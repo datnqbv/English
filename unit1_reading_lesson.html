@@ -559,9 +559,12 @@
   </main>
 
   <!-- Vocab Definition Modal -->
-  <div class="vocab-modal-overlay" id="vocabModalOverlay">
+  <div class="vocab-modal-overlay" id="vocabModalOverlay" role="dialog" aria-modal="true" aria-labelledby="vModalWord">
     <div class="vocab-modal">
-      <h3 id="vModalWord">Word</h3>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <h3 id="vModalWord" style="margin-bottom:0;">Word</h3>
+        <button class="audio-btn" id="vAudioBtn" onclick="speakWord(this.dataset.word)" style="background:var(--accent); border:none; width:36px; height:36px; border-radius:50%; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center;" aria-label="Nghe phát âm">🔊</button>
+      </div>
       <div class="en-def" id="vModalEn">English definition...</div>
       <div class="vi-def" id="vModalVi">Nghĩa tiếng Việt...</div>
       <button class="modal-close" onclick="closeVocabModal()">Got it ✓</button>
@@ -580,6 +583,16 @@
     function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g, '&#39;'); }
     function normalizeText(s) { return String(s).trim().toLowerCase().replace(/[\u2018\u2019\u02BC`]/g, "'").replace(/\s+/g, ' ').replace(/[.,!?;:]+$/, ''); }
 
+    function speakWord(text) {
+      if ('speechSynthesis' in window && text) {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-GB';
+        u.rate = 0.9;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(u);
+      }
+    }
+
     // Hook Overlay logic (Pattern 1.9)
     let hookDismissed = false;
     function initHook(waitMs = 400) {
@@ -595,12 +608,19 @@
     }
     window.addEventListener('DOMContentLoaded', () => initHook(3000));
 
-    // Progress tracker helpers & LMS progress
+    // Progress tracker helpers & LMS progress/state
     function markDone(key) {
       const item = document.querySelector(`#progress-tracker .pt-item[data-key="${key}"]`);
       if (item) item.classList.add('done');
       const doneCount = document.querySelectorAll('#progress-tracker .pt-item.done').length;
       LMS().progress({ done: doneCount, total: 4 });
+      LMS().state({ lastCompletedSection: key, progressCount: doneCount });
+    }
+
+    if (window.AiducationLMS) {
+      window.AiducationLMS.onResume = function(state) {
+        if (state && state.lastCompletedSection) markDone(state.lastCompletedSection);
+      };
     }
 
     // Vocab Modal Data (// ĐỒNG BỘ với file Practice — sửa nội dung phải sửa CẢ 2 nơi)
@@ -609,7 +629,7 @@
       gratitude: { word: 'gratitude', en: 'The feeling of being thankful', vi: 'lòng biết ơn' },
       strengthen: { word: 'strengthen', en: 'To make something stronger', vi: 'làm cho vững chắc, củng cố' },
       bond: { word: 'bond', en: 'A close connection between people', vi: 'mối liên kết gắn bó giữa người với người' },
-      benefit: { word: 'benefits / benefit', en: 'An advantage or good result', vi: 'lợi ích, điều tốt đẹp mang lại' },
+      benefit: { word: 'benefits', en: 'An advantage or good result', vi: 'lợi ích, điều tốt đẹp mang lại' },
       character: { word: 'character', en: 'The qualities that make a person who they are', vi: 'tính cách, phẩm chất tạo nên con người' }
     };
 
@@ -617,6 +637,7 @@
       const data = vocabData[key];
       if (!data) return;
       document.getElementById('vModalWord').textContent = data.word;
+      document.getElementById('vAudioBtn').dataset.word = data.word.replace(' / ', ' ');
       document.getElementById('vModalEn').textContent = data.en;
       document.getElementById('vModalVi').textContent = data.vi;
       document.getElementById('vocabModalOverlay').classList.add('active');
@@ -757,12 +778,12 @@
       },
       {
         title: "Step 1 · Worked-Example Recap",
-        content: `<p style="font-size:13.5px; margin-bottom:8px;">So sánh 3 cặp câu bạn vừa làm:</p>
-        <table class="recap-table">
+        content: `<p style="font-size:13.5px; margin-bottom:8px;">So sánh 3 cặp câu bạn vừa làm (tap từng dòng để xem):</p>
+        <table class="recap-table" id="recapTable">
           <tr><th>Card</th><th>✅ Real Evidence</th><th>❌ Câu bị loại</th></tr>
-          <tr class="active-row"><td>1</td><td>No one teaches...</td><td>Here are 3 things...</td></tr>
-          <tr><td>2</td><td>No one else to do it...</td><td>Parents remind me...</td></tr>
-          <tr><td>3</td><td>effort... / bond...</td><td>bring family closer...</td></tr>
+          <tr class="active-row" onclick="highlightRecapPair('p3', this)"><td>1</td><td>No one teaches...</td><td>Here are 3 things...</td></tr>
+          <tr onclick="highlightRecapPair('p4', this)"><td>2</td><td>No one else to do it...</td><td>Parents remind me...</td></tr>
+          <tr onclick="highlightRecapPair('p5', this)"><td>3</td><td>effort... / bond...</td><td>bring family closer...</td></tr>
         </table>`,
         highlightId: 'p3-ev'
       },
@@ -834,6 +855,19 @@
         document.querySelector('[data-id="p6-main"]').style.display = 'block';
         document.querySelector('[data-id="p6-opinion"]').style.display = 'block';
       }
+    }
+
+    function highlightRecapPair(cardPrefix, trEl) {
+      document.querySelectorAll('.sentence-item').forEach(el => el.className = 'sentence-item');
+      if (trEl) {
+        document.querySelectorAll('#recapTable tr').forEach(r => r.classList.remove('active-row'));
+        trEl.classList.add('active-row');
+      }
+      const goodEl = document.querySelector(`[data-id="${cardPrefix}-ev"]`);
+      const badEl = document.querySelector(`[data-id="${cardPrefix}-no"]`);
+      if (goodEl) goodEl.classList.add('sr-good');
+      if (badEl) badEl.classList.add('sr-bad');
+      if (goodEl) goodEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     function runScanEffect() {

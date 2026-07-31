@@ -346,6 +346,16 @@
       ]
     };
 
+    function speakWord(text) {
+      if ('speechSynthesis' in window && text) {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-GB';
+        u.rate = 0.9;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(u);
+      }
+    }
+
     let currentLevelTab = 'easy';
 
     function renderRefPassage(level) {
@@ -359,11 +369,11 @@
           // Reveal 6 core + 4 support
           revealWords.core.forEach(w => {
             const reg = new RegExp(`\\b(${w.word})\\b`, 'gi');
-            pText = pText.replace(reg, `<span class="rev-tag-core" onclick="alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
+            pText = pText.replace(reg, `<span class="rev-tag-core" role="button" tabindex="0" onclick="speakWord('${w.word}'); alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
           });
           revealWords.support.forEach(w => {
             const reg = new RegExp(`\\b(${w.word})\\b`, 'gi');
-            pText = pText.replace(reg, `<span class="rev-tag-support" onclick="alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
+            pText = pText.replace(reg, `<span class="rev-tag-support" role="button" tabindex="0" onclick="speakWord('${w.word}'); alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
           });
         } else if (level === 'medium') {
           // Reveal 2 support words only (reliable, far beyond)
@@ -371,7 +381,7 @@
             const w = revealWords.support.find(item => item.word === sw);
             if (w) {
               const reg = new RegExp(`\\b(${w.word})\\b`, 'gi');
-              pText = pText.replace(reg, `<span class="rev-tag-support" onclick="alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
+              pText = pText.replace(reg, `<span class="rev-tag-support" role="button" tabindex="0" onclick="speakWord('${w.word}'); alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
             }
           });
         }
