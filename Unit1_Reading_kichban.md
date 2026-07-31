@@ -5,7 +5,22 @@
 mức giữ nguyên 100%). Chỉ thay đổi: (a) thứ tự/thời điểm trình bày (Hook + progressive reveal +
 vocab-in-context thay cho khối tĩnh), (b) đổi mọi tương tác kéo-thả trong đề xuất gốc sang
 tap-to-select (đúng Mục 0.4 design system), (c) thêm lớp "Prove it" (chọn câu chứng minh) chỉ cho
-8/36 câu (True/False + Yes/No/Not Given) — không thêm/bớt đáp án đúng của các câu này.
+8/36 câu (True/False + Yes/No/Not Given) — không thêm/bớt đáp án đúng của các câu này, (d) **🆕 thêm
+khối Strategy Reveal "Spot the Real Evidence"** (sau Discovery #3, trước Kết đoạn) dạy kỹ năng
+Stated Details/Reading for Specific Information, dùng lại 100% câu đã có sẵn trong bài (không thêm
+ngữ liệu mới ngoài cách phân vai 2 câu ở đoạn 6 cho Quick Check), cùng icon 💡 Recap ở Phần 2 tái
+dùng cùng nội dung, (e) **🆕 sửa caption Hook** ("Bạn thấy quen không?" thay vì "Nghe quen không?")
+và **nêu rõ đây là blog post** trong mission text Hook Stage 1 ("...in her blog post today"), (f)
+**🆕 thêm text-reveal cho từ khó ở Reference Pane của Phần 2** (Practice) theo Level — Easy reveal
+đủ 6 từ vựng chính thức + 4 từ khó bổ trợ, Medium chỉ reveal 2 từ khó nhất, Difficult không reveal
+gì — KHÔNG áp dụng ở Phần 1 (Lesson) vì đã có kịch bản giảng/dịch trực tiếp, (g) **🆕 thay 1 câu
+Easy MCQ Vận dụng lệch mục tiêu** (áp dụng tình huống mới → đổi thành câu kết hợp 2 đoạn, đúng
+phạm vi Stated Details) và thêm dòng nhắc "kết hợp 2 đoạn" vào Strategy Reveal, (h) **🆕 mở rộng
+icon 💡 Recap sang cả Difficult** (không chỉ 8 câu Prove-it) + 2 ràng buộc kỹ thuật (không
+`recordMistake()`, không ví dụ mới trong popup), (i) **🆕 thêm nghĩa tiếng Việt vào toàn bộ 6 popup
+từ vựng**, (j) **🆕 thêm dòng hướng dẫn on-screen** cho 3 tương tác tap-to-select (Card 1, Card 2
+causal chain, Card 3) vốn trước đó chỉ có ghi chú kỹ thuật, chưa có câu hướng dẫn thật cho học
+sinh.
 
 ---
 
@@ -16,7 +31,7 @@ tap-to-select (đúng Mục 0.4 design system), (c) thêm lớp "Prove it" (ch�
 phòng khách gia đình lúc chiều tối, một bạn nữ tuổi teen đứng lưỡng lự giữa chồng bát đĩa chưa rửa
 và điện thoại trên sofa (đúng bối cảnh Stage 0 bên dưới). Không có lời thoại robot ở đây (khác
 Module 1A — bài Reading không có nhân vật robot xuyên suốt); thay bằng 1 dòng dẫn ngắn song ngữ đè
-lên góc dưới ảnh: *"Sound familiar? / Nghe quen không?"* rồi tự fade-out 400ms sang Hero + Stage 0.
+lên góc dưới ảnh: *"Sound familiar? / Bạn thấy quen không?"* rồi tự fade-out 400ms sang Hero + Stage 0.
 Học sinh có thể tap vào bất kỳ đâu trên ảnh để fade sớm hơn (không bắt buộc chờ hết 400ms).
 
 **Hero:** Family Life — Benefits of Doing Housework / Lợi ích của việc làm việc nhà
@@ -37,7 +52,7 @@ Hiện riêng đoạn (1), highlight câu: *"I've started to see chores in a dif
 Hỏi (Prediction Picker, không chấm điểm): **Something changed Vy's mind. What do you predict
 happened?** — tap chọn 1 trong: `She became better at chores` / `She understood her parents` /
 `She discovered chores had other benefits` / `No idea yet`
-Sau khi chọn → hiện mission: **Find 3 things that changed Vy's mind.** → hiện tiếp đoạn (2), rồi
+Sau khi chọn → hiện mission: **Find 3 things that changed Vy's mind in her blog post today.** → hiện tiếp đoạn (2), rồi
 mở khoá Benefit Hunt.
 
 **Khối nội dung gốc — Reading Passage** (nguyên văn, chia thành 3 Evidence Card thay vì hiện 1 lần)
@@ -51,6 +66,10 @@ mở khoá Benefit Hunt.
 > **(3)** First, it teaches me practical skills for real life. No one teaches you how to cook a
 > simple meal or keep a room clean in class. You learn these things by doing them at home, again
 > and again, until you can do them well.
+
+**🆕 Dòng hướng dẫn thao tác, hiện on-screen (không chỉ ghi chú kỹ thuật):**
+> *Tap the sentence that gives real evidence.*
+> Tap vào câu có bằng chứng thật.
 
 Tap chọn câu chứa evidence (2 lựa chọn, tap không kéo):
 - ✅ "No one teaches you how to cook a simple meal or keep a room clean in class."
@@ -67,8 +86,12 @@ Tap từ **responsibility** khi gặp ở Card 2 bên dưới (xem tiếp).
 > one else to do it instead. This makes me more careful and reliable, not only at home but in
 > other parts of my life too.
 
-Tap từ **responsibility** → popup nghĩa: *A duty to deal with or take care of something* → hiện
+Tap từ **responsibility** → popup nghĩa: *A duty to deal with or take care of something* — trách nhiệm, bổn phận phải lo liệu việc gì đó → hiện
 ngay câu gap-fill gốc để check: "Second, chores help me build ______." → đáp án: *responsibility*.
+
+**🆕 Dòng hướng dẫn thao tác, hiện on-screen (không chỉ ghi chú kỹ thuật):**
+> *Tap the sentence that completes the chain.*
+> Tap vào câu hoàn thành đúng chuỗi lý do.
 
 Causal chain (tap-to-select, KHÔNG kéo-thả):
 `A task belongs to me` → [tap chọn 1 trong 3 câu bên dưới] → `I become more careful & reliable`
@@ -84,12 +107,16 @@ Chọn đúng → mở khoá **DISCOVERY #2 — RESPONSIBILITY 🔓**
 > care of our home. This gives me a lot of **gratitude** for them. Doing tasks together also
 > helps **strengthen** the **bond** between family members in a way that just talking does not.
 
-Tap từ **gratitude** → popup nghĩa: *The feeling of being thankful* → gap-fill gốc: "This gives me
+Tap từ **gratitude** → popup nghĩa: *The feeling of being thankful* — lòng biết ơn → gap-fill gốc: "This gives me
 a lot of ______ for them." → đáp án: *gratitude*.
-Tap từ **strengthen** → popup nghĩa: *To make something stronger* → gap-fill gốc: "Doing tasks
+Tap từ **strengthen** → popup nghĩa: *To make something stronger* — làm cho vững chắc/mạnh hơn → gap-fill gốc: "Doing tasks
 together also helps ______ the bond between family members." → đáp án: *strengthen*.
-Tap từ **bond** → popup nghĩa: *A close connection between people* → gap-fill gốc: "...strengthen
+Tap từ **bond** → popup nghĩa: *A close connection between people* — mối liên kết gắn bó giữa người với người → gap-fill gốc: "...strengthen
 the ______ between family members." → đáp án: *bond*.
+
+**🆕 Dòng hướng dẫn thao tác, hiện on-screen (không chỉ ghi chú kỹ thuật):**
+> *Tap the 2 sentences that give real evidence.*
+> Tap vào 2 câu có bằng chứng thật.
 
 Tap chọn 2 câu evidence trong đoạn (không kéo):
 - ✅ "how much effort they put into taking care of our home"
@@ -99,15 +126,103 @@ Tap chọn 2 câu evidence trong đoạn (không kéo):
 Chọn đủ 2 câu đúng → hiện chuỗi: SEE THEIR EFFORT → ❤️ GRATITUDE → 👨‍👩‍👧 STRONGER BOND → mở khoá
 **DISCOVERY #3 — FAMILY BOND 🔓**
 
-**Kết đoạn** (đoạn 6, hiện sau khi mở khoá đủ 3 Discovery)
+---
+
+### 🆕 STRATEGY REVEAL — "Spot the Real Evidence"
+*(chèn ngay sau khi mở khoá đủ 3 Discovery, trước Kết đoạn — dạy kỹ năng Unit 1: Stated Details /
+Reading for Specific Information)*
+
+**Layout: Split view — tái dùng Reference Pane (mục 4.8b), KHÔNG bịa layout mới.**
+Trái: đoạn văn liên quan (đánh dấu màu) · Phải: các bước Strategy, tap "Next" để chuyển bước → mỗi
+bước active **auto-scroll + highlight đúng câu tương ứng bên trái** (liên kết động, không phải 2
+khối tĩnh độc lập). Mobile ≤480px: dùng lại 3 chế độ xem sẵn có của Reference Pane (Chia đôi/Bài
+đọc/Câu hỏi), mặc định mở "Chia đôi" thu gọn (passage ~40% màn hình phía trên, steps phía dưới).
+
+**Bước 0 — Intro** (phải: text; trái: chưa highlight, hiện nguyên đoạn 3-4-5 vừa đọc)
+> *Nice work! You found 3 pieces of real evidence. Let's see what they have in common. They're the
+> foundation for Reading for Specific Information.*
+> Bạn vừa tìm đúng 3 bằng chứng. Cùng xem điểm chung của chúng nhé — chúng chính là nền tảng của kỹ
+> năng **Đọc tìm thông tin chi tiết (Reading for Specific Information)**, kỹ năng bạn sẽ dùng xuyên
+> suốt phần Luyện tập.
+
+**Bước 1 — Worked-example recap** (phải: bảng 3 cặp câu; trái: auto-scroll lần lượt đến đoạn 3 → 4
+→ 5, mỗi lần scroll tới, câu ✅ sáng màu xanh lá + khung viền, câu ❌ tương ứng mờ đi/gạch nhẹ — đồng
+bộ với đúng dòng phải đang hiển thị. Tap từng dòng bên phải → trái tự nhảy đúng đoạn + highlight
+đúng cặp câu đó, không bắt buộc theo thứ tự)
+
+| Card | ✅ Evidence | ❌ Câu bị loại |
+|---|---|---|
+| 1 (đoạn 3) | "No one teaches you how to cook a simple meal or keep a room clean in class." | "Here are three things I've learned from doing housework." |
+| 2 (đoạn 4) | "There is no one else to do it instead." | "My parents remind me every day." |
+| 3 (đoạn 5) | "how much effort they put into taking care of our home" | "chores can bring a family closer together" |
+
+**Bước 2 — Rule callout** (phải: text quy tắc; trái: giữ nguyên cả 3 cặp cùng sáng màu 1 lúc để học
+sinh nhìn tổng quan điểm chung)
+> *Notice something? The ✅ sentences always have a specific action or reason. The ❌ sentences just
+> introduce the idea — general, no real detail.*
+> Câu ✅ luôn có hành động hoặc lý do cụ thể. Câu ❌ chỉ là câu dẫn ý — chung chung, không có chi tiết
+> thật.
+
+**Bước 3 — 2-step process** (phải: quy trình 2 bước dạng số; trái: khi tap "Bước 2: Quét đoạn" →
+chạy hiệu ứng quét nhẹ — dòng sáng di chuyển từ trên xuống dưới qua đoạn 3-4-5, mô phỏng động tác
+scan thật, dừng lại đúng tại 3 câu ✅)
+1. Đọc câu hỏi → xác định đang cần tìm loại chi tiết gì (hành động? lý do? con số?)
+2. Quét đoạn liên quan → tìm đúng câu có chi tiết đó, bỏ qua câu chỉ dẫn ý chung chung
+
+*Dòng nhỏ thêm cuối Bước 3 (không phải bước riêng, chỉ 1 câu ghi chú nhỏ hơn, màu nhạt hơn 2 bước
+trên):*
+> 💡 *Với câu hỏi khó hơn, đôi khi bằng chứng nằm ở 2 đoạn khác nhau — vẫn dùng đúng luật này, chỉ
+> cần lặp lại 2 lần rồi ghép câu trả lời lại.*
+
+**Bước 4 — Quick check** (phải: câu hỏi tap-to-match; trái: auto-scroll xuống đoạn (6), cả đoạn hiện
+rõ, chưa highlight gì cho tới khi học sinh tap — dùng luật đã đổi vì đoạn 6 không có cặp "cụ thể vs
+chung chung" rõ như Card 1-3)
+> *Read paragraph (6) again. Which sentence gives Vy's overall conclusion, and which is just her
+> personal opinion added on top?*
+
+Tap chọn vai trò cho từng câu (tap-to-match, không kéo) — khi tap đúng, câu đó sáng màu tương ứng
+ngay trên đoạn (6) bên trái làm feedback trực quan:
+- "The benefits of doing housework go far beyond having a clean house." → tap gán ✅ **Kết luận
+  chính** → sáng xanh lá bên trái
+- "I truly believe every teenager should try it." → tap gán 🗣️ **Ý kiến cá nhân thêm vào** → sáng
+  vàng nhạt bên trái
+
+→ Feedback ngắn: *"Same rule — the sentence that sums up real evidence is the main point, not the
+sentence that only shares a feeling."*
+
+**Bước 5 — Summary Card** (full-width, không cần Split view nữa — card tổng hợp để "mang theo",
+không gắn với đoạn văn cụ thể)
+> 📌 **Quick Recap — Spot the Real Evidence**
+>
+> **Rule:** Hành động/lý do cụ thể = ✅ Evidence · Câu dẫn ý/quan điểm chung chung = ❌ Not evidence
+>
+> **2 steps:**
+> 1️⃣ Đọc câu hỏi → xác định loại chi tiết cần tìm
+> 2️⃣ Quét đoạn liên quan → chọn câu có chi tiết đó, bỏ câu chỉ dẫn ý
+
+Nút bên dưới card: **"Got it — let's continue"** (tap để đóng, chuyển tiếp sang đoạn kết + Word
+Collection như luồng cũ).
+*Nội dung Summary Card này là 1 component/nguồn dữ liệu duy nhất, được tái sử dụng ở Phần 2 —
+xem icon 💡 "Recap" trong Practice bên dưới. Sửa nội dung ở đây thì bên Practice tự cập nhật theo,
+không viết 2 bản riêng.*
+
+**Bước 6 — Câu chốt nối sang Practice**
+> *You'll use this exact skill in Practice — look for "Prove it" and pick the sentence with real
+> evidence.*
+> Bạn sẽ dùng đúng kỹ năng này ở phần Luyện tập — để ý mục "Prove it" và chọn câu có bằng chứng
+> thật.
+
+---
+
+**Kết đoạn** (đoạn 6, hiện sau khi mở khoá đủ 3 Discovery + qua hết Strategy Reveal)
 > **(6)** So here is my honest opinion. The **benefits** of doing housework go far beyond having a
 > clean house. It also helps build **character**, and I truly believe every teenager should try
 > it.
 > *(228 words)*
 
-Tap từ **benefit** → popup nghĩa: *An advantage or good result* → gap-fill gốc: "The ______ of
+Tap từ **benefit** → popup nghĩa: *An advantage or good result* — lợi ích, điều tốt đẹp mang lại → gap-fill gốc: "The ______ of
 doing housework go far beyond having a clean house." → đáp án: *benefits*.
-Tap từ **character** → popup nghĩa: *The qualities that make a person who they are* → gap-fill
+Tap từ **character** → popup nghĩa: *The qualities that make a person who they are* — tính cách, những phẩm chất tạo nên con người → gap-fill
 gốc: "It also helps build ______." → đáp án: *character*.
 
 **YOUR WORD COLLECTION** (thu thập đủ 6 từ đã tap qua trong hành trình đọc — đúng 6 cặp
@@ -122,7 +237,50 @@ text song ngữ: "✓ Found all the evidence — Go to Practice / Đã tìm đ�
 ### PHẦN 2 — PRACTICE (`unit1_reading_practice.html`)
 
 **Practice Reference Pane:** Có — 1 pane không tab (Reading Passage, giữ nguyên đoạn đánh số +
-từ khoá bôi đậm, bỏ tương tác tap-hiện-nghĩa/Evidence Card, chỉ hiển thị để tra cứu read-only).
+từ khoá bôi đậm, bỏ tương tác Evidence Card của Phần 1, chỉ hiển thị để tra cứu). Pane này **giữ
+nguyên xuyên suốt cả Phần 2** — học sinh luôn thấy bài đọc song song lúc làm câu hỏi, theo đúng 3
+chế độ xem sẵn có (Chia đôi mặc định / Bài đọc / Câu hỏi, học sinh tự tap đổi chế độ).
+
+**🆕 Text-reveal theo Level (thay cho quyết định cũ "bỏ hẳn tap-hiện-nghĩa" — nới lại có kiểm soát,
+chỉ áp dụng ở Practice, KHÔNG áp dụng ở Lesson vì Lesson đã có kịch bản giảng/dịch trực tiếp):**
+
+Tách 2 loại reveal, khác nhau cả về hình thức lẫn hành vi, để học sinh phân biệt được "từ đã học" và
+"từ mới chỉ để đỡ vướng":
+
+| | Từ vựng chính thức (6 từ: responsibility, gratitude, strengthen, bond, character, benefit) | Từ khó bổ trợ (4 từ: avoid, practical, reliable, far beyond) |
+|---|---|---|
+| Kiểu highlight | Vàng đậm, có viền (giữ nguyên style đã dùng ở Phần 1) | Gạch chân chấm, màu xám nhạt |
+| Tap → | Popup nghĩa ngắn 1 dòng | Popup nghĩa ngắn 1 dòng |
+| Có gap-fill / vào Word Collection? | Không (khác Phần 1 — ở đây chỉ tra cứu lại, không kiểm tra) | Không |
+
+**Bảng bật/tắt theo Level** (đổi tab Level → Reference Pane tự đổi danh sách từ được reveal, dùng
+chung 1 pane, KHÔNG tách 3 bản passage riêng):
+
+| Level | 6 từ vựng chính thức | 4 từ khó bổ trợ |
+|---|---|---|
+| Easy | ✅ Reveal cả 6 | ✅ Reveal cả 4 (avoid, practical, reliable, far beyond) |
+| Medium | ❌ Không reveal | ✅ Reveal 2 (reliable, far beyond) |
+| Difficult | ❌ Không reveal | ❌ Không reveal |
+
+**🆕 Icon 💡 "Recap" cạnh mỗi câu có Prove-it** — áp dụng cho **cả 3 mức, không chỉ 8 câu T/F +
+Y/N/NG**: 4 True/False ở Easy, 4 Yes/No/Not Given ở Medium, **và cả 4 câu Matching Information ở
+Difficult** (Difficult là mức học sinh ít lỗi nhất ở Mission, nhưng không có nghĩa Matching
+Information dễ hơn T/F — vẫn cần điểm tựa Recap). Icon cố định, nhỏ, đặt cạnh nút Prove-it/nút chọn
+đáp án của câu đó. Tap → mở **1 popup/bottom-sheet nhỏ nổi đè lên trên cùng** (overlay, không phải
+đổi tab hay đổi chế độ xem của Reference Pane), hiển thị đúng nội dung **Summary Card** (Bước 5,
+Strategy Reveal ở Phần 1). **Reference Pane (bài đọc bên trái) vẫn giữ nguyên state phía dưới lớp
+overlay** — dù học sinh đang ở chế độ Chia đôi, Bài đọc, hay Câu hỏi lúc tap 💡, tap "Đóng" popup thì
+quay lại đúng y chế độ + vị trí scroll đó, không bị đổi layout hay mất tiến trình làm bài. Trên
+mobile ≤480px, popup hiện dạng bottom-sheet trượt lên từ dưới (không full-screen), để góc trên vẫn
+thấy được đang ở câu nào.
+Dùng chung 1 component/nguồn dữ liệu với Summary Card ở Phần 1, không viết nội dung riêng cho popup
+này.
+
+**⚠️ 2 ràng buộc kỹ thuật bắt buộc cho popup Recap** (dễ bị hiểu nhầm khi build nên ghi rõ):
+1. Mở popup Recap **KHÔNG được gọi `recordMistake()`** — không tính là sai, không bị trừ điểm hay
+   ảnh hưởng bất kỳ thống kê nào của học sinh, kể cả khi hệ thống có adaptive routing ở unit khác.
+2. Nội dung popup **chỉ nhắc lại Rule + quy trình 2 bước, KHÔNG được thêm ví dụ minh hoạ mới**
+   trùng với câu học sinh đang làm — tránh biến Recap thành gợi ý đáp án trá hình.
 
 **Bài tập — Easy**
 
@@ -181,14 +339,14 @@ từ khoá bôi đậm, bỏ tương tác tap-hiện-nghĩa/Evidence Card, chỉ
     phía sau.
 
 - level: easy | cat: van_dung | dạng: MCQ
-  question: "Based on Vy's experience, which situation would most likely also build
-    'responsibility' in the same way she describes?"
-  options: A. A teacher reminds a student to submit homework | B. A parent completes all
-    housework without asking for help | C. A group of students share one big task together | D.
-    A student is assigned to water the classroom plants alone every day
-  dap_an_dung: D
-  giai_thich_dung: Áp dụng ý "không có ai khác để dựa vào" (đoạn 4) vào một tình huống hoàn toàn
-    mới, không có trong bài.
+  question: "Based on paragraphs 3 and 6, what does Vy learn from housework besides practical
+    skills?"
+  options: A. How to cook more difficult meals | B. Something that helps shape her character |
+    C. A reason to stop doing chores once she is skilled | D. A way to avoid helping her parents
+  dap_an_dung: B
+  giai_thich_dung: Kết hợp thông tin từ đoạn 3 (kỹ năng thực hành) và đoạn 6 (xây dựng tính cách) —
+    cùng dạng "kết hợp 2 đoạn" với các câu Vận dụng khác trong bộ này, thay cho câu áp dụng tình
+    huống mới không có trong bài (đã gỡ vì lệch phạm vi Stated Details).
 
 - level: easy | cat: nhan_biet | dạng: gap-fill
   question: "Chores help Vy build ______."
@@ -398,6 +556,13 @@ thúc bằng 1 hành động phản tư có căn cứ).
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: test ≤480px trước, Reference Pane đủ 3 chế độ xem (Chia đôi/Bài đọc/Câu hỏi).
 - File Practice KHÔNG hero, không lặp tiêu đề Unit.
+- **🆕 Mọi popup nghĩa từ vựng (cả từ vựng chính thức lẫn từ khó bổ trợ) PHẢI có thêm nghĩa tiếng
+  Việt ngắn bên dưới định nghĩa tiếng Anh** — không chỉ hiện định nghĩa Anh-Anh, để hỗ trợ học sinh
+  học yếu hơn. Áp dụng cho toàn bộ popup trong cả Phần 1 và Phần 2, không riêng 1-2 từ.
+- **🆕 Mọi tương tác tap-to-select/tap-to-classify/causal chain PHẢI có 1 dòng hướng dẫn hiện
+  on-screen cho học sinh** (song ngữ, giống style "Before leaving for school, spot something you
+  could change." ở Unit 2 Stage 1) — không được để chỉ có ghi chú kỹ thuật trong ngoặc (VD: "tap
+  không kéo") mà không có câu hướng dẫn thật hiện ra cho học sinh biết phải làm gì tiếp theo.
 - **KHÔNG dùng kéo-thả ở đâu cả** — mọi chỗ trong bản đề xuất gốc có "kéo/drag" (causal chain Card
   2, Evidence Board Difficult) đã được viết lại thành tap-to-select ở kịch bản này; khi build giữ
   đúng cơ chế tap, không tự đổi lại thành drag vì "trông đẹp hơn".
@@ -408,6 +573,15 @@ thúc bằng 1 hành động phản tư có căn cứ).
   chung của hệ thống), không giữ thứ tự A/B/C/D như liệt kê ở trên (thứ tự trên chỉ để giáo viên
   đối chiếu, không phải thứ tự render).
 - Đồng bộ dữ liệu: nội dung passage/vocab phải giống hệt ở cả 2 file (đánh dấu comment "ĐỒNG BỘ").
+- **🆕 Popup 💡 Recap (Phần 2) PHẢI là overlay nổi, KHÔNG được thay thế/che khuất Reference Pane** —
+  học sinh vẫn cần đọc song song bài đọc bên trái lúc làm câu hỏi bên phải xuyên suốt Phần 2; popup
+  chỉ mở tạm lớp trên cùng rồi đóng lại về đúng state cũ, không đổi chế độ xem hay cuộn lại pane bài
+  đọc về đầu.
+- **🆕 Text-reveal ở Practice CHỈ áp dụng trong Reference Pane của Phần 2, KHÔNG thêm vào Phần 1
+  (Lesson)** — ở Lesson đã có kịch bản giảng/dịch trực tiếp nên không cần chữ reveal; thêm vào sẽ làm
+  loãng phần dạy kỹ năng Strategy Reveal. Số lượng từ reveal PHẢI đổi theo Level đang active (Easy 10
+  từ / Medium 2 từ / Difficult 0 từ — xem bảng chi tiết ở mục Practice Reference Pane), không hiện cố
+  định 1 danh sách cho cả 3 mức.
 - KHÔNG dùng adaptive routing (tự chọn Easy/Medium/Difficult theo performance) cho bài này — học
   sinh vẫn chọn tường minh qua Level Tabs như thiết kế gốc; ý tưởng adaptive được gác lại làm đề
   xuất nâng cấp hệ thống riêng, không áp vào bài Unit 1 Reading này.
@@ -423,6 +597,32 @@ thúc bằng 1 hành động phản tư có căn cứ).
   của component match/MCQ có sẵn — không có pattern riêng trong `03_engine` hiện tại, cần build
   thêm 1 hàm nhỏ "tap-select-pair" (Evidence Card ↔ Paragraph) và 1 UI 2 bước (Answer → Prove it)
   khi lên code, dựa trên cơ chế click/tap chuẩn đã có, không phải viết engine hoàn toàn mới.
+- **🆕 Bổ sung mục 1.10 — Strategy Reveal** vào `03_engine_tiengAnh_v1_2.md`: khối worked-example
+  recap + rule callout + quick check + Summary Card, gắn với Reference Pane (4.8b) qua 1 hàm mới
+  `scrollToAndHighlight(paragraphId, sentenceIndex, color)` gọi mỗi khi đổi bước bên phải — tái
+  dùng khung Reference Pane làm layout, không viết lại từ đầu.
+- **🆕 Icon 💡 Recap (Phần 2):** popup nhỏ mở đúng nội dung Summary Card (1.10) từ 1 nguồn dữ liệu
+  chung với Phần 1 — không phải component riêng, chỉ là 1 cách hiển thị khác của cùng 1 data.
+- **🆕 Text-reveal theo Level (Reference Pane, Phần 2):** Reference Pane cần đọc `currentLevelTab`
+  để quyết định render reveal-tag cho từ nào, cấu trúc data đề xuất (đã thêm field `vi` — nghĩa
+  tiếng Việt, bắt buộc cho mọi popup theo lưu ý thiết kế ở trên):
+  ```javascript
+  const revealWords = {
+    easy: [
+      {word: 'responsibility', en: 'A duty to deal with or take care of something',
+       vi: 'trách nhiệm, bổn phận phải lo liệu việc gì đó', type: 'core'},
+      // ... 5 từ core còn lại + 4 từ support (avoid, practical, reliable, far beyond),
+      // mỗi từ đều có đủ 3 field: en, vi, type
+    ],
+    medium: [ /* chỉ 2 từ support: reliable, far beyond */ ],
+    difficult: []
+  };
+  ```
+  Không viết 3 component Reference Pane riêng — chỉ 1 pane, render tag theo mảng tương ứng
+  `currentLevelTab`. 2 style khác nhau (vàng đậm cho 6 từ chính thức / gạch chấm xám cho 4 từ bổ
+  trợ) phân biệt bằng field `type: 'core' | 'support'` trong cùng cấu trúc data trên, không phải
+  2 hệ thống tag tách biệt. Field `vi` áp dụng đồng nhất cho MỌI popup nghĩa trong cả file — kể cả
+  popup ở Phần 1 (Lesson) cũng cần field này, không chỉ riêng Text-reveal ở Phần 2.
 
 **⚠️ Engine chưa có pattern cho Ảnh Hook full-screen + fade-out** (đã kiểm tra `03_engine_tiengAnh_v1_2.md`
 toàn file — chỉ có `fadeUp` cho chat bubble ở mục 1.7, KHÔNG có pattern cho ảnh full-screen chuyển
@@ -434,7 +634,7 @@ cảnh như mô tả ở Module 1A). Đây là phần thật sự cần thêm co
 // HTML: 1 lớp phủ full-screen đè lên toàn bộ nội dung bài học, z-index cao nhất
 // <div id="hook-overlay" class="hook-overlay" onclick="dismissHook()">
 //   <img src="unit1_reading_hook_chore_dilemma.png" alt="">
-//   <p class="hook-caption">Sound familiar? / Nghe quen không?</p>
+//   <p class="hook-caption">Sound familiar? / Bạn thấy quen không?</p>
 // </div>
 
 function initHook() {

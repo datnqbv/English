@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1: Family Life - Reading Practice | Aiducation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1: Family Life - Reading Practice",
+    "subject": "Tiếng Anh",
+    "grade": "10",
+    "objectives": [
+      "Practice reading for specific information across 3 difficulty levels (Easy, Medium, Difficult)",
+      "Master evidence identification (Prove it) for True/False, Yes/No/Not Given, and Matching Information items"
+    ],
+    "structure": [
+      { "id": "ref", "title": "Practice Reference Pane" },
+      { "id": "easy", "title": "Easy Level (12 items)" },
+      { "id": "medium", "title": "Medium Level (12 items)" },
+      { "id": "difficult", "title": "Difficult Level (12 items)" },
+      { "id": "backtoyou", "title": "Back to You & Reflection" },
+      { "id": "assess", "title": "Self-Assessment & Finale" }
+    ],
+    "athenaGuidance": "Nội dung luyện tập Reading Unit 1 gồm 36 câu hỏi chia 3 mức Easy/Medium/Difficult. Hướng dẫn học sinh tra cứu bài đọc bên Reference Pane, sử dụng nút 💡 Recap để xem lại quy tắc tìm bằng chứng thực tế (Action/Reason cụ thể = Real Evidence)."
+  }
+  </script>
+
+  <style>
+    :root {
+      --cream: #FAF7F0; --cream-2: #F0EADD; --cream-3: #E7DECC;
+      --paper-line: #E5DECF; --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A; --ink-2: #514C44; --ink-3: #7C756A; --ink-faint: #ABA396;
+      --jade: #3CA57A; --jade-deep: #2D8B6F; --jade-dark: #14432F;
+      --jade-text: #1B5E48; --jade-soft: #A9D0BE; --jade-pale: #DCEAE1;
+      --sage: #A8C9B8; --sage-deep: #7CA792; --sage-text: #46685A; --sage-pale: #E1ECE4;
+      --accent: #E8A24A; --accent-deep: #CE8A33; --accent-text: #8A551A; --accent-pale: #F7E7CD;
+      --correct: #2D8B6F; --correct-bg: #DCEAE1;
+      --wrong: #C15F3C; --wrong-bg: #F3E2D6;
+      --warning: #C58A2E; --warning-bg: #F5E7CB;
+      --info: #4E7F92; --info-bg: #DCE7EB;
+      --white: #FFFFFF;
+      --radius-lg: 22px; --radius: 14px; --radius-sm: 10px;
+      --shadow: 0 10px 30px rgba(43,43,40,0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 18px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.55;
+      padding-bottom: 60px;
+    }
+
+    /* Container & Layout */
+    .container { max-width: 1140px; margin: 0 auto; padding: 24px 18px; }
+    
+    /* Level Tabs */
+    .level-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+    .level-tab { background: var(--white); border: 2px solid var(--cream-2); border-radius: var(--radius); padding: 12px 22px; font-weight: 700; font-size: 15px; color: var(--ink-2); min-height: 44px; cursor: pointer; }
+    .level-tab.active { background: var(--jade-deep); color: #fff; border-color: var(--jade-deep); box-shadow: var(--shadow); }
+
+    /* Mobile Pane Controls (<= 991px) */
+    .mobile-pane-controls {
+      display: none; margin-bottom: 14px; align-items: center; gap: 6px; flex-wrap: nowrap; background: var(--cream-2); padding: 6px 10px; border-radius: var(--radius); width: 100%; overflow-x: auto;
+    }
+    .mpc-title { font-size: 11.5px; font-weight: 700; color: var(--jade-dark); flex: 0 0 auto; white-space: nowrap; margin-right: 2px; }
+    .mpc-btn { background: var(--white); border: 1.5px solid var(--sage); border-radius: 999px; padding: 6px 10px; font-size: 11.5px; font-weight: 600; color: var(--ink-2); min-height: 34px; flex: 1 1 0; white-space: nowrap; text-align: center; cursor: pointer; }
+    .mpc-btn.active { background: var(--jade-deep); color: #fff; border-color: var(--jade-deep); }
+
+    /* Practice Split Container (Desktop: 2 cols, Mobile: stacked) */
+    .practice-split-container { display: flex; flex-direction: column; gap: 18px; }
+    @media (min-width: 992px) {
+      .practice-split-container { display: grid; grid-template-columns: minmax(340px, 1fr) minmax(460px, 1.3fr); gap: 24px; align-items: start; }
+      .practice-ref-pane { position: sticky; top: 20px; max-height: calc(100vh - 40px); }
+    }
+
+    /* Reference Pane */
+    .practice-ref-pane { background: var(--white); border: 2px solid var(--cream-2); border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px; }
+    .pref-head { border-bottom: 1.5px solid var(--cream-2); padding-bottom: 8px; font-size: 14px; font-weight: 800; color: var(--jade-dark); text-transform: uppercase; letter-spacing: 0.03em; }
+    .pref-body { overflow-y: auto; max-height: 540px; padding-right: 4px; font-size: 15px; line-height: 1.7; color: var(--ink); }
+
+    /* Text reveal tags in Reference Pane */
+    .rev-tag-core { background: var(--accent-pale); color: var(--accent-text); border: 1.5px solid var(--accent); padding: 1px 5px; border-radius: 4px; font-weight: 700; cursor: pointer; }
+    .rev-tag-support { border-bottom: 2px dashed var(--ink-3); color: var(--ink-2); cursor: pointer; font-weight: 600; }
+
+    /* Mobile mode rules */
+    @media (max-width: 991px) {
+      .mobile-pane-controls { display: flex; position: sticky; top: 0; z-index: 85; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+      .practice-ref-pane { position: sticky; top: 46px; z-index: 80; border-bottom: 3px solid var(--jade-deep); }
+      .practice-split-container.mode-split .practice-ref-pane { max-height: 38vh; }
+      .practice-split-container.mode-split .pref-body { max-height: calc(38vh - 55px); }
+      .practice-split-container.mode-ref .practice-ref-pane { max-height: 65vh; }
+      .practice-split-container.mode-ref .pref-body { max-height: calc(65vh - 55px); }
+      .practice-split-container.mode-q .practice-ref-pane { max-height: 14vh; }
+      .practice-split-container.mode-q .pref-body { max-height: calc(14vh - 45px); }
+    }
+
+    /* Questions Pane */
+    .q-card { background: var(--white); border: 2px solid var(--cream-2); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow); transition: border-color 0.25s; }
+    .q-card.ok { border-color: var(--correct); background: var(--correct-bg); }
+    .q-card.no { border-color: var(--wrong); background: var(--wrong-bg); }
+    .q-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .q-num { font-size: 11.5px; font-weight: 800; color: var(--jade-dark); text-transform: uppercase; letter-spacing: 0.03em; }
+    
+    .recap-btn { background: var(--warning-bg); color: var(--warning); border: 1.5px solid var(--warning); border-radius: 999px; padding: 3px 10px; font-size: 11.5px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
+    .recap-btn:hover { background: var(--warning); color: #fff; }
+
+    .q-text { font-size: 15.5px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .q-opts { display: flex; flex-direction: column; gap: 8px; }
+    .q-opt-btn { background: var(--cream); border: 1.5px solid var(--paper-line); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; color: var(--ink); display: flex; align-items: center; justify-content: space-between; }
+    .q-opt-btn.selected { border-color: var(--jade-deep); background: var(--jade-pale); font-weight: 700; }
+    .q-opt-btn.correct { background: var(--correct); color: #fff; border-color: var(--correct); }
+    .q-opt-btn.wrong { background: var(--wrong); color: #fff; border-color: var(--wrong); }
+
+    /* Prove-it Sub Card */
+    .prove-box { background: var(--cream-2); border: 1.5px dashed var(--accent); border-radius: var(--radius-sm); padding: 12px; margin-top: 10px; display: none; }
+    .prove-box.active { display: block; animation: fadein 0.3s; }
+    .prove-title { font-size: 12.5px; font-weight: 800; color: var(--accent-text); text-transform: uppercase; margin-bottom: 6px; }
+
+    .explain-box { font-size: 13px; color: var(--ink-2); background: var(--cream-2); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: 10px; display: none; line-height: 1.5; }
+    .explain-box.show { display: block; }
+
+    /* Input text answers */
+    .text-ans-input { border: 2px solid var(--paper-line); border-radius: var(--radius-sm); padding: 8px 12px; font-size: 14px; font-family: inherit; width: 220px; max-width: 100%; margin-right: 8px; }
+    .text-ans-input.correct { border-color: var(--correct); background: var(--correct-bg); font-weight: 700; }
+    .text-ans-input.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+
+    /* Step Nav & Buttons */
+    .chip-btn { background: var(--jade-deep); color: #fff; border: none; border-radius: 12px; padding: 10px 20px; font-weight: 700; font-size: 14px; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+    .chip-btn:disabled { background: var(--sage); cursor: not-allowed; }
+
+    /* Recap Popup Overlay (Pattern 1.14) */
+    #recap-popup { position: fixed; inset: 0; z-index: 999; display: none; align-items: flex-end; justify-content: center; background: rgba(0,0,0,0.4); padding: 16px; }
+    #recap-popup.open { display: flex; }
+    .recap-sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 22px; width: 100%; max-width: 500px; max-height: 70vh; overflow-y: auto; border: 3px solid var(--jade-deep); box-shadow: var(--shadow); }
+    @media (min-width: 600px) {
+      #recap-popup { align-items: center; }
+      .recap-sheet { border-radius: 20px; }
+    }
+
+    /* Self-Assessment Checklist */
+    .assess-item { display: flex; align-items: flex-start; gap: 12px; background: var(--white); border: 2px solid var(--cream-2); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; cursor: pointer; font-size: 14.5px; }
+    .assess-item.checked { border-color: var(--jade-deep); background: var(--jade-pale); font-weight: 600; }
+    .assess-box { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--sage); flex: 0 0 auto; margin-top: 2px; }
+    .assess-item.checked .assess-box { background: var(--jade-deep); border-color: var(--jade-deep); }
+    
+    .finale { text-align: center; margin-top: 26px; padding: 28px 20px; background: var(--jade-deep); border-radius: var(--radius-lg); color: #fff; display: none; }
+    .finale.show { display: block; animation: pop 0.4s ease; }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Level Tabs -->
+    <div class="level-tabs">
+      <button class="level-tab active" data-level="easy" onclick="switchLevel('easy')">🟢 Easy (12)</button>
+      <button class="level-tab" data-level="medium" onclick="switchLevel('medium')">🟡 Medium (12)</button>
+      <button class="level-tab" data-level="difficult" onclick="switchLevel('difficult')">🔴 Difficult (12)</button>
+    </div>
+
+    <!-- Mobile View Switcher (<=991px) -->
+    <div class="mobile-pane-controls">
+      <span class="mpc-title">Chế độ xem:</span>
+      <button class="mpc-btn active" data-mode="split" onclick="setMobileViewMode('split')">⚖️ Chia đôi</button>
+      <button class="mpc-btn" data-mode="ref" onclick="setMobileViewMode('ref')">🔍 Bài đọc</button>
+      <button class="mpc-btn" data-mode="q" onclick="setMobileViewMode('q')">📝 Câu hỏi</button>
+    </div>
+
+    <div class="practice-split-container mode-split" id="practiceSplit">
+
+      <!-- LEFT COLUMN: Practice Reference Pane -->
+      <div class="practice-ref-pane" id="practiceRefPane">
+        <div class="pref-head">
+          <span>📖 Reference Passage — Blog Post</span>
+        </div>
+        <div class="pref-body" id="refPassageBody">
+          <!-- Rendered dynamically with level text-reveal -->
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Questions Host -->
+      <div class="practice-questions-pane">
+        <div id="questionsHost">
+          <!-- Rendered dynamically per level -->
+        </div>
+
+        <!-- Back to You & Self-Assessment (Renders after completing practice) -->
+        <div id="sec-closing" style="display:none; margin-top:30px;">
+          
+          <!-- Back to You -->
+          <div class="q-card" style="border-color:var(--jade-soft); background:var(--cream);">
+            <h3 style="color:var(--jade-dark); font-size:18px; font-weight:800; margin-bottom:8px;">Back to You · Reflection</h3>
+            
+            <!-- Map Diagram -->
+            <div style="background:var(--white); padding:14px; border-radius:var(--radius); border:1.5px solid var(--paper-line); text-align:center; margin-bottom:14px; font-size:13.5px; font-weight:700; color:var(--jade-dark);">
+              🧹 HOUSEWORK ➔ 🍳 Practical skills / 🎯 Responsibility / ❤️ Family bond ➔ 🌱 Character
+            </div>
+
+            <p style="font-size:14.5px; font-weight:700; color:var(--ink); margin-bottom:10px;">Did Vy change your mind about housework?</p>
+            <div class="q-opts" id="btyOpts">
+              <button class="q-opt-btn" onclick="selectBty(this)"><span>Yes, completely!</span></button>
+              <button class="q-opt-btn" onclick="selectBty(this)"><span>A little bit</span></button>
+              <button class="q-opt-btn" onclick="selectBty(this)"><span>No, still dislike it</span></button>
+            </div>
+
+            <div id="btyEvSelect" style="display:none; margin-top:16px; border-top:1px dashed var(--paper-line-2); padding-top:14px;">
+              <p style="font-size:14px; font-weight:700; color:var(--jade-dark); margin-bottom:8px;">Choose ONE piece of evidence that best supports your answer:</p>
+              <div class="q-opts">
+                <button class="q-opt-btn" onclick="selectBtyEv(this)"><span>"No one teaches you how to cook a simple meal or keep a room clean in class."</span></button>
+                <button class="q-opt-btn" onclick="selectBtyEv(this)"><span>"When a task belongs to me, there is no one else to do it instead."</span></button>
+                <button class="q-opt-btn" onclick="selectBtyEv(this)"><span>"This makes me more careful and reliable, not only at home..."</span></button>
+                <button class="q-opt-btn" onclick="selectBtyEv(this)"><span>"helping them shows me how much effort they put into taking care of our home"</span></button>
+                <button class="q-opt-btn" onclick="selectBtyEv(this)"><span>"Doing tasks together also helps strengthen the bond..."</span></button>
+                <button class="q-opt-btn" onclick="selectBtyEv(this)"><span>"The benefits of doing housework go far beyond having a clean house."</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Self Assessment -->
+          <div class="q-card">
+            <h3 style="color:var(--jade-dark); font-size:18px; font-weight:800; margin-bottom:12px;">Self-Assessment Checklist</h3>
+            <div class="assess-item" onclick="toggleAssess(this)"><div class="assess-box"></div> 1. I can recognise and read 6 key words about family life</div>
+            <div class="assess-item" onclick="toggleAssess(this)"><div class="assess-box"></div> 2. I understand the meaning of each word through the blog post</div>
+            <div class="assess-item" onclick="toggleAssess(this)"><div class="assess-box"></div> 3. I can identify specific information in the text (Stated Details)</div>
+            <div class="assess-item" onclick="toggleAssess(this)"><div class="assess-box"></div> 4. I can complete a summary using specific evidence</div>
+          </div>
+
+          <!-- Finale Banner -->
+          <div class="finale" id="finaleBanner">
+            <h2 style="font-size:24px; margin-bottom:6px;">🎉 Excellent Job!</h2>
+            <p style="font-size:15px; color:var(--sage-pale);">You have completed the Reading Practice module for Unit 1: Family Life.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Recap Popup Overlay (Pattern 1.14) -->
+  <div id="recap-popup" onclick="if(event.target===this)closeRecapPopup()">
+    <div class="recap-sheet">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="color:var(--jade-dark); font-size:18px; font-weight:800;">📌 Quick Recap — Spot the Real Evidence</h3>
+        <button onclick="closeRecapPopup()" style="background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink-3);">✕</button>
+      </div>
+      <div style="background:var(--warning-bg); border-left:4px solid var(--accent); padding:10px 14px; border-radius:6px; font-size:13.5px; color:var(--accent-text); font-weight:700; margin-bottom:12px;">
+        Rule: Action/Reason cụ thể = ✅ Real Evidence | Câu dẫn ý chung chung = ❌ Not evidence
+      </div>
+      <ol style="padding-left:18px; font-size:13.5px; line-height:1.7; color:var(--ink-2);">
+        <li><strong>Xác định loại chi tiết cần tìm:</strong> Đọc kỹ câu hỏi để biết loại thông tin (hành động? lý do?).</li>
+        <li><strong>Quét đoạn văn:</strong> Chọn câu chứa chi tiết cụ thể đó, bỏ qua các câu dẫn ý chung chung.</li>
+      </ol>
+      <button class="chip-btn" style="width:100%; margin-top:16px;" onclick="closeRecapPopup()">Close ✓</button>
+    </div>
+  </div>
+
+  <script>
+    // LMS Safe Accessor & Height Reporting (Section 6 design v1.6)
+    function LMS(){ return window.AiducationLMS || { ready:function(){}, progress:function(){}, event:function(){}, state:function(){}, complete:function(){}, resize:function(){} }; }
+
+    function reportHeight() { LMS().resize({ height: document.documentElement.scrollHeight }); }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+    ro.observe(document.body);
+
+    // Text Normalization for Text Answers (Pattern 4.6)
+    function normalizeText(s) {
+      return String(s).trim().toLowerCase()
+        .replace(/[\u2018\u2019\u02BC`]/g, "'")
+        .replace(/\s+/g, ' ').replace(/[.,!?;:]+$/, '');
+    }
+
+    function expandGeneric(text) {
+      const variants = new Set([text]);
+      const add = fn => { [...variants].forEach(v => { const r = fn(v); if (r !== v) variants.add(r); }); };
+      add(v => v.replace(/\bwon't\b/g, 'will not'));
+      add(v => v.replace(/\bcan't\b/g, 'cannot').replace(/\bcan't\b/g, 'can not'));
+      add(v => v.replace(/(\w)n't\b/g, '$1 not'));
+      add(v => v.replace(/\b(\w+)'ll\b/g, '$1 will'));
+      add(v => v.replace(/\b(\w+)'re\b/g, '$1 are'));
+      add(v => v.replace(/\b(\w+)'ve\b/g, '$1 have'));
+      add(v => v.replace(/\bi'm\b/g, 'i am'));
+      add(v => v.replace(/\b(\w+)'s\b/g, '$1 is'));
+      add(v => v.replace(/\b(\w+)'s\b/g, '$1 has'));
+      return variants;
+    }
+
+    function checkTextAnswer(userInput, targetAns, altAnswers = []) {
+      const userNorm = normalizeText(userInput);
+      const targetNorm = normalizeText(targetAns);
+      if (userNorm === targetNorm) return true;
+      
+      const userExpanded = expandGeneric(userNorm);
+      const targetExpanded = expandGeneric(targetNorm);
+      
+      for (let u of userExpanded) {
+        if (targetExpanded.has(u)) return true;
+        for (let alt of altAnswers) {
+          if (expandGeneric(normalizeText(alt)).has(u)) return true;
+        }
+      }
+      return false;
+    }
+
+    // MCQ Shuffling Helper
+    function shuffleMCQOptions(options, correctIndex) {
+      const correctText = options[correctIndex];
+      const shuffled = [...options].sort(() => Math.random() - 0.5);
+      return { shuffled, correctText };
+    }
+
+    // Passage Text & Text Reveal Data (// ĐỒNG BỘ với file Lesson — sửa nội dung phải sửa CẢ 2 nơi)
+    const rawPassage = [
+      { id: 1, text: "(1) Hi everyone! Today let's talk about something most teenagers try to avoid — housework. I know many people don't enjoy doing the dishes or the laundry. But I've started to see chores in a different way." },
+      { id: 2, text: "(2) Here are three things I've learned from doing housework." },
+      { id: 3, text: "(3) First, it teaches me practical skills for real life. No one teaches you how to cook a simple meal or keep a room clean in class. You learn these things by doing them at home, again and again, until you can do them well." },
+      { id: 4, text: "(4) Second, chores help me build responsibility. When a task belongs to me, there is no one else to do it instead. This makes me more careful and reliable, not only at home but in other parts of my life too." },
+      { id: 5, text: "(5) Third, and this surprised me the most, chores can bring a family closer together. My parents work hard every day, and helping them shows me how much effort they put into taking care of our home. This gives me a lot of gratitude for them. Doing tasks together also helps strengthen the bond between family members in a way that just talking does not." },
+      { id: 6, text: "(6) So here is my honest opinion. The benefits of doing housework go far beyond having a clean house. It also helps build character, and I truly believe every teenager should try it." }
+    ];
+
+    const revealWords = {
+      core: [
+        { word: 'responsibility', en: 'duty to take care of something', vi: 'trách nhiệm' },
+        { word: 'gratitude', en: 'feeling of being thankful', vi: 'lòng biết ơn' },
+        { word: 'strengthen', en: 'make stronger', vi: 'củng cố' },
+        { word: 'bond', en: 'close connection', vi: 'sự gắn kết' },
+        { word: 'character', en: 'qualities of a person', vi: 'tính cách' },
+        { word: 'benefits', en: 'advantages / good results', vi: 'lợi ích' }
+      ],
+      support: [
+        { word: 'avoid', en: 'stay away from', vi: 'tránh' },
+        { word: 'practical', en: 'useful in real life', vi: 'thực tế' },
+        { word: 'reliable', en: 'can be trusted', vi: 'đáng tin cậy' },
+        { word: 'far beyond', en: 'much more than', vi: 'vượt xa' }
+      ]
+    };
+
+    let currentLevelTab = 'easy';
+
+    function renderRefPassage(level) {
+      currentLevelTab = level;
+      let html = '';
+      
+      rawPassage.forEach(p => {
+        let pText = p.text;
+        
+        if (level === 'easy') {
+          // Reveal 6 core + 4 support
+          revealWords.core.forEach(w => {
+            const reg = new RegExp(`\\b(${w.word})\\b`, 'gi');
+            pText = pText.replace(reg, `<span class="rev-tag-core" onclick="alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
+          });
+          revealWords.support.forEach(w => {
+            const reg = new RegExp(`\\b(${w.word})\\b`, 'gi');
+            pText = pText.replace(reg, `<span class="rev-tag-support" onclick="alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
+          });
+        } else if (level === 'medium') {
+          // Reveal 2 support words only (reliable, far beyond)
+          ['reliable', 'far beyond'].forEach(sw => {
+            const w = revealWords.support.find(item => item.word === sw);
+            if (w) {
+              const reg = new RegExp(`\\b(${w.word})\\b`, 'gi');
+              pText = pText.replace(reg, `<span class="rev-tag-support" onclick="alert('${w.word}: ${w.en} (${w.vi})')">$1</span>`);
+            }
+          });
+        }
+        
+        html += `<p style="margin-bottom:12px;">${pText}</p>`;
+      });
+
+      document.getElementById('refPassageBody').innerHTML = html;
+    }
+
+    // Questions Data (12 per level)
+    const questionsData = {
+      easy: [
+        { id: 'e1', type: 'tf', q: '1. Vy says most teenagers enjoy doing housework.', ans: false, proveOpts: ['✅ "I know many people don\'t enjoy doing the dishes or the laundry."', '❌ "Here are three things I\'ve learned from doing housework."'], proveAns: 0, explain: 'Đoạn 1 nêu rõ: "I know many people don\'t enjoy..."' },
+        { id: 'e2', type: 'tf', q: '2. According to paragraph 3, cooking and cleaning skills are not taught in class.', ans: true, proveOpts: ['✅ "No one teaches you how to cook a simple meal or keep a room clean in class."', '❌ "This makes me more careful and reliable..."'], proveAns: 0, explain: 'Đoạn 3 nêu: "No one teaches you... in class."' },
+        { id: 'e3', type: 'tf', q: '3. Vy believes chores help her become more responsible.', ans: true, proveOpts: ['✅ "chores help me build responsibility"', '❌ "helping them shows me how much effort..."'], proveAns: 0, explain: 'Trực tiếp từ đoạn 4.' },
+        { id: 'e4', type: 'tf', q: '4. Doing chores only creates extra work for Vy with no emotional benefit.', ans: false, proveOpts: ['✅ "This gives me a lot of gratitude for them."', '❌ "First, it teaches me practical skills..."'], proveAns: 0, explain: 'Đoạn 5 khẳng định mang lại lòng biết ơn và sự gắn kết.' },
+        
+        { id: 'e5', type: 'mcq', q: '5. According to Vy, how does she learn practical skills?', opts: ['By watching videos online', 'By asking her teacher', 'By doing them at home again and again', 'By reading books about housework'], correctIdx: 2, explain: 'Đoạn 3: "...by doing them at home, again and again."' },
+        { id: 'e6', type: 'mcq', q: '6. What happens when a task belongs only to Vy?', opts: ['Her parents help her finish it', 'There is no one else to do it instead', 'She can ask her friends', 'She usually forgets it'], correctIdx: 1, explain: 'Đoạn 4: "...there is no one else to do it instead."' },
+        { id: 'e7', type: 'mcq', q: '7. Which of the three things did Vy find the most surprising?', opts: ['That chores can bring a family closer together', 'That her parents do not work hard', 'That chores are easy to finish', 'That cooking is difficult'], correctIdx: 0, explain: 'Đoạn 5: "this surprised me the most, chores can bring a family closer..."' },
+        { id: 'e8', type: 'mcq', q: '8. Based on paragraphs 3 and 6, what does Vy learn besides practical skills?', opts: ['How to cook difficult meals', 'Something that helps shape her character', 'A reason to stop doing chores', 'A way to avoid helping parents'], correctIdx: 1, explain: 'Kết hợp đoạn 3 (kỹ năng) và đoạn 6 (xây dựng tính cách).' },
+
+        { id: 'e9', type: 'gap', q: '9. Chores help Vy build ______.', ans: 'responsibility', explain: 'Trực tiếp từ đoạn 4.' },
+        { id: 'e10', type: 'gap', q: '10. Helping them shows me their effort — this gives me a lot of ______ for them.', ans: 'gratitude', explain: 'Trực tiếp từ đoạn 5.' },
+        { id: 'e11', type: 'gap', q: '11. Working on tasks with family tends to make the family feel more ______.', ans: 'connected', explain: 'Diễn giải ý "strengthen the bond".' },
+        { id: 'e12', type: 'gap', q: '12. Doing housework can benefit a teenager\'s skills, relationships, and ______.', ans: 'character', explain: 'Tổng hợp cả bài (đoạn 3, 5, 6).' }
+      ],
+
+      medium: [
+        { id: 'm1', type: 'yn', q: '1. Vy has always enjoyed doing housework.', ans: 'NO', proveOpts: ['✅ "But I\'ve started to see chores in a different way."', '❌ "Here are three things I\'ve learned..."'], proveAns: 0, explain: 'Đoạn 1: cô "đã bắt đầu" thấy khác đi, ngụ ý trước đó không thích.' },
+        { id: 'm2', type: 'yn', q: '2. Vy has brothers or sisters.', ans: 'NOT GIVEN', proveOpts: ['✅ "There is no evidence in the text."', '❌ "My parents work hard every day..."'], proveAns: 0, explain: 'Bài đọc không đề cập đến anh chị em.' },
+        { id: 'm3', type: 'yn', q: '3. Being responsible for a task makes a person more reliable in other areas of life too.', ans: 'YES', proveOpts: ['✅ "not only at home but in other parts of my life too"', '❌ "chores can bring a family closer..."'], proveAns: 0, explain: 'Đoạn 4 nêu rõ điều này.' },
+        { id: 'm4', type: 'yn', q: '4. Vy thinks doing chores is a waste of time.', ans: 'NO', proveOpts: ['✅ "I truly believe every teenager should try it."', '❌ "No one teaches you how to cook..."'], proveAns: 0, explain: 'Giọng văn khuyến khích xuyên suốt bài.' },
+
+        { id: 'm5', type: 'mcq', q: '5. According to paragraph 3, how does Vy learn practical skills like cooking?', opts: ['By taking classes at school', 'By watching videos online', 'By doing them at home again and again', 'By asking her parents'], correctIdx: 2, explain: 'Đoạn 3.' },
+        { id: 'm6', type: 'mcq', q: '6. What does the phrase "there is no one else to do it instead" suggest?', opts: ['Parents complete chores for her', 'Vy is the only person responsible for that task', 'Vy can ask friends to help', 'Vy forgets the task'], correctIdx: 1, explain: 'Diễn giải đoạn 4.' },
+        { id: 'm7', type: 'mcq', q: '7. Why does helping her parents give Vy a feeling of gratitude?', opts: ['Because parents pay her', 'Because parents praise her', 'Because she does not do chores alone', 'Because she realises how much effort they put into the home'], correctIdx: 3, explain: 'Đoạn 5.' },
+        { id: 'm8', type: 'mcq', q: '8. Which sentence best combines TWO benefits of housework mentioned?', opts: ['Chores teach useful skills and help her feel closer to her family', 'Chores are required by parents and take time', 'Chores are boring but keep house clean', 'Chores replace school study'], correctIdx: 0, explain: 'Kết hợp đoạn 3 & đoạn 5.' },
+
+        { id: 'm9', type: 'gap', q: '9. First, doing housework teaches her (9)______ that she cannot learn in the classroom.', ans: 'practical skills', explain: 'Đoạn 3.' },
+        { id: 'm10', type: 'gap', q: '10. Second, having a task of her own makes her more (10)______.', ans: 'careful and reliable', explain: 'Đoạn 4.' },
+        { id: 'm11', type: 'gap', q: '11. Third, helping with chores makes the family feel more (11)______.', ans: 'connected', explain: 'Diễn giải đoạn 5.' },
+        { id: 'm12', type: 'gap', q: '12. Overall, housework helps build a teenager\'s (12)______.', ans: 'character', explain: 'Đoạn 6.' }
+      ],
+
+      difficult: [
+        { id: 'd1', type: 'match', q: '1. A mention of a chore that many teenagers dislike doing', ans: 'Paragraph 1', proveOpts: ['✅ "doing the dishes or the laundry"', '❌ "practical skills for real life"'], proveAns: 0, explain: 'Đoạn 1 nhắc tới dishes/laundry.' },
+        { id: 'd2', type: 'match', q: '2. A skill gained only through repeated practice at home, not through lessons', ans: 'Paragraph 3', proveOpts: ['✅ "by doing them at home, again and again"', '❌ "there is no one else to do it"'], proveAns: 0, explain: 'Đoạn 3.' },
+        { id: 'd3', type: 'match', q: '3. A comparison suggesting working together builds a stronger connection than conversation alone', ans: 'Paragraph 5', proveOpts: ['✅ "in a way that just talking does not"', '❌ "go far beyond having a clean house"'], proveAns: 0, explain: 'Đoạn 5.' },
+        { id: 'd4', type: 'match', q: '4. A claim that the value of housework is not limited to having a tidy home', ans: 'Paragraph 6', proveOpts: ['✅ "go far beyond having a clean house"', '❌ "how much effort they put into taking care of our home"'], proveAns: 0, explain: 'Đoạn 6.' },
+
+        { id: 'd5', type: 'short', q: '5. What is true about practical skills in relation to school lessons?', ans: 'not taught in class', explain: 'Suy luận từ đoạn 3.' },
+        { id: 'd6', type: 'short', q: '6. Why does Vy feel more careful and reliable when a task belongs to her?', ans: 'there is no one else', alt: ['there is no one else to do it instead'], explain: 'Đoạn 4.' },
+        { id: 'd7', type: 'short', q: '7. Apart from family bond, what TWO other benefits does Vy mention?', ans: 'practical skills and character', alt: ['practical skills, character'], explain: 'Đoạn 3 và đoạn 6.' },
+        { id: 'd8', type: 'short', q: '8. Besides useful skills, in what TWO ways does housework affect Vy\'s life?', ans: 'responsibility and family bond', alt: ['responsibility, family bond'], explain: 'Đoạn 4 và đoạn 5.' },
+
+        { id: 'd9', type: 'gap', q: '9. Because there is no one to share the task with, Vy learns to depend more on ______.', ans: 'herself', explain: 'Suy luận từ đoạn 4.' },
+        { id: 'd10', type: 'gap', q: '10. Vy realises how much time and effort her parents give by ______ them.', ans: 'helping', explain: 'Đoạn 5.' },
+        { id: 'd11', type: 'gap', q: '11. Vy believes shared tasks build a stronger bond than ______ alone can.', ans: 'talking', explain: 'Đoạn 5.' },
+        { id: 'd12', type: 'gap', q: '12. Housework also helps shape a teenager\'s ______.', ans: 'character', explain: 'Đoạn 6.' }
+      ]
+    };
+
+    function renderQuestions(level) {
+      const qList = questionsData[level];
+      let html = '';
+
+      qList.forEach((q, idx) => {
+        const isProve = ['tf', 'yn', 'match'].includes(q.type);
+        
+        html += `
+        <div class="q-card" id="qc-${q.id}">
+          <div class="q-head">
+            <span class="q-num">Question ${idx + 1} / 12</span>
+            ${isProve ? `<button class="recap-btn" onclick="openRecapPopup()">💡 Recap</button>` : ''}
+          </div>
+          <div class="q-text">${q.q}</div>
+        `;
+
+        if (q.type === 'tf') {
+          html += `
+            <div class="q-opts">
+              <button class="q-opt-btn" onclick="answerTF('${q.id}', true, this)"><span>TRUE</span></button>
+              <button class="q-opt-btn" onclick="answerTF('${q.id}', false, this)"><span>FALSE</span></button>
+            </div>
+          `;
+        } else if (q.type === 'yn') {
+          html += `
+            <div class="q-opts">
+              <button class="q-opt-btn" onclick="answerYN('${q.id}', 'YES', this)"><span>YES</span></button>
+              <button class="q-opt-btn" onclick="answerYN('${q.id}', 'NO', this)"><span>NO</span></button>
+              <button class="q-opt-btn" onclick="answerYN('${q.id}', 'NOT GIVEN', this)"><span>NOT GIVEN</span></button>
+            </div>
+          `;
+        } else if (q.type === 'match') {
+          html += `
+            <div class="q-opts">
+              <button class="q-opt-btn" onclick="answerMatch('${q.id}', 'Paragraph 1', this)"><span>Paragraph 1</span></button>
+              <button class="q-opt-btn" onclick="answerMatch('${q.id}', 'Paragraph 3', this)"><span>Paragraph 3</span></button>
+              <button class="q-opt-btn" onclick="answerMatch('${q.id}', 'Paragraph 5', this)"><span>Paragraph 5</span></button>
+              <button class="q-opt-btn" onclick="answerMatch('${q.id}', 'Paragraph 6', this)"><span>Paragraph 6</span></button>
+            </div>
+          `;
+        } else if (q.type === 'mcq') {
+          const { shuffled, correctText } = shuffleMCQOptions(q.opts, q.correctIdx);
+          html += `<div class="q-opts">`;
+          shuffled.forEach(opt => {
+            const isCorr = opt === correctText;
+            const safeOpt = esc(opt);
+            const safeCorr = esc(correctText);
+            html += `<button class="q-opt-btn" data-opt="${safeOpt}" onclick="answerMCQ('${q.id}', this, ${isCorr}, '${safeCorr}')"><span>${safeOpt}</span></button>`;
+          });
+          html += `</div>`;
+        } else if (['gap', 'short'].includes(q.type)) {
+          html += `
+            <div style="margin-top:10px;">
+              <input type="text" class="text-ans-input" id="in-${q.id}" placeholder="Type your answer...">
+              <button class="chip-btn" onclick="answerText('${q.id}')">Check</button>
+            </div>
+          `;
+        }
+
+        // Prove-it Box
+        if (isProve) {
+          html += `
+            <div class="prove-box" id="prove-${q.id}">
+              <div class="prove-title">PROVE IT — Pick the sentence with real evidence:</div>
+              <div class="q-opts">
+                ${q.proveOpts.map((po, i) => `
+                  <button class="q-opt-btn" onclick="answerProve('${q.id}', ${i === q.proveAns}, this)"><span>${esc(po)}</span></button>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        // Explain Box
+        html += `<div class="explain-box" id="exp-${q.id}">${esc(q.explain)}</div></div>`;
+      });
+
+      document.getElementById('questionsHost').innerHTML = html;
+    }
+
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g, '&#39;'); }
+
+    // Answer Handlers with Locking
+    function lockQuestionOpts(cardEl) {
+      cardEl.querySelectorAll('.q-opts > button').forEach(b => {
+        b.disabled = true;
+        b.style.pointerEvents = 'none';
+      });
+    }
+
+    function answerTF(qId, userVal, btn) {
+      const card = document.getElementById('qc-' + qId);
+      if (card.classList.contains('answered-step1')) return;
+      card.classList.add('answered-step1');
+
+      const q = questionsData[currentLevelTab].find(item => item.id === qId);
+      const isCorr = userVal === q.ans;
+      card.classList.add(isCorr ? 'ok' : 'no');
+      btn.classList.add(isCorr ? 'correct' : 'wrong');
+      lockQuestionOpts(card);
+
+      document.getElementById('prove-' + qId).classList.add('active');
+    }
+
+    function answerYN(qId, userVal, btn) {
+      const card = document.getElementById('qc-' + qId);
+      if (card.classList.contains('answered-step1')) return;
+      card.classList.add('answered-step1');
+
+      const q = questionsData[currentLevelTab].find(item => item.id === qId);
+      const isCorr = userVal === q.ans;
+      card.classList.add(isCorr ? 'ok' : 'no');
+      btn.classList.add(isCorr ? 'correct' : 'wrong');
+      lockQuestionOpts(card);
+
+      document.getElementById('prove-' + qId).classList.add('active');
+    }
+
+    function answerMatch(qId, userVal, btn) {
+      const card = document.getElementById('qc-' + qId);
+      if (card.classList.contains('answered-step1')) return;
+      card.classList.add('answered-step1');
+
+      const q = questionsData[currentLevelTab].find(item => item.id === qId);
+      const isCorr = userVal === q.ans;
+      card.classList.add(isCorr ? 'ok' : 'no');
+      btn.classList.add(isCorr ? 'correct' : 'wrong');
+      lockQuestionOpts(card);
+
+      document.getElementById('prove-' + qId).classList.add('active');
+    }
+
+    function answerProve(qId, isCorr, btn) {
+      const proveBox = document.getElementById('prove-' + qId);
+      if (proveBox.classList.contains('proved')) return;
+      proveBox.classList.add('proved');
+
+      proveBox.querySelectorAll('button').forEach(b => {
+        b.disabled = true;
+        b.style.pointerEvents = 'none';
+      });
+
+      btn.classList.add(isCorr ? 'correct' : 'wrong');
+      document.getElementById('exp-' + qId).classList.add('show');
+      checkLevelCompletion();
+    }
+
+    function answerMCQ(qId, btn, isCorr, correctText) {
+      const card = document.getElementById('qc-' + qId);
+      if (card.classList.contains('mcq-answered')) return;
+      card.classList.add('mcq-answered');
+
+      const optsContainer = btn.closest('.q-opts');
+      optsContainer.querySelectorAll('button').forEach(b => {
+        b.disabled = true;
+        b.style.pointerEvents = 'none';
+        if (b.dataset.opt === correctText) {
+          b.classList.add('correct');
+        }
+      });
+
+      if (!isCorr) {
+        btn.classList.add('wrong');
+        card.classList.add('no');
+      } else {
+        card.classList.add('ok');
+      }
+
+      document.getElementById('exp-' + qId).classList.add('show');
+      checkLevelCompletion();
+    }
+
+    function answerText(qId) {
+      const input = document.getElementById('in-' + qId);
+      if (input.disabled) return;
+
+      const q = questionsData[currentLevelTab].find(item => item.id === qId);
+      const isCorr = checkTextAnswer(input.value, q.ans, q.alt || []);
+      
+      input.disabled = true;
+      const checkBtn = input.nextElementSibling;
+      if (checkBtn) checkBtn.disabled = true;
+
+      input.classList.remove('correct', 'wrong');
+      input.classList.add(isCorr ? 'correct' : 'wrong');
+      
+      const card = document.getElementById('qc-' + qId);
+      card.classList.add(isCorr ? 'ok' : 'no');
+      document.getElementById('exp-' + qId).classList.add('show');
+      checkLevelCompletion();
+    }
+
+    function checkLevelCompletion() {
+      const total = 12;
+      const answered = document.querySelectorAll('.explain-box.show').length;
+      if (answered >= total) {
+        document.getElementById('sec-closing').style.display = 'block';
+      }
+    }
+
+    // Level & Mobile View Switching
+    function switchLevel(level) {
+      document.querySelectorAll('.level-tab').forEach(t => t.classList.toggle('active', t.dataset.level === level));
+      renderRefPassage(level);
+      renderQuestions(level);
+      document.getElementById('sec-closing').style.display = 'none';
+    }
+
+    function setMobileViewMode(mode) {
+      const container = document.getElementById('practiceSplit');
+      container.className = 'practice-split-container mode-' + mode;
+      document.querySelectorAll('.mpc-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+    }
+
+    function openRecapPopup() { document.getElementById('recap-popup').classList.add('open'); }
+    function closeRecapPopup() { document.getElementById('recap-popup').classList.remove('open'); }
+
+    function selectBty(btn) {
+      document.querySelectorAll('#btyOpts .q-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('btyEvSelect').style.display = 'block';
+    }
+
+    function selectBtyEv(btn) {
+      document.querySelectorAll('#btyEvSelect .q-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    }
+
+    function toggleAssess(el) {
+      el.classList.toggle('checked');
+      const allChecked = document.querySelectorAll('.assess-item.checked').length === 4;
+      if (allChecked) {
+        document.getElementById('finaleBanner').classList.add('show');
+        LMS().complete({ summary: "Finished Unit 1 Reading Practice", score: 100, max: 100 });
+      }
+    }
+
+    // Init Page
+    window.addEventListener('DOMContentLoaded', () => {
+      renderRefPassage('easy');
+      renderQuestions('easy');
+    });
+  </script>
+</body>
+</html>
