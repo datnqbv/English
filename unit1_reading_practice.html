@@ -625,17 +625,25 @@
       const q = questionsData[currentLevelTab].find(item => item.id === qId);
       const isCorr = checkTextAnswer(input.value, q.ans, q.alt || []);
       
-      input.disabled = true;
-      const checkBtn = input.nextElementSibling;
-      if (checkBtn) checkBtn.disabled = true;
-
       input.classList.remove('correct', 'wrong');
       input.classList.add(isCorr ? 'correct' : 'wrong');
       
       const card = document.getElementById('qc-' + qId);
-      card.classList.add(isCorr ? 'ok' : 'no');
-      document.getElementById('exp-' + qId).classList.add('show');
-      checkLevelCompletion();
+
+      if (isCorr) {
+        input.disabled = true;
+        const checkBtn = input.nextElementSibling;
+        if (checkBtn) checkBtn.disabled = true;
+        card.classList.remove('no');
+        card.classList.add('ok');
+        document.getElementById('exp-' + qId).classList.add('show');
+        markQuestionDone(qId);
+        checkLevelCompletion();
+      } else {
+        card.classList.add('no');
+        document.getElementById('exp-' + qId).classList.add('show');
+        // Giữ ô nhập liệu tự do để học sinh sửa đáp án và bấm Check thử lại
+      }
     }
 
     function checkLevelCompletion() {
