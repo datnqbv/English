@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 4 — Pronunciation Practice: Stress in Words with the Same Spelling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #FAF7F0;
+      --paper2: #F0EADD;
+      --jade: #2D8B6F;
+      --deep: #14432F;
+      --sage: #A9D0BE;
+      --gold: #E8A24A;
+      --coral: #C15F3C;
+      --ink: #1A1A1A;
+      --muted: #514C44;
+      --white: #FFFFFF;
+      --line: #E5DECF;
+      --ok: #DCEAE1;
+      --bad: #F3E2D6;
+      --shadow: 0 10px 30px rgba(43, 43, 40, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    button,
+    a,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Baloo 2", sans-serif;
+      color: var(--deep);
+      margin: 0;
+    }
+
+    .wrap {
+      width: min(1060px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* Top File Nav */
+    .file-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #DCEAE1;
+      border-bottom: 1px solid var(--sage);
+      padding: 14px 0;
+      box-shadow: 0 2px 10px rgba(20, 67, 47, .08);
+    }
+
+    .file-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .file-title {
+      font-weight: 800;
+      color: var(--deep);
+      font-size: 16px;
+    }
+
+    .file-title small {
+      display: block;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--deep);
+      background: #fff;
+      border: 1px solid var(--sage);
+      border-radius: 12px;
+      padding: 8px 16px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background .2s;
+    }
+
+    .back:hover {
+      background: var(--paper);
+    }
+
+    main {
+      padding: 36px 0 60px;
+    }
+
+    .intro h1 {
+      font-size: 32px;
+      margin-bottom: 6px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 16px;
+    }
+
+    /* Level Navigation */
+    .levels {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px 0 28px;
+    }
+
+    .level {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      min-height: 48px;
+      padding: 10px 24px;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--muted);
+      transition: all .2s;
+    }
+
+    .level:hover {
+      border-color: var(--sage);
+    }
+
+    .level.active {
+      background: var(--jade);
+      border-color: var(--jade);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    /* Practice Host & Exercise Card */
+    .practice-host {
+      display: grid;
+      gap: 24px;
+    }
+
+    .exercise {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .ex-head {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      background: var(--sage);
+      color: var(--deep);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      flex: none;
+    }
+
+    .ex-head h2 {
+      font-size: 24px;
+    }
+
+    .ex-desc {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    /* Question Styling */
+    .question {
+      border-top: 1px solid var(--line);
+      padding: 20px 0;
+    }
+
+    .question:first-of-type {
+      border-top: 0;
+      padding-top: 4px;
+    }
+
+    .q-title {
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .listen {
+      border: 0;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 18px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform .2s;
+    }
+
+    .listen:hover {
+      transform: scale(1.04);
+    }
+
+    .listen:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    /* Options Grid */
+    .options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .opt {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      min-height: 46px;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink);
+      transition: border-color .2s;
+    }
+
+    .opt:hover:not(:disabled) {
+      border-color: var(--sage);
+    }
+
+    .opt.correct {
+      background: var(--ok);
+      border-color: var(--jade);
+      color: var(--deep);
+    }
+
+    .opt.wrong {
+      background: var(--bad);
+      border-color: var(--coral);
+      color: var(--coral);
+    }
+
+    .opt:disabled {
+      cursor: default;
+    }
+
+    /* Mark the Stress in Sentences */
+    .target-card {
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+
+    .target-word-title {
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 8px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .target-word-title .badge-word {
+      background: #F7E7CD;
+      color: #8A551A;
+      padding: 2px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    /* Feedback Box */
+    .feedback {
+      display: none;
+      margin-top: 14px;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .feedback.show {
+      display: block;
+    }
+
+    .feedback.ok {
+      background: var(--ok);
+      color: var(--deep);
+      border: 1px solid var(--jade);
+    }
+
+    .feedback.no {
+      background: var(--bad);
+      color: #8A2C18;
+      border: 1px solid var(--coral);
+    }
+
+    /* Read Aloud Section */
+    .read-copy {
+      background: var(--paper2);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 12px 0 16px;
+      font-size: 16px;
+      color: var(--deep);
+      white-space: pre-line;
+      line-height: 1.7;
+    }
+
+    .rec-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 14px;
+      min-height: 46px;
+      padding: 10px 20px;
+      font-weight: 800;
+      font-size: 14.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .primary {
+      background: var(--jade);
+      color: #fff;
+    }
+
+    .primary:hover {
+      background: var(--deep);
+    }
+
+    .danger {
+      background: #F3E2D6;
+      color: var(--coral);
+    }
+
+    .secondary {
+      background: var(--paper2);
+      color: var(--deep);
+    }
+
+    .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .rec-status {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .rec-status.live {
+      color: var(--coral);
+      font-weight: 800;
+    }
+
+    .playback {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .submit-note {
+      display: none;
+      background: var(--ok);
+      color: var(--deep);
+      padding: 12px 16px;
+      border-radius: 14px;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    /* Self-Assessment */
+    .assessment {
+      margin-top: 36px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .assessment h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .assess {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .assess:first-of-type {
+      border-top: 0;
+    }
+
+    .assess input {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--jade);
+      cursor: pointer;
+      flex: none;
+      margin-top: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 0 64px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .wrap {
+        width: min(100% - 24px, 1060px);
+      }
+
+      .levels {
+        flex-wrap: nowrap;
+        gap: 6px;
+      }
+
+      .level {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 8px 4px;
+        font-size: 13px;
+        text-align: center;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .exercise {
+        padding: 18px;
+      }
+
+      .ex-head {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .options {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .opt {
+        text-align: left;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .intro h1 {
+        font-size: 28px;
+      }
+    }
+    .finale{text-align:center;margin-top:20px;padding:24px;background:var(--jade);border-radius:18px;color:#fff;display:none;box-shadow:var(--shadow)}.finale h3{color:#fff;font-size:24px;margin-bottom:8px}.finale p{margin:0;font-size:15px;opacity:.95}.finale.show{display:block}
+  </style>
+</head>
+
+<body>
+  <!-- Header File Nav -->
+  <header class="file-nav">
+    <div class="wrap">
+      <div class="file-title">
+        Unit 4 · Pronunciation — Luyện tập
+        <small>Phần 2/2 · Stress in Words with the Same Spelling</small>
+      </div>
+      <a class="back" href="Unit_4_Pronunciation_lesson.html">← Quay lại Bài học</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1>Practice</h1>
+      <p>Nghe, xác định từ loại và đặt trọng âm chính xác cho các từ cùng chữ viết.</p>
+    </section>
+
+    <!-- Level Selector -->
+    <nav class="levels" aria-label="Chọn mức độ">
+      <button class="level active" data-level="easy">🟢 Easy</button>
+      <button class="level" data-level="medium">🟡 Medium</button>
+      <button class="level" data-level="difficult">🔴 Difficult</button>
+    </nav>
+
+    <!-- Practice Host -->
+    <div class="practice-host" id="practiceHost"></div>
+
+    <!-- Self-Assessment -->
+    <section class="assessment">
+      <h2>Self-Assessment</h2>
+      <label class="assess">
+        <input type="checkbox">
+        <span>I can recognise whether a two-syllable word is used as a noun or a verb, and place the stress correctly
+          based on this.</span>
+      </label>
+      <label class="assess">
+        <input type="checkbox">
+        <span>I can pronounce words, phrases, sentences, or short passages with the correct stress clearly.</span>
+      </label>
+      <div class="finale" id="finale">
+        <h3>🎉 Tuyệt vời!</h3>
+        <p>Bạn đã hoàn thành phần Pronunciation của Unit 4. Hẹn gặp lại ở bài học tiếp theo nhé!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>BMH AI · English Grade 10 · Pronunciation — Unit 4: Stress in Words with the Same Spelling</footer>
+
+  <script>
+    const data = {
+      easy: {
+        listenGiven: [
+          { prompt: "record (noun)", word: "a record", options: ["'record", "re'cord"], answer: "'record", explain: "\"Record\" ở vai trò danh từ → áp dụng quy tắc chung, trọng âm âm 1 ('record)." },
+          { prompt: "increase (noun)", word: "an increase", options: ["'increase", "in'crease"], answer: "'increase", explain: "\"Increase\" ở vai trò danh từ → trọng âm âm 1 ('increase)." },
+          { prompt: "present (verb)", word: "to present", options: ["'present", "pre'sent"], answer: "pre'sent", explain: "\"Present\" ở vai trò động từ → trọng âm âm 2 (pre'sent)." }
+        ],
+        ipaIdentify: [
+          { prompt: "export (verb) /ɪkˈspɔːt/", options: ["'export", "ex'port"], answer: "ex'port", explain: "Dấu ˈ trong IPA /ɪkˈspɔːt/ đứng trước âm 2 → ex'port, đúng vai trò động từ." },
+          { prompt: "object (noun) /ˈɒb.dʒɪkt/", options: ["'object", "ob'ject"], answer: "'object", explain: "Dấu ˈ trong IPA /ˈɒb.dʒɪkt/ đứng trước âm 1 → 'object, đúng vai trò danh từ." },
+          { prompt: "conduct (verb) /kənˈdʌkt/", options: ["'conduct", "con'duct"], answer: "con'duct", explain: "Dấu ˈ trong IPA /kənˈdʌkt/ đứng trước âm 2 → con'duct, đúng vai trò động từ." }
+        ],
+        contextListen: [
+          { prompt: "The store keeps a ________ of every sale.", word: "a record", options: ["'record", "re'cord"], answer: "'record", explain: "\"A record\" đóng vai trò danh từ (bản ghi chép) → trọng âm âm 1 ('record)." },
+          { prompt: "We need to ________ the meeting for absent members.", word: "to record", options: ["'record", "re'cord"], answer: "re'cord", explain: "\"To record\" đóng vai trò động từ (ghi lại) → trọng âm âm 2 (re'cord)." },
+          { prompt: "She received a ________ from her grandmother.", word: "a present", options: ["'present", "pre'sent"], answer: "'present", explain: "\"A present\" đóng vai trò danh từ (món quà) → trọng âm âm 1 ('present)." },
+          { prompt: "He will ________ his project to the class tomorrow.", word: "to present", options: ["'present", "pre'sent"], answer: "pre'sent", explain: "\"To present\" đóng vai trò động từ (trình bày) → trọng âm âm 2 (pre'sent)." }
+        ],
+        read: "1. a new record\n2. a price increase\n3. a birthday present"
+      },
+      medium: {
+        listenGiven: [
+          { prompt: "record (verb)", word: "to record", options: ["'record", "re'cord"], answer: "re'cord", explain: "\"Record\" ở vai trò động từ → trọng âm âm 2 (re'cord), ngược với vai trò đã gặp ở Easy." },
+          { prompt: "increase (verb)", word: "to increase", options: ["'increase", "in'crease"], answer: "in'crease", explain: "\"Increase\" ở vai trò động từ → trọng âm âm 2 (in'crease)." },
+          { prompt: "contract (noun)", word: "a contract", options: ["'contract", "con'tract"], answer: "'contract", explain: "\"Contract\" ở vai trò danh từ → trọng âm âm 1 ('contract)." },
+          { prompt: "permit (verb)", word: "to permit", options: ["'permit", "per'mit"], answer: "per'mit", explain: "\"Permit\" ở vai trò động từ → trọng âm âm 2 (per'mit)." }
+        ],
+        grammarRole: [
+          { prompt: "The government plans to <u>export</u> more rice this year.", options: ["'export (noun)", "'export (verb)", "ex'port (verb)", "ex'port (noun)"], answer: "ex'port (verb)", explain: "\"Plans to export\" — \"export\" đóng vai trò động từ sau \"to\" → trọng âm âm 2 (ex'port - verb)." },
+          { prompt: "Vietnam's rice <u>export</u> reached a record high last year.", options: ["'export (noun)", "ex'port (verb)", "'export (verb)", "ex'port (noun)"], answer: "'export (noun)", explain: "\"Rice export reached\" — \"export\" đóng vai trò danh từ (chủ ngữ) → trọng âm âm 1 ('export - noun)." },
+          { prompt: "The teacher will <u>conduct</u> an experiment in class today.", options: ["con'duct (verb)", "'conduct (noun)", "'conduct (verb)", "con'duct (noun)"], answer: "con'duct (verb)", explain: "\"Will conduct an experiment\" — \"conduct\" đóng vai trò động từ → trọng âm âm 2 (con'duct - verb)." },
+          { prompt: "His <u>conduct</u> during the exam was excellent.", options: ["con'duct (verb)", "'conduct (verb)", "'conduct (noun)", "con'duct (noun)"], answer: "'conduct (noun)", explain: "\"His conduct during\" — \"conduct\" đóng vai trò danh từ (chủ ngữ) → trọng âm âm 1 ('conduct - noun)." }
+        ],
+        modifierRole: [
+          { prompt: "He didn't <u>object</u> to the new plan at the meeting.", options: ["'object (noun)", "'object (verb)", "ob'ject (noun)", "ob'ject (verb)"], answer: "ob'ject (verb)", explain: "\"Didn't object to\" — \"object\" đóng vai trò động từ → trọng âm âm 2 (ob'ject - verb)." },
+          { prompt: "The strange <u>object</u> on the table puzzled everyone.", options: ["ob'ject (verb)", "'object (noun)", "'object (verb)", "ob'ject (noun)"], answer: "'object (noun)", explain: "\"The strange object\" — \"object\" đóng vai trò danh từ (có tính từ \"strange\" bổ nghĩa) → trọng âm âm 1 ('object - noun)." }
+        ],
+        read: "1. The manager decided to increase everyone's salary after the company's profits grew.\n2. She kept a detailed record of every customer's order.\n3. He plans to present his research at the international conference next year."
+      },
+      difficult: {
+        givenReversed: [
+          { prompt: "present (noun)", word: "a present", options: ["'present", "pre'sent"], answer: "'present", explain: "\"Present\" ở vai trò danh từ → trọng âm âm 1 ('present), ngược với vai trò đã gặp ở Easy." },
+          { prompt: "export (noun)", word: "an export", options: ["'export", "ex'port"], answer: "'export", explain: "\"Export\" ở vai trò danh từ → trọng âm âm 1 ('export)." },
+          { prompt: "object (verb)", word: "to object", options: ["'object", "ob'ject"], answer: "ob'ject", explain: "\"Object\" ở vai trò động từ → trọng âm âm 2 (ob'ject)." }
+        ],
+        markRule: [
+          {
+            sentence: "The company's <strong>export</strong> of coffee helped it <strong>export</strong> more products than expected.",
+            targets: [
+              { word: "export (1st occurrence)", options: ["'export (1st)", "ex'port (2nd)"], answer: "'export (1st)" },
+              { word: "export (2nd occurrence)", options: ["'export (1st)", "ex'port (2nd)"], answer: "ex'port (2nd)" }
+            ],
+            explain: "\"Export\" đổi trọng âm theo quy tắc: danh từ âm 1 ('export), động từ âm 2 (ex'port)."
+          },
+          {
+            sentence: "His new <strong>contract</strong> requires him to <strong>contract</strong> with three new suppliers by the end of the year.",
+            targets: [
+              { word: "contract (1st occurrence)", options: ["'contract (1st)", "con'tract (2nd)"], answer: "'contract (1st)" },
+              { word: "contract (2nd occurrence)", options: ["'contract (1st)", "con'tract (2nd)"], answer: "con'tract (2nd)" }
+            ],
+            explain: "\"Contract\" đổi trọng âm theo quy tắc: danh từ âm 1 ('contract), động từ âm 2 (con'tract)."
+          },
+          {
+            sentence: "Despite the strong economic <strong>increase</strong> last year, officials still hope to <strong>increase</strong> growth even further this year.",
+            targets: [
+              { word: "increase (1st occurrence)", options: ["'increase (1st)", "in'crease (2nd)"], answer: "'increase (1st)" },
+              { word: "increase (2nd occurrence)", options: ["'increase (1st)", "in'crease (2nd)"], answer: "in'crease (2nd)" }
+            ],
+            explain: "\"Increase\" đổi trọng âm theo quy tắc: danh từ âm 1 ('increase), động từ âm 2 (in'crease)."
+          },
+          {
+            sentence: "Even though he didn't <strong>object</strong> to the plan, he kept a strange <strong>object</strong> hidden in his desk drawer.",
+            targets: [
+              { word: "object (1st occurrence - verb)", options: ["'object (1st)", "ob'ject (2nd)"], answer: "ob'ject (2nd)" },
+              { word: "object (2nd occurrence - noun)", options: ["'object (1st)", "ob'ject (2nd)"], answer: "'object (1st)" }
+            ],
+            explain: "\"Object\" xuất hiện theo thứ tự ngược: động từ trước (ob'ject / âm 2), danh từ sau ('object / âm 1)."
+          }
+        ],
+        markException: [
+          {
+            sentence: "She couldn't <strong>answer</strong> the question, even though she had studied the <strong>answer</strong> key carefully the night before.",
+            targets: [
+              { word: "answer (verb)", options: ["'answer (1st)", "an'swer (2nd)"], answer: "'answer (1st)" },
+              { word: "answer (noun in 'answer key')", options: ["'answer (1st)", "an'swer (2nd)"], answer: "'answer (1st)" }
+            ],
+            explain: "⚠️ <b>Từ ngoại lệ:</b> \"Answer\" KHÔNG đổi trọng âm dù là danh từ hay động từ — cả 2 lần xuất hiện đều nhấn âm 1 ('answer)."
+          },
+          {
+            sentence: "The photographer took a beautiful <strong>picture</strong>, then asked everyone to <strong>picture</strong> themselves in ten years' time.",
+            targets: [
+              { word: "picture (noun)", options: ["'picture (1st)", "pic'ture (2nd)"], answer: "'picture (1st)" },
+              { word: "picture (verb)", options: ["'picture (1st)", "pic'ture (2nd)"], answer: "'picture (1st)" }
+            ],
+            explain: "⚠️ <b>Từ ngoại lệ:</b> \"Picture\" KHÔNG đổi trọng âm dù là danh từ hay động từ — cả 2 lần xuất hiện đều nhấn âm 1 ('picture)."
+          }
+        ],
+        read: "Last year, our local factory decided to increase its production and export more goods overseas. The manager kept a detailed record of every shipment and often had to present reports to visiting officials. Although some workers didn't object to the extra hours, everyone still hoped the new contract would eventually increase their wages too."
+      }
+    };
+
+    const host = document.getElementById('practiceHost');
+    let activeLevel = 'easy';
+
+    const shuffle = a => [...a].sort(() => Math.random() - .5);
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    function render() {
+      const d = data[activeLevel];
+      let html = '';
+
+      if (d.listenGiven) html += buildListenGroup("Listen & Identify Stress", "Nghe phát âm từ và chọn trọng âm đúng.", d.listenGiven);
+      if (d.ipaIdentify) html += buildMCQGroup("IPA & Word Class Recognition", "Dựa vào phiên âm IPA để chọn trọng âm phù hợp với từ loại.", d.ipaIdentify);
+      if (d.contextListen) html += buildListenGroup("Contextual Listening", "Nghe câu và suy luận trọng âm của từ dựa vào từ loại trong câu.", d.contextListen);
+      if (d.grammarRole) html += buildMCQGroup("Grammar Role & Stress (Subject / Infinitive)", "Xác định từ loại và trọng âm dựa vào cấu trúc ngữ pháp.", d.grammarRole);
+      if (d.modifierRole) html += buildMCQGroup("Grammar Role & Stress (Modifiers)", "Xác định từ loại và trọng âm dựa vào các từ bổ nghĩa xung quanh.", d.modifierRole);
+      if (d.givenReversed) html += buildMCQGroup("Word & Part of Speech", "Chọn trọng âm tương ứng với từ loại cho trước.", d.givenReversed);
+      if (d.markRule) html += buildMarkSentenceGroup("Mark the Stress in Sentences (Standard Rules)", "Xác định trọng âm cho các từ in đậm đổi trọng âm theo quy tắc.", d.markRule);
+      if (d.markException) html += buildMarkSentenceGroup("Mark the Stress (⚠️ Exceptional Words)", "Xác định trọng âm cho các từ ngoại lệ KHÔNG đổi trọng âm.", d.markException);
+      if (d.read) html += buildReadAloud(d.read);
+
+      host.innerHTML = html;
+      wireEvents();
+    }
+
+    function buildListenGroup(title, desc, items) {
+      return `<section class="exercise">
+        <div class="ex-head">
+          <span class="tag">Listen</span>
+          <div><h2>${title}</h2><div class="ex-desc">${desc}</div></div>
+        </div>
+        ${items.map((q, i) => `
+          <div class="question mcq-q" data-answer="${esc(q.answer)}" data-explain="${esc(q.explain)}">
+            <button class="listen" data-word="${esc(q.word || q.prompt)}">🔊 Hear Word / Phrase</button>
+            <div class="q-title">${i + 1}. ${esc(q.prompt)}</div>
+            <div class="options">
+              ${q.options.map(o => `<button class="opt" data-value="${esc(o)}">${esc(o)}</button>`).join('')}
+            </div>
+            <div class="feedback"></div>
+          </div>
+        `).join('')}
+      </section>`;
+    }
+
+    function buildMCQGroup(title, desc, items) {
+      return `<section class="exercise">
+        <div class="ex-head">
+          <span class="tag">Identify</span>
+          <div><h2>${title}</h2><div class="ex-desc">${desc}</div></div>
+        </div>
+        ${items.map((q, i) => `
+          <div class="question mcq-q" data-answer="${esc(q.answer)}" data-explain="${esc(q.explain)}">
+            <div class="q-title">${i + 1}. ${q.prompt}</div>
+            <div class="options">
+              ${shuffle(q.options).map(o => `<button class="opt" data-value="${esc(o)}">${esc(o)}</button>`).join('')}
+            </div>
+            <div class="feedback"></div>
+          </div>
+        `).join('')}
+      </section>`;
+    }
+
+    function buildMarkSentenceGroup(title, desc, items) {
+      return `<section class="exercise">
+        <div class="ex-head">
+          <span class="tag">Mark Stress</span>
+          <div><h2>${title}</h2><div class="ex-desc">${desc}</div></div>
+        </div>
+        ${items.map((q, i) => `
+          <div class="question sentence-q" data-explain="${esc(q.explain)}">
+            <div class="q-title">${i + 1}. ${q.sentence}</div>
+            ${q.targets.map((t, idx) => `
+              <div class="target-card" data-answer="${esc(t.answer)}" data-target-idx="${idx}">
+                <div class="target-word-title">Target word: <span class="badge-word">${esc(t.word)}</span></div>
+                <div class="options">
+                  ${t.options.map(o => `<button class="opt target-opt" data-value="${esc(o)}">${esc(o)}</button>`).join('')}
+                </div>
+              </div>
+            `).join('')}
+            <div class="feedback"></div>
+          </div>
+        `).join('')}
+      </section>`;
+    }
+
+    function buildReadAloud(text) {
+      return `<section class="exercise recorder">
+        <div class="ex-head">
+          <span class="tag">Read Aloud</span>
+          <div><h2>Record Your Voice</h2><div class="ex-desc">Đọc rõ ràng và chú ý thay đổi trọng âm giữa Danh từ và Động từ trước khi gửi cho AI.</div></div>
+        </div>
+        <div class="read-copy">${esc(text)}</div>
+        <div class="rec-controls">
+          <button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button>
+          <button class="btn danger" data-rec-stop disabled>■ Dừng</button>
+          <button class="btn secondary" data-rec-submit disabled>Gửi bản ghi cho AI</button>
+        </div>
+        <div class="rec-status" data-rec-status>Chưa ghi âm.</div>
+        <audio class="playback" data-rec-audio controls hidden></audio>
+        <div class="submit-note" data-rec-note>✓ Đã nhận bản ghi. Tính năng chấm giọng nói AI sẽ được kết nối tại đây.</div>
+      </section>`;
+    }
+
+    function playPromptWord(word, btn) {
+      if (!('speechSynthesis' in window)) return;
+      btn.disabled = true;
+      const u = new SpeechSynthesisUtterance(word);
+      u.lang = 'en-GB';
+      u.rate = .85;
+      u.onend = u.onerror = () => { btn.disabled = false; };
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    }
+
+    function checkCompletion() {
+      const allAssessChecked = [...document.querySelectorAll('.assess input')].every(i => i.checked);
+      const f = document.getElementById('finale');
+      if (f) f.classList.toggle('show', allAssessChecked);
+    }
+
+    function wireEvents() {
+      // Audio playback buttons
+      host.querySelectorAll('.listen').forEach(b => {
+        b.onclick = () => playPromptWord(b.dataset.word, b);
+      });
+
+      // MCQ questions
+      host.querySelectorAll('.mcq-q').forEach(q => {
+        q.querySelectorAll('.opt').forEach(b => {
+          b.onclick = () => {
+            if (q.dataset.done) return;
+            const ok = b.dataset.value === q.dataset.answer;
+            b.classList.add(ok ? 'correct' : 'wrong');
+            const fb = q.querySelector('.feedback');
+            fb.className = 'feedback show ' + (ok ? 'ok' : 'no');
+            fb.innerHTML = ok ? '✅ <b>Đúng rồi!</b> ' + q.dataset.explain : '❌ Chưa đúng. Hãy phân tích từ loại trong câu và thử chọn lại.';
+            if (ok) {
+              q.dataset.done = '1';
+              q.querySelectorAll('.opt').forEach(x => x.disabled = true);
+              checkCompletion();
+            }
+          };
+        });
+      });
+
+      // Sentence Stress Marking
+      host.querySelectorAll('.sentence-q').forEach(q => {
+        const cards = q.querySelectorAll('.target-card');
+        cards.forEach(c => {
+          c.querySelectorAll('.target-opt').forEach(b => {
+            b.onclick = () => {
+              if (c.dataset.done) return;
+              const ok = b.dataset.value === c.dataset.answer;
+              b.classList.add(ok ? 'correct' : 'wrong');
+              if (ok) {
+                c.dataset.done = '1';
+                c.querySelectorAll('.target-opt').forEach(x => x.disabled = true);
+              }
+              // Check overall sentence completion
+              const allDone = [...cards].every(card => card.dataset.done === '1');
+              if (allDone && !q.dataset.done) {
+                q.dataset.done = '1';
+                const fb = q.querySelector('.feedback');
+                fb.className = 'feedback show ok';
+                fb.innerHTML = '✅ <b>Chính xác!</b> ' + q.dataset.explain;
+                checkCompletion();
+              }
+            };
+          });
+        });
+      });
+
+      // Voice Recorders
+      wireRecorders();
+    }
+
+    let currentStream;
+    function wireRecorders() {
+      host.querySelectorAll('.recorder').forEach(box => {
+        let rec, chunks = [], url;
+        const start = box.querySelector('[data-rec-start]');
+        const stop = box.querySelector('[data-rec-stop]');
+        const submit = box.querySelector('[data-rec-submit]');
+        const status = box.querySelector('[data-rec-status]');
+        const audio = box.querySelector('[data-rec-audio]');
+        const note = box.querySelector('[data-rec-note]');
+
+        start.onclick = async () => {
+          try {
+            currentStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            chunks = [];
+            rec = new MediaRecorder(currentStream);
+            rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+            rec.onstop = () => {
+              const blob = new Blob(chunks, { type: rec.mimeType });
+              if (url) URL.revokeObjectURL(url);
+              url = URL.createObjectURL(blob);
+              audio.src = url;
+              audio.hidden = false;
+              submit.disabled = false;
+              status.textContent = '✅ Đã ghi xong — hãy nghe lại trước khi gửi.';
+              status.classList.remove('live');
+              currentStream.getTracks().forEach(t => t.stop());
+            };
+            rec.start();
+            start.disabled = true;
+            stop.disabled = false;
+            submit.disabled = true;
+            note.style.display = 'none';
+            status.textContent = '🔴 Đang ghi âm…';
+            status.classList.add('live');
+          } catch (err) {
+            status.textContent = '❌ Không truy cập được micro. Hãy cấp quyền micro cho trình duyệt.';
+          }
+        };
+
+        stop.onclick = () => {
+          if (rec?.state === 'recording') rec.stop();
+          start.disabled = false;
+          stop.disabled = true;
+        };
+
+        submit.onclick = () => {
+          note.style.display = 'block';
+          /* TODO: Nối API chấm giọng nói AI */
+        };
+      });
+    }
+
+    // Level Switcher
+    document.querySelectorAll('.level').forEach(b => {
+      b.onclick = () => {
+        activeLevel = b.dataset.level;
+        document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x === b));
+        render();
+        checkCompletion();
+        window.scrollTo({ top: document.querySelector('.levels').offsetTop - 20, behavior: 'smooth' });
+      };
+    });
+
+    document.querySelectorAll('.assess input').forEach(i => i.addEventListener('change', checkCompletion));
+
+    // Initial render
+    render();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 1 — Reading: Benefits of Doing Housework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1 — Reading: Benefits of Doing Housework (Lesson)",
+    "subject": "Tiếng Anh",
+    "grade": "10",
+    "objectives": [
+      "Understand and use vocabulary related to family life (responsibility, gratitude, strengthen, bond, benefits, character)",
+      "Read for specific information in a text about the benefits of doing housework for teenagers"
+    ],
+    "structure": [
+      { "id": "stage0", "title": "Stage 0: Chore Dilemma" },
+      { "id": "stage1", "title": "Stage 1: The Mystery" },
+      { "id": "discoveries", "title": "Reading Passage & Evidence Discoveries" },
+      { "id": "vocab", "title": "Your Word Collection" }
+    ],
+    "athenaGuidance": "(a) Bài học mở đầu bằng trải nghiệm dự đoán (Hook & Dilemma) và phát hiện bằng chứng trong bài đọc về 3 lợi ích của làm việc nhà. (b) Từ vựng cốt lõi: responsibility (trách nhiệm/nhiệm vụ), gratitude (lòng biết ơn), strengthen (làm mạnh thêm/củng cố), bond (sự gắn kết), benefits (lợi ích), character (tính cách/phẩm chất). (c) Hướng dẫn học sinh tự tìm bằng chứng trong bài đọc, giải thích ý nghĩa từ vựng trong ngữ cảnh khi học sinh hỏi."
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Neutrals */
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+
+      /* Jade */
+      --jade: #3CA57A;
+      --jade-deep: #2D8B6F;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+
+      /* Sage */
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+
+      /* Accent */
+      --accent: #E8A24A;
+      --accent-deep: #CE8A33;
+      --accent-text: #8A551A;
+      --accent-pale: #F7E7CD;
+
+      /* Semantic */
+      --correct: #2D8B6F;
+      --correct-bg: #DCEAE1;
+      --wrong: #C15F3C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+
+      --white: #FFFFFF;
+      --radius-lg: 22px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 10px 30px rgba(43,43,40,0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 18px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin-top: 0;
+    }
+
+    /* Pattern 1.9: Hook Overlay Full-Screen */
+    .hook-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--jade-dark);
+      cursor: pointer;
+      transition: opacity .4s ease, visibility .4s ease;
+    }
+    .hook-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hook-overlay .hook-caption {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(20, 67, 47, 0.88);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      border-radius: 999px;
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .hook-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Layout & Wrap */
+    .wrap {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Progress Tracker Sticky */
+    #progress-tracker {
+      position: fixed;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 190px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px 16px 14px;
+      z-index: 50;
+      border: 2px solid var(--cream-2);
+    }
+    .pt-handle {
+      width: 44px;
+      height: 14px;
+      background: var(--jade-dark);
+      border-radius: 6px;
+      margin: -24px auto 10px;
+    }
+    #progress-tracker h4 {
+      font-size: 13px;
+      letter-spacing: .02em;
+      color: var(--jade-dark);
+      margin: 0 0 10px;
+      text-transform: uppercase;
+    }
+    .pt-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      padding: 6px 0;
+      color: var(--ink-2);
+    }
+    .pt-box {
+      width: 16px;
+      height: 16px;
+      border-radius: 5px;
+      border: 2px solid var(--sage);
+      flex: 0 0 auto;
+      position: relative;
+      transition: .25s;
+    }
+    .pt-item.done .pt-box {
+      background: var(--jade-deep);
+      border-color: var(--jade-deep);
+    }
+    .pt-item.done .pt-box::after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 0px;
+      width: 4px;
+      height: 8px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(40deg);
+    }
+    .pt-item.done {
+      color: var(--jade-dark);
+      font-weight: 600;
+    }
+
+    @media (max-width: 880px) {
+      #progress-tracker {
+        position: sticky;
+        top: 0;
+        transform: none;
+        width: auto;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 16px;
+        border: none;
+        border-bottom: 2px solid var(--cream-2);
+      }
+      .pt-handle { display: none; }
+      #progress-tracker h4 { margin: 0; white-space: nowrap; font-size: 11px; }
+      .pt-items { display: flex; gap: 12px; overflow-x: auto; scrollbar-width: none; }
+      .pt-items::-webkit-scrollbar { display: none; }
+      .pt-item { padding: 0; white-space: nowrap; min-height: 44px; align-items: center; }
+    }
+
+    /* Header Nav */
+    header.file-nav {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--paper-line);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    header.file-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .file-title {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--jade-dark);
+    }
+    .file-title small {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+    .nav-link-btn {
+      background: var(--jade-deep);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: all 0.2s;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-link-btn:hover {
+      background: var(--jade-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: var(--jade-deep);
+      overflow: hidden;
+      padding: 40px 24px;
+      border-radius: var(--radius-lg);
+      margin: 24px 0;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: 1.25;
+      margin: 0 0 10px;
+    }
+    .hero p.sub {
+      color: var(--sage);
+      font-size: 16px;
+      margin: 0 0 20px;
+      font-weight: 500;
+    }
+    .objectives {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .obj-pill {
+      background: #fff;
+      color: var(--jade-dark);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .obj-num {
+      background: var(--jade-deep);
+      color: #fff;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* Cards & Components */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      margin-bottom: 24px;
+      border: 2px solid var(--cream-2);
+      box-shadow: var(--shadow);
+    }
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .card-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--jade-pale);
+      color: var(--jade-dark);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .card h2 {
+      font-size: 20px;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    /* Buttons */
+    .chip-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 44px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background .2s, transform .1s;
+    }
+    .chip-btn:hover { background: var(--jade-dark); }
+    .chip-btn:disabled { background: var(--sage); cursor: not-allowed; opacity: .7; }
+
+    /* Option Cards Grid */
+    .opt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .opt-card {
+      background: var(--cream);
+      border: 2px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .opt-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+    }
+    .opt-card.picked {
+      background: var(--jade-pale);
+      border-color: var(--jade-deep);
+      color: var(--jade-dark);
+      font-weight: 700;
+    }
+    .opt-card.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--jade-text);
+      font-weight: 700;
+    }
+    .opt-card.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+    }
+
+    /* Passage Box */
+    .passage-box {
+      background: var(--cream);
+      border-left: 4px solid var(--jade-deep);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 14px 0;
+      color: var(--ink);
+    }
+    .passage-box mark {
+      background: var(--accent-pale);
+      color: var(--accent-text);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    /* Vocab Tag Click-Reveal */
+    .vocab-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--sage-pale);
+      color: var(--jade-dark);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1.5px solid var(--sage);
+      transition: all .2s;
+    }
+    .vocab-tag:hover {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+    }
+
+    /* Discovery Badge */
+    .discovery-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent-pale);
+      border: 2px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      margin-top: 16px;
+      font-weight: 700;
+      color: var(--accent-text);
+      font-size: 14.5px;
+      display: none;
+      animation: popFade .35s ease forwards;
+    }
+    .discovery-badge.show { display: flex; }
+    @keyframes popFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Causal Flow */
+    .causal-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 14px 0;
+    }
+    .causal-box {
+      background: var(--cream-2);
+      border: 1.5px dashed var(--paper-line-2);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      text-align: center;
+      font-size: 14px;
+      color: var(--jade-dark);
+    }
+
+    /* Word Collection Grid */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .word-card {
+      background: var(--cream);
+      border: 2px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: all 0.2s;
+    }
+    .word-card.unlocked {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+    }
+    .word-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .word-card strong {
+      font-size: 17px;
+      color: var(--jade-dark);
+    }
+    .audio-btn {
+      background: var(--accent);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      font-size: 14px;
+      min-height: 32px;
+    }
+
+    /* Mission Box */
+    .mission-box {
+      background: var(--jade-dark);
+      color: #fff;
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      margin: 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14.5px;
+    }
+    .mission-icon { font-size: 28px; }
+
+    /* Modal Popup */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 67, 47, 0.5);
+      backdrop-filter: blur(3px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+    }
+    .modal-backdrop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      max-width: 440px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transform: translateY(16px);
+      transition: all 0.25s ease;
+      border: 2px solid var(--cream-2);
+    }
+    .modal-backdrop.show .modal-content {
+      transform: translateY(0);
+    }
+    .modal-word {
+      font-size: 22px;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+    .modal-def {
+      font-size: 15px;
+      color: var(--ink-2);
+      margin: 12px 0 20px;
+      line-height: 1.5;
+    }
+
+    /* Next Link Banner */
+    .next-banner {
+      background: var(--jade-dark);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      text-align: center;
+      margin-top: 32px;
+      box-shadow: var(--shadow);
+    }
+    .next-banner h3 {
+      color: #fff;
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+    .next-banner p {
+      color: var(--sage);
+      margin: 0 0 18px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LMS Safe Accessor -->
+  <script>
+    function LMS(){return window.AiducationLMS||{ready:function(){},progress:function(){},event:function(){},state:function(){},complete:function(){},resize:function(){}};}
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  </script>
+
+  <!-- Pattern 1.9: Hook Overlay Full-Screen Image -->
+  <div id="hookOverlay" class="hook-overlay" onclick="dismissHook()">
+    <img id="hookImg" src="Unit 1_Anh Hook vao dau bai.png" alt="Hook Chore Dilemma">
+    <div class="hook-caption">Sound familiar? / Nghe quen không? <i>(Chạm vào ảnh để bắt đầu ➔)</i></div>
+  </div>
+
+  <!-- Header Nav -->
+  <header class="file-nav">
+    <div class="wrap">
+      <div class="file-title">
+        Unit 1 · Reading — Bài học
+        <small>Family Life · Benefits of Doing Housework</small>
+      </div>
+      <a class="nav-link-btn" href="Unit_1_Reading_practice.html">Sang Luyện tập ➔</a>
+    </div>
+  </header>
+
+  <!-- Progress Tracker Sticky -->
+  <div id="progress-tracker">
+    <div class="pt-handle"></div>
+    <h4>Tasks</h4>
+    <div class="pt-items">
+      <div class="pt-item" data-key="stage0"><div class="pt-box"></div>Stage 0: Dilemma</div>
+      <div class="pt-item" data-key="stage1"><div class="pt-box"></div>Stage 1: Mystery</div>
+      <div class="pt-item" data-key="discoveries"><div class="pt-box"></div>3 Discoveries</div>
+      <div class="pt-item" data-key="vocab"><div class="pt-box"></div>Word Collection</div>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <!-- Hero -->
+    <section class="hero">
+      <span class="eyebrow">✅ Unit 1 · Reading</span>
+      <h1>Family Life — Benefits of Doing Housework</h1>
+      <p class="sub">Khám phá ý nghĩa thực sự của việc làm việc nhà với học sinh tuổi teen</p>
+      <div class="objectives">
+        <div class="obj-pill"><span class="obj-num">1</span>Understand &amp; use family life vocabulary</div>
+        <div class="obj-pill"><span class="obj-num">2</span>Read for specific information &amp; evidence</div>
+      </div>
+    </section>
+
+    <!-- STAGE 0: Chore Dilemma (Pattern 1.6 Prediction Picker) -->
+    <section class="card" id="stage0">
+      <div class="card-head">
+        <div class="card-num">0</div>
+        <h2>Stage 0: Chore Dilemma</h2>
+      </div>
+      <p><strong>Bối cảnh:</strong> Bố mẹ bạn hôm nay đi làm về muộn. Bạn vừa có 30 phút rảnh rỗi hiếm hoi. Bạn sẽ làm gì?</p>
+      
+      <div class="opt-grid" id="dilemmaOpts">
+        <div class="opt-card" onclick="pickDilemma(this, 'Clean room')">🧹 Clean the room</div>
+        <div class="opt-card" onclick="pickDilemma(this, 'Do the dishes')">🍽️ Do the dishes</div>
+        <div class="opt-card" onclick="pickDilemma(this, 'Pretend')">📱 "Pretend I didn't see anything"</div>
+      </div>
+
+      <div id="surveySec" style="display:none; margin-top:20px; border-top: 1.5px dashed var(--paper-line); padding-top:16px;">
+        <p><strong>What do you actually get from doing chores?</strong> (Chọn 1-2 ý kiến bạn nghĩ đúng nhất):</p>
+        <div class="opt-grid" id="perceptionOpts">
+          <div class="opt-card" onclick="togglePerception(this, 'Clean house')">🧹 Clean house</div>
+          <div class="opt-card" onclick="togglePerception(this, 'Life skills')">🍳 Life skills</div>
+          <div class="opt-card" onclick="togglePerception(this, 'Responsibility')">🎯 Responsibility</div>
+          <div class="opt-card" onclick="togglePerception(this, 'Closer family')">❤️ Closer family</div>
+          <div class="opt-card" onclick="togglePerception(this, 'Nothing')">❌ Nothing</div>
+        </div>
+        <button class="chip-btn" id="btnContinueStage0" style="margin-top:16px;" onclick="unlockStage1()" disabled>Tiếp tục ➔</button>
+      </div>
+    </section>
+
+    <!-- STAGE 1: The Mystery (Progressive Reveal 1.7) -->
+    <section class="card" id="stage1" style="display:none;">
+      <div class="card-head">
+        <div class="card-num">1</div>
+        <h2>Stage 1: The Mystery</h2>
+      </div>
+
+      <div class="passage-box">
+        <strong>(1)</strong> Hi everyone! Today let's talk about something most teenagers try to avoid — housework. I know many people don't enjoy doing the dishes or the laundry. But <mark>I've started to see chores in a different way.</mark>
+      </div>
+
+      <p><strong>Something changed Vy's mind. What do you predict happened?</strong></p>
+      <div class="opt-grid" id="mysteryOpts">
+        <div class="opt-card" onclick="pickMystery(this)">She became better at chores</div>
+        <div class="opt-card" onclick="pickMystery(this)">She understood her parents</div>
+        <div class="opt-card" onclick="pickMystery(this)">She discovered chores had other benefits</div>
+        <div class="opt-card" onclick="pickMystery(this)">No idea yet</div>
+      </div>
+
+      <div id="missionBox" style="display:none;" class="mission-box">
+        <div class="mission-icon">🔍</div>
+        <div>
+          <strong>MISSION:</strong>
+          <div>Find 3 things that changed Vy's mind in the text below!</div>
+        </div>
+      </div>
+
+      <button class="chip-btn" id="btnContinueStage1" style="display:none; margin-top:16px;" onclick="unlockCards()">Bắt đầu khám phá ➔</button>
+    </section>
+
+    <!-- READING PASSAGE CARDS -->
+    <div id="readingCards" style="display:none;">
+
+      <!-- CARD 1: Practical Skills -->
+      <section class="card" id="card1">
+        <div class="card-head">
+          <div class="card-num">1</div>
+          <h2>CARD 1 — Practical Skills</h2>
+        </div>
+
+        <div class="passage-box">
+          <strong>(2)</strong> Here are three things I've learned from doing housework.<br><br>
+          <strong>(3)</strong> First, it teaches me practical skills for real life. No one teaches you how to cook a simple meal or keep a room clean in class. You learn these things by doing them at home, again and again, until you can do them well.
+        </div>
+
+        <p><strong>1. Chạm chọn câu chứa bằng chứng (Evidence):</strong></p>
+        <div class="opt-grid">
+          <div class="opt-card" onclick="checkEvidence(this, true, 'card1')">"No one teaches you how to cook a simple meal or keep a room clean in class."</div>
+          <div class="opt-card" onclick="checkEvidence(this, false, 'card1')">"Here are three things I've learned from doing housework."</div>
+        </div>
+
+        <div id="card1Ex" style="display:none; margin-top:20px;">
+          <p><strong>2. Which example supports this?</strong></p>
+          <div class="opt-grid">
+            <div class="opt-card" onclick="checkExample(this, true, 'card1')">🍳 cook a meal</div>
+            <div class="opt-card" onclick="checkExample(this, true, 'card1')">🧹 keep a room clean</div>
+            <div class="opt-card" onclick="checkExample(this, false, 'card1')">📚 pass an exam</div>
+          </div>
+        </div>
+
+        <div class="discovery-badge" id="discovery1">
+          <div style="font-size:24px;">🔓</div>
+          <div>DISCOVERY #1 — PRACTICAL SKILLS UNLOCKED!</div>
+        </div>
+      </section>
+
+      <!-- CARD 2: Responsibility -->
+      <section class="card" id="card2">
+        <div class="card-head">
+          <div class="card-num">2</div>
+          <h2>CARD 2 — Responsibility</h2>
+        </div>
+
+        <div class="passage-box">
+          <strong>(4)</strong> Second, chores help me build <span class="vocab-tag" onclick="showVocab('responsibility', 'A duty to deal with or take care of something')">responsibility 🔍</span>. When a task belongs to me, there is no one else to do it instead. This makes me more careful and reliable, not only at home but in other parts of my life too.
+        </div>
+
+        <div id="card2Gap" style="display:none; background:var(--cream-2); padding:16px; border-radius:var(--radius); margin-bottom:16px;">
+          <strong style="font-size:14px; color:var(--jade-dark);">Vocab Check:</strong> Second, chores help me build 
+          <input type="text" id="gapResp" placeholder="nhập từ vừa tra..." style="padding:8px 12px; border-radius:8px; border:2px solid var(--paper-line); font-size:14.5px; width:180px;"> 
+          <button class="chip-btn" style="padding:6px 14px; min-height:36px; font-size:13px;" onclick="checkGap('gapResp', 'responsibility', 'card2Causal')">Xác nhận</button>
+        </div>
+
+        <div id="card2Causal" style="display:none;">
+          <p><strong>Hoàn thành chuỗi Nguyên nhân - Kết quả (Causal Chain):</strong></p>
+          <div class="causal-flow">
+            <div class="causal-box">A task belongs to me</div>
+            <div style="text-align:center; font-weight:bold; color:var(--jade-deep); font-size:13px;">⬇️ (Chọn câu giải thích ở giữa)</div>
+            <div class="opt-grid">
+              <div class="opt-card" onclick="checkCausal(this, true)">"There is no one else to do it instead"</div>
+              <div class="opt-card" onclick="checkCausal(this, false)">"My parents remind me every day"</div>
+              <div class="opt-card" onclick="checkCausal(this, false)">"I get paid for it"</div>
+            </div>
+            <div style="text-align:center; font-weight:bold; color:var(--jade-deep); font-size:13px;">⬇️</div>
+            <div class="causal-box">I become more careful &amp; reliable</div>
+          </div>
+        </div>
+
+        <div class="discovery-badge" id="discovery2">
+          <div style="font-size:24px;">🔓</div>
+          <div>DISCOVERY #2 — RESPONSIBILITY UNLOCKED!</div>
+        </div>
+      </section>
+
+      <!-- CARD 3: Family Bond -->
+      <section class="card" id="card3">
+        <div class="card-head">
+          <div class="card-num">3</div>
+          <h2>CARD 3 — Family Bond</h2>
+        </div>
+
+        <div class="passage-box">
+          <strong>(5)</strong> Third, and this surprised me the most, chores can bring a family closer together. My parents work hard every day, and helping them shows me how much effort they put into taking care of our home. This gives me a lot of <span class="vocab-tag" onclick="showVocab('gratitude', 'The feeling of being thankful')">gratitude 🔍</span> for them. Doing tasks together also helps <span class="vocab-tag" onclick="showVocab('strengthen', 'To make something stronger')">strengthen 🔍</span> the <span class="vocab-tag" onclick="showVocab('bond', 'A close connection between people')">bond 🔍</span> between family members in a way that just talking does not.
+        </div>
+
+        <div id="card3Gaps" style="display:none; background:var(--cream-2); padding:16px; border-radius:var(--radius); margin-bottom:16px;">
+          <p style="margin:0 0 10px; font-weight:700; color:var(--jade-dark); font-size:14px;">Vocab Check:</p>
+          <div style="margin-bottom:8px; font-size:14px;">• This gives me a lot of <input type="text" id="gapGrat" placeholder="gratitude" style="padding:6px 10px; border-radius:6px; border:1.5px solid var(--paper-line); width:140px;"> for them.</div>
+          <div style="margin-bottom:8px; font-size:14px;">• Doing tasks together also helps <input type="text" id="gapStr" placeholder="strengthen" style="padding:6px 10px; border-radius:6px; border:1.5px solid var(--paper-line); width:140px;"> the bond.</div>
+          <div style="margin-bottom:12px; font-size:14px;">• ...strengthen the <input type="text" id="gapBond" placeholder="bond" style="padding:6px 10px; border-radius:6px; border:1.5px solid var(--paper-line); width:140px;"> between family members.</div>
+          <button class="chip-btn" style="padding:6px 14px; min-height:36px; font-size:13px;" onclick="checkCard3Gaps()">Xác nhận từ vựng</button>
+        </div>
+
+        <div id="card3Evidence" style="display:none;">
+          <p><strong>Chạm chọn 2 câu Evidence trong đoạn 5:</strong></p>
+          <div class="opt-grid">
+            <div class="opt-card" onclick="toggleCard3Ev(this, true)">"how much effort they put into taking care of our home"</div>
+            <div class="opt-card" onclick="toggleCard3Ev(this, true)">"strengthen the bond between family members"</div>
+            <div class="opt-card" onclick="toggleCard3Ev(this, false)">"chores can bring a family closer together" (câu dẫn)</div>
+          </div>
+        </div>
+
+        <div class="discovery-badge" id="discovery3">
+          <div style="font-size:24px;">🔓</div>
+          <div>DISCOVERY #3 — FAMILY BOND UNLOCKED!</div>
+        </div>
+      </section>
+
+      <!-- CONCLUSION (Paragraph 6) -->
+      <section class="card" id="cardConclusion" style="display:none;">
+        <div class="card-head">
+          <div class="card-num">4</div>
+          <h2>Conclusion</h2>
+        </div>
+
+        <div class="passage-box">
+          <strong>(6)</strong> So here is my honest opinion. The <span class="vocab-tag" onclick="showVocab('benefits', 'An advantage or good result')">benefits 🔍</span> of doing housework go far beyond having a clean house. It also helps build <span class="vocab-tag" onclick="showVocab('character', 'The qualities that make a person who they are')">character 🔍</span>, and I truly believe every teenager should try it.<br>
+          <em style="font-size:13px; color:var(--ink-3);">(228 words)</em>
+        </div>
+
+        <!-- YOUR WORD COLLECTION -->
+        <h3 style="margin-top:28px;">🌟 Your Word Collection (6/6)</h3>
+        <p style="font-size:14.5px; color:var(--ink-2);">Từ vựng cốt lõi thu thập được qua bài đọc:</p>
+
+        <div class="collection-grid" id="collectionGrid">
+          <div class="word-card unlocked" id="wc-responsibility">
+            <div class="word-card-header">
+              <strong>responsibility</strong>
+              <button class="audio-btn" onclick="speak('responsibility')">🔊</button>
+            </div>
+            <div style="font-size:13px; color:var(--jade-text);">A duty to deal with or take care of something</div>
+          </div>
+          <div class="word-card unlocked" id="wc-gratitude">
+            <div class="word-card-header">
+              <strong>gratitude</strong>
+              <button class="audio-btn" onclick="speak('gratitude')">🔊</button>
+            </div>
+            <div style="font-size:13px; color:var(--jade-text);">The feeling of being thankful</div>
+          </div>
+          <div class="word-card unlocked" id="wc-strengthen">
+            <div class="word-card-header">
+              <strong>strengthen</strong>
+              <button class="audio-btn" onclick="speak('strengthen')">🔊</button>
+            </div>
+            <div style="font-size:13px; color:var(--jade-text);">To make something stronger</div>
+          </div>
+          <div class="word-card unlocked" id="wc-bond">
+            <div class="word-card-header">
+              <strong>bond</strong>
+              <button class="audio-btn" onclick="speak('bond')">🔊</button>
+            </div>
+            <div style="font-size:13px; color:var(--jade-text);">A close connection between people</div>
+          </div>
+          <div class="word-card unlocked" id="wc-benefits">
+            <div class="word-card-header">
+              <strong>benefits</strong>
+              <button class="audio-btn" onclick="speak('benefits')">🔊</button>
+            </div>
+            <div style="font-size:13px; color:var(--jade-text);">An advantage or good result</div>
+          </div>
+          <div class="word-card unlocked" id="wc-character">
+            <div class="word-card-header">
+              <strong>character</strong>
+              <button class="audio-btn" onclick="speak('character')">🔊</button>
+            </div>
+            <div style="font-size:13px; color:var(--jade-text);">The qualities that make a person who they are</div>
+          </div>
+        </div>
+
+        <div class="next-banner">
+          <h3>✓ Found all the evidence &amp; collected words!</h3>
+          <p>Bạn đã hoàn thành khám phá toàn bộ bài đọc. Hãy sang phần Luyện tập để thử sức với các dạng bài T/F, Y/N/NG, Prove-it và Summary!</p>
+          <a href="Unit_1_Reading_practice.html" class="chip-btn" style="background:var(--accent); color:var(--accent-text); font-size:16px;">Chuyển sang Luyện tập ➔</a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Vocab Modal -->
+  <div class="modal-backdrop" id="vocabModal" onclick="hideVocab()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 class="modal-word" id="modalWordTitle">Word</h3>
+        <button class="audio-btn" onclick="speakCurrentModalWord()">🔊</button>
+      </div>
+      <div class="modal-def" id="modalWordDef">Definition</div>
+      <button class="chip-btn" style="width:100%;" onclick="hideVocab()">Đã hiểu ➔</button>
+    </div>
+  </div>
+
+  <script>
+    function markDone(key) {
+      const el = document.querySelector(`#progress-tracker .pt-item[data-key="${key}"]`);
+      if (el) el.classList.add('done');
+      reportProgress();
+    }
+
+    function reportProgress() {
+      const doneCount = document.querySelectorAll('#progress-tracker .pt-item.done').length;
+      LMS().progress({ done: doneCount, total: 4 });
+    }
+
+    // Pattern 1.9: Dismiss Full-screen AI Hook Image Overlay
+    let hookDismissed = false;
+    function dismissHook() {
+      if (hookDismissed) return;
+      hookDismissed = true;
+      const overlay = document.getElementById('hookOverlay');
+      if (overlay) {
+        overlay.classList.add('fade-out');
+        overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+      }
+    }
+    window.addEventListener('DOMContentLoaded', () => setTimeout(dismissHook, 400));
+
+    // Stage 0 Handler
+    function pickDilemma(el, val) {
+      document.querySelectorAll('#dilemmaOpts .opt-card').forEach(c => c.classList.remove('picked'));
+      el.classList.add('picked');
+      document.getElementById('surveySec').style.display = 'block';
+    }
+
+    const perceptions = new Set();
+    function togglePerception(el, val) {
+      el.classList.toggle('picked');
+      perceptions.has(val) ? perceptions.delete(val) : perceptions.add(val);
+      document.getElementById('btnContinueStage0').disabled = perceptions.size === 0;
+    }
+
+    function unlockStage1() {
+      markDone('stage0');
+      document.getElementById('stage1').style.display = 'block';
+      document.getElementById('stage1').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Stage 1 Handler
+    function pickMystery(el) {
+      document.querySelectorAll('#mysteryOpts .opt-card').forEach(c => c.classList.remove('picked'));
+      el.classList.add('picked');
+      document.getElementById('missionBox').style.display = 'flex';
+      document.getElementById('btnContinueStage1').style.display = 'inline-flex';
+    }
+
+    function unlockCards() {
+      markDone('stage1');
+      document.getElementById('readingCards').style.display = 'block';
+      document.getElementById('card1').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Card 1 Handlers
+    function checkEvidence(el, isOk, cardId) {
+      if (isOk) {
+        el.classList.add('correct');
+        document.getElementById('card1Ex').style.display = 'block';
+      } else {
+        el.classList.add('wrong');
+      }
+    }
+
+    function checkExample(el, isOk, cardId) {
+      if (isOk) {
+        el.classList.add('correct');
+        document.getElementById('discovery1').classList.add('show');
+        checkAllDiscoveries();
+      } else {
+        el.classList.add('wrong');
+      }
+    }
+
+    // Vocab Modal Popup
+    let currentWord = '';
+    function showVocab(word, def) {
+      currentWord = word;
+      document.getElementById('modalWordTitle').textContent = word;
+      document.getElementById('modalWordDef').textContent = def;
+      document.getElementById('vocabModal').classList.add('show');
+      speak(word);
+
+      // Trigger inline check input visibility if applicable
+      if (word === 'responsibility') document.getElementById('card2Gap').style.display = 'block';
+      if (word === 'gratitude' || word === 'strengthen' || word === 'bond') {
+        document.getElementById('card3Gaps').style.display = 'block';
+      }
+    }
+    function hideVocab() {
+      document.getElementById('vocabModal').classList.remove('show');
+    }
+    function speakCurrentModalWord() {
+      if (currentWord) speak(currentWord);
+    }
+
+    // Card 2 Handlers
+    function checkGap(inpId, ans, nextSecId) {
+      const val = document.getElementById(inpId).value.trim().toLowerCase();
+      if (val === ans.toLowerCase()) {
+        document.getElementById(inpId).style.borderColor = 'var(--correct)';
+        document.getElementById(inpId).style.background = 'var(--correct-bg)';
+        document.getElementById(nextSecId).style.display = 'block';
+      } else {
+        document.getElementById(inpId).style.borderColor = 'var(--wrong)';
+        document.getElementById(inpId).style.background = 'var(--wrong-bg)';
+      }
+    }
+
+    function checkCausal(el, isOk) {
+      if (isOk) {
+        el.classList.add('correct');
+        document.getElementById('discovery2').classList.add('show');
+        checkAllDiscoveries();
+      } else {
+        el.classList.add('wrong');
+      }
+    }
+
+    // Card 3 Handlers
+    function checkCard3Gaps() {
+      const g1 = document.getElementById('gapGrat').value.trim().toLowerCase() === 'gratitude';
+      const g2 = document.getElementById('gapStr').value.trim().toLowerCase() === 'strengthen';
+      const g3 = document.getElementById('gapBond').value.trim().toLowerCase() === 'bond';
+
+      document.getElementById('gapGrat').style.borderColor = g1 ? 'var(--correct)' : 'var(--wrong)';
+      document.getElementById('gapStr').style.borderColor = g2 ? 'var(--correct)' : 'var(--wrong)';
+      document.getElementById('gapBond').style.borderColor = g3 ? 'var(--correct)' : 'var(--wrong)';
+
+      if (g1 && g2 && g3) {
+        document.getElementById('card3Evidence').style.display = 'block';
+      }
+    }
+
+    const card3EvSet = new Set();
+    function toggleCard3Ev(el, isOk) {
+      if (isOk) {
+        el.classList.add('correct');
+        card3EvSet.add(el);
+        if (card3EvSet.size >= 2) {
+          document.getElementById('discovery3').classList.add('show');
+          checkAllDiscoveries();
+        }
+      } else {
+        el.classList.add('wrong');
+      }
+    }
+
+    function checkAllDiscoveries() {
+      const d1 = document.getElementById('discovery1').classList.contains('show');
+      const d2 = document.getElementById('discovery2').classList.contains('show');
+      const d3 = document.getElementById('discovery3').classList.contains('show');
+      if (d1 && d2 && d3) {
+        markDone('discoveries');
+        markDone('vocab');
+        document.getElementById('cardConclusion').style.display = 'block';
+      }
+    }
+
+    // Audio TTS Speech Synthesis
+    function speak(text) {
+      if (!('speechSynthesis' in window)) return;
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = 0.9;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    }
+
+    // Resize height reporting
+    function reportHeight(){ LMS().resize({ height: document.documentElement.scrollHeight }); }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+    ro.observe(document.body);
+  </script>
+</body>
+</html>

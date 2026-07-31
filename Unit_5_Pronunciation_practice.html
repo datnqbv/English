@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 5 — Pronunciation Practice: Stress in Three-Syllable Nouns</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #FAF7F0;
+      --paper2: #F0EADD;
+      --jade: #2D8B6F;
+      --deep: #14432F;
+      --sage: #A9D0BE;
+      --gold: #E8A24A;
+      --coral: #C15F3C;
+      --ink: #1A1A1A;
+      --muted: #514C44;
+      --white: #FFFFFF;
+      --line: #E5DECF;
+      --ok: #DCEAE1;
+      --bad: #F3E2D6;
+      --shadow: 0 10px 30px rgba(43, 43, 40, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    button,
+    a,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Baloo 2", sans-serif;
+      color: var(--deep);
+      margin: 0;
+    }
+
+    .wrap {
+      width: min(1060px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* Top File Nav */
+    .file-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #DCEAE1;
+      border-bottom: 1px solid var(--sage);
+      padding: 14px 0;
+      box-shadow: 0 2px 10px rgba(20, 67, 47, .08);
+    }
+
+    .file-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .file-title {
+      font-weight: 800;
+      color: var(--deep);
+      font-size: 16px;
+    }
+
+    .file-title small {
+      display: block;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--deep);
+      background: #fff;
+      border: 1px solid var(--sage);
+      border-radius: 12px;
+      padding: 8px 16px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background .2s;
+    }
+
+    .back:hover {
+      background: var(--paper);
+    }
+
+    main {
+      padding: 36px 0 60px;
+    }
+
+    .intro h1 {
+      font-size: 32px;
+      margin-bottom: 6px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 16px;
+    }
+
+    /* Level Navigation */
+    .levels {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px 0 28px;
+    }
+
+    .level {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      min-height: 48px;
+      padding: 10px 24px;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--muted);
+      transition: all .2s;
+    }
+
+    .level:hover {
+      border-color: var(--sage);
+    }
+
+    .level.active {
+      background: var(--jade);
+      border-color: var(--jade);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    /* Practice Host & Exercise Card */
+    .practice-host {
+      display: grid;
+      gap: 24px;
+    }
+
+    .exercise {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .ex-head {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      background: var(--sage);
+      color: var(--deep);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      flex: none;
+    }
+
+    .ex-head h2 {
+      font-size: 24px;
+    }
+
+    .ex-desc {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    /* Question Styling */
+    .question {
+      border-top: 1px solid var(--line);
+      padding: 20px 0;
+    }
+
+    .question:first-of-type {
+      border-top: 0;
+      padding-top: 4px;
+    }
+
+    .q-title {
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .listen {
+      border: 0;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 18px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform .2s;
+    }
+
+    .listen:hover {
+      transform: scale(1.04);
+    }
+
+    .listen:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    /* Options Grid */
+    .options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .opt {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      min-height: 46px;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink);
+      transition: border-color .2s;
+    }
+
+    .opt:hover:not(:disabled) {
+      border-color: var(--sage);
+    }
+
+    .opt.correct {
+      background: var(--ok);
+      border-color: var(--jade);
+      color: var(--deep);
+    }
+
+    .opt.wrong {
+      background: var(--bad);
+      border-color: var(--coral);
+      color: var(--coral);
+    }
+
+    .opt:disabled {
+      cursor: default;
+    }
+
+    /* Tap-to-Categorize (Component 4.17 Sorting) */
+    .cat-item-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .cat-item {
+      min-height: 44px;
+      padding: 10px 18px;
+      border-radius: 14px;
+      border: 2px solid var(--line);
+      background: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .cat-item:hover {
+      border-color: var(--sage);
+    }
+
+    .cat-item.selected {
+      border-color: var(--gold);
+      background: #F7E7CD;
+    }
+
+    .cat-item.placed {
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .cat-buckets {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .cat-bucket-card {
+      background: var(--paper);
+      border: 2px dashed var(--sage);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .cat-bucket-card h3 {
+      font-size: 18px;
+      color: var(--deep);
+      margin-bottom: 10px;
+    }
+
+    .cat-bucket-btn {
+      min-height: 44px;
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--jade);
+      background: var(--jade);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .cat-bucket-btn:disabled {
+      opacity: .5;
+      cursor: default;
+    }
+
+    .placed-words {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 10px;
+      min-height: 32px;
+    }
+
+    .placed-tag {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--deep);
+    }
+
+    .mark-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .check-btn {
+      background: var(--jade);
+      color: #fff;
+      border: 0;
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 20px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .check-btn:disabled {
+      opacity: .5;
+      cursor: default;
+    }
+
+    .none-btn {
+      background: var(--paper2);
+      color: var(--deep);
+      border: 1.5px solid var(--sage);
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 18px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .none-btn.active {
+      background: #F7E7CD;
+      border-color: var(--gold);
+    }
+
+    /* Mark the Stress in Sentences */
+    .target-card {
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+
+    .target-word-title {
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 8px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .target-word-title .badge-word {
+      background: #F7E7CD;
+      color: #8A551A;
+      padding: 2px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    /* Feedback Box */
+    .feedback {
+      display: none;
+      margin-top: 14px;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .feedback.show {
+      display: block;
+    }
+
+    .feedback.ok {
+      background: var(--ok);
+      color: var(--deep);
+      border: 1px solid var(--jade);
+    }
+
+    .feedback.no {
+      background: var(--bad);
+      color: #8A2C18;
+      border: 1px solid var(--coral);
+    }
+
+    /* Read Aloud Section */
+    .read-copy {
+      background: var(--paper2);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 12px 0 16px;
+      font-size: 16px;
+      color: var(--deep);
+      white-space: pre-line;
+      line-height: 1.7;
+    }
+
+    .rec-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 14px;
+      min-height: 46px;
+      padding: 10px 20px;
+      font-weight: 800;
+      font-size: 14.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .primary {
+      background: var(--jade);
+      color: #fff;
+    }
+
+    .primary:hover {
+      background: var(--deep);
+    }
+
+    .danger {
+      background: #F3E2D6;
+      color: var(--coral);
+    }
+
+    .secondary {
+      background: var(--paper2);
+      color: var(--deep);
+    }
+
+    .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .rec-status {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .rec-status.live {
+      color: var(--coral);
+      font-weight: 800;
+    }
+
+    .playback {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .submit-note {
+      display: none;
+      background: var(--ok);
+      color: var(--deep);
+      padding: 12px 16px;
+      border-radius: 14px;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    /* Self-Assessment */
+    .assessment {
+      margin-top: 36px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .assessment h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .assess {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .assess:first-of-type {
+      border-top: 0;
+    }
+
+    .assess input {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--jade);
+      cursor: pointer;
+      flex: none;
+      margin-top: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 0 64px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 24px, 1060px);
+      }
+
+      .levels {
+        flex-wrap: nowrap;
+        gap: 6px;
+      }
+
+      .level {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 8px 4px;
+        font-size: 13px;
+        text-align: center;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .exercise {
+        padding: 18px;
+      }
+
+      .ex-head {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .cat-buckets {
+        grid-template-columns: 1fr;
+      }
+
+      .options {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .opt {
+        text-align: left;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .intro h1 {
+        font-size: 28px;
+      }
+    }
+    .finale{text-align:center;margin-top:20px;padding:24px;background:var(--jade);border-radius:18px;color:#fff;display:none;box-shadow:var(--shadow)}.finale h3{color:#fff;font-size:24px;margin-bottom:8px}.finale p{margin:0;font-size:15px;opacity:.95}.finale.show{display:block}
+  </style>
+</head>
+
+<body>
+  <!-- Header File Nav -->
+  <header class="file-nav">
+    <div class="wrap">
+      <div class="file-title">
+        Unit 5 · Pronunciation — Luyện tập
+        <small>Phần 2/2 · Stress in Three-Syllable Nouns</small>
+      </div>
+      <a class="back" href="Unit_5_Pronunciation_lesson.html">← Quay lại Bài học</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1>Practice</h1>
+      <p>Nghe, nhận diện và thực hành đặt trọng âm chính xác ở danh từ có 3 âm tiết.</p>
+    </section>
+
+    <!-- Level Selector -->
+    <nav class="levels" aria-label="Chọn mức độ">
+      <button class="level active" data-level="easy">🟢 Easy</button>
+      <button class="level" data-level="medium">🟡 Medium</button>
+      <button class="level" data-level="difficult">🔴 Difficult</button>
+    </nav>
+
+    <!-- Practice Host -->
+    <div class="practice-host" id="practiceHost"></div>
+
+    <!-- Self-Assessment -->
+    <section class="assessment">
+      <h2>Self-Assessment</h2>
+      <label class="assess">
+        <input type="checkbox">
+        <span>I can recognise the stress pattern of three-syllable nouns when listening.</span>
+      </label>
+      <label class="assess">
+        <input type="checkbox">
+        <span>I can pronounce words, phrases, sentences, or short passages with the correct stress clearly.</span>
+      </label>
+      <div class="finale" id="finale">
+        <h3>🎉 Tuyệt vời!</h3>
+        <p>Bạn đã hoàn thành phần Pronunciation của Unit 5. Hẹn gặp lại ở bài học tiếp theo nhé!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>BMH AI · English Grade 10 · Pronunciation — Unit 5: Stress in Three-Syllable Nouns</footer>
+
+  <script>
+    const data = {
+      easy: {
+        sorting: {
+          title: "Sorting — Tap to Categorize",
+          desc: "Chạm 1 từ, sau đó chạm nhóm tương ứng (●-- hoặc -●-) để xếp từ. Bấm Kiểm tra khi xếp xong.",
+          items: [
+            { word: "century", bucket: "1st" },
+            { word: "invention", bucket: "2nd" },
+            { word: "family", bucket: "1st" },
+            { word: "computer", bucket: "2nd" },
+            { word: "chocolate", bucket: "1st" },
+            { word: "tradition", bucket: "2nd" }
+          ],
+          buckets: [
+            { key: "1st", label: "Stress on 1st (●--)" },
+            { key: "2nd", label: "Stress on 2nd (-●-)" }
+          ],
+          explain: "Century, family, chocolate đều nhấn trọng âm ở âm tiết đầu tiên (●--). Invention, computer, tradition đều nhấn trọng âm ở âm tiết thứ hai (-●-) — đây là 2 mẫu trọng âm cơ bản nhất cần phân biệt."
+        },
+        oddOneOut: [
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["holiday", "century", "computer"], answer: "computer", explain: "\"Computer\" nhấn âm 2 (-●-), khác \"holiday\" và \"century\" đều nhấn âm 1 (●--)." },
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["family", "tradition", "potato"], answer: "family", explain: "\"Family\" nhấn âm 1 (●--), khác \"tradition\" và \"potato\" đều nhấn âm 2 (-●-)." },
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["Internet", "banana", "Africa"], answer: "banana", explain: "\"Banana\" nhấn âm 2 (-●-), khác \"Internet\" và \"Africa\" đều nhấn âm 1 (●--)." },
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["syllable", "grandfather", "disaster"], answer: "disaster", explain: "\"Disaster\" nhấn âm 2 (-●-), khác \"syllable\" và \"grandfather\" đều nhấn âm 1 (●--)." }
+        ],
+        read: "1. a public holiday\n2. a modern computer\n3. my grandfather"
+      },
+      medium: {
+        listenSingle: [
+          { word: "advantage", options: ["●--", "-●-", "--●"], answer: "-●-", explain: "\"Advantage\" nhấn âm 2 (-●-)." },
+          { word: "referee", options: ["●--", "-●-", "--●"], answer: "--●", explain: "\"Referee\" nhấn âm 3 (--●) — mẫu ít phổ biến hơn." },
+          { word: "syllable", options: ["●--", "-●-", "--●"], answer: "●--", explain: "\"Syllable\" nhấn âm 1 (●--)." },
+          { word: "potato", options: ["●--", "-●-", "--●"], answer: "-●-", explain: "\"Potato\" nhấn âm 2 (-●-)." }
+        ],
+        oddListen: [
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["century", "syllable", "Africa", "computer"], answer: "computer", explain: "\"Computer\" nhấn âm 2, ba từ còn lại đều nhấn âm 1 (đáp án D)." },
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["invention", "holiday", "tradition", "advantage"], answer: "holiday", explain: "\"Holiday\" nhấn âm 1, ba từ còn lại đều nhấn âm 2 (đáp án B)." },
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["potato", "family", "grandfather", "chocolate"], answer: "potato", explain: "\"Potato\" nhấn âm 2, ba từ còn lại đều nhấn âm 1 (đáp án A)." }
+        ],
+        oddTextIPA: [
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["banana /bəˈnɑː.nə/", "tomato /təˈmɑː.təʊ/", "Internet /ˈɪn.tə.net/", "disaster /dɪˈzɑː.stər/"], answer: "Internet /ˈɪn.tə.net/", explain: "\"Internet\" nhấn âm 1 (dấu ˈ trước \"ɪn\"), ba từ còn lại đều nhấn âm 2." },
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["century /ˈsen.tʃər.i/", "holiday /ˈhɒl.ə.deɪ/", "family /ˈfæm.əl.i/", "afternoon /ˌɑːf.təˈnuːn/"], answer: "afternoon /ˌɑːf.təˈnuːn/", explain: "\"Afternoon\" nhấn âm 3 (mẫu ít phổ biến), ba từ còn lại đều nhấn âm 1." },
+          { prompt: "Which word has a DIFFERENT stress pattern?", options: ["invention /ɪnˈven.ʃən/", "engineer /ˌen.dʒɪˈnɪər/", "computer /kəmˈpjuː.tər/", "tradition /trəˈdɪʃ.ən/"], answer: "engineer /ˌen.dʒɪˈnɪər/", explain: "\"Engineer\" nhấn âm 3, ba từ còn lại đều nhấn âm 2." }
+        ],
+        read: "1. My grandfather told us an interesting story about an old tradition in our village.\n2. The new computer helped the whole family finish their project before the holiday.\n3. Africa has a rich history full of invention and tradition."
+      },
+      difficult: {
+        listenSingle: [
+          { word: "Africa", options: ["●--", "-●-", "--●"], answer: "●--", explain: "\"Africa\" nhấn âm 1 (●--)." },
+          { word: "tomato", options: ["●--", "-●-", "--●"], answer: "-●-", explain: "\"Tomato\" nhấn âm 2 (-●-)." },
+          { word: "volunteer", options: ["●--", "-●-", "--●"], answer: "--●", explain: "\"Volunteer\" nhấn âm 3 (--●) — mẫu ít phổ biến hơn." }
+        ],
+        markRule: [
+          {
+            sentence: "The <strong>invention</strong> of the computer changed the whole <strong>century</strong>.",
+            targets: [
+              { word: "invention", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "-●- (2nd)" },
+              { word: "century", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "●-- (1st)" }
+            ],
+            explain: "\"Invention\" (-●-) và \"century\" (●--) nằm ở hai mẫu trọng âm khác nhau trong cùng một câu."
+          },
+          {
+            sentence: "Every <strong>family</strong> has its own unique <strong>tradition</strong> passed down for generations.",
+            targets: [
+              { word: "family", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "●-- (1st)" },
+              { word: "tradition", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "-●- (2nd)" }
+            ],
+            explain: "\"Family\" (●--) và \"tradition\" (-●-) ở 2 mẫu trọng âm khác nhau."
+          },
+          {
+            sentence: "In the <strong>afternoon</strong>, my <strong>grandfather</strong> likes to tell stories about Africa.",
+            targets: [
+              { word: "afternoon", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "--● (3rd)" },
+              { word: "grandfather", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "●-- (1st)" }
+            ],
+            explain: "\"Afternoon\" thuộc mẫu ít phổ biến (--●), khác với \"grandfather\" (●--)."
+          },
+          {
+            sentence: "Working as a <strong>volunteer</strong> <strong>engineer</strong> in <strong>Africa</strong> was the greatest <strong>advantage</strong> of her career.",
+            targets: [
+              { word: "volunteer", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "--● (3rd)" },
+              { word: "engineer", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "--● (3rd)" },
+              { word: "Africa", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "●-- (1st)" },
+              { word: "advantage", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "-●- (2nd)" }
+            ],
+            explain: "Câu chứa 4 từ 3 âm tiết thuộc cả 3 mẫu trọng âm khác nhau: volunteer (--●), engineer (--●), Africa (●--), advantage (-●-)."
+          }
+        ],
+        markSameAndTrap: [
+          {
+            sentence: "The <strong>disaster</strong> destroyed much of the region's agriculture, including <strong>tomato</strong> and potato farms.",
+            targets: [
+              { word: "disaster", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "-●- (2nd)" },
+              { word: "tomato", options: ["●-- (1st)", "-●- (2nd)", "--● (3rd)"], answer: "-●- (2nd)" }
+            ],
+            explain: "Cả \"disaster\" và \"tomato\" đều cùng mẫu -●- (âm 2)."
+          },
+          {
+            sentence: "The two brothers played outside in the garden until it got dark.",
+            isTrap: true,
+            explain: "⚠️ <b>Câu bẫy:</b> Không có danh từ 3 âm tiết nào thuộc bài đang học trong câu này."
+          }
+        ],
+        read: "My grandfather grew up in Africa during a difficult century. He often talks about the invention of the radio and how it changed his family's tradition of storytelling. Every afternoon, he still enjoys telling us stories about his childhood, and we always listen carefully to every syllable of his fascinating adventures."
+      }
+    };
+
+    const host = document.getElementById('practiceHost');
+    let activeLevel = 'easy';
+
+    const shuffle = a => [...a].sort(() => Math.random() - .5);
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    function render() {
+      const d = data[activeLevel];
+      let html = '';
+
+      if (d.sorting) html += buildSortingSection(d.sorting);
+      if (d.oddOneOut) html += buildMCQGroup("Odd One Out", "Chọn từ có mẫu trọng âm khác với 2 từ còn lại.", d.oddOneOut);
+      if (d.listenSingle) html += buildListenGroup("Listen & Place Stress", "Nghe từ đơn và chọn mẫu trọng âm (●-- / -●- / --●).", d.listenSingle);
+      if (d.oddListen) html += buildMCQGroup("Odd One Out (Listening)", "Chọn từ có mẫu trọng âm khác với 3 từ còn lại.", d.oddListen);
+      if (d.oddTextIPA) html += buildMCQGroup("Odd One Out (Text & IPA)", "Nhìn từ và IPA, chọn từ có trọng âm khác biệt.", d.oddTextIPA);
+      if (d.markRule) html += buildMarkSentenceGroup("Mark the Stress in Sentences", "Xác định trọng âm cho các từ in đậm trong câu.", d.markRule);
+      if (d.markSameAndTrap) html += buildMarkSentenceGroup("Mark the Stress (Consistency & Trap Question)", "Xác định trọng âm từ in đậm hoặc chọn 'Không có từ nào' nếu là câu bẫy.", d.markSameAndTrap);
+      if (d.read) html += buildReadAloud(d.read);
+
+      host.innerHTML = html;
+      wireEvents();
+    }
+
+    function buildSortingSection(sorting) {
+      const shuffledItems = shuffle(sorting.items);
+      return `<section class="exercise sorting-ex" data-explain="${esc(sorting.explain)}">
+        <div class="ex-head">
+          <span class="tag">Categorize</span>
+          <div><h2>${sorting.title}</h2><div class="ex-desc">${sorting.desc}</div></div>
+        </div>
+        
+        <div class="cat-item-list" id="catItemList">
+          ${shuffledItems.map(i => `<div class="cat-item" data-word="${esc(i.word)}" data-bucket="${esc(i.bucket)}">${esc(i.word)}</div>`).join('')}
+        </div>
+
+        <div class="cat-buckets">
+          ${sorting.buckets.map(b => `
+            <div class="cat-bucket-card" data-bucket="${esc(b.key)}">
+              <h3>${esc(b.label)}</h3>
+              <button class="cat-bucket-btn" data-assign-bucket="${esc(b.key)}">Xếp vào nhóm này</button>
+              <div class="placed-words" id="placed-${esc(b.key)}"></div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="mark-actions">
+          <button class="check-btn" id="btnCheckSorting">Kiểm tra bài xếp</button>
+        </div>
+        <div class="feedback" id="sortingFeedback"></div>
+      </section>`;
+    }
+
+    function buildListenGroup(title, desc, items) {
+      return `<section class="exercise">
+        <div class="ex-head">
+          <span class="tag">Listen</span>
+          <div><h2>${title}</h2><div class="ex-desc">${desc}</div></div>
+        </div>
+        ${items.map((q, i) => `
+          <div class="question mcq-q" data-answer="${esc(q.answer)}" data-explain="${esc(q.explain)}">
+            <button class="listen" data-word="${esc(q.word)}">🔊 Hear Word</button>
+            <div class="q-title">${i + 1}. Which stress pattern do you hear for <strong>"${esc(q.word)}"</strong>?</div>
+            <div class="options">
+              ${q.options.map(o => `<button class="opt" data-value="${esc(o)}">${esc(o)}</button>`).join('')}
+            </div>
+            <div class="feedback"></div>
+          </div>
+        `).join('')}
+      </section>`;
+    }
+
+    function buildMCQGroup(title, desc, items) {
+      return `<section class="exercise">
+        <div class="ex-head">
+          <span class="tag">Identify</span>
+          <div><h2>${title}</h2><div class="ex-desc">${desc}</div></div>
+        </div>
+        ${items.map((q, i) => `
+          <div class="question mcq-q" data-answer="${esc(q.answer)}" data-explain="${esc(q.explain)}">
+            <div class="q-title">${i + 1}. ${esc(q.prompt)}</div>
+            <div class="options">
+              ${shuffle(q.options).map(o => `<button class="opt" data-value="${esc(o)}">${esc(o)}</button>`).join('')}
+            </div>
+            <div class="feedback"></div>
+          </div>
+        `).join('')}
+      </section>`;
+    }
+
+    function buildMarkSentenceGroup(title, desc, items) {
+      return `<section class="exercise">
+        <div class="ex-head">
+          <span class="tag">Mark Stress</span>
+          <div><h2>${title}</h2><div class="ex-desc">${desc}</div></div>
+        </div>
+        ${items.map((q, i) => `
+          <div class="question sentence-q" data-is-trap="${q.isTrap ? 'true' : 'false'}" data-explain="${esc(q.explain)}">
+            <div class="q-title">${i + 1}. ${q.sentence}</div>
+            
+            ${q.isTrap ? `
+              <div class="mark-actions">
+                <button class="none-btn" data-action="trap-none">Không có từ nào</button>
+              </div>
+            ` : `
+              ${q.targets.map((t, idx) => `
+                <div class="target-card" data-answer="${esc(t.answer)}" data-target-idx="${idx}">
+                  <div class="target-word-title">Target word: <span class="badge-word">${esc(t.word)}</span></div>
+                  <div class="options">
+                    ${t.options.map(o => `<button class="opt target-opt" data-value="${esc(o)}">${esc(o)}</button>`).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            `}
+            <div class="feedback"></div>
+          </div>
+        `).join('')}
+      </section>`;
+    }
+
+    function buildReadAloud(text) {
+      return `<section class="exercise recorder">
+        <div class="ex-head">
+          <span class="tag">Read Aloud</span>
+          <div><h2>Record Your Voice</h2><div class="ex-desc">Đọc rõ ràng và chú ý các mẫu trọng âm của danh từ 3 âm tiết trước khi gửi cho AI.</div></div>
+        </div>
+        <div class="read-copy">${esc(text)}</div>
+        <div class="rec-controls">
+          <button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button>
+          <button class="btn danger" data-rec-stop disabled>■ Dừng</button>
+          <button class="btn secondary" data-rec-submit disabled>Gửi bản ghi cho AI</button>
+        </div>
+        <div class="rec-status" data-rec-status>Chưa ghi âm.</div>
+        <audio class="playback" data-rec-audio controls hidden></audio>
+        <div class="submit-note" data-rec-note>✓ Đã nhận bản ghi. Tính năng chấm giọng nói AI sẽ được kết nối tại đây.</div>
+      </section>`;
+    }
+
+    function playPromptWord(word, btn) {
+      if (!('speechSynthesis' in window)) return;
+      btn.disabled = true;
+      const u = new SpeechSynthesisUtterance(word);
+      u.lang = 'en-GB';
+      u.rate = .85;
+      u.onend = u.onerror = () => { btn.disabled = false; };
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    }
+
+    function checkCompletion() {
+      const allAssessChecked = [...document.querySelectorAll('.assess input')].every(i => i.checked);
+      const f = document.getElementById('finale');
+      if (f) f.classList.toggle('show', allAssessChecked);
+    }
+
+    function wireEvents() {
+      // Audio playback buttons
+      host.querySelectorAll('.listen').forEach(b => {
+        b.onclick = () => playPromptWord(b.dataset.word, b);
+      });
+
+      // Sorting Component Wiring (4.17 Tap-to-Categorize)
+      const sortingEx = host.querySelector('.sorting-ex');
+      if (sortingEx) {
+        let selectedCatItem = null;
+        const placements = {}; // { word: bucketKey }
+
+        sortingEx.querySelectorAll('.cat-item').forEach(el => {
+          el.onclick = () => {
+            if (sortingEx.dataset.done) return;
+            sortingEx.querySelectorAll('.cat-item').forEach(i => i.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedCatItem = el;
+          };
+        });
+
+        sortingEx.querySelectorAll('[data-assign-bucket]').forEach(btn => {
+          btn.onclick = () => {
+            if (!selectedCatItem || sortingEx.dataset.done) return;
+            const bKey = btn.dataset.assignBucket;
+            const word = selectedCatItem.dataset.word;
+            placements[word] = bKey;
+            const container = document.getElementById('placed-' + bKey);
+            let existing = container.querySelector(`[data-placed="${word}"]`);
+            if (!existing) {
+              existing = document.createElement('span');
+              existing.className = 'placed-tag';
+              existing.dataset.placed = word;
+              existing.textContent = word;
+              container.appendChild(existing);
+            }
+            selectedCatItem.classList.remove('selected');
+            selectedCatItem.classList.add('placed');
+            selectedCatItem = null;
+          };
+        });
+
+        const checkBtn = document.getElementById('sortingCheckBtn');
+        if (checkBtn) {
+          checkBtn.onclick = () => {
+            if (sortingEx.dataset.done) return;
+            const items = data[activeLevel].sorting.items;
+            const total = items.length;
+            const placedCount = Object.keys(placements).length;
+
+            if (placedCount < total) {
+              alert('Hãy xếp đủ cả ' + total + ' từ vào các nhóm trước khi bấm Kiểm tra.');
+              return;
+            }
+
+            let correct = 0;
+            items.forEach(i => {
+              if (placements[i.word] === i.bucket) correct++;
+            });
+
+            const isAllOk = correct === total;
+            sortingEx.dataset.done = '1';
+            checkBtn.disabled = true;
+            sortingEx.querySelectorAll('.cat-bucket-btn').forEach(b => b.disabled = true);
+
+            const fb = document.getElementById('sortingFeedback');
+            fb.className = 'feedback show ' + (isAllOk ? 'ok' : 'no');
+            fb.innerHTML = (isAllOk ? '✅ <b>Chính xác tuyệt đối!</b> ' : `❌ Bạn xếp đúng ${correct}/${total} từ. `) + data[activeLevel].sorting.explain;
+            checkCompletion();
+          };
+        }
+      }
+
+      host.querySelectorAll('.mcq-q').forEach(q => {
+        q.querySelectorAll('.opt').forEach(b => {
+          b.onclick = () => {
+            if (q.dataset.done) return;
+            const ok = b.dataset.value === q.dataset.answer;
+            b.classList.add(ok ? 'correct' : 'wrong');
+            const fb = q.querySelector('.feedback');
+            fb.className = 'feedback show ' + (ok ? 'ok' : 'no');
+            fb.innerHTML = ok ? '✅ <b>Đúng rồi!</b> ' + q.dataset.explain : '❌ Chưa đúng. Hãy kiểm tra vị trí trọng âm và thử lại.';
+            if (ok) {
+              q.dataset.done = '1';
+              q.querySelectorAll('.opt').forEach(x => x.disabled = true);
+              checkCompletion();
+            }
+          };
+        });
+      });
+
+      // Sentence Stress Marking & Trap Questions
+      host.querySelectorAll('.sentence-q').forEach(q => {
+        const isTrap = q.dataset.isTrap === 'true';
+
+        if (isTrap) {
+          const trapBtn = q.querySelector('[data-action="trap-none"]');
+          if (trapBtn) {
+            trapBtn.onclick = () => {
+              if (q.dataset.done) return;
+              q.dataset.done = '1';
+              trapBtn.classList.add('active');
+              trapBtn.disabled = true;
+              const fb = q.querySelector('.feedback');
+              fb.className = 'feedback show ok';
+              fb.innerHTML = '✅ <b>Chính xác!</b> ' + q.dataset.explain;
+              checkCompletion();
+            };
+          }
+        } else {
+          const cards = q.querySelectorAll('.target-card');
+          cards.forEach(c => {
+            c.querySelectorAll('.target-opt').forEach(b => {
+              b.onclick = () => {
+                if (c.dataset.done) return;
+                const ok = b.dataset.value === c.dataset.answer;
+                b.classList.add(ok ? 'correct' : 'wrong');
+                if (ok) {
+                  c.dataset.done = '1';
+                  c.querySelectorAll('.target-opt').forEach(x => x.disabled = true);
+                }
+                // Check overall sentence completion
+                const allDone = [...cards].every(card => card.dataset.done === '1');
+                if (allDone && !q.dataset.done) {
+                  q.dataset.done = '1';
+                  const fb = q.querySelector('.feedback');
+                  fb.className = 'feedback show ok';
+                  fb.innerHTML = '✅ <b>Chính xác!</b> ' + q.dataset.explain;
+                  checkCompletion();
+                }
+              };
+            });
+          });
+        }
+      });
+
+      // Voice Recorders
+      wireRecorders();
+    }
+
+    let currentStream;
+    function wireRecorders() {
+      host.querySelectorAll('.recorder').forEach(box => {
+        let rec, chunks = [], url;
+        const start = box.querySelector('[data-rec-start]');
+        const stop = box.querySelector('[data-rec-stop]');
+        const submit = box.querySelector('[data-rec-submit]');
+        const status = box.querySelector('[data-rec-status]');
+        const audio = box.querySelector('[data-rec-audio]');
+        const note = box.querySelector('[data-rec-note]');
+
+        start.onclick = async () => {
+          try {
+            currentStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            chunks = [];
+            rec = new MediaRecorder(currentStream);
+            rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+            rec.onstop = () => {
+              const blob = new Blob(chunks, { type: rec.mimeType });
+              if (url) URL.revokeObjectURL(url);
+              url = URL.createObjectURL(blob);
+              audio.src = url;
+              audio.hidden = false;
+              submit.disabled = false;
+              status.textContent = '✅ Đã ghi xong — hãy nghe lại trước khi gửi.';
+              status.classList.remove('live');
+              currentStream.getTracks().forEach(t => t.stop());
+            };
+            rec.start();
+            start.disabled = true;
+            stop.disabled = false;
+            submit.disabled = true;
+            note.style.display = 'none';
+            status.textContent = '🔴 Đang ghi âm…';
+            status.classList.add('live');
+          } catch (err) {
+            status.textContent = '❌ Không truy cập được micro. Hãy cấp quyền micro cho trình duyệt.';
+          }
+        };
+
+        stop.onclick = () => {
+          if (rec?.state === 'recording') rec.stop();
+          start.disabled = false;
+          stop.disabled = true;
+        };
+
+        submit.onclick = () => {
+          note.style.display = 'block';
+          /* TODO: Nối API chấm giọng nói AI */
+        };
+      });
+    }
+
+    // Level Switcher
+    document.querySelectorAll('.level').forEach(b => {
+      b.onclick = () => {
+        activeLevel = b.dataset.level;
+        document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x === b));
+        render();
+        checkCompletion();
+        window.scrollTo({ top: document.querySelector('.levels').offsetTop - 20, behavior: 'smooth' });
+      };
+    });
+
+    document.querySelectorAll('.assess input').forEach(i => i.addEventListener('change', checkCompletion));
+
+    // Initial render
+    render();
+  </script>
+</body>
+
+</html>

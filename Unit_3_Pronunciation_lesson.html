@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 3 — Pronunciation: Stress in Two-Syllable Words</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #FAF7F0;
+      --paper2: #F0EADD;
+      --jade: #2D8B6F;
+      --deep: #14432F;
+      --sage: #A9D0BE;
+      --gold: #E8A24A;
+      --coral: #C15F3C;
+      --ink: #1A1A1A;
+      --muted: #514C44;
+      --white: #FFFFFF;
+      --line: #E5DECF;
+      --shadow: 0 10px 30px rgba(43, 43, 40, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Baloo 2", sans-serif;
+      color: var(--deep);
+      margin: 0;
+    }
+
+    .wrap {
+      width: min(1060px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--jade);
+      color: #fff;
+      padding: 64px 0 76px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.1;
+      margin: 18px 0 12px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      font-size: 17px;
+      font-weight: 600;
+      color: #E1ECE4;
+    }
+
+    main {
+      padding: 42px 0;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      display: inline-flex;
+      background: var(--sage);
+      color: var(--deep);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-size: 30px;
+      margin-top: 8px;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin: 4px 0 0;
+    }
+
+    /* Rules Grid */
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .rule {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .rule-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .sound {
+      font: 800 24px "Baloo 2";
+      color: var(--deep);
+    }
+
+    .audio {
+      border: 0;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      color: #fff;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      transition: transform .2s;
+    }
+
+    .audio:hover {
+      transform: scale(1.06);
+    }
+
+    .rule p {
+      font-size: 15px;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .examples {
+      background: var(--paper2);
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--deep);
+    }
+
+    .practice-line {
+      color: var(--jade);
+      font-weight: 700;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .note-box {
+      grid-column: 1 / -1;
+      background: #FFF8EB;
+      border: 2px dashed var(--gold);
+      border-radius: 20px;
+      padding: 20px 24px;
+      color: var(--ink);
+    }
+
+    .note-box h3 {
+      font-size: 20px;
+      color: #8A551A;
+      margin-bottom: 8px;
+    }
+
+    .note-box p {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    /* Words Section */
+    .words-section {
+      margin-top: 52px;
+    }
+
+    .word-table {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .word-col {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .word-col h3 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+      color: var(--deep);
+      border-bottom: 2px solid var(--paper2);
+      padding-bottom: 10px;
+    }
+
+    .word {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    .word:first-of-type {
+      border-top: 0;
+    }
+
+    .word strong {
+      color: var(--deep);
+      font-size: 16px;
+    }
+
+    .ipa {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .mini-audio {
+      border: 0;
+      background: #F7E7CD;
+      color: #8A551A;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: transform .2s;
+    }
+
+    .mini-audio:hover {
+      transform: scale(1.08);
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* Read Aloud */
+    .read-aloud {
+      margin-top: 52px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .read-copy {
+      background: var(--paper2);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 16px 0;
+      font-size: 16px;
+      color: var(--deep);
+      line-height: 1.8;
+      word-break: break-word;
+    }
+
+    .rec-controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 14px;
+      min-height: 48px;
+      padding: 10px 22px;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .primary {
+      background: var(--jade);
+      color: #fff;
+    }
+
+    .primary:hover {
+      background: var(--deep);
+    }
+
+    .secondary {
+      background: var(--paper2);
+      color: var(--deep);
+    }
+
+    .danger {
+      background: #F3E2D6;
+      color: var(--coral);
+    }
+
+    .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .rec-status {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rec-status.live {
+      color: var(--coral);
+      font-weight: 700;
+    }
+
+    .recording-playback {
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    .submit-note {
+      display: none;
+      margin-top: 14px;
+      background: #DCEAE1;
+      color: var(--deep);
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-weight: 600;
+    }
+
+    /* Next Button */
+    .next {
+      display: flex;
+      justify-content: center;
+      margin: 44px 0 16px;
+    }
+
+    .next a {
+      text-decoration: none;
+      background: var(--jade);
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 16px;
+      font-weight: 800;
+      font-size: 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: background .2s;
+    }
+
+    .next a:hover {
+      background: var(--deep);
+    }
+
+    .next a small {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 0 64px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+
+      .rules,
+      .word-table {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 48px 0 56px;
+      }
+
+      .rule {
+        padding: 20px;
+      }
+
+      .section-head h2 {
+        font-size: 26px;
+      }
+
+      .read-aloud {
+        padding: 20px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        width: min(100% - 24px, 1060px);
+      }
+
+      main {
+        padding-top: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">✅ Unit 3 · Pronunciation</span>
+      <h1>Stress in Two-Syllable Words</h1>
+      <p>Recognise and correctly place stress in two-syllable nouns, adjectives, and verbs.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Rule Section -->
+    <section>
+      <div class="section-head">
+        <span class="tag">Sound guide</span>
+        <h2>Quy tắc trọng âm</h2>
+        <p class="lead">Nghe mẫu và nắm vững quy tắc đánh trọng âm đối với từ có 2 âm tiết.</p>
+      </div>
+
+      <div class="rules">
+        <article class="rule">
+          <div class="rule-top">
+            <span class="sound">Stress on the 1st Syllable</span>
+            <button class="audio" data-say="singer, programme, common, careful"
+              aria-label="Nghe các từ mẫu nhấn âm 1">🔊</button>
+          </div>
+          <p><strong>Nouns &amp; Adjectives:</strong> Hầu hết danh từ và tính từ có 2 âm tiết đều nhấn trọng âm vào âm
+            tiết thứ nhất.</p>
+          <div class="examples">Ví dụ: <b>singer, programme, common, careful</b></div>
+          <div class="practice-line">Thực hành: singer → <strong>SINGer</strong> (nhấn mạnh âm 1)</div>
+        </article>
+
+        <article class="rule">
+          <div class="rule-top">
+            <span class="sound">Stress on the 2nd Syllable</span>
+            <button class="audio" data-say="relax, perform, attract, decide"
+              aria-label="Nghe các từ mẫu nhấn âm 2">🔊</button>
+          </div>
+          <p><strong>Verbs:</strong> Hầu hết động từ có 2 âm tiết đều nhấn trọng âm vào âm tiết thứ hai.</p>
+          <div class="examples">Ví dụ: <b>relax, perform, attract, decide</b></div>
+          <div class="practice-line">Thực hành: relax → <strong>reLAX</strong> (nhấn mạnh âm 2)</div>
+        </article>
+
+        <div class="note-box">
+          <h3>📌 Lưu ý mở rộng (Homographs / Từ cùng chữ khác trọng âm)</h3>
+          <p>Một số từ có thể vừa là danh từ vừa là động từ, và trọng âm sẽ thay đổi theo từ loại — ví dụ
+            <strong>PREsent</strong> (danh từ: món quà) khác với <strong>preSENT</strong> (động từ: trình bày);
+            <strong>REcord</strong> (danh từ: bản ghi âm) khác với <strong>reCORD</strong> (động từ: ghi âm). Đây là
+            điểm cần đặc biệt lưu ý khi nghe/đọc, vì cùng một từ có thể mang 2 trọng âm khác nhau tùy ngữ cảnh.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Word Bank Section -->
+    <section class="words-section">
+      <div class="section-head">
+        <span class="tag">Word bank</span>
+        <h2>Từ minh hoạ</h2>
+        <p class="lead">Bấm nút loa 🔊 để nghe phát âm từng từ.</p>
+      </div>
+
+      <div class="word-table" id="wordTable"></div>
+    </section>
+
+    <!-- Read Aloud Section -->
+    <section class="read-aloud">
+      <span class="tag">Read aloud</span>
+      <h2>Nghe và lặp lại</h2>
+      <p>Đọc lần lượt 16 từ minh hoạ dưới đây, ghi âm và nộp bản thu để AI chấm.</p>
+
+      <div class="read-copy">
+        <strong>1st syllable stress:</strong> singer · programme · common · careful · garden · lucky · teacher ·
+        open<br>
+        <strong>2nd syllable stress:</strong> relax · perform · attract · decide · prepare · complete · believe · arrive
+      </div>
+
+      <div class="rec-controls">
+        <button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button>
+        <button class="btn danger" data-rec-stop disabled>■ Dừng</button>
+        <button class="btn secondary" data-rec-submit disabled>Gửi bản ghi cho AI</button>
+      </div>
+
+      <div class="rec-status" data-rec-status>Chưa ghi âm.</div>
+      <audio class="recording-playback" data-rec-audio controls hidden></audio>
+      <div class="submit-note" data-rec-note>✓ Đã nhận bản ghi. Tính năng chấm giọng nói AI sẽ được kết nối tại đây.
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="next">
+      <a href="Unit_3_Pronunciation_practice.html">
+        ✓ Done learning rules — Go to Practice<br>
+        <small>Đã học xong quy tắc — Sang Luyện tập →</small>
+      </a>
+    </div>
+  </main>
+
+  <footer>BMH AI · English Grade 10 · Pronunciation — Unit 3: Stress in Two-Syllable Words</footer>
+
+  <script>
+    const wordGroups = [
+      {
+        title: "Stress on 1st Syllable",
+        words: [
+          ["singer", "/ˈsɪŋ.ər/"],
+          ["programme", "/ˈprəʊ.græm/"],
+          ["common", "/ˈkɒm.ən/"],
+          ["careful", "/ˈkeə.fəl/"],
+          ["garden", "/ˈɡɑː.dən/"],
+          ["lucky", "/ˈlʌk.i/"],
+          ["teacher", "/ˈtiː.tʃər/"],
+          ["open", "/ˈəʊ.pən/"]
+        ]
+      },
+      {
+        title: "Stress on 2nd Syllable",
+        words: [
+          ["relax", "/rɪˈlæks/"],
+          ["perform", "/pəˈfɔːm/"],
+          ["attract", "/əˈtrækt/"],
+          ["decide", "/dɪˈsaɪd/"],
+          ["prepare", "/prɪˈpeər/"],
+          ["complete", "/kəmˈpliːt/"],
+          ["believe", "/bɪˈliːv/"],
+          ["arrive", "/əˈraɪv/"]
+        ]
+      }
+    ];
+
+    const table = document.getElementById('wordTable');
+    wordGroups.forEach(g => {
+      const col = document.createElement('div');
+      col.className = 'word-col';
+      col.innerHTML = `<h3>${g.title}</h3>` + g.words.map(w =>
+        `<div class="word">
+          <div>
+            <strong>${esc(w[0])}</strong>
+            <div class="ipa">${esc(w[1])}</div>
+          </div>
+          <button class="mini-audio" data-say="${esc(w[0])}" aria-label="Nghe phát âm từ ${esc(w[0])}">🔊</button>
+        </div>`
+      ).join('');
+      table.appendChild(col);
+    });
+
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function speak(text, rate = 0.88) {
+      if (!('speechSynthesis' in window)) return;
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = rate;
+      speechSynthesis.speak(u);
+    }
+
+    document.addEventListener('click', e => {
+      const b = e.target.closest('[data-say]');
+      if (b) speak(b.dataset.say);
+    });
+
+    // Voice Recorder
+    let mediaRecorder, stream, chunks = [], recordingUrl;
+    document.querySelectorAll('.read-aloud').forEach(wireRecorder);
+
+    function wireRecorder(box) {
+      const start = box.querySelector('[data-rec-start]');
+      const stop = box.querySelector('[data-rec-stop]');
+      const submit = box.querySelector('[data-rec-submit]');
+      const status = box.querySelector('[data-rec-status]');
+      const audio = box.querySelector('[data-rec-audio]');
+      const note = box.querySelector('[data-rec-note]');
+
+      start.onclick = async () => {
+        try {
+          stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          chunks = [];
+          mediaRecorder = new MediaRecorder(stream);
+          mediaRecorder.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+          mediaRecorder.onstop = () => {
+            const blob = new Blob(chunks, { type: mediaRecorder.mimeType });
+            if (recordingUrl) URL.revokeObjectURL(recordingUrl);
+            recordingUrl = URL.createObjectURL(blob);
+            audio.src = recordingUrl;
+            audio.hidden = false;
+            submit.disabled = false;
+            status.textContent = '✅ Đã ghi xong — hãy nghe lại trước khi gửi.';
+            status.classList.remove('live');
+            stream.getTracks().forEach(t => t.stop());
+          };
+          mediaRecorder.start();
+          start.disabled = true;
+          stop.disabled = false;
+          submit.disabled = true;
+          note.style.display = 'none';
+          status.textContent = '🔴 Đang ghi âm…';
+          status.classList.add('live');
+        } catch (err) {
+          status.textContent = '❌ Không truy cập được micro. Hãy kiểm tra và cấp quyền micro cho trình duyệt.';
+        }
+      };
+
+      stop.onclick = () => {
+        if (mediaRecorder?.state === 'recording') mediaRecorder.stop();
+        start.disabled = false;
+        stop.disabled = true;
+      };
+
+      submit.onclick = () => {
+        note.style.display = 'block';
+        /* TODO: Nối API chấm giọng nói AI */
+      };
+    }
+  </script>
+</body>
+
+</html>
