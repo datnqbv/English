@@ -71,15 +71,20 @@ từ mục tiêu, học sinh chọn từ nghe được; cho nghe lại không gi
 6. Target word phát ra: **tree** — Options: A. tree / B. free / C. three
    `dap_an_dung`: A — `giai_thich_dung`: Từ gây nhiễu (free, three) đều có âm /r/ ở cuối cụm phụ âm — bộ ba dễ nhầm nhất giữa /tr/, /fr/, /θr/.
 
-**Nhận diện khác biệt phát âm** *(không cần audio, thuần suy luận — dữ liệu "mục tiêu âm" giữ nội
-bộ để build, không hiện cho học sinh)*:
-1. Options: A. tree / B. three / C. free *(mục tiêu /tr/)*
-   `dap_an_dung`: A — `giai_thich_dung`: "Three" (/θr/) và "free" (/fr/) là âm dễ lẫn nhất với /tr/ vì cùng vần "-ee", cần phân biệt điểm chạm lưỡi.
-2. Options: A. crowd / B. cloud / C. proud *(mục tiêu /kr/)*
-   `dap_an_dung`: A — `giai_thich_dung`: "Cloud" (/kl/) rất gần /kr/ vì cùng bắt đầu bằng "c", chỉ khác âm thứ 2.
-3. Options: A. bread / B. dread / C. thread *(mục tiêu /br/)*
+**Nhận diện khác biệt phát âm — Minimal pairs nâng cao** *(dùng `playPromptWord()` — phát đúng 1
+từ mục tiêu, giống Listen-and-Circle Nhận biết ở trên, nhưng distractor gần âm hơn nên đòi hỏi phân
+biệt tinh hơn; cho nghe lại không giới hạn. KHÔNG làm "thuần suy luận qua chữ, không audio" như bản
+cũ — cách đó buộc phải chọn 1 trong 2 lỗi: hoặc giấu âm mục tiêu (mù mờ, học sinh không có căn cứ
+để chọn), hoặc nêu tên âm mục tiêu ngay trong đề (lộ đáp án qua chữ cái đầu, vì chỉ đúng 1 lựa chọn
+được viết bằng đúng 2 chữ cái đó — học sinh đoán qua mặt chữ, không cần nghe/hiểu gì cả). Có audio
+thì đáp án đến từ việc NGHE, giải quyết được cả hai lỗi cùng lúc.)*:
+1. Target word phát ra: **tree** — Options: A. tree / B. three / C. free
+   `dap_an_dung`: A — `giai_thich_dung`: "Three" (/θr/) và "free" (/fr/) là âm dễ lẫn nhất với /tr/ vì cùng vần "-ee", cần phân biệt điểm chạm lưỡi khi nghe.
+2. Target word phát ra: **crowd** — Options: A. crowd / B. cloud / C. proud
+   `dap_an_dung`: A — `giai_thich_dung`: "Cloud" (/kl/) rất gần /kr/ vì cùng bắt đầu bằng "c", chỉ khác âm thứ 2 — cần nghe kỹ.
+3. Target word phát ra: **bread** — Options: A. bread / B. dread / C. thread
    `dap_an_dung`: A — `giai_thich_dung`: "Dread" (/dr/) và "thread" (/θr/) cùng vần "-read" với "bread" nhưng khác hẳn âm đầu.
-4. Options: A. truck / B. drum / C. thumb *(mục tiêu /tr/)*
+4. Target word phát ra: **truck** — Options: A. truck / B. drum / C. thumb
    `dap_an_dung`: A — `giai_thich_dung`: "Drum" (/dr/) dễ nhầm với /tr/ vì cùng nhóm phụ âm + r; "thumb" không có blend, cần nhận ra sự vắng mặt hoàn toàn của /r/.
 
 **Read Aloud — Short Phrases** *(component 9.4, ghi âm nộp AI chấm)*:
@@ -119,11 +124,11 @@ differently — không cần audio)*:
 
 **Odd One Out** *(không cần audio, 4 lựa chọn — 3 từ cùng nhóm, 1 từ khác)*:
 1. Options: A. crab / B. crowd / C. cloud / D. cream
-   `dap_an_dung`: C (cloud = /kl/) — `giai_thich_dung`: "Cloud" gần /kr/ nhất trong nhóm nhiễu vì cùng chữ "c" đầu từ.
+   `dap_an_dung`: C (cloud = /kl/) — `giai_thich_dung`: "Crab", "crowd", "cream" đều có cụm /kr/; riêng "cloud" là /kl/ (âm thứ 2 là /l/, không phải /r/) — dễ nhầm vì cùng bắt đầu bằng chữ "c" như 3 từ còn lại.
 2. Options: A. tree / B. trip / C. truck / D. three
-   `dap_an_dung`: D (three = /θr/) — `giai_thich_dung`: "Three" dễ nhầm nhất với /tr/ vì chỉ khác 1 âm (/θ/ thay /t/), đây là cặp tối thiểu kinh điển.
+   `dap_an_dung`: D (three = /θr/) — `giai_thich_dung`: "Tree", "trip", "truck" đều có cụm /tr/; riêng "three" là /θr/ (âm đầu /θ/, không phải /t/) — cặp tối thiểu kinh điển dễ gây nhầm lẫn khi đọc.
 3. Options: A. bring / B. brave / C. bridge / D. drive
-   `dap_an_dung`: D (drive = /dr/) — `giai_thich_dung`: "Drive" có cụm /dr/ rất gần vị trí cấu âm với /br/, cần nghe kỹ âm mở đầu.
+   `dap_an_dung`: D (drive = /dr/) — `giai_thich_dung`: "Bring", "brave", "bridge" đều có cụm /br/; riêng "drive" là /dr/ (âm đầu /d/, không phải /b/) — cần nghe kỹ âm mở đầu vì vị trí cấu âm khá gần nhau.
 
 **Nhận diện khác biệt phát âm — có câu bẫy**:
 1. Options: A. chrome / B. crowd / C. character / D. crayon
@@ -157,12 +162,19 @@ differently — không cần audio)*:
 - Nút 🔊 Listen-and-Circle: disable khi đang phát, cho nghe lại không giới hạn số lần (khác giới hạn thử của MCQ chấm điểm thường — vẫn giữ nguyên tắc gợi ý trước khi lộ đáp án khi chọn sai).
 - Read Aloud (cả Phần 1 và mức Vận dụng mọi mức): dùng nguyên component 9.4 (`02_design_tiengAnh.md`) — `submitRecording()` để dạng khung, comment `// TODO: nối API chấm giọng nói`, không tự bịa kết quả chấm.
 - Vị trí đáp án các câu trắc nghiệm chữ (không phải Listen-and-Circle) vẫn phải random khi build.
+- **Sửa lỗi ở mục "Nhận diện khác biệt phát âm — Minimal pairs nâng cao" (Easy):** bản cũ (thuần
+  chữ, không audio) buộc phải chọn 1 trong 2 lỗi — giấu âm mục tiêu (mù mờ, không có căn cứ chọn)
+  hoặc nêu tên âm mục tiêu trong đề (lộ đáp án qua chữ cái đầu, học sinh đoán qua mặt chữ mà không
+  cần nghe/hiểu gì). Đã sửa: chuyển hẳn sang audio `playPromptWord()`, cùng cơ chế Listen-and-Circle
+  Nhận biết ở trên nhưng distractor gần âm hơn (đúng tinh thần "Minimal pairs nâng cao" — Thông
+  hiểu). KHÔNG build lại theo kiểu "thuần chữ không audio" như bản cũ.
 
 ### Ghi chú cho Giai đoạn 2 (Design)
 - Đọc `02_design_tiengAnh.md` mục: 4.2 (Hero), 9.4 (Read Aloud/ghi âm — dùng cả Phần 1 lẫn Vận
   dụng mọi mức Phần 2), 4.6 (Practice types — MCQ chuẩn cho Nhận diện khác biệt/Odd One Out), 4.7
   (Self-assessment).
 - Đọc `03_engine_tiengAnh.md` mục 4.2 — dùng `playPromptWord()` cho toàn bộ câu Listen-and-Circle
-  (Nhận biết Easy/Medium), KHÔNG dùng `speak()` thường (tốc độ nhanh hơn, không phù hợp bài phân
-  biệt minimal pairs).
+  (Nhận biết) LẪN mục "Nhận diện khác biệt phát âm — Minimal pairs nâng cao" (Thông hiểu, cùng cơ
+  chế nhưng distractor khó hơn), KHÔNG dùng `speak()` thường (tốc độ nhanh hơn, không phù hợp bài
+  phân biệt minimal pairs).
 - KHÔNG dùng 4.8b (Practice Reference Pane) — xem Ngoại lệ ở đầu kịch bản này.

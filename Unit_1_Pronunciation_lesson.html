@@ -5,6 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Unit 1 — Pronunciation: /br/, /kr/, /tr/</title>
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1: Family Life - Pronunciation Lesson",
+    "subject": "Tiếng Anh",
+    "grade": "10",
+    "objectives": [
+      "Recognise and pronounce the consonant blends /br/, /kr/, and /tr/ correctly"
+    ],
+    "structure": [
+      { "id": "sound-guide", "title": "Sound Guide & Rules" },
+      { "id": "word-bank", "title": "Word Bank" },
+      { "id": "read-aloud", "title": "Read Aloud Practice" }
+    ],
+    "athenaGuidance": "Nội dung bài học Pronunciation Unit 1 gồm 3 cụm âm /br/, /kr/, /tr/. Hướng dẫn học sinh vị trí môi, lưỡi và luồng hơi."
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -462,6 +478,12 @@
   </main>
   <footer>BMH AI · English Grade 10 · Pronunciation — Unit 1: /br/, /kr/, /tr/</footer>
   <script>
+    function LMS(){ return window.AiducationLMS || { ready:function(){}, progress:function(){}, event:function(){}, state:function(){}, complete:function(){}, resize:function(){} }; }
+    function reportHeight() { LMS().resize({ height: document.documentElement.scrollHeight }); }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+    ro.observe(document.body);
+
     const groups = [{ sound: '/br/', words: [['bread', '/bred/'], ['brave', '/breɪv/'], ['bridge', '/brɪdʒ/'], ['branch', '/brɑːntʃ/']] }, { sound: '/kr/', words: [['crab', '/kræb/'], ['cream', '/kriːm/'], ['cry', '/kraɪ/'], ['crowd', '/kraʊd/']] }, { sound: '/tr/', words: [['tree', '/triː/'], ['truck', '/trʌk/'], ['trip', '/trɪp/'], ['treasure', '/ˈtreʒ.ər/']] }];
     const table = document.getElementById('wordTable');
     groups.forEach(g => { const col = document.createElement('div'); col.className = 'word-col'; col.innerHTML = '<h3>' + g.sound + '</h3>' + g.words.map(w => '<div class="word"><div><strong>' + w[0] + '</strong><div class="ipa">' + w[1] + '</div></div><button class="mini-audio" data-say="' + w[0] + '" aria-label="Nghe ' + w[0] + '">🔊</button></div>').join(''); table.appendChild(col) });

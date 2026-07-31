@@ -5,6 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Unit 1 — Pronunciation Practice</title>
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1: Family Life - Pronunciation Practice",
+    "subject": "Tiếng Anh",
+    "grade": "10",
+    "objectives": [
+      "Practice recognizing and distinguishing consonant blends /br/, /kr/, and /tr/ across Easy, Medium, and Difficult levels",
+      "Read aloud phrases, sentences, and short passage containing /br/, /kr/, and /tr/"
+    ],
+    "structure": [
+      { "id": "easy", "title": "Easy Level (Listen & Circle, Minimal Pairs, Read Aloud Phrases)" },
+      { "id": "medium", "title": "Medium Level (Listen & Circle, Pronunciation Difference, Read Aloud Sentences)" },
+      { "id": "difficult", "title": "Difficult Level (Odd One Out, Pronunciation Difference, Read Aloud Passage)" },
+      { "id": "assess", "title": "Self-Assessment" }
+    ],
+    "athenaGuidance": "Nội dung luyện tập Pronunciation Unit 1 gồm 3 mức Easy/Medium/Difficult. Hướng dẫn học sinh nghe phân biệt minimal pairs và thực hành Read Aloud."
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -449,23 +467,58 @@
   </main>
   <footer>BMH AI · English Grade 10 · Pronunciation — Unit 1: /br/, /kr/, /tr/</footer>
   <script>
+    function LMS(){ return window.AiducationLMS || { ready:function(){}, progress:function(){}, event:function(){}, state:function(){}, complete:function(){}, resize:function(){} }; }
+    function reportHeight() { LMS().resize({ height: document.documentElement.scrollHeight }); }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+    ro.observe(document.body);
+
     const data = {
       easy: {
         listen: [
-          { word: 'bread', options: ['bread', 'bed', 'head'], explain: 'Từ gây nhiễu (bed, head) khác âm đầu rõ ràng so với /br/.' }, { word: 'crab', options: ['crab', 'cab', 'lab'], explain: 'Từ gây nhiễu (cab, lab) không có cụm phụ âm /kr/, dễ phân biệt.' }, { word: 'truck', options: ['truck', 'duck', 'luck'], explain: 'Từ gây nhiễu (duck, luck) khác âm đầu rõ ràng so với /tr/.' }, { word: 'brave', options: ['brave', 'wave', 'grave'], explain: 'Từ gây nhiễu (wave, grave) vần giống nhưng khác âm đầu — cần nghe kỹ cụm /br/.' }, { word: 'cream', options: ['cream', 'dream', 'scream'], explain: 'Từ gây nhiễu (dream, scream) có phụ âm gần giống /kr/ hơn, cần phân biệt tinh hơn.' }, { word: 'tree', options: ['tree', 'free', 'three'], explain: 'Free và three đều có /r/ trong cụm đầu — cần phân biệt /tr/, /fr/, /θr/.' }],
-        identify: [{ options: ['tree', 'three', 'free'], answer: 'tree', explain: 'Three (/θr/) và free (/fr/) dễ lẫn với /tr/ vì cùng vần “-ee”.' }, { options: ['crowd', 'cloud', 'proud'], answer: 'crowd', explain: 'Cloud (/kl/) rất gần /kr/ vì cùng bắt đầu bằng “c”, chỉ khác âm thứ hai.' }, { options: ['bread', 'dread', 'thread'], answer: 'bread', explain: 'Dread (/dr/) và thread (/θr/) cùng vần “-read” nhưng khác âm đầu.' }, { options: ['truck', 'drum', 'thumb'], answer: 'truck', explain: 'Drum (/dr/) dễ nhầm với /tr/; thumb không có blend /tr/.' }],
+          { word: 'bread', options: ['bread', 'bed', 'head'], explain: 'Từ gây nhiễu (bed, head) khác âm đầu rõ ràng so với /br/.' },
+          { word: 'crab', options: ['crab', 'cab', 'lab'], explain: 'Từ gây nhiễu (cab, lab) không có cụm phụ âm /kr/, dễ phân biệt.' },
+          { word: 'truck', options: ['truck', 'duck', 'luck'], explain: 'Từ gây nhiễu (duck, luck) khác âm đầu rõ ràng so với /tr/.' },
+          { word: 'brave', options: ['brave', 'wave', 'grave'], explain: 'Từ gây nhiễu (wave, grave) vần giống nhưng khác âm đầu — cần nghe kỹ cụm /br/.' },
+          { word: 'cream', options: ['cream', 'dream', 'scream'], explain: 'Từ gây nhiễu (dream, scream) có phụ âm gần giống /kr/ hơn, cần phân biệt tinh hơn.' },
+          { word: 'tree', options: ['tree', 'free', 'three'], explain: 'Từ gây nhiễu (free, three) đều có âm /r/ ở cuối cụm phụ âm — bộ ba dễ nhầm nhất giữa /tr/, /fr/, /θr/.' }
+        ],
+        minimalPairs: [
+          { word: 'tree', options: ['tree', 'three', 'free'], explain: '"Three" (/θr/) và "free" (/fr/) là âm dễ lẫn nhất với /tr/ vì cùng vần "-ee", cần phân biệt điểm chạm lưỡi khi nghe.' },
+          { word: 'crowd', options: ['crowd', 'cloud', 'proud'], explain: '"Cloud" (/kl/) rất gần /kr/ vì cùng bắt đầu bằng "c", chỉ khác âm thứ 2 — cần nghe kỹ.' },
+          { word: 'bread', options: ['bread', 'dread', 'thread'], explain: '"Dread" (/dr/) và "thread" (/θr/) cùng vần "-read" với "bread" nhưng khác hẳn âm đầu.' },
+          { word: 'truck', options: ['truck', 'drum', 'thumb'], explain: '"Drum" (/dr/) dễ nhầm với /tr/ vì cùng nhóm phụ âm + r; "thumb" không có blend, cần nhận ra sự vắng mặt hoàn toàn của /r/.' }
+        ],
         read: 'a brave crab\nfresh bread and cream\na quick trip'
       },
       medium: {
         listen: [
-          { word: 'brick', options: ['brick', 'trick', 'click'], explain: 'Trick (/tr/) và click (/kl/) đều có cụm phụ âm nhưng khác /br/.' }, { word: 'crown', options: ['crown', 'clown', 'brown'], explain: 'Clown (/kl/) dễ nhầm với /kr/ nhất vì cùng bắt đầu bằng “c”.' }, { word: 'trail', options: ['trail', 'rail', 'tail'], explain: 'Rail và tail không có cụm phụ âm; trail có /t/ trước /r/.' }, { word: 'bright', options: ['bright', 'fright', 'light'], explain: 'Fright (/fr/) rất gần /br/ về vị trí cấu âm nhưng khác âm đầu.' }],
-        identify: [{ options: ['chrome', 'chair', 'cheese', 'chicken'], answer: 'chrome', explain: 'Chrome là /kroʊm/; ba từ còn lại bắt đầu bằng /tʃ/.' }, { options: ['character', 'change', 'cherry', 'teacher'], answer: 'character', explain: 'Character phát âm /k/ dù viết “ch”; các từ còn lại có /tʃ/.' }, { options: ['wrist', 'trust', 'truck', 'trip'], answer: 'wrist', explain: 'Wrist có “w” câm và không tạo blend /tr/.' }, { options: ['bring', 'ring', 'cling', 'sing'], answer: 'bring', explain: 'Bring là từ duy nhất có cụm /br/ ở đầu.' }],
+          { word: 'brick', options: ['brick', 'trick', 'click'], explain: '"Trick" (/tr/) và "click" (/kl/) đều có cụm phụ âm nhưng khác hẳn /br/.' },
+          { word: 'crown', options: ['crown', 'clown', 'brown'], explain: '"Clown" (/kl/) dễ nhầm với /kr/ nhất trong 3 lựa chọn vì cùng bắt đầu bằng "c".' },
+          { word: 'trail', options: ['trail', 'rail', 'tail'], explain: '"Rail" và "tail" không có cụm phụ âm — cần nhận diện sự có mặt của /t/ trước /r/.' },
+          { word: 'bright', options: ['bright', 'fright', 'light'], explain: '"Fright" (/fr/) rất gần /br/ về vị trí cấu âm nhưng khác âm đầu.' }
+        ],
+        identify: [
+          { options: ['chrome', 'chair', 'cheese', 'chicken'], answer: 'chrome', explain: '"Chrome" phát âm là /kroʊm/ (âm /k/, có blend /kr/), khác với B/C/D đều là /tʃ/ — bẫy chính tả kinh điển của "ch".' },
+          { options: ['character', 'change', 'cherry', 'teacher'], answer: 'character', explain: 'Tương tự, "character" phát âm /k/ dù viết "ch", còn lại đều /tʃ/.' },
+          { options: ['wrist', 'trust', 'truck', 'trip'], answer: 'wrist', explain: '"Wrist" có "w" câm, không tạo blend /tr/, trong khi B/C/D đều có /tr/ rõ.' },
+          { options: ['bring', 'ring', 'cling', 'sing'], answer: 'bring', explain: '"Bring" là từ duy nhất có cụm /br/ ở đầu; B/C/D chỉ có 1 phụ âm đơn trước vần "-ing".' }
+        ],
         read: 'The brave crab crawled across the sandy beach.\nA big crowd gathered to watch the truck race.\nShe took a quick trip to visit her grandmother.'
       },
       difficult: {
         odd: [
-          { options: ['crab', 'crowd', 'cloud', 'cream'], answer: 'cloud', explain: 'Cloud có /kl/, ba từ còn lại có /kr/.' }, { options: ['tree', 'trip', 'truck', 'three'], answer: 'three', explain: 'Three có /θr/, ba từ còn lại có /tr/.' }, { options: ['bring', 'brave', 'bridge', 'drive'], answer: 'drive', explain: 'Drive có /dr/, ba từ còn lại có /br/.' }],
-        identify: [{ options: ['chrome', 'crowd', 'character', 'crayon'], answer: 'character', explain: 'Character không có blend /kr/.' }, { options: ['wrist', 'train', 'trail', 'truck'], answer: 'wrist', explain: 'Wrist không có âm /t/ nối với /r/.' }, { options: ['bring', 'brave', 'lamb', 'bridge'], answer: 'lamb', explain: 'Lamb có “b” câm ở cuối, không có /br/ đầu từ.' }, { options: ['crab', 'climb', 'cream', 'cry'], answer: 'climb', explain: 'Climb có /kl/ và “b” câm ở cuối.' }, { options: ['tree', 'three', 'trip', 'truck'], answer: 'three', explain: 'Three có /θr/, khác /tr/.' }],
+          { options: ['crab', 'crowd', 'cloud', 'cream'], answer: 'cloud', explain: '"Crab", "crowd", "cream" đều có cụm /kr/; riêng "cloud" là /kl/ (âm thứ 2 là /l/, không phải /r/) — dễ nhầm vì cùng bắt đầu bằng chữ "c" như 3 từ còn lại.' },
+          { options: ['tree', 'trip', 'truck', 'three'], answer: 'three', explain: '"Tree", "trip", "truck" đều có cụm /tr/; riêng "three" là /θr/ (âm đầu /θ/, không phải /t/) — cặp tối thiểu kinh điển dễ gây nhầm lẫn khi đọc.' },
+          { options: ['bring', 'brave', 'bridge', 'drive'], answer: 'drive', explain: '"Bring", "brave", "bridge" đều có cụm /br/; riêng "drive" là /dr/ (âm đầu /d/, không phải /b/) — cần nghe kỹ âm mở đầu vì vị trí cấu âm khá gần nhau.' }
+        ],
+        identify: [
+          { options: ['chrome', 'crowd', 'character', 'crayon'], answer: 'character', explain: '"Character" là từ duy nhất KHÔNG có blend /kr/ dù viết bằng "cr" giống các từ khác về mặt hình ảnh chữ.' },
+          { options: ['wrist', 'train', 'trail', 'truck'], answer: 'wrist', explain: '"Wrist" có "w" câm, hoàn toàn không có âm /r/ nối với /t/.' },
+          { options: ['bring', 'brave', 'lamb', 'bridge'], answer: 'lamb', explain: '"Lamb" có "b" câm ở cuối, không liên quan blend /br/ ở đầu từ như 3 từ còn lại — câu bẫy dễ nhầm vì cùng chứa chữ "b".' },
+          { options: ['crab', 'climb', 'cream', 'cry'], answer: 'climb', explain: '"Climb" chứa cụm /kl/ (không phải /kr/) và có "b" câm ở cuối — hai lớp bẫy trong 1 từ.' },
+          { options: ['tree', 'three', 'trip', 'truck'], answer: 'three', explain: '"Three" lặp lại kiểu bẫy /θr/ vs /tr/ nhưng đặt cạnh nhiều từ /tr/ hơn để tăng độ khó nhận diện.' }
+        ],
         read: 'Last weekend, my brother and I took a trip to the countryside. We saw a huge crowd gathered near an old bridge, watching a group of workers repair a broken truck. My brother bravely offered to help carry some bread and cream for the tired workers. By the time we left, everyone was smiling, and the crew thanked us warmly for our kindness.'
       }
     };
@@ -482,7 +535,18 @@
       }
       return w.replace(/^([bcdfghjklmnpqrstvwxyz])/i, '<u>$1</u>');
     }
-    function render() { const d = data[active]; let html = ''; if (d.listen) html += buildGroup('Listen & Circle', 'Nghe từ mục tiêu và chọn từ bạn nghe được.', d.listen, true); if (d.odd) html += buildGroup('Odd One Out', 'Chọn từ có cụm âm khác với ba từ còn lại.', d.odd, false); html += buildGroup('Pronunciation Difference', 'Chọn từ có phần gạch chân phát âm là /br/, /kr/ hoặc /tr/.', d.identify, false); html += readAloud(d.read); host.innerHTML = html; wireQuestions(); wireRecorders() }
+    function render() {
+      const d = data[active];
+      let html = '';
+      if (d.listen) html += buildGroup('Listen & Circle', 'Nghe từ mục tiêu và chọn từ bạn nghe được.', d.listen, true);
+      if (d.minimalPairs) html += buildGroup('Minimal Pairs — Listen & Circle', 'Nghe từ mục tiêu và phân biệt các cặp âm gần nhau.', d.minimalPairs, true);
+      if (d.odd) html += buildGroup('Odd One Out', 'Chọn từ có cụm âm khác với ba từ còn lại.', d.odd, false);
+      if (d.identify) html += buildGroup('Pronunciation Difference', 'Chọn từ có phần gạch chân phát âm khác với các từ còn lại.', d.identify, false, true);
+      html += readAloud(d.read);
+      host.innerHTML = html;
+      wireQuestions();
+      wireRecorders();
+    }
     function buildGroup(title, desc, items, audio, underline = false) { const isDiff = underline || title === 'Pronunciation Difference'; return '<section class="exercise"><div class="ex-head"><span class="tag">' + (audio ? 'Listen' : 'Choose') + '</span><div><h2>' + title + '</h2><div>' + desc + '</div></div></div>' + items.map((q, i) => { const answer = q.word || q.answer; return '<div class="question" data-answer="' + esc(answer) + '" data-explain="' + esc(q.explain) + '">' + (audio ? '<button class="listen" data-word="' + esc(q.word) + '">🔊 Listen again</button>' : '') + '<div class="q-title">' + (i + 1) + '. ' + (audio ? 'Which word do you hear?' : 'Choose the correct word.') + '</div><div class="options">' + shuffle(q.options).map(o => '<button class="opt" data-value="' + esc(o) + '">' + (isDiff ? formatOptionText(o) : esc(o)) + '</button>').join('') + '</div><div class="feedback"></div></div>' }).join('') + '</section>' }
     function readAloud(text) { return '<section class="exercise recorder"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng rồi nghe lại bản ghi trước khi gửi.</div></div></div><div class="read-copy">' + esc(text) + '</div><div class="rec-controls"><button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button><button class="btn danger" data-rec-stop disabled>■ Dừng</button><button class="btn secondary" data-rec-submit disabled>Gửi bản ghi cho AI</button></div><div class="rec-status" data-rec-status>Chưa ghi âm.</div><audio class="playback" data-rec-audio controls hidden></audio><div class="submit-note" data-rec-note>Đã nhận bản ghi. Tính năng chấm giọng nói AI sẽ được kết nối tại đây.</div></section>' }
     function playPromptWord(word, btn) { if (!('speechSynthesis' in window)) return; btn.disabled = true; const u = new SpeechSynthesisUtterance(word); u.lang = 'en-GB'; u.rate = .85; u.onend = u.onerror = () => btn.disabled = false; speechSynthesis.cancel(); speechSynthesis.speak(u) }
