@@ -244,6 +244,7 @@ header.hero p { max-width:850px; font-size:17px; line-height:1.7; }
 .q-block { padding:18px 0; border-bottom:1px solid var(--cream-2); }
 .q-block:last-child { border-bottom:0; }
 .q-num { width:34px; height:34px; font-size:14px; border-radius:10px; }
+.q-num.range-number { width:auto; min-width:66px; padding:0 10px; white-space:nowrap; }
 .q-prompt, .pq-prompt { font-size:17px; line-height:1.7; }
 .q-passage-ref { font-size:13px; margin-left:44px; }
 .q-options, .tf-row, .fill-row { margin-left:44px; }
@@ -278,6 +279,16 @@ header.hero p { max-width:850px; font-size:17px; line-height:1.7; }
 .pq-item { padding:20px 0; }
 .step-nav { gap:12px; }
 
+/* A3 Reading: keep the passage visible while the learner answers. */
+.reading-workspace { display:grid; grid-template-columns:minmax(0, 1.08fr) minmax(390px, .92fr); gap:24px; align-items:start; }
+.reading-passage-pane { position:sticky; top:18px; min-width:0; }
+.reading-passage-label { display:flex; align-items:center; gap:8px; margin-bottom:9px; color:var(--jade-text);
+  font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
+.reading-passage { margin:0 !important; padding:20px 22px !important; max-height:calc(100vh - 170px); max-height:calc(100dvh - 170px); overflow-y:auto;
+  font-size:19px !important; line-height:1.9 !important; scrollbar-gutter:stable; box-shadow:0 3px 12px rgba(43,43,40,.05); }
+.reading-questions { min-width:0; }
+.reading-questions .q-block:first-child { padding-top:0; }
+
 button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline:3px solid var(--accent);
   outline-offset:3px;
@@ -300,6 +311,11 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   .mobile-pane-controls { position:sticky; top:54px; z-index:20; box-shadow:0 4px 12px rgba(43,43,40,.08); }
   .mpc-btn { min-height:42px; font-size:14px; }
   .pref-body { max-height:none; overflow:visible; }
+  .reading-workspace { display:block; }
+  .reading-passage-pane { position:sticky; top:54px; z-index:15; margin-bottom:20px; padding:10px;
+    background:var(--white); border:1.5px solid var(--cream-3); border-radius:var(--radius); box-shadow:0 8px 22px rgba(43,43,40,.12); }
+  .reading-passage-label { margin:0 4px 7px; }
+  .reading-passage { max-height:34vh; font-size:18px !important; padding:14px 15px !important; line-height:1.8 !important; }
 }
 
 @media (max-width:600px) {
@@ -312,6 +328,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   .q-options, .tf-row, .fill-row, .q-passage-ref { margin-left:0; }
   .q-head { gap:10px; }
   .q-num { margin-right:0; }
+  .q-num.range-number { min-width:64px; }
   .q-prompt, .pq-prompt { font-size:16px; }
   .email-body, .article-body, .pref-body, .interview-text { font-size:17px; line-height:1.85; }
   .email-body, .article-body { padding:18px 16px; }
@@ -568,14 +585,28 @@ function renderUCPart(title, sub, items, host, hasPassage){
   const wrap = document.createElement('div');
   wrap.className = 'uc-part';
   wrap.innerHTML = `<div class="uc-part-title">${esc(title)}</div><div class="uc-part-sub">${esc(sub)}</div>`;
+  let questionHost = wrap;
   if (hasPassage) {
+    const workspace = document.createElement('div');
+    workspace.className = 'reading-workspace';
+    const passagePane = document.createElement('div');
+    passagePane.className = 'reading-passage-pane';
+    const passageLabel = document.createElement('div');
+    passageLabel.className = 'reading-passage-label';
+    passageLabel.textContent = 'Reading passage';
     const p = document.createElement('div');
-    p.className = 'q-passage-ref';
+    p.className = 'q-passage-ref reading-passage';
     p.style.marginLeft = '0'; p.style.fontStyle = 'normal'; p.style.marginBottom = '14px';
     p.style.background = 'var(--cream-2)'; p.style.padding = '12px 14px'; p.style.borderRadius = 'var(--radius)';
     p.style.borderLeft = '4px solid var(--jade-deep)'; p.style.color = 'var(--ink)';
     p.textContent = readingPassageUC;
-    wrap.appendChild(p);
+    passagePane.appendChild(passageLabel);
+    passagePane.appendChild(p);
+    questionHost = document.createElement('div');
+    questionHost.className = 'reading-questions';
+    workspace.appendChild(passagePane);
+    workspace.appendChild(questionHost);
+    wrap.appendChild(workspace);
   }
   let lastTask = null;
   items.forEach(q => {
@@ -583,10 +614,10 @@ function renderUCPart(title, sub, items, host, hasPassage){
       const th = document.createElement('div');
       th.className = 'task-header';
       th.innerHTML = `<span class="task-instr">${esc(q.taskInstr)}</span>`;
-      wrap.appendChild(th);
+      questionHost.appendChild(th);
       lastTask = q.task;
     }
-    wrap.appendChild(renderUCQuestion(q));
+    questionHost.appendChild(renderUCQuestion(q));
   });
   host.appendChild(wrap);
 }
@@ -668,6 +699,7 @@ function renderOrderingUC(host){
   qb.className = 'q-block';
   qb.innerHTML = `<div class="q-head"><span class="q-num">36–40</span><span class="q-prompt">The 5 parts of the email below are in the wrong order. Choose the correct order (1–5).</span></div>`;
 
+  qb.querySelector('.q-num').classList.add('range-number');
   const shuffledParts = [...ucOrderParts].sort(()=>Math.random()-0.5);
   const partsRow = document.createElement('div'); partsRow.className = 'order-row';
   const seqRow = document.createElement('div'); seqRow.className = 'order-seq';
