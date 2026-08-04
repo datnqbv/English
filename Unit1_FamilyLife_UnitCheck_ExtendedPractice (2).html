@@ -48,11 +48,12 @@ button { cursor:pointer; transition:all .15s ease; }
 .pt-box { width:16px; height:16px; border-radius:5px; border:2px solid var(--sage); flex:0 0 auto; }
 .pt-item.done .pt-box { background:var(--correct); border-color:var(--correct); }
 .pt-item.done { color:var(--jade-text); }
-@media (max-width:900px){
+/* Keep the tracker out of the lesson column on laptops and smaller desktops. */
+@media (max-width:1640px){
   #progress-tracker { position:sticky; top:0; width:100%; border-radius:0; display:flex; align-items:center;
     gap:14px; padding:10px 14px; overflow-x:auto; box-shadow:0 4px 10px rgba(0,0,0,.06); }
   #progress-tracker h4 { display:none; }
-  .pt-items { flex-direction:row; gap:14px; }
+  .pt-items { flex-direction:row; gap:14px; margin-inline:auto; }
   .pt-item { white-space:nowrap; }
 }
 
@@ -157,7 +158,7 @@ section { margin-bottom:34px; }
 
 .uc-submit-bar { position:sticky; bottom:0; background:var(--white); border-top:2px solid var(--cream-2);
   padding:8px 16px; display:flex; justify-content:space-between; align-items:center; border-radius:var(--radius-lg) var(--radius-lg) 0 0;
-  box-shadow:0 -6px 20px rgba(0,0,0,.06); margin-top:6px; flex-wrap:wrap; gap:10px; }
+  box-shadow:0 -6px 20px rgba(0,0,0,.06); margin-top:6px; flex-wrap:wrap; gap:10px; z-index:30; }
 .uc-progress-text { font-size:12.5px; color:var(--ink-2); font-weight:600; }
 .chip-btn { background:var(--jade-deep); color:#fff; border:none; border-radius:12px; padding:10px 18px;
   font-weight:700; font-size:13.5px; min-height:44px; cursor:pointer; }
@@ -285,7 +286,7 @@ header.hero p { max-width:850px; font-size:17px; line-height:1.7; }
 .reading-passage-pane { position:sticky; top:18px; min-width:0; }
 .reading-passage-label { display:flex; align-items:center; gap:8px; margin-bottom:9px; color:var(--jade-text);
   font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
-.reading-passage { margin:0 !important; padding:20px 22px !important; max-height:calc(100vh - 170px); max-height:calc(100dvh - 170px); overflow-y:auto;
+.reading-passage { margin:0 !important; padding:20px 22px !important; max-height:calc(100vh - var(--uc-submit-height, 58px) - 76px); max-height:calc(100dvh - var(--uc-submit-height, 58px) - 76px); overflow-y:auto;
   font-size:19px !important; line-height:1.9 !important; scrollbar-gutter:stable; box-shadow:0 3px 12px rgba(43,43,40,.05); }
 .reading-questions { min-width:0; }
 .reading-questions .q-block:first-child { padding-top:0; }
@@ -342,11 +343,17 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
   .step-nav .chip-btn { flex:1; }
   .uc-submit-bar { margin-left:-15px; margin-right:-15px; padding:8px 15px; }
 }
+
+/* Short landscape screens need normal document flow more than another sticky layer. */
+@media (max-width:900px) and (max-height:600px) {
+  .reading-passage-pane { position:relative; top:auto; }
+  .reading-passage { max-height:46vh; }
+}
 </style>
 </head>
 <body>
 
-<div id="progress-tracker">
+<div id="progress-tracker" aria-label="Tiến độ bài học">
   <h4>Tasks</h4>
   <div class="pt-items">
     <div class="pt-item" data-key="unitcheck"><div class="pt-box"></div>Unit Check</div>
@@ -370,10 +377,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
     <p class="sec-sub">40 câu · 10 điểm · làm hết rồi nộp 1 lần</p>
     <div id="ucHost"></div>
     <div class="uc-submit-bar">
-      <span class="uc-progress-text" id="ucProgressText">Đã làm 0/40 câu</span>
+      <span class="uc-progress-text" id="ucProgressText" aria-live="polite">Đã làm 0/40 câu</span>
       <button class="chip-btn" id="btnSubmitUC" disabled>✓ Nộp bài</button>
     </div>
-    <div class="uc-result" id="ucResult">
+    <div class="uc-result" id="ucResult" role="status" aria-live="polite" tabindex="-1">
       <div class="uc-score" id="ucScoreText">0/40</div>
       <div class="cat-badges" id="ucCatBadges"></div>
       <div class="cat-badges" id="ucLevelBadges"></div>
@@ -390,7 +397,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
     </div>
 
     <div class="mobile-pane-controls" id="mobilePaneControls">
-      <button class="mpc-btn active" data-view="split">Chia đôi</button>
+      <button class="mpc-btn active" data-view="split">Cả hai</button>
       <button class="mpc-btn" data-view="ref">Bài đọc</button>
       <button class="mpc-btn" data-view="main">Câu hỏi</button>
     </div>
@@ -594,9 +601,13 @@ function renderUCPart(title, sub, items, host, hasPassage){
     passagePane.className = 'reading-passage-pane';
     const passageLabel = document.createElement('div');
     passageLabel.className = 'reading-passage-label';
+    passageLabel.id = 'readingPassageLabel';
     passageLabel.textContent = 'Reading passage';
     const p = document.createElement('div');
     p.className = 'q-passage-ref reading-passage';
+    p.tabIndex = 0;
+    p.setAttribute('role', 'region');
+    p.setAttribute('aria-labelledby', passageLabel.id);
     p.style.marginLeft = '0'; p.style.fontStyle = 'normal'; p.style.marginBottom = '14px';
     p.style.background = 'var(--cream-2)'; p.style.padding = '12px 14px'; p.style.borderRadius = 'var(--radius)';
     p.style.borderLeft = '4px solid var(--jade-deep)'; p.style.color = 'var(--ink)';
@@ -637,9 +648,11 @@ function renderUCQuestion(q){
     ['True','False'].forEach(label=>{
       const btn = document.createElement('button');
       btn.className = 'tf-btn'; btn.textContent = label; btn.type='button';
+      btn.setAttribute('aria-pressed', 'false');
       btn.onclick = () => {
-        row.querySelectorAll('.tf-btn').forEach(b=>b.classList.remove('selected'));
+        row.querySelectorAll('.tf-btn').forEach(b=>{ b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
         btn.classList.add('selected');
+        btn.setAttribute('aria-pressed', 'true');
         const val = (label==='True');
         ucAnswered[q.id] = { value: val, isCorrect: val === q.answer };
         updateUCProgress();
@@ -653,9 +666,11 @@ function renderUCQuestion(q){
     shuffled.forEach(opt=>{
       const btn = document.createElement('button');
       btn.className = 'opt-btn'; btn.textContent = opt.text; btn.type='button';
+      btn.setAttribute('aria-pressed', 'false');
       btn.onclick = () => {
-        row.querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('selected'));
+        row.querySelectorAll('.opt-btn').forEach(b=>{ b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); });
         btn.classList.add('selected');
+        btn.setAttribute('aria-pressed', 'true');
         ucAnswered[q.id] = { value: opt.text, isCorrect: opt.isCorrect };
         updateUCProgress();
       };
@@ -669,10 +684,16 @@ function renderUCQuestion(q){
     for (let i=0;i<n;i++){
       const inp = document.createElement('input');
       inp.className = 'fill-inp'; inp.type = 'text'; inp.placeholder = 'Gõ đáp án...';
+      inp.setAttribute('aria-label', `Câu ${q.id}${n > 1 ? `, ô ${i + 1}` : ''}`);
       inp.oninput = () => {
         const vals = inputs.map(x=>x.value.trim());
-        const correct = vals.every((v,i)=> v.toLowerCase() === (q.answers[i]||'').toLowerCase()) && vals.every(v=>v.length>0);
-        ucAnswered[q.id] = { value: vals, isCorrect: correct };
+        const complete = vals.every(v=>v.length>0);
+        if (complete) {
+          const correct = vals.every((v,i)=> v.toLowerCase() === (q.answers[i]||'').toLowerCase());
+          ucAnswered[q.id] = { value: vals, isCorrect: correct };
+        } else {
+          delete ucAnswered[q.id];
+        }
         updateUCProgress();
       };
       inputs.push(inp);
@@ -721,8 +742,8 @@ function renderOrderingUC(host){
         if (ucOrderPicked.length === 5) {
           const correct = ucOrderPicked.every((k,i)=>k===ucOrderAnswer[i]);
           ucAnswered['order'] = { value: [...ucOrderPicked], isCorrect: correct };
-          updateUCProgress();
         }
+        updateUCProgress();
       };
       partsRow.appendChild(btn);
     });
@@ -751,10 +772,10 @@ function renderOrderingUC(host){
 }
 
 function updateUCProgress(){
-  const totalNeeded = allUC.length + 1; // +1 cho phần ordering (5 câu tính là 1 khối)
-  const answeredCount = Object.keys(ucAnswered).length;
-  document.getElementById('ucProgressText').textContent = `Đã làm ${answeredCount}/${totalNeeded} phần`;
-  document.getElementById('btnSubmitUC').disabled = answeredCount < totalNeeded;
+  const answeredQuestions = allUC.filter(q=>ucAnswered[q.id]).length + ucOrderPicked.length;
+  const totalQuestions = allUC.length + ucOrderParts.length;
+  document.getElementById('ucProgressText').textContent = `Đã làm ${answeredQuestions}/${totalQuestions} câu`;
+  document.getElementById('btnSubmitUC').disabled = answeredQuestions < totalQuestions;
 }
 
 function submitUC(){
@@ -819,6 +840,7 @@ function submitUC(){
   document.getElementById('btnSubmitUC').textContent = '✓ Đã nộp';
   markDone('unitcheck');
   LMS().complete({ module:'unit1_unitcheck', score: totalOk, total: totalQ, byCat, byLevel });
+  document.getElementById('ucResult').focus({preventScroll:true});
   document.getElementById('ucResult').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
@@ -829,6 +851,10 @@ function buildUC(){
   renderUCPart('A3. READING (Câu 23–35)', 'Detail comprehension · Main idea · Reference · Inference · Guess meaning from context', ucReading, host, true);
   renderOrderingUC(host);
   document.getElementById('btnSubmitUC').addEventListener('click', submitUC);
+  const submitBar = document.querySelector('.uc-submit-bar');
+  const syncSubmitHeight = () => document.documentElement.style.setProperty('--uc-submit-height', `${Math.ceil(submitBar.getBoundingClientRect().height)}px`);
+  syncSubmitHeight();
+  if ('ResizeObserver' in window) new ResizeObserver(syncSubmitHeight).observe(submitBar);
   updateUCProgress();
 }
 
@@ -1135,14 +1161,20 @@ document.getElementById('btnStepNext').addEventListener('click', ()=>{
 });
 
 document.querySelectorAll('.level-tab').forEach(tab=>{
-  tab.addEventListener('click', ()=> renderLevel(tab.dataset.level));
+  tab.setAttribute('aria-pressed', tab.classList.contains('active') ? 'true' : 'false');
+  tab.addEventListener('click', ()=>{
+    renderLevel(tab.dataset.level);
+    document.querySelectorAll('.level-tab').forEach(t=>t.setAttribute('aria-pressed', t.classList.contains('active') ? 'true' : 'false'));
+  });
 });
 
 /* Mobile pane controls */
 document.querySelectorAll('.mpc-btn').forEach(btn=>{
+  btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
   btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.mpc-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.mpc-btn').forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
     const view = btn.dataset.view;
     const ref = document.getElementById('refPane'), mainP = document.getElementById('mainPane');
     ref.classList.remove('hide-mobile'); mainP.classList.remove('hide-mobile');
