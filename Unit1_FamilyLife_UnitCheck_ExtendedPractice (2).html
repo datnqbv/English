@@ -219,6 +219,111 @@ section { margin-bottom:34px; }
 .finale p { color:var(--jade-text); font-size:14px; }
 
 footer { text-align:center; padding:30px 20px; color:var(--ink-3); font-size:12px; }
+
+/* ===== Readability & usability refresh ===== */
+:root {
+  --content-width: 1180px;
+  --reading-size: 18px;
+  --control-size: 16px;
+}
+html { scroll-behavior:smooth; }
+body { font-size:18px; line-height:1.65; }
+header.hero, main { max-width:var(--content-width); }
+header.hero { margin-top:32px; }
+header.hero h1 { font-size:clamp(30px, 3vw, 42px); line-height:1.2; }
+header.hero p { max-width:850px; font-size:17px; line-height:1.7; }
+.hero-rule { padding:14px 18px; font-size:15px; line-height:1.6; }
+.sec-title { font-size:clamp(23px, 2vw, 29px); }
+.sec-sub { font-size:15px; line-height:1.6; }
+
+.uc-part { padding:clamp(20px, 3vw, 32px); }
+.uc-part-title { font-size:20px; }
+.uc-part-sub, .task-header .task-instr { font-size:14px; }
+.task-header { align-items:flex-start; padding-bottom:10px; margin-top:24px; }
+.task-header .task-num { font-size:15px; }
+.q-block { padding:18px 0; border-bottom:1px solid var(--cream-2); }
+.q-block:last-child { border-bottom:0; }
+.q-num { width:34px; height:34px; font-size:14px; border-radius:10px; }
+.q-prompt, .pq-prompt { font-size:17px; line-height:1.7; }
+.q-passage-ref { font-size:13px; margin-left:44px; }
+.q-options, .tf-row, .fill-row { margin-left:44px; }
+.opt-btn, .tf-btn, .fill-inp, .chip-btn, .level-tab {
+  font-size:var(--control-size);
+  min-height:50px;
+}
+.opt-btn { padding:13px 16px; line-height:1.5; }
+.fill-inp { padding:11px 14px; }
+.explain-box { font-size:15px; line-height:1.65; padding:13px 15px; }
+.uc-progress-text, .step-counter { font-size:14px; }
+
+.email-subject { font-size:18px; }
+.email-meta-row, .email-from-name { font-size:14px; }
+.email-from-addr { font-size:12px; }
+.email-body, .article-body, .pref-body, .interview-text {
+  font-size:var(--reading-size);
+  line-height:1.9;
+}
+.email-body, .article-body { padding:22px 24px; }
+.article-title { font-size:21px; line-height:1.35; }
+.article-tag, .interview-speaker { font-size:12px; }
+.interview-line { padding:14px 16px; }
+.ref-msg-item { padding:12px 14px; font-size:16px; line-height:1.7; }
+.ref-msg-author { font-size:12px; }
+
+.level-tabs { gap:12px; }
+.practice-split-container { gap:22px; }
+.practice-ref-pane, .practice-main-pane { padding:22px; }
+.pref-title, .step-header { font-size:14px; letter-spacing:.05em; }
+.pref-body { max-height:68vh; padding-right:8px; scrollbar-gutter:stable; }
+.pq-item { padding:20px 0; }
+.step-nav { gap:12px; }
+
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
+.opt-btn:hover:not(:disabled), .tf-btn:hover:not(:disabled), .chip-btn:hover:not(:disabled) {
+  transform:translateY(-1px);
+}
+
+@media (min-width:901px) {
+  .practice-ref-pane { flex:1.08; position:sticky; top:18px; }
+  .practice-main-pane { flex:.92; }
+}
+
+@media (max-width:900px) {
+  body { font-size:17px; }
+  header.hero, main { padding-left:16px; padding-right:16px; }
+  header.hero { margin-top:22px; }
+  .level-tabs { overflow-x:auto; padding-bottom:4px; }
+  .level-tab { flex:0 0 auto; min-width:132px; }
+  .mobile-pane-controls { position:sticky; top:54px; z-index:20; box-shadow:0 4px 12px rgba(43,43,40,.08); }
+  .mpc-btn { min-height:42px; font-size:14px; }
+  .pref-body { max-height:none; overflow:visible; }
+}
+
+@media (max-width:600px) {
+  body { padding-bottom:30px; }
+  header.hero h1 { font-size:29px; }
+  header.hero p { font-size:16px; }
+  .uc-part, .practice-ref-pane, .practice-main-pane { padding:18px 15px; border-radius:16px; }
+  .task-header { display:block; }
+  .task-header .task-instr { display:block; margin-top:4px; }
+  .q-options, .tf-row, .fill-row, .q-passage-ref { margin-left:0; }
+  .q-head { gap:10px; }
+  .q-num { margin-right:0; }
+  .q-prompt, .pq-prompt { font-size:16px; }
+  .email-body, .article-body, .pref-body, .interview-text { font-size:17px; line-height:1.85; }
+  .email-body, .article-body { padding:18px 16px; }
+  .tf-row { gap:8px; }
+  .fill-row { align-items:stretch; }
+  .fill-inp { width:100%; min-width:0; }
+  .fill-row .chip-btn { width:100%; }
+  .step-nav { flex-wrap:wrap; }
+  .step-counter { width:100%; text-align:center; order:-1; }
+  .step-nav .chip-btn { flex:1; }
+  .uc-submit-bar { margin-left:-15px; margin-right:-15px; padding:12px 15px; }
+}
 </style>
 </head>
 <body>
