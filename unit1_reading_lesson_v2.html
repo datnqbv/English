@@ -144,7 +144,7 @@
   .guess-modal .g-feedback { display: none; margin-top: 14px; }
   .guess-modal .g-feedback.show { display: block; }
 
-  .strategy-container { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; background: var(--white); border: 3px solid var(--jade-deep); border-radius: var(--radius-lg); padding: 20px; margin-top: 20px; box-shadow: var(--shadow); }
+  .strategy-container { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
   @media (max-width: 768px) { .strategy-container { grid-template-columns: 1fr; } }
   .strategy-left { background: var(--cream); border-radius: var(--radius); padding: 16px; max-height: 460px; overflow-y: auto; border: 1.5px solid var(--paper-line); position: relative; }
   .sentence { display: block; padding: 6px 8px; border-radius: 6px; margin-bottom: 6px; font-size: 14.5px; transition: background-color .25s ease; }
@@ -155,10 +155,12 @@
   .scan-word.scan-anchor-hit { background: var(--accent); color: #fff; font-weight: 700; animation: scanFlash .5s ease; }
   @keyframes scanFlash { 0% { box-shadow: 0 0 0 0 var(--accent); } 60% { box-shadow: 0 0 0 8px rgba(0,0,0,0); } }
 
-  .strategy-right { display: flex; flex-direction: column; justify-content: space-between; }
-  .strategy-step-card { background: var(--cream-2); border-radius: var(--radius); padding: 16px; min-height: 240px; }
-  .strategy-step-title { font-size: 16px; font-weight: 800; color: var(--jade-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-  .strategy-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+  .strategy-right { display: flex; flex-direction: column; gap: 12px; }
+  .strategy-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 2px solid var(--paper-line); margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+  .strategy-step-title { font-size: 17px; font-weight: 800; color: var(--jade-dark); }
+  .strategy-top-knowledge { background: var(--cream-2); border: 1.5px solid var(--paper-line); border-radius: var(--radius); padding: 16px 18px; margin-bottom: 16px; font-size: 14.5px; line-height: 1.7; color: var(--ink); }
+  .strategy-top-knowledge:empty { display: none; }
+  .strategy-nav { display: flex; align-items: center; gap: 10px; }
   .chip-btn { background: var(--jade-deep); color: #fff; border: none; border-radius: 12px; padding: 10px 20px; font-weight: 700; font-size: 14px; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
   .chip-btn:disabled { background: var(--sage); cursor: not-allowed; }
   .chip-btn.ghost { background: transparent; color: var(--jade-dark); border: 1.5px solid var(--sage); }
@@ -212,7 +214,7 @@
 <body>
 
 <div id="hook-overlay" class="hook-overlay" onclick="dismissHook()">
-  <img src="Unit 1_Anh Hook vao dau bai.png" alt="Vy hesitating between chores and phone">
+  <img src="https://github.com/datnqbv/English/blob/main/Unit%201_Anh%20Hook%20vao%20dau%20bai.png?raw=true" alt="Vy hesitating between chores and phone">
   <div class="hook-caption">Sound familiar? / Bạn thấy quen không?</div>
 </div>
 
@@ -361,6 +363,17 @@
   <section class="card-block locked" id="sec-strategy">
     <span class="section-tag">🆕 STRATEGY REVEAL</span>
     <h2 class="section-title">Scanning + Reading for Details</h2>
+    <div class="strategy-header">
+      <div class="strategy-step-title" id="stepCardTitle">Bước 0 · Cảm giác của bạn lúc này?</div>
+      <div class="strategy-nav">
+        <button class="chip-btn ghost" id="btnStratPrev" onclick="prevStratStep()">← Back</button>
+        <span id="stratStepPos" style="font-size:13px; font-weight:700; color:var(--ink-2);">Step 1/8</span>
+        <button class="chip-btn" id="btnStratNext" onclick="nextStratStep()">Next →</button>
+      </div>
+    </div>
+
+    <div class="strategy-top-knowledge" id="stepTopKnowledge"></div>
+
     <div class="strategy-container">
       <div class="strategy-left" id="strategyPassage">
         <span class="sentence" data-id="p3-ev" id="scanPara">
@@ -374,14 +387,7 @@
         <span class="sentence" data-id="p6-main" style="display:none; border-top:1px dashed var(--paper-line-2); padding-top:10px; margin-top:10px;">"The benefits of doing housework go far beyond having a clean house."</span>
         <span class="sentence" data-id="p6-opinion" style="display:none;">"I truly believe every teenager should try it."</span>
       </div>
-      <div class="strategy-right">
-        <div class="strategy-step-card" id="stepCardBody"></div>
-        <div class="strategy-nav">
-          <button class="chip-btn ghost" id="btnStratPrev" onclick="prevStratStep()">← Back</button>
-          <span id="stratStepPos" style="font-size:13px; font-weight:700; color:var(--ink-2);">Step 1/8</span>
-          <button class="chip-btn" id="btnStratNext" onclick="nextStratStep()">Next →</button>
-        </div>
-      </div>
+      <div class="strategy-right" id="stepRightContent"></div>
     </div>
   </section>
 
@@ -753,26 +759,29 @@ function continueAnchorScan() {
 
 const stratSteps = [
   { title: "Bước 0 · Cảm giác của bạn lúc này?",
-    content: `<p style="font-size:14px; color:var(--ink-2); margin-bottom:10px;">Điều gì đang đọng lại với bạn lúc này?</p>
-      <div class="checkin-opts" id="checkinOpts">
+    knowledge: `<p style="font-size:14.5px; color:var(--ink-2); font-weight:600;">Điều gì đang đọng lại với bạn lúc này?</p>`,
+    interactive: `<div class="checkin-opts" id="checkinOpts">
         <button onclick="pickCheckin(this)">🤔 Tôi không hiểu gì</button>
         <button onclick="pickCheckin(this)">😐 Tôi đã nắm được khái niệm</button>
         <button onclick="pickCheckin(this)">😵 Tôi thấy thật rối mắt</button>
       </div>
       <div class="checkin-normalize" id="checkinNormalize">
-        Cảm giác đó hoàn toàn bình thường — khi gặp 1 bài đọc cùng lúc với nhiều câu hỏi, ai cũng
-        từng thấy không biết nên bắt đầu từ đâu.
+        Cảm giác đó hoàn toàn bình thường — khi gặp 1 bài đọc cùng lúc với nhiều câu hỏi, ai cũng từng thấy không biết nên bắt đầu từ đâu.
       </div>`,
     highlightId: null, isCheckin: true },
 
-  { title: "Bước 1 · Giới thiệu",
-    content: `<p style="font-size:14px; line-height:1.8;">Thật ra bạn đã học <strong>Scanning</strong> từ THCS rồi — đây là kỹ năng đọc quét một văn bản, để tìm đúng thông tin mà câu hỏi yêu cầu. Hôm nay chúng ta sẽ dùng lại chính kỹ năng đó, và thêm 1 bước phát triển mới: <strong>Reading for Details</strong>.</p>
-      <p style="font-size:14px; line-height:1.8; margin-top:8px;"><strong>Reading for Details</strong> thật ra cũng là kỹ thuật đọc quét, nhưng chúng ta cần dừng mắt ở đúng vị trí, nghĩa và tìm ra câu có CHỨA CHI TIẾT cụ thể (specific detail), chứ không phải câu mang ý chung chung? Bạn đã dùng kỹ năng này ở phần Benefit Hunt mà không để ý, giờ chúng ta hãy cùng xem lại nhé!</p>`,
+  { title: "Bước 1 · Giới thiệu kỹ năng",
+    knowledge: `<p style="font-size:14.5px; line-height:1.8;">Thật ra bạn đã học <strong>Scanning</strong> từ THCS rồi — đây là kỹ năng đọc quét một văn bản, để tìm đúng thông tin mà câu hỏi yêu cầu. Hôm nay chúng ta sẽ dùng lại chính kỹ năng đó, và thêm 1 bước phát triển mới: <strong>Reading for Details</strong>.</p>
+      <p style="font-size:14.5px; line-height:1.8; margin-top:8px;"><strong>Reading for Details</strong> thật ra cũng là kỹ thuật đọc quét, nhưng chúng ta cần dừng mắt ở đúng vị trí, và tìm ra câu có CHỨA CHI TIẾT cụ thể (specific detail), chứ không phải câu mang ý chung chung. Bạn đã dùng kỹ năng này ở phần Benefit Hunt mà không để ý, giờ chúng ta hãy cùng xem lại nhé!</p>`,
+    interactive: `<div style="background:var(--cream-2); border-radius:var(--radius); padding:16px; border:1.5px solid var(--paper-line);">
+        <strong style="color:var(--jade-dark); font-size:14.5px;">👈 Quan sát đoạn văn ở cột 1:</strong>
+        <p style="font-size:13.5px; color:var(--ink-2); margin-top:6px; line-height:1.6;">Đây là các câu trích từ bài đọc của Vy mà bạn vừa trả lời ở các Card trước. Bấm <strong>Next →</strong> để xem lại 3 cặp câu cụ thể!</p>
+      </div>`,
     highlightId: null },
 
   { title: "Bước 2 · Xem lại 3 cặp câu vừa chọn",
-    content: `<p style="font-size:13.5px; line-height:1.7; margin-bottom:10px;">Ở Benefit Hunt, mỗi Card bạn đều chọn giữa 2 câu — 1 câu <strong>✅ Details</strong> (chứa chi tiết cụ thể: bao gồm hành động, lý do rõ ràng) và 1 câu <strong>❌ Ý chung</strong> (chỉ nêu ý tổng thể, không có chi tiết).</p>
-      <p style="font-size:13px; color:var(--ink-2); margin-bottom:8px;">Tap (ấn vào) từng dòng để xem lại đúng cặp câu đó trong bài:</p>
+    knowledge: `<p style="font-size:14.5px; line-height:1.7;">Ở Benefit Hunt, mỗi Card bạn đều chọn giữa 2 câu — 1 câu <strong>✅ Details</strong> (chứa chi tiết cụ thể: bao gồm hành động, lý do rõ ràng) và 1 câu <strong>❌ Ý chung</strong> (chỉ nêu ý tổng thể, không có chi tiết).</p>`,
+    interactive: `<p style="font-size:13.5px; font-weight:700; color:var(--jade-dark); margin-bottom:6px;">Tap (ấn vào) từng dòng để xem lại cặp câu tương ứng ở cột 1:</p>
       <table class="recap-table" id="recapTable">
         <tr><th>Card</th><th>✅ Details</th><th>❌ Ý chung</th></tr>
         <tr class="active-row" onclick="highlightRecapPair('p3', this)"><td>1</td><td>Last week, I cooked dinner...</td><td>Nobody teaches you...</td></tr>
@@ -782,58 +791,72 @@ const stratSteps = [
     highlightId: 'p3-ev' },
 
   { title: "Bước 3 · Rút ra Quy luật của Reading for Details",
-    content: `<div style="background:var(--warning-bg); border-left:4px solid var(--accent); padding:12px; border-radius:6px; font-size:14px; line-height:1.7;">
-      <strong>💡 RULE:</strong><br>
-      <strong>Reading for Details</strong> là: đọc quét tài liệu để tìm đúng chi tiết được hỏi, và
-      DỪNG LẠI ở những câu chứa chi tiết đó.<br><br>
-      Cách nhận biết: câu chứa <strong>✅ Details</strong> luôn có hành động hoặc lý do cụ thể. Câu
-      <strong>❌ Ý chung</strong> chỉ dẫn ý, không có chi tiết thật, ở bước đọc lấy specific information (Details), chúng ta cần bỏ qua những câu ý chung thế này.</div>`,
+    knowledge: `<div style="background:var(--warning-bg); border-left:4px solid var(--accent); padding:14px; border-radius:var(--radius-sm); font-size:14.5px; line-height:1.7;">
+      <strong style="font-size:16px; color:var(--accent-text);">💡 RULE: READING FOR DETAILS</strong><br>
+      <strong>Reading for Details</strong> là: đọc quét tài liệu để tìm đúng chi tiết được hỏi, và DỪNG LẠI ở những câu chứa chi tiết đó.<br><br>
+      <strong>Cách nhận biết:</strong> Câu chứa <strong>✅ Details</strong> luôn có hành động hoặc lý do cụ thể. Câu <strong>❌ Ý chung</strong> chỉ dẫn ý, không có chi tiết thật. Ở bước đọc lấy specific information (Details), chúng ta cần bỏ qua những câu ý chung thế này.
+    </div>`,
+    interactive: `<div style="background:var(--jade-pale); border:1.5px solid var(--jade-soft); border-radius:var(--radius); padding:16px;">
+      <strong style="color:var(--jade-dark); font-size:14.5px;">👈 Quan sát các câu được tô xanh ở cột 1:</strong>
+      <p style="font-size:13.5px; color:var(--ink-2); margin-top:8px; line-height:1.6;">Cả 3 câu <strong>✅ Details</strong> đều chứa hành động và thời gian cụ thể (<em>Last week, cooked dinner, Every Monday, take out rubbish, Yesterday, washed dishes...</em>).</p>
+    </div>`,
     highlightId: 'all-ev' },
 
   { title: "Bước 4 · Scanning bằng Anchor Word",
-    content: `<p style="font-size:13.5px; line-height:1.8;">Để Scanning nhanh, bạn cần 1 "điểm neo" gọi là <strong>anchor word</strong> — đây là từ khóa giúp mắt biết nên dừng ở đâu. Anchor word có 3 dạng:</p>
-    <ol style="padding-left:18px; font-size:13.5px; line-height:1.8; margin-bottom:14px;">
+    knowledge: `<p style="font-size:14.5px; line-height:1.8; margin-bottom:10px;">Để Scanning nhanh, bạn cần 1 "điểm neo" gọi là <strong>anchor word</strong> — đây là từ khóa giúp mắt biết nên dừng ở đâu. Anchor word có 3 dạng:</p>
+    <ol style="padding-left:20px; font-size:14px; line-height:1.8; margin-bottom:12px; color:var(--ink);">
       <li><strong>Khớp y nguyên hoặc gần y nguyên</strong> — có chữ giống hoặc cùng gốc với đề bài (VD: Câu hỏi hỏi "cook" và "clean", câu trong bài là "cooked" và "cleaned").</li>
       <li><strong>Là từ đồng nghĩa hoặc diễn giải lại</strong> — của đề bài, với ý tương đương. (VD thật trong Practice: câu hỏi <em>"What does the phrase 'there is no one else to do it instead' suggest?"</em> — đáp án đúng diễn giải lại thành <em>"Vy is the only person responsible for that task"</em>. "The only person responsible" và "no one else to do it instead" là 2 cách nói cùng 1 ý.)</li>
       <li><strong>Là từ khái quát, còn bài đọc cho các chi tiết cụ thể minh hoạ</strong> — câu hỏi dùng 1 từ chung, bài đọc kể ra hành động/ví dụ cụ thể thuộc về từ đó. (VD thật trong Practice: câu hỏi hỏi về <em>"practical skills"</em> — bài đọc không lặp lại chữ này, mà kể ra 2 chi tiết cụ thể thuộc phạm trù đó: <em>"cooked dinner"</em>, <em>"cleaned my room"</em>.)</li>
     </ol>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
-      <div style="background:var(--white); border:1.5px solid var(--paper-line-2); border-radius:10px; padding:8px 10px; font-size:12px; line-height:1.55;">
-        <strong style="color:var(--jade-dark);">Quy trình:</strong><br>quét nhanh tìm anchor word → dừng lại → áp <strong>Rule ở Bước 3</strong> để kiểm tra câu đó có phải Details thật không.
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:10px;">
+      <div style="background:var(--white); border:1.5px solid var(--paper-line-2); border-radius:10px; padding:10px 12px; font-size:13px; line-height:1.55;">
+        <strong style="color:var(--jade-dark);">📋 Quy trình:</strong><br>Quét nhanh tìm anchor word → dừng lại → áp <strong>Rule ở Bước 3</strong> để kiểm tra câu đó có phải Details thật không.
       </div>
-      <div style="background:var(--wrong-bg); border:1.5px solid var(--wrong); border-radius:10px; padding:8px 10px; font-size:12px; line-height:1.55; color:var(--wrong);">
+      <div style="background:var(--wrong-bg); border:1.5px solid var(--wrong); border-radius:10px; padding:10px 12px; font-size:13px; line-height:1.55; color:var(--wrong);">
         ⚠️ <strong>Đáp án nhiễu (distractor)</strong> thường chứa chữ GIỐNG bài nhưng SAI ý — đọc kỹ cả câu, đừng chọn ngay khi thấy chữ quen.
       </div>
-    </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; align-items:start;">
-      <button class="chip-btn" style="width:100%; justify-content:center; height:44px; font-size:12.5px; padding:8px 6px;" onclick="runAnchorWordScan()">▶ Xem minh hoạ quét</button>
-      <div id="scanExplainBox" style="background:var(--white); border:2px solid var(--accent); border-radius:10px; padding:8px 10px; min-height:44px; display:flex; flex-direction:column; justify-content:center;">
-        <div id="scanExplainText" style="font-size:11.5px; line-height:1.5; color:var(--ink-3);">Bấm nút để xem giải thích từng anchor word tại đây.</div>
-        <button class="chip-btn" id="scanContinueBtn" style="margin-top:8px; display:none; font-size:12px; padding:6px 10px;" onclick="continueAnchorScan()">Quét tiếp →</button>
+    </div>`,
+    interactive: `<div style="display:flex; flex-direction:column; gap:12px;">
+      <button class="chip-btn" style="width:100%; justify-content:center; height:46px; font-size:14px; font-weight:700;" onclick="runAnchorWordScan()">▶ Xem minh hoạ quét</button>
+      <div id="scanExplainBox" style="background:var(--white); border:2.5px solid var(--accent); border-radius:var(--radius); padding:16px; min-height:80px; display:flex; flex-direction:column; justify-content:center; box-shadow:var(--shadow);">
+        <div id="scanExplainText" style="font-size:13.5px; line-height:1.6; color:var(--ink-2);">Bấm nút để xem giải thích từng anchor word tại đây.</div>
+        <button class="chip-btn" id="scanContinueBtn" style="margin-top:12px; display:none; font-size:13.5px; padding:8px 16px; background:var(--jade-deep); align-self:flex-start;" onclick="continueAnchorScan()">Quét tiếp →</button>
       </div>
     </div>`,
     highlightId: 'scan' },
 
   { title: "Bước 5 · Áp dụng thử",
-    content: `<p style="font-size:13.5px; line-height:1.8; margin-bottom:8px;">Đọc lại đoạn (6). Giả sử câu hỏi là: <em>"What does Vy say the benefits of housework go beyond?"</em> Anchor word cần tìm là <strong>"clean house"</strong> (từ khoá xuất hiện y nguyên trong câu hỏi và trong bài).</p>
-    <p style="font-size:13.5px; line-height:1.7; font-weight:700; color:var(--jade-dark); margin-bottom:8px;">Sau khi Scanning tìm ra câu chứa anchor word, áp Rule ở Bước 3: câu nào dưới đây là <strong>✅ Details</strong> thật (trả lời trực tiếp, cụ thể cho câu hỏi), câu nào chỉ là <strong>❌ Ý chung</strong> (không chứa anchor word, không trả lời được câu hỏi)?</p>
-    <button class="picker-btn" style="padding:8px 12px; font-size:13px;" onclick="checkQuickCheck(true, this)">"The benefits go far beyond having a clean house."</button>
-    <button class="picker-btn" style="padding:8px 12px; font-size:13px; margin-top:6px;" onclick="checkQuickCheck(false, this)">"I truly believe every teenager should try it."</button>
-    <div id="qc-feedback" style="display:none; font-size:12.5px; color:var(--correct); font-weight:700; margin-top:8px;">✓ Đúng rồi! Câu "The benefits go far beyond having a clean house" chứa đúng anchor word "clean house" và trả lời trực tiếp câu hỏi — đây là Details thật. Câu "I truly believe every teenager should try it" không chứa anchor word và không trả lời câu hỏi — đó là ý kiến cá nhân thêm vào, không phải Details.</div>
-    <div id="qc-feedback-wrong" style="display:none; font-size:12.5px; color:var(--wrong); font-weight:700; margin-top:8px;">✗ Chưa đúng. Câu này không chứa anchor word "clean house" và không trả lời trực tiếp câu hỏi "go beyond WHAT?" — đây chỉ là ý kiến cá nhân của Vy, không phải Details. Bấm lại để chọn câu đúng.</div>`,
+    knowledge: `<p style="font-size:14.5px; line-height:1.8; margin-bottom:4px;">Đọc lại đoạn (6). Giả sử câu hỏi là: <em>"What does Vy say the benefits of housework go beyond?"</em> Anchor word cần tìm là <strong>"clean house"</strong> (từ khoá xuất hiện y nguyên trong câu hỏi và trong bài).</p>`,
+    interactive: `<p style="font-size:14px; font-weight:700; color:var(--jade-dark); margin-bottom:10px;">Câu nào dưới đây là kết luận chính (câu khái quát ý cả đoạn), không phải chỉ là ý kiến cá nhân thêm vào?</p>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <button class="picker-btn" style="padding:12px 16px; font-size:14px; line-height:1.5;" onclick="checkQuickCheck(true, this)">"The benefits go far beyond having a clean house."</button>
+      <button class="picker-btn" style="padding:12px 16px; font-size:14px; line-height:1.5;" onclick="checkQuickCheck(false, this)">"I truly believe every teenager should try it."</button>
+      <div id="qc-feedback" style="display:none; font-size:13.5px; line-height:1.6; color:var(--jade-dark); background:var(--jade-pale); border-left:4px solid var(--jade-deep); padding:12px 14px; border-radius:0 var(--radius-sm) var(--radius-sm) 0; font-weight:600; margin-top:4px;">
+        ✓ Đúng rồi! Câu "The benefits go far beyond having a clean house" khái quát toàn bộ ý của đoạn (6) — đây là kết luận chính. Câu "I truly believe every teenager should try it" chỉ là ý kiến riêng của Vy thêm vào sau kết luận, không mang thông tin khái quát mới.
+      </div>
+      <div id="qc-feedback-wrong" style="display:none; font-size:13.5px; line-height:1.6; color:var(--wrong); background:var(--wrong-bg); border-left:4px solid var(--wrong); padding:12px 14px; border-radius:0 var(--radius-sm) var(--radius-sm) 0; font-weight:600; margin-top:4px;">
+        ✗ Chưa đúng. Câu "I truly believe every teenager should try it" chỉ là ý kiến riêng của Vy thêm vào sau kết luận, không mang thông tin khái quát mới. Bấm lại để chọn câu đúng.
+      </div>
+    </div>`,
     highlightId: 'p6' },
 
   { title: "Bước 6 · Tổng kết",
-    content: `<div class="summary-card">
+    knowledge: ``,
+    interactive: `<div class="summary-card" style="margin-top:0;">
       <h4>📌 Quick Recap</h4>
-      <p style="font-size:13px; margin-bottom:10px;"><strong>1. Scanning</strong><br>Tìm anchor word (khớp y nguyên hoặc đồng nghĩa) → lướt mắt thật nhanh, chỉ dừng khi gặp anchor word.</p>
-      <p style="font-size:13px;"><strong>2. Reading for Details</strong><br>Đọc kỹ câu vừa dừng — có chi tiết cụ thể (hành động/lý do) = ✅ Details · chỉ có ý chung = ❌ bỏ qua.</p>
+      <p style="font-size:13.5px; margin-bottom:10px;"><strong>1. Scanning</strong><br>Tìm anchor word (khớp y nguyên hoặc đồng nghĩa) → lướt mắt thật nhanh, chỉ dừng khi gặp anchor word.</p>
+      <p style="font-size:13.5px;"><strong>2. Reading for Details</strong><br>Đọc kỹ câu vừa dừng — có chi tiết cụ thể (hành động/lý do) = ✅ Details · chỉ có ý chung = ❌ bỏ qua.</p>
     </div>
-    <button class="chip-btn" style="width:100%; margin-top:12px; justify-content:center;" onclick="finishStrategy()">Đã hiểu — tiếp tục ✓</button>`,
+    <button class="chip-btn" style="width:100%; margin-top:14px; justify-content:center;" onclick="finishStrategy()">Đã hiểu — tiếp tục ✓</button>`,
     highlightId: null },
 
   { title: "Bước 7 · Sẵn sàng vào Luyện tập",
-    content: `<p style="font-size:14px; line-height:1.8;">Ở phần Luyện tập, bạn sẽ dùng đúng 2 kỹ năng này: <strong>Scanning</strong> để tìm anchor word trong mỗi câu hỏi, rồi <strong>Reading for Details</strong> để chọn đúng câu chứa chi tiết — để ý mục "Prove it" và chọn câu có chi tiết cụ thể.</p>`,
+    knowledge: `<p style="font-size:14.5px; line-height:1.8;">Ở phần Luyện tập, bạn sẽ dùng đúng 2 kỹ năng này: <strong>Scanning</strong> để tìm anchor word trong mỗi câu hỏi, rồi <strong>Reading for Details</strong> để chọn đúng câu chứa chi tiết — để ý mục "Prove it" và chọn câu có chi tiết cụ thể.</p>`,
+    interactive: `<div style="text-align:center; padding:16px; background:var(--jade-pale); border-radius:var(--radius); border:1.5px solid var(--jade-soft);">
+      <p style="font-size:15px; font-weight:700; color:var(--jade-dark); margin-bottom:12px;">Bạn đã sẵn sàng thực hành kỹ năng Scanning &amp; Reading for Details chưa?</p>
+      <button class="chip-btn" style="padding:12px 24px; font-size:15px;" onclick="finishStrategy()">Đến phần Vocabulary &amp; Conclusion →</button>
+    </div>`,
     highlightId: null }
 ];
 
@@ -842,10 +865,22 @@ let checkinPicked = false;
 function renderStrategyStep(idx) {
   currentStratStep = idx;
   const step = stratSteps[idx];
-  document.getElementById('stepCardBody').innerHTML = `<div class="strategy-step-title">${step.title}</div><div>${step.content}</div>`;
+
+  document.getElementById('stepCardTitle').textContent = step.title;
   document.getElementById('stratStepPos').textContent = `Step ${idx + 1}/${stratSteps.length}`;
   document.getElementById('btnStratPrev').disabled = idx === 0;
   document.getElementById('btnStratNext').disabled = idx === stratSteps.length - 1 || (step.isCheckin && !checkinPicked);
+
+  const topEl = document.getElementById('stepTopKnowledge');
+  if (step.knowledge && step.knowledge.trim() !== '') {
+    topEl.innerHTML = step.knowledge;
+    topEl.style.display = 'block';
+  } else {
+    topEl.innerHTML = '';
+    topEl.style.display = 'none';
+  }
+
+  document.getElementById('stepRightContent').innerHTML = step.interactive || '';
 
   document.querySelectorAll('.sentence').forEach(el => { el.classList.remove('sr-good','sr-bad'); });
   if (step.highlightId === 'p3-ev') {
