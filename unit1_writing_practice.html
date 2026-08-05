@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 — Writing: Phần 2 — Practice</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<script type="application/json" id="athena-context">
+{
+  "title": "Unit 1 - Writing - Part 2: Practice (Easy, Medium, Difficult) - Informal Email: Family Routines",
+  "subject": "Tiếng Anh",
+  "grade": "10",
+  "objectives": [
+    "Nhận diện đúng 5 phần của Informal Email (Greeting/Opening/Body/Closing/Sign-off)",
+    "Sửa lỗi chia động từ hiện tại đơn cho routine",
+    "Viết đoạn Body theo công thức What + When + Why, phân biệt weekday (hiện tại đơn) và weekend (hiện tại tiếp diễn) ở mức Difficult"
+  ],
+  "structure": [
+    { "id": "level-easy", "title": "Practice - Easy" },
+    { "id": "level-medium", "title": "Practice - Medium" },
+    { "id": "level-difficult", "title": "Practice - Difficult" }
+  ],
+  "athenaGuidance": "File Luyện tập (Part 2) nối tiếp Part 1 Theory. Easy: email của Minh gửi Lan (2 routine: xem phim tối thứ Sáu, dắt chó đi dạo mỗi sáng). Medium: email sạch của Lan gửi Minh (3 routine) + email lỗi ngữ pháp của Nam (3 lỗi chia động từ). Difficult: email sạch của Nam so sánh weekday (hiện tại đơn) và weekend (hiện tại tiếp diễn) + email lỗi của Lan (4 lỗi trộn thì). Không có đáp án cần giữ bí mật tuyệt đối vì đây là bài luyện tập tự chấm/tự đối chiếu."
+}
+</script>
+
+<style>
+:root{
+  --cream:#FAF7F0; --cream-2:#F0EADD; --cream-3:#E7DECC;
+  --paper-line:#E5DECF; --paper-line-2:#D6CCB6;
+  --ink:#1A1A1A; --ink-2:#514C44; --ink-3:#7C756A; --ink-faint:#ABA396;
+  --jade:#3CA57A; --jade-deep:#2A8167; --jade-dark:#14432F;
+  --jade-text:#1B5E48; --jade-soft:#A9D0BE; --jade-pale:#DCEAE1;
+  --sage:#A8C9B8; --sage-deep:#7CA792; --sage-text:#46685A; --sage-pale:#E1ECE4;
+  --accent:#E8A24A; --accent-deep:#CE8A33; --accent-text:#8A551A; --accent-pale:#F7E7CD;
+  --correct:#2A8167; --correct-bg:#DCEAE1;
+  --wrong:#A84B2C;   --wrong-bg:#F3E2D6;
+  --warning:#C58A2E; --warning-bg:#F5E7CB;
+  --info:#4E7F92;    --info-bg:#DCE7EB;
+  --white:#FFFFFF;
+  --radius-lg:22px; --radius:14px; --radius-sm:10px;
+  --shadow:0 10px 30px rgba(43,43,40,0.10);
+}
+*{box-sizing:border-box;}
+button:focus-visible,[role="button"]:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
+  outline:3px solid var(--accent-deep); outline-offset:2px;
+}
+body{margin:0;font-family:'Be Vietnam Pro',sans-serif;font-size:17px;color:var(--ink);
+  background:var(--cream);line-height:1.6;-webkit-text-size-adjust:100%;}
+h1,h2,h3,.display{font-family:'Be Vietnam Pro',sans-serif;font-weight:800;color:var(--jade-dark);margin:0;}
+button{font-family:inherit;cursor:pointer;}
+p{margin:0 0 12px;} p:last-child{margin-bottom:0;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 60px;}
+
+/* Top bar (KHÔNG hero — file Practice) */
+.topbar{background:var(--jade-deep);color:#fff;padding:18px 18px 14px;text-align:center;}
+.topbar h1{color:#fff;font-size:19px;margin:0 0 4px;}
+.topbar .sub{font-size:13px;color:#fff;opacity:.92;font-weight:600;}
+
+/* Mobile pane mode switcher */
+.mobile-pane-controls{display:none;margin:14px 0;align-items:center;gap:6px;flex-wrap:nowrap;
+  background:var(--cream-2);padding:6px 10px;border-radius:var(--radius);width:100%;
+  overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:85;}
+.mobile-pane-controls::-webkit-scrollbar{display:none;}
+.mpc-title{font-size:11.5px;font-weight:700;color:var(--jade-dark);flex:0 0 auto;white-space:nowrap;margin-right:2px;}
+.mpc-btn{background:var(--white);border:1.5px solid var(--sage);border-radius:999px;padding:6px 10px;
+  font-size:11.5px;font-weight:600;color:var(--ink-2);min-height:34px;flex:1 1 0;white-space:nowrap;text-align:center;}
+.mpc-btn.active{background:var(--jade-deep);color:#fff;border-color:var(--jade-deep);}
+
+/* Split container */
+.practice-split-container{display:flex;flex-direction:column;gap:16px;padding-top:16px;}
+.practice-ref-pane{background:var(--white);border:2px solid var(--cream-2);border-radius:var(--radius-lg);
+  padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;}
+.pref-head{display:flex;align-items:center;border-bottom:1.5px solid var(--cream-2);padding-bottom:8px;}
+.pref-tabs{display:flex;gap:8px;width:100%;}
+.pref-tab{background:var(--cream-2);border:1.5px solid transparent;border-radius:999px;padding:7px 14px;
+  font-size:12.5px;font-weight:700;color:var(--ink-2);min-height:38px;flex:1;text-align:center;white-space:nowrap;font-family:inherit;}
+.pref-tab.active{background:var(--jade-deep);color:#fff;border-color:var(--jade-deep);}
+.pref-body{flex:1;overflow-y:auto;max-height:480px;}
+.pref-view{display:none;}
+.pref-view.active{display:block;animation:fadein .25s;}
+@keyframes fadein{ from{opacity:0;transform:translateY(6px);} to{opacity:1;transform:none;} }
+
+.practice-questions-pane{min-width:0;}
+
+@media (min-width:992px){
+  .practice-split-container{display:grid;grid-template-columns:minmax(320px,1fr) minmax(420px,1.25fr);
+    gap:20px;align-items:start;}
+  .practice-ref-pane{position:sticky;top:16px;max-height:calc(100vh - 32px);}
+}
+@media (max-width:991px){
+  .mobile-pane-controls{display:flex;}
+  .practice-ref-pane{position:sticky;top:48px;z-index:80;max-height:38vh;
+    box-shadow:0 8px 24px rgba(42,129,103,.15);border-bottom:3px solid var(--jade-deep);}
+  .pref-body{max-height:calc(38vh - 55px);overflow-y:auto;}
+  .practice-split-container.mode-split .practice-ref-pane{max-height:38vh;}
+  .practice-split-container.mode-split .pref-body{max-height:calc(38vh - 55px);}
+  .practice-split-container.mode-ref .practice-ref-pane{max-height:66vh;}
+  .practice-split-container.mode-ref .pref-body{max-height:calc(66vh - 55px);}
+  .practice-split-container.mode-ref .practice-questions-pane{display:none;}
+  .practice-split-container.mode-q .practice-ref-pane{display:none;}
+}
+
+/* Mail app inside reference pane */
+.mailapp{border-radius:14px;overflow:hidden;border:1px solid var(--paper-line);background:var(--white);}
+.mailapp-head{background:var(--cream-2);padding:10px 13px;border-bottom:1px solid var(--paper-line);}
+.mailapp-row{display:flex;gap:8px;font-size:11.5px;margin-bottom:2px;}
+.mailapp-row:last-child{margin-bottom:0;}
+.mailapp-label{font-weight:800;color:var(--ink-3);min-width:50px;}
+.mailapp-subject-text{font-weight:800;color:var(--jade-dark);}
+.mailapp-body{padding:13px;font-size:13.5px;line-height:1.75;color:var(--ink);}
+.mailapp-body p{margin:0 0 9px;}
+.mailapp-body p:last-child{margin-bottom:0;}
+.mailapp-body .sig{color:var(--ink-2);font-style:italic;}
+.mailapp-toolbar{padding:8px 12px;border-top:1px solid var(--cream-2);background:var(--cream-2);
+  display:flex;align-items:center;gap:8px;}
+.mailapp-send{font-size:11px;font-weight:800;color:var(--jade-text);letter-spacing:.03em;margin-right:2px;}
+.mailapp-icons{display:flex;gap:8px;font-size:12px;opacity:.7;}
+
+/* Level tabs */
+.level-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:6px;flex-wrap:wrap;}
+.level-tab{background:var(--white);border:1.5px solid var(--paper-line-2);border-radius:999px;
+  padding:9px 18px;font-weight:700;font-size:13.5px;color:var(--ink-2);min-height:42px;font-family:inherit;}
+.level-tab.active{background:var(--jade-deep);color:#fff;border-color:var(--jade-deep);}
+
+.level-intro{font-size:13.5px;color:var(--ink-2);font-style:italic;text-align:center;margin:10px 0 6px;}
+
+.card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:20px;margin:14px 0;}
+.card h3{font-size:16px;margin:0 0 8px;color:var(--jade-text);}
+.activity-label{font-size:12px;font-weight:800;color:var(--jade-text);text-transform:uppercase;letter-spacing:.03em;
+  display:block;margin-bottom:6px;}
+
+/* Bilingual instruction block */
+.desc-en{font-size:14.5px;color:var(--ink);margin-bottom:4px;}
+.desc-vi{font-size:12.5px;color:var(--ink-3);font-style:italic;margin-bottom:14px;}
+
+/* MCQ */
+.q-card{background:var(--cream-2);border-radius:var(--radius);padding:15px;margin-bottom:12px;}
+.q-num{font-size:11.5px;font-weight:800;color:var(--ink-3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.02em;}
+.q-quote{margin-bottom:12px;background:var(--white);border-radius:var(--radius-sm);padding:10px 12px;line-height:1.55;}
+.qq-en{font-style:italic;font-weight:600;color:var(--ink);font-size:14px;}
+.qq-vi{font-size:12px;color:var(--ink-3);margin-top:4px;font-style:italic;}
+.q-opts{display:flex;flex-direction:column;gap:8px;}
+.q-opt{background:var(--white);border:1.5px solid var(--paper-line-2);border-radius:var(--radius-sm);
+  padding:10px 14px;font-size:13.5px;text-align:left;min-height:44px;font-family:inherit;color:var(--ink);}
+.q-opt:disabled{cursor:default;}
+.q-opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--jade-text);font-weight:700;}
+.q-opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong);}
+.q-fb{margin-top:10px;border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;display:none;line-height:1.55;}
+.q-fb.show{display:block;}
+.q-fb.hint{background:var(--warning-bg);color:var(--accent-text);}
+.q-fb.ok{background:var(--correct-bg);color:var(--jade-text);}
+
+/* Ordering */
+.ord-wrap{background:var(--cream-2);border-radius:var(--radius);padding:15px;}
+.ord-bank{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.ord-tile{background:var(--white);border:1.5px solid var(--paper-line-2);border-radius:var(--radius-sm);
+  padding:9px 13px;text-align:left;min-height:44px;font-family:inherit;color:var(--ink);line-height:1.4;}
+.ord-tile.placed{opacity:.32;pointer-events:none;}
+.ot-en{font-size:13px;font-weight:500;}
+.ot-vi{font-size:11px;color:var(--ink-3);margin-top:3px;font-style:italic;}
+.ord-answer{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;min-height:16px;}
+.ord-ans-row{display:flex;gap:10px;align-items:flex-start;background:var(--white);border-radius:var(--radius-sm);
+  padding:9px 12px;border:1.5px solid var(--paper-line-2);line-height:1.4;}
+.ord-ans-row.correct{border-color:var(--correct);background:var(--correct-bg);}
+.ord-ans-row.wrong{border-color:var(--wrong);background:var(--wrong-bg);}
+.ord-num{font-weight:800;color:var(--jade-deep);flex:0 0 auto;}
+.ord-controls{display:flex;gap:10px;flex-wrap:wrap;}
+
+/* Buttons */
+.an-btn{background:var(--jade-deep);color:#fff;border:none;border-radius:var(--radius-sm);
+  padding:10px 18px;font-weight:700;font-size:13px;min-height:44px;font-family:inherit;}
+.an-btn.ghost{background:transparent;color:var(--jade-dark);border:1.5px solid var(--sage);}
+.reveal-btn{background:transparent;color:var(--accent-text);border:1.5px dashed var(--accent);
+  border-radius:var(--radius-sm);padding:9px 16px;min-height:42px;font-weight:700;font-size:13px;}
+.reveal-btn:hover{background:var(--accent-pale);}
+
+/* Tables */
+.fill-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px;}
+.fill-table th,.fill-table td{border:1px solid var(--paper-line-2);padding:8px 9px;text-align:left;vertical-align:top;}
+.fill-table th{background:var(--cream-2);color:var(--jade-dark);font-weight:700;font-size:11.5px;}
+.fill-table td{color:var(--ink-2);}
+.fill-table input,.fill-table textarea{width:100%;border:none;border-bottom:1.5px dashed var(--sage);
+  background:transparent;font-family:inherit;font-size:12.5px;padding:3px 0;color:var(--ink);resize:vertical;}
+.fill-table input:focus,.fill-table textarea:focus{outline:none;border-bottom-color:var(--jade-deep);}
+.given-cell{font-style:italic;color:var(--jade-text);font-weight:600;}
+
+.draft-box{background:var(--cream-2);border-radius:var(--radius-sm);padding:11px 13px;margin:10px 0;font-style:italic;font-size:13px;color:var(--ink-2);}
+
+.write-area{width:100%;min-height:110px;border:2px solid var(--paper-line);border-radius:var(--radius);
+  padding:12px 14px;font-size:14px;font-family:inherit;resize:vertical;margin:10px 0 8px;color:var(--ink);}
+.write-area:focus{outline:none;border-color:var(--jade-deep);}
+
+/* Self-check */
+.self-check{margin-top:14px;}
+.sc-title{font-size:12px;font-weight:800;color:var(--jade-text);margin-bottom:8px;text-transform:uppercase;letter-spacing:.02em;}
+.sc-item{display:flex;align-items:flex-start;gap:10px;background:var(--white);border:1.5px solid var(--paper-line-2);
+  border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:8px;cursor:pointer;font-size:13px;color:var(--ink-2);min-height:44px;}
+.sc-item.checked{border-color:var(--jade-deep);background:var(--jade-pale);color:var(--jade-text);font-weight:600;}
+.sc-box{width:19px;height:19px;border-radius:6px;border:2px solid var(--sage);flex:0 0 auto;position:relative;margin-top:1px;}
+.sc-item.checked .sc-box{background:var(--jade-deep);border-color:var(--jade-deep);}
+.sc-item.checked .sc-box::after{content:'';position:absolute;left:2px;top:-1px;width:4px;height:8px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(40deg);}
+
+.next-level-wrap{text-align:center;margin:20px 0 6px;}
+.next-level-btn{background:var(--jade-deep);color:#fff;border:none;border-radius:var(--radius-sm);
+  padding:12px 24px;font-weight:700;font-size:14px;min-height:46px;}
+.finale{text-align:center;margin:18px 0;padding:24px 18px;background:var(--jade-deep);border-radius:var(--radius-lg);color:#fff;}
+.finale h3{color:#fff;font-size:17px;margin-bottom:6px;}
+.finale p{color:#fff;opacity:.9;font-size:13.5px;}
+
+/* Popup */
+.popup-overlay{position:fixed;inset:0;z-index:600;display:none;align-items:flex-end;justify-content:center;background:rgba(20,20,18,.42);}
+.popup-overlay.open{display:flex;}
+.popup-sheet{background:#fff;border-radius:20px 20px 0 0;padding:22px 20px 20px;width:100%;
+  max-width:480px;max-height:74vh;overflow-y:auto;box-shadow:0 -10px 30px rgba(0,0,0,.18);animation:sheetUp .25s ease;}
+@keyframes sheetUp{ from{transform:translateY(24px);opacity:0;} to{transform:none;opacity:1;} }
+@media (min-width:521px){ .popup-overlay{align-items:center;} .popup-sheet{border-radius:20px;} }
+.popup-sheet p{font-size:14px;color:var(--ink-2);}
+.popup-close{display:block;margin:16px auto 0;background:var(--jade-deep);color:#fff;border:none;
+  border-radius:var(--radius-sm);padding:10px 22px;font-weight:700;font-size:13.5px;min-height:44px;}
+
+footer{text-align:center;padding:26px 18px 46px;color:var(--ink-3);font-size:12.5px;}
+
+@media (max-width:480px){
+  .card{padding:16px 14px;border-radius:var(--radius);}
+  body{font-size:15.5px;}
+  .fill-table{font-size:11.5px;}
+  .fill-table th,.fill-table td{padding:6px 7px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Writing — Phần 2: Practice</h1>
+  <div class="sub">Unit 1 · Family Life | Informal Email: Family Routines</div>
+</div>
+
+<div class="wrap">
+
+  <div class="mobile-pane-controls">
+    <span class="mpc-title">Chế độ xem:</span>
+    <button class="mpc-btn active" data-mode="split" onclick="setMobileViewMode('split')">⚖️ Chia đôi</button>
+    <button class="mpc-btn" data-mode="ref" onclick="setMobileViewMode('ref')">✉️ Email</button>
+    <button class="mpc-btn" data-mode="q" onclick="setMobileViewMode('q')">📝 Câu hỏi</button>
+  </div>
+
+  <div class="practice-split-container mode-split" id="practiceSplit">
+
+    <!-- LEFT / TOP: Reference email pane -->
+    <div class="practice-ref-pane" id="practiceRefPane">
+      <div class="pref-head"><div class="pref-tabs" id="prefTabs"></div></div>
+      <div class="pref-body" id="prefBody"></div>
+    </div>
+
+    <!-- RIGHT / BOTTOM: Questions pane -->
+    <div class="practice-questions-pane">
+      <div class="level-tabs" id="levelTabs"></div>
+      <div id="questionsHost">
+
+        <!-- ============ EASY ============ -->
+        <div class="q-level-section" id="q_level-easy" style="display:block;">
+          <p class="level-intro">Goal: write short sentences that make sense (What + When), a reason (Why) is not required yet.<br>
+          <span style="opacity:.85;">Mục tiêu: viết được những câu ngắn, trả lời được các câu hỏi What và When, với những câu phức tạp yêu cầu đưa lý do (trả lời câu hỏi Why) có thể tạm bỏ qua ở giai đoạn này.</span></p>
+
+          <div class="card">
+            <span class="activity-label">Structure labelling</span>
+            <div class="desc-en">Read Minh's email on the left. Which part of the email does each sentence/phrase below belong to? Choose the best answer.</div>
+            <div class="desc-vi">Đọc email của Minh bên trái. Mỗi câu/đoạn trích dưới đây thuộc phần nào của email? Chọn đáp án đúng nhất.</div>
+            <div id="easySL"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Sentence Ordering</span>
+            <div class="desc-en">The parts below belong to a DIFFERENT email (from Nam), but they are mixed up. Tap them in the correct order — just follow the 5-part formula you've learned (Greeting always first, Sign-off always last).</div>
+            <div class="desc-vi">Các phần dưới đây thuộc một email KHÁC (của Nam) nhưng đang bị xáo trộn. Chạm theo đúng thứ tự — chỉ cần bám theo công thức 5 phần đã học (Greeting luôn đầu, Sign-off luôn cuối).</div>
+            <div id="easyOrd"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Read &amp; Extract</span>
+            <div class="desc-en">Read Minh's email again. Based on the signal words (First/Second, always/every...), complete the table below. Routine 1 has already been filled in as an example.</div>
+            <div class="desc-vi">Đọc lại email của Minh. Dựa vào các signal words (First/Second, always/every...), hoàn thành bảng dưới đây. Routine 1 đã được điền mẫu.</div>
+            <table class="fill-table">
+              <tr><th>Routine</th><th>When / How often</th><th>Why it matters</th></tr>
+              <tr><td class="given-cell">1. watch a movie together</td><td class="given-cell">every Friday night</td><td class="given-cell">helps relax after a long week</td></tr>
+              <tr><td>2. walk the dog</td><td><input type="text" placeholder="When?"></td><td><input type="text" placeholder="Why?"></td></tr>
+            </table>
+            <button class="reveal-btn" onclick="openPopup('Đáp án gợi ý — Routine 2', '&lt;p&gt;&lt;b&gt;When:&lt;/b&gt; every morning (before breakfast).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; it\u0027s a nice way for us to enjoy some fresh air together.&lt;/p&gt;')">Xem đáp án gợi ý</button>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Guided Writing</span>
+            <div class="desc-en">Using the information in the table below, write 2 Body sentences (one sentence per routine, with a sequence word). At Easy level, What + When is enough — Why is not required yet.</div>
+            <div class="desc-vi">Dùng thông tin trong bảng dưới đây, viết 2 câu Body (mỗi routine 1 câu, có sequence word). Ở mức Easy, chỉ cần đủ What + When là đạt — chưa bắt buộc Why.</div>
+            <table class="fill-table">
+              <tr><th>Routine</th><th>When / How often</th></tr>
+              <tr><td>have breakfast together</td><td>every day</td></tr>
+              <tr><td>play badminton</td><td>every Sunday</td></tr>
+            </table>
+            <textarea class="write-area" placeholder="Viết 2 câu Body ở đây..."></textarea>
+            <button class="reveal-btn" onclick="openPopup('Model answer', '&lt;p&gt;&lt;em&gt;First, we have breakfast together every day. Second, we play badminton every Sunday.&lt;/em&gt;&lt;/p&gt;')">Xem model answer</button>
+            <div class="self-check">
+              <div class="sc-title">📝 Self-check</div>
+              <div id="easySC"></div>
+            </div>
+          </div>
+
+          <div class="next-level-wrap">
+            <button class="next-level-btn" onclick="goToLevel('level-medium')">Sang mức Medium →</button>
+          </div>
+        </div>
+
+        <!-- ============ MEDIUM ============ -->
+        <div class="q-level-section" id="q_level-medium" style="display:none;">
+          <p class="level-intro">Goal: write sentences with a reason (Why) + a connector (because/so), after practising chunking/brainstorming.<br>
+          <span style="opacity:.85;">Mục tiêu: viết được những câu có lý do (Why) kèm từ nối (because/so), sau khi đã luyện viết các câu ở độ dài vừa phải trong phần Easy trước đó.</span></p>
+
+          <div class="card">
+            <span class="activity-label">Structure labelling</span>
+            <div class="desc-en">Read Lan's email on the left. Which part of the email does each excerpt below (longer than one sentence) belong to? Choose the best answer.</div>
+            <div class="desc-vi">Đọc email của Lan bên trái. Mỗi đoạn trích dưới đây (dài hơn 1 câu) thuộc phần nào của email? Chọn đáp án đúng nhất.</div>
+            <div id="medSL"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Error Identification</span>
+            <div class="desc-en">The email below (from Nam — switch to the "⚠️ Email có lỗi" tab on the left to read it) has 3 grammar mistakes in the Body. For each sentence, choose the correct fix — you need to understand the verb conjugation rule to pick the right one.</div>
+            <div class="desc-vi">Email của Nam (chuyển sang tab "⚠️ Email có lỗi" bên trái để đọc) có 3 lỗi ngữ pháp ở phần Body. Với mỗi câu, chọn cách sửa đúng — phải hiểu đúng quy tắc chia động từ mới chọn được cách sửa phù hợp.</div>
+            <div id="medErr"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Paragraph Ordering</span>
+            <div class="desc-en">The parts below belong to a different email (from Minh), but they are mixed up. Note: sentence A and sentence E both mention "family" — read carefully for the FUNCTION of each sentence (an opening lead-in or a closing question inviting a reply), you can't just guess from format like "Hi/Best,".</div>
+            <div class="desc-vi">Các phần dưới đây thuộc một email khác (của Minh) nhưng đang bị xáo trộn. Chú ý: câu A và câu E đều nhắc đến "family", phải đọc kỹ CHỨC NĂNG của từng câu (hỏi thăm dẫn nhập hay hỏi ngược mời phản hồi), không thể chỉ dựa vào định dạng như "Hi/Best," để đoán.</div>
+            <div id="medOrd"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Read &amp; Extract</span>
+            <div class="desc-en">Read Lan's clean email again. Complete the table — pay attention to the "Connector" column (because/so).</div>
+            <div class="desc-vi">Đọc lại email sạch của Lan. Hoàn thành bảng — chú ý cột "Từ nối" (because/so).</div>
+            <table class="fill-table">
+              <tr><th>Routine</th><th>When</th><th>Why</th><th>Connector</th></tr>
+              <tr><td class="given-cell">1. eat dinner together</td><td class="given-cell">at 7 p.m.</td><td class="given-cell">the only time to sit down and talk</td><td class="given-cell">because</td></tr>
+              <tr><td>2. go to the local market</td><td class="given-cell">every Saturday morning</td><td><input type="text" placeholder="Why?"></td><td><input type="text" placeholder="Connector?"></td></tr>
+              <tr><td class="given-cell">3. cook a big family meal</td><td class="given-cell">once a month</td><td class="given-cell">(dad makes noodle soup, everyone helps)</td><td class="given-cell">—</td></tr>
+            </table>
+            <button class="reveal-btn" onclick="openPopup('Đáp án gợi ý — Routine 2', '&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; \u0022it always puts us in a good mood\u0022 (vì được chọn trái cây tươi + trò chuyện với người bán).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Từ nối:&lt;/b&gt; \u0022so\u0022.&lt;/p&gt;')">Xem đáp án gợi ý</button>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Chunking &amp; Brainstorm</span>
+            <div class="desc-en">Before writing your own Body paragraph, practise chunking: read the draft ideas below, choose 3 ideas that are DIVERSE in activity type and frequency, then fill in your own What/When/Why draft table.</div>
+            <div class="desc-vi">Trước khi viết đoạn Body của riêng bạn, hãy luyện chunking: đọc danh sách ý nháp dưới đây, chọn 3 ý ĐA DẠNG về loại hoạt động và tần suất, rồi tự điền vào bảng nháp What/When/Why.</div>
+            <div class="draft-box">Draft ideas: reading books together — cooking on weekends — playing board games — visiting relatives — doing homework together — watering the plants — washing the car — going to the cinema</div>
+            <table class="fill-table">
+              <tr><th>Your idea (What)</th><th>When / How often</th><th>Why</th></tr>
+              <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+              <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+              <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </table>
+            <button class="reveal-btn" onclick="openPopup('Gợi ý tham khảo (không phải đáp án duy nhất)', '&lt;p&gt;&lt;em&gt;playing board games / every Friday evening / because it helps us laugh and relax together&lt;/em&gt;&lt;/p&gt;')">Xem gợi ý tham khảo</button>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Guided Writing</span>
+            <div class="desc-en">Using the information in the table below, write a Body paragraph with 3 routines (2-3 sentences per routine). Each routine MUST have a Why and use a connector (because/so).</div>
+            <div class="desc-vi">Dùng thông tin trong bảng dưới đây, viết đoạn Body gồm 3 routines (2-3 câu/routine). Mỗi routine PHẢI có Why và dùng từ nối (because/so).</div>
+            <table class="fill-table">
+              <tr><th>Routine</th><th>When / How often</th><th>Suggested Why</th></tr>
+              <tr><td>water the plants together</td><td>every evening</td><td>helps the garden stay healthy, relaxing after school</td></tr>
+              <tr><td>visit relatives</td><td>every other Sunday</td><td>keeps the family close, grandparents are happy to see everyone</td></tr>
+              <tr><td>do homework together</td><td>every weekday evening</td><td>can help each other with difficult subjects</td></tr>
+            </table>
+            <textarea class="write-area" placeholder="Viết đoạn Body 3 routines ở đây..."></textarea>
+            <button class="reveal-btn" onclick="openPopup('Model answer', '&lt;p&gt;&lt;em&gt;First, we water the plants together every evening because it helps the garden stay healthy, and it\u0027s a relaxing thing to do after school. Second, we visit our relatives every other Sunday, so we can keep the family close and make our grandparents happy. Third, we do our homework together every weekday evening because we can help each other with difficult subjects.&lt;/em&gt;&lt;/p&gt;')">Xem model answer</button>
+            <div class="self-check">
+              <div class="sc-title">📝 Self-check</div>
+              <div id="medSC"></div>
+            </div>
+          </div>
+
+          <div class="next-level-wrap">
+            <button class="next-level-btn" onclick="goToLevel('level-difficult')">Sang mức Difficult →</button>
+          </div>
+        </div>
+
+        <!-- ============ DIFFICULT ============ -->
+        <div class="q-level-section" id="q_level-difficult" style="display:none;">
+          <p class="level-intro">Goal: chunk with more natural language (fewer ready-made prompts), write more comparing weekday and weekend routines.<br>
+          <span style="opacity:.85;">Mục tiêu: viết các câu dài với ngôn ngữ tự nhiên hơn (ít gợi ý sẵn), viết nhiều hơn khi so sánh routine ngày thường và cuối tuần.</span></p>
+
+          <div class="card">
+            <span class="activity-label">Structure labelling</span>
+            <div class="desc-en">Read Nam's email on the left. Which part does each excerpt below belong to? Note: the Body in this email is split into 2 separate paragraphs (weekday and weekend).</div>
+            <div id="diffSL"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Error Identification — advanced</span>
+            <div class="desc-en">The email below (from Lan — switch to the "⚠️ Email có lỗi" tab on the left) has 4 mistakes mixing weekday (simple present) and weekend (present continuous) tenses. For each sentence, choose the correct fix.</div>
+            <div id="diffErr"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Paragraph Ordering</span>
+            <div class="desc-en">The parts below belong to a different email (from Minh), but they are mixed up. Note: the "weekday" part is always told BEFORE the "weekend" part (because the weekend sentence uses the connector "But" to contrast with what was just said about the weekday) — you can't just rely on format to order them.</div>
+            <div id="diffOrd"></div>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Read &amp; Extract — advanced</span>
+            <div class="desc-en">Read Nam's clean email again. Tell apart the weekday routine (simple present) and the weekend trend (present continuous), then complete the table.</div>
+            <table class="fill-table">
+              <tr><th></th><th>Weekday (simple present)</th><th>Weekend (present continuous)</th></tr>
+              <tr><td class="given-cell">Routine / trend</td><td class="given-cell">have a quick breakfast at 6:30; call each other in the evening</td><td><input type="text" placeholder="Routine/xu hướng weekend?"></td></tr>
+              <tr><td class="given-cell">Language signal</td><td class="given-cell">always, usually</td><td><input type="text" placeholder="Tín hiệu?"></td></tr>
+            </table>
+            <button class="reveal-btn" onclick="openPopup('Đáp án gợi ý', '&lt;p&gt;&lt;b&gt;Routine/xu hướng weekend:&lt;/b&gt; trying a new recipe every Saturday; spending more time in the garden on Sunday afternoons.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tín hiệu:&lt;/b&gt; \u0022These days\u0022, \u0022At the moment\u0022.&lt;/p&gt;')">Xem đáp án gợi ý</button>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Chunking với ngôn ngữ tự nhiên</span>
+            <div class="desc-en">Read the natural paragraph below (no ready-made draft table this time). Identify which activities are weekday (fixed habits) and which are weekend (recent trends), based on the language signals, then fill in your own draft table.</div>
+            <div class="draft-box">Every weekday morning, my dad always drives me to school before he goes to work, and we always chat about our plans for the day. On weekday evenings, we usually eat together around 7 o'clock, but sometimes work keeps him late. These days, our weekends look different. We're spending Saturday afternoons learning how to bake bread, and my brother is teaching himself to skateboard in the park every Sunday.</div>
+            <table class="fill-table">
+              <tr><th></th><th>Activity</th><th>Language signal</th></tr>
+              <tr><td class="given-cell">Weekday</td><td><input type="text"></td><td><input type="text"></td></tr>
+              <tr><td class="given-cell">Weekend</td><td><input type="text"></td><td><input type="text"></td></tr>
+            </table>
+            <button class="reveal-btn" onclick="openPopup('Gợi ý tham khảo', '&lt;p&gt;&lt;b&gt;Weekday:&lt;/b&gt; dad drives to school + chat about plans; eat together around 7. Tín hiệu: always, usually.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Weekend:&lt;/b&gt; learning to bake bread on Saturday afternoons; brother teaching himself to skateboard every Sunday. Tín hiệu: \u0022These days\u0022, thì hiện tại tiếp diễn (\u0027re spending / is teaching).&lt;/p&gt;')">Xem gợi ý tham khảo</button>
+          </div>
+
+          <div class="card">
+            <span class="activity-label">Free Writing</span>
+            <div class="desc-en">You want to write to a friend, comparing your family's weekday and weekend routines. There is NO outline or suggested ideas this time — think of the content yourself. Requirements: use both simple present (weekday) and present continuous (weekend), have at least 2 routines of each type, and use at least 1 contrasting connector "but".</div>
+            <textarea class="write-area" style="min-height:160px;" placeholder="Viết thư của bạn ở đây..."></textarea>
+            <button class="reveal-btn" onclick="openPopup('Model answer', '&lt;p&gt;&lt;em&gt;On weekdays, our routines stay pretty much the same. We always read together before bed, and every morning, we always help each other with a few chores before rushing out the door.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;But our weekends keep changing. These days, we\u0027re trying a new sport together every Saturday, and at the moment, we\u0027re also redecorating the living room bit by bit. Our weekdays feel so predictable, but our weekends never look the same twice!&lt;/em&gt;&lt;/p&gt;')">Xem model answer</button>
+            <div class="self-check">
+              <div class="sc-title">📝 Self-check</div>
+              <div id="diffSC"></div>
+            </div>
+          </div>
+
+          <div class="finale">
+            <h3>🎉 Hoàn thành Part 2!</h3>
+            <p>Bạn đã luyện xong cả 3 mức Easy, Medium, Difficult.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>Unit 1 · Writing — Part 1: Theory đã học trước đó.</footer>
+
+<div class="popup-overlay" id="popupOverlay" onclick="if(event.target===this)closePopup()">
+  <div class="popup-sheet">
+    <h3 id="popupTitle" style="font-size:16px;margin-bottom:10px;"></h3>
+    <div id="popupContent"></div>
+    <button class="popup-close" onclick="closePopup()">Đóng</button>
+  </div>
+</div>
+
+<script>
+function LMS(){return window.AiducationLMS||{ready:function(){},progress:function(){},event:function(){},state:function(){},complete:function(){},resize:function(){}};}
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function shuffle(arr){ return [...arr].sort(() => Math.random() - 0.5); }
+
+/* ---------- Popup ---------- */
+function openPopup(title, html){
+  document.getElementById('popupTitle').textContent = title;
+  document.getElementById('popupContent').innerHTML = html;
+  document.getElementById('popupOverlay').classList.add('open');
+}
+function closePopup(){ document.getElementById('popupOverlay').classList.remove('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+/* ---------- Mobile pane mode ---------- */
+function setMobileViewMode(mode){
+  const container = document.getElementById('practiceSplit');
+  container.classList.remove('mode-split','mode-ref','mode-q');
+  container.classList.add('mode-' + mode);
+  document.querySelectorAll('.mpc-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+}
+
+/* =========================================================
+   MAIL DATA
+   ========================================================= */
+function mailAppHTML(mail){
+  return `<div class="mailapp">
+    <div class="mailapp-head">
+      <div class="mailapp-row"><span class="mailapp-label">To:</span><span>${esc(mail.to)}</span></div>
+      <div class="mailapp-row"><span class="mailapp-label">Subject:</span><span class="mailapp-subject-text">${esc(mail.subject)}</span></div>
+    </div>
+    <div class="mailapp-body">
+      ${mail.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}
+      <p class="sig">${esc(mail.sig).replace(/\\n/g,'<br>')}</p>
+    </div>
+    <div class="mailapp-toolbar"><span class="mailapp-send">SEND</span><span class="mailapp-icons" aria-hidden="true">📎 🙂 🔗 🖼️</span></div>
+  </div>`;
+}
+
+const levelData = {
+  'level-easy': {
+    tabLabel:'Easy',
+    intro_en:"Goal: write short sentences that make sense (What + When) — a reason (Why) is not required yet.",
+    intro_vi:"Mục tiêu: viết được câu ngắn, có ý (What + When) là đạt yêu cầu — chưa bắt buộc lý do (Why) phức tạp.",
+    refEmails:[
+      { id:'clean', label:'✉️ Email', mail:{
+        to:'lan@webmail.com', subject:"My family's habits",
+        paragraphs:[
+          'Hi Lan,',
+          "Thanks for your email! You asked about my family's routines, so here are two of them.",
+          'First, we always watch a movie together every Friday night. It helps us relax after a long week.',
+          "Second, my mum and I walk our dog every morning before breakfast. It's a nice way for us to enjoy some fresh air together.",
+          'Do you have similar routines? Write back soon!'
+        ], sig:'Best,\\nMinh' } }
+    ]
+  },
+  'level-medium': {
+    tabLabel:'Medium',
+    intro_en:"Goal: write sentences with a reason (Why) + a connector (because/so), after practising chunking/brainstorming at a moderate length.",
+    intro_vi:"Mục tiêu: viết được câu có lý do (Why) + từ nối (because/so), sau khi đã luyện chunking/brainstorm ở độ dài vừa phải.",
+    refEmails:[
+      { id:'clean', label:'✉️ Email sạch (Lan)', mail:{
+        to:'minh@webmail.com', subject:"My family's little traditions",
+        paragraphs:[
+          'Hi Minh,',
+          "How are you doing? You asked about my family's daily habits, so let me tell you about a few of them.",
+          "First, we always eat dinner together at 7 p.m. because it's the only time we can all sit down and talk about our day.",
+          'Second, every Saturday morning, we go to the local market together. We enjoy choosing fresh fruit and chatting with the sellers, so it always puts us in a good mood.',
+          'Third, once a month, we cook a big family meal together. My dad usually makes his special noodle soup, and we all help him in the kitchen.',
+          "I'd love to hear about your family too. Let me know soon!"
+        ], sig:'Best wishes,\\nLan' } },
+      { id:'buggy', label:'⚠️ Email có lỗi (Nam)', mail:{
+        to:'minh@webmail.com', subject:"My family's weekend habits",
+        paragraphs:[
+          'Hi Minh,',
+          "Thanks for asking about my family's routines! Here are a few of them.",
+          'First, my family always are having breakfast together on Sundays.',
+          'Second, we usually clean the house on Saturday because we wants everything tidy before the week starts.',
+          'Third, every month, we visiting my grandparents and help them in the garden.',
+          'Write back soon!'
+        ], sig:'Best,\\nNam' } }
+    ]
+  },
+  'level-difficult': {
+    tabLabel:'Difficult',
+    intro_en:"Goal: chunk with more natural language (fewer ready-made prompts) and write more — comparing weekday routines with weekend routines.",
+    intro_vi:"Mục tiêu: chunking với ngôn ngữ tự nhiên hơn (ít gợi ý sẵn), viết nhiều hơn — so sánh routine ngày thường (weekday, hiện tại đơn) với cuối tuần (weekend, hiện tại tiếp diễn).",
+    refEmails:[
+      { id:'clean', label:'✉️ Email sạch (Nam)', mail:{
+        to:'lan@webmail.com', subject:'Our routines: weekdays and weekends!',
+        paragraphs:[
+          'Hi Lan,',
+          "Sorry for the late reply! Here's what my family's routines look like now.",
+          "On weekdays, we usually keep things simple. First, we always have a quick breakfast together at 6:30 because everyone needs to leave for school or work. Second, we always call each other in the evening if we're not home for dinner.",
+          "These days, our weekends look different. At the moment, we're trying a new recipe every Saturday because my sister just started a cooking class. We're also spending more time in the garden on Sunday afternoons these days.",
+          'So our weekday habits stay the same, but our weekend activities keep changing! What about your family?'
+        ], sig:'Take care,\\nNam' } },
+      { id:'buggy', label:'⚠️ Email có lỗi (Lan)', mail:{
+        to:'minh@webmail.com', subject:"What we usually do vs what's happening now",
+        paragraphs:[
+          'Hi Minh,',
+          "Sorry for not writing sooner! Let me tell you what my family's routines look like these days.",
+          'On weekdays, my family is always having a fast breakfast before school.',
+          'Every evening, we usually watches the news together after dinner.',
+          'These days, on weekends, we cook a new recipe every Saturday because my sister wants to practise her cooking skills.',
+          'At the moment, my mum plants flowers in the garden every Sunday afternoon.',
+          'Write soon!'
+        ], sig:'Best,\\nLan' } }
+    ]
+  }
+};
+
+let currentRefEmailIdx = 0;
+function renderRefPane(levelId){
+  const lvl = levelData[levelId];
+  currentRefEmailIdx = 0;
+  const tabsEl = document.getElementById('prefTabs');
+  if (lvl.refEmails.length > 1){
+    tabsEl.style.display = 'flex';
+    tabsEl.innerHTML = lvl.refEmails.map((e,i) =>
+      `<button class="pref-tab${i===0?' active':''}" onclick="switchRefEmail(${i})">${esc(e.label)}</button>`
+    ).join('');
+  } else {
+    tabsEl.style.display = 'none';
+    tabsEl.innerHTML = '';
+  }
+  document.getElementById('prefBody').innerHTML = mailAppHTML(lvl.refEmails[0].mail);
+  window._currentLevelId = levelId;
+}
+function switchRefEmail(idx){
+  const lvl = levelData[window._currentLevelId];
+  currentRefEmailIdx = idx;
+  document.querySelectorAll('.pref-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.getElementById('prefBody').innerHTML = mailAppHTML(lvl.refEmails[idx].mail);
+}
+
+/* =========================================================
+   Level tabs
+   ========================================================= */
+function renderLevelTabs(){
+  document.getElementById('levelTabs').innerHTML = Object.keys(levelData).map(id =>
+    `<button class="level-tab${id==='level-easy'?' active':''}" data-id="${id}" onclick="goToLevel('${id}')">${levelData[id].tabLabel}</button>`
+  ).join('');
+}
+function goToLevel(id){
+  document.querySelectorAll('.level-tab').forEach(t => t.classList.toggle('active', t.dataset.id === id));
+  document.querySelectorAll('.q-level-section').forEach(s => s.style.display = (s.id === 'q_' + id ? 'block' : 'none'));
+  renderRefPane(id);
+  document.getElementById('practiceRefPane').scrollTop = 0;
+  window.scrollTo({ top: 0, behavior:'smooth' });
+  LMS().event('level_change', { level: id });
+}
+renderLevelTabs();
+
+/* =========================================================
+   MCQ engine
+   ========================================================= */
+const mcqState = {};
+function renderMCQGroup(containerId, questions, genericHint, showVi=true){
+  const host = document.getElementById(containerId);
+  host.innerHTML = questions.map((q, qi) => {
+    const qid = containerId + '_' + qi;
+    const displayVi = showVi || q.forceVi;
+    return `<div class="q-card">
+      <div class="q-num">Question ${qi+1}</div>
+      <div class="q-quote"><div class="qq-en">"${esc(q.en)}"</div>${displayVi && q.vi ? `<div class="qq-vi">${esc(q.vi)}</div>` : ''}</div>
+      <div class="q-opts" id="opts_${qid}"></div>
+      <div class="q-fb" id="fb_${qid}"></div>
+    </div>`;
+  }).join('');
+  questions.forEach((q, qi) => {
+    const qid = containerId + '_' + qi;
+    mcqState[qid] = { tries:0, done:false, data:q, hint: q.hint || genericHint };
+    renderMCQOptions(qid);
+  });
+}
+function renderMCQOptions(qid){
+  const state = mcqState[qid];
+  state.shuffledOpts = shuffle(state.data.options);
+  const wrap = document.getElementById('opts_'+qid);
+  wrap.innerHTML = state.shuffledOpts.map((optText, i) =>
+    `<button class="q-opt" onclick="answerMCQ('${qid}', this, ${i})">${esc(optText)}</button>`
+  ).join('');
+}
+function answerMCQ(qid, btn, idx){
+  const state = mcqState[qid];
+  if (state.done) return;
+  const chosenText = state.shuffledOpts[idx];
+  state.tries++;
+  const isCorrect = chosenText === state.data.correct;
+  const fb = document.getElementById('fb_'+qid);
+  const allBtns = Array.from(document.querySelectorAll(`#opts_${qid} .q-opt`));
+
+  if (isCorrect){
+    state.done = true;
+    btn.classList.add('correct');
+    allBtns.forEach(b => b.disabled = true);
+    fb.className = 'q-fb ok show';
+    fb.innerHTML = `<b>✅ Chính xác!</b> ${esc(state.data.explain)}`;
+    LMS().event('mcq_correct', { qid });
+  } else {
+    btn.classList.add('wrong');
+    if (state.tries < 2){
+      fb.className = 'q-fb hint show';
+      fb.innerHTML = `💡 ${esc(state.hint)}`;
+      allBtns.forEach(b => { if (b !== btn) b.disabled = false; });
+      btn.disabled = true;
+    } else {
+      state.done = true;
+      allBtns.forEach((b, i) => {
+        b.disabled = true;
+        if (state.shuffledOpts[i] === state.data.correct) b.classList.add('correct');
+      });
+      fb.className = 'q-fb ok show';
+      fb.innerHTML = `<b>Đáp án đúng: ${esc(state.data.correct)}</b><br>${esc(state.data.explain)}`;
+    }
+    LMS().event('mcq_wrong', { qid, tries: state.tries });
+  }
+}
+
+const STRUCT_HINT_4 = 'Đọc lại câu này: nó là lời chào đơn giản, một câu cảm ơn/hỏi thăm dẫn nhập, một routine có sequence word, hay một câu hỏi mời hồi âm?';
+const STRUCT_HINT_5 = 'Câu này thuộc phần nào trong khung 5 phần? Nếu là Body, hãy xem có tín hiệu "On weekdays" (hiện tại đơn) hay "These days/At the moment" (hiện tại tiếp diễn) không.';
+const GRAMMAR_HINT = 'Xem lại chủ ngữ của câu là số ít hay số nhiều, và routine này có phải diễn ra thường xuyên, cố định không (hiện tại đơn) hay là xu hướng gần đây (hiện tại tiếp diễn).';
+
+/* ---------- EASY: Structure labelling ---------- */
+renderMCQGroup('easySL', [
+  { en:'Hi Lan,', vi:'Chào Lan,', options:['Greeting','Opening','Body','Closing'], correct:'Greeting',
+    explain:'Đây chỉ là lời chào tên người nhận, chưa có nội dung gì khác → Greeting.' },
+  { en:"Thanks for your email! You asked about my family's routines, so here are two of them.",
+    vi:"Cảm ơn email của bạn! Bạn đã hỏi về các thói quen của gia đình mình, nên đây là hai thói quen trong số đó.",
+    options:['Greeting','Opening','Body','Closing'], correct:'Opening',
+    explain:'Câu này cảm ơn + nhắc lại lý do viết + dẫn cầu nối sang Body ("here are two of them") → Opening.' },
+  { en:'First, we always watch a movie together every Friday night. It helps us relax after a long week.',
+    vi:'Đầu tiên, gia đình mình luôn xem phim cùng nhau vào mỗi tối thứ Sáu. Điều đó giúp cả nhà thư giãn sau một tuần dài.',
+    options:['Greeting','Opening','Body','Closing'], correct:'Body',
+    explain:'Có sequence word "First" và mô tả đủ What + When + Why cho 1 routine → Body.' },
+  { en:'Do you have similar routines? Write back soon!', vi:'Bạn có thói quen tương tự không? Viết thư lại sớm nhé!',
+    options:['Greeting','Opening','Body','Closing'], correct:'Closing',
+    explain:'Câu hỏi ngược + lời mời hồi âm → Closing.' }
+], STRUCT_HINT_4);
+
+/* ---------- MEDIUM: Structure labelling ---------- */
+renderMCQGroup('medSL', [
+  { en:'Hi Minh,', vi:'Chào Minh,', options:['Greeting','Opening','Body','Closing'], correct:'Greeting',
+    explain:'Chỉ có lời chào tên người nhận → Greeting.' },
+  { en:"How are you doing? You asked about my family's daily habits, so let me tell you about a few of them.",
+    vi:'Bạn khoẻ không? Bạn đã hỏi về các thói quen hằng ngày của gia đình mình, nên để mình kể cho bạn nghe một vài thói quen đó.',
+    options:['Greeting','Opening','Body','Closing'], correct:'Opening',
+    explain:'Hỏi thăm + nhắc lại lý do viết + dẫn cầu nối sang Body → Opening.' },
+  { en:"First, we always eat dinner together at 7 p.m. because it's the only time we can all sit down and talk about our day.",
+    vi:'Đầu tiên, gia đình mình luôn ăn tối cùng nhau lúc 7 giờ tối vì đó là lúc duy nhất cả nhà có thể ngồi lại và trò chuyện về ngày hôm đó.',
+    options:['Greeting','Opening','Body','Closing'], correct:'Body',
+    explain:'Có sequence word "First" + đủ What/When/Why cho 1 routine → Body.' },
+  { en:'Second, every Saturday morning, we go to the local market together. We enjoy choosing fresh fruit and chatting with the sellers, so it always puts us in a good mood.',
+    vi:'Thứ hai, mỗi sáng thứ Bảy, cả nhà cùng đi chợ. Mình thích chọn trái cây tươi và trò chuyện với người bán hàng, nên việc này luôn khiến mọi người vui vẻ.',
+    options:['Greeting','Opening','Body','Closing'], correct:'Body',
+    explain:'Cùng là 1 routine khác trong Body, có sequence word "Second" → Body.' },
+  { en:'Third, once a month, we cook a big family meal together. My dad usually makes his special noodle soup, and we all help him in the kitchen.',
+    vi:'Thứ ba, mỗi tháng một lần, cả nhà cùng nấu một bữa ăn lớn. Bố mình thường nấu món súp mì đặc biệt, và mọi người cùng giúp bố trong bếp.',
+    options:['Greeting','Opening','Body','Closing'], correct:'Body',
+    explain:'Routine thứ 3, có sequence word "Third" → Body.' },
+  { en:"I'd love to hear about your family too. Let me know soon!",
+    vi:'Mình cũng rất muốn nghe về gia đình bạn. Cho mình biết sớm nhé!',
+    options:['Greeting','Opening','Body','Closing'], correct:'Closing',
+    explain:'Câu mời chia sẻ ngược + mời hồi âm, không còn sequence word → Closing.' }
+], STRUCT_HINT_4, false);
+
+/* ---------- MEDIUM: Error identification ---------- */
+renderMCQGroup('medErr', [
+  { en:'First, my family always are having breakfast together on Sundays.',
+    vi:'Đầu tiên, gia đình mình luôn ăn sáng cùng nhau vào các ngày Chủ nhật.',
+    options:['always are having → always has','always are having → always have','always are having → is always having','Không cần sửa'],
+    correct:'always are having → always has',
+    explain:'Chủ ngữ "my family" số ít, routine dùng thì hiện tại đơn → "always has", không dùng thì tiếp diễn "are having".' },
+  { en:'...because we wants everything tidy before the week starts.',
+    vi:'...vì mọi người muốn mọi thứ gọn gàng trước khi tuần mới bắt đầu.',
+    options:['we wants → we want','we wants → we wanting','we wants → we is wanting','Không cần sửa'],
+    correct:'we wants → we want',
+    explain:'Chủ ngữ "we" số nhiều, động từ hiện tại đơn KHÔNG thêm "s" → "we want".' },
+  { en:'...we visiting my grandparents and help them in the garden.',
+    vi:'...cả nhà đến thăm ông bà và giúp ông bà làm vườn.',
+    options:['we visiting → we visit','we visiting → we visits','we visiting → we are visit','Không cần sửa'],
+    correct:'we visiting → we visit',
+    explain:'Câu thiếu động từ chia đúng thì — cần thì hiện tại đơn "we visit" để khớp với "and help" ngay sau.' }
+], GRAMMAR_HINT, false);
+
+/* ---------- DIFFICULT: Structure labelling ---------- */
+renderMCQGroup('diffSL', [
+  { en:'Hi Lan,', vi:'Chào Lan,', options:['Greeting','Opening','Body — weekday','Body — weekend','Closing'], correct:'Greeting',
+    explain:'Chỉ có lời chào tên người nhận → Greeting.' },
+  { en:"Sorry for the late reply! Here's what my family's routines look like now.",
+    vi:'Xin lỗi vì trả lời muộn! Đây là những thói quen hiện tại của gia đình mình.',
+    options:['Greeting','Opening','Body — weekday','Body — weekend','Closing'], correct:'Opening',
+    explain:'Xin lỗi vì trả lời muộn + dẫn vào chủ đề → Opening.' },
+  { en:'On weekdays, we usually keep things simple. First, we always have a quick breakfast together at 6:30 because everyone needs to leave for school or work...',
+    vi:'Vào các ngày trong tuần, gia đình mình thường giữ mọi thứ đơn giản. Đầu tiên, cả nhà luôn ăn sáng nhanh cùng nhau lúc 6:30 vì ai cũng cần rời nhà đi học hoặc đi làm...',
+    forceVi:true,
+    options:['Greeting','Opening','Body — weekday','Body — weekend','Closing'], correct:'Body — weekday',
+    explain:'Có tín hiệu "On weekdays" + thì hiện tại đơn (always have) → Body phần weekday.' },
+  { en:"These days, our weekends look different. At the moment, we're trying a new recipe every Saturday...",
+    vi:'Dạo này, cuối tuần của gia đình mình trông khác hẳn. Hiện tại, cả nhà đang thử một công thức nấu ăn mới vào mỗi thứ Bảy...',
+    forceVi:true,
+    options:['Greeting','Opening','Body — weekday','Body — weekend','Closing'], correct:'Body — weekend',
+    explain:'Có tín hiệu "These days"/"At the moment" + thì hiện tại tiếp diễn (we\'re trying) → Body phần weekend.' },
+  { en:'So our weekday habits stay the same, but our weekend activities keep changing! What about your family?',
+    vi:'Vậy nên thói quen ngày thường của gia đình mình vẫn giữ nguyên, nhưng các hoạt động cuối tuần thì cứ thay đổi liên tục! Còn gia đình bạn thì sao?',
+    options:['Greeting','Opening','Body — weekday','Body — weekend','Closing'], correct:'Closing',
+    explain:'Câu tóm tắt so sánh + câu hỏi ngược mời chia sẻ → Closing.' }
+], STRUCT_HINT_5, false);
+
+/* ---------- DIFFICULT: Error identification advanced ---------- */
+renderMCQGroup('diffErr', [
+  { en:'On weekdays, my family is always having a fast breakfast before school.',
+    vi:'Vào các ngày trong tuần, gia đình mình luôn ăn sáng nhanh trước khi đi học.',
+    options:['is always having → always has','is always having → always have','is always having → is having always','Không cần sửa'],
+    correct:'is always having → always has',
+    explain:'Đây là thói quen cố định vào weekday (không có tín hiệu "these days"/"at the moment") → dùng hiện tại đơn "always has", không dùng hiện tại tiếp diễn.' },
+  { en:'Every evening, we usually watches the news together after dinner.',
+    vi:'Mỗi tối, cả nhà thường xem tin tức cùng nhau sau bữa tối.',
+    options:['usually watches → usually watch','usually watches → usually watching','usually watches → is usually watching','Không cần sửa'],
+    correct:'usually watches → usually watch',
+    explain:'Chủ ngữ "we" số nhiều, hiện tại đơn không thêm "s" → "usually watch".' },
+  { en:'These days, on weekends, we cook a new recipe every Saturday because my sister wants to practise her cooking skills.',
+    vi:'Dạo này, vào cuối tuần, cả nhà nấu một công thức mới mỗi thứ Bảy vì em gái mình muốn luyện tập kỹ năng nấu ăn.',
+    forceVi:true,
+    options:['cook → are cooking','cook → cooked','cook → will cook','Không cần sửa'],
+    correct:'cook → are cooking',
+    explain:'Tín hiệu "These days" cho thấy đây là xu hướng GẦN ĐÂY, tạm thời (weekend) → dùng hiện tại tiếp diễn "are cooking", không dùng hiện tại đơn.' },
+  { en:'At the moment, my mum plants flowers in the garden every Sunday afternoon.',
+    vi:'Hiện tại, mẹ mình trồng hoa trong vườn vào mỗi chiều Chủ nhật.',
+    options:['plants → is planting','plants → planted','plants → plant','Không cần sửa'],
+    correct:'plants → is planting',
+    explain:'Tín hiệu "At the moment" + đây là hoạt động weekend gần đây → dùng hiện tại tiếp diễn "is planting".' }
+], GRAMMAR_HINT, false);
+
+/* =========================================================
+   Ordering engine
+   ========================================================= */
+const ordState = {};
+const explainCache = {};
+function setOrderingExplain(containerId, html){ explainCache[containerId] = html; }
+function renderOrdering(containerId, items, correctOrder, showVi=true){
+  ordState[containerId] = { items, correctOrder, placed:[], showVi };
+  const host = document.getElementById(containerId);
+  host.innerHTML = `
+    <div class="ord-wrap">
+      <div class="ord-bank" id="bank_${containerId}"></div>
+      <div class="ord-answer" id="ans_${containerId}"></div>
+      <div class="ord-controls">
+        <button class="an-btn" onclick="checkOrdering('${containerId}')">Kiểm tra thứ tự</button>
+        <button class="an-btn ghost" onclick="resetOrdering('${containerId}')">↺ Làm lại</button>
+      </div>
+      <div class="q-fb" id="fb_${containerId}"></div>
+    </div>`;
+  buildOrderingBank(containerId);
+}
+function tileHTML(item, showVi){
+  const displayVi = showVi || item.forceVi;
+  return `<div class="ot-en">${esc(item.en)}</div>${displayVi && item.vi ? `<div class="ot-vi">${esc(item.vi)}</div>` : ''}`;
+}
+function buildOrderingBank(containerId){
+  const st = ordState[containerId];
+  const bank = document.getElementById('bank_'+containerId);
+  const shuffled = shuffle(st.items);
+  bank.innerHTML = shuffled.map(it =>
+    `<button class="ord-tile" data-id="${it.id}" onclick="placeTile('${containerId}','${it.id}', this)">
+       ${tileHTML(it, st.showVi)}
+     </button>`
+  ).join('');
+}
+function placeTile(containerId, itemId, btn){
+  const st = ordState[containerId];
+  if (st.placed.includes(itemId)) return;
+  st.placed.push(itemId);
+  btn.classList.add('placed');
+  const item = st.items.find(i => i.id === itemId);
+  const ansWrap = document.getElementById('ans_'+containerId);
+  const row = document.createElement('div');
+  row.className = 'ord-ans-row';
+  row.dataset.id = itemId;
+  row.innerHTML = `<span class="ord-num">${st.placed.length}</span><span>${tileHTML(item, st.showVi)}</span>`;
+  ansWrap.appendChild(row);
+}
+function checkOrdering(containerId){
+  const st = ordState[containerId];
+  if (st.placed.length !== st.items.length){
+    const fb = document.getElementById('fb_'+containerId);
+    fb.className = 'q-fb hint show';
+    fb.textContent = 'Bạn chạm đủ tất cả các mảnh trước khi kiểm tra nhé.';
+    return;
+  }
+  const rows = document.querySelectorAll(`#ans_${containerId} .ord-ans-row`);
+  let allCorrect = true;
+  rows.forEach((row, i) => {
+    const ok = st.placed[i] === st.correctOrder[i];
+    row.classList.remove('correct','wrong');
+    row.classList.add(ok ? 'correct' : 'wrong');
+    if (!ok) allCorrect = false;
+  });
+  const fb = document.getElementById('fb_'+containerId);
+  fb.className = 'q-fb ' + (allCorrect ? 'ok' : 'hint') + ' show';
+  fb.innerHTML = (allCorrect ? '<b>✅ Chính xác!</b> ' : '<b>Chưa đúng hết — xem lại các dòng đỏ.</b> ') + explainCache[containerId];
+  LMS().event('ordering_check', { containerId, allCorrect });
+}
+function resetOrdering(containerId){
+  const st = ordState[containerId];
+  st.placed = [];
+  document.getElementById('ans_'+containerId).innerHTML = '';
+  document.getElementById('fb_'+containerId).className = 'q-fb';
+  buildOrderingBank(containerId);
+}
+
+/* ---------- EASY: Ordering ---------- */
+renderOrdering('easyOrd', [
+  { id:'A', en:'First, we always tidy our rooms every Saturday morning. Second, we watch the news together every evening.',
+    vi:'Đầu tiên, cả nhà luôn dọn phòng vào mỗi sáng thứ Bảy. Thứ hai, cả nhà xem tin tức cùng nhau mỗi tối.' },
+  { id:'B', en:'Hi Minh,', vi:'Chào Minh,' },
+  { id:'C', en:"How are you? I wanted to tell you about my family's routines.", vi:'Bạn khoẻ không? Mình muốn kể cho bạn nghe về các thói quen của gia đình mình.' },
+  { id:'D', en:'Best, Nam', vi:'Thân, Nam' },
+  { id:'E', en:'Let me know about your family too!', vi:'Cho mình biết về gia đình bạn nữa nhé!' }
+], ['B','C','A','E','D']);
+setOrderingExplain('easyOrd', esc('B = Greeting ("Hi Minh,") → C = Opening (hỏi thăm + dẫn vào chủ đề) → A = Body (có sequence words First/Second) → E = Closing (mời chia sẻ) → D = Sign-off (lời kết + tên).'));
+
+/* ---------- MEDIUM: Ordering ---------- */
+renderOrdering('medOrd', [
+  { id:'A', en:'Do you and your family have any habits like these?', vi:'Bạn và gia đình có thói quen nào giống vậy không?' },
+  { id:'B', en:"First, we always go grocery shopping together on Saturday mornings because it's more fun as a team. Second, we usually watch a cooking show on Sunday evenings, so we can get ideas for the week's meals.",
+    vi:"Đầu tiên, cả nhà luôn đi chợ cùng nhau vào sáng thứ Bảy vì làm cùng nhau vui hơn. Thứ hai, cả nhà thường xem chương trình nấu ăn vào tối Chủ nhật, để có ý tưởng cho các bữa ăn trong tuần." },
+  { id:'C', en:'Hi Lan,', vi:'Chào Lan,' },
+  { id:'D', en:'Best wishes, Minh', vi:'Chúc bạn mọi điều tốt đẹp, Minh' },
+  { id:'E', en:"Thanks for your last email! I wanted to share a few of my family's habits with you.",
+    vi:'Cảm ơn email trước của bạn! Mình muốn chia sẻ với bạn một vài thói quen của gia đình mình.' }
+], ['C','E','B','A','D'], false);
+setOrderingExplain('medOrd', esc('C = Greeting → E = Opening (cảm ơn + dẫn vào, nhắc đến "family" theo nghĩa DẪN NHẬP chủ đề) → B = Body (có sequence words + lý do bằng "because/so") → A = Closing (nhắc đến "family" nhưng theo nghĩa CÂU HỎI NGƯỢC mời phản hồi) → D = Sign-off.'));
+
+/* ---------- DIFFICULT: Ordering ---------- */
+renderOrdering('diffOrd', [
+  { id:'A', en:'Do you have any routines like these? Write back soon!', vi:'Bạn có thói quen nào giống vậy không? Viết thư lại sớm nhé!' },
+  { id:'B', en:'During the week, we usually stick to simple habits. We always have breakfast together at 6:45, and we always do the dishes together after dinner.',
+    vi:'Trong tuần, gia đình mình thường giữ những thói quen đơn giản. Cả nhà luôn ăn sáng cùng nhau lúc 6:45, và luôn rửa bát cùng nhau sau bữa tối.', forceVi:true },
+  { id:'C', en:'Hi Lan,', vi:'Chào Lan,' },
+  { id:'D', en:"But at the weekend, things are a little different these days. We're trying a new recipe every Saturday, and we're spending more time in the garden on Sundays.",
+    vi:'Nhưng vào cuối tuần, mọi thứ dạo này hơi khác một chút. Cả nhà đang thử một công thức nấu ăn mới mỗi thứ Bảy, và dành nhiều thời gian hơn ở vườn vào Chủ nhật.', forceVi:true },
+  { id:'E', en:"Sorry for the late reply! Here's what my family's routines look like now.", vi:'Xin lỗi vì trả lời muộn! Đây là những thói quen hiện tại của gia đình mình.' },
+  { id:'F', en:'Best, Minh', vi:'Thân, Minh' }
+], ['C','E','B','D','A','F'], false);
+setOrderingExplain('diffOrd', esc('C = Greeting → E = Opening → B = Body weekday (thì hiện tại đơn, always) → D = Body weekend ("But" báo hiệu tương phản, PHẢI đứng SAU B) → A = Closing (câu hỏi ngược + mời hồi âm) → F = Sign-off. Nếu đặt D trước B, từ nối "But" sẽ không có gì để tương phản — đây là tín hiệu logic để xác định đúng thứ tự.'));
+
+/* ---------- Self-check ---------- */
+function renderSelfCheck(containerId, items){
+  document.getElementById(containerId).innerHTML = items.map(txt =>
+    `<div class="sc-item" onclick="this.classList.toggle('checked')"><span class="sc-box"></span><span>${esc(txt)}</span></div>`
+  ).join('');
+}
+renderSelfCheck('easySC', [
+  'Có đủ 2 sequence words (First, Second)?',
+  'Mỗi câu có đủ What + When?',
+  'Dùng đúng thì hiện tại đơn?'
+]);
+renderSelfCheck('medSC', [
+  'Đủ 3 routines, mỗi routine có sequence word riêng?',
+  'Mỗi routine có đủ What + When + Why?',
+  'Có dùng từ nối (because/so) rõ ràng, không lặp lại 1 từ nối cho cả 3 câu?'
+]);
+renderSelfCheck('diffSC', [
+  'Có ít nhất 2 routine weekday (hiện tại đơn) và 2 xu hướng weekend (hiện tại tiếp diễn)?',
+  'Dùng đúng tín hiệu ngôn ngữ cho từng thì (always/usually vs these days/at the moment)?',
+  'Có ít nhất 1 từ nối tương phản "but" (không dùng while/however — vượt trần A2 của Lớp 10 HK1)?',
+  'Đoạn văn có tổ chức rõ ràng (weekday trước, weekend sau)?'
+]);
+
+/* ---------- LMS wiring ---------- */
+LMS().ready();
+function reportHeight(){ LMS().resize({ height: document.documentElement.scrollHeight }); }
+window.addEventListener('load', reportHeight);
+if (window.ResizeObserver){
+  const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+  ro.observe(document.body);
+}
+
+renderRefPane('level-easy');
+</script>
+</body>
+</html>
