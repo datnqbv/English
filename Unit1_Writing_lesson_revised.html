@@ -135,13 +135,13 @@ button:active{transform:scale(.96);}
 
 /* Scroll stack — 5 bước viết phần Body */
 .scroll-stack-scroller{position:relative;width:100%;overflow:visible;overscroll-behavior:contain;
-  -webkit-overflow-scrolling:touch;scroll-behavior:smooth;transform:translateZ(0);}
+  -webkit-overflow-scrolling:touch;scroll-behavior:smooth;}
 .scroll-stack-inner{position:relative;padding:0 0 24px;min-height:0;}
 .scroll-stack-card-wrapper{display:contents;}
 .scroll-stack-card{position:sticky;top:calc(78px + var(--stack-index,0)*14px);z-index:calc(20 + var(--stack-index,0));
-  transform-origin:top center;will-change:transform,filter;backface-visibility:hidden;transform-style:preserve-3d;
+  transform-origin:top center;will-change:auto;backface-visibility:visible;
   min-height:20rem;margin:0 0 64px;padding:clamp(22px,4vw,32px);border-radius:28px;
-  box-shadow:0 18px 45px rgba(20,67,47,.14);-webkit-transform:translateZ(0);transform:translateZ(0);
+  box-shadow:0 18px 45px rgba(20,67,47,.14);transform:none;
   opacity:1;visibility:visible;animation:none;}
 .card.scroll-stack-card,.card.scroll-stack-card.visible{opacity:1;visibility:visible;animation:none;}
 .scroll-stack-card::before{content:attr(data-stack-step);position:absolute;right:22px;top:20px;width:34px;height:34px;
@@ -1064,12 +1064,11 @@ function initBodyStepStack(){
 
     cards.forEach((card,index) => {
       const metric = metrics[index];
-      const depth = active > index ? active - index : 0;
       card.classList.toggle('stack-current',index === active);
       card.classList.toggle('stack-passed',index < active);
       if (!reduceMotion && !metric.disabled){
-        card.style.transform = 'translate3d(0,0,0)';
-        card.style.filter = depth ? `brightness(${Math.max(.82,1-depth*.045)}) blur(${Math.min(1.2,depth*.28)}px)` : '';
+        card.style.transform = 'none';
+        card.style.filter = 'none';
       } else {
         card.style.transform = '';
         card.style.filter = '';
