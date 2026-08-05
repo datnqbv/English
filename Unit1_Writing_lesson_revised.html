@@ -133,6 +133,27 @@ button:active{transform:scale(.96);}
 .step-dot.active{background:var(--jade-deep);width:20px;border-radius:5px;}
 .step-label{font-size:11px;font-weight:800;color:var(--jade-text);margin-left:4px;text-transform:uppercase;letter-spacing:.03em;}
 
+/* Scroll stack — 5 bước viết phần Body */
+.scroll-stack-scroller{position:relative;width:100%;overflow:visible;overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;scroll-behavior:smooth;transform:translateZ(0);}
+.scroll-stack-inner{position:relative;padding:0 0 24px;min-height:0;}
+.scroll-stack-card-wrapper{display:contents;}
+.scroll-stack-card{position:sticky;top:calc(78px + var(--stack-index,0)*14px);z-index:calc(20 + var(--stack-index,0));
+  transform-origin:top center;will-change:transform,filter;backface-visibility:hidden;transform-style:preserve-3d;
+  min-height:20rem;margin:0 0 64px;padding:clamp(22px,4vw,32px);border-radius:28px;
+  box-shadow:0 18px 45px rgba(20,67,47,.14);-webkit-transform:translateZ(0);transform:translateZ(0);
+  opacity:1;visibility:visible;animation:none;}
+.card.scroll-stack-card,.card.scroll-stack-card.visible{opacity:1;visibility:visible;animation:none;}
+.scroll-stack-card::before{content:attr(data-stack-step);position:absolute;right:22px;top:20px;width:34px;height:34px;
+  display:grid;place-items:center;border-radius:50%;background:var(--jade-dark);color:#fff;font-size:13px;font-weight:800;
+  box-shadow:0 4px 12px rgba(20,67,47,.2);}
+.scroll-stack-card .step-track{padding-right:46px;}
+.scroll-stack-card.stack-current{border-color:var(--accent);box-shadow:0 22px 55px rgba(20,67,47,.2);}
+.scroll-stack-card.stack-passed{pointer-events:none;}
+.scroll-stack-card.stack-passed button,.scroll-stack-card.stack-passed select,.scroll-stack-card.stack-passed a{pointer-events:auto;}
+.scroll-stack-card[data-stack-step="5"]{margin-bottom:0;}
+.scroll-stack-end{width:100%;height:1px;}
+
 /* 4. Routine icon chips */
 .routine-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
 .routine-chip{display:inline-flex;align-items:center;gap:6px;background:var(--white);
@@ -223,6 +244,7 @@ td{color:var(--ink-2);}
 .reveal-btn{background:transparent;color:var(--accent-text);border:1.5px dashed var(--accent);
   border-radius:var(--radius-sm);padding:8px 16px;min-height:42px;font-weight:700;font-size:13.5px;}
 .reveal-btn:hover{background:var(--accent-pale);}
+.ex-block .reveal-btn{margin-top:12px;}
 
 /* Formula sentence */
 .formula-sentence{font-size:15px;line-height:1.9;background:var(--cream-2);border-radius:var(--radius);
@@ -304,6 +326,15 @@ footer{text-align:center;padding:30px 18px 50px;color:var(--ink-3);font-size:13p
   .hero h1{font-size:24px;}
   table{font-size:12.5px;}
   th,td{padding:7px 8px;}
+}
+
+@media (max-width:880px){
+  .scroll-stack-inner{padding-top:0;padding-bottom:18px;}
+  .scroll-stack-card{top:calc(68px + var(--stack-index,0)*9px);margin-bottom:44px;min-height:18rem;
+    padding:20px 16px;border-radius:20px;}
+  .scroll-stack-card::before{right:14px;top:14px;width:30px;height:30px;}
+  .scroll-stack-card .step-track{padding-right:36px;}
+  .scroll-stack-card.stack-too-tall{position:relative;top:auto!important;transform:none!important;filter:none!important;}
 }
 
 /* ---------- UX polish: responsive, accessible, distraction-free ---------- */
@@ -528,7 +559,10 @@ body{min-height:100vh;background:
     <div class="callout">Công thức mỗi routine: <b>[What] + [When / How often] + [Why it matters]</b></div>
   </div>
 
-  <div class="card fade-target">
+  <div class="scroll-stack-scroller" id="bodySteps" aria-label="Quy trình viết Body gồm 5 bước">
+  <div class="scroll-stack-inner">
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="1">
     <div class="step-track"><span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-label">Bước 1/5</span></div>
     <h3>Bước 1 — Brainstorm ý tưởng</h3>
     <p>Trước khi viết, Nam tự hỏi bản thân: "Nhà mình có những thói quen gì?" và liệt kê nháp ra giấy, chưa cần chọn lọc:</p>
@@ -543,8 +577,10 @@ body{min-height:100vh;background:
       <span class="routine-chip"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#E1ECE4"/><line x1="25" y1="10" x2="14" y2="29" stroke="#46685A" stroke-width="2.4" stroke-linecap="round"/><path d="M11 31l4-7 5 3-4 6.5z" fill="#7CA792"/></svg>Dọn nhà</span>
     </div>
   </div>
+  </div>
 
-  <div class="card fade-target">
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="2">
     <div class="step-track"><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-label">Bước 2/5</span></div>
     <h3>Bước 2 — Brainstorm chi tiết What/When/Why</h3>
     <p>Ví dụ với ý "chơi cầu lông":</p>
@@ -560,8 +596,10 @@ body{min-height:100vh;background:
       <button class="reveal-btn" onclick="openPopup('So sánh 2 cách trả lời', '&lt;p&gt;&lt;b&gt;❌ Hời hợt:&lt;/b&gt; \u0022...because it\u0027s fun.\u0022 → Đúng ngữ pháp nhưng quá chung chung, không cho người đọc thấy được điều gì đặc biệt.&lt;/p&gt;&lt;p&gt;&lt;b&gt;✅ Đào sâu hơn:&lt;/b&gt; \u0022We always laugh a lot and have great fun together, no matter who wins the games.\u0022 → Cụ thể hơn: nói rõ điều gì làm cho routine này đáng nhớ (tiếng cười, không quan trọng thắng-thua) thay vì chỉ nói \u0022vui\u0022.&lt;/p&gt;')">So sánh 2 cách trả lời</button>
     </div>
   </div>
+  </div>
 
-  <div class="card fade-target">
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="3">
     <div class="step-track"><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-label">Bước 3/5</span></div>
     <h3>Bước 3 — Ráp câu hoàn chỉnh</h3>
     <p>Từ 3 mảnh nguyên liệu ở Bước 2, Nam ráp lại thành câu hoàn chỉnh, thêm sequence word ở đầu:</p>
@@ -572,8 +610,10 @@ body{min-height:100vh;background:
       <span><i class="dot" style="background:var(--jade-pale);border:1px solid var(--jade);"></i>Why</span>
     </div>
   </div>
+  </div>
 
-  <div class="card fade-target">
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="4">
     <div class="step-track"><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-dot"></span><span class="step-label">Bước 4/5</span></div>
     <h3>Bước 4 — Lặp lại cho 2 routine còn lại</h3>
     <table>
@@ -582,8 +622,10 @@ body{min-height:100vh;background:
       <tr><td class="icon-cell"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#E1ECE4"/><line x1="25" y1="10" x2="14" y2="29" stroke="#46685A" stroke-width="2.4" stroke-linecap="round"/><path d="M11 31l4-7 5 3-4 6.5z" fill="#7CA792"/></svg>Dọn nhà</td><td>tidy up the house / once a month, Saturday morning / make a list, everyone picks tasks, feel proud</td><td>Third, once a month, on a Saturday morning, we tidy up the whole house as a team. We make a list of jobs, and everyone picks one or two tasks to do. We always feel really pleased when we see our home looking spotless at the end of the morning.</td></tr>
     </table>
   </div>
+  </div>
 
-  <div class="card fade-target">
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="5">
     <div class="step-track"><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-label">Bước 5/5</span></div>
     <h3>Bước 5 — Lỗi thường gặp</h3>
     <table>
@@ -592,6 +634,10 @@ body{min-height:100vh;background:
       <tr><td>Sai thì (tiếp diễn cho routine)</td><td>Second, we are watching TV every Friday evening.</td><td>Second, we watch TV every Friday evening.</td></tr>
       <tr><td>Why quá chung chung</td><td>...because it's nice.</td><td>...because it gives us time to talk about our week without any distractions.</td></tr>
     </table>
+  </div>
+  </div>
+  <div class="scroll-stack-end" aria-hidden="true"></div>
+  </div>
   </div>
 
   <div class="card fade-target">
@@ -979,6 +1025,78 @@ function resetAnalyzer(){ clearInterval(analyzeTimer); selectEmail(currentEmailI
 
 renderTabs();
 selectEmail(currentEmailIdx);
+
+/* ---------- Scroll stack: 5 bước viết Body (vanilla JS) ---------- */
+function initBodyStepStack(){
+  const root = document.getElementById('bodySteps');
+  if (!root) return;
+  const cards = Array.from(root.querySelectorAll('.scroll-stack-card'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let metrics = [];
+  let ticking = false;
+  let lastActive = -1;
+
+  cards.forEach((card,index) => {
+    card.style.setProperty('--stack-index',index);
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-label',`Bước ${index + 1} trong 5`);
+  });
+
+  function measure(){
+    cards.forEach(card => card.classList.remove('stack-too-tall'));
+    if (window.innerWidth <= 880){
+      cards.forEach(card => {
+        if (card.scrollHeight > window.innerHeight * .78) card.classList.add('stack-too-tall');
+      });
+    }
+    const rootTop = root.getBoundingClientRect().top + window.scrollY;
+    metrics = cards.map((card,index) => ({
+      trigger:rootTop + card.offsetTop - (window.innerWidth <= 880 ? 68 : 78) - index * (window.innerWidth <= 880 ? 9 : 14),
+      disabled:card.classList.contains('stack-too-tall')
+    }));
+    update();
+  }
+
+  function update(){
+    const y = window.scrollY;
+    let active = -1;
+    metrics.forEach((metric,index) => { if (y >= metric.trigger - 12) active = index; });
+
+    cards.forEach((card,index) => {
+      const metric = metrics[index];
+      const progress = Math.max(0,Math.min(1,(y - metric.trigger) / 190));
+      const targetScale = .88 + index * .025;
+      const scale = 1 - progress * (1 - targetScale);
+      const depth = active > index ? active - index : 0;
+      card.classList.toggle('stack-current',index === active);
+      card.classList.toggle('stack-passed',index < active);
+      if (!reduceMotion && !metric.disabled){
+        card.style.transform = `translate3d(0,0,0) scale(${scale.toFixed(3)})`;
+        card.style.filter = depth ? `brightness(${Math.max(.82,1-depth*.045)}) blur(${Math.min(1.2,depth*.28)}px)` : '';
+      } else {
+        card.style.transform = '';
+        card.style.filter = '';
+      }
+    });
+
+    if (active !== lastActive && active >= 0){
+      lastActive = active;
+      LMS().event('body_step_viewed',{step:active + 1});
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll',() => {
+    if (!ticking){ ticking = true; requestAnimationFrame(update); }
+  },{passive:true});
+  window.addEventListener('resize',() => {
+    clearTimeout(window._stackResize);
+    window._stackResize = setTimeout(measure,140);
+  });
+  window.addEventListener('load',measure,{once:true});
+  measure();
+}
+initBodyStepStack();
 
 /* ---------- Reading comfort ---------- */
 const progressBar = document.getElementById('readingProgressBar');

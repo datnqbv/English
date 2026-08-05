@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 · Family Routines — Speaking (Lesson)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#FAF7F0; --cream-2:#F0EADD; --cream-3:#E7DECC;
+  --paper-line:#E5DECF; --paper-line-2:#D6CCB6;
+  --ink:#1A1A1A; --ink-2:#514C44; --ink-3:#7C756A; --ink-faint:#ABA396;
+  --jade:#3CA57A; --jade-deep:#2D8B6F; --jade-dark:#14432F;
+  --jade-text:#1B5E48; --jade-soft:#A9D0BE; --jade-pale:#DCEAE1;
+  --sage:#A8C9B8; --sage-deep:#7CA792; --sage-text:#46685A; --sage-pale:#E1ECE4;
+  --accent:#E8A24A; --accent-deep:#CE8A33; --accent-text:#8A551A; --accent-pale:#F7E7CD;
+  --correct:#2D8B6F; --correct-bg:#DCEAE1;
+  --wrong:#C15F3C; --wrong-bg:#F3E2D6;
+  --warning:#C58A2E; --warning-bg:#F5E7CB;
+  --info:#4E7F92; --info-bg:#DCE7EB;
+  --white:#FFFFFF;
+  --radius-lg:22px; --radius:14px; --radius-sm:10px;
+  --shadow:0 10px 30px rgba(43,43,40,0.10);
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:'Be Vietnam Pro',sans-serif; font-size:18px; color:var(--ink); background:var(--cream); line-height:1.55; }
+h1,h2,h3,.display { font-family:'Be Vietnam Pro',sans-serif; font-weight:800; color:var(--jade-dark); }
+p { margin:0 0 10px; }
+
+/* Icon minh hoạ cho 3 nhóm Stating Opinion / Agreeing / Disagreeing */
+.func-icon { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  flex:0 0 auto; }
+.func-icon svg { width:22px; height:22px; }
+.func-icon.opinion { background:var(--accent-deep); color:#fff; }
+.func-icon.agree { background:var(--jade-deep); color:#fff; }
+.func-icon.disagree { background:var(--wrong); color:#fff; }
+
+/* Useful Expressions — bảng gọn, icon nhỏ đầu cột + nút nhảy tới phần chi tiết */
+.func-icon-sm { width:22px; height:22px; border-radius:50%; display:inline-flex; align-items:center;
+  justify-content:center; margin-right:6px; vertical-align:middle; flex:0 0 auto; }
+.func-icon-sm svg { width:13px; height:13px; }
+.func-icon-sm.opinion { background:var(--accent-deep); color:#fff; }
+.func-icon-sm.agree { background:var(--jade-deep); color:#fff; }
+.func-icon-sm.disagree { background:var(--wrong); color:#fff; }
+.th-head-row { display:flex; align-items:center; }
+
+/* Functional Language — card màu bao quanh mỗi nhóm cấu trúc */
+.fl-block { border-radius:var(--radius-lg); padding:18px 18px 4px; margin-bottom:20px; }
+.fl-block.opinion { background:var(--accent-pale); }
+.fl-block.agree { background:var(--jade-pale); }
+.fl-block.disagree { background:var(--wrong-bg); }
+.fl-block table.func-table { background:var(--white); border-radius:var(--radius-sm); overflow:hidden; }
+.fl-head { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.fl-head h3.sub-h { margin:0; }
+
+/* Progress tracker */
+#progress-tracker { position:fixed; right:18px; top:50%; transform:translateY(-50%); width:190px;
+  background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px 16px 14px;
+  z-index:50; border:2px solid var(--cream-2); }
+.pt-handle { width:44px; height:14px; background:var(--jade-dark); border-radius:6px; margin:-24px auto 10px; }
+#progress-tracker h4 { font-size:13px; letter-spacing:.02em; color:var(--jade-dark); margin:0 0 10px; text-transform:uppercase; }
+.pt-item { display:flex; align-items:center; gap:8px; font-size:12.5px; padding:6px 0; color:var(--ink-2); }
+.pt-box { width:16px; height:16px; border-radius:5px; border:2px solid var(--sage); flex:0 0 auto; position:relative; transition:.25s; }
+.pt-item.done .pt-box { background:var(--jade-deep); border-color:var(--jade-deep); }
+.pt-item.done .pt-box::after { content:''; position:absolute; left:3px; top:0; width:4px; height:8px;
+  border:solid #fff; border-width:0 2px 2px 0; transform:rotate(40deg); }
+.pt-item.done { color:var(--jade-dark); font-weight:600; }
+@media (max-width:880px) {
+  #progress-tracker { position:sticky; top:0; transform:none; width:auto; left:0; right:0; border-radius:0;
+    display:flex; align-items:center; gap:14px; padding:10px 16px; border:none; border-bottom:2px solid var(--cream-2); }
+  .pt-handle { display:none; }
+  #progress-tracker h4 { margin:0; white-space:nowrap; font-size:11px; }
+  .pt-items { display:flex; gap:12px; overflow-x:auto; scrollbar-width:none; }
+  .pt-items::-webkit-scrollbar { display:none; }
+  .pt-item { padding:0; white-space:nowrap; min-height:44px; align-items:center; }
+}
+
+main { max-width:760px; margin:26px auto 60px; padding:0 18px; }
+section.card { background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow);
+  padding:26px 24px; margin-bottom:22px; }
+section.card h2 { font-size:22px; margin:0 0 6px; }
+.section-desc { color:var(--ink-2); font-size:14.5px; margin-bottom:18px; }
+h3.sub-h { font-size:16.5px; color:var(--jade-text); margin:22px 0 10px; }
+
+/* Lecture-style guide box */
+.guide-box { background:var(--jade-pale); border-radius:var(--radius); padding:14px 18px; margin-bottom:20px;
+  display:flex; gap:12px; align-items:flex-start; }
+.guide-icon { width:36px; height:36px; border-radius:50%; background:var(--jade-deep); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; }
+.guide-text { font-size:14px; color:var(--jade-text); line-height:1.65; padding-top:4px; }
+.guide-box.done { background:var(--accent-pale); margin-bottom:0; margin-top:22px; }
+.guide-box.done .guide-icon { background:var(--accent-deep); }
+.guide-box.done .guide-text { color:var(--accent-text); }
+
+/* Comprehension cards */
+.comp-card { background:var(--white); border:2px solid var(--cream-2); border-radius:var(--radius);
+  padding:20px 20px 18px; margin-bottom:16px; box-shadow:0 4px 14px rgba(20,67,47,0.05); }
+.comp-num { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px;
+  border-radius:50%; background:var(--jade-deep); color:#fff; font-size:13px; font-weight:800; margin-right:8px; }
+.mcq-q { font-weight:700; margin-bottom:6px; font-size:16px; display:inline; }
+.q-translate { font-size:13px; color:var(--ink-3); font-style:italic; margin:2px 0 14px 34px; }
+.mcq-options { display:flex; flex-direction:column; gap:8px; }
+.mcq-option { text-align:left; background:var(--cream-2); border:2px solid transparent; border-radius:var(--radius-sm);
+  padding:11px 14px; font-size:14.5px; font-family:inherit; color:var(--ink); cursor:pointer; min-height:44px; }
+.mcq-option:hover:not(.disabled) { border-color:var(--sage); }
+.mcq-option.correct { background:var(--correct-bg); border-color:var(--correct); color:var(--jade-text); font-weight:700; }
+.mcq-option.wrong { background:var(--wrong-bg); border-color:var(--wrong); color:var(--wrong); font-weight:700; }
+.mcq-option.disabled { cursor:default; opacity:.85; }
+.mcq-feedback { display:none; margin-top:10px; padding:11px 14px; border-radius:var(--radius-sm);
+  font-size:13.5px; background:var(--info-bg); color:#2c4a55; }
+
+/* Table */
+table.func-table { width:100%; border-collapse:collapse; margin-bottom:6px; }
+table.func-table th { background:var(--jade-pale); color:var(--jade-dark); font-size:13px; text-align:left;
+  padding:9px 12px; border-radius:8px 8px 0 0; }
+.th-vi { display:block; font-size:11px; font-weight:600; color:var(--jade-text); opacity:.8; margin-top:2px; }
+table.func-table td { border-bottom:1px solid var(--paper-line); padding:10px 12px; font-size:14.5px; vertical-align:top; }
+table.func-table tr:last-child td { border-bottom:none; }
+
+/* Audio button */
+.audio-btn { background:var(--accent); border:none; width:30px; height:30px; border-radius:50%; flex:0 0 auto;
+  color:#fff; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; font-size:13px; }
+.audio-btn:active { transform:scale(.92); }
+.ex-row { display:flex; align-items:center; gap:8px; }
+
+/* Note boxes */
+.tip-box { background:var(--accent-pale); border-left:4px solid var(--accent-deep); border-radius:0 var(--radius) var(--radius) 0;
+  padding:12px 16px; font-size:13.5px; color:var(--accent-text); margin:14px 0; line-height:1.6; }
+.warn-box { background:var(--warning-bg); border-left:4px solid var(--warning); border-radius:0 var(--radius) var(--radius) 0;
+  padding:12px 16px; font-size:13.5px; color:#6b4d15; margin:14px 0; line-height:1.6; }
+
+/* Task / gap-fill */
+.task-box { background:var(--cream-2); border-radius:var(--radius); padding:16px 18px; margin-bottom:14px; }
+.instr-translate { font-size:12.5px; color:var(--ink-3); font-style:italic; margin:-8px 0 12px; }
+.gap-select { border:2px solid var(--paper-line); border-radius:var(--radius-sm); padding:6px 10px; font-size:14px;
+  font-family:inherit; background:var(--white); min-height:36px; margin:0 3px; }
+.check-btn { background:var(--jade-deep); color:#fff; border:none; border-radius:999px; padding:12px 22px;
+  font-weight:700; font-size:14px; min-height:46px; cursor:pointer; margin-top:6px; }
+.check-btn:disabled { background:var(--sage); cursor:default; }
+.task-feedback { display:none; margin-top:12px; padding:12px 14px; border-radius:var(--radius-sm); font-size:13.5px; }
+.task-feedback.correct { background:var(--correct-bg); color:var(--jade-text); display:block; }
+.task-feedback.wrong { background:var(--wrong-bg); color:var(--wrong); display:block; }
+
+/* Reveal button */
+.reveal-btn { background:var(--white); border:2px solid var(--jade-deep); color:var(--jade-deep); border-radius:999px;
+  padding:10px 18px; font-weight:700; font-size:13.5px; cursor:pointer; min-height:42px; }
+.reveal-box { display:none; margin-top:12px; background:var(--jade-pale); border-radius:var(--radius); padding:14px 16px;
+  font-size:14px; color:var(--jade-text); line-height:1.6; }
+
+/* Shadowing */
+.shadow-row { display:flex; gap:12px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--paper-line); }
+.shadow-row:last-child { border-bottom:none; }
+.shadow-text { flex:1; }
+.shadow-sentence { font-size:15px; color:var(--ink); margin-bottom:4px; }
+.shadow-func { font-size:11.5px; color:var(--jade-text); font-weight:700; text-transform:uppercase; letter-spacing:.02em; }
+.shadow-tip { font-size:12.5px; color:var(--ink-2); margin-top:4px; font-style:italic; }
+.shadow-record { display:flex; align-items:center; gap:10px; margin-top:12px; flex-wrap:wrap; }
+.mic-btn { background:var(--accent); color:#fff; border:none; width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px; flex:0 0 auto; }
+.mic-btn.stop { background:var(--wrong); }
+.mic-status { font-size:12px; color:var(--ink-3); }
+.shadow-playback { display:none; align-items:center; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.shadow-playback.show { display:flex; }
+.shadow-playback audio { height:32px; max-width:190px; }
+.chip-btn { background:var(--jade-deep); color:#fff; border:none; border-radius:999px; padding:7px 14px;
+  font-weight:700; font-size:11.5px; cursor:pointer; min-height:34px; }
+.chip-btn.ghost { background:var(--white); border:1.5px solid var(--sage); color:var(--ink-2); }
+.shadow-feedback { display:none; margin-top:8px; padding:8px 12px; border-radius:8px; font-size:12px;
+  background:var(--cream-2); color:var(--ink-2); }
+
+footer { text-align:center; padding:30px 18px 50px; color:var(--ink-3); font-size:13px; }
+
+/* ---------- UX polish: desktop + mobile ---------- */
+html { scroll-behavior:smooth; scroll-padding-top:78px; }
+body { min-height:100vh; -webkit-text-size-adjust:100%; background:
+  radial-gradient(circle at 8% 12%,rgba(60,165,122,.08),transparent 26rem),
+  radial-gradient(circle at 92% 42%,rgba(232,162,74,.07),transparent 24rem),var(--cream); }
+button,select { font-family:inherit; }
+button { touch-action:manipulation; }
+button:focus-visible,select:focus-visible,a:focus-visible,audio:focus-visible {
+  outline:3px solid var(--accent-deep); outline-offset:3px; }
+.skip-link { position:fixed; left:16px; top:10px; z-index:1000; transform:translateY(-160%);
+  background:var(--jade-dark); color:#fff; padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none; }
+.skip-link:focus { transform:none; }
+.reading-progress { position:fixed; inset:0 0 auto; height:4px; z-index:999; pointer-events:none; }
+.reading-progress span { display:block; width:0; height:100%; background:linear-gradient(90deg,var(--accent),var(--jade));
+  box-shadow:0 1px 5px rgba(20,67,47,.3); }
+.back-to-top { position:fixed; right:20px; bottom:20px; z-index:90; width:48px; height:48px; border:0;
+  border-radius:50%; display:grid; place-items:center; background:var(--jade-dark); color:#fff; font-size:22px;
+  box-shadow:0 8px 24px rgba(20,67,47,.28); opacity:0; visibility:hidden; transform:translateY(12px); transition:.2s ease; }
+.back-to-top.show { opacity:1; visibility:visible; transform:none; }
+.back-to-top:hover { background:var(--jade-deep); transform:translateY(-2px); }
+.pt-item { border:0; background:transparent; width:100%; text-align:left; font-family:inherit; cursor:pointer; }
+.pt-item.active { color:var(--accent-text); font-weight:800; }
+.pt-item.active .pt-box { border-color:var(--accent); background:var(--accent-pale); }
+.pt-item.done.active .pt-box { background:var(--jade-deep); border-color:var(--accent); }
+section.card { border:1px solid rgba(214,204,182,.65); transition:box-shadow .25s ease,border-color .25s ease; }
+section.card:hover { border-color:var(--sage); box-shadow:0 14px 38px rgba(43,43,40,.12); }
+.mcq-option,.check-btn,.reveal-btn,.audio-btn,.mic-btn,.chip-btn { transition:transform .12s ease,box-shadow .2s ease,background-color .2s ease; }
+.mcq-option:active,.check-btn:active,.reveal-btn:active,.audio-btn:active,.mic-btn:active,.chip-btn:active { transform:scale(.97); }
+.audio-btn,.mic-btn { min-width:44px; min-height:44px; }
+.gap-select { min-height:44px; max-width:100%; }
+
+@media (min-width:881px) {
+  main { max-width:min(920px,calc(100vw - 270px)); padding-inline:28px; }
+  #progress-tracker { right:max(18px,calc((100vw - 1370px)/2)); width:205px; }
+  section.card { padding:32px 36px; margin-bottom:26px; }
+  section.card h2 { font-size:24px; }
+  .section-desc { font-size:15.5px; }
+}
+@media (max-width:880px) {
+  body { padding-top:59px; }
+  #progress-tracker { position:fixed; top:0; bottom:auto; left:0; right:0; width:100%; transform:none;
+    padding:7px 10px; border:0; border-bottom:1px solid var(--cream-2); border-radius:0;
+    display:flex; align-items:center; z-index:99; box-shadow:0 5px 18px rgba(20,67,47,.10); }
+  #progress-tracker h4 { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .pt-handle { display:none; }
+  .pt-items { display:flex; flex:1; gap:12px; overflow-x:auto; scrollbar-width:none; scroll-snap-type:x proximity;
+    scroll-padding-inline:8px; -webkit-overflow-scrolling:touch; }
+  .pt-items::-webkit-scrollbar { display:none; }
+  .pt-item { flex:0 0 auto; width:auto; min-height:44px; padding:0 6px; white-space:nowrap; scroll-snap-align:center; }
+  .pt-item.active { padding-inline:10px; background:var(--accent-pale); border-radius:999px; }
+  main { margin-top:18px; padding-inline:14px; }
+  section.card { scroll-margin-top:16px; }
+  table.func-table { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+  table.func-table th { min-width:145px; }
+  .fl-block { padding:16px 12px 4px; }
+  .back-to-top { right:14px; bottom:14px; width:46px; height:46px; }
+}
+@media (max-width:520px) {
+  body { font-size:16px; }
+  main { padding-inline:12px; }
+  section.card { padding:20px 15px; border-radius:16px; margin-bottom:14px; }
+  section.card h2 { font-size:20px; line-height:1.35; }
+  .guide-box { padding:13px 14px; }
+  .comp-card { padding:16px 13px; }
+  .q-translate { margin-left:0; margin-top:7px; }
+  .mcq-option { padding:11px 12px; }
+  .task-box { padding:14px 12px; }
+  .shadow-row { gap:9px; }
+  .shadow-playback audio { width:100%; max-width:100%; }
+  .fl-head { align-items:flex-start; }
+}
+@media (hover:none) { section.card:hover { border-color:rgba(214,204,182,.65); box-shadow:var(--shadow); } }
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+}
+@media print {
+  #progress-tracker,.reading-progress,.back-to-top,.skip-link,.shadow-record { display:none!important; }
+  body { padding:0; background:#fff; } main { max-width:none; }
+  section.card { box-shadow:none; break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#sec-ee">Bỏ qua đến nội dung bài học</a>
+<div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
+
+<div id="progress-tracker">
+  <div class="pt-handle"></div>
+  <h4>Tasks</h4>
+  <div class="pt-items">
+    <button class="pt-item" type="button" data-key="ee" data-target="sec-ee"><span class="pt-box"></span>Daily Conversation</button>
+    <button class="pt-item" type="button" data-key="fl" data-target="sec-fl"><span class="pt-box"></span>Functional Language</button>
+    <button class="pt-item" type="button" data-key="ss" data-target="sec-ss"><span class="pt-box"></span>Sentence Structure</button>
+    <button class="pt-item" type="button" data-key="sh" data-target="sec-sh"><span class="pt-box"></span>Shadowing</button>
+  </div>
+</div>
+
+<main>
+
+<!-- BƯỚC 1 -->
+<section class="card" id="sec-ee">
+  <h2>Daily Conversation</h2>
+
+  <div class="guide-box">
+    <div class="guide-icon">🎥</div>
+    <div class="guide-text">Bạn đã xem video hội thoại giữa Minh, Linh và Lan. Bây giờ hãy đoán thử xem điều gì đã xảy ra trong video nhé!</div>
+  </div>
+
+  <div class="comp-card">
+    <div class="mcq-block" id="q1">
+      <div><span class="comp-num">1</span><span class="mcq-q">What are the three friends talking about?</span></div>
+      <div class="q-translate">Ba người bạn đang nói về điều gì?</div>
+      <div class="mcq-options">
+        <button class="mcq-option" data-correct="true" onclick="checkMCQ(this,'q1','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Whether children should do housework</button>
+        <button class="mcq-option" onclick="checkMCQ(this,'q1','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Whether children should study more at home</button>
+        <button class="mcq-option" onclick="checkMCQ(this,'q1','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Whether children should have more free time</button>
+        <button class="mcq-option" onclick="checkMCQ(this,'q1','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Whether children should help their parents cook</button>
+      </div>
+      <div class="mcq-feedback" id="fb-q1"></div>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="mcq-block" id="q2">
+      <div><span class="comp-num">2</span><span class="mcq-q">Look at the video again. Who agrees that children should do housework?</span></div>
+      <div class="q-translate">Xem lại video, và hãy chọn xem ai đồng ý với quan điểm trẻ em nên làm việc nhà?</div>
+      <div class="mcq-options">
+        <button class="mcq-option" data-correct="true" onclick="checkMCQ(this,'q2','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Minh and Lan (the boy on the left and the girl on the right)</button>
+        <button class="mcq-option" onclick="checkMCQ(this,'q2','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Linh and Lan (the two girls)</button>
+        <button class="mcq-option" onclick="checkMCQ(this,'q2','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Only Minh (the boy)</button>
+        <button class="mcq-option" onclick="checkMCQ(this,'q2','Nice! Let\'s find out how they said it.','Not quite — watch the video once more, then let\'s see how they said it.')">Only Linh (the girl in the middle)</button>
+      </div>
+      <div class="mcq-feedback" id="fb-q2"></div>
+    </div>
+  </div>
+
+  <div class="guide-box done" id="guide-ee-done" style="display:none;">
+    <div class="guide-icon">✅</div>
+    <div class="guide-text">Tuyệt vời! Giờ chúng ta sẽ cùng xem lại cách Minh, Linh và Lan đã diễn đạt ý kiến của mình trong đoạn hội thoại đó nhé.</div>
+  </div>
+
+  <h3 class="sub-h" style="margin-top:24px;">Useful Expressions</h3>
+  <p class="section-desc" style="margin-bottom:2px;">Did you notice how Minh, Linh, and Lan expressed their opinions in the video? Here are the expressions they used:</p>
+  <p class="instr-translate">Bạn có để ý cách Minh, Linh và Lan diễn đạt ý kiến của mình trong video không? Đây là những cách diễn đạt mà các bạn ấy đã dùng:</p>
+  <table class="func-table">
+    <tr>
+      <th><span class="func-icon-sm opinion"><svg viewBox="0 0 48 48" fill="none"><path d="M6 10c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v18c0 2.2-1.8 4-4 4H20l-8 8v-8h-2c-2.2 0-4-1.8-4-4V10z" fill="currentColor"/><circle cx="16" cy="19" r="2.3" fill="#fff"/><circle cx="24" cy="19" r="2.3" fill="#fff"/><circle cx="32" cy="19" r="2.3" fill="#fff"/></svg></span>Stating Opinion<span class="th-vi">Đưa ra ý kiến</span></th>
+      <th><span class="func-icon-sm agree"><svg viewBox="0 0 48 48" fill="none"><path d="M6 10c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v18c0 2.2-1.8 4-4 4H20l-8 8v-8h-2c-2.2 0-4-1.8-4-4V10z" fill="currentColor"/><path d="M15 19l5 5 11-11" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>Agreeing<span class="th-vi">Đồng ý</span></th>
+      <th><span class="func-icon-sm disagree"><svg viewBox="0 0 48 48" fill="none"><path d="M6 10c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v18c0 2.2-1.8 4-4 4H20l-8 8v-8h-2c-2.2 0-4-1.8-4-4V10z" fill="currentColor"/><path d="M16 13l14 14M30 13L16 27" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>Disagreeing<span class="th-vi">Không đồng ý</span></th>
+    </tr>
+    <tr>
+      <td>I think (that)...<br>In my opinion,...<br>I believe (that)...</td>
+      <td>I agree (with you).<br>That's right.</td>
+      <td>I don't think so.<br>I don't agree.</td>
+    </tr>
+  </table>
+
+  <h3 class="sub-h">Task — Complete the conversation</h3>
+  <div class="task-box">
+    <p style="font-size:13.5px;color:var(--ink-2);margin-bottom:4px;">Choose the correct expression for each blank.</p>
+    <p class="instr-translate">Chọn cách diễn đạt đúng cho mỗi chỗ trống.</p>
+    <p style="line-height:2.1;">
+      <b>Lan:</b> Do you think students should clean their own classroom, or should the school hire a cleaner?<br>
+      <b>Minh:</b> <select class="gap-select" id="g1"><option value="">— choose —</option><option value="C">In my opinion</option><option value="A">I don't think so</option><option value="B">I agree with</option><option value="D">That's right</option></select>, students should do it themselves. It teaches responsibility.<br>
+      <b>Lan:</b> <select class="gap-select" id="g2"><option value="">— choose —</option><option value="C">In my opinion</option><option value="A">I don't think so</option><option value="B">I agree with</option><option value="D">That's right</option></select>, younger students might not do it very well.<br>
+      <b>Linh:</b> <select class="gap-select" id="g3"><option value="">— choose —</option><option value="C">In my opinion</option><option value="A">I don't think so</option><option value="B">I agree with</option><option value="D">That's right</option></select> Minh. I think older students can definitely handle it.<br>
+      <b>Minh:</b> Exactly! And it also helps us look after our own space. Cleaning together can even be fun sometimes!<br>
+      <b>Lan:</b> <select class="gap-select" id="g4"><option value="">— choose —</option><option value="C">In my opinion</option><option value="A">I don't think so</option><option value="B">I agree with</option><option value="D">That's right</option></select>, but I still worry about the time it takes.
+    </p>
+    <button class="check-btn" onclick="checkTask1()">✓ Kiểm tra</button>
+    <div class="task-feedback" id="fb-task1"></div>
+  </div>
+
+  <div class="guide-box done">
+    <div class="guide-icon">🎉</div>
+    <div class="guide-text">Xong phần Daily Conversation rồi! Chúng ta chuyển sang phần Functional Language để học kỹ hơn cách nêu ý kiến, đồng ý và không đồng ý.</div>
+  </div>
+</section>
+
+<!-- BƯỚC 2 -->
+<section class="card" id="sec-fl">
+  <h2>Functional Language</h2>
+
+  <div class="guide-box">
+    <div class="guide-icon">📘</div>
+    <div class="guide-text">Ở phần này, bạn sẽ học 3 nhóm cấu trúc quan trọng: nêu ý kiến, đồng ý, và không đồng ý. Đọc kỹ từng cấu trúc và bấm nút 🔊 để nghe ví dụ nhé.</div>
+  </div>
+
+  <div class="fl-block opinion" id="fl-opinion">
+  <div class="fl-head">
+    <div class="func-icon opinion"><svg viewBox="0 0 48 48" fill="none"><path d="M6 10c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v18c0 2.2-1.8 4-4 4H20l-8 8v-8h-2c-2.2 0-4-1.8-4-4V10z" fill="currentColor"/><circle cx="16" cy="19" r="2.3" fill="#fff"/><circle cx="24" cy="19" r="2.3" fill="#fff"/><circle cx="32" cy="19" r="2.3" fill="#fff"/></svg></div>
+    <h3 class="sub-h">1. Stating Opinion (Nêu ý kiến)</h3>
+  </div>
+  <table class="func-table">
+    <tr><th>Cấu trúc</th><th>Ví dụ</th></tr>
+    <tr><td>I think (that)...</td><td><div class="ex-row"><button class="audio-btn" onclick="speak('I think housework is important for children.')">🔊</button><span>I think housework is important for children.</span></div></td></tr>
+    <tr><td>In my opinion, ...</td><td><div class="ex-row"><button class="audio-btn" onclick="speak('In my opinion, kids should help at home.')">🔊</button><span>In my opinion, kids should help at home.</span></div></td></tr>
+    <tr><td>I believe (that)...</td><td><div class="ex-row"><button class="audio-btn" onclick="speak('I believe simple chores are easy to manage.')">🔊</button><span>I believe simple chores are easy to manage.</span></div></td></tr>
+  </table>
+  <div class="tip-box">Ở giai đoạn này, cả 3 cấu trúc câu trên đều có thể thay thế nhau một cách tự nhiên, bạn chỉ cần nhớ đây là những cách có thể mở đầu một ý kiến.</div>
+  </div>
+
+  <div class="fl-block agree" id="fl-agree">
+  <div class="fl-head">
+    <div class="func-icon agree"><svg viewBox="0 0 48 48" fill="none"><path d="M6 10c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v18c0 2.2-1.8 4-4 4H20l-8 8v-8h-2c-2.2 0-4-1.8-4-4V10z" fill="currentColor"/><path d="M15 19l5 5 11-11" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+    <h3 class="sub-h">2. Agreeing (Thể hiện sự đồng ý, đồng thuận)</h3>
+  </div>
+  <table class="func-table">
+    <tr><th>Cấu trúc</th><th>Ví dụ</th></tr>
+    <tr><td>I agree (with you).</td><td><div class="ex-row"><button class="audio-btn" onclick="speak('I agree with you, chores are useful.')">🔊</button><span>I agree with you, chores are useful.</span></div></td></tr>
+    <tr><td>That's right.</td><td><div class="ex-row"><button class="audio-btn" onclick="speak('That\'s right, everyone should help a little.')">🔊</button><span>That's right, everyone should help a little.</span></div></td></tr>
+  </table>
+  <div class="tip-box">"That's right" hợp khi xác nhận lại đúng một điều cụ thể bạn vừa nghe; "I agree (with)" hợp khi đồng tình với quan điểm của người vừa nói.</div>
+  </div>
+
+  <div class="fl-block disagree" id="fl-disagree">
+  <div class="fl-head">
+    <div class="func-icon disagree"><svg viewBox="0 0 48 48" fill="none"><path d="M6 10c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v18c0 2.2-1.8 4-4 4H20l-8 8v-8h-2c-2.2 0-4-1.8-4-4V10z" fill="currentColor"/><path d="M16 13l14 14M30 13L16 27" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></div>
+    <h3 class="sub-h">3. Disagreeing (Thể hiện sự không đồng ý, ý kiến trái chiều)</h3>
+  </div>
+  <table class="func-table">
+    <tr><th>Cấu trúc</th><th>Ví dụ</th></tr>
+    <tr><td>I don't think so.</td><td><div class="ex-row"><button class="audio-btn" onclick="speak('I don\'t think so, kids need more free time.')">🔊</button><span>I don't think so, kids need more free time.</span></div></td></tr>
+    <tr><td>I don't agree.</td><td><div class="ex-row"><button class="audio-btn" onclick="speak('I don\'t agree, homework should come first.')">🔊</button><span>I don't agree, homework should come first.</span></div></td></tr>
+  </table>
+  <div class="warn-box">⚠️ Lưu ý: Hai cấu trúc trên đều có thể dùng để đưa ra ý kiến phản bác. Ở giai đoạn này, chúng ta chưa cần dùng đến cấu trúc "nhượng bộ rồi phản bác" (VD: "That's true, but...") — câu "But I still believe..." chỉ là một ví dụ tự nhiên xuất hiện trong hội thoại, bạn chưa cần dùng đến ở bài luyện tập này.</div>
+  </div>
+
+  <div class="guide-box done">
+    <div class="guide-icon">🎉</div>
+    <div class="guide-text">Xong phần Functional Language rồi! Tiếp theo, chúng ta sẽ học cách đưa ra lý do cụ thể để bảo vệ ý kiến của mình.</div>
+  </div>
+</section>
+
+<!-- BƯỚC 3 -->
+<section class="card" id="sec-ss">
+  <h2>Sentence Structure</h2>
+
+  <div class="guide-box">
+    <div class="guide-icon">🧩</div>
+    <div class="guide-text">Nêu ý kiến thôi chưa đủ — bạn cần thêm lý do để thuyết phục người nghe. Dưới đây là những lý do thường dùng khi bàn về việc trẻ em có nên làm việc nhà hay không.</div>
+  </div>
+
+  <p class="section-desc">Reasons — Should / Shouldn't</p>
+  <table class="func-table">
+    <tr><th>Children should do housework because...</th><th>Children shouldn't do housework because...</th></tr>
+    <tr>
+      <td><div class="ex-row"><button class="audio-btn" onclick="speak('It makes them feel proud of contributing something real to the family.',0.65)">🔊</button><span>...it makes them feel proud of contributing something real to the family.</span></div></td>
+      <td><div class="ex-row"><button class="audio-btn" onclick="speak('Their schedules are already packed with classes and extracurricular activities.',0.65)">🔊</button><span>...their schedules are already packed with classes and extracurricular activities.</span></div></td>
+    </tr>
+    <tr>
+      <td><div class="ex-row"><button class="audio-btn" onclick="speak('It gives them practical experience that textbooks can\'t teach.',0.65)">🔊</button><span>...it gives them practical experience that textbooks can't teach.</span></div></td>
+      <td><div class="ex-row"><button class="audio-btn" onclick="speak('Some tasks, like using cleaning chemicals, aren\'t safe for young children.',0.65)">🔊</button><span>...some tasks, like using cleaning chemicals, aren't safe for young children.</span></div></td>
+    </tr>
+    <tr>
+      <td><div class="ex-row"><button class="audio-btn" onclick="speak('It helps them understand how much effort it takes to run a home.',0.65)">🔊</button><span>...it helps them understand how much effort it takes to run a home.</span></div></td>
+      <td><div class="ex-row"><button class="audio-btn" onclick="speak('It can take time away from hobbies that help them grow in other ways.',0.65)">🔊</button><span>...it can take time away from hobbies that help them grow in other ways.</span></div></td>
+    </tr>
+  </table>
+
+  <h3 class="sub-h">Task — Complete the conversation</h3>
+  <div class="task-box">
+    <p style="line-height:1.9;">
+      <b>Lan:</b> I just finished a mini survey about housework for my project — people had really different opinions!<br>
+      <b>Minh:</b> Oh nice, what did you find out?<br>
+      <b>Lan:</b> Well, some students think chores are actually good practice. What's your take, Minh?<br>
+      <b>Minh:</b> <input type="text" id="fill1" placeholder="your answer..." style="border:2px solid var(--paper-line);border-radius:8px;padding:6px 10px;font-size:14px;font-family:inherit;min-width:220px;">. It's practical experience you just can't get from a textbook.<br>
+      <b>Lan:</b> That's a fair point. Linh, did people in your group agree with that?<br>
+      <b>Linh:</b> Not really — <input type="text" id="fill2" placeholder="your answer..." style="border:2px solid var(--paper-line);border-radius:8px;padding:6px 10px;font-size:14px;font-family:inherit;min-width:220px;">. There's barely enough time for homework as it is.<br>
+      <b>Minh:</b> Fair enough, but I still think it's worth making time for.<br>
+      <b>Lan:</b> Perfect, I'll add both views to my report — thanks, guys!
+    </p>
+    <button class="reveal-btn" onclick="document.getElementById('ss-reveal').style.display='block'">💡 Xem gợi ý đáp án</button>
+    <div class="reveal-box" id="ss-reveal">
+      <b>(1)</b> it makes them feel proud of contributing something real to the family / it gives them practical experience that textbooks can't teach / it helps them understand how much effort it takes to run a home<br><br>
+      <b>(2)</b> their schedules are already packed with classes and extracurricular activities / some tasks aren't safe for young children / it can take time away from other hobbies
+    </div>
+  </div>
+
+  <div class="guide-box done">
+    <div class="guide-icon">🎉</div>
+    <div class="guide-text">Xong phần Sentence Structure! Bây giờ hãy luyện phát âm những câu quan trọng trong phần Shadowing nhé.</div>
+  </div>
+</section>
+
+<!-- SHADOWING -->
+<section class="card" id="sec-sh">
+  <h2>Shadowing</h2>
+
+  <div class="guide-box">
+    <div class="guide-icon">🎧</div>
+    <div class="guide-text">Bấm 🔊 để nghe từng câu, lặp lại theo đúng ngữ điệu, rồi bấm 🎙️ để thu âm giọng của bạn và gửi cho Athena kiểm tra nhé.</div>
+  </div>
+
+  <div class="shadow-row">
+    <button class="audio-btn" onclick="speak('I just finished a mini survey about housework for my project — people had really different opinions!',0.7)">🔊</button>
+    <div class="shadow-text">
+      <div class="shadow-sentence">I just finished a mini survey about housework for my project — people had really different opinions!</div>
+      <div class="shadow-func">Giving context</div>
+      <div class="shadow-tip">Nhấn "mini survey" và "different opinions"; giọng lên nhẹ ở cuối để thể hiện sự bất ngờ.</div>
+      <div class="shadow-record">
+        <button class="mic-btn" id="btnRec-sh1" onclick="startRecording('sh1')" aria-label="Ghi âm">🎙️</button>
+        <button class="mic-btn stop" id="btnStop-sh1" style="display:none;" onclick="stopRecording('sh1')" aria-label="Dừng ghi âm">⏹</button>
+        <span class="mic-status" id="status-sh1">Ghi âm câu này để gửi Athena kiểm tra</span>
+      </div>
+      <div class="shadow-playback" id="playback-sh1">
+        <audio id="audio-sh1" controls></audio>
+        <button class="chip-btn ghost" onclick="reRecord('sh1')">↺ Ghi lại</button>
+        <button class="chip-btn" onclick="submitToAthena('sh1')">✓ Gửi cho Athena</button>
+      </div>
+      <div class="shadow-feedback" id="feedback-sh1"></div>
+    </div>
+  </div>
+
+  <div class="shadow-row">
+    <button class="audio-btn" onclick="speak('In my opinion, children should do housework — it gives them practical experience you just can\'t get from a textbook.',0.7)">🔊</button>
+    <div class="shadow-text">
+      <div class="shadow-sentence">In my opinion, children should do housework — it gives them practical experience you just can't get from a textbook.</div>
+      <div class="shadow-func">Stating opinion (should) + giving reason</div>
+      <div class="shadow-tip">Nhấn mạnh "should" và "can't"; ngắt nhẹ sau dấu gạch ngang.</div>
+      <div class="shadow-record">
+        <button class="mic-btn" id="btnRec-sh2" onclick="startRecording('sh2')" aria-label="Ghi âm">🎙️</button>
+        <button class="mic-btn stop" id="btnStop-sh2" style="display:none;" onclick="stopRecording('sh2')" aria-label="Dừng ghi âm">⏹</button>
+        <span class="mic-status" id="status-sh2">Ghi âm câu này để gửi Athena kiểm tra</span>
+      </div>
+      <div class="shadow-playback" id="playback-sh2">
+        <audio id="audio-sh2" controls></audio>
+        <button class="chip-btn ghost" onclick="reRecord('sh2')">↺ Ghi lại</button>
+        <button class="chip-btn" onclick="submitToAthena('sh2')">✓ Gửi cho Athena</button>
+      </div>
+      <div class="shadow-feedback" id="feedback-sh2"></div>
+    </div>
+  </div>
+
+  <div class="shadow-row">
+    <button class="audio-btn" onclick="speak('That\'s a fair point.',0.7)">🔊</button>
+    <div class="shadow-text">
+      <div class="shadow-sentence">That's a fair point.</div>
+      <div class="shadow-func">Agreeing (nhẹ)</div>
+      <div class="shadow-tip">Giọng ấm, ngắn gọn; không kéo dài "fair".</div>
+      <div class="shadow-record">
+        <button class="mic-btn" id="btnRec-sh3" onclick="startRecording('sh3')" aria-label="Ghi âm">🎙️</button>
+        <button class="mic-btn stop" id="btnStop-sh3" style="display:none;" onclick="stopRecording('sh3')" aria-label="Dừng ghi âm">⏹</button>
+        <span class="mic-status" id="status-sh3">Ghi âm câu này để gửi Athena kiểm tra</span>
+      </div>
+      <div class="shadow-playback" id="playback-sh3">
+        <audio id="audio-sh3" controls></audio>
+        <button class="chip-btn ghost" onclick="reRecord('sh3')">↺ Ghi lại</button>
+        <button class="chip-btn" onclick="submitToAthena('sh3')">✓ Gửi cho Athena</button>
+      </div>
+      <div class="shadow-feedback" id="feedback-sh3"></div>
+    </div>
+  </div>
+
+  <div class="shadow-row">
+    <button class="audio-btn" onclick="speak('Not really — I don\'t think children should do too much; their schedules are already packed with classes and activities.',0.7)">🔊</button>
+    <div class="shadow-text">
+      <div class="shadow-sentence">Not really — I don't think children should do too much; their schedules are already packed with classes and activities.</div>
+      <div class="shadow-func">Disagreeing (shouldn't-idea) + giving reason</div>
+      <div class="shadow-tip">Nhấn "don't think" và "should"; ngắt nhẹ sau dấu chấm phẩy trước khi nêu lý do.</div>
+      <div class="shadow-record">
+        <button class="mic-btn" id="btnRec-sh4" onclick="startRecording('sh4')" aria-label="Ghi âm">🎙️</button>
+        <button class="mic-btn stop" id="btnStop-sh4" style="display:none;" onclick="stopRecording('sh4')" aria-label="Dừng ghi âm">⏹</button>
+        <span class="mic-status" id="status-sh4">Ghi âm câu này để gửi Athena kiểm tra</span>
+      </div>
+      <div class="shadow-playback" id="playback-sh4">
+        <audio id="audio-sh4" controls></audio>
+        <button class="chip-btn ghost" onclick="reRecord('sh4')">↺ Ghi lại</button>
+        <button class="chip-btn" onclick="submitToAthena('sh4')">✓ Gửi cho Athena</button>
+      </div>
+      <div class="shadow-feedback" id="feedback-sh4"></div>
+    </div>
+  </div>
+
+  <div class="guide-box done">
+    <div class="guide-icon">🏁</div>
+    <div class="guide-text">Bạn đã hoàn thành phần Bài học! Hãy mở file Luyện tập &amp; Nói để tiếp tục với phần Luyện tập và Production nhé.</div>
+  </div>
+</section>
+
+</main>
+
+<footer>Unit 1 · Family Routines — Speaking · Bài học.</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Về đầu trang">↑</button>
+
+<script>
+function speak(text, rate) {
+  if (!('speechSynthesis' in window)) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-GB';
+  u.rate = rate || 0.7;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+function markDone(key) {
+  const el = document.querySelector('#progress-tracker .pt-item[data-key="' + key + '"]');
+  if (el) el.classList.add('done');
+}
+
+function checkMCQ(btn, groupId, msgCorrect, msgWrong) {
+  const group = document.getElementById(groupId);
+  if (group.dataset.answered) return;
+  group.dataset.answered = '1';
+  const options = group.querySelectorAll('.mcq-option');
+  options.forEach(o => o.classList.add('disabled'));
+  const fb = document.getElementById('fb-' + groupId);
+  if (btn.dataset.correct === 'true') {
+    btn.classList.add('correct');
+    fb.textContent = msgCorrect;
+  } else {
+    btn.classList.add('wrong');
+    group.querySelector('[data-correct="true"]').classList.add('correct');
+    fb.textContent = msgWrong;
+  }
+  fb.style.display = 'block';
+  if (document.getElementById('q1').dataset.answered && document.getElementById('q2').dataset.answered) {
+    document.getElementById('guide-ee-done').style.display = 'flex';
+    markDone('ee');
+  }
+}
+
+function checkTask1() {
+  const answers = { g1: 'C', g2: 'A', g3: 'B', g4: 'D' };
+  const anyEmpty = ['g1','g2','g3','g4'].some(id => document.getElementById(id).value === '');
+  const fb = document.getElementById('fb-task1');
+  if (anyEmpty) {
+    fb.className = 'task-feedback wrong';
+    fb.textContent = 'Bạn hãy chọn đủ cả 4 chỗ trống nhé.';
+    return;
+  }
+  const allCorrect = Object.keys(answers).every(id => document.getElementById(id).value === answers[id]);
+  if (allCorrect) {
+    fb.className = 'task-feedback correct';
+    fb.textContent = '✓ Chính xác! Bạn đã dùng đúng cả 3 nhóm: nêu ý kiến, không đồng ý, đồng ý.';
+    markDone('ee');
+  } else {
+    fb.className = 'task-feedback wrong';
+    fb.textContent = 'Chưa đúng hết — đáp án đúng là: (1) In my opinion · (2) I don\'t think so · (3) I agree with · (4) That\'s right.';
+  }
+}
+
+/* ---- Shadowing: ghi âm & gửi Athena (MediaRecorder API) ---- */
+let mediaRecorder, audioChunks = [];
+
+async function startRecording(id) {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(audioChunks, { type: 'audio/webm' });
+      document.getElementById('audio-' + id).src = URL.createObjectURL(blob);
+      document.getElementById('playback-' + id).classList.add('show');
+      stream.getTracks().forEach(t => t.stop());
+    };
+    mediaRecorder.start();
+    document.getElementById('btnRec-' + id).style.display = 'none';
+    document.getElementById('btnStop-' + id).style.display = 'inline-flex';
+    document.getElementById('status-' + id).textContent = '🔴 Đang ghi âm...';
+  } catch (err) {
+    alert('Không truy cập được microphone. Vui lòng kiểm tra quyền truy cập trình duyệt.');
+  }
+}
+function stopRecording(id) {
+  mediaRecorder?.stop();
+  document.getElementById('btnStop-' + id).style.display = 'none';
+  document.getElementById('btnRec-' + id).style.display = 'inline-flex';
+  document.getElementById('status-' + id).textContent = '✅ Đã ghi xong — nghe lại hoặc gửi cho Athena.';
+}
+function reRecord(id) {
+  document.getElementById('playback-' + id).classList.remove('show');
+  document.getElementById('feedback-' + id).style.display = 'none';
+  document.getElementById('status-' + id).textContent = 'Ghi âm câu này để gửi Athena kiểm tra';
+}
+function submitToAthena(id) {
+  const fb = document.getElementById('feedback-' + id);
+  fb.style.display = 'block';
+  fb.textContent = '⏳ Đang gửi cho Athena...';
+  // Gửi blob ghi âm lên endpoint chấm của nền tảng (do đội backend cung cấp) — khi tích hợp thật,
+  // thay đoạn dưới bằng lệnh gọi API thật và hiển thị nhận xét Athena trả về.
+  setTimeout(() => {
+    fb.textContent = '✅ Đã gửi cho Athena — chờ nhận xét nhé.';
+  }, 900);
+}
+
+/* ---- Reading navigation & accessibility ---- */
+const progressBar = document.getElementById('readingProgressBar');
+const backToTop = document.getElementById('backToTop');
+const trackerItems = Array.from(document.querySelectorAll('#progress-tracker .pt-item'));
+
+trackerItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const target = document.getElementById(item.dataset.target);
+    if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+});
+
+if ('IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      trackerItems.forEach(item => {
+        const active = item.dataset.target === entry.target.id;
+        item.classList.toggle('active', active);
+        if (active) {
+          item.classList.add('done');
+          item.setAttribute('aria-current','step');
+          item.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+        } else item.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin:'-20% 0px -65% 0px' });
+  document.querySelectorAll('main > section.card').forEach(section => sectionObserver.observe(section));
+}
+
+document.querySelectorAll('.mcq-feedback,.task-feedback,.shadow-feedback,.mic-status').forEach(el => {
+  el.setAttribute('aria-live','polite');
+});
+document.querySelectorAll('.audio-btn').forEach(btn => {
+  if (!btn.getAttribute('aria-label')) btn.setAttribute('aria-label','Nghe câu mẫu');
+});
+
+let scrollTicking = false;
+function updateReadingUI() {
+  const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  const ratio = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+  progressBar.style.width = (ratio * 100).toFixed(1) + '%';
+  backToTop.classList.toggle('show', window.scrollY > 650);
+  scrollTicking = false;
+}
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(updateReadingUI); }
+}, { passive:true });
+backToTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+updateReadingUI();
+</script>
+</body>
+</html>

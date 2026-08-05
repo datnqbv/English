@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 · Family Routines — Speaking (Practice)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#FAF7F0; --cream-2:#F0EADD; --cream-3:#E7DECC;
+  --paper-line:#E5DECF; --paper-line-2:#D6CCB6;
+  --ink:#1A1A1A; --ink-2:#514C44; --ink-3:#7C756A; --ink-faint:#ABA396;
+  --jade:#3CA57A; --jade-deep:#2D8B6F; --jade-dark:#14432F;
+  --jade-text:#1B5E48; --jade-soft:#A9D0BE; --jade-pale:#DCEAE1;
+  --sage:#A8C9B8; --sage-deep:#7CA792; --sage-text:#46685A; --sage-pale:#E1ECE4;
+  --accent:#E8A24A; --accent-deep:#CE8A33; --accent-text:#8A551A; --accent-pale:#F7E7CD;
+  --correct:#2D8B6F; --correct-bg:#DCEAE1;
+  --wrong:#C15F3C; --wrong-bg:#F3E2D6;
+  --warning:#C58A2E; --warning-bg:#F5E7CB;
+  --info:#4E7F92; --info-bg:#DCE7EB;
+  --white:#FFFFFF;
+  --radius-lg:22px; --radius:14px; --radius-sm:10px;
+  --shadow:0 10px 30px rgba(43,43,40,0.10);
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:'Be Vietnam Pro',sans-serif; font-size:18px; color:var(--ink); background:var(--cream); line-height:1.55; }
+h1,h2,h3,.display { font-family:'Be Vietnam Pro',sans-serif; font-weight:800; color:var(--jade-dark); }
+p { margin:0 0 10px; }
+
+#progress-tracker { position:fixed; right:18px; top:50%; transform:translateY(-50%); width:190px;
+  background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px 16px 14px;
+  z-index:50; border:2px solid var(--cream-2); }
+.pt-handle { width:44px; height:14px; background:var(--jade-dark); border-radius:6px; margin:-24px auto 10px; }
+#progress-tracker h4 { font-size:13px; letter-spacing:.02em; color:var(--jade-dark); margin:0 0 10px; text-transform:uppercase; }
+.pt-item { display:flex; align-items:center; gap:8px; font-size:12.5px; padding:6px 0; color:var(--ink-2); }
+.pt-box { width:16px; height:16px; border-radius:5px; border:2px solid var(--sage); flex:0 0 auto; position:relative; transition:.25s; }
+.pt-item.done .pt-box { background:var(--jade-deep); border-color:var(--jade-deep); }
+.pt-item.done .pt-box::after { content:''; position:absolute; left:3px; top:0; width:4px; height:8px;
+  border:solid #fff; border-width:0 2px 2px 0; transform:rotate(40deg); }
+.pt-item.done { color:var(--jade-dark); font-weight:600; }
+@media (max-width:880px) {
+  #progress-tracker { position:sticky; top:0; transform:none; width:auto; left:0; right:0; border-radius:0;
+    display:flex; align-items:center; gap:14px; padding:10px 16px; border:none; border-bottom:2px solid var(--cream-2); }
+  .pt-handle { display:none; }
+  #progress-tracker h4 { margin:0; white-space:nowrap; font-size:11px; }
+  .pt-items { display:flex; gap:12px; overflow-x:auto; scrollbar-width:none; }
+  .pt-items::-webkit-scrollbar { display:none; }
+  .pt-item { padding:0; white-space:nowrap; min-height:44px; align-items:center; }
+}
+
+.hero { position:relative; background:var(--jade-deep); overflow:hidden; padding:50px 20px 74px; }
+.hero-inner { position:relative; z-index:2; text-align:center; color:#fff; max-width:640px; margin:0 auto; }
+.eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.35); padding:6px 16px; border-radius:999px; font-size:13px;
+  text-transform:uppercase; margin-bottom:16px; }
+.hero h1 { color:#fff; font-size:clamp(24px,4.5vw,36px); line-height:1.2; margin:0; }
+.hero p.sub { color:var(--sage-pale); font-size:16px; margin-top:8px; font-weight:600; }
+
+main { max-width:760px; margin:-40px auto 60px; padding:0 18px; position:relative; z-index:3; }
+section.card { background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow);
+  padding:26px 24px; margin-bottom:22px; }
+section.card h2 { font-size:22px; margin:0 0 6px; }
+.section-desc { color:var(--ink-2); font-size:14.5px; margin-bottom:18px; }
+
+/* Reference recap (collapsible) */
+.ref-toggle { display:flex; align-items:center; justify-content:space-between; background:var(--cream-2);
+  border-radius:var(--radius); padding:12px 16px; cursor:pointer; font-weight:700; color:var(--jade-dark); font-size:14.5px; }
+.ref-body { display:none; padding:14px 4px 4px; }
+.ref-body.open { display:block; }
+.ref-tabs { display:flex; gap:8px; margin-bottom:12px; }
+.ref-tab { background:var(--cream-2); border:1.5px solid transparent; border-radius:999px; padding:7px 14px;
+  font-size:12.5px; font-weight:700; color:var(--ink-2); cursor:pointer; }
+.ref-tab.active { background:var(--jade-deep); color:#fff; }
+.ref-pane { display:none; font-size:13.5px; line-height:1.7; color:var(--ink-2); }
+.ref-pane.active { display:block; }
+.ref-pane ul { margin:0; padding-left:18px; }
+
+/* Level tabs */
+.level-tabs { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+.level-tab { flex:1; min-width:100px; background:var(--cream-2); border:2px solid transparent; border-radius:var(--radius-sm);
+  padding:10px 8px; font-weight:700; font-size:13.5px; color:var(--ink-2); cursor:pointer; text-align:center; min-height:44px; }
+.level-tab.active { background:var(--jade-deep); color:#fff; }
+.level-panel { display:none; }
+.level-panel.active { display:block; }
+
+/* MCQ (reuse) */
+.mcq-block { margin-bottom:20px; background:var(--cream-2); border-radius:var(--radius); padding:16px 18px; }
+.mcq-q { font-weight:700; margin-bottom:12px; font-size:15.5px; line-height:1.6; }
+.mcq-options { display:flex; flex-direction:column; gap:8px; }
+.mcq-option { text-align:left; background:var(--white); border:2px solid var(--paper-line); border-radius:var(--radius-sm);
+  padding:11px 14px; font-size:14px; font-family:inherit; color:var(--ink); cursor:pointer; min-height:44px; }
+.mcq-option:hover:not(.disabled) { border-color:var(--sage-deep); }
+.mcq-option.correct { background:var(--correct-bg); border-color:var(--correct); color:var(--jade-text); font-weight:700; }
+.mcq-option.wrong { background:var(--wrong-bg); border-color:var(--wrong); color:var(--wrong); font-weight:700; }
+.mcq-option.disabled { cursor:default; opacity:.9; }
+.mcq-feedback { display:none; margin-top:10px; padding:11px 14px; border-radius:var(--radius-sm);
+  font-size:13.5px; background:var(--white); color:var(--ink-2); border:1.5px dashed var(--sage); }
+
+.group-title { font-size:15px; font-weight:800; color:var(--jade-text); margin:24px 0 12px; }
+.tip-box { display:none; background:var(--accent-pale); border-left:4px solid var(--accent-deep);
+  border-radius:0 var(--radius) var(--radius) 0; padding:14px 16px; font-size:13.5px; color:var(--accent-text);
+  margin:16px 0; line-height:1.6; }
+.tip-box.unlocked { display:block; }
+.next-btn { background:var(--jade-deep); color:#fff; border:none; border-radius:999px; padding:12px 24px;
+  font-weight:700; font-size:14px; min-height:46px; cursor:pointer; display:none; margin-top:8px; }
+.next-btn.show { display:inline-flex; }
+
+/* Production */
+.prod-intro { background:var(--info-bg); border-radius:var(--radius); padding:12px 16px; font-size:13.5px;
+  color:#2c4a55; margin-bottom:18px; }
+.step-box { background:var(--cream-2); border-radius:var(--radius); padding:16px 18px; margin-bottom:14px; }
+.step-label { font-size:12px; font-weight:800; color:var(--jade-text); text-transform:uppercase; letter-spacing:.03em; margin-bottom:8px; }
+.stance-btns { display:flex; gap:10px; margin:10px 0; }
+.stance-btn { flex:1; background:var(--white); border:2px solid var(--paper-line); border-radius:var(--radius-sm);
+  padding:12px; font-weight:700; font-size:14px; cursor:pointer; min-height:46px; }
+.stance-btn.selected { background:var(--jade-deep); color:#fff; border-color:var(--jade-deep); }
+.reason-opt { display:block; background:var(--white); border:2px solid var(--paper-line); border-radius:var(--radius-sm);
+  padding:10px 14px; margin-bottom:8px; font-size:13.5px; cursor:pointer; }
+.reason-opt.selected { border-color:var(--accent-deep); background:var(--accent-pale); }
+.reason-group { display:none; }
+.reason-group.show { display:block; }
+.preview-box { background:var(--jade-pale); border-radius:var(--radius); padding:14px 16px; font-size:14px;
+  color:var(--jade-text); font-style:italic; line-height:1.6; }
+
+.record-box { background:var(--white); border:2px solid var(--cream-2); border-radius:var(--radius-lg); padding:18px; text-align:center; }
+.record-target { font-size:15px; font-weight:600; color:var(--ink); margin-bottom:14px; line-height:1.6; }
+.record-controls { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
+.rec-btn { background:var(--accent); color:#fff; border:none; border-radius:999px; padding:12px 22px;
+  font-weight:700; font-size:13.5px; min-height:46px; display:inline-flex; align-items:center; gap:8px; cursor:pointer; }
+.rec-btn.stop { background:var(--wrong); }
+.rec-timer { font-size:13px; font-weight:700; color:var(--ink-2); font-variant-numeric:tabular-nums; }
+.record-playback { margin-top:14px; display:none; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
+.record-playback.show { display:flex; }
+.chip-btn { background:var(--jade-deep); color:#fff; border:none; border-radius:999px; padding:9px 16px;
+  font-weight:700; font-size:12.5px; cursor:pointer; min-height:40px; }
+.chip-btn.ghost { background:var(--white); border:2px solid var(--sage); color:var(--ink-2); }
+
+.model-reveal { display:none; margin-top:14px; background:var(--jade-pale); border-radius:var(--radius); padding:14px 16px;
+  font-size:14px; color:var(--jade-text); line-height:1.7; }
+.model-reveal.show { display:block; }
+.reveal-btn { background:var(--white); border:2px solid var(--jade-deep); color:var(--jade-deep); border-radius:999px;
+  padding:10px 18px; font-weight:700; font-size:13px; cursor:pointer; min-height:42px; margin-top:12px; display:none; }
+.reveal-btn.show { display:inline-flex; }
+
+/* Nộp bài ghi âm cho Athena chấm */
+.record-feedback { display:none; margin-top:10px; padding:10px 14px; border-radius:var(--radius-sm); font-size:12.5px;
+  background:var(--cream-2); color:var(--ink-2); }
+
+/* Phrase/collocation gợi ý — mảnh cụm từ, không phải cả câu */
+.phrase-box { background:var(--accent-pale); border-radius:var(--radius-sm); padding:10px 14px; margin-top:10px;
+  font-size:12.5px; color:var(--accent-text); display:flex; align-items:center; gap:8px; flex-wrap:wrap; text-align:left; }
+.phrase-box b { flex:0 0 auto; }
+.phrase-chip { background:var(--white); border:1.5px solid var(--accent-deep); border-radius:999px; padding:4px 11px;
+  font-size:12px; font-weight:700; color:var(--accent-text); }
+
+.warn-box { background:var(--warning-bg); border-left:4px solid var(--warning); border-radius:0 var(--radius) var(--radius) 0;
+  padding:12px 16px; font-size:13.5px; color:#6b4d15; margin-bottom:16px; line-height:1.6; }
+
+/* Preview 2 câu (Easy) */
+.preview-line { margin-bottom:8px; }
+.preview-line:last-child { margin-bottom:0; }
+.preview-label { display:inline-block; font-weight:800; font-size:11px; color:var(--jade-dark);
+  text-transform:uppercase; letter-spacing:.03em; background:var(--white); border-radius:999px;
+  padding:2px 9px; margin-right:8px; }
+.preview-placeholder { color:var(--ink-3); font-style:italic; font-size:13.5px; }
+
+/* Từ nối gợi ý (Medium) */
+.connector-box { background:var(--info-bg); border-radius:var(--radius); padding:12px 16px; margin-bottom:16px;
+  font-size:13px; color:#2c4a55; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.connector-box b { flex:0 0 auto; }
+.chip { background:var(--white); border:1.5px solid #b9d3db; border-radius:999px; padding:4px 11px;
+  font-size:12.5px; font-weight:700; color:#2c4a55; }
+
+/* Khung lên ý / brainstorm trước khi nói tự do (Difficult) */
+.outline-box { background:var(--jade-pale); border-radius:var(--radius-lg); padding:18px 20px; margin-bottom:20px; }
+.outline-title { font-weight:800; font-size:14.5px; color:var(--jade-dark); margin-bottom:10px; }
+.outline-box ol { margin:0; padding-left:20px; font-size:13.5px; color:var(--jade-text); line-height:2; }
+.outline-reminder { font-size:12.5px; color:var(--jade-text); background:var(--jade-pale); border-radius:var(--radius-sm);
+  padding:8px 12px; margin-bottom:14px; display:inline-block; }
+.checklist { list-style:none; padding:0; margin:10px 0 0; }
+.checklist li { display:flex; gap:10px; align-items:flex-start; font-size:13.5px; padding:5px 0; color:var(--ink-2); }
+.checklist input { margin-top:3px; width:18px; height:18px; accent-color:var(--jade-deep); flex:0 0 auto; }
+
+/* Self-evaluation */
+.selfeval-list { list-style:none; padding:0; margin:0; }
+.selfeval-list li { display:flex; gap:12px; align-items:flex-start; padding:10px 0; border-bottom:1px solid var(--paper-line); font-size:14.5px; }
+.selfeval-list li:last-child { border-bottom:none; }
+.selfeval-list input { margin-top:3px; width:20px; height:20px; accent-color:var(--jade-deep); flex:0 0 auto; }
+
+footer { text-align:center; padding:30px 18px 50px; color:var(--ink-3); font-size:13px; }
+</style>
+</head>
+<body>
+
+<div id="progress-tracker">
+  <div class="pt-handle"></div>
+  <h4>Tasks</h4>
+  <div class="pt-items">
+    <div class="pt-item" data-key="practice"><div class="pt-box"></div>Practice</div>
+    <div class="pt-item" data-key="production"><div class="pt-box"></div>Production</div>
+    <div class="pt-item" data-key="assess"><div class="pt-box"></div>Self-Assessment</div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">🗣️ Unit 1 · Speaking</span>
+    <h1>Family Routines — Luyện tập &amp; Nói</h1>
+    <p class="sub">Why should/shouldn't children do housework?</p>
+  </div>
+</header>
+
+<main>
+
+<!-- REFERENCE RECAP -->
+<div class="ref-toggle" onclick="document.getElementById('refBody').classList.toggle('open')">
+  <span>📎 Xem lại kiến thức đã học</span><span>▾</span>
+</div>
+<div class="ref-body" id="refBody">
+  <div class="ref-tabs">
+    <button class="ref-tab active" onclick="switchRef(this,'refFL')">Functional Language</button>
+    <button class="ref-tab" onclick="switchRef(this,'refReasons')">Reasons</button>
+  </div>
+  <div class="ref-pane active" id="refFL">
+    <b>Stating Opinion:</b> I think (that)... · In my opinion,... · I believe (that)...<br>
+    <b>Agreeing:</b> I agree (with you). · That's right.<br>
+    <b>Disagreeing:</b> I don't think so. · I don't agree.
+  </div>
+  <div class="ref-pane" id="refReasons">
+    <b>Should:</b>
+    <ul>
+      <li>...it makes them feel proud of contributing something real to the family.</li>
+      <li>...it gives them practical experience that textbooks can't teach.</li>
+      <li>...it helps them understand how much effort it takes to run a home.</li>
+    </ul>
+    <b>Shouldn't:</b>
+    <ul>
+      <li>...their schedules are already packed with classes and extracurricular activities.</li>
+      <li>...some tasks aren't safe for young children.</li>
+      <li>...it can take time away from hobbies that help them grow in other ways.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BƯỚC 4 -->
+<section class="card" id="sec-practice" style="margin-top:20px;">
+  <h2>Luyện tập</h2>
+  <p class="section-desc">Chọn đáp án đúng cho mỗi câu.</p>
+
+  <div id="dang1">
+    <div class="group-title">Xác định chức năng giao tiếp</div>
+
+    <div class="mcq-block" id="p1">
+      <div class="mcq-q">1. "In my opinion, children should help with housework."</div>
+      <div class="mcq-options">
+        <button class="mcq-option" onclick="checkP(this,'p1','Chưa đúng — đây không phải hành động đồng ý với ai.')">Agreeing</button>
+        <button class="mcq-option" onclick="checkP(this,'p1','Chưa đúng — câu này không phải phản đối.')">Disagreeing</button>
+        <button class="mcq-option" data-correct="true" onclick="checkP(this,'p1','“In my opinion” là cấu trúc mở đầu ý kiến điển hình.')">Stating an opinion</button>
+        <button class="mcq-option" onclick="checkP(this,'p1','Chưa đúng — câu này không phải một câu hỏi.')">Asking for an opinion</button>
+      </div>
+      <div class="mcq-feedback" id="fb-p1"></div>
+    </div>
+
+    <div class="mcq-block" id="p2">
+      <div class="mcq-q">2. "I think you're right — housework really does teach responsibility."</div>
+      <div class="mcq-options">
+        <button class="mcq-option" onclick="checkP(this,'p2','Có “I think” nhưng ngay sau là “you\'re right” — tức là đồng ý với ý người khác, không phải nêu ý kiến mới.')">Stating a new opinion</button>
+        <button class="mcq-option" data-correct="true" onclick="checkP(this,'p2','Có “I think” nhưng ngay sau là “you\'re right” — tức là đồng ý với ý người khác, không phải nêu ý kiến mới.')">Agreeing with someone's opinion</button>
+        <button class="mcq-option" onclick="checkP(this,'p2','Chưa đúng — câu này không thể hiện sự phản đối.')">Disagreeing</button>
+        <button class="mcq-option" onclick="checkP(this,'p2','Chưa đúng — câu này không phải một câu hỏi.')">Asking for a reason</button>
+      </div>
+      <div class="mcq-feedback" id="fb-p2"></div>
+    </div>
+
+    <div class="mcq-block" id="p3">
+      <div class="mcq-q">3. "I don't think children should do a lot of housework, but a little can be helpful."</div>
+      <div class="mcq-options">
+        <button class="mcq-option" onclick="checkP(this,'p3','Câu này còn thêm 1 ý kiến riêng ở vế sau nữa, không chỉ đơn thuần phản đối.')">Chỉ Disagreeing</button>
+        <button class="mcq-option" onclick="checkP(this,'p3','Vế đầu của câu vẫn là phản đối mức độ nhiều, không phải đồng ý hoàn toàn.')">Chỉ Agreeing</button>
+        <button class="mcq-option" onclick="checkP(this,'p3','Câu này không phải một câu hỏi xin làm rõ.')">Asking for clarification</button>
+        <button class="mcq-option" data-correct="true" onclick="checkP(this,'p3','“I don\'t think... a lot” = disagreeing với mức độ nhiều; “but a little can be helpful” = thêm ý kiến riêng.')">Disagreeing với 1 phần + nêu ý kiến riêng</button>
+      </div>
+      <div class="mcq-feedback" id="fb-p3"></div>
+    </div>
+
+    <div class="tip-box" id="tip-dang1">💡 <b>Ghi nhớ:</b> một câu có thể vừa mang chức năng đồng ý/phản đối, vừa chứa thêm một ý kiến riêng đi kèm — hãy đọc kỹ cả câu trước khi chọn.</div>
+    <button class="next-btn" id="next-dang1" onclick="showDang2()">Tiếp theo →</button>
+  </div>
+
+  <div id="dang2" style="display:none;">
+    <div class="group-title">Chọn phản hồi phù hợp</div>
+
+    <div class="mcq-block" id="p4">
+      <div class="mcq-q">4. <b>Lan:</b> Do you think children should help with housework?</div>
+      <div class="mcq-options">
+        <button class="mcq-option" data-correct="true" onclick="checkP(this,'p4','Lan hỏi ý kiến mới, chưa có gì để đồng ý/phản đối — cần Stating Opinion.')">In my opinion, yes — it teaches useful skills.</button>
+        <button class="mcq-option" onclick="checkP(this,'p4','Lan đang hỏi ý kiến mới, chưa có gì để đồng ý.')">I agree with you.</button>
+        <button class="mcq-option" onclick="checkP(this,'p4','Lan đang hỏi ý kiến mới, chưa có gì để phản đối.')">I don't think so.</button>
+        <button class="mcq-option" onclick="checkP(this,'p4','Câu này không trả lời đúng câu hỏi của Lan.')">Sure, what time is it?</button>
+      </div>
+      <div class="mcq-feedback" id="fb-p4"></div>
+    </div>
+
+    <div class="mcq-block" id="p5">
+      <div class="mcq-q">5. <b>Minh:</b> I think kids should do more chores at home.<br>— chọn câu <b>đồng ý</b> với Minh —</div>
+      <div class="mcq-options">
+        <button class="mcq-option" onclick="checkP(this,'p5','Mở đầu “In my opinion” nghe hợp lệ nhưng “I\'m not so sure” lại là phản đối nhẹ.')">In my opinion, I'm not so sure.</button>
+        <button class="mcq-option" data-correct="true" onclick="checkP(this,'p5','Đây là câu đồng ý rõ ràng, kèm lý do ủng hộ.')">I agree with you, it's a good idea.</button>
+        <button class="mcq-option" onclick="checkP(this,'p5','Đây là câu phản đối, không phải đồng ý.')">I don't think so, they're too busy.</button>
+        <button class="mcq-option" onclick="checkP(this,'p5','Đây là câu hỏi lại, không phải bày tỏ đồng ý.')">Why do you think that?</button>
+      </div>
+      <div class="mcq-feedback" id="fb-p5"></div>
+    </div>
+
+    <div class="mcq-block" id="p6">
+      <div class="mcq-q">6. <b>Linh:</b> I don't think children should do housework — they need more time to study.<br>— chọn câu vừa <b>phản đối Linh</b>, vừa nêu <b>lý do riêng</b> —</div>
+      <div class="mcq-options">
+        <button class="mcq-option" onclick="checkP(this,'p6','Đây là câu đồng ý hoàn toàn, không phải phản đối.')">I agree with you completely.</button>
+        <button class="mcq-option" onclick="checkP(this,'p6','Đây là câu đồng ý, không phải phản đối.')">That's right, studying is important.</button>
+        <button class="mcq-option" data-correct="true" onclick="checkP(this,'p6','Câu này vừa có “I don\'t agree” (disagreeing) vừa có lý do riêng đi kèm.')">I don't agree — a little housework can actually help them relax.</button>
+        <button class="mcq-option" onclick="checkP(this,'p6','Đây là câu hỏi lại, không phải phản đối kèm lý do.')">Why do you think that?</button>
+      </div>
+      <div class="mcq-feedback" id="fb-p6"></div>
+    </div>
+
+    <div class="tip-box" id="tip-dang2">💡 <b>Ghi nhớ:</b> khi được yêu cầu vừa đồng ý/phản đối vừa nêu lý do, câu trả lời đúng phải có đủ cả 2 phần — chỉ có 1 phần thôi là chưa đủ.</div>
+  </div>
+</section>
+
+<!-- BƯỚC 5 -->
+<section class="card" id="sec-production">
+  <h2>Production</h2>
+  <p class="prod-intro">This is a self-study platform — every task below is speaking practice with Athena: record your answer and receive automatic feedback.</p>
+
+  <div class="level-tabs">
+    <button class="level-tab active" onclick="switchLevel(this,'lvl-easy')">Easy</button>
+    <button class="level-tab" onclick="switchLevel(this,'lvl-medium')">Medium</button>
+    <button class="level-tab" onclick="switchLevel(this,'lvl-difficult')">Difficult</button>
+  </div>
+
+  <!-- EASY -->
+  <div class="level-panel active" id="lvl-easy">
+    <div class="group-title">Athena asks — 2 lượt hỏi đáp</div>
+    <p class="section-desc">Athena sẽ hỏi 2 câu. Mỗi lượt, bạn chọn đáp án phù hợp rồi ghi âm nói to câu đó — không cần gõ chữ, chỉ cần chọn và nói.</p>
+
+    <div class="step-box">
+      <div class="step-label">Athena — Lượt 1</div>
+      <p>"Do you think children should do housework?"</p>
+      <div class="stance-btns">
+        <button class="stance-btn" id="stanceAgree" onclick="chooseStance('agree')">I agree</button>
+        <button class="stance-btn" id="stanceDisagree" onclick="chooseStance('disagree')">I disagree</button>
+      </div>
+      <div class="preview-box" id="easy-preview1"><span class="preview-placeholder">Chọn "I agree" hoặc "I disagree" để xem câu bạn sẽ nói.</span></div>
+      <div class="record-box" style="margin-top:12px;">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-easy1" onclick="startRecording('easy1')">🎙️ Ghi âm câu trả lời</button>
+          <button class="rec-btn stop" id="btnStop-easy1" style="display:none;" onclick="stopRecording('easy1')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-easy1">
+          <audio id="audio-easy1" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('easy1')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('easy1')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-easy1"></div>
+      </div>
+    </div>
+
+    <div class="step-box" id="easy-turn2" style="display:none;">
+      <div class="step-label">Athena — Lượt 2</div>
+      <p>"Why do you think that?"</p>
+      <div class="reason-group" id="reasonsAgree">
+        <label class="reason-opt"><input type="radio" name="reasonEasy" data-text="It makes them feel proud of contributing something real to the family." style="margin-right:8px;"> It makes them feel proud of contributing something real to the family.</label>
+        <label class="reason-opt"><input type="radio" name="reasonEasy" data-text="It gives them practical experience that textbooks can't teach." style="margin-right:8px;"> It gives them practical experience that textbooks can't teach.</label>
+        <label class="reason-opt"><input type="radio" name="reasonEasy" data-text="It helps them understand how much effort it takes to run a home." style="margin-right:8px;"> It helps them understand how much effort it takes to run a home.</label>
+      </div>
+      <div class="reason-group" id="reasonsDisagree">
+        <label class="reason-opt"><input type="radio" name="reasonEasy" data-text="Their schedules are already packed with classes and activities." style="margin-right:8px;"> Their schedules are already packed with classes and activities.</label>
+        <label class="reason-opt"><input type="radio" name="reasonEasy" data-text="Some tasks, like using cleaning chemicals, aren't safe for young children." style="margin-right:8px;"> Some tasks, like using cleaning chemicals, aren't safe for young children.</label>
+        <label class="reason-opt"><input type="radio" name="reasonEasy" data-text="It can take time away from hobbies that help them grow in other ways." style="margin-right:8px;"> It can take time away from hobbies that help them grow in other ways.</label>
+      </div>
+      <div class="preview-box" id="easy-preview2"><span class="preview-placeholder">Chọn 1 lý do ở trên để xem câu bạn sẽ nói.</span></div>
+      <div class="record-box" style="margin-top:12px;">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-easy2" onclick="startRecording('easy2')">🎙️ Ghi âm câu trả lời</button>
+          <button class="rec-btn stop" id="btnStop-easy2" style="display:none;" onclick="stopRecording('easy2')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-easy2">
+          <audio id="audio-easy2" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('easy2')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('easy2')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-easy2"></div>
+      </div>
+    </div>
+
+    <button class="reveal-btn" id="reveal-easy" onclick="document.getElementById('model-easy').classList.add('show')">📖 Xem model answer</button>
+    <div class="model-reveal" id="model-easy"><div class="preview-line"><span class="preview-label" style="background:var(--jade-pale);">Lượt 1</span>I think children should do housework.</div><div class="preview-line"><span class="preview-label" style="background:var(--jade-pale);">Lượt 2</span>In my opinion, it gives them practical experience they can't get from a textbook.</div></div>
+  </div>
+
+  <!-- MEDIUM -->
+  <div class="level-panel" id="lvl-medium">
+    <div class="group-title">Athena responds</div>
+    <p class="section-desc">Đây không phải câu mẫu để đọc lại — mỗi lượt chỉ gợi ý một vài <b>phrase/collocation</b> và từ nối, bạn tự dựng câu của riêng mình từ đó. 3 lượt nói đi nói lại với Athena.</p>
+
+    <div class="step-box">
+      <div class="step-label">Athena — as Linh (lượt 1)</div>
+      <p>"I don't think children should do housework — our schedules are already packed with school and activities."</p>
+      <div class="record-box">
+        <div class="record-target">
+          Trả lời lại Linh: nêu ý kiến của bạn (should/shouldn't) kèm 2 lý do.
+        </div>
+        <div class="phrase-box"><b>🔑 Phrase gợi ý:</b> <span class="phrase-chip">proud to contribute</span> <span class="phrase-chip">practical experience</span> <span class="phrase-chip">run a home</span> <span class="phrase-chip">packed with activities</span> <span class="phrase-chip">not safe for children</span></div>
+        <div class="connector-box" style="margin-top:8px;"><b>💬 Từ nối:</b> <span class="chip">First,</span> <span class="chip">Also,</span></div>
+        <div class="record-controls" style="margin-top:12px;">
+          <button class="rec-btn" id="btnRec-med1" onclick="startRecording('med1')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-med1" style="display:none;" onclick="stopRecording('med1')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-med1">
+          <audio id="audio-med1" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('med1')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('med1')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-med1"></div>
+      </div>
+    </div>
+
+    <div class="step-box" id="med-turn2" style="display:none;">
+      <div class="step-label">Athena — as Linh (lượt 2)</div>
+      <p>"Hmm, maybe. But I still think studying should come first."</p>
+      <div class="record-box">
+        <div class="record-target">
+          Agree/Disagree với Linh, kèm 1 lý do bổ sung.
+        </div>
+        <div class="phrase-box"><b>🔑 Phrase gợi ý:</b> <span class="phrase-chip">matter a lot</span> <span class="phrase-chip">relax and unwind</span> <span class="phrase-chip">manage time better</span> <span class="phrase-chip">teach responsibility</span></div>
+        <div class="connector-box" style="margin-top:8px;"><b>💬 Từ nối:</b> <span class="chip">However,</span> <span class="chip">That's why</span></div>
+        <div class="record-controls" style="margin-top:12px;">
+          <button class="rec-btn" id="btnRec-med2" onclick="startRecording('med2')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-med2" style="display:none;" onclick="stopRecording('med2')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-med2">
+          <audio id="audio-med2" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('med2')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('med2')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-med2"></div>
+      </div>
+    </div>
+
+    <div class="step-box" id="med-turn3" style="display:none;">
+      <div class="step-label">Athena — as Linh (lượt 3)</div>
+      <p>"That's a fair point, actually. But what would you say to a friend who thinks housework is a waste of time?"</p>
+      <div class="record-box">
+        <div class="record-target">
+          Trả lời câu hỏi của Linh, rồi chốt lại ý kiến của bạn.
+        </div>
+        <div class="phrase-box"><b>🔑 Phrase gợi ý:</b> <span class="phrase-chip">doesn't take much time</span> <span class="phrase-chip">worth doing a little</span> <span class="phrase-chip">waste of time</span> <span class="phrase-chip">parents' job</span></div>
+        <div class="connector-box" style="margin-top:8px;"><b>💬 Từ nối:</b> <span class="chip">So,</span> <span class="chip">In conclusion,</span></div>
+        <div class="record-controls" style="margin-top:12px;">
+          <button class="rec-btn" id="btnRec-med3" onclick="startRecording('med3')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-med3" style="display:none;" onclick="stopRecording('med3')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-med3">
+          <audio id="audio-med3" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('med3')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('med3')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-med3"></div>
+      </div>
+    </div>
+
+    <button class="reveal-btn" id="reveal-medium" onclick="document.getElementById('model-medium').classList.add('show')">📖 Xem model exchange (chỉ để tham khảo, không phải đáp án duy nhất)</button>
+    <div class="model-reveal" id="model-medium">
+      <b>Turn 1:</b> "I don't agree. First, doing housework makes kids feel proud to contribute something real to the family. Also, it teaches them skills that textbooks can't."<br><br>
+      <b>Turn 2:</b> "That's right, studying does matter a lot. However, I still think a little housework can help us relax and manage our time better."<br><br>
+      <b>Turn 3:</b> "I'd tell them that housework doesn't take much time at all. So, I still think it's worth doing a little every day."
+    </div>
+  </div>
+
+  <!-- DIFFICULT -->
+  <div class="level-panel" id="lvl-difficult">
+    <div class="outline-box">
+      <div class="outline-title">🧠 Lên ý trước khi nói (không cần viết ra, chỉ cần nghĩ nhanh trong đầu theo đúng 4 bước đã học)</div>
+      <ol>
+        <li><b>Nêu ý kiến</b> — should/shouldn't, dùng "I think.../In my opinion..."</li>
+        <li><b>Lý do 1</b> — bắt đầu bằng "First,..."</li>
+        <li><b>Lý do 2</b> — bắt đầu bằng "Also,..." hoặc "Second,..."</li>
+        <li><b>Kết ý / phản hồi lại</b> — dùng "However,..." hoặc "That's why..." để chốt ý hoặc phản hồi phản biện</li>
+      </ol>
+    </div>
+
+    <div class="group-title">(a) Athena Multi-turn</div>
+
+    <div class="step-box">
+      <div class="step-label">Athena — turn 1</div>
+      <p>"Some people say housework takes time away from studying. What's your opinion?"</p>
+      <div class="record-box">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-diff1" onclick="startRecording('diff1')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-diff1" style="display:none;" onclick="stopRecording('diff1')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-diff1">
+          <audio id="audio-diff1" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('diff1')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('diff1')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-diff1"></div>
+      </div>
+    </div>
+
+    <div class="step-box" id="diff-turn2" style="display:none;">
+      <div class="step-label">Athena — turn 2, rebuttal</div>
+      <p>"But what if a student already has a lot of exams coming up?"</p>
+      <div class="record-box">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-diff2" onclick="startRecording('diff2')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-diff2" style="display:none;" onclick="stopRecording('diff2')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-diff2">
+          <audio id="audio-diff2" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('diff2')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('diff2')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-diff2"></div>
+      </div>
+    </div>
+
+    <div class="step-box" id="diff-turn3" style="display:none;">
+      <div class="step-label">Athena — turn 3, rebuttal</div>
+      <p>"Interesting — why do you think that?"</p>
+      <div class="record-box">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-diff3" onclick="startRecording('diff3')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-diff3" style="display:none;" onclick="stopRecording('diff3')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-diff3">
+          <audio id="audio-diff3" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('diff3')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('diff3')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-diff3"></div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-2);">Try to combine your opinion with 2 reasons using a connector (First,... Second,...), and combine agreeing/disagreeing with your reason in one fluent sentence.</p>
+
+    <button class="reveal-btn" id="reveal-diff" onclick="document.getElementById('model-diff').classList.add('show')">📖 Xem sample model answer (chỉ để tham khảo văn phong)</button>
+    <div class="model-reveal" id="model-diff">"In my opinion, children should still do a little housework, even during exam time. First, it gives them practical experience that textbooks can't teach. Second, it helps them understand how much effort it takes to run a home. I agree that studying matters a lot, but I believe a short break for chores can actually help us relax and focus better."</div>
+
+    <div class="group-title" style="margin-top:30px;">(b) Free response</div>
+    <p class="section-desc">Hãy thử 3 tình huống dưới đây, càng về sau sẽ càng khó và bạn phải tự lập nhiều hơn. Chọn topic phù hợp với bạn để nói rồi gửi cho Athena chấm nhé</p>
+
+    <div class="step-box">
+      <div class="step-label">Gợi ý 1 — Chủ đề khác: dọn vệ sinh lớp học</div>
+      <p>Do you think students should clean their own classroom, or should the school hire a cleaner? Give your opinion and explain why, using at least 2 reasons.</p>
+      <p class="instr-translate" style="margin-top:-6px;">Theo bạn, học sinh có nên tự dọn vệ sinh lớp học, hay nhà trường nên thuê người dọn dẹp? Nêu ý kiến và giải thích bằng ít nhất 2 lý do.</p>
+      <div class="record-target" style="background:var(--white);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:12px;text-align:left;">
+        🧩 Structure gợi ý:<br>
+        1. Ý kiến (should/shouldn't) &nbsp;→&nbsp; 2. Lý do 1 (First,...) &nbsp;→&nbsp; 3. Lý do 2 (Also,...) &nbsp;→&nbsp; 4. Kết (So,.../That's why...)
+      </div>
+      <div class="connector-box" style="margin-bottom:12px;"><b>💬 Từ nối:</b> <span class="chip">First,</span> <span class="chip">Also,</span> <span class="chip">So,</span> <span class="chip">That's why</span></div>
+      <ul class="checklist">
+        <li><input type="checkbox"> I stated my opinion clearly (should/shouldn't).</li>
+        <li><input type="checkbox"> I gave 2 reasons, linked with a connector.</li>
+        <li><input type="checkbox"> I used at least one expression from the Functional Language section.</li>
+      </ul>
+      <div class="record-box" style="margin-top:12px;">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-free1" onclick="startRecording('free1')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-free1" style="display:none;" onclick="stopRecording('free1')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-free1">
+          <audio id="audio-free1" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('free1')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('free1')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-free1"></div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-label">Gợi ý 2 — Đóng vai</div>
+      <p>You are Minh. A friend says: "Housework is a waste of time — parents should just do it themselves." Respond and explain why you disagree.</p>
+      <p class="outline-reminder">🧠 Gợi ý ít hơn: chỉ cần nhớ 2 bước — Không đồng ý (Disagreeing) → Lý do.</p>
+      <ul class="checklist">
+        <li><input type="checkbox"> I disagreed clearly.</li>
+        <li><input type="checkbox"> I gave at least one reason.</li>
+        <li><input type="checkbox"> I used a Disagreeing expression.</li>
+      </ul>
+      <div class="record-box" style="margin-top:12px;">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-free2" onclick="startRecording('free2')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-free2" style="display:none;" onclick="stopRecording('free2')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-free2">
+          <audio id="audio-free2" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('free2')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('free2')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-free2"></div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-label">Gợi ý 3 — Phản hồi quote (không có gợi ý nào)</div>
+      <div class="warn-box" style="margin-bottom:12px;">⚠️ Không có model answer hay gợi ý cấu trúc nào ở phần này — bạn tự nói hoàn toàn theo cách riêng của mình.</div>
+      <p>Quote: "Children who help at home grow up to be more responsible adults." Do you agree or disagree? Give one real example to support your answer.</p>
+      <ul class="checklist">
+        <li><input type="checkbox"> I stated my opinion at the start.</li>
+        <li><input type="checkbox"> I gave a real example.</li>
+        <li><input type="checkbox"> My answer has a clear conclusion.</li>
+      </ul>
+      <div class="record-box" style="margin-top:12px;">
+        <div class="record-controls">
+          <button class="rec-btn" id="btnRec-free3" onclick="startRecording('free3')">🎙️ Ghi âm</button>
+          <button class="rec-btn stop" id="btnStop-free3" style="display:none;" onclick="stopRecording('free3')">⏹ Dừng</button>
+        </div>
+        <div class="record-playback" id="playback-free3">
+          <audio id="audio-free3" controls></audio>
+          <button class="chip-btn ghost" onclick="reRecord('free3')">↺ Ghi lại</button>
+          <button class="chip-btn" onclick="submitToAthena('free3')">✓ Gửi cho Athena</button>
+        </div>
+        <div class="record-feedback" id="feedback-free3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELF-EVALUATION -->
+<section class="card" id="sec-assess">
+  <h2>Self-evaluation</h2>
+  <ul class="selfeval-list">
+    <li><input type="checkbox" onchange="checkAssess()"><span>I can state an opinion using at least one expression from the Functional Language section.</span></li>
+    <li><input type="checkbox" onchange="checkAssess()"><span>I can give a clear opinion on whether children should do housework.</span></li>
+    <li><input type="checkbox" onchange="checkAssess()"><span>I can support my opinion with at least one specific reason.</span></li>
+    <li><input type="checkbox" onchange="checkAssess()"><span>I can agree or disagree with someone naturally.</span></li>
+    <li><input type="checkbox" onchange="checkAssess()"><span>I can speak for 4–6 sentences without looking at a script.</span></li>
+  </ul>
+</section>
+
+</main>
+
+<footer>Unit 1 · Family Routines — Speaking · Luyện tập &amp; Nói.</footer>
+
+<script>
+function markDone(key) {
+  const el = document.querySelector('#progress-tracker .pt-item[data-key="' + key + '"]');
+  if (el) el.classList.add('done');
+}
+
+function switchRef(btn, paneId) {
+  document.querySelectorAll('.ref-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.ref-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(paneId).classList.add('active');
+}
+
+function switchLevel(btn, panelId) {
+  document.querySelectorAll('.level-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+
+/* ---- Practice MCQ (Dạng 1 / Dạng 2) ---- */
+const dang1Ids = ['p1','p2','p3'];
+const dang2Ids = ['p4','p5','p6'];
+
+function checkP(btn, groupId, explain) {
+  const group = document.getElementById(groupId);
+  if (group.dataset.answered) return;
+  group.dataset.answered = '1';
+  group.querySelectorAll('.mcq-option').forEach(o => o.classList.add('disabled'));
+  const fb = document.getElementById('fb-' + groupId);
+  if (btn.dataset.correct === 'true') {
+    btn.classList.add('correct');
+  } else {
+    btn.classList.add('wrong');
+    group.querySelector('[data-correct="true"]').classList.add('correct');
+  }
+  fb.textContent = explain;
+  fb.style.display = 'block';
+
+  if (dang1Ids.every(id => document.getElementById(id).dataset.answered)) {
+    document.getElementById('tip-dang1').classList.add('unlocked');
+    document.getElementById('next-dang1').classList.add('show');
+  }
+  if (dang2Ids.every(id => document.getElementById(id).dataset.answered)) {
+    document.getElementById('tip-dang2').classList.add('unlocked');
+    markDone('practice');
+  }
+}
+
+function showDang2() {
+  document.getElementById('dang2').style.display = 'block';
+  document.getElementById('dang2').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ---- Easy: Lượt 1 (stance) & Lượt 2 (reason) ---- */
+function chooseStance(v) {
+  document.getElementById('stanceAgree').classList.toggle('selected', v==='agree');
+  document.getElementById('stanceDisagree').classList.toggle('selected', v==='disagree');
+  document.getElementById('reasonsAgree').classList.toggle('show', v==='agree');
+  document.getElementById('reasonsDisagree').classList.toggle('show', v==='disagree');
+  document.querySelectorAll('input[name="reasonEasy"]').forEach(r => r.checked = false);
+  document.querySelectorAll('.reason-opt').forEach(o => o.classList.remove('selected'));
+  updateEasyPreview1();
+}
+document.addEventListener('change', function(e){
+  if (e.target.name === 'reasonEasy') {
+    document.querySelectorAll('.reason-opt').forEach(o => o.classList.remove('selected'));
+    e.target.closest('.reason-opt').classList.add('selected');
+    updateEasyPreview2();
+  }
+});
+
+function updateEasyPreview1() {
+  const previewEl = document.getElementById('easy-preview1');
+  const stance = document.getElementById('stanceAgree').classList.contains('selected') ? 'agree'
+    : (document.getElementById('stanceDisagree').classList.contains('selected') ? 'disagree' : null);
+  if (!stance) {
+    previewEl.innerHTML = '<span class="preview-placeholder">Chọn "I agree" hoặc "I disagree" để xem câu bạn sẽ nói.</span>';
+    return;
+  }
+  const sentence1 = stance === 'agree' ? 'I think children should do housework.' : "I think children shouldn't do housework.";
+  previewEl.innerHTML = '<div class="preview-line"><span class="preview-label">Câu bạn sẽ nói</span>' + sentence1 + '</div>';
+}
+
+function updateEasyPreview2() {
+  const previewEl = document.getElementById('easy-preview2');
+  const reasonEl = document.querySelector('input[name="reasonEasy"]:checked');
+  if (!reasonEl) {
+    previewEl.innerHTML = '<span class="preview-placeholder">Chọn 1 lý do ở trên để xem câu bạn sẽ nói.</span>';
+    return;
+  }
+  previewEl.innerHTML = '<div class="preview-line"><span class="preview-label">Câu bạn sẽ nói</span>' + reasonEl.dataset.text + '</div>';
+}
+
+/* ---- Recording (MediaRecorder) ---- */
+let mediaRecorder, audioChunks = [], recStartTime, activeId = null;
+
+async function startRecording(id) {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+    activeId = id;
+    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(audioChunks, { type: 'audio/webm' });
+      document.getElementById('audio-' + id).src = URL.createObjectURL(blob);
+      document.getElementById('playback-' + id).classList.add('show');
+      stream.getTracks().forEach(t => t.stop());
+      onRecordingDone(id);
+    };
+    mediaRecorder.start();
+    document.getElementById('btnRec-' + id).style.display = 'none';
+    document.getElementById('btnStop-' + id).style.display = 'inline-flex';
+  } catch (err) {
+    alert('Không truy cập được microphone. Vui lòng kiểm tra quyền truy cập trình duyệt.');
+  }
+}
+function stopRecording(id) {
+  mediaRecorder?.stop();
+  document.getElementById('btnStop-' + id).style.display = 'none';
+  document.getElementById('btnRec-' + id).style.display = 'inline-flex';
+}
+function reRecord(id) {
+  document.getElementById('playback-' + id).classList.remove('show');
+}
+
+function onRecordingDone(id) {
+  if (id === 'easy1') {
+    document.getElementById('easy-turn2').style.display = 'block';
+    document.getElementById('easy-turn2').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  if (id === 'easy2') {
+    document.getElementById('reveal-easy').classList.add('show');
+  }
+  if (id === 'med1') {
+    document.getElementById('med-turn2').style.display = 'block';
+  }
+  if (id === 'med2') {
+    document.getElementById('med-turn3').style.display = 'block';
+  }
+  if (id === 'med3') {
+    document.getElementById('reveal-medium').classList.add('show');
+  }
+  if (id === 'diff1') {
+    document.getElementById('diff-turn2').style.display = 'block';
+  }
+  if (id === 'diff2') {
+    document.getElementById('diff-turn3').style.display = 'block';
+  }
+  if (id === 'diff3') {
+    document.getElementById('reveal-diff').classList.add('show');
+  }
+  if (['easy2','med3','diff3','free1','free2','free3'].includes(id)) {
+    markDone('production');
+  }
+}
+
+function submitToAthena(id) {
+  const fb = document.getElementById('feedback-' + id);
+  if (!fb) return;
+  fb.style.display = 'block';
+  fb.textContent = '⏳ Đang gửi cho Athena...';
+  // Gửi blob ghi âm lên endpoint chấm của nền tảng (do đội backend cung cấp) — khi tích hợp thật,
+  // thay đoạn dưới bằng lệnh gọi API thật và hiển thị nhận xét Athena trả về.
+  setTimeout(() => {
+    fb.textContent = '✅ Đã gửi cho Athena — chờ nhận xét nhé.';
+  }, 900);
+}
+
+function checkAssess() {
+  const boxes = document.querySelectorAll('.selfeval-list input[type="checkbox"]');
+  const allChecked = Array.from(boxes).every(b => b.checked);
+  if (allChecked) markDone('assess');
+}
+</script>
+</body>
+</html>
