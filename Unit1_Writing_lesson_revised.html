@@ -1064,14 +1064,11 @@ function initBodyStepStack(){
 
     cards.forEach((card,index) => {
       const metric = metrics[index];
-      const progress = Math.max(0,Math.min(1,(y - metric.trigger) / 190));
-      const targetScale = .88 + index * .025;
-      const scale = 1 - progress * (1 - targetScale);
       const depth = active > index ? active - index : 0;
       card.classList.toggle('stack-current',index === active);
       card.classList.toggle('stack-passed',index < active);
       if (!reduceMotion && !metric.disabled){
-        card.style.transform = `translate3d(0,0,0) scale(${scale.toFixed(3)})`;
+        card.style.transform = 'translate3d(0,0,0)';
         card.style.filter = depth ? `brightness(${Math.max(.82,1-depth*.045)}) blur(${Math.min(1.2,depth*.28)}px)` : '';
       } else {
         card.style.transform = '';
