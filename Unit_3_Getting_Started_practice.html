@@ -1831,24 +1831,7 @@ section.block.active-step {
 
 <body>
 
-  <div id="clipboard">
-    <div class="clip"></div>
-    <h4>Task Progress</h4>
-    <div class="items">
-      <div class="item" data-key="messages" onclick="switchMainStep(1)">
-        <div class="box"></div>Read Messages
-      </div>
-      <div class="item" data-key="vocab" onclick="switchMainStep(1); switchTopView('vocab');">
-        <div class="box"></div>Vocabulary
-      </div>
-      <div class="item" data-key="practice" onclick="switchMainStep(2)">
-        <div class="box"></div>Practice
-      </div>
-      <div class="item" data-key="assess" onclick="switchMainStep(3)">
-        <div class="box"></div>Self-Assessment
-      </div>
-    </div>
-  </div>
+
 
   <header class="hero">
     <div class="hero-inner wrap">
@@ -1990,8 +1973,7 @@ section.block.active-step {
               </div>
             </div>
             <div class="vocab-grid" id="vocabGrid"></div>
-            <button class="chip-btn unlock-btn" id="btnGoPractice" onclick="goToPractice()">✓ Finished Learning — Go to
-              Practice →</button>
+
           </div>
         </div>
       </div>
@@ -2205,7 +2187,8 @@ section.block.active-step {
 
     /* ---------- clipboard progress ---------- */
     function markDone(key) {
-      document.querySelector(`#clipboard .item[data-key="${key}"]`).classList.add('done');
+      const el = document.querySelector(`#clipboard .item[data-key="${key}"]`);
+      if (el) el.classList.add('done');
     }
 
     /* ---------- top panel: tab Tin nhắn / Từ vựng + nút Gom ---------- */
@@ -3369,8 +3352,6 @@ section.block.active-step {
     }
 
     /* File 2/2: original Unit 3 Practice and Self-Assessment body. */
-    #clipboard .item[data-key="messages"],
-    #clipboard .item[data-key="vocab"],
     #stepNav1,
     #sec-top { display: none !important; }
   </style>
