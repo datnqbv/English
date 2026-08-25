@@ -4,23 +4,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Unit 1 — Pronunciation Practice</title>
+  <title>Unit 2 — Pronunciation Practice</title>
   <script type="application/json" id="athena-context">
   {
-    "title": "Unit 1: A long and healthy life - Pronunciation Practice",
+    "title": "Unit 2: The generation gap - Pronunciation Practice",
     "subject": "Tiếng Anh",
     "grade": "11",
     "objectives": [
-      "Distinguish strong and weak forms of auxiliary verbs: do/does, have/has, was/were, can when listening and reading",
-      "Identify weak forms in questions and tag questions vs strong forms in short answers and emphatic stress",
-      "Read aloud sentences, tiered phrases, and a short passage with correct auxiliary verb pronunciation"
+      "Distinguish contracted forms ('s, 're, 'll, n't, Let's) from full forms when listening and reading",
+      "Differentiate between contraction ('s = is) and possessive ('s = của)",
+      "Read aloud tiered phrases and a contextual conversation passage with natural liaison and correct stress"
     ],
     "structure": [
       { "id": "practice", "title": "Practice (Listen & Circle, Read Aloud — Short Phrases)" },
       { "id": "extra", "title": "Extra Practice (Contextual MCQ with Distractors, Read Aloud — Passage)" },
       { "id": "assess", "title": "Self-Assessment" }
     ],
-    "athenaGuidance": "Nội dung luyện tập Pronunciation Unit 1 Lớp 11 tập trung vào 7 trợ động từ (do/does, have/has, was/were, can). Phần Practice luyện nhận diện Weak vs Strong qua câu hỏi và câu trả lời ngắn kèm ghi âm 3 tiers. Phần Extra Practice gồm 10 câu trắc nghiệm ngữ cảnh phức hợp (câu đơn, câu kép, câu hỏi đuôi và câu bẫy động từ chính có chia 'has') cùng đoạn văn đọc 58 từ."
+    "athenaGuidance": "Nội dung luyện tập Pronunciation Unit 2 Lớp 11 tập trung vào các dạng rút gọn trong hội thoại ('s, 're, 'll, n't, Let's). Phần Practice luyện phân biệt Contracted vs Full qua âm thanh câu hỏi và câu trả lời. Phần Extra Practice gồm 9 câu trắc nghiệm ngữ cảnh phức hợp (bao gồm bẫy sở hữu cách 's, câu hỏi đuôi và quy tắc văn viết trang trọng) cùng đoạn đọc hội thoại 50 từ."
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -285,17 +285,6 @@
       font-size: 16px;
       margin-bottom: 10px;
       color: var(--ink);
-    }
-
-    .q-statement {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--jade-dark);
-      background: var(--cream-2);
-      padding: 10px 14px;
-      border-radius: var(--radius-sm);
-      margin-bottom: 12px;
-      display: inline-block;
     }
 
     .listen {
@@ -612,8 +601,8 @@
 <body>
   <header class="file-nav">
     <div class="wrap">
-      <div class="file-title">Unit 1 · Pronunciation &mdash; Practice
-        <small>Luyện tập · Strong and Weak Forms of Auxiliary Verbs</small>
+      <div class="file-title">Unit 2 · Pronunciation &mdash; Practice
+        <small>Luyện tập · Contracted Forms in Conversations</small>
       </div>
     </div>
   </header>
@@ -621,8 +610,8 @@
   <main class="wrap">
     <section class="intro">
       <h1>Practice</h1>
-      <p>Luyện tập nghe, nhận diện và phát âm dạng yếu (Weak form /ə/) và dạng mạnh (Strong form) của trợ động từ (do, does, have, has, was, were, can) trong các ngữ cảnh giao tiếp khác nhau.</p>
-      <p class="tts-note">🔊 Âm thanh sử dụng giọng đọc tổng hợp chuẩn Anh-Anh (Web Speech API) &ndash; mỗi trợ động từ được đặt trong câu cụ thể để thể hiện chính xác cách đọc.</p>
+      <p>Luyện tập nghe, nhận diện và phát âm dạng rút gọn (Contracted forms: 's, 're, 'll, n't, Let's) so với dạng đầy đủ (Full forms) trong các tình huống hội thoại thực tế.</p>
+      <p class="tts-note">🔊 Âm thanh sử dụng giọng đọc tổng hợp chuẩn Anh-Anh (Web Speech API) &ndash; phiên âm Cambridge (can't = /kɑːnt/).</p>
     </section>
 
     <nav class="levels" aria-label="Chọn phần">
@@ -639,11 +628,11 @@
       <p class="assess-lock-note" id="assessLockNote">🔒 Hoàn thành câu hỏi và ghi âm ở cả Practice và Extra Practice để mở khoá phần tự đánh giá.</p>
       <label class="assess">
         <input type="checkbox" disabled>
-        <span>I can recognise the strong and weak forms of auxiliary verbs (do/does, have/has, was/were, can) when listening.</span>
+        <span>I can recognise contracted forms (What's, We'll, You're, can't, don't, Let's...) when listening.</span>
       </label>
       <label class="assess">
         <input type="checkbox" disabled>
-        <span>I can pronounce words, phrases, sentences, or short passages containing the strong and weak forms of auxiliary verbs (do/does, have/has, was/were, can) clearly.</span>
+        <span>I can pronounce words, phrases, sentences, or short passages containing contracted forms clearly.</span>
       </label>
       <div class="finale" id="finale">
         <span class="complete-icon">🎉</span>Congratulations! You've completed this practice.
@@ -652,7 +641,7 @@
     </section>
   </main>
 
-  <footer>BMH AI · English Grade 11 · Pronunciation — Unit 1: Strong and Weak Forms of Auxiliary Verbs</footer>
+  <footer>BMH AI · English Grade 11 · Pronunciation — Unit 2: Contracted Forms in Conversations</footer>
 
   <script>
     // ---------- LMS Integration ----------
@@ -678,12 +667,12 @@
 
     // ---------- Text-to-speech (Web Speech API) ----------
     const SPEAK = {
-      do_q: "Do you drink enough water every day?",
-      was_q: "Was it hard to give up your old habits?",
-      does_ans: "Yes, she does.",
-      can_q: "Can you get up early on weekdays?",
-      have_ans: "Yes, I have.",
-      were_ans: "Yes, they were."
+      whats_q: "What's the topic of today's discussion?",
+      well_ans: "We'll talk about the generation gap.",
+      dont_ans: "No, I don't.",
+      yes_i_will: "Will you speak next? Yes, I will.",
+      thats_ans: "That's a good point.",
+      youre_ans: "You're right, Mark."
     };
 
     function speak(key) {
@@ -702,118 +691,112 @@
       practice: {
         listen: [
           {
-            statement: "Do you drink enough water every day?",
-            audioKey: "do_q",
-            options: ["Weak", "Strong"],
-            answer: "Weak",
-            explain: '"Do" đứng đầu câu hỏi Yes/No, không mang trọng âm → đọc /də/, lướt nhanh.'
+            statement: "What's the topic of today's discussion?",
+            audioKey: "whats_q",
+            options: ["Contracted", "Full"],
+            answer: "Contracted",
+            explain: '"What\'s" = What is, nối liền thành 1 âm tiết /wɒts/, dùng tự nhiên đầu câu hỏi.'
           },
           {
-            statement: "Was it hard to give up your old habits?",
-            audioKey: "was_q",
-            options: ["Weak", "Strong"],
-            answer: "Weak",
-            explain: '"Was" đứng giữa câu hỏi, không mang trọng âm → đọc /wəz/.'
+            statement: "We'll talk about the generation gap.",
+            audioKey: "well_ans",
+            options: ["Contracted", "Full"],
+            answer: "Contracted",
+            explain: '"We\'ll" = We will, nối liền vào chủ ngữ "We" thành /wiːl/.'
           },
           {
-            statement: "Yes, she does.",
-            audioKey: "does_ans",
-            options: ["Weak", "Strong"],
-            answer: "Strong",
-            explain: '"Does" đứng một mình cuối câu trả lời ngắn, không có động từ theo sau → đọc /dʌz/, rõ nguyên âm.'
+            statement: "No, I don't.",
+            audioKey: "dont_ans",
+            options: ["Contracted", "Full"],
+            answer: "Contracted",
+            explain: '"don\'t" là dạng phủ định (n\'t) — CÓ THỂ đứng một mình cuối câu, không cần đổi sang dạng đầy đủ.'
           },
           {
-            statement: "Can you get up early on weekdays?",
-            audioKey: "can_q",
-            options: ["Weak", "Strong"],
-            answer: "Weak",
-            explain: '"Can" đứng trước động từ chính "get up", không mang trọng âm → đọc /kən/.'
+            statement: "Will you speak next? – Yes, I will.",
+            audioKey: "yes_i_will",
+            options: ["Contracted", "Full"],
+            answer: "Full",
+            explain: 'Trường hợp đặc biệt: "I will" đứng một mình cuối câu trả lời → PHẢI dùng dạng đầy đủ, không được nói "Yes, I\'ll."'
           },
           {
-            statement: "Yes, I have.",
-            audioKey: "have_ans",
-            options: ["Weak", "Strong"],
-            answer: "Strong",
-            explain: '"Have" đứng một mình cuối câu trả lời ngắn → đọc /hæv/, rõ nguyên âm.'
+            statement: "That's a good point.",
+            audioKey: "thats_ans",
+            options: ["Contracted", "Full"],
+            answer: "Contracted",
+            explain: '"That\'s" = That is, nối liền vào từ đứng trước thành /ðæts/.'
           },
           {
-            statement: "Yes, they were.",
-            audioKey: "were_ans",
-            options: ["Weak", "Strong"],
-            answer: "Strong",
-            explain: '"Were" đứng một mình cuối câu trả lời ngắn → đọc /wɜː/, rõ nguyên âm.'
+            statement: "You're right, Mark.",
+            audioKey: "youre_ans",
+            options: ["Contracted", "Full"],
+            answer: "Contracted",
+            explain: '"You\'re" = You are, nối liền vào chủ ngữ "You" thành /jʊər/.'
           }
         ],
         readTiers: [
-          "Do you exercise? – Yes, I do.",
-          "Was it hard? – Yes, it was. Can you get up early? – Yes, I can.",
-          "Have you started eating healthily? – Yes, I have. Does she exercise every day? – Yes, she does."
+          "What's the topic today? – We'll talk about the generation gap.",
+          "You're right, Mark. That's a good point.",
+          "We can't avoid daily arguments, but let's continue our discussion calmly."
         ]
       },
       extra: {
         mcq: [
           {
-            statement: 'Has she given up bad habits completely?',
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Weak",
-            explain: '"Has" đứng đầu câu hỏi thì hiện tại hoàn thành, không mang trọng âm → /həz/.'
+            statement: "You're spending too much time on your phone, aren't you?",
+            options: ["Contracted", "Full", "Not a contracted form here"],
+            answer: "Contracted",
+            explain: '"You\'re" = You are, nối liền vào chủ ngữ, dùng bình thường trong câu.'
           },
           {
-            statement: 'Yes, he has, and he looks much healthier.',
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Strong",
-            explain: '"Has" đứng một mình trước dấu phẩy, không có động từ theo sau ngay → mang trọng âm, đọc /hæz/.'
+            statement: "That's not what I meant.",
+            options: ["Contracted", "Full", "Not a contracted form here"],
+            answer: "Contracted",
+            explain: '"That\'s" = That is, đứng đầu câu, nối liền tự nhiên thành /ðæts/.'
           },
           {
-            statement: 'My grandmother has a large garden full of vegetables.',
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Not an auxiliary verb here",
-            explain: 'Câu bẫy: "has" ở đây là động từ chính (nghĩa "sở hữu"), không phải trợ động từ trong câu hỏi/câu trả lời ngắn, không áp dụng quy tắc đọc lướt/nhấn mạnh đang học.'
+            statement: "The teacher's bag is heavy today.",
+            options: ["Contracted", "Full", "Not a contracted form here"],
+            answer: "Not a contracted form here",
+            explain: 'Câu bẫy: \'s ở đây là \'s sở hữu ("cái túi của giáo viên"), không phải rút gọn của "is" — không áp dụng quy tắc đang học.'
           },
           {
-            statement: 'Can you exercise regularly? – Yes, I can.',
-            options: ["Both weak", "Both strong", "One weak, one strong"],
-            answer: "One weak, one strong",
-            explain: '"Can" thứ nhất đứng trước động từ chính trong câu hỏi → đọc lướt /kən/. "Can" thứ hai đứng một mình cuối câu trả lời ngắn → đọc nhấn mạnh /kæn/.'
+            statement: "I'm not sure who'll be free this weekend, but I'll ask him.",
+            options: ["Both contracted", "Both full", "One contracted, one full"],
+            answer: "Both contracted",
+            explain: 'Cả "who\'ll" và "I\'ll" đều đứng trước phần câu theo sau (be free / ask him) → cả hai đều dùng dạng rút gọn bình thường.'
           },
           {
-            statement: 'Were you surprised, or were you expecting it?',
-            options: ["Both weak", "Both strong", "One weak, one strong"],
-            answer: "Both weak",
-            explain: 'Cả hai "were" đều nằm giữa câu hỏi, không đứng một mình ở cuối câu trả lời ngắn → cả hai đều đọc lướt /wə/.'
+            statement: "We can't agree on everything, and we don't always understand each other.",
+            options: ["Both contracted", "Both full", "One contracted, one full"],
+            answer: "Both contracted",
+            explain: 'Cả "can\'t" và "don\'t" đều là dạng phủ định, đứng trước động từ chính → cả hai đều rút gọn bình thường.'
           },
           {
-            statement: 'Do you often skip breakfast?',
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Weak",
-            explain: '"Do" đứng đầu câu hỏi Yes/No, không mang trọng âm → /də/.'
+            statement: "Will your grandparents visit this weekend? – Yes, they will.",
+            options: ["Contracted", "Full", "Not a contracted form here"],
+            answer: "Full",
+            explain: 'Ôn lại trường hợp đặc biệt: "they will" đứng một mình cuối câu trả lời → phải dùng dạng đầy đủ, không nói "they\'ll" một mình.'
           },
           {
-            statement: "Yes, it was, but I don't mind now.",
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Strong",
-            explain: '"Was" đứng một mình trước dấu phẩy, là phần thông tin chính của câu trả lời → mang trọng âm, đọc /wɒz/.'
+            statement: 'In a formal opinion essay, which form should you write: "It is important" or "It\'s important"?',
+            options: ["Contracted", "Full"],
+            answer: "Full",
+            explain: 'Văn viết trang trọng (bài luận học thuật) tránh dùng dạng rút gọn — nên viết đầy đủ "It is important".'
           },
           {
-            statement: "You don't like ice-cream, do you?",
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Weak",
-            explain: 'Câu hỏi đuôi (tag question) xác nhận lại, giọng xuống — "do" ở đuôi câu không mang thông tin chính → đọc lướt /də/.'
+            statement: "Let's not argue about this again.",
+            options: ["Contracted", "Full", "Not a contracted form here"],
+            answer: "Contracted",
+            explain: '"Let\'s" = Let us, dùng trong câu đề nghị hoặc rủ rê.'
           },
           {
-            statement: "She hasn't finished her homework, has she?",
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Weak",
-            explain: 'Tương tự câu 8 — "has" ở đuôi câu chỉ xác nhận lại điều vừa nói, giọng xuống → đọc lướt /həz/.'
-          },
-          {
-            statement: 'Really? You can speak French, can you?',
-            options: ["Weak", "Strong", "Not an auxiliary verb here"],
-            answer: "Strong",
-            explain: 'Ngoại lệ: "Really?" cho thấy người nói thật sự bất ngờ và muốn hỏi lại (giọng lên cuối câu), không đơn thuần xác nhận → "can" ở đuôi câu được đọc rõ hơn, gần với cách đọc nhấn mạnh /kæn/.'
+            statement: "Don't you think grandparents should share their experiences?",
+            options: ["Contracted", "Full", "Not a contracted form here"],
+            answer: "Contracted",
+            explain: '"Don\'t" là dạng phủ định, dùng tự nhiên đầu câu hỏi phủ định.'
           }
         ],
-        read: "Mai is my classmate who has completely changed her lifestyle this year. Does she still eat fast food? No, she doesn't — she now prefers fresh fruit and vegetables. Was it hard for her at first? Yes, it was, but she stayed determined. Can she run five kilometres now? Yes, she can, and she looks much healthier than before."
+        read: "Linh's grandmother often says teenagers today don't respect tradition. Linh disagrees. She thinks it's not about respect — it's about different lifestyles. \"We're not lazy,\" she explains, \"we just communicate differently.\" Her grandmother listens carefully. \"That's an interesting point,\" she replies. \"Let's talk about this more over dinner tonight, shall we?\""
       }
     };
 
@@ -823,7 +806,7 @@
     const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
     function buildListenGroup(items, idPrefix) {
-      return '<section class="exercise"><div class="ex-head"><span class="tag">Listen &amp; Circle</span><div><h2>Listen and identify Weak or Strong</h2><div>Nghe từng câu và xác định trợ động từ được đọc ở dạng Weak form hay Strong form.</div></div></div>' +
+      return '<section class="exercise"><div class="ex-head"><span class="tag">Listen &amp; Circle</span><div><h2>Listen and identify Contracted or Full</h2><div>Nghe từng câu và xác định từ/cụm từ được đọc ở dạng rút gọn (Contracted form) hay dạng đầy đủ (Full form).</div></div></div>' +
         items.map((q, i) => {
           const optsHtml = shuffle(q.options).map(o => '<button class="opt" data-value="' + esc(o) + '">' + esc(o) + '</button>').join('');
           return '<div class="question" data-qid="' + idPrefix + '-' + i + '" data-answer="' + esc(q.answer) + '" data-explain="' + esc(q.explain) + '">' +
@@ -835,7 +818,7 @@
     }
 
     function buildMcqGroup(items, idPrefix) {
-      return '<section class="exercise"><div class="ex-head"><span class="tag">Mark the Form</span><div><h2>Mark the Weak/Strong Form in Context</h2><div>Đọc câu/ngữ cảnh và chọn dạng phát âm đúng của trợ động từ (hoặc xác định không phải trợ động từ).</div></div></div>' +
+      return '<section class="exercise"><div class="ex-head"><span class="tag">Mark the Form</span><div><h2>Mark the Contracted/Full Form in Context</h2><div>Đọc câu/ngữ cảnh và chọn dạng phát âm đúng (hoặc xác định không phải dạng rút gọn).</div></div></div>' +
         items.map((q, i) => {
           const optsHtml = shuffle(q.options).map(o => '<button class="opt" data-value="' + esc(o) + '">' + esc(o) + '</button>').join('');
           return '<div class="question" data-qid="' + idPrefix + '-' + i + '" data-answer="' + esc(q.answer) + '" data-explain="' + esc(q.explain) + '">' +
@@ -852,7 +835,7 @@
     }
 
     function readAloudExtra(text) {
-      return '<section class="exercise recorder" data-recorder="extra"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng cả đoạn văn rồi nghe lại bản ghi trước khi gửi.</div></div></div><div class="read-copy">' + esc(text) + '</div>' +
+      return '<section class="exercise recorder" data-recorder="extra"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng cả đoạn hội thoại rồi nghe lại bản ghi trước khi gửi.</div></div></div><div class="read-copy">' + esc(text) + '</div>' +
         recorderControls() + '</section>';
     }
 
@@ -963,7 +946,7 @@
         b.classList.add(ok ? 'correct' : 'wrong');
         const fb = q.querySelector('.feedback');
         fb.className = 'feedback show ' + (ok ? 'ok' : 'no');
-        fb.innerHTML = ok ? '✅ <b>Chính xác!</b> ' + q.dataset.explain : '❌ <b>Chưa đúng.</b> Hãy xem xét vị trí của trợ động từ và thử lại.';
+        fb.innerHTML = ok ? '✅ <b>Chính xác!</b> ' + q.dataset.explain : '❌ <b>Chưa đúng.</b> Hãy xem xét dạng rút gọn và thử lại.';
         if (ok) {
           q.dataset.done = '1';
           q.querySelectorAll('.opt').forEach(x => x.disabled = true);
