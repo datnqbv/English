@@ -5,7 +5,7 @@ trigger: always_on
 # MANDATORY PRE-CHECK RULE
 
 Mỗi khi người dùng yêu cầu sửa đổi, viết mới, hoặc refactor code:
-- Bước 1 (BẮT BUỘC): Đọc nội dung file thiết kế tại `02_design_tiengAnh_v1_6.md` và `03_engine_tiengAnh_v1_8.md`
+- Bước 1 (BẮT BUỘC): Đọc nội dung file thiết kế tại `02_design_tiengAnh_v4.md` và `03_engine_tiengAnh_v4.md`
     + Nếu không tìm thấy file → DỪNG, báo lỗi, KHÔNG tự suy diễn kiến trúc. 
 - Bước 2: So sánh yêu cầu của người dùng với các nguyên tắc thiết kế trong 2 file đó.
 - Bước 3: Mới tiến hành chỉnh sửa code theo đúng thiết kế và kịch bản của người dùng.

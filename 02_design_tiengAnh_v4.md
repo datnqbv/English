@@ -1,6 +1,40 @@
-# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v1.6
+# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v2.2
 
-> **v1.6** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **v2.2** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **Mới ở v2.2:**
+> 1. **Component mới 4.21 — Idea Diagram (sơ đồ cây phát triển ý, gốc→nhánh→lá, 4 mức hỗ trợ):**
+>    dùng cho bài brainstorm ý theo cấu trúc phân tầng trước khi viết/nói (Writing Suggestion &
+>    Benefits paragraph...). Dựng thuần bằng CSS Flexbox, KHÔNG dùng SVG/toạ độ JS để vẽ đường nối
+>    (dễ vỡ khi mobile xoay màn hình/bàn phím ảo đẩy layout) — xem Mục 4.21.
+> 2. **Component mới 4.22 — Auto-collapse Theory Block:** đoạn lý thuyết dài tự gom lại thành thanh
+>    tiêu đề gọn khi học sinh chuyển sang phần tiếp theo, bấm lại để mở xem lại — áp dụng cho mọi
+>    khối lý thuyết dài (Khung tổng quát, Đi sâu từng phần, Phân tích bài mẫu...). Xem Nguyên tắc 14
+>    (Mục 0) và Mục 4.22.
+> 3. **Engine 1.17 (file `03_engine_tiengAnh.md`) — Typewriter + Growing Diagram:** hiệu ứng gõ chữ
+>    dần + Idea Diagram "mọc" thêm 1 cấp, dùng cho demo GV/AI dẫn dắt tuần tự trước khi học sinh tự
+>    làm. Mở rộng từ Progressive Reveal có sẵn (Mục 1.7), không phải component tách rời.
+>
+> **v2.1:**
+> 1. **Component mới 4.20 — Guided Noticing (ô gõ tự do, tự đối chiếu đáp án):** dùng cho bước
+>    "học sinh tự tìm cụm từ chức năng ngôn ngữ trong hội thoại mẫu trước khi xem bảng đầy đủ"
+>    (Menu B ở Speaking, đã dùng lặp lại từ Unit 4 trở đi). Học sinh gõ tự do vào ô input, KHÔNG
+>    auto-chấm đúng/sai — bấm nút "Hiện đáp án" để tự đối chiếu. Xem Mục 4.20, checklist bổ sung
+>    ở Mục 9.15.
+>
+> **Mới ở v2.0:**
+> 1. **Bỏ hẳn Task bar/`#progress-tracker`** — xoá toàn bộ code ở Mục 4.1 cũ, thay bằng ghi chú
+>    deprecate; dọn mọi tham chiếu còn sót ở Mục 3, Mục 5, Mục 7, Mục 8.
+> 2. **Bỏ nút/link điều hướng giữa File Lesson và File Practice khi tách 2 file** (mặc định) — xem
+>    Mục 8.2 mục 2/3 cập nhật. Hành vi trong-trang `goToPractice()` ở Mục 4.8 chỉ còn áp dụng cho
+>    trường hợp gộp 1 file (ngoại lệ chủ động).
+> 3. **Nguyên tắc 12 (mới, Mục 0):** giọng đọc bắt buộc `en-GB`; quy tắc chống lặp pattern ở cấp nội
+>    dung soạn bài cho MCQ trọng âm/Cloze/Matching, không chỉ dựa vào random vị trí hiển thị.
+>
+> **v1.9:** thêm component 4.19 Vietnamese Translation Toggle (nút bật/tắt bản dịch, mặc định
+> ẩn) — dùng cho hướng dẫn/mô tả nhiệm vụ dài cần hỗ trợ tiếng Việt mà không hiển thị song ngữ mặc
+> định; KHÔNG dùng cho câu hỏi/đề bài (luôn thuần tiếng Anh). Đúc kết từ quá trình build Speaking
+> Unit 1 — xem Mục 4.19, checklist bổ sung ở Mục 7.
+
 
 
 > **Dùng được cả trên Antigravity (Gemini) lẫn Claude** — file không phụ thuộc tool cụ thể, không
@@ -118,6 +152,13 @@ câu luyện tập mỗi mức. Báo mình nếu cần chỉnh gì."* — không
    pháp/không hợp pháp") cũng phải chuyển sang tap-to-select (xem Mục 4.17 — component này hay bị
    quên nhất vì không nằm chung nhóm với "nối từ", dễ bị build lại bằng drag-and-drop theo bản
    năng). Kéo-thả khó thao tác chính xác trên cảm ứng, vi phạm nguyên tắc mobile-first.
+   > **Ngoại lệ duy nhất — thanh trượt kéo so sánh (Before/After slider, Mục 4.18):** đây KHÔNG
+   > phải "kéo-thả" theo nghĩa bị cấm ở trên (không có việc thả 1 phần tử vào đúng/sai 1 vị trí
+   > đích để chấm điểm) — chỉ là kéo 1 tay cầm liên tục trên 1 trục, giống thanh âm lượng. Được
+   > phép dùng cho dạng bài so sánh trực quan (VD "Bữa cơm gia đình: Xưa & Nay"), nhưng **bắt buộc**
+   > implement đúng theo Mục 4.18 (`touch-action:none` trên container + `e.preventDefault()` trong
+   > `touchmove` với listener `{ passive:false }`) — nếu thiếu, kéo trên mobile sẽ bị cuộn cả màn
+   > hình thay vì di chuyển thanh trượt.
 5. **Mỗi câu hỏi luyện tập PHẢI có phần giải thích** (`explain`) — không chỉ báo đúng/sai. Đây là
    lỗi hay gặp nhất khi build nhanh, vi phạm nguyên tắc "Giải thích kiến thức" ở
    `01_scenario_builder_v4.md` PHẦN 0 Bước 5.
@@ -193,6 +234,60 @@ câu luyện tập mỗi mức. Báo mình nếu cần chỉnh gì."* — không
    - Ngoài viết tắt, data câu hỏi có thể khai báo thêm field `altAnswers: [...]` để chấp nhận các
      cách viết đúng khác ngoài viết tắt (đồng nghĩa, thứ tự từ khác nhưng vẫn đúng ngữ pháp) — hàm
      `checkTextAnswer()` phải so với `ans` VÀ toàn bộ `altAnswers` trước khi báo sai.
+11. **Sàn cỡ chữ tối thiểu — phân biệt rõ "nội dung ngôn ngữ HS phải đọc để học" và "nhãn UI/meta phụ".**
+    Lỗi thật đã gặp: nhiều component để chữ nội dung học (đoạn Reading, tin nhắn hội thoại, IPA, câu
+    ví dụ từ vựng, đáp án MCQ...) xuống dưới cả `body` baseline 18px, có chỗ xuống tới 9.5px — đọc rất
+    mỏi mắt, đặc biệt trên di động. Áp dụng 2 mức sàn:
+    - **≥ 15px** cho mọi nội dung ngôn ngữ chính HS phải đọc/gõ để học hoặc trả lời (đoạn văn Reading,
+      tin nhắn hội thoại, câu hỏi + đáp án MCQ/Matching/Gap-fill, IPA, câu ví dụ từ vựng, model text
+      Writing...). Ưu tiên 16-17px khi layout còn chỗ (xem `.fill-sentence`/`.fte-sentence` = 17px làm
+      chuẩn tham chiếu).
+    - **≥ 11px** cho nhãn UI/meta thuần tuý không cần đọc kỹ để hiểu bài (giờ tin nhắn, dấu ✓ nhỏ, nhãn
+      trạng thái, số thứ tự...) — KHÔNG áp mức 15px này vì sẽ làm rối giao diện.
+    - **Không suy luận cỡ chữ theo "cột hẹp desktop" rồi áp nguyên sang mobile.** Lỗi thật đã gặp ở
+      Vocabulary (4.4): class `.compact` thu nhỏ chữ cho lưới nhiều cột trên desktop, nhưng bị kế thừa
+      luôn vào carousel mobile — dù mỗi thẻ carousel mobile LUÔN chiếm 84% màn hình bất kể tổng số thẻ
+      (xem 4.8/4.4), thừa chỗ chứ không hề hẹp. Mỗi khi 1 class thu nhỏ chữ được tạo ra cho lý do
+      "cột/khung hẹp", phải tự hỏi: trên mobile, khung này có thật sự còn hẹp không, hay đã đổi layout
+      (VD sang carousel/step-gate 1-lúc-1-khối) khiến chiều rộng thực tế đã rộng rãi trở lại? Nếu rộng
+      lại, PHẢI viết đè bằng media query riêng để tăng chữ trở lại mức bình thường, không dùng chung 1
+      class cho cả 2 tình huống khác bản chất.
+    - Khi tăng cỡ chữ một component, luôn xem lại `line-height`/`padding` đi kèm để bù trừ chiều cao
+      tăng thêm (đặc biệt trên mobile) — không tăng chữ mà giữ nguyên khoảng đệm/line-height cũ, dễ gây
+      vỡ khung hoặc chữ đè lên nhau.
+12. **Giọng đọc TTS bắt buộc `en-GB` (Anh-Anh)** — mọi lần gọi `SpeechSynthesisUtterance`/hàm
+    `speak()` ở BẤT KỲ component nào (Flashcard 4.4, Read Aloud 9.4, Listen & Circle...) đều PHẢI
+    set `u.lang = 'en-GB'`. **Không được đổi sang `'en-US'` hay để mặc định trống** (mặc định trống
+    thường ra giọng theo ngôn ngữ hệ điều hành, hay lệch sang Mỹ) — kể cả khi build component audio
+    mới không có trong thư viện Mục 4. Đây là quy tắc cứng áp dụng toàn hệ thống, không tự đổi theo
+    "giọng nghe hay hơn" hay theo thiết bị test.
+13. **Chống đoán mò theo PATTERN ở cấp nội dung soạn bài — khác với nguyên tắc 7 (random vị trí
+    hiển thị lúc render).** Nguyên tắc 7 chỉ đảm bảo vị trí đáp án đúng không cố định qua các LẦN
+    RENDER — không tự sửa được nếu bản thân dữ liệu câu hỏi khi SOẠN đã đi theo 1 khuôn lặp cố định
+    qua các câu liền kề trong cùng 1 bài/gói. Khi soạn `data` câu hỏi, bắt buộc tự kiểm tra và đảo:
+    - **MCQ nhận diện trọng âm/khác biệt âm (Pronunciation):** đáp án đúng (mẫu trọng âm, vị trí từ
+      lệch nhóm...) không được lặp theo chu kỳ đều đặn qua các câu (VD "1-2, 1-2, 1-2" liên tục) —
+      đảo ngẫu nhiên giữa các khả năng, không theo chu kỳ cố định.
+    - **Loại từ/cấu trúc:** không để cả 1 bài chỉ dùng đúng 1 khuôn chuyển loại từ (VD toàn danh
+      từ→động từ) hay lặp đúng 1 cấu trúc câu qua nhiều câu liền kề — trộn nhiều biến thể nếu nội
+      dung gốc cho phép.
+    - **Cloze — danh sách từ cho sẵn:** thứ tự từ trong danh sách hiển thị phía trên đoạn văn KHÔNG
+      được trùng thứ tự các chỗ trống cần điền — soạn `data` đã phải xáo trước, không liệt kê từ
+      trên xuống dưới đúng theo thứ tự điền.
+    - **Matching:** thứ tự cột đáp án trong `data` không được khớp 1-1, 2-2, 3-3... với cột trái —
+      soạn data đã đảo trước (không chỉ trông chờ `.sort(()=>Math.random()-0.5)` lúc render, vì có
+      component chỉ shuffle 1 lần khi build rồi lưu cố định).
+    - Áp dụng cho mọi component có set nhiều câu hỏi liên tiếp (4.6, 4.11, 4.12, 4.13, 4.16, 4.17).
+14. **Đoạn lý thuyết dài PHẢI tự gom lại khi chuyển sang nội dung mới — bấm để mở lại khi cần xem
+    lại, không xoá mất.** Áp dụng cho mọi khối giải thích/lý thuyết dài đứng TRƯỚC phần luyện tập
+    (VD ở Writing: Hook → Khung tổng quát → Đi sâu từng phần → Phân tích bài mẫu → Bảng tín hiệu —
+    mỗi khối có thể dài vài đoạn). Khi học sinh cuộn/bấm sang khối tiếp theo, khối vừa đọc xong tự
+    thu gọn thành 1 thanh tiêu đề ngắn (giữ đúng tiêu đề gốc + icon mũi tên), không hiện chi tiết —
+    bấm lại vào thanh đó để mở ra xem lại, không mất nội dung. Đây là nguyên tắc chung; component
+    kỹ thuật cụ thể xem Mục 4.22 — không nhầm với "nút Gom" ở Top Panel (Mục 4.8, chỉ gộp Phone
+    Chat + Vocabulary) hay Progressive Unlock (Mục 4.9, chỉ mở khoá tuần tự, không tự gom lại phần
+    đã mở). Mục đích: tránh trang lý thuyết dài vô hạn khi có nhiều khối nối tiếp nhau, đồng thời
+    không mất khả năng tra cứu lại như nếu ẩn hẳn bằng Progressive Unlock.
 
 > 🚫 **CẢNH BÁO TOÀN CỤC — LỖI THẬT ĐÃ GẶP, ĐỌC KỸ TRƯỚC KHI BUILD:** mọi từ/câu/tên/số liệu xuất
 > hiện trong file này (Mục 0 nguyên tắc 9-10, Mục 4.6, và file `03_engine_tiengAnh.md` PHẦN 1.10)
@@ -290,13 +385,11 @@ h1,h2,h3,.display { font-family:'Be Vietnam Pro',sans-serif; font-weight:800; co
 > khi quyết định giữ/bỏ/thêm phần nào** — xem quy trình chọn ở Mục 4.0.
 >
 > Điểm chung KHÔNG đổi cho mọi module dù cấu trúc bên trong khác nhau: 1 file HTML độc lập, không
-> sidebar/header điều hướng nhiều module, `#progress-tracker` sticky theo dõi các bước con TRONG
-> module đó (không phải theo dõi cả 9 module của Unit).
+> sidebar/header/Task bar điều hướng hay theo dõi tiến trình dưới bất kỳ hình thức nào — học sinh
+> chỉ thấy đúng nội dung bài học, không có thanh trạng thái cố định nào che khuất màn hình (bỏ hẳn
+> `#progress-tracker`/"Task bar" từng có ở Mục 4.1 bản cũ — xem ghi chú tại vị trí Mục 4.1 bên dưới).
 
 ```
-#progress-tracker (sticky — desktop: cột phải cố định / mobile: thanh ngang trên cùng, cuộn)
-  Nhiệm vụ = các phần THẬT SỰ có trong bài (không nhất thiết đúng 4 mục dưới đây)
-
 header.hero (TUỲ CHỌN, ẩn được display:none nếu cần — xem quy tắc Mục 3.3/3.6 file Toán)
   eyebrow badge + h1 tên Unit + mô tả ngắn + thẻ nhân vật + mục tiêu bài học
 
@@ -330,9 +423,6 @@ footer
 > read-only (Practice Reference Pane 4.8b), không lặp lại toàn bộ tương tác gốc (không lật thẻ,
 > không phát âm lại trong Reference Pane).
 
-Mobile: `#progress-tracker` chuyển từ cột dọc bên phải (desktop) sang thanh ngang sticky trên
-cùng, cuộn được (cùng kỹ thuật với tab ngang ở Mục 3.2 file Toán).
-
 ---
 
 ## 4. Component Library — thư viện tham khảo, tự chọn & ghép theo kịch bản
@@ -356,61 +446,20 @@ Mục 4 là **thư viện**, không phải trình tự bắt buộc. Trước kh
    khớp bản chất hoạt động.
 ```
 
-### 4.1 Progress Tracker (sticky)
+### 4.1 (ĐÃ BỎ — Task bar/Progress Tracker)
 
-```html
-<div id="progress-tracker">
-  <div class="pt-handle"></div>
-  <h4>Tasks</h4>
-  <div class="pt-items">
-    <div class="pt-item" data-key="messages"><div class="pt-box"></div>Messages</div>
-    <div class="pt-item" data-key="vocab"><div class="pt-box"></div>Vocabulary</div>
-    <div class="pt-item" data-key="practice"><div class="pt-box"></div>Practice</div>
-    <div class="pt-item" data-key="assess"><div class="pt-box"></div>Self-Assessment</div>
-  </div>
-</div>
-```
-
-> **Nhãn tiếng Anh làm chính** (`Messages`/`Vocabulary`/`Practice`/`Self-Assessment`, không phải
-> `Tin nhắn`/`Từ vựng`/`Luyện tập`/`Tự đánh giá`) — vì đây là chương trình dạy Tiếng Anh, tiêu đề
-> các giai đoạn/tab nên dùng tiếng Anh để tăng tiếp xúc ngôn ngữ, KHÁC với phần hướng dẫn/nút bấm
-> thao tác (VD "Tin tiếp theo →", "Gom lại") vẫn giữ tiếng Việt vì đó là chỉ dẫn UI, không phải nội
-> dung học. Nếu cần dịch hỗ trợ học sinh mới, thêm dòng tiếng Việt nhỏ hơn bên dưới/trong ngoặc —
-> không thay thế hẳn bằng tiếng Việt. Áp dụng nhất quán cho Level Tabs (4.5) và Top Panel tabs (4.8).
-```css
-#progress-tracker {
-  position: fixed; right: 18px; top: 50%; transform: translateY(-50%);
-  width: 190px; background: var(--white); border-radius: var(--radius);
-  box-shadow: var(--shadow); padding: 16px 16px 14px; z-index: 50;
-  border: 2px solid var(--cream-2);
-}
-.pt-handle { width:44px; height:14px; background:var(--jade-dark); border-radius:6px; margin:-24px auto 10px; }
-#progress-tracker h4 { font-size:13px; letter-spacing:.02em; color:var(--jade-dark);
-  margin:0 0 10px; text-transform:uppercase; }
-.pt-item { display:flex; align-items:center; gap:8px; font-size:12.5px; padding:6px 0; color:var(--ink-2); }
-.pt-box { width:16px; height:16px; border-radius:5px; border:2px solid var(--sage); flex:0 0 auto;
-  position:relative; transition:.25s; }
-.pt-item.done .pt-box { background:var(--jade-deep); border-color:var(--jade-deep); }
-.pt-item.done .pt-box::after { content:''; position:absolute; left:3px; top:0px; width:4px; height:8px;
-  border:solid #fff; border-width:0 2px 2px 0; transform:rotate(40deg); }
-.pt-item.done { color:var(--jade-dark); font-weight:600; }
-
-@media (max-width: 880px) {
-  #progress-tracker { position: sticky; top: 0; transform: none; width: auto; left: 0; right: 0;
-    border-radius: 0; display: flex; align-items: center; gap: 14px; padding: 10px 16px;
-    border: none; border-bottom: 2px solid var(--cream-2); }
-  .pt-handle { display: none; }
-  #progress-tracker h4 { margin: 0; white-space: nowrap; font-size: 11px; }
-  .pt-items { display: flex; gap: 12px; overflow-x: auto; scrollbar-width: none; }
-  .pt-items::-webkit-scrollbar { display: none; }
-  .pt-item { padding: 0; white-space: nowrap; min-height: 44px; align-items: center; }
-}
-```
-```javascript
-function markDone(key){ document.querySelector(`#progress-tracker .pt-item[data-key="${key}"]`).classList.add('done'); }
-// Gọi markDone('messages'|'vocab'|'practice'|'assess') khi học sinh hoàn thành từng phần.
-// Nối vào LMS: mỗi lần gọi markDone(), cũng gọi LMS().progress({done, total:4}) — xem PHẦN 7 file Toán.
-```
+> **Đã bỏ hoàn toàn theo yêu cầu cập nhật mới nhất — không dùng lại dưới bất kỳ hình thức nào.**
+> Bản trước Mục 4.1 là `#progress-tracker` (sidebar sticky bên phải desktop / thanh ngang sticky
+> trên cùng mobile, liệt kê Tasks Messages/Vocabulary/Practice/Self-Assessment). Component này ĐÃ
+> BỊ XOÁ HẲN khỏi hệ thống — không tạo lại `#progress-tracker`, `.pt-item`, `.pt-handle`, hàm
+> `markDone()`, hay bất kỳ thanh/box liệt kê tiến trình tương tự nào (kể cả biến thể khác tên) ở
+> BẤT KỲ file HTML nào, dù 1-file hay tách 2 file. Học sinh chỉ thấy đúng nội dung bài học; tiến
+> trình hoàn thành do nền tảng LMS tự theo dõi qua `LMS().progress()`/`LMS().complete()` gọi ngầm
+> trong code (xem PHẦN 7 file Toán), không cần và không được hiển thị bằng UI riêng trong bài.
+>
+> Số thứ tự Mục 4.1 giữ nguyên chỗ trống (không dồn số các mục 4.2 trở đi) để tránh phá vỡ toàn bộ
+> tham chiếu số mục đã dùng xuyên suốt tài liệu này và ở `01_scenario_builder_tiengAnh.md`/
+> `03_engine_tiengAnh.md`.
 
 ### 4.2 Hero/Header — tuỳ chọn, ẩn được
 
@@ -528,7 +577,7 @@ hội thoại thay vì đọc 1 khối văn bản).
 /* Giới hạn 72% giờ đặt ở KHỐI (bong bóng + meta), không đặt ở .bubble — vì hàng đã có thêm avatar
    chiếm chỗ; để 72% trên .bubble sẽ tính theo chiều rộng khối con, tin dài bị tràn lệch. */
 .msg-row > div { max-width:72%; }
-.bubble { max-width:100%; padding:10px 14px; border-radius:16px; font-size:14px; min-height:20px; }
+.bubble { max-width:100%; padding:10px 14px; border-radius:16px; font-size:15px; line-height:1.5; min-height:20px; }
 .msg-row.left .bubble { background:var(--white); border-bottom-left-radius:4px; color:var(--ink); }
 .msg-row.right .bubble { background:var(--jade-deep); color:#fff; border-bottom-right-radius:4px; }
 .msg-time { font-size:10px; color:var(--ink-3); margin-top:2px; }
@@ -757,12 +806,12 @@ Mỗi phần tử `vocab[]` có **2 ô ảnh**, `img` được ưu tiên, `illus
   grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); }
 .vocab-grid[data-count="10"], .vocab-grid[data-count="11"], .vocab-grid[data-count="12"] {
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
-.vocab-grid.compact .vfront .word { font-size:13px; }
-.vocab-grid.compact .vfront .ipa, .vocab-grid.compact .vfront .hint { font-size:9.5px; }
+.vocab-grid.compact .vfront .word { font-size:13.5px; }
+.vocab-grid.compact .vfront .ipa, .vocab-grid.compact .vfront .hint { font-size:11px; }
 .vocab-grid.compact .vfront .label { padding:7px 8px 8px; }
 .vocab-grid.compact .vface { padding:14px; }
 .vocab-grid.compact .vback .nghia { font-size:14.5px; }
-.vocab-grid.compact .vback .ex { font-size:11px; line-height:1.45; }
+.vocab-grid.compact .vback .ex { font-size:12px; line-height:1.5; }
 
 .vcard { perspective:1200px; }
 .vcard-inner { position:relative; width:100%; transition:transform .55s cubic-bezier(.2,.8,.3,1); transform-style:preserve-3d; }
@@ -811,8 +860,8 @@ Mỗi phần tử `vocab[]` có **2 ô ảnh**, `img` được ưu tiên, `illus
 .vcard.seen .vfront .num::after { content:' ✓'; }
 .vfront .word { font-weight:800; font-size:14.5px; color:var(--jade-dark); line-height:1.25;
   min-height:2.5em; display:flex; align-items:center; justify-content:center; overflow-wrap:anywhere; }
-.vfront .ipa { font-size:11px; color:var(--ink-3); margin-top:2px; }
-.vfront .hint { font-size:10.5px; color:var(--jade-deep); font-weight:600; margin-top:4px; }
+.vfront .ipa { font-size:12px; color:var(--ink-3); margin-top:2px; }
+.vfront .hint { font-size:11.5px; color:var(--jade-deep); font-weight:600; margin-top:4px; }
 .vback { position:absolute; inset:0; background:var(--jade-dark); color:#fff; transform:rotateY(180deg);
   cursor:pointer; overflow-y:auto; justify-content:flex-start; }
 .vback .en { font-size:13px; color:var(--jade-pale); font-weight:700; margin-bottom:4px; margin-top:auto; }
@@ -833,6 +882,16 @@ Mỗi phần tử `vocab[]` có **2 ô ảnh**, `img` được ưu tiên, `illus
   .vfront .illus-box { max-height:46vh; } /* chặn trần chiều cao ảnh trên máy hẹp */
   .vocab-nav { display:flex; }
   .audio-btn { width:36px; height:36px; }
+  /* Quan trọng: .compact (chữ thu nhỏ) được thiết kế cho CỘT HẸP trên desktop (4 hoặc 7-12 thẻ
+     chia lưới). Trên mobile, mỗi thẻ carousel LUÔN chiếm 84% màn hình bất kể tổng số thẻ — không
+     hề hẹp — nên phải reset lại cỡ chữ về mức bình thường, không kế thừa mức thu nhỏ của desktop. */
+  .vocab-grid.compact .vfront .word { font-size:15px; }
+  .vocab-grid.compact .vfront .ipa { font-size:12.5px; }
+  .vocab-grid.compact .vfront .hint { font-size:12px; }
+  .vocab-grid.compact .vfront .label { padding:9px 10px 10px; }
+  .vocab-grid.compact .vface { padding:18px; }
+  .vocab-grid.compact .vback .nghia { font-size:17px; }
+  .vocab-grid.compact .vback .ex { font-size:13px; line-height:1.55; }
 }
 ```
 ```javascript
@@ -1173,7 +1232,7 @@ function shuffleMCQOptions(options) {
 .match-wrap { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
 @media (max-width:600px){ .match-wrap{grid-template-columns:1fr;} }
 .match-opt { background:var(--cream-2); border:2px solid transparent; border-radius:var(--radius);
-  padding:10px 14px; margin-bottom:8px; font-size:13.5px; min-height:44px; display:flex; align-items:center; }
+  padding:10px 14px; margin-bottom:8px; font-size:15px; min-height:44px; display:flex; align-items:center; }
 .match-opt.active { border-color:var(--accent); background:var(--accent-pale); }
 .match-opt.matched { background:var(--correct-bg); border-color:var(--correct); color:var(--jade-text); }
 .match-opt.shake { animation:shake .35s; }
@@ -1232,19 +1291,42 @@ practiceHost.querySelectorAll('.match-opt.def').forEach(el => {
 > code mẫu trên.
 
 **Gap-fill:**
+
+**🆕 HTML markup bắt buộc — cùng nguyên tắc "1 câu liền mạch" như Find the Error (9.16):** trước
+đây mục này chỉ có data + CSS cho ô input, KHÔNG có ví dụ ghép "câu văn + input" thành khối liền
+mạch — đúng lỗ hổng đã gây lỗi Find the Error. Chuỗi `sent` chứa `________` PHẢI được tách và render
+thành **1 khối `<p>` duy nhất**, input chèn xen giữa 2 nửa câu bằng chính `<input>` (vốn đã là
+`display:inline-block` mặc định, chảy tự nhiên trong dòng văn bản) — KHÔNG bọc riêng nửa câu trước/
+sau input thành các `<span>`/`<div>` có border/background riêng, KHÔNG tách câu thành nhiều dòng
+cố định:
+
+```html
+<div class="fill-item">
+  <p class="fill-sentence">
+    <span class="fill-num">1.</span> Recycling bins
+    <input type="text" class="fill-blank" data-idx="0" placeholder="______">
+    around the school last month.
+  </p>
+  <button class="check-btn">Kiểm tra</button>
+</div>
+```
 ```javascript
 // altAnswers: tuỳ chọn — các cách viết đúng khác ngoài viết tắt/đầy đủ (xem nguyên tắc 10, Mục 0).
 // strictNoContraction: true — chỉ set khi CHỦ ĐỘNG không muốn chấp nhận viết tắt cho câu này.
 { sent: "... ________ ...", ans: "...", altAnswers: [], explain: "..." }
 ```
 ```css
+.fill-sentence { display:inline; font-size:17px; line-height:1.9; color:var(--ink); }
 .fill-item input[type=text] { border:2px solid var(--cream-2); border-radius:var(--radius-sm);
-  padding:8px 12px; font-size:13.5px; width:220px; max-width:60%; min-height:40px; }
+  padding:8px 12px; font-size:15px; width:220px; max-width:60%; min-height:40px; }
 .fill-item input[type=text].correct { border-color:var(--correct); background:var(--correct-bg); }
 .fill-item input[type=text].wrong { border-color:var(--wrong); background:var(--wrong-bg); }
 .check-btn { background:var(--jade-deep); color:#fff; border:none; border-radius:var(--radius-sm);
   padding:8px 16px; min-height:40px; font-weight:600; margin-left:8px; }
 ```
+> ⚠️ Áp dụng ĐÚNG nguyên tắc này cho cả **Sentence Completion** (chỗ trống nằm giữa câu, không có
+> word box) — cùng 1 lỗi tiềm ẩn, cùng 1 cách sửa: 1 khối `<p>` liền mạch, input chảy tự nhiên trong
+> dòng văn bản.
 
 > ⚠️ **Hàm chấm đáp án dùng CHUNG cho mọi ô nhập chữ trong toàn hệ thống** (Gap-fill, Q&A mở, Error
 > Correction, và bất kỳ `input[type=text]`/`textarea` nào cần tự chấm đúng-sai) — định nghĩa 1 lần
@@ -1430,6 +1512,10 @@ Collapsible Panel (kỹ thuật gốc y hệt Mục 3.7 file `02_design_toan_fin
       </div>
       <div id="vocabView" class="top-view">
         <!-- Component 4.4 Vocabulary ở đây -->
+        <!-- ⚠️ btnGoPractice/goToPractice() CHỈ dùng khi người dùng CHỦ ĐỘNG yêu cầu gộp lại 1 file
+             (xem Mục 8, ngoại lệ). Với mặc định TÁCH 2 file (Lesson/Practice riêng), KHÔNG có
+             section#sec-practice trong cùng file này để nhảy tới — bỏ hẳn nút này, Vocabulary
+             view kết thúc tự nhiên, không có CTA nào (đúng Quy tắc mới 3 ở 01_scenario_builder). -->
         <button class="chip-btn unlock-btn" id="btnGoPractice" onclick="goToPractice()">✓ Đã học xong — Sang Luyện tập →</button>
       </div>
     </div>
@@ -1617,7 +1703,7 @@ function goToPractice() {
 .ref-vocab-card { background:var(--cream-2); border:1.5px solid var(--paper-line); border-radius:var(--radius-sm); padding:10px 12px; }
 .ref-vocab-card .w { font-weight:800; font-size:13.5px; color:var(--jade-dark); }
 .ref-vocab-card .m { font-size:12px; color:var(--jade-text); font-weight:600; margin-top:2px; }
-.ref-vocab-card .e { font-size:11px; color:var(--ink-2); font-style:italic; margin-top:4px; line-height:1.35; }
+.ref-vocab-card .e { font-size:12px; color:var(--ink-2); font-style:italic; margin-top:4px; line-height:1.4; }
 
 .q-nav-bar { background:var(--white); border:2px solid var(--cream-2); border-radius:var(--radius);
   padding:10px 14px; margin-top:18px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
@@ -1747,7 +1833,7 @@ function unlockSection(bodyId, lockId){
 ```
 ```css
 .reading-box { background:var(--white); border:1px solid var(--paper-line); border-radius:var(--radius-lg);
-  padding:1.5rem; font-size:15px; line-height:2.2; color:var(--ink); }
+  padding:1.5rem; font-size:16px; line-height:2; color:var(--ink); }
 .kw { cursor:pointer; border-bottom:2px dashed var(--jade-soft); position:relative; }
 .kw:hover, .kw.on { background:var(--jade-pale); }
 .kw-tip { display:none; position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%);
@@ -1758,7 +1844,7 @@ function unlockSection(bodyId, lockId){
   border:1px solid var(--paper-line); color:var(--ink-2); }
 .rev-btn { font-size:12px; padding:5px 12px; min-height:32px; border-radius:99px; border:1px solid var(--paper-line);
   background:var(--white); color:var(--ink-2); }
-@media (max-width:640px) { .reading-box { padding:1rem; font-size:14px; line-height:2; } }
+@media (max-width:640px) { .reading-box { padding:0.9rem 0.85rem; font-size:16px; line-height:1.8; } }
 ```
 ```javascript
 function toggleKw(el){ el.classList.toggle('on'); updateKwStat(); }
@@ -1789,10 +1875,10 @@ bài đọc/nghe):
 .q-card.ok { border-color:var(--correct); background:var(--correct-bg); }
 .q-card.no { border-color:var(--wrong); background:var(--wrong-bg); }
 .q-num { font-size:11px; font-weight:600; color:var(--ink-3); text-transform:uppercase; margin-bottom:6px; }
-.q-text { font-size:15px; color:var(--ink); margin-bottom:0.5rem; line-height:1.7; }
+.q-text { font-size:16px; color:var(--ink); margin-bottom:0.5rem; line-height:1.65; }
 .q-opts { display:flex; flex-direction:column; gap:6px; margin-top:0.75rem; }
 .q-opts button { min-height:44px; padding:10px 14px; border-radius:var(--radius); border:1px solid var(--paper-line);
-  background:var(--white); font-size:14px; text-align:left; color:var(--ink); }
+  background:var(--white); font-size:15px; text-align:left; color:var(--ink); }
 .q-opts button.correct { border-color:var(--correct); background:var(--correct-bg); color:var(--jade-text); }
 .q-opts button.wrong { border-color:var(--wrong); background:var(--wrong-bg); color:var(--wrong); }
 .q-explain { font-size:13px; padding:8px 12px; border-radius:var(--radius-sm); margin-top:0.75rem;
@@ -1820,7 +1906,7 @@ bài đọc/nghe):
 .match-cols { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:1rem; }
 @media (max-width:600px){ .match-cols{grid-template-columns:1fr;} }
 .match-chip { display:flex; align-items:center; padding:10px 14px; min-height:44px; border-radius:var(--radius);
-  border:2px solid var(--paper-line); background:var(--white); font-size:14px; margin-bottom:8px; color:var(--ink); }
+  border:2px solid var(--paper-line); background:var(--white); font-size:15px; margin-bottom:8px; color:var(--ink); }
 .match-chip.active { border-color:var(--accent); background:var(--accent-pale); }
 .match-chip.matched { background:var(--correct-bg); border-color:var(--correct); color:var(--jade-text); }
 .match-chip.wrong { animation:shake .35s; border-color:var(--wrong); }
@@ -1858,7 +1944,7 @@ function tapDef(el, key){
 .tile-answer { border:2px dashed var(--paper-line); background:var(--white); }
 .word-tile { display:inline-flex; padding:8px 16px; min-height:40px; align-items:center;
   border-radius:var(--radius); border:1px solid var(--paper-line); background:var(--white);
-  font-size:14px; color:var(--ink); cursor:pointer; }
+  font-size:15px; color:var(--ink); cursor:pointer; }
 .word-tile.used { opacity:.3; pointer-events:none; }
 ```
 ```javascript
@@ -1880,7 +1966,7 @@ file audio thật cần phát đúng giọng.
 ```
 ```css
 .chunk-row { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--cream-2); }
-.chunk-text { font-size:14.5px; color:var(--ink); }
+.chunk-text { font-size:16px; color:var(--ink); }
 ```
 ```javascript
 function speak(text, lang='en-GB'){
@@ -1907,12 +1993,12 @@ function speak(text, lang='en-GB'){
 ```
 ```css
 .model-text { background:var(--cream-2); border-left:4px solid var(--jade-deep); border-radius:0 var(--radius) var(--radius) 0;
-  padding:1rem 1.25rem; font-size:14.5px; line-height:1.8; margin-bottom:1rem; }
-.frame-row { padding:10px 0; font-size:14.5px; line-height:2.2; }
+  padding:1rem 1.25rem; font-size:16px; line-height:1.75; margin-bottom:1rem; }
+.frame-row { padding:10px 0; font-size:16px; line-height:2; }
 .frame-inp { border:2px solid var(--paper-line); border-radius:var(--radius-sm); padding:6px 10px;
-  font-size:13.5px; min-width:120px; min-height:36px; background:var(--white); }
+  font-size:14px; min-width:120px; min-height:36px; background:var(--white); }
 .write-area { width:100%; min-height:160px; border:2px solid var(--paper-line); border-radius:var(--radius);
-  padding:12px 14px; font-size:14.5px; font-family:inherit; resize:vertical; }
+  padding:12px 14px; font-size:15px; font-family:inherit; resize:vertical; }
 .write-area:focus { outline:none; border-color:var(--jade-deep); }
 .word-count { font-size:12px; color:var(--ink-3); margin-top:4px; text-align:right; }
 ```
@@ -1974,7 +2060,7 @@ function scoreByCategory(answered){
 ```css
 .cat-item-list { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
 .cat-item { min-height:44px; padding:9px 16px; border-radius:var(--radius); border:2px solid var(--paper-line);
-  background:var(--white); font-size:13.5px; color:var(--ink); }
+  background:var(--white); font-size:15px; color:var(--ink); }
 .cat-item.selected { border-color:var(--accent); background:var(--accent-pale); }
 .cat-item.placed { opacity:.4; pointer-events:none; }
 .cat-buckets { display:flex; gap:10px; flex-wrap:wrap; }
@@ -2005,17 +2091,326 @@ function assignBucket(bucketKey) {
 }
 ```
 
+### 4.18 Before/After Comparison Slider — kéo so sánh Trước/Sau (Warm-up/hook trực quan)
+
+> **Dùng khi nào:** kịch bản cần học sinh tự kéo để đối chiếu 2 trạng thái đối lập của cùng 1
+> cảnh/chủ đề (VD "bữa cơm gia đình 20 năm trước vs hiện tại", "before/after" 1 thói quen, 1 không
+> gian...) làm hook mở bài trước khi vào Getting Started. **Không dùng cho bài luyện tập chấm
+> điểm** — đây thuần là công cụ khám phá trực quan, không có đúng/sai.
+>
+> **Xem lại Nguyên tắc 4 (Mục 0):** đây là ngoại lệ DUY NHẤT được phép "kéo" trong toàn hệ thống,
+> vì bản chất khác drag-and-drop-vào-đích — chỉ là 1 tay cầm trượt liên tục trên 1 trục ngang,
+> không có khái niệm "thả đúng chỗ". Nhưng chính vì là thao tác kéo, nó **rất dễ vỡ trên mobile**
+> nếu thiếu 2 dòng bắt buộc bên dưới: trình duyệt mobile mặc định coi mọi cử chỉ kéo dọc/ngang
+> trong vùng đó là để **cuộn trang**, nên nếu không chặn rõ ràng, học sinh chạm vào thanh trượt sẽ
+> bị cuộn cả màn hình thay vì di chuyển được thanh.
+
+```css
+.comparison-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: col-resize;
+  touch-action: none; /* BẮT BUỘC — không có dòng này, kéo trên mobile = cuộn trang, không di
+                          chuyển được thanh trượt. Báo cho trình duyệt biết vùng này do JS xử lý
+                          toàn bộ cử chỉ chạm, không nhường lại cho hành vi cuộn mặc định. */
+}
+.img-after-wrapper {
+  position: absolute; inset: 0; overflow: hidden;
+  clip-path: polygon(var(--slider-pos) 0, 100% 0, 100% 100%, var(--slider-pos) 100%);
+}
+```
+```javascript
+// sliderPos: 0-100, lưu vào CSS var --slider-pos để clip-path ảnh "after" theo đúng vị trí kéo
+function handleMove(e) {
+  if (!isDragging) return;
+  if (e.touches) e.preventDefault(); // BẮT BUỘC — chặn cuộn trang khi ngón tay đang kéo thanh.
+                                      // Chỉ có tác dụng NẾU listener touchmove đăng ký
+                                      // { passive: false } bên dưới — thiếu 1 trong 2 là hỏng.
+  const rect = container.getBoundingClientRect();
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const percentage = ((clientX - rect.left) / rect.width) * 100;
+  setSliderPosition(Math.max(0, Math.min(100, percentage)));
+}
+
+container.addEventListener('mousedown', (e) => { isDragging = true; handleMove(e); });
+window.addEventListener('mousemove', handleMove);
+window.addEventListener('mouseup', () => { isDragging = false; });
+
+container.addEventListener('touchstart', (e) => { isDragging = true; handleMove(e); }, { passive: true });
+// { passive: false } BẮT BUỘC ở touchmove — mặc định trình duyệt đăng ký passive:true để tối ưu
+// hiệu năng cuộn, khiến preventDefault() ở handleMove bị trình duyệt ÂM THẦM BỎ QUA (không báo lỗi
+// gì cả, chỉ đơn giản là không có tác dụng) nếu thiếu khai báo này.
+window.addEventListener('touchmove', handleMove, { passive: false });
+window.addEventListener('touchend', () => { isDragging = false; });
+```
+
+> **Lỗi thường gặp nếu bỏ sót:** kéo thanh trượt trên desktop (chuột) chạy đúng 100%, chỉ lộ ra khi
+> **mở bằng điện thoại thật** — kéo phát là cả trang cuộn theo, không di chuyển được vạch chia
+> ảnh. Vì lỗi chỉ hiện trên touch, dễ lọt qua nghiệm thu nếu chỉ test bằng DevTools responsive mode
+> trên desktop (chuột vẫn giả lập là mousedown, không kích hoạt đúng nhánh touchmove/passive).
+> **Bắt buộc test bằng ngón tay thật trên điện thoại**, không chỉ resize cửa sổ trình duyệt.
+
+---
+
+### 4.19 Vietnamese Translation Toggle — nút bật/tắt bản dịch, mặc định ẩn
+
+> **Dùng khi nào:** mọi module (đặc biệt Speaking) khi cần đưa 1 đoạn hướng dẫn/mô tả nhiệm vụ
+> DÀI hoặc có khái niệm khó sang tiếng Việt hỗ trợ, nhưng KHÔNG được hiển thị song song 2 thứ
+> tiếng cùng lúc theo mặc định (làm rối mắt, học sinh lười đọc bản tiếng Anh). Đây là component
+> thay thế cho việc viết thẳng song ngữ trong nội dung.
+>
+> **Không dùng cho:** câu hỏi/đề bài (Practice, MCQ, Task...) — nội dung câu hỏi PHẢI luôn thuần
+> tiếng Anh, không được có bản dịch kèm theo dưới bất kỳ hình thức nào, kể cả toggle. Không dùng
+> cho nhãn nút/tiêu đề ngắn, đơn giản (những chỗ đó chỉ cần viết tiếng Anh, không cần dịch).
+> Không dùng cho dòng "Giải thích" sau khi trả lời — dòng đó vẫn viết thẳng tiếng Việt như quy tắc
+> chung, không bọc qua toggle.
+
+```html
+<p>...nội dung tiếng Anh cần hỗ trợ dịch...</p>
+<button class="vi-toggle" onclick="toggleVi(this,'vi-xxx')">🇻🇳 Show translation</button>
+<div class="vi-text" id="vi-xxx">...bản dịch tiếng Việt...</div>
+```
+```css
+.vi-toggle { background:none; border:none; color:var(--jade-text); font-size:11.5px; font-weight:700;
+  cursor:pointer; padding:3px 0; margin-top:4px; display:inline-flex; align-items:center; gap:4px; }
+.vi-toggle:hover { text-decoration:underline; }
+.vi-text { display:none; font-size:12.5px; color:var(--ink-3); font-style:italic; margin:4px 0 0; line-height:1.5; }
+.vi-text.show { display:block; }
+```
+```javascript
+function toggleVi(btn, id) {
+  const vi = document.getElementById(id);
+  const showing = vi.classList.toggle('show');
+  btn.textContent = showing ? '🇻🇳 Hide translation' : '🇻🇳 Show translation';
+}
+```
+
+> **Mỗi `id` phải DUY NHẤT trong toàn file** — kể cả khi 1 trang có nhiều khối `.vi-toggle` (VD
+> nhiều bước Production khác nhau), không được trùng `id` giữa các khối, nếu không nút bấm sau sẽ
+> điều khiển nhầm sang khối `.vi-text` đầu tiên có cùng id.
+>
+> **Lỗi thật đã gặp:** khi viết nội dung cho toggle, nếu chuỗi tiếng Anh có dấu nháy đơn
+> (don't/isn't/you'll...) và JS bọc chuỗi bằng `'...'`, PHẢI escape thành `\'` — thiếu escape làm
+> đóng chuỗi JS sớm, gây lỗi cú pháp âm thầm (không hiện lỗi trên giao diện, chỉ làm toàn bộ nút
+> bấm sau đó ngừng hoạt động). Ưu tiên viết câu trong chuỗi JS tránh contraction, hoặc bọc bằng
+> `"..."` nếu nội dung không chứa dấu `"`.
+
+### 4.20 Guided Noticing — ô gõ tự do, tự đối chiếu đáp án (KHÔNG auto-chấm)
+
+> **Dùng khi nào:** bước "học sinh tự tìm cụm từ chức năng ngôn ngữ trong hội thoại/văn bản mẫu
+> TRƯỚC KHI xem bảng Useful Expressions đầy đủ" (kịch bản Speaking gọi là "Menu B — Guided
+> Noticing", dùng lặp lại từ Unit 4 trở đi ở Bước 1). Mục đích là để học sinh chủ động quan sát/
+> suy luận trước, không phải để chấm điểm đúng-sai — vì câu trả lời có thể diễn đạt khác chữ với
+> đáp án gợi ý mà vẫn đúng ý (VD học sinh chép đúng 1 phần câu, hoặc diễn đạt lại bằng từ khác).
+>
+> **Khác với Gap-fill/Cloze (4.6):** Gap-fill chấm đúng/sai tự động bằng `checkTextAnswer()` vì
+> đáp án là 1 từ/cụm từ cố định, không có chỗ diễn giải. Guided Noticing thì NGƯỢC LẠI — không
+> gọi `checkTextAnswer()`, không có trạng thái đúng/sai, chỉ có 2 trạng thái: "đang gõ" và "đã xem
+> đáp án". Không dùng nhầm 2 component này cho nhau.
+
+```html
+<div class="notice-box">
+  <p class="notice-q">1 cách diễn đạt ĐỒNG Ý mà nhân vật đã dùng:</p>
+  <textarea class="notice-input" id="notice-1" placeholder="Gõ câu trả lời của bạn ở đây..."></textarea>
+</div>
+<button class="reveal-btn" onclick="revealNotice(['notice-1','notice-2','notice-3'], 'notice-ans-block')">
+  Hiện đáp án
+</button>
+<div class="notice-ans-block" id="notice-ans-block" hidden>
+  <p><b>Đáp án gợi ý:</b> "I totally agree that..."</p>
+  <p class="notice-note">Câu trả lời của bạn không cần giống hệt — chỉ cần đúng ý là được.</p>
+</div>
+```
+```css
+.notice-box { margin-bottom:14px; }
+.notice-q { font-size:15px; font-weight:600; color:var(--ink); margin-bottom:8px; }
+.notice-input { width:100%; min-height:44px; border:2px solid var(--paper-line); border-radius:var(--radius-sm);
+  padding:10px 12px; font-size:15px; font-family:inherit; resize:vertical; }
+.notice-input:focus { outline:none; border-color:var(--jade-deep); }
+.reveal-btn { background:var(--white); color:var(--jade-text); border:2px solid var(--jade-soft);
+  border-radius:999px; padding:10px 22px; font-weight:700; font-size:14px; min-height:44px; margin-top:4px; }
+.reveal-btn:hover { background:var(--jade-pale); }
+.notice-ans-block { margin-top:14px; background:var(--cream-2); border-radius:var(--radius);
+  padding:14px 16px; font-size:14.5px; color:var(--ink-2); }
+.notice-ans-block p { margin:0 0 6px; }
+.notice-note { font-style:italic; color:var(--ink-3); font-size:13px; }
+```
+```javascript
+// KHÔNG so sánh nội dung textarea với đáp án — chỉ hiện khối đáp án khi bấm nút.
+// Không gọi checkTextAnswer(), không gọi recordMistake() — bước này không tính điểm.
+function revealNotice(inputIds, ansBlockId) {
+  document.getElementById(ansBlockId).hidden = false;
+  document.getElementById(ansBlockId).scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+```
+
+> **⚠️ Bắt buộc:**
+> 1. KHÔNG gọi `checkTextAnswer()` hay bất kỳ hàm so khớp chuỗi nào cho `.notice-input` — đây là
+>    điểm khác biệt cốt lõi với Gap-fill (4.6).
+> 2. KHÔNG gọi `recordMistake()` khi bấm "Hiện đáp án" — mở đáp án không tính là làm sai, không
+>    ảnh hưởng adaptive routing (giống nguyên tắc Recap ở Mục 9.13 của Engine).
+> 3. Nút "Hiện đáp án" hiện đủ TẤT CẢ đáp án gợi ý của cả khối Guided Noticing đó cùng lúc (không
+>    tách riêng từng câu 1 nút, trừ khi kịch bản có ghi rõ tách riêng).
+> 4. Sau khi hiện đáp án, KHÔNG khoá/disable lại ô `.notice-input` — học sinh vẫn có thể sửa/gõ
+>    thêm nếu muốn, vì đây không phải bài chấm điểm.
+> 5. Đề bài của khối này (`.notice-q`) viết tiếng Việt bình thường (không phải nội dung
+>    câu hỏi/đề luyện tập chính thức phải thuần tiếng Anh như Mục 4.19 quy định) — vì đây là
+>    hướng dẫn hoạt động, không phải đề bài chấm điểm.
+
+### 4.21 Idea Diagram — sơ đồ cây phát triển ý (gốc → nhánh → lá), 4 mức hỗ trợ
+
+> **Dùng khi nào:** bài cần học sinh brainstorm ý theo cấu trúc phân tầng trước khi viết/nói (Writing
+> Suggestion & Benefits paragraph, thảo luận có lập luận...). Thay thế hoàn toàn ý tưởng "vẽ mindmap
+> tự do" bằng 1 cấu trúc CỐ ĐỊNH (gốc → N nhánh → M lá/nhánh) — không cho học sinh tự kéo/định vị
+> node, vì bất kỳ thao tác "đặt node ở đâu tuỳ ý" nào cũng khó chấm và dễ vỡ trên mobile.
+>
+> **Quyết định thiết kế quan trọng — không dùng SVG vẽ đường nối:** đường nối cây thường được dựng
+> bằng SVG/absolute-position tính toạ độ bằng JS — cách này CỰC DỄ VỠ khi mobile xoay ngang/dọc hoặc
+> khi bàn phím ảo đẩy layout (phải tính lại toạ độ mỗi lần). Thay vào đó, dùng thuần CSS Flexbox +
+> border để gợi ý đường nối (không phải đường nối thật), tự động responsive không cần JS đo lại gì.
+
+```html
+<div class="idea-diagram" data-state="partial">
+  <div class="idea-root">Benefits of Viet Nam's participation in international organisations</div>
+  <div class="idea-branches">
+    <div class="idea-branch" style="--branch-color: var(--jade-deep)">
+      <div class="idea-branch-title">Cultural exchange</div>
+      <ul class="idea-leaves">
+        <li class="idea-leaf filled">promote Vietnamese culture abroad</li>
+        <li class="idea-leaf blank"><input class="idea-leaf-input" placeholder="✏️ your idea..."></li>
+      </ul>
+    </div>
+    <div class="idea-branch" style="--branch-color: var(--accent)">
+      <div class="idea-branch-title">Educational opportunities</div>
+      <ul class="idea-leaves">
+        <li class="idea-leaf blank"><input class="idea-leaf-input" placeholder="✏️ your idea..."></li>
+        <li class="idea-leaf blank"><input class="idea-leaf-input" placeholder="✏️ your idea..."></li>
+      </ul>
+    </div>
+  </div>
+  <button class="idea-suggest-btn" onclick="toggleSuggestion(this)">💡 So sánh gợi ý</button>
+  <div class="idea-suggestion" hidden><!-- nội dung gợi ý, không phải đáp án đúng/sai --></div>
+</div>
+```
+```css
+.idea-diagram { padding: 4px 0; }
+.idea-root {
+  background: var(--jade-deep); color: #fff; font-weight: 700; text-align: center;
+  border-radius: var(--radius); padding: 14px 18px; margin-bottom: 4px; font-size: 15px;
+}
+/* Gợi ý đường nối: 1 vạch ngắn thuần CSS, không phải SVG — không cần tính lại khi resize */
+.idea-root::after {
+  content: ""; display: block; width: 2px; height: 14px; background: var(--paper-line);
+  margin: 0 auto;
+}
+.idea-branches {
+  display: flex; gap: 14px; flex-wrap: wrap; /* desktop: hàng ngang, tự xuống dòng nếu chật */
+}
+.idea-branch {
+  flex: 1 1 220px; /* mobile ≤480px: mỗi nhánh chiếm trọn hàng vì flex-basis > nửa màn hình nhỏ */
+  background: var(--cream-2); border-top: 4px solid var(--branch-color);
+  border-radius: 0 0 var(--radius) var(--radius); padding: 12px 14px;
+}
+.idea-branch-title { font-weight: 700; color: var(--ink); margin-bottom: 8px; font-size: 14.5px; }
+.idea-leaves { display: flex; flex-direction: column; gap: 6px; } /* LUÔN dọc, kể cả desktop —
+  danh sách lá vốn hẹp, không cần layout ngang, tránh mọi rủi ro responsive ở tầng này */
+.idea-leaf { background: var(--white); border-radius: var(--radius-sm); padding: 8px 10px;
+  font-size: 14px; min-height: 40px; display: flex; align-items: center; }
+.idea-leaf.filled::before { content: "✓ "; color: var(--jade-deep); font-weight: 700; }
+.idea-leaf-input { width: 100%; border: 2px dashed var(--paper-line); border-radius: var(--radius-sm);
+  padding: 8px 10px; font-size: 14px; min-height: 40px; background: var(--white); }
+.idea-leaf-input:focus { outline: none; border-color: var(--jade-deep); border-style: solid; }
+.idea-suggest-btn { margin-top: 12px; min-height: 44px; padding: 10px 18px; border-radius: var(--radius-sm);
+  background: var(--cream-2); border: 2px solid var(--paper-line); font-weight: 600; }
+.idea-suggestion { margin-top: 10px; background: var(--jade-pale); border-radius: var(--radius); padding: 12px 16px; }
+
+/* Mobile ≤480px: ép mỗi nhánh xuống 1 hàng riêng, KHÔNG dùng flex-wrap tự nhiên vì item cuối có
+   thể kẹt cạnh item trước nếu vừa đủ 2 cột hẹp — ép rõ ràng để chắc chắn luôn xếp dọc */
+@media (max-width: 480px) {
+  .idea-branches { flex-direction: column; }
+  .idea-branch { flex-basis: auto; }
+}
+```
+
+**4 mức hỗ trợ, đặt qua `data-state`:**
+
+| `data-state` | Root/Branch | Leaf |
+|---|---|---|
+| `full` | text tĩnh | toàn bộ `.idea-leaf.filled` (✓, đọc/phân tích) |
+| `partial` | text tĩnh | mix `.filled` + `.idea-leaf-input` (viền nét đứt) |
+| `guided` | text tĩnh | thay `<ul>` bằng 1 đoạn `<p class="idea-guiding-q">` (câu hỏi gợi mở, in nghiêng) + 1 `<textarea>` |
+| `blank` | root/branch title cũng là `<input>` | toàn bộ `.idea-leaf-input`; có thêm nút `+ Add branch` (JS clone `.idea-branch` rỗng) |
+
+> **Không auto-chấm bất kỳ ô nào** (đúng tinh thần Guided Noticing 4.20) — nút "💡 So sánh gợi ý"
+> chỉ hiện khối gợi ý bên cạnh, không khoá ô input, không đánh giá đúng/sai.
+> **📱 Mobile:** đã ép `flex-direction: column` ở `.idea-branches` — không cần accordion thu gọn vì
+> mỗi branch vốn đã ngắn (title + 2-3 leaf); nếu nội dung 1 branch quá dài (>4 leaf), bọc thêm
+> `<details>`/`<summary>` gốc HTML thay vì tự viết JS toggle (nhẹ hơn, có accessibility mặc định).
+
+### 4.22 Auto-collapse Theory Block — tự gom lý thuyết dài khi chuyển sang phần mới
+
+> **Dùng khi nào:** khối lý thuyết/giải thích dài đứng nối tiếp nhau trước phần luyện tập (VD chuỗi
+> Hook → Khung tổng quát → Đi sâu từng phần → Phân tích bài mẫu → Bảng tín hiệu ở Writing) — xem
+> Nguyên tắc 14 (Mục 0). Dùng `<details>`/`<summary>` gốc HTML thay vì tự viết JS toggle riêng — nhẹ
+> hơn, có accessibility mặc định (đọc được bằng screen reader, hoạt động cả khi JS lỗi).
+
+```html
+<details class="theory-block" open data-block="hook">
+  <summary class="theory-block-title">🌍 Hook — Viet Nam's Blue Berets</summary>
+  <div class="theory-block-body">
+    <!-- toàn bộ nội dung Hook -->
+  </div>
+</details>
+<details class="theory-block" data-block="tool">
+  <summary class="theory-block-title">🧠 A thinking tool: Diagrams for developing ideas</summary>
+  <div class="theory-block-body"><!-- ... --></div>
+</details>
+```
+```css
+.theory-block { background: var(--white); border-radius: var(--radius); margin-bottom: 10px;
+  border: 1px solid var(--paper-line); overflow: hidden; }
+.theory-block-title { min-height: 44px; padding: 12px 16px; font-weight: 700; font-size: 15px;
+  color: var(--ink); cursor: pointer; list-style: none; display: flex; align-items: center;
+  gap: 8px; }
+.theory-block-title::-webkit-details-marker { display: none; } /* ẩn tam giác mặc định, tự vẽ mũi tên */
+.theory-block-title::before { content: "▸"; transition: transform .2s; color: var(--jade-deep); }
+.theory-block[open] > .theory-block-title::before { transform: rotate(90deg); }
+.theory-block-body { padding: 0 16px 16px; font-size: 15px; line-height: 1.7; }
+```
+```javascript
+// Tự gom khối trước khi mở khối kế tiếp — gắn theo thứ tự đọc, KHÔNG gọi khi học sinh tự bấm mở
+// lại 1 khối cũ (chỉ auto-collapse theo tiến trình đọc xuôi, không ép đóng khi học sinh chủ động mở)
+function autoCollapsePrev(nextBlockEl) {
+  const blocks = [...document.querySelectorAll('.theory-block')];
+  const idx = blocks.indexOf(nextBlockEl);
+  if (idx > 0) blocks[idx - 1].open = false;
+  nextBlockEl.open = true;
+}
+```
+
+> **⚠️ Bắt buộc:**
+> 1. Chỉ auto-collapse khối LIỀN TRƯỚC khi học sinh chủ động mở khối MỚI (cuộn tới hoặc bấm) — không
+>    gom ngược các khối đã mở trước đó xa hơn, tránh học sinh mất dấu đang đọc tới đâu.
+> 2. Bấm vào `<summary>` của khối đã gom LUÔN mở lại được, không giới hạn số lần mở/đóng.
+> 3. KHÔNG dùng cho khối luyện tập có chấm điểm (Practice/Write) — chỉ dùng cho khối lý thuyết đọc/
+>    phân tích thuần tuý; khối luyện tập dùng đúng Progressive Unlock (4.9) hoặc Step-gate (4.5).
+> 4. `open` mặc định chỉ đặt `true` cho khối ĐẦU TIÊN — các khối sau mặc định đóng, tự mở khi học
+>    sinh cuộn tới hoặc bấm, không hiện sẵn hết gây trang dài vô hạn ngay từ đầu.
+
 ---
 
 ## 5. Mobile & Responsive — checklist
 
-- [ ] `#progress-tracker`: cột dọc bên phải (desktop) → thanh ngang sticky trên cùng (mobile)
+- [ ] Không có Task bar/`#progress-tracker` hay bất kỳ thanh theo dõi tiến trình nào hiển thị trên
+      trang (đã bỏ hẳn — xem ghi chú tại Mục 4.1)
 - [ ] `.phone`: `width:min(380px,92vw)` — không tràn ngang trên màn hình hẹp
 - [ ] Vocabulary (4.4) desktop: `.vocab-grid` số cột co theo `data-count` (1-12 thẻ); mobile
       (≤640px): carousel vuốt ngang (`display:flex; overflow-x:auto; scroll-snap-type:x mandatory`),
       KHÔNG còn xếp lưới dọc — mũi tên `#vocabPrev/#vocabNext` chỉ hiện trên mobile, ẩn nếu ≤1 thẻ
-- [ ] Bấm "Sang Luyện tập" (4.8) tự động Gom Top Panel lại — bài tập lọt màn hình ngay, không bắt
-      học sinh cuộn thêm 1 lần nữa sau khi đã bấm nút
+- [ ] *(chỉ áp dụng khi gộp 1 file theo yêu cầu chủ động — xem Mục 8)* Bấm "Sang Luyện tập" (4.8) tự
+      động Gom Top Panel lại — bài tập lọt màn hình ngay, không bắt học sinh cuộn thêm 1 lần nữa;
+      với bản mặc định TÁCH 2 file, nút này không tồn tại (bỏ hẳn — xem ghi chú tại Mục 4.8)
 - [ ] Practice Reference Pane (4.8b, nếu có): desktop chia đôi CHIỀU DỌC (2 cột, `grid-template-columns`
       ở ≥992px); mobile chia đôi CHIỀU NGANG (2 khối xếp chồng, `.practice-ref-pane` sticky trên,
       câu hỏi cuộn dưới); `.mobile-pane-controls` (Chia đôi/Bài đọc/Câu hỏi) chỉ hiện ≤991px và
@@ -2023,6 +2418,10 @@ function assignBucket(bucketKey) {
 - [ ] Mọi nút (`chip-btn`, `level-tab`, `check-btn`, `audio-btn`, `top-tab`, `next-level-btn`,
       `vnav-btn`, `mpc-btn`, `pref-tab`, `q-nav-btn`...) ≥44px trên mobile
 - [ ] `.match-wrap` 2 cột → 1 cột dưới 600px
+- [ ] Before/After Slider (4.18, nếu có): `.comparison-container` có `touch-action:none`;
+      `touchmove` đăng ký `{ passive:false }` và `handleMove` gọi `e.preventDefault()` khi
+      `e.touches` tồn tại — đã **kéo thử bằng ngón tay trên điện thoại thật**, không chỉ DevTools
+      responsive mode (chuột không lộ được lỗi cuộn trang này)
 - [ ] Test ở 375px, 768px, 1280px
 
 ---
@@ -2107,6 +2506,11 @@ ro.observe(document.body);
       thành 1 mức có nút bấm thẳng sang mức còn lại (xem 4.5)
 - [ ] Nếu bài có cả Hội thoại + Từ vựng: đã dùng Top Panel gộp có khoá tuần tự (4.8), không tách
       2 section xếp dọc tự do
+- [ ] Nếu bài có chuỗi nhiều khối lý thuyết dài nối tiếp (Writing Hook → Khung tổng quát → Đi sâu
+      từng phần → Phân tích bài mẫu...): đã dùng Auto-collapse Theory Block (4.22), không để tất cả
+      hiện cùng lúc thành 1 trang dài vô hạn
+- [ ] Nếu bài có brainstorm ý phân tầng (Writing Suggestion & Benefits...): đã dùng Idea Diagram
+      (4.21) đúng 1 trong 4 `data-state`, không tự vẽ mindmap tự do bằng SVG/toạ độ JS
 - [ ] Mỗi tin nhắn (4.3) vẽ đủ **avatar + tên người nói + giờ**, avatar có ở CẢ typing-indicator,
       nhánh "hiện hết tin nhắn" và Reference Pane (4.8b) — không chỉ bong bóng + giờ; tên/hình
       nhân vật lấy từ đúng 1 map `speaker` + `avatarHTML()`, không viết cứng rải rác
@@ -2124,13 +2528,19 @@ ro.observe(document.body);
       Reference Pane trống cho có
 - [ ] Nội dung trong Reference Pane (4.8b) lấy đúng từ data của Khối 1 (`messages`/`vocab`/đoạn
       Reading), không soạn lại data riêng gây lệch nội dung giữa 2 khối
-- [ ] `#progress-tracker` hoạt động đúng, nối được sang `LMS().progress()`
+- [ ] Không có Task bar/`#progress-tracker` hay component tương tự nào trong file; `LMS().progress()`
+      vẫn được gọi ngầm trong code khi học sinh hoàn thành từng phần (không cần UI riêng)
 - [ ] Hero (nếu có) ẩn được bằng `display:none` không gãy JS
 - [ ] Không dùng kéo-thả (drag-and-drop) — bài nối/sắp xếp/phân loại dùng tap-to-select
-      (Mục 4.12/4.13/4.17)
+      (Mục 4.12/4.13/4.17). Ngoại lệ Before/After Slider (4.18, nếu có) đã đúng chuẩn
+      `touch-action:none` + `preventDefault()`/`passive:false` — xem checklist Mục 5
 - [ ] Mọi MCQ/Matching đã xáo vị trí đáp án đúng khi render bằng hàm dùng chung (Mục 0 nguyên tắc
       7, `shuffleMCQOptions()` ở Mục 4.6) — không gán cứng đáp án đúng lệch về 1 vị trí quen tay
-- [ ] File là 1 module độc lập, không có sidebar/header điều hướng nhiều module trong 1 file
+- [ ] Nếu có dùng Vietnamese Translation Toggle (4.19): chỉ đặt ở đoạn hướng dẫn/mô tả dài, KHÔNG
+      đặt ở câu hỏi/đề bài (câu hỏi luôn thuần tiếng Anh); mỗi `id` của `.vi-text` duy nhất trong
+      toàn file; chuỗi JS chứa dấu nháy đơn (don't/isn't/you'll...) đã escape `\'` đúng cách
+- [ ] File là 1 module độc lập, không có sidebar/header/Task bar điều hướng hay theo dõi tiến trình
+      nào trong 1 file
 - [ ] Đạt checklist Mobile ở Mục 5 và checklist LMS ở PHẦN 7 file Toán
 
 ---
@@ -2175,14 +2585,19 @@ ro.observe(document.body);
    - **(b) Dựa vào `LMS().state()` của nền tảng thật:** CHỈ dùng nếu đã xác nhận với đội LMS rằng
      state được lưu chung theo học sinh + đọc được xuyên nhiều file/module (không phải mặc định của
      mọi nền tảng) — không tự ý giả định, dễ tạo khoá "chết" nếu nền tảng không hỗ trợ.
-   - **(c) Banner nhắc nhẹ (không hard-lock):** File 2 mở đầu bằng 1 dòng `.lead` kiểu "Đã đọc hết
-     Bài học ở phần trước chưa? [Quay lại Bài học →]" — chỉ là gợi ý UX, không chặn thao tác.
-3. **Nút "Sang Luyện tập" đổi từ hành vi trong-trang (`switchTopView`+`toggleTopPanel`) sang điều
-   hướng trang thật:** `onclick="location.href='ten-file-practice.html'"` (hoặc thẻ `<a>` styled
-   như `.chip-btn`) — không còn ý nghĩa "gom Top Panel" vì Top Panel không tồn tại trong File 2.
-4. **`#progress-tracker` chỉ liệt kê đúng phần THẬT có trong file đó** — File 1: 2 `pt-item`
-   (Messages, Vocabulary); File 2: 2 `pt-item` (Practice, Self-Assessment) — không giữ nguyên 4 mục
-   chung của bản 1-file (xem 4.1).
+   - ~~(c) Banner nhắc nhẹ~~ — **ĐÃ BỎ.** Bản trước dùng banner "Đã đọc hết Bài học ở phần trước
+     chưa? [Quay lại Bài học →]" — banner này chứa 1 link ngược sang File Lesson nên vi phạm quy
+     tắc mới "không liên kết Lesson ↔ Practice" (xem điểm 3 ngay dưới). Không dùng lại phương án
+     này dưới bất kỳ hình thức nào, kể cả không phải hard-lock.
+3. **KHÔNG có nút/link điều hướng nào giữa 2 file (đổi so với bản trước).** File 1 không còn nút
+   "Sang Luyện tập" trỏ sang File 2 (`location.href='...'`/thẻ `<a>`); File 2 không còn nút/banner
+   "Quay lại Bài học" trỏ ngược sang File 1. Mỗi file kết thúc/bắt đầu tự nhiên bằng nội dung của
+   chính nó — học sinh chuyển bước qua danh sách bài học của nền tảng LMS, không qua nút trong bài.
+   (Ghi chú: hành vi trong-trang `switchTopView`/`toggleTopPanel` ở bản 1-file — khi KHÔNG tách file
+   theo yêu cầu chủ động của người dùng — không thuộc phạm vi quy tắc này vì đó là cuộn/gom trong
+   cùng 1 trang, không phải điều hướng sang file khác.)
+4. *(đã gộp vào ghi chú Task bar ở Mục 4.1 — không còn nội dung riêng ở đây, xem lý do bỏ hẳn
+   `#progress-tracker` tại vị trí Mục 4.1.)*
 5. **`LMS().complete()` chỉ bắn ở File 2** (nơi thật sự chấm điểm) — File 1 chỉ gọi
    `LMS().progress()`/`LMS().event()` khi đọc xong tin nhắn/lật xong thẻ, KHÔNG gọi `complete()` vì
    chưa có gì để chấm. Athena Manifest cũng tách 2 bản riêng theo đúng `structure[]` của từng file,
@@ -2193,11 +2608,12 @@ ro.observe(document.body);
 ### 8.3 Checklist riêng khi tách file (thêm vào Mục 7)
 
 - [ ] `messages`/`vocab` giống hệt nhau ở 2 file, có comment "ĐỒNG BỘ" đánh dấu
-- [ ] Đã chọn rõ 1 trong 3 phương án khoá tuần tự ở 8.2 mục 2 (không để File 2 vừa có banner nhắc
-      vừa có khoá cứng dựa trên biến không tồn tại — dễ xảy ra nếu copy nhầm code từ bản 1-file)
-- [ ] Nút điều hướng giữa 2 file dùng `location.href`/`<a>` thật, không còn gọi các hàm chỉ có nghĩa
-      trong bản 1-file (`switchTopView`, `toggleTopPanel`, `goToPractice`)
-- [ ] `#progress-tracker` mỗi file chỉ có đúng 2 mục thật sự thuộc file đó
+- [ ] Đã chọn 1 trong 2 phương án khoá tuần tự còn hiệu lực ở 8.2 mục 2 (a hoặc b — phương án (c)
+      banner đã bỏ vì chứa link ngược sang File Lesson, vi phạm quy tắc không liên kết 2 file)
+- [ ] **Không có bất kỳ nút/link nào điều hướng giữa 2 file** — không còn `location.href=`, thẻ
+      `<a href="..._practice.html">`/`<a href="..._lesson.html">`, hay các hàm chỉ có nghĩa trong
+      bản 1-file (`switchTopView`, `toggleTopPanel`, `goToPractice`) bị sót lại khi tách file
+- [ ] Không có Task bar/`#progress-tracker` ở bất kỳ file nào (đã bỏ hẳn — xem Mục 4.1)
 - [ ] `LMS().complete()` chỉ xuất hiện đúng 1 lần, ở File 2
 
 ---
@@ -2377,7 +2793,7 @@ document.getElementById('btnSubmitRecord').addEventListener('click', submitRecor
 .chunk-bank { background:var(--cream-2); }
 .chunk-answer { border:2px dashed var(--paper-line-2); background:var(--white); }
 .chunk-tile { display:flex; align-items:flex-start; gap:10px; padding:12px 16px; border-radius:var(--radius);
-  border:1.5px solid var(--paper-line); background:var(--white); font-size:14px; line-height:1.6;
+  border:1.5px solid var(--paper-line); background:var(--white); font-size:15px; line-height:1.55;
   color:var(--ink); cursor:pointer; min-height:44px; }
 .chunk-tile:hover { border-color:var(--accent); }
 .chunk-tile.placed { opacity:.35; pointer-events:none; }
@@ -2457,7 +2873,7 @@ renderChunkBank();
 .rubric-item .rlabel { font-size:11px; color:var(--ink-2); font-weight:700; text-transform:uppercase; }
 .rubric-item .rscore { font-size:22px; font-weight:800; color:var(--jade-dark); margin-top:2px; }
 .rubric-item .rscore small { font-size:12px; color:var(--ink-3); font-weight:600; }
-.write-comment { font-size:13.5px; color:var(--ink-2); line-height:1.6; background:var(--cream-2);
+.write-comment { font-size:14px; color:var(--ink-2); line-height:1.6; background:var(--cream-2);
   border-radius:var(--radius); padding:12px 14px; }
 ```
 ```javascript
@@ -2668,4 +3084,89 @@ chưa — nếu chưa, thêm ngay, không để mặc định "học sinh tự �
       mở, không chứa ví dụ minh hoạ mới trùng câu đang làm (9.13)
 - [ ] Mọi tương tác tuỳ biến (tap-to-classify, causal chain, tap-select-pairs, hotspot...) đều có
       dòng hướng dẫn thao tác hiện thật trên UI, song ngữ — không chỉ có ghi chú kỹ thuật (9.14)
+- [ ] Guided Noticing (4.20): `.notice-input` KHÔNG gọi `checkTextAnswer()`/`recordMistake()`; nút
+      "Hiện đáp án" chỉ hiện khối đáp án, không khoá lại ô input, không đánh giá đúng/sai (4.20)
+- [ ] Idea Diagram (4.21): dựng thuần CSS Flexbox, KHÔNG dùng SVG/toạ độ JS vẽ đường nối; đúng 1
+      trong 4 `data-state` (full/partial/guided/blank); mobile ép `flex-direction:column` ở
+      `.idea-branches`; không auto-chấm ô `.idea-leaf-input`
+- [ ] Auto-collapse Theory Block (4.22): dùng `<details>/<summary>` gốc HTML; chỉ gom khối LIỀN
+      TRƯỚC khi mở khối mới; không dùng cho khối luyện tập có chấm điểm; khối đầu tiên mới `open`
+      mặc định
+- [ ] Typewriter + Growing Diagram (engine 1.17, nếu có demo dẫn dắt): tôn trọng
+      `prefers-reduced-motion`, có nút/tap bỏ qua hiệu ứng, dùng `.hidden-grow{display:none}` thay
+      vì `opacity:0` để tránh layout nhảy giật trên mobile
+- [ ] Find the Error (Error Identification): 4 lựa chọn A/B/C/D render **inline liền mạch trong 1
+      câu duy nhất** (giống văn bản thường, browser tự wrap), TUYỆT ĐỐI không phải 4 "card"/pill
+      riêng có border-box ép xuống dòng riêng; không có bảng Easy/Medium/Difficult checkbox debug
+      lộ ra ngoài UI học sinh (9.16)
+- [ ] Gap-fill/Sentence Completion: câu + ô input nằm trong ĐÚNG 1 khối `<p>` liền mạch (Mục 4,
+      ngay trên Bài Gap-fill), không tách nửa câu trước/sau input thành card/span riêng có border
+- [ ] Nội dung ngôn ngữ chính (Reading, chat bubble, câu hỏi/đáp án, IPA, ví dụ từ vựng, model text)
+      đạt sàn ≥15px; nhãn UI/meta phụ ≥11px (0, nguyên tắc 11). Không có class thu-nhỏ-chữ nào bị
+      "kế thừa nhầm" từ ngữ cảnh cột hẹp desktop sang layout mobile đã đổi (carousel/step-gate) mà
+      chưa được viết đè lại bằng media query riêng.
+
+### 9.16 Find the Error (Error Identification trong câu) — layout dạng câu liền mạch, KHÔNG phải
+card rời
+
+> Phát hiện qua ảnh chụp bản build thật (Grammar · Passive Voice — Practice, dạng "Tìm phần lỗi sai
+> A/B/C/D"): 4 lựa chọn đang render thành 4 "card" riêng — mỗi cái có viền chấm + nền + bo góc +
+> chiều rộng cố định, xếp trong flex-wrap. Kết quả: câu bị vỡ thành từng mảnh rời rạc, xuống dòng
+> lộn xộn (A+B chung 1 dòng, C tự xuống dòng riêng dù còn thừa chỗ, D lại xuống dòng khác), khoảng
+> trắng thừa lớn, đọc như 1 chuỗi nhãn dán chứ không phải 1 câu văn. Đây là lỗi vì **không có pattern
+> nào trong file này định nghĩa component "Find the Error" trước đó** — người build phải tự bịa
+> layout, và bịa sai. Mục này bổ sung pattern chuẩn để không lặp lại.
+
+**Nguyên tắc cốt lõi: cả câu (kể cả 4 phần A/B/C/D) PHẢI nằm trong 1 khối `<p>` duy nhất, dùng
+`display:inline` cho từng lựa chọn — KHÔNG dùng `inline-block`/card/border-box ép chiều rộng cố
+định.** Để trình duyệt tự ngắt dòng theo đúng cách 1 đoạn văn bản thường ngắt — không tự chia dòng
+theo từng lựa chọn.
+
+```html
+<div class="fte-item">
+  <p class="fte-sentence">
+    <span class="fte-num">1.</span> The new recycling bins
+    <span class="fte-choice" data-choice="A" tabindex="0">(A) were install</span>
+    <span class="fte-choice" data-choice="B" tabindex="0">(B) in the school</span>
+    <span class="fte-choice" data-choice="C" tabindex="0">(C) by the staff</span>
+    <span class="fte-choice" data-choice="D" tabindex="0">(D) last week</span>.
+  </p>
+  <button class="fte-confirm">✓ Xác nhận lỗi</button>
+  <div class="fte-feedback correct" hidden>
+    <b>Chính xác!</b> Phần A sai. Đúng phải là "were installed" (thiếu đuôi -ed của quá khứ phân từ
+    trong câu bị động quá khứ đơn).
+  </div>
+</div>
+```
+```css
+.fte-item { background:var(--white); border-radius:var(--radius); padding:20px 22px; margin-bottom:16px; }
+.fte-num { font-weight:700; color:var(--ink-2); margin-right:4px; }
+.fte-sentence { display:inline; font-size:17px; line-height:1.9; color:var(--ink); }
+/* Quan trọng: KHÔNG inline-block, KHÔNG border, KHÔNG background mặc định — chỉ gạch chân chấm để
+   báo hiệu "đây là phần có thể tap", không phá vỡ dòng chảy của câu */
+.fte-choice { display:inline; border-bottom:2px dashed var(--ink-3); padding:0 1px; cursor:pointer;
+  border-radius:3px; transition:background .15s; }
+.fte-choice:hover, .fte-choice:focus-visible { background:var(--accent-pale); }
+.fte-choice.selected { background:var(--accent-pale); border-bottom-color:var(--accent);
+  color:var(--accent-text); font-weight:700; }
+.fte-choice.marked-wrong { background:var(--wrong-bg); border-bottom-color:var(--wrong);
+  color:var(--wrong); font-weight:700; } /* hiện sau khi Xác nhận, đánh dấu đúng phần sai thật */
+.fte-confirm { margin-top:14px; background:var(--correct); color:#fff; border:none;
+  border-radius:var(--radius-sm); padding:10px 20px; font-weight:700; min-height:44px; }
+.fte-feedback { margin-top:12px; padding:12px 16px; border-radius:var(--radius-sm); font-size:14.5px; }
+.fte-feedback.correct { background:var(--correct-bg); color:var(--jade-text); }
+.fte-feedback.wrong { background:var(--wrong-bg); color:var(--wrong); }
+```
+
+**⚠️ Bắt buộc:**
+1. Cả câu — kể cả text dẫn không tappable ("The new recycling bins") lẫn 4 lựa chọn A-D — nằm
+   trong ĐÚNG 1 thẻ `<p class="fte-sentence">`, không tách rời ra các div/card con.
+2. `.fte-choice` là `display:inline`, không đặt `width`/`min-width` cố định, không `border` bao
+   quanh toàn khối — chỉ `border-bottom` (gạch chân) để giữ cảm giác "đọc câu văn bình thường, có
+   4 chỗ gạch chân để chọn", đúng chuẩn đề thi tìm lỗi sai in trên giấy.
+3. Nhãn "(A)"/"(B)"/"(C)"/"(D)" nằm NGAY TRONG span đó (đầu câu chữ), không tách thành 1 badge
+   riêng phía trước — tránh việc badge và text bị trôi lệch dòng với nhau khi wrap.
+4. **KHÔNG hiện bất kỳ debug control nào** (checkbox Easy/Medium/Difficult Level, nút preview mức
+   độ...) trong bản học sinh nhìn thấy — nếu cần công cụ dev để xem trước từng mức, đặt sau 1 flag
+   `?debug=1` trên URL hoặc build riêng bản QA, không lẫn vào component chính.
 

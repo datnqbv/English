@@ -1,4 +1,23 @@
-# 🎮 ENGINE TIẾNG ANH — Pattern Kỹ Thuật Cho Tương Tác Module — v1.8
+# 🎮 ENGINE TIẾNG ANH — Pattern Kỹ Thuật Cho Tương Tác Module — v1.11
+
+> **Mới ở v1.11:** khoá cứng giọng đọc TTS `en-GB` ở mọi hàm `speak()`/`SpeechSynthesisUtterance`
+> trong file này (không đổi sang `en-US`) — xem ghi chú tại từng hàm; đồng bộ với nguyên tắc 12/13
+> (mới) ở `02_design_tiengAnh.md` Mục 0 về giọng đọc + chống lặp pattern khi soạn data câu hỏi.
+
+> **Mới ở v1.10:** thêm 3.6 Vocabulary Word-Mastery Tracking & Recap — pattern đọc nhãn kỹ thuật
+> `[Trạm/Bài · Từ]` từ kịch bản Vocabulary (từ `PROMPT_TEMPLATE_VOCABULARY_v5_2.md` trở lên — kiến
+> trúc mới "Warm-up → Flashcards → 4 Trạm → Extra Practice → Recap"), tính đúng/sai theo TỪNG TỪ
+> xuyên suốt cả 4 Trạm lẫn Extra Practice, và render Recap ĐỘNG cuối bài — thay hẳn cơ chế
+> Self-evaluation tĩnh cũ (vốn chỉ áp dụng cho Practice 3 gói NB/TH/VD, nay Vocabulary không còn
+> dùng khung đó). Các module KHÁC (Grammar/Reading/Writing...) vẫn dùng Self-evaluation tĩnh như cũ
+> — 3.6 CHỈ áp dụng cho module Vocabulary theo kiến trúc mới.
+
+> **Mới ở v1.9:** thêm 1.16 Before/After Comparison Slider — pattern kỹ thuật tương ứng component
+> 4.18 ở file `02_design_tiengAnh.md` (fix bắt buộc `touch-action:none` +
+> `e.preventDefault()`/`{ passive:false }` để tránh kéo bị cuộn cả trang trên mobile). Đồng thời
+> sửa lại 1.3 (trước ghi "Drag & Drop DOM") — mục này còn sót cơ chế kéo-thả bằng pointer events,
+> mâu thuẫn với quyết định "không dùng kéo-thả" đã chốt ở `02_design_tiengAnh.md` Nguyên tắc 4 và
+> component 4.12 (Tap-to-Match). Xem chi tiết ở 1.3.
 
 > 🚫 **CẢNH BÁO TOÀN CỤC — LỖI THẬT ĐÃ GẶP:** mọi từ/câu ví dụ trong file này (đặc biệt PHẦN 1.10)
 > chỉ để MINH HOẠ CẤU TRÚC DỮ LIỆU, KHÔNG PHẢI nội dung bài học — tuyệt đối không copy/tái sử dụng
@@ -7,13 +26,13 @@
 > hẳn kịch bản gốc. Nội dung thật 100% lấy từ kịch bản/file đính kèm của người dùng — xem chi tiết ở
 > `02_design_tiengAnh.md` Mục 0 (cảnh báo toàn cục ngay sau nguyên tắc 10).
 
-> **v1.8** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **v1.10** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
 
 
-> **Mục đích:** Pattern kỹ thuật cho tương tác tiếng Anh — click-reveal, drag-drop
-> DOM, audio/ghi âm, hotspot ảnh, model 3D
+> **Mục đích:** Pattern kỹ thuật cho tương tác tiếng Anh — click-reveal, tap-to-match,
+> audio/ghi âm, hotspot ảnh, model 3D, before/after slider
 > **Dùng kèm:** `01_scenario_builder_tiengAnh.md` + `02_design_tiengAnh.md`
-> **Đọc file này khi:** Build tương tác drag-drop / audio / ghi âm / hotspot / 3D
+> **Đọc file này khi:** Build tương tác nối cột / audio / ghi âm / hotspot / 3D / before-after slider
 
 ---
 
@@ -21,7 +40,9 @@
 
 Đọc phần tương ứng khi kịch bản có từ khoá sau — không đọc toàn bộ file mỗi lần:
 - **Click-reveal/collocation:** "click để hiện nghĩa", "highlight collocation" → PHẦN 1.1–1.2
-- **Drag & drop:** "kéo thả", "nối cột", "drag" → PHẦN 1.3
+- **Nối cột/ghép cặp (từ↔nghĩa):** "nối cột", "ghép cặp", "matching" → PHẦN 1.3 (Tap-to-Match —
+  **KHÔNG** dùng kéo-thả, xem cảnh báo trong mục; nếu kịch bản/bản tham khảo ghi "drag", "kéo thả"
+  cho dạng nối cột thì vẫn build bằng tap-to-select, không build đúng chữ "drag" theo nghĩa đen)
 - **Word order/tiles:** "sắp xếp từ", "word tiles" → PHẦN 1.4
 - **Hotspot:** "click vào ảnh", "hotspot", "scene tương tác" → PHẦN 1.5 (điểm nhỏ, marker có sẵn)
   hoặc **1.5b (vùng/box — dùng cho vật hình khối lớn: chai nước, laptop, thùng rác...)**
@@ -47,9 +68,21 @@
   💡", "mang theo được", "lật lại xem lại" → PHẦN 1.14
 - **Reveal từ vựng theo Level/từ khó bổ trợ:** "text-reveal", "từ khó bổ trợ", "reveal theo level",
   "nghĩa tiếng Việt dưới popup" → PHẦN 1.15 (mở rộng của 1.1, chỉ dùng ở Practice)
+- **Before/After Slider/kéo so sánh:** "before/after", "trước/sau", "kéo so sánh", "slider so sánh",
+  "then vs now" → PHẦN 1.16 (khác 1.3 — đây là NGOẠI LỆ DUY NHẤT được phép "kéo" thật, xem cảnh báo
+  touch-action trong mục; chỉ dùng làm hook trực quan, không chấm điểm)
+- **Demo dẫn dắt gõ chữ dần + sơ đồ mọc dần:** "gõ dần", "typewriter", "demo mẫu trước khi tự làm",
+  "mọc thêm nhánh", "cây mọc dần" → PHẦN 1.17 (dùng cùng Idea Diagram — component 4.21 file design;
+  chỉ đọc, không chấm điểm, xem `prefers-reduced-motion`)
+- **Sơ đồ cây phát triển ý/brainstorm phân tầng:** "mindmap", "sơ đồ tư duy", "sơ đồ cây", "gốc→
+  nhánh→lá", "brainstorm diagram" → component 4.21 file design (KHÔNG build bằng SVG/toạ độ JS tự
+  do — dùng đúng cấu trúc Flexbox cố định của 4.21)
 - **Adaptive/ẩn nhãn mức độ:** "adaptive", "tự chọn mức theo performance", "ẩn Easy/Medium/
   Difficult", "routing ngầm" → PHẦN 3.5 (khác Level Tabs 4.5 chuẩn — chỉ dùng khi kịch bản nêu rõ
   yêu cầu, không tự áp dụng cho module khác)
+- **Recap Vocabulary theo từ / "4 Trạm" / Extra Practice:** "Words you've mastered", "Words to
+  review", "nhãn Trạm · Từ", "Recap động", "4 Trạm" → PHẦN 3.6 (CHỈ áp dụng cho module Vocabulary
+  kiến trúc mới — không áp dụng Self-evaluation tĩnh cũ của module này nữa)
 - **Audio:** "audio player", "nghe", "transcript" → PHẦN 2.1
 - **Ghi âm:** "ghi âm", "record", "microphone" → PHẦN 2.2
 - **AI roleplay:** "AI đóng vai", "hỏi lại", "nhiều lượt" → PHẦN 2.3
@@ -131,58 +164,34 @@ function clickKW(el, isCorrect) {
 > đúng/sai/bỏ qua, đúng nguyên tắc "giải thích kiến thức" ở file 01, không
 > chỉ hiện số điểm.
 
-### 1.3 Drag & Drop DOM — Nối 2 Cột (`.vchip` ↔ `.nslot`)
+### 1.3 Tap-to-Match — Nối 2 Cột (KHÔNG dùng Drag & Drop)
 
-Khác Toán (kéo-thả trên canvas, cần tự tính hitbox) — ở đây dùng element DOM
-thật nên đơn giản hơn, nhưng vẫn cần touch support thủ công vì HTML5 Drag &
-Drop API gốc **không hoạt động tốt trên mobile/touch** — dùng pointer events
-thay vì `dragstart`/`dragover`:
+> 🚫 **Đã sửa ở v1.9 — mục này trước đây ghi "Drag & Drop DOM" kèm code kéo-thả bằng pointer
+> events.** Đó là pattern CŨ, đã bị chốt bỏ khi file design ban hành Nguyên tắc 4 (Mục 0) và
+> component 4.12: **không dùng kéo-thả dưới bất kỳ hình thức nào**, kể cả bản pointer-events "giả
+> lập kéo" như code cũ ở đây — vì vẫn giữ nguyên nhược điểm gốc (ngón tay che mất điểm thả, dễ thả
+> nhầm trên màn hình nhỏ). Nếu kịch bản hoặc bản tham khảo ghi "kéo thả", "drag", "nối cột" cho
+> dạng bài này, **vẫn build bằng tap-to-select** — chạm 1 chip cột trái, rồi chạm chip tương ứng
+> cột phải để ghép cặp.
+>
+> Code kỹ thuật đầy đủ (HTML/CSS/JS) đã có sẵn ở `02_design_tiengAnh.md` component **4.12** — dùng
+> nguyên khối đó, không viết lại phiên bản khác ở đây để tránh 2 nguồn code lệch nhau. Phần dưới chỉ
+> là lưu ý kỹ thuật bổ sung không có trong 4.12.
 
-```javascript
-let dragEl = null, dragGhost = null;
-
-function initDraggable(chip) {
-  chip.addEventListener('pointerdown', e => {
-    if (chip.classList.contains('matched')) return;
-    dragEl = chip;
-    dragGhost = chip.cloneNode(true);
-    dragGhost.style.cssText = 'position:fixed;pointer-events:none;opacity:0.85;z-index:999';
-    document.body.appendChild(dragGhost);
-    moveGhost(e);
-  });
-}
-
-document.addEventListener('pointermove', e => {
-  if (!dragEl) return;
-  moveGhost(e);
-  // Highlight slot đang hover
-  document.querySelectorAll('.nslot').forEach(slot => {
-    const r = slot.getBoundingClientRect();
-    slot.classList.toggle('over',
-      e.clientX >= r.left && e.clientX <= r.right &&
-      e.clientY >= r.top && e.clientY <= r.bottom);
-  });
-});
-
-document.addEventListener('pointerup', e => {
-  if (!dragEl) return;
-  const target = document.elementFromPoint(e.clientX, e.clientY)?.closest('.nslot');
-  if (target && !target.classList.contains('filled')) {
-    onDropMatch(dragEl, target); // gán vchip vào nslot, KHÔNG chấm đúng/sai ngay
-  }
-  dragGhost.remove();
-  document.querySelectorAll('.nslot.over').forEach(s => s.classList.remove('over'));
-  dragEl = null;
-});
-
-function moveGhost(e) {
-  dragGhost.style.left = (e.clientX - 20) + 'px';
-  dragGhost.style.top = (e.clientY - 20) + 'px';
-}
 ```
-> Chấm đúng/sai chỉ chạy khi bấm nút "Kiểm tra" (không chấm real-time từng
-> lượt thả) — đúng nguyên tắc chống dò mù: nếu chấm ngay mỗi lần thả, học
-> sinh có thể dò bằng thử-sai liên tục thay vì suy luận nghĩa từ trước.
+Khác Toán (kéo-thả trên canvas, cần tự tính hitbox) — tiếng Anh không có bài nối nào dùng kéo-thả
+nữa, kể cả dạng DOM. Tap-to-match hoạt động giống hệt nhau trên chuột lẫn cảm ứng nên không cần xử
+lý touch riêng như pattern kéo-thả cũ (không còn `pointerdown`/`pointermove`/`pointerup`, không còn
+"ghost" đi theo ngón tay) — đơn giản hơn hẳn về code lẫn thao tác học sinh.
+```
+
+> ⚠️ **Lưu ý khác biệt với 1.8 (Tap-to-Select-in-Sentence) mà AI cần cân nhắc khi soạn kịch bản:**
+> code mẫu ở 4.12 chấm đúng/sai **NGAY khi tap** từng cặp (real-time, không gate bằng nút "Kiểm
+> tra"), khác với nguyên tắc "chống dò mù — chấm khi bấm Kiểm tra" áp dụng ở 1.8. Đây
+> là lựa chọn có chủ đích cho matching 1-1 (mỗi lần tap là 1 phán đoán độc lập, không dò được đáp án
+> của các cặp còn lại từ phản hồi), nhưng CHƯA được ghi thành quy tắc rõ ràng ở file design — nếu
+> thấy kịch bản nào có vẻ dễ bị "dò mù" qua matching nhiều cặp liên tiếp, hỏi lại người soạn thay vì
+> tự quyết.
 
 ### 1.4 Click-to-Order — Word Tiles Xây Câu
 
@@ -352,7 +361,8 @@ nghe/đọc câu, xác định từ nào chứa blend đang học; có thể có
 KHÁC 1.2 (Click-Timed-Game): 1.2 cho phản hồi đúng/sai NGAY khi click từng cụm — học sinh có thể
 "dò" đáp án bằng cách click thử lần lượt. Pattern 1.8 này KHÔNG cho phản hồi khi tap — chỉ đổi
 trạng thái "đã chọn" (tương tự chọn nhiều đáp án MCQ), học sinh phải chủ động chọn xong toàn bộ rồi
-mới bấm "Kiểm tra" mới biết đúng/sai — đúng nguyên tắc chống dò mù giống Drag & Drop (1.3).
+mới bấm "Kiểm tra" mới biết đúng/sai — đúng nguyên tắc chống dò mù (áp dụng khi 1 lần chấm gộp
+nhiều lựa chọn trong cùng 1 câu — khác matching 1-1 ở 1.3, xem lưu ý ở cuối mục 1.3).
 
 Pattern:
   1. Câu được tách theo từ (giữ dấu câu dính liền từ trước, tránh tách nhầm "class." thành 2 token)
@@ -363,8 +373,7 @@ Pattern:
   4. Bấm nút "Kiểm tra" mới chấm: so khớp tập từ đã chọn với tập từ đúng (`correctWords`) →
      .selected.correct (xanh, chọn đúng) / .selected.wrong (đỏ, chọn nhầm) / .missed (vàng, đúng
      nhưng không chọn) — rồi hiện `giai_thich_dung`.
-  5. Khoá tương tác sau khi bấm Kiểm tra (giống nguyên tắc ở 1.3), có nút "Làm lại" riêng nếu muốn
-     thử lại câu đó.
+  5. Khoá tương tác sau khi bấm Kiểm tra, có nút "Làm lại" riêng nếu muốn thử lại câu đó.
 ```
 ```javascript
 let selectedWords = new Set();
@@ -500,6 +509,11 @@ QUYẾT ĐỊNH KỸ THUẬT — dùng INDEX {start,end}, KHÔNG dùng substring
 // KHÔNG bao gồm) của đúng phần cần gạch chân trong TỪ ĐÓ. oddIdx: chỉ số phần tử là đáp án đúng
 // (từ khác nhóm/đúng nhóm tuỳ đề) TRƯỚC khi xáo — dùng shuffleMCQOptions-style xáo vị trí hiển thị
 // (nguyên tắc 7, Mục 0 file 02) khi render, không gán cứng vị trí A/B/C.
+// ⚠️ Chống đoán mò theo pattern (nguyên tắc 13, Mục 0 file 02): khi soạn NHIỀU câu trong 1 mảng
+// pronQuestions, giá trị oddIdx của TỪNG CÂU không được rơi vào 1 chu kỳ đều đặn (VD câu 1 oddIdx=1,
+// câu 2 oddIdx=2, câu 3 oddIdx=1, câu 4 oddIdx=2... lặp lại "1-2, 1-2"). shuffleMCQOptionsObj() chỉ
+// xáo VỊ TRÍ HIỂN THỊ lúc render — không sửa được pattern nếu oddIdx trong DATA gốc đã đi theo chu
+// kỳ cố định. Soạn data xong, tự rà lại dãy oddIdx của cả set trước khi giao.
 const pronQuestions = [
   {
     instruction: "Choose the word whose underlined part is pronounced differently from the other three.",
@@ -819,6 +833,100 @@ function renderRevealWords(currentLevelTab) {
 > nhưng khác mục đích — đừng gộp 1 popup cho cả 2 (Recap nhắc chiến thuật đọc hiểu, Reveal nhắc nghĩa
 > từ vựng), giữ riêng để học sinh không nhầm lẫn 2 loại hỗ trợ.
 
+### 1.16 Before/After Comparison Slider — tay cầm kéo trục ngang (component 4.18 file design)
+
+```
+Khác 1.3 (Tap-to-Match nối 2 cột — tap 2 lần, không có khái niệm "kéo"): đây là 1 tay cầm DUY NHẤT trượt liên
+tục trên 1 trục ngang, không có khái niệm đích thả đúng/sai — dùng cho Warm-up hook trực quan
+kiểu "kéo để so sánh Trước/Sau" (xem component 4.18 file 02_design_tiengAnh).
+
+⚠️ Lỗi nền tảng nhất của pattern này: mặc định trình duyệt mobile diễn giải MỌI cử chỉ kéo trong
+vùng đó là để CUỘN TRANG, không phải để di chuyển tay cầm. Chuột trên desktop không bao giờ lộ lỗi
+này (DevTools responsive mode cũng KHÔNG lộ vì vẫn giả lập bằng sự kiện chuột) — chỉ hiện khi kéo
+bằng ngón tay thật trên điện thoại thật. 2 dòng bắt buộc để chặn hành vi cuộn mặc định:
+  1. CSS: `touch-action: none` trên container chứa tay cầm.
+  2. JS: listener `touchmove` đăng ký `{ passive: false }`, VÀ trong handler gọi `e.preventDefault()`.
+     Thiếu (2) mà chỉ có (1) → vẫn cuộn, vì `preventDefault()` trong listener `passive: true`
+     (mặc định của trình duyệt) bị ÂM THẦM bỏ qua, không báo lỗi console.
+```
+
+```javascript
+function handleMove(e) {
+  if (!isDragging) return;
+  if (e.touches) e.preventDefault(); // chỉ có tác dụng nếu touchmove đăng ký passive:false bên dưới
+  const rect = container.getBoundingClientRect();
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const percentage = ((clientX - rect.left) / rect.width) * 100;
+  setSliderPosition(Math.max(0, Math.min(100, percentage)));
+}
+
+container.addEventListener('mousedown', e => { isDragging = true; handleMove(e); });
+window.addEventListener('mousemove', handleMove);
+window.addEventListener('mouseup', () => { isDragging = false; });
+
+container.addEventListener('touchstart', e => { isDragging = true; handleMove(e); }, { passive: true });
+window.addEventListener('touchmove', handleMove, { passive: false }); // bắt buộc passive:false
+window.addEventListener('touchend', () => { isDragging = false; });
+```
+```css
+.comparison-container { touch-action: none; cursor: col-resize; } /* bắt buộc, xem giải thích trên */
+```
+> Nghiệm thu: bắt buộc kéo thử bằng ngón tay trên điện thoại thật, không chỉ resize cửa sổ trình
+> duyệt hoặc DevTools responsive mode — cả 2 cách đó đều dùng sự kiện chuột nên không lộ được lỗi.
+
+### 1.17 Typewriter + Growing Diagram — demo dẫn dắt tuần tự (dùng cùng Idea Diagram 4.21 file design)
+
+```
+Dùng cho khối "demo GV/AI dẫn" trước khi học sinh tự làm (VD demo phân tích 1 văn bản mẫu ở Writing
+trước khi học sinh tự làm với văn bản khác) — câu hỏi hiện trước, chữ trả lời gõ dần, rồi 1 cấp của
+Idea Diagram (4.21) "mọc" thêm. Đây là bản MỞ RỘNG của Progressive Reveal (Mục 1.7 — hiện dần từng
+khối) — thêm hiệu ứng gõ ký tự + đồng bộ với việc mở khoá 1 phần trong .idea-diagram, không phải
+component tách rời. Khối này CHỈ ĐỌC, không chấm điểm — không gắn recordMistake()/checkTextAnswer()
+dưới bất kỳ hình thức nào, đúng tinh thần Strategy Reveal (Mục 1.11-1.13).
+```
+
+```javascript
+// Dùng [...text] thay vì text.length/charAt — tránh cắt sai ký tự có dấu tổ hợp (Unicode)
+function typeText(el, text, speed = 28, onDone) {
+  const chars = [...text];
+  let i = 0;
+  el.textContent = '';
+  // Tôn trọng prefers-reduced-motion — hiện ngay lập tức, không ép hiệu ứng lên người dùng nhạy cảm
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = text; onDone?.(); return;
+  }
+  const timer = setInterval(() => {
+    el.textContent += chars[i]; i++;
+    if (i >= chars.length) { clearInterval(timer); onDone?.(); }
+  }, speed);
+  // Bấm để bỏ qua hiệu ứng — BẮT BUỘC, không ép học sinh phải đợi hết animation nếu đã đọc kịp
+  el.closest('.demo-qa-step')?.addEventListener('click', () => {
+    clearInterval(timer); el.textContent = text; onDone?.();
+  }, { once: true });
+}
+
+// Gọi sau khi 1 câu hỏi gõ xong → mở khoá 1 cấp trong Idea Diagram (thêm class hiện dần)
+function growBranch(diagramEl, branchIndex, level) {
+  const branch = diagramEl.querySelectorAll('.idea-branch')[branchIndex];
+  const target = level === 'branch' ? branch : branch.querySelector('.idea-leaf:last-child');
+  target.classList.remove('hidden-grow');
+  target.classList.add('fadeUp'); // tái dùng keyframe fadeUp đã có ở Mục 1.7
+}
+```
+```css
+.hidden-grow { display: none; } /* ẩn trước khi "mọc" — KHÔNG dùng visibility:hidden để không giữ
+  chỗ trống, tránh layout nhảy giật trên khung hẹp mobile */
+```
+
+> **📱 Mobile — 3 lưu ý bắt buộc:**
+> 1. Tốc độ gõ giữ 25-35ms/ký tự — nhanh hơn dễ giật trên máy yếu, chậm hơn học sinh sốt ruột (đã có
+>    nút bấm-để-bỏ-qua, nhưng vẫn nên mặc định vừa phải).
+> 2. Vì diagram "mọc" thêm nội dung real-time, dùng `.hidden-grow{display:none}` (không chiếm layout)
+>    thay vì `opacity:0` — nếu dùng opacity, khung rỗng vẫn chiếm chỗ trên màn hình hẹp, đẩy nút
+>    "Reveal" lệch vị trí gây khó chạm lại.
+> 3. Test bằng `prefers-reduced-motion` bật (DevTools → Rendering → Emulate CSS media feature) VÀ
+>    bằng cách bấm-để-bỏ-qua giữa chừng — cả 2 đường đều phải hiện đủ text, không kẹt nửa chừng.
+
 ### 2.1 Audio Player Chuẩn
 
 ```javascript
@@ -1029,7 +1137,96 @@ function overrideLevel(newLevel) {
 
 ---
 
-## PHẦN 4 — 3D & VISUAL NÂNG CAO
+### 3.6 Vocabulary Word-Mastery Tracking & Recap (chỉ module Vocabulary, kiến trúc mới)
+
+```
+Dùng khi build module Vocabulary theo PROMPT_TEMPLATE_VOCABULARY_v5_2 trở lên (kiến trúc "Warm-up →
+Flashcards → 4 Trạm → Extra Practice → Recap") — module này KHÔNG còn Self-evaluation tĩnh, thay
+bằng Recap ĐỘNG tính theo từng từ, xuyên suốt cả 4 Trạm lẫn Extra Practice.
+
+Nguồn dữ liệu: kịch bản có nhãn [Trạm: X · Từ: word1, word2] hoặc [Extra Practice — Bài N · Từ: ...]
+ngay phía trên mỗi câu hỏi — nhãn này ẨN khỏi UI học sinh (đúng quy tắc chung "nhãn kỹ thuật không
+hiển thị" của toàn hệ thống), nhưng dữ liệu `words` + `station` PHẢI được giữ lại làm field kỹ thuật
+trong object câu hỏi khi build HTML — cùng nguyên tắc với field `cat`/`level` ở 3.5 (dữ liệu chấm &
+phân tích, không phải nhãn hiển thị).
+
+Nguyên tắc tính mastery — theo TRẠNG THÁI CUỐI CÙNG, không phải lần trả lời đầu tiên:
+  - Học sinh sửa lại câu trả lời (retry) → ghi đè trạng thái đúng/sai của câu đó cho từ liên quan,
+    không cộng dồn/trừ điểm qua các lần thử (khác 3.5 — 3.5 đếm SỐ LẦN sai để routing độ khó, còn
+    đây chỉ quan tâm KẾT QUẢ CUỐI CÙNG của mỗi câu để biết từ đó đã "thuộc" chưa).
+  - 1 từ được xem là "mastered" khi TẤT CẢ câu hỏi gắn nhãn từ đó (ở mọi Trạm + Extra Practice) đều
+    ở trạng thái đúng — chỉ cần 1 câu còn sai là từ đó rơi vào "review".
+  - 1 câu có thể gắn nhiều từ cùng lúc (thường gặp ở Extra Practice Bài 3) — cập nhật trạng thái cho
+    TẤT CẢ từ trong nhãn đó, không chỉ từ đầu tiên.
+```
+
+```javascript
+// wordTrack: { word: { answers: {questionId: bool}, wrongStations: Set } }
+const wordTrack = {};
+
+// Gọi 1 lần khi render mỗi câu hỏi, lấy dữ liệu words/station từ field kỹ thuật (không phải nhãn UI)
+function registerWordQuestion(questionId, words, stationLabel) {
+  words.forEach(w => {
+    if (!wordTrack[w]) wordTrack[w] = { answers: {}, wrongStations: new Set() };
+  });
+}
+
+// Gọi mỗi khi học sinh chấm/sửa 1 câu — dùng chung điểm gọi với cơ chế chấm sẵn có của từng dạng bài
+// (MCQ click, gap-fill so khớp text không phân biệt hoa/thường + trim khoảng trắng thừa, bảng điền
+// từ ở Trạm 3 dùng cùng cơ chế so khớp text như gap-fill)
+function recordWordAnswer(questionId, words, stationLabel, isCorrect) {
+  words.forEach(w => {
+    if (!wordTrack[w]) wordTrack[w] = { answers: {}, wrongStations: new Set() };
+    wordTrack[w].answers[questionId] = isCorrect;
+    if (isCorrect) wordTrack[w].wrongStations.delete(stationLabel);
+    else wordTrack[w].wrongStations.add(stationLabel);
+  });
+}
+
+function buildRecap() {
+  const mastered = [];
+  const review = {}; // { word: [stationLabel, ...] }
+  Object.entries(wordTrack).forEach(([word, data]) => {
+    const answered = Object.values(data.answers);
+    const allCorrect = answered.length > 0 && answered.every(Boolean);
+    if (allCorrect) mastered.push(word);
+    else review[word] = [...data.wrongStations];
+  });
+  return { mastered, review };
+}
+
+// Gọi ở màn Recap cuối bài — SAU khi hoàn thành Extra Practice Bài 3, đúng quy tắc Next Button (3.3)
+// không auto-advance, học sinh tự bấm vào màn Recap.
+function renderRecap() {
+  const { mastered, review } = buildRecap();
+  const reviewWords = Object.keys(review);
+
+  document.getElementById('recap-mastered').textContent = mastered.length ? mastered.join(', ') : '—';
+
+  if (reviewWords.length === 0) {
+    document.getElementById('recap-tip').textContent =
+      "You've got all the words down! Ready for the next lesson.";
+    document.getElementById('recap-review-row').style.display = 'none';
+  } else {
+    document.getElementById('recap-review-row').style.display = 'flex';
+    document.getElementById('recap-review').textContent = reviewWords.join(', ');
+    const stationsToRevisit = [...new Set(Object.values(review).flat())];
+    document.getElementById('recap-tip').textContent =
+      `Tip: go back to ${stationsToRevisit.join(', ')} to practice these again.`;
+  }
+}
+```
+> ⚠️ **3 ràng buộc bắt buộc** (dễ sai khi build): (1) `registerWordQuestion`/`recordWordAnswer` dùng
+> field `words`/`station` lấy TỪ nhãn kỹ thuật trong kịch bản — không tự suy luận từ nội dung câu
+> hỏi nếu kịch bản không gắn nhãn rõ; (2) `renderRecap()` chỉ gọi SAU khi học sinh đã hoàn thành toàn
+> bộ Extra Practice (đủ dữ liệu để tính), không gọi giữa chừng khi còn Trạm chưa làm — Recap giữa
+> chừng sẽ cho kết quả sai vì thiếu dữ liệu; (3) KHÔNG viết nội dung Recap tĩnh cố định thay cho hàm
+> này dưới bất kỳ hình thức nào, kể cả khi kịch bản có sẵn câu mẫu — câu mẫu trong kịch bản CHỈ là
+> template có placeholder `{mastered_words}`/`{review_words}`, không phải nội dung cuối.
+> ⚠️ Nếu 1 Unit có nhiều bài Vocabulary khác nhau (nhiều bộ key words khác nhau trong cùng Unit),
+> `wordTrack` reset về rỗng khi bắt đầu bài Vocabulary mới — không cộng dồn từ vựng của bài trước.
+
+---
 
 ### 4.1 Model 3D — `<model-viewer>` (Hình thức D — file 01)
 
@@ -1058,6 +1255,10 @@ document.querySelectorAll('model-viewer').forEach(mv => {
 > ảnh fallback 2D phòng khi model lỗi hoặc mạng chậm.
 
 ### 4.2 Text-to-Speech Phát Âm Từ Đơn
+
+> ⚠️ **`utter.lang = 'en-GB'` là bắt buộc, không tự đổi** (xem `02_design_tiengAnh.md` Mục 0
+> nguyên tắc 12) — mọi biến thể hàm `speak()` khác trong file này/component mới đều phải giữ đúng
+> `'en-GB'`, không dùng `'en-US'` hay để mặc định trống.
 
 ```javascript
 function speak(text) {
@@ -1101,8 +1302,10 @@ function playPromptWord(word, btnId) {
   3. "Lỗi xảy ra khi làm thao tác gì, trên thiết bị/trình duyệt nào?"
 
 - Lỗi hay gặp:
-  → Drag-drop không nhận trên mobile: kiểm tra dùng pointer events, không
-    phải HTML5 dragstart/dragover (không hoạt động tốt trên touch)
+  → Before/After Slider (1.16) kéo bị cuộn cả trang trên mobile: kiểm tra
+    `.comparison-container` có `touch-action:none`, và `touchmove` đăng ký
+    `{ passive:false }` kèm `e.preventDefault()` trong handler — thiếu 1 trong 2 là hỏng, và
+    chuột/DevTools responsive mode KHÔNG lộ được lỗi này, phải test bằng ngón tay thật
   → Audio không play được: kiểm tra gọi play() có nằm trong user gesture
     trực tiếp không (đặc biệt iOS Safari)
   → Ghi âm không xin được quyền mic: kiểm tra trang chạy trên HTTPS
@@ -1110,6 +1313,13 @@ function playPromptWord(word, btnId) {
   → Hotspot lệch vị trí trên mobile: kiểm tra dùng % không phải px
   → model-viewer không hiện: kiểm tra định dạng đúng .glb, dung lượng dưới
     ~5MB cho web, và script CDN đã load trước khi element render
+  → Tap-to-Match (1.3) tap không ăn trên mobile: kiểm tra vùng chạm mỗi chip ≥44px (Mục 0 nguyên
+    tắc 6) — khác lỗi kéo-thả cũ, đây thường chỉ là thiếu padding chứ không phải lỗi event
+  → Vocabulary Recap (3.6) hiện sai/thiếu từ: kiểm tra (1) mọi câu hỏi đều có field `words` khớp
+    CHÍNH XÁC chính tả với key word gốc trong Flashcards (lệch 1 ký tự = tính thành 2 từ khác nhau
+    trong `wordTrack`), (2) `renderRecap()` không bị gọi trước khi học sinh làm xong Extra Practice
+    Bài 3, (3) nếu 1 câu gắn nhiều từ, cả mảng `words` đã được truyền đủ vào `recordWordAnswer` chứ
+    không chỉ từ đầu tiên
 
 - Mỗi phiên chỉ build 1 file HTML cho 1 module.
 ```
