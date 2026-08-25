@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 1 — Pronunciation Practice</title>
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1: Family Life - Pronunciation Practice",
+    "subject": "Tiếng Anh",
+    "grade": "10",
+    "objectives": [
+      "Recognise the consonant blends /br/, /kr/, and /tr/ when listening",
+      "Read aloud phrases, sentences, and short passages containing /br/, /kr/, and /tr/ clearly"
+    ],
+    "structure": [
+      { "id": "practice", "title": "Practice (Listen & Circle, Minimal Pairs, Read Aloud — Short Phrases)" },
+      { "id": "extra", "title": "Extra Practice (Odd One Out, Pronunciation Difference, Read Aloud — Passage)" },
+      { "id": "assess", "title": "Self-Assessment" }
+    ],
+    "athenaGuidance": "Nội dung luyện tập Pronunciation Unit 1 gồm 2 phần: Practice (nhận diện cơ bản qua nghe, 16 câu) và Extra Practice (đúng định dạng thi thật MCQ odd one out/underline, 17 câu, có bẫy chính tả ch và âm câm). Hướng dẫn học sinh nghe phân biệt minimal pairs và thực hành Read Aloud."
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf7ef;
+      --paper2: #f2eadc;
+      --jade: #2d8b6f;
+      --deep: #14432f;
+      --sage: #a9cbb8;
+      --gold: #efa83e;
+      --coral: #ef6040;
+      --ink: #202a25;
+      --muted: #626a65;
+      --white: #fff;
+      --line: #e6dcc9;
+      --ok: #e3f3eb;
+      --bad: #fde8e3;
+      --shadow: 0 12px 32px rgba(20, 67, 47, .1)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      line-height: 1.55
+    }
+
+    button,
+    a,
+    input {
+      font: inherit
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Baloo 2", sans-serif;
+      color: var(--deep);
+      margin: 0
+    }
+
+    .vi-sub {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: 2px
+    }
+
+    .wrap {
+      width: min(1060px, calc(100% - 32px));
+      margin: auto
+    }
+
+    .file-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #dcebe3;
+      border-bottom: 1px solid var(--sage);
+      padding: 14px 0;
+      box-shadow: 0 2px 10px rgba(20, 67, 47, .08);
+    }
+
+    .file-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px
+    }
+
+    .file-title {
+      font-weight: 800;
+      color: var(--deep)
+    }
+
+    .file-title small {
+      display: block;
+      font-weight: 500
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--deep);
+      background: #fff;
+      border: 1px solid var(--sage);
+      border-radius: 12px;
+      padding: 9px 14px;
+      font-weight: 700
+    }
+
+    main {
+      padding: 36px 0
+    }
+
+    .intro h1 {
+      font-size: 34px
+    }
+
+    .intro p {
+      color: var(--muted)
+    }
+
+    .levels {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0
+    }
+
+    .level {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      min-height: 48px;
+      padding: 9px 21px;
+      font-weight: 800
+    }
+
+    .level.active {
+      background: var(--jade);
+      border-color: var(--jade);
+      color: #fff
+    }
+
+    .level:disabled {
+      opacity: .5;
+      cursor: not-allowed
+    }
+
+    .lock-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 18px;
+      font-weight: 600
+    }
+
+    .assess-lock-note {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0 0 10px
+    }
+
+    .assess input:disabled {
+      cursor: not-allowed;
+      opacity: .4
+    }
+
+    .practice-host {
+      display: grid;
+      gap: 18px
+    }
+
+    .exercise {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow)
+    }
+
+    .ex-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 15px
+    }
+
+    .tag {
+      background: var(--sage);
+      color: var(--deep);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .ex-head h2 {
+      font-size: 23px
+    }
+
+    .ex-head>div>div {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px
+    }
+
+    .question {
+      border-top: 1px solid var(--line);
+      padding: 18px 0
+    }
+
+    .question:first-of-type {
+      border-top: 0;
+      padding-top: 3px
+    }
+
+    .q-title {
+      font-weight: 700;
+      margin-bottom: 10px
+    }
+
+    .listen {
+      border: 0;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 15px;
+      font-weight: 800;
+      margin-bottom: 10px
+    }
+
+    .listen:disabled {
+      opacity: .5
+    }
+
+    .options {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap
+    }
+
+    .opt {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 15px
+    }
+
+    .opt u {
+      text-decoration: underline;
+      text-decoration-color: var(--jade);
+      text-decoration-thickness: 2.5px;
+      text-underline-offset: 3px;
+      font-weight: 800;
+      color: var(--deep);
+    }
+
+    .opt:hover {
+      border-color: var(--sage)
+    }
+
+    .opt.correct {
+      background: var(--ok);
+      border-color: var(--jade);
+      color: var(--deep)
+    }
+
+    .opt.wrong {
+      background: var(--bad);
+      border-color: var(--coral)
+    }
+
+    .opt:disabled {
+      cursor: default
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 10px;
+      border-radius: 12px;
+      padding: 11px 13px;
+      background: var(--paper2);
+      font-size: 13px
+    }
+
+    .feedback.show {
+      display: block
+    }
+
+    .feedback.ok {
+      background: var(--ok)
+    }
+
+    .feedback.no {
+      background: var(--bad)
+    }
+
+    .read-copy {
+      background: var(--paper2);
+      border-radius: 14px;
+      padding: 14px 17px;
+      margin: 10px 0;
+      font-size: 17px;
+      color: var(--deep);
+      white-space: pre-line
+    }
+
+    .read-copy b {
+      color: var(--jade);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .rec-controls {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      min-height: 45px;
+      padding: 9px 17px;
+      font-weight: 800
+    }
+
+    .primary {
+      background: var(--jade);
+      color: #fff
+    }
+
+    .danger {
+      background: #fbe3dd;
+      color: #a83b25
+    }
+
+    .secondary {
+      background: var(--paper2);
+      color: var(--deep)
+    }
+
+    .btn:disabled {
+      opacity: .45
+    }
+
+    .rec-status {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px
+    }
+
+    .rec-status.live {
+      color: var(--coral);
+      font-weight: 800
+    }
+
+    .playback {
+      width: 100%;
+      margin-top: 10px
+    }
+
+    .submit-note {
+      display: none;
+      background: var(--ok);
+      padding: 11px;
+      border-radius: 12px;
+      margin-top: 10px
+    }
+
+    .assessment {
+      margin-top: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px
+    }
+
+    .assess {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      cursor: pointer
+    }
+
+    .assess:first-of-type {
+      border-top: 0
+    }
+
+    .assess input {
+      width: 21px;
+      height: 21px;
+      accent-color: var(--jade)
+    }
+
+    .finale {
+      text-align: center;
+      margin-top: 20px;
+      padding: 24px;
+      background: var(--sage);
+      border-radius: 18px;
+      color: var(--deep);
+      display: none;
+      box-shadow: var(--shadow)
+    }
+
+    .finale .complete-icon {
+      font-size: 30px;
+      display: block;
+      margin-bottom: 8px
+    }
+
+    .finale p {
+      margin: 6px 0 0;
+      font-size: 14px
+    }
+
+    .finale.show {
+      display: block
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px 0 60px;
+      color: var(--muted);
+      font-size: 12.5px
+    }
+
+    @media(max-width:600px) {
+      .wrap {
+        width: min(100% - 22px, 1060px)
+      }
+
+      .file-nav .wrap {
+        align-items: flex-start
+      }
+
+      .back {
+        font-size: 12px
+      }
+
+      .levels {
+        flex-wrap: nowrap;
+        gap: 6px
+      }
+
+      .level {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 8px 4px;
+        font-size: 13px;
+        text-align: center;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap
+      }
+
+      .exercise {
+        padding: 16px
+      }
+
+      .ex-head {
+        align-items: flex-start;
+        flex-direction: column
+      }
+
+      .options {
+        display: grid;
+        grid-template-columns: 1fr
+      }
+
+      .opt {
+        text-align: left
+      }
+
+      .btn {
+        width: 100%
+      }
+
+      .intro h1 {
+        font-size: 29px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="file-nav">
+    <div class="wrap">
+      <div class="file-title">Unit 1 · Pronunciation — Practice<small>Luyện tập · /br/, /kr/, /tr/</small></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <h1>Practice</h1>
+      <p>Nghe, nhận diện và phát âm chính xác các cụm phụ âm /br/, /kr/ và /tr/.</p>
+    </section>
+    <nav class="levels" aria-label="Chọn phần"><button class="level active" data-level="practice">🟢 Practice</button><button
+        class="level" data-level="extra" disabled>🔒 Extra Practice</button></nav>
+    <p class="lock-note" id="extraLockNote">🔒 Hoàn thành hết câu hỏi và ghi âm phần Practice để mở khoá Extra Practice.</p>
+    <div class="practice-host" id="practiceHost"></div>
+    <section class="assessment">
+      <h2>Self-Assessment</h2>
+      <p class="assess-lock-note" id="assessLockNote">🔒 Hoàn thành câu hỏi và ghi âm ở cả Practice và Extra Practice để mở khoá phần tự đánh giá.</p>
+      <label class="assess"><input type="checkbox" disabled><span>I can recognise the difference between the blends /br/, /kr/, and /tr/ when listening.</span></label><label class="assess"><input type="checkbox" disabled><span>I can pronounce words, phrases, sentences, or short passages containing /br/, /kr/, and /tr/ clearly.</span></label>
+      <div class="finale" id="finale"><span class="complete-icon">🎉</span>Congratulations! You've completed this practice.
+        <p><small>Chúc mừng bạn đã hoàn thành phần luyện tập!</small></p>
+      </div>
+    </section>
+  </main>
+  <footer>BMH AI · English Grade 10 · Pronunciation — Unit 1: /br/, /kr/, /tr/</footer>
+  <script>
+    function LMS() { return window.AiducationLMS || { ready: function () { }, progress: function () { }, event: function () { }, state: function () { }, complete: function () { }, resize: function () { } }; }
+    function reportHeight() { LMS().resize({ height: document.documentElement.scrollHeight }); }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+    ro.observe(document.body);
+
+    // ---- DATA ----
+    // "listen"/"minimalPairs": { word, options:[strings incl. correct], explain }
+    // "odd": { options:[4 strings], answer, explain }  — whole-word comparison, no underline
+    // "identify": { options:[4 {word,start,end}], answer, explain } — underline is DECLARED explicitly, never guessed by regex
+    const data = {
+      practice: {
+        listen: [
+          { word: 'bread', options: ['bread', 'bed', 'head', 'said'], explain: 'Từ gây nhiễu (bed, head, said) không có cụm /br/ ở đầu.' },
+          { word: 'crab', options: ['crab', 'cab', 'lab', 'map'], explain: 'Từ gây nhiễu (cab, lab, map) chỉ có 1 phụ âm đơn, không có blend /kr/.' },
+          { word: 'truck', options: ['truck', 'duck', 'luck', 'sock'], explain: 'Từ gây nhiễu (duck, luck, sock) không có blend /tr/.' },
+          { word: 'brave', options: ['brave', 'wave', 'cave', 'gate'], explain: 'Từ gây nhiễu (wave, cave, gate) vần giống nhưng khác âm đầu — cần nghe kỹ cụm /br/.' },
+          { word: 'cream', options: ['cream', 'dream', 'scream', 'gleam'], explain: 'Cả 4 từ đều có blend — cần nghe kỹ phụ âm đầu: /kr/ (cream) khác /dr/ (dream), /skr/ (scream), /gl/ (gleam).' },
+          { word: 'bridge', options: ['bridge', 'fridge', 'ridge', 'grudge'], explain: '"Bridge" /br/ khác "fridge" /fr/, "grudge" /gr/; "ridge" chỉ có /r/, không có blend.' },
+          { word: 'crowd', options: ['crowd', 'cloud', 'proud', 'loud'], explain: '"Crowd" /kr/ dễ nhầm với "cloud" /kl/ và "proud" /pr/; "loud" không có blend.' },
+          { word: 'tree', options: ['tree', 'three', 'free', 'flee'], explain: '"Tree" /tr/ khác "three" /θr/, "free" /fr/, "flee" /fl/.' }
+        ],
+        minimalPairs: [
+          { word: 'brand', options: ['brand', 'grand', 'bland', 'sand'], explain: '"Brand" /br/ khác "grand" /gr/, "bland" /bl/; "sand" không có blend.' },
+          { word: 'bright', options: ['bright', 'fright', 'flight', 'light'], explain: '"Bright" /br/ khác "fright" /fr/, "flight" /fl/; "light" không có blend.' },
+          { word: 'bring', options: ['bring', 'ring', 'cling', 'string'], explain: '"Bring" /br/ khác "cling" /kl/, "string" /str/; "ring" không có blend.' },
+          { word: 'brush', options: ['brush', 'blush', 'crush', 'rush'], explain: '"Brush" /br/ khác "blush" /bl/, "crush" /kr/; "rush" không có blend.' },
+          { word: 'cry', options: ['cry', 'fry', 'fly', 'sky'], explain: '"Cry" /kr/ khác "fry" /fr/, "fly" /fl/, "sky" /sk/.' },
+          { word: 'trip', options: ['trip', 'drip', 'flip', 'grip'], explain: '"Trip" /tr/ khác "drip" /dr/, "flip" /fl/, "grip" /gr/ — cùng vần "-ip" nên phải nghe kỹ phụ âm đầu.' },
+          { word: 'trick', options: ['trick', 'click', 'brick', 'sick'], explain: '"Trick" /tr/ khác "click" /kl/, "brick" /br/; "sick" không có blend.' },
+          { word: 'tray', options: ['tray', 'grey', 'play', 'day'], explain: '"Tray" /tr/ khác "grey" /gr/, "play" /pl/; "day" không có blend.' }
+        ],
+        readTiers: [
+          'Brave crabs climb trees.',
+          'Bright crabs bring fresh bread to the truck.',
+          'Three brave crabs bring bright trays across the bridge.'
+        ]
+      },
+      extra: {
+        odd: [
+          { options: ['tree', 'three', 'trip', 'truck'], answer: 'three', explain: '"Three" là /θr/ (âm th), khác với tree/trip/truck đều /tr/.' },
+          { options: ['treasure', 'treaty', 'triangle', 'wretched'], answer: 'wretched', explain: '"Wretched" viết "wr", "w" câm nên chỉ đọc /r/, không tạo blend /tr/; treasure/treaty/triangle đều /tr/. Từ vựng hiếm hơn nên cần đọc kỹ, không đoán theo cảm tính.' },
+          { options: ['wrap', 'wrench', 'wrinkle', 'trap'], answer: 'trap', explain: 'Đảo ngược so với câu trên: "trap" mới là từ CÓ blend /tr/ thật; wrap/wrench/wrinkle đều viết "wr" với "w" câm, chỉ đọc /r/.' },
+          { options: ['crimson', 'cripple', 'crystal', 'clumsy'], answer: 'clumsy', explain: '"Clumsy" là /kl/, khác với crimson/cripple/crystal đều /kr/ — từ vựng hiếm hơn nên không thể đoán nhanh theo thói quen.' },
+          { options: ['broom', 'brook', 'brawl', 'blossom'], answer: 'blossom', explain: '"Blossom" là /bl/, khác với broom/brook/brawl đều /br/ — "bl" và "br" rất dễ nhầm khi đọc nhanh.' },
+          { options: ['crawl', 'craft', 'cradle', 'clatter'], answer: 'clatter', explain: '"Clatter" là /kl/, khác với crawl/craft/cradle đều /kr/.' },
+          { options: ['wring', 'wrist', 'wreck', 'bring'], answer: 'bring', explain: 'Lại một câu bẫy đảo ngược: wring/wrist/wreck đều viết "wr" với "w" câm, chỉ đọc /r/; "bring" mới có blend /br/ thật — không được thấy "wr" là chọn theo phản xạ.' },
+          { options: ['blend', 'bland', 'blaze', 'bridge'], answer: 'bridge', explain: '"Bridge" là /br/, khác với blend/bland/blaze đều /bl/ — chỉ khác đúng 1 chữ cái thứ hai (l/r) nên rất dễ nhầm nếu đọc lướt.' }
+        ],
+        identify: [
+          { options: [{ word: 'chair', start: 0, end: 2 }, { word: 'chrome', start: 0, end: 3 }, { word: 'cheese', start: 0, end: 2 }, { word: 'chicken', start: 0, end: 2 }], answer: 'chrome', explain: '"Chrome" đọc /kroʊm/ (âm /k/, có blend /kr/); chair/cheese/chicken đều đọc "ch" = /tʃ/.' },
+          { options: [{ word: 'change', start: 0, end: 2 }, { word: 'cherry', start: 0, end: 2 }, { word: 'character', start: 0, end: 2 }, { word: 'teacher', start: 3, end: 5 }], answer: 'character', explain: '"Character" đọc /k/ dù viết "ch"; change/cherry/teacher đều đọc "ch" = /tʃ/.' },
+          { options: [{ word: 'character', start: 0, end: 2 }, { word: 'chrome', start: 0, end: 3 }, { word: 'crowd', start: 0, end: 2 }, { word: 'crayon', start: 0, end: 2 }], answer: 'character', explain: '"Character" là từ duy nhất KHÔNG có blend /kr/ dù viết gần giống "cr" về mặt hình ảnh; chrome/crowd/crayon đều /kr/.' },
+          { options: [{ word: 'crab', start: 0, end: 2 }, { word: 'cream', start: 0, end: 2 }, { word: 'climb', start: 0, end: 2 }, { word: 'cry', start: 0, end: 2 }], answer: 'climb', explain: '"Climb" chứa cụm /kl/ (không phải /kr/) và có "b" câm ở cuối — hai lớp bẫy trong 1 từ; crab/cream/cry đều /kr/.' },
+          { options: [{ word: 'brave', start: 0, end: 2 }, { word: 'drive', start: 0, end: 2 }, { word: 'bridge', start: 0, end: 2 }, { word: 'branch', start: 0, end: 2 }], answer: 'drive', explain: '"Drive" là /dr/, khác với brave/bridge/branch đều /br/ — cần nghe/nhìn kỹ vì vị trí cấu âm khá gần nhau.' }
+        ],
+        read: 'Last weekend, my brother and I took a trip to the countryside. We saw a huge crowd gathered near an old bridge, watching a group of workers repair a broken truck. My brother bravely offered to help carry some bread and cream for the tired workers. By the time we left, everyone was smiling, and the crew thanked us warmly for our kindness.'
+      }
+    };
+
+    const host = document.getElementById('practiceHost'); let active = 'practice';
+    const shuffle = a => [...a].sort(() => Math.random() - .5);
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    // Explicit {word,start,end} → underline. NEVER guessed by regex (see PROMPT_TEMPLATE_PRONUNCIATION v9.5, Mục 1.10).
+    function formatOptionText(o) {
+      const w = o.word;
+      return esc(w.slice(0, o.start)) + '<u>' + esc(w.slice(o.start, o.end)) + '</u>' + esc(w.slice(o.end));
+    }
+
+    const Q_TITLE = {
+      listen: 'Which word do you hear?',
+      odd: 'Choose the word with a different consonant cluster from the other three.',
+      identify: 'Choose the word whose underlined part is pronounced differently from the other three.'
+    };
+
+    function buildGroup(kind, title, desc, items, idPrefix) {
+      const audio = kind === 'listen';
+      return '<section class="exercise"><div class="ex-head"><span class="tag">' + (audio ? 'Listen' : 'Choose') + '</span><div><h2>' + title + '</h2><div>' + desc + '</div></div></div>' +
+        items.map((q, i) => {
+          const answer = q.word || q.answer;
+          const optsHtml = shuffle(q.options).map(o => {
+            if (kind === 'identify') return '<button class="opt" data-value="' + esc(o.word) + '">' + formatOptionText(o) + '</button>';
+            return '<button class="opt" data-value="' + esc(o) + '">' + esc(o) + '</button>';
+          }).join('');
+          return '<div class="question" data-qid="' + idPrefix + '-' + i + '" data-answer="' + esc(answer) + '" data-explain="' + esc(q.explain) + '">' +
+            (audio ? '<button class="listen" data-word="' + esc(q.word) + '">🔊 Listen again</button>' : '') +
+            '<div class="q-title">' + (i + 1) + '. ' + Q_TITLE[kind] + '</div><div class="options">' + optsHtml + '</div><div class="feedback"></div></div>';
+        }).join('') + '</section>';
+    }
+
+    function readAloudPractice(tiers) {
+      return '<section class="exercise recorder" data-recorder="practice"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng rồi nghe lại bản ghi trước khi gửi. Độ khó tăng dần qua 3 câu.</div></div></div>' +
+        tiers.map((t, i) => '<div class="read-copy"><b>Tier ' + (i + 1) + '</b>' + esc(t) + '</div>').join('') +
+        recorderControls() + '</section>';
+    }
+    function readAloudExtra(text) {
+      return '<section class="exercise recorder" data-recorder="extra"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng cả đoạn rồi nghe lại bản ghi trước khi gửi.</div></div></div><div class="read-copy">' + esc(text) + '</div>' +
+        recorderControls() + '</section>';
+    }
+    function recorderControls() {
+      return '<div class="rec-controls"><button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button><button class="btn danger" data-rec-stop disabled>■ Dừng</button><button class="btn secondary" data-rec-submit disabled>Gửi bản ghi cho Athena</button></div><div class="rec-status" data-rec-status>Chưa ghi âm.</div><audio class="playback" data-rec-audio controls hidden></audio><div class="submit-note" data-rec-note>Đã nhận bản ghi. Tính năng chấm giọng nói Athena sẽ được kết nối tại đây.</div>';
+    }
+
+    function render() {
+      const d = data[active];
+      let html = '';
+      if (d.listen) html += buildGroup('listen', 'Listen &amp; Circle', 'Listen and choose the word you hear.', d.listen, active + '-listen');
+      if (d.minimalPairs) html += buildGroup('listen', 'Minimal Pairs — Listen &amp; Circle', 'Listen carefully — these words sound similar. Choose the word you hear.', d.minimalPairs, active + '-mp');
+      if (d.odd) html += buildGroup('odd', 'Odd One Out', 'Choose the word with a different consonant cluster from the other three.', d.odd, active + '-odd');
+      if (d.identify) html += buildGroup('identify', 'Pronunciation Difference', 'Choose the word whose underlined part sounds different from the other three.', d.identify, active + '-identify');
+      if (d.readTiers) html += readAloudPractice(d.readTiers);
+      if (d.read) html += readAloudExtra(d.read);
+      host.innerHTML = html;
+      wireQuestions();
+      wireRecorders();
+    }
+
+    function playPromptWord(word, btn) { if (!('speechSynthesis' in window)) return; btn.disabled = true; const u = new SpeechSynthesisUtterance(word); u.lang = 'en-GB'; u.rate = .85; u.onend = u.onerror = () => btn.disabled = false; speechSynthesis.cancel(); speechSynthesis.speak(u) }
+    let correctIds = new Set();
+    let autoSwitched = false;
+    let practiceRecorded = false;
+    let extraRecorded = false;
+    function totals() {
+      return {
+        practiceTotal: (data.practice.listen ? data.practice.listen.length : 0) + (data.practice.minimalPairs ? data.practice.minimalPairs.length : 0),
+        extraTotal: (data.extra.odd ? data.extra.odd.length : 0) + (data.extra.identify ? data.extra.identify.length : 0)
+      };
+    }
+    function countWithPrefix(prefix) { return [...correctIds].filter(id => id.startsWith(prefix)).length; }
+    function updateProgress() {
+      const t = totals();
+      const practiceDone = countWithPrefix('practice-') >= t.practiceTotal && practiceRecorded;
+      const extraDone = countWithPrefix('extra-') >= t.extraTotal && extraRecorded;
+      const extraBtn = document.querySelector('.level[data-level="extra"]');
+      extraBtn.disabled = !practiceDone;
+      extraBtn.textContent = practiceDone ? '🟠 Extra Practice' : '🔒 Extra Practice';
+      document.getElementById('extraLockNote').style.display = practiceDone ? 'none' : 'block';
+      document.querySelectorAll('.assess input').forEach(i => i.disabled = !(practiceDone && extraDone));
+      document.getElementById('assessLockNote').style.display = (practiceDone && extraDone) ? 'none' : 'block';
+      if (practiceDone && active === 'practice' && !autoSwitched) {
+        autoSwitched = true;
+        active = 'extra';
+        document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x.dataset.level === 'extra'));
+        render();
+        scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' });
+      }
+      checkCompletion();
+    }
+    function checkCompletion() {
+      const allAssessChecked = [...document.querySelectorAll('.assess input')].every(i => i.checked);
+      const f = document.getElementById('finale');
+      if (f) f.classList.toggle('show', allAssessChecked);
+    }
+    function wireQuestions() {
+      host.querySelectorAll('.listen').forEach(b => b.onclick = () => playPromptWord(b.dataset.word, b));
+      host.querySelectorAll('.question').forEach(q => q.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+        if (q.dataset.done) return;
+        const ok = b.dataset.value === q.dataset.answer;
+        b.classList.add(ok ? 'correct' : 'wrong');
+        const fb = q.querySelector('.feedback');
+        fb.className = 'feedback show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = ok ? '✅ <b>Correct.</b> ' + q.dataset.explain : '❌ Chưa đúng. Hãy nghe/quan sát kỹ âm đầu và thử lại.';
+        if (ok) { q.dataset.done = '1'; q.querySelectorAll('.opt').forEach(x => x.disabled = true); correctIds.add(q.dataset.qid); updateProgress(); }
+      }))
+    }
+    let currentStream;
+    function wireRecorders() {
+      host.querySelectorAll('.recorder').forEach(box => {
+        let rec, chunks = [], url;
+        const section = box.dataset.recorder;
+        const start = box.querySelector('[data-rec-start]'), stop = box.querySelector('[data-rec-stop]'), submit = box.querySelector('[data-rec-submit]'), status = box.querySelector('[data-rec-status]'), audio = box.querySelector('[data-rec-audio]');
+        start.onclick = async () => { try { currentStream = await navigator.mediaDevices.getUserMedia({ audio: true }); chunks = []; rec = new MediaRecorder(currentStream); rec.ondataavailable = e => e.data.size && chunks.push(e.data); rec.onstop = () => { const blob = new Blob(chunks, { type: rec.mimeType }); if (url) URL.revokeObjectURL(url); url = URL.createObjectURL(blob); audio.src = url; audio.hidden = false; submit.disabled = false; status.textContent = 'Đã ghi xong — hãy nghe lại trước khi gửi.'; status.classList.remove('live'); currentStream.getTracks().forEach(t => t.stop()); if (section === 'practice') practiceRecorded = true; if (section === 'extra') extraRecorded = true; updateProgress() }; rec.start(); start.disabled = true; stop.disabled = false; status.textContent = '● Đang ghi âm…'; status.classList.add('live') } catch (e) { status.textContent = 'Không truy cập được micro. Hãy cấp quyền micro.' } };
+        stop.onclick = () => { if (rec?.state === 'recording') rec.stop(); start.disabled = false; stop.disabled = true };
+        submit.onclick = () => submitRecording(box)
+      })
+    }
+    function submitRecording(box) { box.querySelector('[data-rec-note]').style.display = 'block'; /* TODO: nối API chấm giọng nói */ }
+    document.querySelectorAll('.assess input').forEach(i => i.addEventListener('change', checkCompletion));
+    document.querySelectorAll('.level').forEach(b => b.onclick = () => { if (b.disabled) return; active = b.dataset.level; document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x === b)); render(); checkCompletion(); scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' }) });
+    render();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 4 — Pronunciation Practice</title>
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 4: For a better community - Pronunciation Practice",
+    "subject": "Tiếng Anh",
+    "grade": "10",
+    "objectives": [
+      "Recognise stress-shift pairs (record, present, object, permit, export, import, increase, decrease...) when listening",
+      "Distinguish noun stress (1st syllable) from verb stress (2nd syllable) for the same spelling",
+      "Read aloud phrases, sentences, and a short passage containing stress-shift words with correct stress"
+    ],
+    "structure": [
+      { "id": "practice", "title": "Practice (Listen & Circle, Minimal Pairs, Read Aloud — Short Phrases)" },
+      { "id": "extra", "title": "Extra Practice (Odd One Out, Pronunciation Difference, Read Aloud — Passage)" },
+      { "id": "assess", "title": "Self-Assessment" }
+    ],
+    "athenaGuidance": "Nội dung luyện tập Pronunciation Unit 4 tập trung vào nhóm 18 từ đổi trọng âm theo từ loại (whitelist dòng Phonetics #5 mở rộng: record, present, object, permit, conflict, contract, produce, export, import, suspect, contrast, insult, protest, increase, decrease, desert, rebel, conduct). Practice: Listen & Circle + Minimal Pairs dùng câu ngắn để phân biệt danh từ (âm 1) và động từ (âm 2). Extra Practice: Odd One Out và Pronunciation Difference dùng đúng 2 cấu hình đã quy định — từ đổi trọng âm làm nhiễu (không nhãn) hoặc làm đáp án đúng (có nhãn (n.)/(v.))."
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf7ef;
+      --paper2: #f2eadc;
+      --jade: #2d8b6f;
+      --deep: #14432f;
+      --sage: #a9cbb8;
+      --gold: #efa83e;
+      --coral: #ef6040;
+      --ink: #202a25;
+      --muted: #626a65;
+      --white: #fff;
+      --line: #e6dcc9;
+      --ok: #e3f3eb;
+      --bad: #fde8e3;
+      --shadow: 0 12px 32px rgba(20, 67, 47, .1)
+    }
+
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Be Vietnam Pro", sans-serif; line-height: 1.55 }
+    button, a, input { font: inherit }
+    button { cursor: pointer }
+    h1, h2, h3 { font-family: "Baloo 2", sans-serif; color: var(--deep); margin: 0 }
+    .vi-sub { display: block; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: none; letter-spacing: normal; margin-top: 2px }
+    .wrap { width: min(1060px, calc(100% - 32px)); margin: auto }
+
+    .file-nav { position: sticky; top: 0; z-index: 100; background: #dcebe3; border-bottom: 1px solid var(--sage); padding: 14px 0; box-shadow: 0 2px 10px rgba(20, 67, 47, .08); }
+    .file-nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 14px }
+    .file-title { font-weight: 800; color: var(--deep) }
+    .file-title small { display: block; font-weight: 500 }
+
+    main { padding: 36px 0 }
+    .intro h1 { font-size: 34px }
+    .intro p { color: var(--muted) }
+    .tts-note { font-size: 12.5px; color: var(--muted); margin-top: 4px }
+
+    .levels { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 }
+    .level { border: 2px solid var(--line); background: #fff; border-radius: 14px; min-height: 48px; padding: 9px 21px; font-weight: 800 }
+    .level.active { background: var(--jade); border-color: var(--jade); color: #fff }
+    .level:disabled { opacity: .5; cursor: not-allowed }
+    .lock-note { color: var(--muted); font-size: 13px; margin: 0 0 18px; font-weight: 600 }
+    .assess-lock-note { color: var(--muted); font-size: 13px; font-weight: 600; margin: 0 0 10px }
+    .assess input:disabled { cursor: not-allowed; opacity: .4 }
+
+    .practice-host { display: grid; gap: 18px }
+    .exercise { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 22px; box-shadow: var(--shadow) }
+    .ex-head { display: flex; gap: 12px; align-items: center; margin-bottom: 15px }
+    .tag { background: var(--sage); color: var(--deep); border-radius: 999px; padding: 5px 11px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em }
+    .ex-head h2 { font-size: 23px }
+    .ex-head>div>div { color: var(--muted); font-size: 14px; margin-top: 2px }
+
+    .question { border-top: 1px solid var(--line); padding: 18px 0 }
+    .question:first-of-type { border-top: 0; padding-top: 3px }
+    .q-title { font-weight: 700; margin-bottom: 10px }
+    .listen { border: 0; background: var(--gold); color: #fff; border-radius: 12px; min-height: 44px; padding: 8px 15px; font-weight: 800; margin-bottom: 10px }
+    .listen:disabled { opacity: .5 }
+    .options { display: flex; gap: 9px; flex-wrap: wrap }
+    .opt { border: 2px solid var(--line); background: #fff; border-radius: 12px; min-height: 44px; padding: 8px 15px }
+    .opt u { text-decoration: underline; text-decoration-color: var(--jade); text-decoration-thickness: 2.5px; text-underline-offset: 3px; font-weight: 800; color: var(--deep); }
+    .opt:hover { border-color: var(--sage) }
+    .opt.correct { background: var(--ok); border-color: var(--jade); color: var(--deep) }
+    .opt.wrong { background: var(--bad); border-color: var(--coral) }
+    .opt:disabled { cursor: default }
+    .feedback { display: none; margin-top: 10px; border-radius: 12px; padding: 11px 13px; background: var(--paper2); font-size: 13px }
+    .feedback.show { display: block }
+    .feedback.ok { background: var(--ok) }
+    .feedback.no { background: var(--bad) }
+
+    .read-copy { background: var(--paper2); border-radius: 14px; padding: 14px 17px; margin: 10px 0; font-size: 17px; color: var(--deep); white-space: pre-line }
+    .read-copy b { color: var(--jade); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; display: block; margin-bottom: 4px }
+    .rec-controls { display: flex; gap: 9px; flex-wrap: wrap }
+    .btn { border: 0; border-radius: 12px; min-height: 45px; padding: 9px 17px; font-weight: 800 }
+    .primary { background: var(--jade); color: #fff }
+    .danger { background: #fbe3dd; color: #a83b25 }
+    .secondary { background: var(--paper2); color: var(--deep) }
+    .btn:disabled { opacity: .45 }
+    .rec-status { font-size: 13px; color: var(--muted); margin-top: 10px }
+    .rec-status.live { color: var(--coral); font-weight: 800 }
+    .playback { width: 100%; margin-top: 10px }
+    .submit-note { display: none; background: var(--ok); padding: 11px; border-radius: 12px; margin-top: 10px }
+
+    .assessment { margin-top: 28px; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 22px }
+    .assess { display: flex; gap: 11px; align-items: flex-start; padding: 13px 0; border-top: 1px solid var(--line); cursor: pointer }
+    .assess:first-of-type { border-top: 0 }
+    .assess input { width: 21px; height: 21px; accent-color: var(--jade) }
+
+    .finale { text-align: center; margin-top: 20px; padding: 24px; background: var(--sage); border-radius: 18px; color: var(--deep); display: none; box-shadow: var(--shadow) }
+    .finale .complete-icon { font-size: 30px; display: block; margin-bottom: 8px }
+    .finale p { margin: 6px 0 0; font-size: 14px }
+    .finale.show { display: block }
+
+    footer { text-align: center; padding: 34px 0 60px; color: var(--muted); font-size: 12.5px }
+
+    @media(max-width:600px) {
+      .wrap { width: min(100% - 22px, 1060px) }
+      .file-nav .wrap { align-items: flex-start }
+      .back { font-size: 12px }
+      .levels { flex-wrap: nowrap; gap: 6px }
+      .level { flex: 1 1 0; min-width: 0; padding: 8px 4px; font-size: 13px; text-align: center; justify-content: center; display: inline-flex; align-items: center; white-space: nowrap }
+      .exercise { padding: 16px }
+      .ex-head { align-items: flex-start; flex-direction: column }
+      .options { display: grid; grid-template-columns: 1fr }
+      .opt { text-align: left }
+      .btn { width: 100% }
+      .intro h1 { font-size: 29px }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="file-nav">
+    <div class="wrap">
+      <div class="file-title">Unit 4 · Pronunciation — Practice<small>Luyện tập · Same word, different stress</small></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <h1>Practice</h1>
+      <p>Nghe, nhận diện và phát âm đúng trọng âm của những từ viết giống hệt nhau nhưng đổi cả nghĩa lẫn từ loại
+        khi đổi vị trí trọng âm (record, present, object, permit, export, import...).</p>
+      <p class="tts-note">🔊 Âm thanh dùng giọng đọc tổng hợp của trình duyệt (Web Speech API) — mỗi từ mục tiêu được
+        đọc trong một câu ngắn để giữ đúng trọng âm theo đúng từ loại.</p>
+    </section>
+    <nav class="levels" aria-label="Chọn phần"><button class="level active" data-level="practice">🟢 Practice</button><button
+        class="level" data-level="extra" disabled>🔒 Extra Practice</button></nav>
+    <p class="lock-note" id="extraLockNote">🔒 Hoàn thành hết câu hỏi và ghi âm phần Practice để mở khoá Extra Practice.</p>
+    <div class="practice-host" id="practiceHost"></div>
+    <section class="assessment">
+      <h2>Self-Assessment</h2>
+      <p class="assess-lock-note" id="assessLockNote">🔒 Hoàn thành câu hỏi và ghi âm ở cả Practice và Extra Practice để mở khoá phần tự đánh giá.</p>
+      <label class="assess"><input type="checkbox" disabled><span>I can recognise the stress-shift pattern in words like record, present, object, and permit when listening.</span></label><label class="assess"><input type="checkbox" disabled><span>I can pronounce these words correctly according to whether they are a noun or a verb in context.</span></label>
+      <div class="finale" id="finale"><span class="complete-icon">🎉</span>Congratulations! You've completed this practice.
+        <p><small>Chúc mừng bạn đã hoàn thành phần luyện tập!</small></p>
+      </div>
+    </section>
+  </main>
+  <footer>BMH AI · English Grade 10 · Pronunciation — Unit 4: Stress in two-syllable words with the same spelling</footer>
+  <script>
+    function LMS() { return window.AiducationLMS || { ready: function () { }, progress: function () { }, event: function () { }, state: function () { }, complete: function () { }, resize: function () { } }; }
+    function reportHeight() { LMS().resize({ height: document.documentElement.scrollHeight }); }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+    ro.observe(document.body);
+
+    // ---------- Text-to-speech (Web Speech API) thay cho AUDIO_MAP ----------
+    // Các từ đổi trọng âm được gửi trong 1 câu ngắn để trình duyệt đọc đúng trọng âm theo từ loại
+    // (đọc từ đơn lẻ không đủ để phân biệt record/present khác nhau khi là n. hay v.).
+    const SPEAK = {
+      record_v: "I will record this.",
+      present_n: "Here is a present.",
+      object_v: "I object to this.",
+      permit_n: "Show me your permit.",
+      export_v: "They export goods.",
+      import_n: "This is an import.",
+      increase_v: "Prices increase now.",
+      decrease_n: "There was a decrease."
+    };
+    function speak(key) {
+      const text = SPEAK[key];
+      if (!text || !("speechSynthesis" in window)) return null;
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "en-GB"; u.rate = 0.88; u.pitch = 1;
+      window.speechSynthesis.speak(u);
+      return u;
+    }
+
+    // ---- DATA ----
+    const data = {
+      practice: {
+        listen: [
+          { word: 'record (v.)', audioKey: 'record_v', options: ['record (v.)', 'record (n.)', 'decide', 'perform'], explain: '"Record" khi là động từ (to record) nhấn trọng âm âm tiết 2: /rɪˈkɔːd/.' },
+          { word: 'present (n.)', audioKey: 'present_n', options: ['present (n.)', 'present (v.)', 'famous', 'concert'], explain: '"Present" khi là danh từ (a present) nhấn trọng âm âm tiết 1: /ˈpreznt/.' },
+          { word: 'object (v.)', audioKey: 'object_v', options: ['object (v.)', 'object (n.)', 'attract', 'arrive'], explain: '"Object" khi là động từ (to object) nhấn trọng âm âm tiết 2: /əbˈdʒekt/.' },
+          { word: 'permit (n.)', audioKey: 'permit_n', options: ['permit (n.)', 'permit (v.)', 'artist', 'comment'], explain: '"Permit" khi là danh từ (a permit) nhấn trọng âm âm tiết 1: /ˈpɜːmɪt/.' }
+        ],
+        minimalPairs: [
+          { word: 'export (v.)', audioKey: 'export_v', options: ['export (v.)', 'export (n.)', 'enjoy', 'decide'], explain: '"Export" khi là động từ (to export) nhấn trọng âm âm tiết 2: /ɪkˈspɔːt/.' },
+          { word: 'import (n.)', audioKey: 'import_n', options: ['import (n.)', 'import (v.)', 'famous', 'concert'], explain: '"Import" khi là danh từ (an import) nhấn trọng âm âm tiết 1: /ˈɪmpɔːt/.' },
+          { word: 'increase (v.)', audioKey: 'increase_v', options: ['increase (v.)', 'increase (n.)', 'attract', 'arrive'], explain: '"Increase" khi là động từ (to increase) nhấn trọng âm âm tiết 2: /ɪnˈkriːs/.' },
+          { word: 'decrease (n.)', audioKey: 'decrease_n', options: ['decrease (n.)', 'decrease (v.)', 'artist', 'comment'], explain: '"Decrease" khi là danh từ (a decrease) nhấn trọng âm âm tiết 1: /ˈdiːkriːs/.' }
+        ],
+        readTiers: [
+          'The company plans to increase production this year.',
+          'They signed a new contract to export more rice and import less oil.',
+          "The rebels launched a protest to object to the government's new policy, but officials refused to permit any changes."
+        ]
+      },
+      extra: {
+        odd: [
+          { options: ['teacher', 'machine', 'mother', 'father'], answer: 'machine', explain: 'teacher, mother, father đều nhấn âm 1; machine nhấn âm 2.' },
+          { options: ['famous', 'decide', 'artist', 'common'], answer: 'decide', explain: 'famous, artist, common là danh từ/tính từ, nhấn âm 1; decide là động từ, nhấn âm 2.' },
+          { options: ['enjoy', 'concert', 'comment', 'friendship'], answer: 'enjoy', explain: 'concert, comment, friendship nhấn âm 1; enjoy là động từ, nhấn âm 2.' },
+          { options: ['perform', 'latest', 'arrive', 'receive'], answer: 'latest', explain: 'perform, arrive, receive là động từ, nhấn âm 2; latest là tính từ, nhấn âm 1.' },
+          { options: ['famous', 'artist', 'concert', 'object (v.)'], answer: 'object (v.)', explain: 'famous, artist, concert nhấn âm 1; object khi dùng làm động từ (v.) nhấn âm 2: ob-JECT.' },
+          { options: ['decide', 'attract', 'arrive', 'contrast (n.)'], answer: 'contrast (n.)', explain: 'decide, attract, arrive là động từ, nhấn âm 2; contrast khi dùng làm danh từ (n.) nhấn âm 1: CON-trast.' },
+          { options: ['famous', 'decide', 'artist', 'insult'], answer: 'decide', explain: 'famous, artist nhấn âm 1; decide là động từ, nhấn âm 2. "insult" đứng một mình không xác định được từ loại nên không xét — chỉ là từ gây nhiễu.' },
+          { options: ['arrive', 'attract', 'concert', 'conduct'], answer: 'concert', explain: 'arrive, attract là động từ, nhấn âm 2; concert là danh từ, nhấn âm 1. "conduct" đứng một mình không xét vì có thể đọc 2 cách.' }
+        ],
+        identify: [
+          { options: [{ word: 'famous', start: 0, end: 2 }, { word: 'artist', start: 0, end: 2 }, { word: 'concert', start: 0, end: 3 }, { word: 'decide', start: 2, end: 6 }], answer: 'decide', explain: 'famous, artist, concert nhấn âm tiết 1 (phần in đậm); decide nhấn âm tiết 2.' },
+          { options: [{ word: 'perform', start: 3, end: 7 }, { word: 'attract', start: 2, end: 7 }, { word: 'enjoy', start: 2, end: 5 }, { word: 'comment', start: 0, end: 3 }], answer: 'comment', explain: 'perform, attract, enjoy nhấn âm tiết 2; comment nhấn âm tiết 1.' },
+          { options: [{ word: 'receive', start: 2, end: 7 }, { word: 'arrive', start: 2, end: 6 }, { word: 'attract', start: 2, end: 7 }, { word: 'friendship', start: 0, end: 6 }], answer: 'friendship', explain: 'receive, arrive, attract nhấn âm tiết 2; friendship nhấn âm tiết 1.' },
+          { options: [{ word: 'famous', start: 0, end: 2 }, { word: 'latest', start: 0, end: 2 }, { word: 'artist', start: 0, end: 2 }, { word: 'perform', start: 3, end: 7 }], answer: 'perform', explain: 'famous, latest, artist nhấn âm tiết 1; perform nhấn âm tiết 2.' },
+          { options: [{ word: 'comment', start: 0, end: 3 }, { word: 'friendship', start: 0, end: 6 }, { word: 'concert', start: 0, end: 3 }, { word: 'enjoy', start: 2, end: 5 }], answer: 'enjoy', explain: 'comment, friendship, concert nhấn âm tiết 1; enjoy nhấn âm tiết 2.' }
+        ],
+        read: "Every year, this small company must decide how to balance its budget. Last year, they had to increase the price of their produce because of a supply conflict with another factory. This year, they plan to export more goods and import fewer raw materials. Their new contract should help decrease costs and avoid further conflict between departments."
+      }
+    };
+
+    const host = document.getElementById('practiceHost'); let active = 'practice';
+    const shuffle = a => [...a].sort(() => Math.random() - .5);
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    function formatOptionText(o) {
+      const w = o.word;
+      return esc(w.slice(0, o.start)) + '<u>' + esc(w.slice(o.start, o.end)) + '</u>' + esc(w.slice(o.end));
+    }
+
+    const Q_TITLE = {
+      listen: 'Which word do you hear?',
+      odd: 'Choose the word with a different stress pattern from the other three.',
+      identify: 'Choose the word whose stressed syllable (in bold) is in a different position from the other three.'
+    };
+
+    function buildGroup(kind, title, desc, items, idPrefix) {
+      const audio = kind === 'listen';
+      return '<section class="exercise"><div class="ex-head"><span class="tag">' + (audio ? 'Listen' : 'Choose') + '</span><div><h2>' + title + '</h2><div>' + desc + '</div></div></div>' +
+        items.map((q, i) => {
+          const answer = q.word || q.answer;
+          const optsHtml = shuffle(q.options).map(o => {
+            if (kind === 'identify') return '<button class="opt" data-value="' + esc(o.word) + '">' + formatOptionText(o) + '</button>';
+            return '<button class="opt" data-value="' + esc(o) + '">' + esc(o) + '</button>';
+          }).join('');
+          return '<div class="question" data-qid="' + idPrefix + '-' + i + '" data-answer="' + esc(answer) + '" data-explain="' + esc(q.explain) + '">' +
+            (audio ? '<button class="listen" data-audio="' + esc(q.audioKey || q.word) + '">🔊 Listen again</button>' : '') +
+            '<div class="q-title">' + (i + 1) + '. ' + Q_TITLE[kind] + '</div><div class="options">' + optsHtml + '</div><div class="feedback"></div></div>';
+        }).join('') + '</section>';
+    }
+
+    function readAloudPractice(tiers) {
+      return '<section class="exercise recorder" data-recorder="practice"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng rồi nghe lại bản ghi trước khi gửi. Độ khó tăng dần qua 3 câu.</div></div></div>' +
+        tiers.map((t, i) => '<div class="read-copy"><b>Tier ' + (i + 1) + '</b>' + esc(t) + '</div>').join('') +
+        recorderControls() + '</section>';
+    }
+    function readAloudExtra(text) {
+      return '<section class="exercise recorder" data-recorder="extra"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng cả đoạn rồi nghe lại bản ghi trước khi gửi.</div></div></div><div class="read-copy">' + esc(text) + '</div>' +
+        recorderControls() + '</section>';
+    }
+    function recorderControls() {
+      return '<div class="rec-controls"><button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button><button class="btn danger" data-rec-stop disabled>■ Dừng</button><button class="btn secondary" data-rec-submit disabled>Gửi bản ghi cho Athena</button></div><div class="rec-status" data-rec-status>Chưa ghi âm.</div><audio class="playback" data-rec-audio controls hidden></audio><div class="submit-note" data-rec-note>Đã nhận bản ghi. Tính năng chấm giọng nói Athena sẽ được kết nối tại đây.</div>';
+    }
+
+    function render() {
+      const d = data[active];
+      let html = '';
+      if (d.listen) html += buildGroup('listen', 'Listen &amp; Circle', 'Listen and choose the word (and its stress) you hear.', d.listen, active + '-listen');
+      if (d.minimalPairs) html += buildGroup('listen', 'Minimal Pairs — Listen &amp; Circle', 'Listen carefully — these words are spelt the same but stressed differently. Choose the one you hear.', d.minimalPairs, active + '-mp');
+      if (d.odd) html += buildGroup('odd', 'Odd One Out', 'Choose the word with a different stress pattern from the other three.', d.odd, active + '-odd');
+      if (d.identify) html += buildGroup('identify', 'Pronunciation Difference', 'Choose the word whose stressed syllable (in bold) is in a different position from the other three.', d.identify, active + '-identify');
+      if (d.readTiers) html += readAloudPractice(d.readTiers);
+      if (d.read) html += readAloudExtra(d.read);
+      host.innerHTML = html;
+      wireQuestions();
+      wireRecorders();
+    }
+
+    function playPromptWord(key, btn) { const u = speak(key); if (!u) return; btn.disabled = true; u.onend = u.onerror = () => btn.disabled = false; }
+    let correctIds = new Set();
+    let autoSwitched = false;
+    let practiceRecorded = false;
+    let extraRecorded = false;
+    function totals() {
+      return {
+        practiceTotal: (data.practice.listen ? data.practice.listen.length : 0) + (data.practice.minimalPairs ? data.practice.minimalPairs.length : 0),
+        extraTotal: (data.extra.odd ? data.extra.odd.length : 0) + (data.extra.identify ? data.extra.identify.length : 0)
+      };
+    }
+    function countWithPrefix(prefix) { return [...correctIds].filter(id => id.startsWith(prefix)).length; }
+    function updateProgress() {
+      const t = totals();
+      const practiceDone = countWithPrefix('practice-') >= t.practiceTotal && practiceRecorded;
+      const extraDone = countWithPrefix('extra-') >= t.extraTotal && extraRecorded;
+      const extraBtn = document.querySelector('.level[data-level="extra"]');
+      extraBtn.disabled = !practiceDone;
+      extraBtn.textContent = practiceDone ? '🟠 Extra Practice' : '🔒 Extra Practice';
+      document.getElementById('extraLockNote').style.display = practiceDone ? 'none' : 'block';
+      document.querySelectorAll('.assess input').forEach(i => i.disabled = !(practiceDone && extraDone));
+      document.getElementById('assessLockNote').style.display = (practiceDone && extraDone) ? 'none' : 'block';
+      if (practiceDone && active === 'practice' && !autoSwitched) {
+        autoSwitched = true;
+        active = 'extra';
+        document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x.dataset.level === 'extra'));
+        render();
+        scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' });
+      }
+      checkCompletion();
+    }
+    function checkCompletion() {
+      const allAssessChecked = [...document.querySelectorAll('.assess input')].every(i => i.checked);
+      const f = document.getElementById('finale');
+      if (f) f.classList.toggle('show', allAssessChecked);
+    }
+    function wireQuestions() {
+      host.querySelectorAll('.listen').forEach(b => b.onclick = () => playPromptWord(b.dataset.audio, b));
+      host.querySelectorAll('.question').forEach(q => q.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+        if (q.dataset.done) return;
+        const ok = b.dataset.value === q.dataset.answer;
+        b.classList.add(ok ? 'correct' : 'wrong');
+        const fb = q.querySelector('.feedback');
+        fb.className = 'feedback show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = ok ? '✅ <b>Correct.</b> ' + q.dataset.explain : '❌ Chưa đúng. Hãy nghe/quan sát kỹ âm đầu và thử lại.';
+        if (ok) { q.dataset.done = '1'; q.querySelectorAll('.opt').forEach(x => x.disabled = true); correctIds.add(q.dataset.qid); updateProgress(); }
+      }))
+    }
+    let currentStream;
+    function wireRecorders() {
+      host.querySelectorAll('.recorder').forEach(box => {
+        let rec, chunks = [], url;
+        const section = box.dataset.recorder;
+        const start = box.querySelector('[data-rec-start]'), stop = box.querySelector('[data-rec-stop]'), submit = box.querySelector('[data-rec-submit]'), status = box.querySelector('[data-rec-status]'), audio = box.querySelector('[data-rec-audio]');
+        start.onclick = async () => { try { currentStream = await navigator.mediaDevices.getUserMedia({ audio: true }); chunks = []; rec = new MediaRecorder(currentStream); rec.ondataavailable = e => e.data.size && chunks.push(e.data); rec.onstop = () => { const blob = new Blob(chunks, { type: rec.mimeType }); if (url) URL.revokeObjectURL(url); url = URL.createObjectURL(blob); audio.src = url; audio.hidden = false; submit.disabled = false; status.textContent = 'Đã ghi xong — hãy nghe lại trước khi gửi.'; status.classList.remove('live'); currentStream.getTracks().forEach(t => t.stop()); if (section === 'practice') practiceRecorded = true; if (section === 'extra') extraRecorded = true; updateProgress() }; rec.start(); start.disabled = true; stop.disabled = false; status.textContent = '● Đang ghi âm…'; status.classList.add('live') } catch (e) { status.textContent = 'Không truy cập được micro. Hãy cấp quyền micro.' } };
+        stop.onclick = () => { if (rec?.state === 'recording') rec.stop(); start.disabled = false; stop.disabled = true };
+        submit.onclick = () => submitRecording(box)
+      })
+    }
+    function submitRecording(box) { box.querySelector('[data-rec-note]').style.display = 'block'; /* TODO: nối API chấm giọng nói */ }
+    document.querySelectorAll('.assess input').forEach(i => i.addEventListener('change', checkCompletion));
+    document.querySelectorAll('.level').forEach(b => b.onclick = () => { if (b.disabled) return; active = b.dataset.level; document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x === b)); render(); checkCompletion(); scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' }) });
+    render();
+  </script>
+</body>
+
+</html>

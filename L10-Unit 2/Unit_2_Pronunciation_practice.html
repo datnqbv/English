@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 2 — Pronunciation Practice</title>
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 2: Your Body and You - Pronunciation Practice",
+    "subject": "Tiếng Anh",
+    "grade": "10",
+    "objectives": [
+      "Recognise the consonant blends /kl/, /pl/, /gr/, and /pr/ when listening",
+      "Read aloud phrases, sentences, and short passages containing /kl/, /pl/, /gr/, and /pr/ clearly"
+    ],
+    "structure": [
+      { "id": "practice", "title": "Practice (Listen & Circle, Minimal Pairs, Read Aloud — Short Phrases)" },
+      { "id": "extra", "title": "Extra Practice (Odd One Out, Pronunciation Difference, Read Aloud — Passage)" },
+      { "id": "assess", "title": "Self-Assessment" }
+    ],
+    "athenaGuidance": "Nội dung luyện tập Pronunciation Unit 2 gồm 2 phần: Practice (nhận diện cơ bản qua nghe, 16 câu) và Extra Practice (đúng định dạng thi thật MCQ odd one out/underline, 17 câu). Hướng dẫn học sinh nghe phân biệt minimal pairs và thực hành Read Aloud."
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf7ef;
+      --paper2: #f2eadc;
+      --jade: #2d8b6f;
+      --deep: #14432f;
+      --sage: #a9cbb8;
+      --gold: #efa83e;
+      --coral: #ef6040;
+      --ink: #202a25;
+      --muted: #626a65;
+      --white: #fff;
+      --line: #e6dcc9;
+      --ok: #e3f3eb;
+      --bad: #fde8e3;
+      --shadow: 0 12px 32px rgba(20, 67, 47, .1)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      line-height: 1.55
+    }
+
+    button,
+    a,
+    input {
+      font: inherit
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Baloo 2", sans-serif;
+      color: var(--deep);
+      margin: 0
+    }
+
+    .vi-sub {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: 2px
+    }
+
+    .wrap {
+      width: min(1060px, calc(100% - 32px));
+      margin: auto
+    }
+
+    .file-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #dcebe3;
+      border-bottom: 1px solid var(--sage);
+      padding: 14px 0;
+      box-shadow: 0 2px 10px rgba(20, 67, 47, .08);
+    }
+
+    .file-nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px
+    }
+
+    .file-title {
+      font-weight: 800;
+      color: var(--deep)
+    }
+
+    .file-title small {
+      display: block;
+      font-weight: 500
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--deep);
+      background: #fff;
+      border: 1px solid var(--sage);
+      border-radius: 12px;
+      padding: 9px 14px;
+      font-weight: 700
+    }
+
+    main {
+      padding: 36px 0
+    }
+
+    .intro h1 {
+      font-size: 34px
+    }
+
+    .intro p {
+      color: var(--muted)
+    }
+
+    .levels {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0
+    }
+
+    .level {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      min-height: 48px;
+      padding: 9px 21px;
+      font-weight: 800
+    }
+
+    .level.active {
+      background: var(--jade);
+      border-color: var(--jade);
+      color: #fff
+    }
+
+    .level:disabled {
+      opacity: .5;
+      cursor: not-allowed
+    }
+
+    .lock-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0 0 18px;
+      font-weight: 600
+    }
+
+    .assess-lock-note {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0 0 10px
+    }
+
+    .assess input:disabled {
+      cursor: not-allowed;
+      opacity: .4
+    }
+
+    .practice-host {
+      display: grid;
+      gap: 18px
+    }
+
+    .exercise {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow)
+    }
+
+    .ex-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 15px
+    }
+
+    .tag {
+      background: var(--sage);
+      color: var(--deep);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .ex-head h2 {
+      font-size: 23px
+    }
+
+    .ex-head>div>div {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px
+    }
+
+    .question {
+      border-top: 1px solid var(--line);
+      padding: 18px 0
+    }
+
+    .question:first-of-type {
+      border-top: 0;
+      padding-top: 3px
+    }
+
+    .q-title {
+      font-weight: 700;
+      margin-bottom: 10px
+    }
+
+    .listen {
+      border: 0;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 15px;
+      font-weight: 800;
+      margin-bottom: 10px
+    }
+
+    .listen:disabled {
+      opacity: .5
+    }
+
+    .options {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap
+    }
+
+    .opt {
+      border: 2px solid var(--line);
+      background: #fff;
+      border-radius: 12px;
+      min-height: 44px;
+      padding: 8px 15px
+    }
+
+    .opt u {
+      text-decoration: underline;
+      text-decoration-color: var(--jade);
+      text-decoration-thickness: 2.5px;
+      text-underline-offset: 3px;
+      font-weight: 800;
+      color: var(--deep);
+    }
+
+    .opt:hover {
+      border-color: var(--sage)
+    }
+
+    .opt.correct {
+      background: var(--ok);
+      border-color: var(--jade);
+      color: var(--deep)
+    }
+
+    .opt.wrong {
+      background: var(--bad);
+      border-color: var(--coral)
+    }
+
+    .opt:disabled {
+      cursor: default
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 10px;
+      border-radius: 12px;
+      padding: 11px 13px;
+      background: var(--paper2);
+      font-size: 13px
+    }
+
+    .feedback.show {
+      display: block
+    }
+
+    .feedback.ok {
+      background: var(--ok)
+    }
+
+    .feedback.no {
+      background: var(--bad)
+    }
+
+    .read-copy {
+      background: var(--paper2);
+      border-radius: 14px;
+      padding: 14px 17px;
+      margin: 10px 0;
+      font-size: 17px;
+      color: var(--deep);
+      white-space: pre-line
+    }
+
+    .read-copy b {
+      color: var(--jade);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .rec-controls {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      min-height: 45px;
+      padding: 9px 17px;
+      font-weight: 800
+    }
+
+    .primary {
+      background: var(--jade);
+      color: #fff
+    }
+
+    .danger {
+      background: #fbe3dd;
+      color: #a83b25
+    }
+
+    .secondary {
+      background: var(--paper2);
+      color: var(--deep)
+    }
+
+    .btn:disabled {
+      opacity: .45
+    }
+
+    .rec-status {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px
+    }
+
+    .rec-status.live {
+      color: var(--coral);
+      font-weight: 800
+    }
+
+    .playback {
+      width: 100%;
+      margin-top: 10px
+    }
+
+    .submit-note {
+      display: none;
+      background: var(--ok);
+      padding: 11px;
+      border-radius: 12px;
+      margin-top: 10px
+    }
+
+    .assessment {
+      margin-top: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px
+    }
+
+    .assess {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      cursor: pointer
+    }
+
+    .assess:first-of-type {
+      border-top: 0
+    }
+
+    .assess input {
+      width: 21px;
+      height: 21px;
+      accent-color: var(--jade)
+    }
+
+    .finale {
+      text-align: center;
+      margin-top: 20px;
+      padding: 24px;
+      background: var(--sage);
+      border-radius: 18px;
+      color: var(--deep);
+      display: none;
+      box-shadow: var(--shadow)
+    }
+
+    .finale .complete-icon {
+      font-size: 30px;
+      display: block;
+      margin-bottom: 8px
+    }
+
+    .finale p {
+      margin: 6px 0 0;
+      font-size: 14px
+    }
+
+    .finale.show {
+      display: block
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px 0 60px;
+      color: var(--muted);
+      font-size: 12.5px
+    }
+
+    @media(max-width:600px) {
+      .wrap {
+        width: min(100% - 22px, 1060px)
+      }
+
+      .file-nav .wrap {
+        align-items: flex-start
+      }
+
+      .back {
+        font-size: 12px
+      }
+
+      .levels {
+        flex-wrap: nowrap;
+        gap: 6px
+      }
+
+      .level {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 8px 4px;
+        font-size: 13px;
+        text-align: center;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap
+      }
+
+      .exercise {
+        padding: 16px
+      }
+
+      .ex-head {
+        align-items: flex-start;
+        flex-direction: column
+      }
+
+      .options {
+        display: grid;
+        grid-template-columns: 1fr
+      }
+
+      .opt {
+        text-align: left
+      }
+
+      .btn {
+        width: 100%
+      }
+
+      .intro h1 {
+        font-size: 29px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="file-nav">
+    <div class="wrap">
+      <div class="file-title">Unit 2 · Pronunciation — Practice<small>Luyện tập · /kl/, /pl/, /gr/, /pr/</small></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <h1>Practice</h1>
+      <p>Nghe, nhận diện và phát âm chính xác các cụm phụ âm /kl/, /pl/, /gr/ và /pr/.</p>
+    </section>
+    <nav class="levels" aria-label="Chọn phần"><button class="level active" data-level="practice">🟢 Practice</button><button
+        class="level" data-level="extra" disabled>🔒 Extra Practice</button></nav>
+    <p class="lock-note" id="extraLockNote">🔒 Hoàn thành hết câu hỏi và ghi âm phần Practice để mở khoá Extra Practice.</p>
+    <div class="practice-host" id="practiceHost"></div>
+    <section class="assessment">
+      <h2>Self-Assessment</h2>
+      <p class="assess-lock-note" id="assessLockNote">🔒 Hoàn thành câu hỏi và ghi âm ở cả Practice và Extra Practice để mở khoá phần tự đánh giá.</p>
+      <label class="assess"><input type="checkbox" disabled><span>I can recognise the difference between the blends /kl/, /pl/, /gr/, and /pr/ when listening.</span></label><label class="assess"><input type="checkbox" disabled><span>I can pronounce words, phrases, sentences, or short passages containing /kl/, /pl/, /gr/, and /pr/ clearly.</span></label>
+      <div class="finale" id="finale"><span class="complete-icon">🎉</span>Congratulations! You've completed this practice.
+        <p><small>Chúc mừng bạn đã hoàn thành phần luyện tập!</small></p>
+      </div>
+    </section>
+  </main>
+  <footer>BMH AI · English Grade 10 · Pronunciation — Unit 2: /kl/, /pl/, /gr/, /pr/</footer>
+  <script>
+    function LMS() { return window.AiducationLMS || { ready: function () { }, progress: function () { }, event: function () { }, state: function () { }, complete: function () { }, resize: function () { } }; }
+    function reportHeight() { LMS().resize({ height: document.documentElement.scrollHeight }); }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+    ro.observe(document.body);
+
+    // ---- DATA ----
+    // "listen"/"minimalPairs": { word, options:[strings incl. correct], explain }
+    // "odd": { options:[4 strings], answer, explain }  — whole-word comparison, no underline
+    // "identify": { options:[4 {word,start,end}], answer, explain } — underline is DECLARED explicitly, never guessed by regex
+    const data = {
+      practice: {
+        listen: [
+          { word: 'club', options: ['club', 'cub', 'cup', 'tub'], explain: 'Từ gây nhiễu (cub, cup, tub) chỉ có 1 phụ âm đơn, không có blend /kl/.' },
+          { word: 'please', options: ['please', 'peas', 'tease', 'knees'], explain: 'Từ gây nhiễu (peas, tease, knees) không có cụm /pl/ ở đầu.' },
+          { word: 'green', options: ['green', 'bean', 'seen', 'keen'], explain: 'Từ gây nhiễu (bean, seen, keen) không có blend /gr/.' },
+          { word: 'proud', options: ['proud', 'loud', 'round', 'found'], explain: 'Từ gây nhiễu (loud, round, found) không có blend /pr/.' },
+          { word: 'class', options: ['class', 'glass', 'grass', 'brass'], explain: 'Cả 4 từ đều có blend — cần nghe kỹ phụ âm đầu: /kl/ (class) khác /gl/ (glass), /gr/ (grass), /br/ (brass).' },
+          { word: 'play', options: ['play', 'pray', 'flay', 'tray'], explain: '"Play" /pl/ khác "pray" /pr/, "flay" /fl/, "tray" /tr/.' },
+          { word: 'grow', options: ['grow', 'glow', 'crow', 'blow'], explain: '"Grow" /gr/ khác "glow" /gl/, "crow" /kr/, "blow" /bl/.' },
+          { word: 'group', options: ['group', 'drop', 'crop', 'loop'], explain: '"Group" /gr/ khác "drop" /dr/, "crop" /kr/; "loop" không có blend.' }
+        ],
+        minimalPairs: [
+          { word: 'clean', options: ['clean', 'green', 'glean', 'keen'], explain: '"Clean" /kl/ khác "green" /gr/, "glean" /gl/; "keen" không có blend.' },
+          { word: 'plan', options: ['plan', 'flan', 'clan', 'tan'], explain: '"Plan" /pl/ khác "flan" /fl/, "clan" /kl/; "tan" không có blend.' },
+          { word: 'place', options: ['place', 'race', 'brace', 'grace'], explain: '"Place" /pl/ khác "race" (không có blend), "brace" /br/, "grace" /gr/.' },
+          { word: 'plate', options: ['plate', 'grate', 'crate', 'rate'], explain: '"Plate" /pl/ khác "grate" /gr/, "crate" /kr/; "rate" không có blend.' },
+          { word: 'grey', options: ['grey', 'pray', 'tray', 'day'], explain: '"Grey" /gr/ khác "pray" /pr/, "tray" /tr/; "day" không có blend.' },
+          { word: 'proud', options: ['proud', 'cloud', 'crowd', 'loud'], explain: '"Proud" /pr/ dễ nhầm với "cloud" /kl/ và "crowd" /kr/; "loud" không có blend.' },
+          { word: 'price', options: ['price', 'rice', 'twice', 'spice'], explain: '"Price" /pr/ khác "rice" (không có blend), "twice" (/tw/, không phải blend r/l), "spice" (/sp/, khác nhóm).' },
+          { word: 'grape', options: ['grape', 'drape', 'crepe', 'cape'], explain: '"Grape" /gr/ khác "drape" /dr/, "crepe" /kr/; "cape" không có blend.' }
+        ],
+        readTiers: [
+          'Please clean the green grass properly.',
+          'The proud class played a great game and practiced properly, please.',
+          'Please help the proud class plant green grapes properly and gracefully.'
+        ]
+      },
+      extra: {
+        odd: [
+          { options: ['clover', 'clock', 'clip', 'crowd'], answer: 'crowd', explain: '"Crowd" là /kr/, khác với clover/clock/clip đều /kl/.' },
+          { options: ['plate', 'place', 'plan', 'proud'], answer: 'proud', explain: '"Proud" là /pr/, khác với plate/place/plan đều /pl/.' },
+          { options: ['grape', 'green', 'grow', 'present'], answer: 'present', explain: '"Present" là /pr/, khác với grape/green/grow đều /gr/.' },
+          { options: ['play', 'plant', 'place', 'glass'], answer: 'glass', explain: '"Glass" là /gl/, khác với play/plant/place đều /pl/ — "gl" và "pl" dễ nhầm nếu đọc lướt.' },
+          { options: ['climb', 'clown', 'clip', 'flag'], answer: 'flag', explain: '"Flag" là /fl/, khác với climb/clown/clip đều /kl/.' },
+          { options: ['prize', 'protect', 'proud', 'brave'], answer: 'brave', explain: '"Brave" là /br/, khác với prize/protect/proud đều /pr/.' },
+          { options: ['grow', 'green', 'grape', 'dream'], answer: 'dream', explain: '"Dream" là /dr/, khác với grow/green/grape đều /gr/.' },
+          { options: ['play', 'plan', 'place', 'blend'], answer: 'blend', explain: '"Blend" là /bl/, khác với play/plan/place đều /pl/.' }
+        ],
+        identify: [
+          { options: [{ word: 'class', start: 0, end: 2 }, { word: 'clean', start: 0, end: 2 }, { word: 'click', start: 0, end: 2 }, { word: 'grass', start: 0, end: 2 }], answer: 'grass', explain: '"Grass" là /gr/, khác với class/clean/click đều /kl/.' },
+          { options: [{ word: 'flag', start: 0, end: 2 }, { word: 'flame', start: 0, end: 2 }, { word: 'flat', start: 0, end: 2 }, { word: 'plan', start: 0, end: 2 }], answer: 'plan', explain: '"Plan" là /pl/, khác với flag/flame/flat đều /fl/ — "fl" và "pl" nhìn khá giống nên dễ nhầm.' },
+          { options: [{ word: 'grow', start: 0, end: 2 }, { word: 'green', start: 0, end: 2 }, { word: 'group', start: 0, end: 2 }, { word: 'crow', start: 0, end: 2 }], answer: 'crow', explain: '"Crow" là /kr/, khác với grow/green/group đều /gr/.' },
+          { options: [{ word: 'prize', start: 0, end: 2 }, { word: 'protect', start: 0, end: 2 }, { word: 'proud', start: 0, end: 2 }, { word: 'plant', start: 0, end: 2 }], answer: 'plant', explain: '"Plant" là /pl/, khác với prize/protect/proud đều /pr/.' },
+          { options: [{ word: 'grey', start: 0, end: 2 }, { word: 'green', start: 0, end: 2 }, { word: 'group', start: 0, end: 2 }, { word: 'glow', start: 0, end: 2 }], answer: 'glow', explain: '"Glow" là /gl/, khác với grey/green/group đều /gr/ — "gl" và "gr" chỉ khác đúng 1 chữ cái.' }
+        ],
+        read: 'Last term, our class decided to start a green project. We planned to clean up the playground and plant more trees near the ground close to the gate. Everyone felt proud when we finished. Our teacher asked us to present our project to the whole school, and we promised to protect our garden every single week.'
+      }
+    };
+
+    const host = document.getElementById('practiceHost'); let active = 'practice';
+    const shuffle = a => [...a].sort(() => Math.random() - .5);
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    // Explicit {word,start,end} → underline. NEVER guessed by regex (see PROMPT_TEMPLATE_PRONUNCIATION v9.5, Mục 1.10).
+    function formatOptionText(o) {
+      const w = o.word;
+      return esc(w.slice(0, o.start)) + '<u>' + esc(w.slice(o.start, o.end)) + '</u>' + esc(w.slice(o.end));
+    }
+
+    const Q_TITLE = {
+      listen: 'Which word do you hear?',
+      odd: 'Choose the word with a different consonant cluster from the other three.',
+      identify: 'Choose the word whose underlined part is pronounced differently from the other three.'
+    };
+
+    function buildGroup(kind, title, desc, items, idPrefix) {
+      const audio = kind === 'listen';
+      return '<section class="exercise"><div class="ex-head"><span class="tag">' + (audio ? 'Listen' : 'Choose') + '</span><div><h2>' + title + '</h2><div>' + desc + '</div></div></div>' +
+        items.map((q, i) => {
+          const answer = q.word || q.answer;
+          const optsHtml = shuffle(q.options).map(o => {
+            if (kind === 'identify') return '<button class="opt" data-value="' + esc(o.word) + '">' + formatOptionText(o) + '</button>';
+            return '<button class="opt" data-value="' + esc(o) + '">' + esc(o) + '</button>';
+          }).join('');
+          return '<div class="question" data-qid="' + idPrefix + '-' + i + '" data-answer="' + esc(answer) + '" data-explain="' + esc(q.explain) + '">' +
+            (audio ? '<button class="listen" data-word="' + esc(q.word) + '">🔊 Listen again</button>' : '') +
+            '<div class="q-title">' + (i + 1) + '. ' + Q_TITLE[kind] + '</div><div class="options">' + optsHtml + '</div><div class="feedback"></div></div>';
+        }).join('') + '</section>';
+    }
+
+    function readAloudPractice(tiers) {
+      return '<section class="exercise recorder" data-recorder="practice"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng rồi nghe lại bản ghi trước khi gửi. Độ khó tăng dần qua 3 câu.</div></div></div>' +
+        tiers.map((t, i) => '<div class="read-copy"><b>Tier ' + (i + 1) + '</b>' + esc(t) + '</div>').join('') +
+        recorderControls() + '</section>';
+    }
+    function readAloudExtra(text) {
+      return '<section class="exercise recorder" data-recorder="extra"><div class="ex-head"><span class="tag">Read aloud</span><div><h2>Record your voice</h2><div>Đọc rõ ràng cả đoạn rồi nghe lại bản ghi trước khi gửi.</div></div></div><div class="read-copy">' + esc(text) + '</div>' +
+        recorderControls() + '</section>';
+    }
+    function recorderControls() {
+      return '<div class="rec-controls"><button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button><button class="btn danger" data-rec-stop disabled>■ Dừng</button><button class="btn secondary" data-rec-submit disabled>Gửi bản ghi cho Athena</button></div><div class="rec-status" data-rec-status>Chưa ghi âm.</div><audio class="playback" data-rec-audio controls hidden></audio><div class="submit-note" data-rec-note>Đã nhận bản ghi. Tính năng chấm giọng nói Athena sẽ được kết nối tại đây.</div>';
+    }
+
+    function render() {
+      const d = data[active];
+      let html = '';
+      if (d.listen) html += buildGroup('listen', 'Listen &amp; Circle', 'Listen and choose the word you hear.', d.listen, active + '-listen');
+      if (d.minimalPairs) html += buildGroup('listen', 'Minimal Pairs — Listen &amp; Circle', 'Listen carefully — these words sound similar. Choose the word you hear.', d.minimalPairs, active + '-mp');
+      if (d.odd) html += buildGroup('odd', 'Odd One Out', 'Choose the word with a different consonant cluster from the other three.', d.odd, active + '-odd');
+      if (d.identify) html += buildGroup('identify', 'Pronunciation Difference', 'Choose the word whose underlined part sounds different from the other three.', d.identify, active + '-identify');
+      if (d.readTiers) html += readAloudPractice(d.readTiers);
+      if (d.read) html += readAloudExtra(d.read);
+      host.innerHTML = html;
+      wireQuestions();
+      wireRecorders();
+    }
+
+    function playPromptWord(word, btn) { if (!('speechSynthesis' in window)) return; btn.disabled = true; const u = new SpeechSynthesisUtterance(word); u.lang = 'en-GB'; u.rate = .85; u.onend = u.onerror = () => btn.disabled = false; speechSynthesis.cancel(); speechSynthesis.speak(u) }
+    let correctIds = new Set();
+    let autoSwitched = false;
+    let practiceRecorded = false;
+    let extraRecorded = false;
+    function totals() {
+      return {
+        practiceTotal: (data.practice.listen ? data.practice.listen.length : 0) + (data.practice.minimalPairs ? data.practice.minimalPairs.length : 0),
+        extraTotal: (data.extra.odd ? data.extra.odd.length : 0) + (data.extra.identify ? data.extra.identify.length : 0)
+      };
+    }
+    function countWithPrefix(prefix) { return [...correctIds].filter(id => id.startsWith(prefix)).length; }
+    function updateProgress() {
+      const t = totals();
+      const practiceDone = countWithPrefix('practice-') >= t.practiceTotal && practiceRecorded;
+      const extraDone = countWithPrefix('extra-') >= t.extraTotal && extraRecorded;
+      const extraBtn = document.querySelector('.level[data-level="extra"]');
+      extraBtn.disabled = !practiceDone;
+      extraBtn.textContent = practiceDone ? '🟠 Extra Practice' : '🔒 Extra Practice';
+      document.getElementById('extraLockNote').style.display = practiceDone ? 'none' : 'block';
+      document.querySelectorAll('.assess input').forEach(i => i.disabled = !(practiceDone && extraDone));
+      document.getElementById('assessLockNote').style.display = (practiceDone && extraDone) ? 'none' : 'block';
+      if (practiceDone && active === 'practice' && !autoSwitched) {
+        autoSwitched = true;
+        active = 'extra';
+        document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x.dataset.level === 'extra'));
+        render();
+        scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' });
+      }
+      checkCompletion();
+    }
+    function checkCompletion() {
+      const allAssessChecked = [...document.querySelectorAll('.assess input')].every(i => i.checked);
+      const f = document.getElementById('finale');
+      if (f) f.classList.toggle('show', allAssessChecked);
+    }
+    function wireQuestions() {
+      host.querySelectorAll('.listen').forEach(b => b.onclick = () => playPromptWord(b.dataset.word, b));
+      host.querySelectorAll('.question').forEach(q => q.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+        if (q.dataset.done) return;
+        const ok = b.dataset.value === q.dataset.answer;
+        b.classList.add(ok ? 'correct' : 'wrong');
+        const fb = q.querySelector('.feedback');
+        fb.className = 'feedback show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = ok ? '✅ <b>Correct.</b> ' + q.dataset.explain : '❌ Chưa đúng. Hãy nghe/quan sát kỹ âm đầu và thử lại.';
+        if (ok) { q.dataset.done = '1'; q.querySelectorAll('.opt').forEach(x => x.disabled = true); correctIds.add(q.dataset.qid); updateProgress(); }
+      }))
+    }
+    let currentStream;
+    function wireRecorders() {
+      host.querySelectorAll('.recorder').forEach(box => {
+        let rec, chunks = [], url;
+        const section = box.dataset.recorder;
+        const start = box.querySelector('[data-rec-start]'), stop = box.querySelector('[data-rec-stop]'), submit = box.querySelector('[data-rec-submit]'), status = box.querySelector('[data-rec-status]'), audio = box.querySelector('[data-rec-audio]');
+        start.onclick = async () => { try { currentStream = await navigator.mediaDevices.getUserMedia({ audio: true }); chunks = []; rec = new MediaRecorder(currentStream); rec.ondataavailable = e => e.data.size && chunks.push(e.data); rec.onstop = () => { const blob = new Blob(chunks, { type: rec.mimeType }); if (url) URL.revokeObjectURL(url); url = URL.createObjectURL(blob); audio.src = url; audio.hidden = false; submit.disabled = false; status.textContent = 'Đã ghi xong — hãy nghe lại trước khi gửi.'; status.classList.remove('live'); currentStream.getTracks().forEach(t => t.stop()); if (section === 'practice') practiceRecorded = true; if (section === 'extra') extraRecorded = true; updateProgress() }; rec.start(); start.disabled = true; stop.disabled = false; status.textContent = '● Đang ghi âm…'; status.classList.add('live') } catch (e) { status.textContent = 'Không truy cập được micro. Hãy cấp quyền micro.' } };
+        stop.onclick = () => { if (rec?.state === 'recording') rec.stop(); start.disabled = false; stop.disabled = true };
+        submit.onclick = () => submitRecording(box)
+      })
+    }
+    function submitRecording(box) { box.querySelector('[data-rec-note]').style.display = 'block'; /* TODO: nối API chấm giọng nói */ }
+    document.querySelectorAll('.assess input').forEach(i => i.addEventListener('change', checkCompletion));
+    document.querySelectorAll('.level').forEach(b => b.onclick = () => { if (b.disabled) return; active = b.dataset.level; document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x === b)); render(); checkCompletion(); scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' }) });
+    render();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Unit 4 — Pronunciation: Same word, different stress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf7ef;
+      --paper2: #f2eadc;
+      --jade: #2d8b6f;
+      --deep: #14432f;
+      --sage: #a9cbb8;
+      --gold: #efa83e;
+      --coral: #ef6040;
+      --ink: #202a25;
+      --muted: #626a65;
+      --white: #fff;
+      --line: #e6dcc9;
+      --shadow: 0 12px 32px rgba(20, 67, 47, .1)
+    }
+
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Be Vietnam Pro", sans-serif; line-height: 1.55 }
+    button, a { font: inherit }
+    button { cursor: pointer }
+    h1, h2, h3 { font-family: "Baloo 2", sans-serif; color: var(--deep); margin: 0 }
+    .wrap { width: min(1060px, calc(100% - 32px)); margin: auto }
+
+    .hero { background: var(--jade); color: #fff; padding: 64px 0 76px; text-align: center }
+    .eyebrow { display: inline-flex; border: 1px solid #ffffff66; background: #ffffff18; border-radius: 999px; padding: 6px 15px; font-size: 13px; text-transform: uppercase }
+    .hero h1 { color: #fff; font-size: clamp(28px, 5.6vw, 48px); line-height: 1.15; margin: 18px 0 12px }
+    .hero p { max-width: 720px; margin: auto; font-size: 17px; font-weight: 600 }
+    .blend-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 28px }
+    .blend { background: #fff; color: var(--deep); border-radius: 16px; padding: 10px 22px; font: 800 18px "Baloo 2"; box-shadow: var(--shadow) }
+
+    main { padding: 42px 0 }
+    .section-head { margin-bottom: 20px }
+    .tag { display: inline-flex; background: var(--sage); color: var(--deep); border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase }
+    .section-head h2 { font-size: 30px; margin-top: 7px }
+    .lead { color: var(--muted); margin: 3px 0 0 }
+    .vi-sub { display: block; font-size: 13px; font-weight: 600; color: var(--muted); text-transform: none; letter-spacing: normal; margin-top: 2px }
+
+    .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px }
+    .rule { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 22px; box-shadow: var(--shadow) }
+    .rule-top { display: flex; align-items: center; justify-content: space-between; gap: 10px }
+    .sound { font: 800 20px "Baloo 2"; color: var(--deep) }
+    .audio { border: 0; border-radius: 50%; width: 44px; height: 44px; background: var(--gold); color: #fff; font-size: 18px; flex: none }
+    .rule p { font-size: 14px }
+    .examples { background: var(--paper2); border-radius: 13px; padding: 10px 12px; font-size: 13px }
+    .practice-line { color: var(--jade); font-weight: 700; margin-top: 10px; font-size: 13px }
+
+    .special-box { margin-top: 20px; background: #fdf1de; border: 1px solid #f2ddb0; border-radius: 20px; padding: 20px 22px }
+    .special-box h3 { font-size: 18px; display: flex; align-items: center; gap: 8px }
+    .special-box .sub-label { font-weight: 800; color: #a8730f; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; display: block; margin: 14px 0 6px }
+    .special-box .sub-label:first-of-type { margin-top: 16px }
+    .special-box p { font-size: 14px; margin: 0 }
+    .pair-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px }
+    .pair { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; font-size: 13px; display: flex; align-items: center; gap: 8px }
+    .pair b { color: var(--deep) }
+
+    .words-section { margin-top: 48px }
+    .word-table { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px }
+    .word-col { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 16px; box-shadow: var(--shadow) }
+    .word-col h3 { text-align: center; font-size: 17px; margin-bottom: 8px }
+    .word { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 8px; border-top: 1px solid var(--line) }
+    .word:first-of-type { border-top: 0 }
+    .word strong { color: var(--deep) }
+    .ipa { font-size: 12px; color: var(--muted) }
+    .mini-audio { border: 0; background: #f7e6c7; color: #995c09; border-radius: 50%; width: 36px; height: 36px; flex: none; font-size: 14px }
+
+    .practice-section { margin-top: 48px }
+    .level-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px }
+    .level-btn { border: 1px solid var(--line); background: #fff; color: var(--deep); border-radius: 999px; padding: 8px 18px; font-weight: 700; font-size: 13px }
+    .level-btn.active { background: var(--jade); color: #fff; border-color: var(--jade) }
+    .qcard { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow); margin-bottom: 14px; display: none }
+    .qcard.show { display: block }
+    .qcard .qtext { font-size: 15px; margin-bottom: 10px }
+    .qcard .opts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px }
+    .opt-btn { border: 1px solid var(--line); background: var(--paper2); border-radius: 10px; padding: 8px 14px; font-size: 13px; font-weight: 700; color: var(--deep) }
+    .opt-btn.correct { background: #d9f0e2; border-color: #7fbf9b; color: #14432f }
+    .opt-btn.wrong { background: #fbe3dd; border-color: #e3a190; color: #a83b25 }
+    .explain { display: none; font-size: 13px; background: var(--paper2); border-radius: 12px; padding: 10px 12px; color: var(--muted) }
+    .explain.show { display: block }
+
+    .read-aloud { margin-top: 48px; background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 24px; box-shadow: var(--shadow) }
+    .read-copy { background: var(--paper2); border-radius: 16px; padding: 18px; margin: 14px 0; font-size: 16px; color: var(--deep) }
+    .rec-controls { display: flex; gap: 10px; flex-wrap: wrap }
+    .btn { border: 0; border-radius: 12px; min-height: 46px; padding: 10px 18px; font-weight: 700 }
+    .primary { background: var(--jade); color: #fff }
+    .secondary { background: var(--paper2); color: var(--deep) }
+    .danger { background: #fbe3dd; color: #a83b25 }
+    .btn:disabled { opacity: .45; cursor: not-allowed }
+    .rec-status { margin-top: 12px; color: var(--muted); font-size: 13px }
+    .rec-status.live { color: var(--coral); font-weight: 700 }
+    .recording-playback { width: 100%; margin-top: 12px }
+    .submit-note { display: none; margin-top: 12px; background: #e6f3ed; color: var(--deep); border-radius: 12px; padding: 12px }
+
+    .selfeval { margin-top: 40px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; box-shadow: var(--shadow) }
+    .selfeval ul { margin: 10px 0 0; padding-left: 20px; font-size: 14px; color: var(--ink) }
+    .selfeval li { margin-bottom: 6px }
+
+    .next { display: flex; justify-content: center; margin: 40px 0 10px }
+    .lesson-complete { background: var(--sage); color: var(--deep); padding: 20px 32px; border-radius: 18px; font-weight: 800; text-align: center; box-shadow: var(--shadow) }
+    .lesson-complete .complete-icon { font-size: 30px; display: block; margin-bottom: 8px }
+    .lesson-complete small { display: block; font-size: 13px; font-weight: 600; margin-top: 4px; opacity: .85 }
+
+    footer { text-align: center; padding: 34px 0 60px; color: var(--muted); font-size: 12.5px }
+    .tts-note { font-size: 12px; color: var(--muted); margin-top: 6px }
+
+    @media(max-width:760px) {
+      .rules, .word-table { grid-template-columns: 1fr }
+      .hero { padding: 48px 0 58px }
+      .rule { padding: 18px }
+      .section-head h2 { font-size: 26px }
+    }
+    @media(max-width:480px) {
+      .wrap { width: min(100% - 22px, 1060px) }
+      main { padding-top: 30px }
+      .blend { font-size: 15px; padding: 8px 16px }
+      .read-aloud { padding: 17px }
+      .btn { width: 100% }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="wrap"><span class="eyebrow">✅ Unit 4 · Pronunciation</span>
+      <h1>Stress in two-syllable words with the same spelling</h1>
+      <p>Recognise and produce correct stress in words that change meaning and word class when the stress moves —
+        same spelling, two different words.</p>
+      <div class="blend-row"><span class="blend">'RECord (n.)</span><span class="blend">re'CORD (v.)</span><span
+          class="blend">1 word · 2 stresses</span></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section>
+      <div class="section-head"><span class="tag">Sound guide</span>
+        <h2>Pronunciation Rules<span class="vi-sub">Quy tắc phát âm</span></h2>
+        <p class="lead">Trọng âm (stress) là âm tiết được đọc to hơn, rõ hơn và dài hơi hơn các âm tiết còn lại trong
+          từ. Ở Unit 4, các em sẽ học một nhóm từ đặc biệt: viết giống hệt nhau nhưng đổi cả nghĩa lẫn từ loại khi đổi
+          vị trí trọng âm.</p>
+      </div>
+      <div class="rules">
+        <article class="rule">
+          <div class="rule-top"><span class="sound">Nhắc lại: Unit 3</span><button class="audio" data-seq="famous,perform">🔊</button></div>
+          <p>Với từ 2 âm tiết nói chung: danh từ/tính từ thường nhấn <b>âm tiết 1</b> (VD famous, artist); động từ
+            thường nhấn <b>âm tiết 2</b> (VD enjoy, perform). Đây là quy tắc nền — Unit 4 sẽ đào sâu một nhóm ngoại lệ
+            đặc biệt của chính quy tắc này.</p>
+          <div class="examples">Ví dụ: <b>famous</b> (n./adj.) ↔ <b>perform</b> (v.)</div>
+        </article>
+        <article class="rule">
+          <div class="rule-top"><span class="sound">Định nghĩa: Same word, ≠ stress</span><button class="audio"
+              data-seq="record_n,record_v">🔊</button></div>
+          <p>Một nhóm nhỏ từ 2 âm tiết được viết <b>giống hệt nhau</b> nhưng có <b>hai cách đọc trọng âm khác nhau</b>
+            — không phải hai từ khác nhau cùng vần, mà là <b>1 từ, 2 giọng đọc, 2 nghĩa</b>. Ở dạng danh từ, âm tiết
+            đầu đọc to rõ, âm tiết sau lướt nhẹ; ở dạng động từ, ngược lại — âm tiết đầu lướt nhẹ, âm tiết sau đọc to,
+            rõ và kéo dài hơi hơn.</p>
+          <div class="examples">Ví dụ: <b>record, present, object</b>...</div>
+          <div class="practice-line"><b>RE</b>-cord (n.) ↔ re-<b>CORD</b> (v.)</div>
+        </article>
+        <article class="rule">
+          <div class="rule-top"><span class="sound">Mẹo nhận diện</span><button class="audio"
+              data-seq="export_n,export_v">🔊</button></div>
+          <p>Đừng nhìn mặt chữ — hãy nhìn <b>vai trò của từ trong câu</b>. Đứng sau a/an/the, làm chủ ngữ/tân ngữ →
+            gần như chắc chắn là danh từ, đọc trọng âm âm 1. Là hành động chính, có "to" phía trước, hoặc chia được
+            thì → là động từ, đọc trọng âm âm 2.</p>
+          <div class="examples">Ví dụ: "the <b>EXport</b>" (n.) ↔ "to <b>exPORT</b>" (v.)</div>
+        </article>
+      </div>
+      <div class="special-box">
+        <h3>⭐ Trường hợp đặc biệt & mẹo phát âm</h3>
+        <span class="sub-label">Trường hợp đặc biệt</span>
+        <p>18 từ dưới đây là danh sách đã kiểm chứng có hiện tượng đổi trọng âm theo từ loại. Không phải mọi từ 2 âm
+          tiết đều thuộc nhóm này — chỉ áp dụng cho đúng danh sách đã cho, không tự suy luận sang từ khác.</p>
+        <div class="pair-row">
+          <div class="pair"><b>'RECord</b> (n.) — bản ghi âm</div>
+          <div class="pair"><b>re'CORD</b> (v.) — ghi âm</div>
+          <div class="pair"><b>'PREsent</b> (n.) — món quà</div>
+          <div class="pair"><b>pre'SENT</b> (v.) — trình bày</div>
+        </div>
+        <span class="sub-label">Mẹo phát âm</span>
+        <p>Nhìn vị trí từ trong câu: sau a/an/the/sở hữu cách hoặc làm chủ ngữ/tân ngữ → danh từ, nhấn âm 1; là hành
+          động chính của câu, có thể chia thì, hoặc có "to" phía trước → động từ, nhấn âm 2.</p>
+      </div>
+    </section>
+
+    <section class="words-section">
+      <div class="section-head"><span class="tag">Word bank</span>
+        <h2>18 cặp từ đổi trọng âm<span class="vi-sub">Bấm nút loa để nghe từng cặp trong câu ví dụ</span></h2>
+        <p class="lead tts-note">🔊 Âm thanh dùng giọng đọc tổng hợp (Web Speech API) của trình duyệt — mỗi từ được đọc
+          trong một câu ngắn để giữ đúng trọng âm theo từ loại. Nếu trình duyệt không hỗ trợ, nút loa sẽ không phát
+          ra âm thanh.</p>
+      </div>
+      <div class="word-table" id="wordTable"></div>
+    </section>
+
+    <section class="practice-section">
+      <div class="section-head"><span class="tag">Practice</span>
+        <h2>Practice<span class="vi-sub">Bấm đáp án để kiểm tra, đọc phần giải thích bên dưới</span></h2>
+      </div>
+      <div class="level-tabs" id="levelTabs">
+        <button class="level-btn active" data-level="easy">Easy</button>
+        <button class="level-btn" data-level="medium">Medium</button>
+        <button class="level-btn" data-level="difficult">Difficult</button>
+      </div>
+      <div id="quizArea"></div>
+    </section>
+
+    <section class="read-aloud"><span class="tag">Read aloud</span>
+      <h2>Listen and Repeat<span class="vi-sub">Nghe và lặp lại</span></h2>
+      <p>Đọc đoạn văn dưới đây, chú ý đúng trọng âm của các từ in đậm, ghi âm và nộp bản thu để AI chấm.</p>
+      <div class="read-copy">Every year, this small company must decide how to balance its budget. Last year, they
+        had to <b>increase</b> the price of their <b>produce</b> because of a supply <b>conflict</b> with another
+        factory. This year, they plan to <b>export</b> more goods and <b>import</b> fewer raw materials. Their new
+        <b>contract</b> should help <b>decrease</b> costs and avoid further <b>conflict</b> between departments.
+      </div>
+      <div class="rec-controls"><button class="btn primary" data-rec-start>🎙 Bắt đầu ghi âm</button><button
+          class="btn danger" data-rec-stop disabled>■ Dừng</button><button class="btn secondary" data-rec-submit
+          disabled>Gửi bản ghi cho AI</button></div>
+      <div class="rec-status" data-rec-status>Chưa ghi âm.</div><audio class="recording-playback" data-rec-audio
+        controls hidden></audio>
+      <div class="submit-note" data-rec-note>Đã nhận bản ghi. Tính năng chấm giọng nói AI sẽ được kết nối tại đây.</div>
+    </section>
+
+    <section class="selfeval">
+      <div class="section-head"><span class="tag">Self-evaluation</span>
+        <h2>Tự đánh giá</h2>
+      </div>
+      <ul>
+        <li>Em có thể phân biệt được cách đọc danh từ và động từ của ít nhất 10/18 từ trong danh sách không?</li>
+        <li>Khi gặp một từ thuộc nhóm này trong câu lạ, em có tự xác định được vai trò ngữ pháp của nó trước khi đọc
+          không?</li>
+        <li>Em có nhầm lẫn giữa quy tắc chung (Unit 3) và nhóm từ đổi trọng âm đặc biệt (Unit 4) không?</li>
+      </ul>
+    </section>
+
+    <div class="next">
+      <div class="lesson-complete"><span class="complete-icon">🎉</span>Congratulations! You've completed this
+        lesson.<br><small>Chúc mừng bạn đã hoàn thành bài học!</small></div>
+    </div>
+  </main>
+  <footer>BMH AI · English Grade 10 · Pronunciation — Unit 4: Stress in two-syllable words with the same spelling</footer>
+
+  <script>
+    // ---------- Text-to-speech (Web Speech API) ----------
+    // Với nhóm từ đổi trọng âm, gửi cả câu ngắn để trình duyệt phát đúng trọng âm theo từ loại.
+    const SPEAK = {
+      famous: "famous", perform: "perform",
+      record_n: "This is a record.", record_v: "I will record this.",
+      present_n: "Here is a present.", present_v: "I will present this.",
+      object_n: "Look at that object.", object_v: "I object to this.",
+      permit_n: "Show me your permit.", permit_v: "They permit this.",
+      conflict_n: "This is a conflict.", conflict_v: "They conflict often.",
+      contract_n: "Sign the contract.", contract_v: "They contract work.",
+      produce_n: "Fresh produce here.", produce_v: "They produce goods.",
+      export_n: "This is an export.", export_v: "They export goods.",
+      import_n: "This is an import.", import_v: "They import goods.",
+      suspect_n: "He is a suspect.", suspect_v: "I suspect him.",
+      contrast_n: "Note the contrast.", contrast_v: "They contrast ideas.",
+      insult_n: "That is an insult.", insult_v: "Do not insult him.",
+      protest_n: "Join the protest.", protest_v: "They protest loudly.",
+      increase_n: "There was an increase.", increase_v: "Prices increase now.",
+      decrease_n: "There was a decrease.", decrease_v: "Prices decrease now.",
+      desert_n: "Cross the desert.", desert_v: "Do not desert them.",
+      rebel_n: "He is a rebel.", rebel_v: "They rebel today.",
+      conduct_n: "Watch his conduct.", conduct_v: "They conduct research."
+    };
+    function speak(key) {
+      const text = SPEAK[key]; if (!text || !("speechSynthesis" in window)) return null;
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "en-GB"; u.rate = 0.88; u.pitch = 1;
+      window.speechSynthesis.speak(u);
+      return u;
+    }
+    function speakSequence(keys) {
+      let i = 0;
+      const step = () => {
+        if (i >= keys.length) return;
+        const u = speak(keys[i]); i++;
+        if (u) u.onend = step; else step();
+      };
+      step();
+    }
+    document.addEventListener('click', e => {
+      const seqBtn = e.target.closest('[data-seq]'); if (seqBtn) { speakSequence(seqBtn.dataset.seq.split(',')); return; }
+      const audioBtn = e.target.closest('[data-audio]'); if (audioBtn) { speak(audioBtn.dataset.audio); return; }
+    });
+
+    // ---------- Word bank ----------
+    const groups = [
+      { title: "Nhóm 1", words: [
+        ["record", "'RE-cord /ˈrekɔːd/ (n.) — bản ghi âm", "record_n"],
+        ["record", "re-'CORD /rɪˈkɔːd/ (v.) — ghi âm", "record_v"],
+        ["present", "'PRE-sent /ˈpreznt/ (n.) — món quà", "present_n"],
+        ["present", "pre-'SENT /prɪˈzent/ (v.) — trình bày", "present_v"],
+        ["object", "'OB-ject /ˈɒbdʒɪkt/ (n.) — đồ vật", "object_n"],
+        ["object", "ob-'JECT /əbˈdʒekt/ (v.) — phản đối", "object_v"],
+        ["permit", "'PER-mit /ˈpɜːmɪt/ (n.) — giấy phép", "permit_n"],
+        ["permit", "per-'MIT /pəˈmɪt/ (v.) — cho phép", "permit_v"],
+        ["conflict", "'CON-flict /ˈkɒnflɪkt/ (n.) — xung đột", "conflict_n"],
+        ["conflict", "con-'FLICT /kənˈflɪkt/ (v.) — xung đột", "conflict_v"],
+        ["contract", "'CON-tract /ˈkɒntrækt/ (n.) — hợp đồng", "contract_n"],
+        ["contract", "con-'TRACT /kənˈtrækt/ (v.) — ký hợp đồng", "contract_v"],
+      ]},
+      { title: "Nhóm 2", words: [
+        ["produce", "'PRO-duce /ˈprɒdjuːs/ (n.) — nông sản", "produce_n"],
+        ["produce", "pro-'DUCE /prəˈdjuːs/ (v.) — sản xuất", "produce_v"],
+        ["export", "'EX-port /ˈekspɔːt/ (n.) — hàng xuất khẩu", "export_n"],
+        ["export", "ex-'PORT /ɪkˈspɔːt/ (v.) — xuất khẩu", "export_v"],
+        ["import", "'IM-port /ˈɪmpɔːt/ (n.) — hàng nhập khẩu", "import_n"],
+        ["import", "im-'PORT /ɪmˈpɔːt/ (v.) — nhập khẩu", "import_v"],
+        ["suspect", "'SUS-pect /ˈsʌspekt/ (n.) — nghi phạm", "suspect_n"],
+        ["suspect", "sus-'PECT /səˈspekt/ (v.) — nghi ngờ", "suspect_v"],
+        ["contrast", "'CON-trast /ˈkɒntrɑːst/ (n.) — sự tương phản", "contrast_n"],
+        ["contrast", "con-'TRAST /kənˈtrɑːst/ (v.) — tương phản", "contrast_v"],
+        ["insult", "'IN-sult /ˈɪnsʌlt/ (n.) — lời sỉ nhục", "insult_n"],
+        ["insult", "in-'SULT /ɪnˈsʌlt/ (v.) — sỉ nhục", "insult_v"],
+      ]},
+      { title: "Nhóm 3", words: [
+        ["protest", "'PRO-test /ˈprəʊtest/ (n.) — cuộc biểu tình", "protest_n"],
+        ["protest", "pro-'TEST /prəˈtest/ (v.) — phản đối", "protest_v"],
+        ["increase", "'IN-crease /ˈɪnkriːs/ (n.) — sự tăng", "increase_n"],
+        ["increase", "in-'CREASE /ɪnˈkriːs/ (v.) — tăng lên", "increase_v"],
+        ["decrease", "'DE-crease /ˈdiːkriːs/ (n.) — sự giảm", "decrease_n"],
+        ["decrease", "de-'CREASE /dɪˈkriːs/ (v.) — giảm đi", "decrease_v"],
+        ["desert", "'DE-sert /ˈdezət/ (n.) — sa mạc", "desert_n"],
+        ["desert", "de-'SERT /dɪˈzɜːt/ (v.) — bỏ rơi", "desert_v"],
+        ["rebel", "'RE-bel /ˈrebl/ (n.) — kẻ nổi loạn", "rebel_n"],
+        ["rebel", "re-'BEL /rɪˈbel/ (v.) — nổi loạn", "rebel_v"],
+        ["conduct", "'CON-duct /ˈkɒndʌkt/ (n.) — hành vi", "conduct_n"],
+        ["conduct", "con-'DUCT /kənˈdʌkt/ (v.) — tiến hành", "conduct_v"],
+      ]}
+    ];
+    const table = document.getElementById('wordTable');
+    groups.forEach(g => {
+      const col = document.createElement('div'); col.className = 'word-col';
+      col.innerHTML = '<h3>' + g.title + '</h3>' + g.words.map(w =>
+        '<div class="word"><div><strong>' + w[0] + '</strong><div class="ipa">' + w[1] + '</div></div>' +
+        '<button class="mini-audio" data-audio="' + w[2] + '" aria-label="Nghe ' + w[0] + '">🔊</button></div>'
+      ).join('');
+      table.appendChild(col);
+    });
+
+    // ---------- Practice quiz ----------
+    const QUIZ = {
+      easy: [
+        { q: "Which word is stressed on the FIRST syllable?", opts: ["reCORD", "RECord", "obJECT", "perMIT"], correct: 1,
+          explain: "RECord (n.) nhấn âm 1 — bản ghi âm." },
+        { q: "Which word is stressed on the SECOND syllable?", opts: ["PREsent", "CONtract", "exPORT", "INcrease"], correct: 2,
+          explain: "exPORT (v.) nhấn âm 2 — hành động xuất khẩu." },
+        { q: "Choose the word with the same stress pattern as 'im-PORT' (verb):", opts: ["CONflict (n.)", "proTEST (v.)", "REbel (n.)", "INsult (n.)"], correct: 1,
+          explain: "proTEST (v.) nhấn âm 2, giống cách nhấn của import khi dùng làm động từ." },
+        { q: "'SUSpect' (noun) nhấn vào âm tiết nào?", opts: ["Âm 1", "Âm 2"], correct: 0,
+          explain: "SUSpect (n. — nghi phạm) nhấn âm 1; động từ 'suspect' (nghi ngờ) mới nhấn âm 2." },
+        { q: "Odd one out (khác vị trí trọng âm — ôn quy tắc chung Unit 3):", opts: ["teacher", "machine", "mother", "father"], correct: 1,
+          explain: "machine nhấn âm 2 (đây là từ mượn, không thuộc nhóm đổi trọng âm), 3 từ còn lại nhấn âm 1." }
+      ],
+      medium: [
+        { q: '"The police arrested the ___."', opts: ["SUSpect", "susPECT"], correct: 0,
+          explain: "Đứng sau 'the' → danh từ → SUSpect (nghi phạm)." },
+        { q: '"I ___ that he is lying."', opts: ["SUSpect", "susPECT"], correct: 1,
+          explain: "Là hành động chính của câu → động từ → susPECT (nghi ngờ)." },
+        { q: '"This factory can ___ 500 cars a day."', opts: ["PROduce", "proDUCE"], correct: 1,
+          explain: "Theo sau 'can' (động từ khuyết thiếu) → động từ nguyên mẫu → proDUCE." },
+        { q: '"Fresh ___ is sold at the market every morning."', opts: ["PROduce", "proDUCE"], correct: 0,
+          explain: "Làm chủ ngữ của câu → danh từ → PROduce (nông sản)." },
+        { q: '"There was a big ___ between the two managers."', opts: ["CONflict", "conFLICT"], correct: 0,
+          explain: "Đứng sau 'a' → danh từ → CONflict." },
+        { q: '"Their opinions often ___ with each other."', opts: ["CONflict", "conFLICT"], correct: 1,
+          explain: "Là động từ chính, chia theo chủ ngữ số nhiều → conFLICT." }
+      ],
+      difficult: [
+        { q: '"They export rice, but they also import machinery." — Xác định trọng âm của 2 từ in nghiêng (đều là động từ).', opts: ["exPORT / imPORT", "EXport / IMport"], correct: 0,
+          explain: "Cả hai đều làm động từ chính của câu → nhấn âm 2: exPORT, imPORT." },
+        { q: '"The export of rice increased, while the import of oil decreased." — export/import ở đây là từ loại gì?', opts: ["Danh từ — EXport / IMport", "Động từ — exPORT / imPORT"], correct: 0,
+          explain: "Sau 'the' và trước 'of' → làm danh từ → EXport, IMport (nhấn âm 1)." },
+        { q: '"The company signed a new contract to contract work to a supplier." — Xác định 2 từ contract.', opts: ["CONtract (n.) — conTRACT (v.)", "conTRACT (n.) — CONtract (v.)"], correct: 0,
+          explain: "Từ 1 sau 'a new' → danh từ CONtract; từ 2 sau 'to' → động từ nguyên mẫu conTRACT." },
+        { q: '"The rebels launched a protest to rebel against the new law." — Xác định 4 từ mục tiêu theo đúng thứ tự.', opts: ["REbels(n.) PROtest(n.) reBEL(v.)", "reBELs(n.) proTEST(n.) REbel(v.)"], correct: 0,
+          explain: "'rebels' và 'protest' đầu câu làm danh từ (nhấn âm 1); 'rebel' sau 'to' làm động từ (nhấn âm 2)." },
+        { q: 'Tag question: "They signed a contract to increase exports, didn\'t they?" — Nếu người hỏi gần như chắc chắn, phần đuôi câu hỏi đọc thế nào?', opts: ["Lướt nhẹ, giọng xuống", "Đọc rõ, giọng lên"], correct: 0,
+          explain: "Khi chỉ xác nhận lại điều đã chắc chắn, phần đuôi câu hỏi đọc lướt, giọng xuống; nếu thật sự bất ngờ/muốn hỏi lại thì mới đọc rõ, giọng lên." }
+      ]
+    };
+    const quizArea = document.getElementById('quizArea');
+    function renderQuiz(level) {
+      quizArea.innerHTML = '';
+      QUIZ[level].forEach((item, idx) => {
+        const card = document.createElement('div'); card.className = 'qcard show';
+        const optsHtml = item.opts.map((o, i) => '<button class="opt-btn" data-idx="' + i + '">' + o + '</button>').join('');
+        card.innerHTML = '<div class="qtext"><b>Câu ' + (idx + 1) + '.</b> ' + item.q + '</div>' +
+          '<div class="opts">' + optsHtml + '</div>' +
+          '<div class="explain">' + item.explain + '</div>';
+        const buttons = card.querySelectorAll('.opt-btn');
+        buttons.forEach(b => b.addEventListener('click', () => {
+          buttons.forEach(x => x.disabled = true);
+          buttons.forEach((x, i) => { if (i === item.correct) x.classList.add('correct'); });
+          if (parseInt(b.dataset.idx) !== item.correct) b.classList.add('wrong');
+          card.querySelector('.explain').classList.add('show');
+        }));
+        quizArea.appendChild(card);
+      });
+    }
+    renderQuiz('easy');
+    document.getElementById('levelTabs').addEventListener('click', e => {
+      const btn = e.target.closest('.level-btn'); if (!btn) return;
+      document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderQuiz(btn.dataset.level);
+    });
+
+    // ---------- Recorder (giữ nguyên cơ chế như Unit 3) ----------
+    let mediaRecorder, stream, chunks = [], recordingUrl;
+    document.querySelectorAll('.read-aloud').forEach(wireRecorder);
+    function wireRecorder(box) {
+      const start = box.querySelector('[data-rec-start]'), stop = box.querySelector('[data-rec-stop]'),
+        submit = box.querySelector('[data-rec-submit]'), status = box.querySelector('[data-rec-status]'),
+        audio = box.querySelector('[data-rec-audio]'), note = box.querySelector('[data-rec-note]');
+      start.onclick = async () => {
+        try {
+          stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          chunks = []; mediaRecorder = new MediaRecorder(stream);
+          mediaRecorder.ondataavailable = e => { if (e.data.size) chunks.push(e.data) };
+          mediaRecorder.onstop = () => {
+            const blob = new Blob(chunks, { type: mediaRecorder.mimeType });
+            if (recordingUrl) URL.revokeObjectURL(recordingUrl);
+            recordingUrl = URL.createObjectURL(blob);
+            audio.src = recordingUrl; audio.hidden = false; submit.disabled = false;
+            status.textContent = 'Đã ghi xong — hãy nghe lại trước khi gửi.'; status.classList.remove('live');
+            stream.getTracks().forEach(t => t.stop());
+          };
+          mediaRecorder.start(); start.disabled = true; stop.disabled = false; submit.disabled = true;
+          note.style.display = 'none'; status.textContent = '● Đang ghi âm…'; status.classList.add('live');
+        } catch (err) { status.textContent = 'Không truy cập được micro. Hãy cấp quyền micro cho trình duyệt.' }
+      };
+      stop.onclick = () => { if (mediaRecorder?.state === 'recording') mediaRecorder.stop(); start.disabled = false; stop.disabled = true };
+      submit.onclick = () => { box.querySelector('[data-rec-note]').style.display = 'block'; /* TODO: nối API chấm giọng nói */ };
+    }
+  </script>
+</body>
+
+</html>
