@@ -754,20 +754,65 @@ const AUDIO_MAP={"teacher":"data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADT
     function countWithPrefix(prefix) { return [...correctIds].filter(id => id.startsWith(prefix)).length; }
     function updateProgress() {
       const t = totals();
-      const practiceDone = countWithPrefix('practice-') >= t.practiceTotal && practiceRecorded;
-      const extraDone = countWithPrefix('extra-') >= t.extraTotal && extraRecorded;
+      const pCount = countWithPrefix('practice-');
+      const pTotal = t.practiceTotal;
+      const eCount = countWithPrefix('extra-');
+      const eTotal = t.extraTotal;
+
+      const practiceDone = pCount >= pTotal && practiceRecorded;
+      const extraDone = eCount >= eTotal && extraRecorded;
       const extraBtn = document.querySelector('.level[data-level="extra"]');
+
       extraBtn.disabled = !practiceDone;
       extraBtn.textContent = practiceDone ? '🟠 Extra Practice' : '🔒 Extra Practice';
-      document.getElementById('extraLockNote').style.display = practiceDone ? 'none' : 'block';
+
+      const lockNote = document.getElementById('extraLockNote');
+      if (lockNote && !autoSwitched) {
+        if (!practiceDone) {
+          lockNote.style.display = 'block';
+          const missing = [];
+          if (pCount < pTotal) missing.push('trả lời đúng ' + pCount + '/' + pTotal + ' câu trắc nghiệm');
+          if (!practiceRecorded) missing.push('ghi âm phần luyện đọc');
+          lockNote.innerHTML = '🔒 Hãy hoàn thành: <b>' + missing.join(' và ') + '</b> để mở khoá Extra Practice.';
+        } else {
+          lockNote.style.display = 'none';
+        }
+      }
+
       document.querySelectorAll('.assess input').forEach(i => i.disabled = !(practiceDone && extraDone));
-      document.getElementById('assessLockNote').style.display = (practiceDone && extraDone) ? 'none' : 'block';
+      const assessNote = document.getElementById('assessLockNote');
+      if (assessNote) {
+        if (!(practiceDone && extraDone)) {
+          assessNote.style.display = 'block';
+          const missing = [];
+          if (!practiceDone) missing.push('phần Practice');
+          if (eCount < eTotal) missing.push('trả lời đúng ' + eCount + '/' + eTotal + ' câu Extra Practice');
+          if (!extraRecorded) missing.push('ghi âm đoạn văn Extra Practice');
+          assessNote.innerHTML = '🔒 Hãy hoàn thành: <b>' + missing.join(', ') + '</b> để mở khoá phần tự đánh giá.';
+        } else {
+          assessNote.style.display = 'none';
+        }
+      }
+
       if (practiceDone && active === 'practice' && !autoSwitched) {
         autoSwitched = true;
-        active = 'extra';
-        document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x.dataset.level === 'extra'));
-        render();
-        scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' });
+        if (lockNote) {
+          lockNote.style.display = 'block';
+          lockNote.innerHTML = '🎉 <b>Tuyệt vời! Bạn đã hoàn thành phần Practice.</b> Đang chuyển sang <b>Extra Practice</b> sau 3 giây...';
+          lockNote.style.color = 'var(--jade-text)';
+          lockNote.style.background = 'var(--correct-bg)';
+          lockNote.style.border = '1px solid var(--jade-soft)';
+          lockNote.style.padding = '10px 14px';
+          lockNote.style.borderRadius = 'var(--radius-sm)';
+        }
+        setTimeout(() => {
+          if (active === 'practice') {
+            active = 'extra';
+            document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x.dataset.level === 'extra'));
+            render();
+            scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' });
+          }
+        }, 3000);
       }
       checkCompletion();
     }

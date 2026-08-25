@@ -911,10 +911,24 @@
 
       if (practiceDone && active === 'practice' && !autoSwitched) {
         autoSwitched = true;
-        active = 'extra';
-        document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x.dataset.level === 'extra'));
-        render();
-        scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' });
+        const lockNote = document.getElementById('extraLockNote');
+        if (lockNote) {
+          lockNote.style.display = 'block';
+          lockNote.innerHTML = '🎉 <b>Tuyệt vời! Bạn đã hoàn thành phần Practice.</b> Đang chuyển sang <b>Extra Practice</b> sau 3 giây...';
+          lockNote.style.color = 'var(--jade-text)';
+          lockNote.style.background = 'var(--correct-bg)';
+          lockNote.style.border = '1px solid var(--jade-soft)';
+          lockNote.style.padding = '10px 14px';
+          lockNote.style.borderRadius = 'var(--radius-sm)';
+        }
+        setTimeout(() => {
+          if (active === 'practice') {
+            active = 'extra';
+            document.querySelectorAll('.level').forEach(x => x.classList.toggle('active', x.dataset.level === 'extra'));
+            render();
+            scrollTo({ top: document.querySelector('.levels').offsetTop - 10, behavior: 'smooth' });
+          }
+        }, 3000);
       }
       checkCompletion();
     }
