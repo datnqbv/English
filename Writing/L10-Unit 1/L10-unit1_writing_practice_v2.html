@@ -224,45 +224,64 @@
     .mobile-pane-controls {
       display: none;
       margin: 0 0 16px;
-      align-items: center;
-      gap: 6px;
       background: var(--white);
-      padding: 8px 10px;
+      padding: 10px 12px;
       border-radius: var(--radius);
       width: 100%;
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: 0 4px 14px rgba(20, 67, 47, 0.10);
-      border: 1px solid var(--cream-2);
+      border: 1px solid var(--paper-line);
+      box-sizing: border-box;
     }
 
     .mpc-title {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 800;
       color: var(--jade-dark);
-      flex: 0 0 auto;
-      margin-right: 4px;
+      margin-bottom: 6px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .mpc-btns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      width: 100%;
     }
 
     .mpc-btn {
       background: var(--cream-2);
       border: 1.5px solid var(--paper-line-2);
       border-radius: 999px;
-      padding: 8px 12px;
+      padding: 7px 6px;
       font-size: 12px;
       font-weight: 700;
       color: var(--ink-2);
-      min-height: 38px;
-      flex: 1 1 0;
+      min-height: 40px;
+      width: 100%;
       white-space: nowrap;
       text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all .15s ease;
+      cursor: pointer;
+    }
+
+    .mpc-btn:hover {
+      background: var(--cream-3);
     }
 
     .mpc-btn.active {
       background: var(--jade-deep);
       color: #fff;
       border-color: var(--jade-deep);
+      box-shadow: 0 2px 8px rgba(42, 129, 103, 0.25);
     }
 
     /* Split Container Layout */
@@ -340,12 +359,12 @@
 
     @media (max-width: 991px) {
       .mobile-pane-controls {
-        display: flex;
+        display: block;
       }
 
       .practice-ref-pane {
         position: sticky;
-        top: 56px;
+        top: 68px;
         z-index: 90;
         max-height: 38vh;
         box-shadow: 0 8px 24px rgba(42, 129, 103, .15);
@@ -1277,6 +1296,21 @@
       .fill-table td {
         padding: 7px 8px;
       }
+
+      .mobile-pane-controls {
+        padding: 8px 8px;
+        margin-bottom: 12px;
+      }
+
+      .mpc-btns {
+        gap: 4px;
+      }
+
+      .mpc-btn {
+        font-size: 11px;
+        padding: 6px 2px;
+        min-height: 38px;
+      }
     }
   </style>
 </head>
@@ -1303,9 +1337,11 @@
 
       <div class="mobile-pane-controls">
         <span class="mpc-title">Chế độ xem:</span>
-        <button class="mpc-btn active" data-mode="split" onclick="setMobileViewMode('split')">⚖️ Chia đôi</button>
-        <button class="mpc-btn" data-mode="ref" onclick="setMobileViewMode('ref')">✉️ Email mẫu</button>
-        <button class="mpc-btn" data-mode="q" onclick="setMobileViewMode('q')">📝 Câu hỏi</button>
+        <div class="mpc-btns">
+          <button class="mpc-btn active" data-mode="split" onclick="setMobileViewMode('split')">⚖️ Chia đôi</button>
+          <button class="mpc-btn" data-mode="ref" onclick="setMobileViewMode('ref')">✉️ Email mẫu</button>
+          <button class="mpc-btn" data-mode="q" onclick="setMobileViewMode('q')">📝 Câu hỏi</button>
+        </div>
       </div>
 
       <div class="practice-split-container mode-split" id="practiceSplit">
