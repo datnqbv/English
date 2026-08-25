@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 — Writing: Phần 2 — Practice</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="application/json" id="athena-context">
+{
+  "title": "Unit 1 - Writing - Part 2: Practice (Identify / Structure / Write) - Informal Email: Family Routines",
+  "subject": "Tiếng Anh",
+  "grade": "10",
+  "objectives": [
+    "Nhận diện đúng 5 phần của Informal Email (Greeting/Opening/Body/Closing/Sign-off)",
+    "Sửa lỗi chia động từ hiện tại đơn cho routine",
+    "Viết đoạn Body theo công thức What + When + Why, phân biệt weekday (hiện tại đơn) và weekend (hiện tại tiếp diễn) ở mức Difficult"
+  ],
+  "structure": [
+    { "id": "phase-0", "title": "Identify" },
+    { "id": "phase-1", "title": "Structure" },
+    { "id": "phase-2", "title": "Write" }
+  ],
+  "athenaGuidance": "File Luyện tập (Part 2) nối tiếp Part 1 Theory, gồm 3 phần cố định: Identify (Structure labelling + Read & Extract, mỗi dạng 1 lần, dùng email của Minh). Structure (2 bài Passage/Letter Arrangement khác nhau thật sự, đúng 5 câu mỗi bài — bài 1 email Lan đơn giản, bài 2 email Nam mix weekday/weekend). Write (Sentence building, 2 bước Guided Writing hỗ trợ giảm dần nhưng đều luyện cả weekday VÀ weekend trong cùng đoạn ngay từ đầu — không tách riêng, Correct the mistake, viết đoạn Body kết hợp weekday hiện tại đơn và weekend hiện tại tiếp diễn). Không có đáp án cần giữ bí mật tuyệt đối vì đây là bài luyện tập tự chấm/tự đối chiếu."
+}
+</script>
+
+  <style>
+    :root {
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+      --jade: #3CA57A;
+      --jade-deep: #2A8167;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+      --accent: #E8A24A;
+      --accent-deep: #CE8A33;
+      --accent-text: #8A551A;
+      --accent-pale: #F7E7CD;
+      --correct: #2A8167;
+      --correct-bg: #DCEAE1;
+      --wrong: #A84B2C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+      --white: #FFFFFF;
+      --radius-lg: 20px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 8px 24px rgba(43, 43, 40, 0.08);
+      --shadow-lg: 0 14px 38px rgba(20, 67, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 60px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+      min-height: 100vh;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform .12s ease, background-color .2s ease, border-color .2s ease;
+      touch-action: manipulation;
+    }
+
+    button:active {
+      transform: scale(.97);
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--accent-deep);
+      outline-offset: 2px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 18px 50px;
+    }
+
+    /* Skip Link & Reading Progress */
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: 12px;
+      z-index: 1000;
+      transform: translateY(-160%);
+      background: var(--jade-dark);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: none;
+    }
+
+    .reading-progress {
+      position: fixed;
+      inset: 0 0 auto;
+      height: 4px;
+      background: transparent;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .reading-progress span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--jade));
+      transition: width .1s linear;
+    }
+
+    /* Compact Sleek Header */
+    .top-header {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 24px 20px 28px;
+      text-align: center;
+      border-bottom: 3px solid var(--jade-dark);
+    }
+
+    .top-header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .top-header h1 {
+      color: #fff;
+      font-size: clamp(22px, 4vw, 30px);
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .top-header .sub {
+      font-size: 14.5px;
+      opacity: .92;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .top-header-tags {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .top-tag {
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    main {
+      margin-top: 18px;
+    }
+
+    /* Mobile View Mode Controls */
+    .mobile-pane-controls {
+      display: none;
+      margin: 0 0 16px;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      padding: 8px 10px;
+      border-radius: var(--radius);
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 14px rgba(20, 67, 47, 0.10);
+      border: 1px solid var(--cream-2);
+    }
+
+    .mpc-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      flex: 0 0 auto;
+      margin-right: 4px;
+    }
+
+    .mpc-btn {
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-2);
+      min-height: 38px;
+      flex: 1 1 0;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .mpc-btn.active {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+    }
+
+    /* Split Container Layout */
+    .practice-split-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .practice-ref-pane {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pref-head {
+      border-bottom: 1.5px solid var(--cream-2);
+      padding-bottom: 10px;
+    }
+
+    .pref-tabs {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .pref-tab {
+      background: var(--cream-2);
+      border: 1.5px solid transparent;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      min-height: 40px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .pref-tab.active {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+    }
+
+    .pref-body {
+      flex: 1;
+      overflow-y: auto;
+      max-height: 520px;
+    }
+
+    .practice-questions-pane {
+      min-width: 0;
+    }
+
+    @media (min-width: 992px) {
+      .practice-split-container {
+        display: grid;
+        grid-template-columns: minmax(320px, 440px) 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .practice-ref-pane {
+        position: sticky;
+        top: 20px;
+        max-height: calc(100vh - 40px);
+      }
+    }
+
+    @media (max-width: 991px) {
+      .mobile-pane-controls {
+        display: flex;
+      }
+
+      .practice-ref-pane {
+        position: sticky;
+        top: 56px;
+        z-index: 90;
+        max-height: 38vh;
+        box-shadow: 0 8px 24px rgba(42, 129, 103, .15);
+        border-bottom: 3px solid var(--jade-deep);
+      }
+
+      .pref-body {
+        max-height: calc(38vh - 60px);
+      }
+
+      .practice-split-container.mode-split .practice-ref-pane {
+        max-height: 38vh;
+      }
+
+      .practice-split-container.mode-split .pref-body {
+        max-height: calc(38vh - 60px);
+      }
+
+      .practice-split-container.mode-ref .practice-ref-pane {
+        max-height: 72vh;
+      }
+
+      .practice-split-container.mode-ref .pref-body {
+        max-height: calc(72vh - 60px);
+      }
+
+      .practice-split-container.mode-ref .practice-questions-pane {
+        display: none;
+      }
+
+      .practice-split-container.mode-q .practice-ref-pane {
+        display: none;
+      }
+    }
+
+    /* MailApp Component */
+    .mailapp {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--paper-line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .mailapp-bar {
+      background: var(--jade-dark);
+      color: #fff;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mailapp-bar-icons {
+      margin-left: auto;
+      display: flex;
+      gap: 10px;
+      opacity: .85;
+      font-size: 13px;
+    }
+
+    .mailapp-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--cream-2);
+    }
+
+    .mailapp-avatar-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--jade-pale);
+      color: var(--jade-dark);
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .mailapp-name {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--jade-dark);
+      line-height: 1.3;
+    }
+
+    .mailapp-to {
+      font-size: 11.5px;
+      color: var(--ink-3);
+    }
+
+    .mailapp-time {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--ink-3);
+      align-self: flex-start;
+    }
+
+    .mailapp-subject {
+      padding: 10px 14px 0;
+      font-weight: 800;
+      font-size: 13.5px;
+      color: var(--jade-dark);
+    }
+
+    .mailapp-body {
+      padding: 12px 14px 16px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    .mailapp-body p {
+      margin: 0 0 9px;
+    }
+
+    .mailapp-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .mailapp-body .sig {
+      color: var(--ink-2);
+      font-style: italic;
+    }
+
+    .mailapp-toolbar {
+      padding: 9px 14px;
+      border-top: 1px solid var(--cream-2);
+      background: var(--cream-2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mailapp-send {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--jade-text);
+      letter-spacing: .03em;
+      margin-right: 2px;
+    }
+
+    .mailapp-icons {
+      display: flex;
+      gap: 8px;
+      font-size: 12px;
+      opacity: .7;
+    }
+
+    /* Level Tabs */
+    .level-tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .level-tab {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 999px;
+      padding: 10px 22px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--ink-2);
+      min-height: 44px;
+    }
+
+    .level-tab.active {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+      box-shadow: var(--shadow);
+    }
+
+    .level-intro {
+      font-size: 13.5px;
+      color: var(--ink-2);
+      margin: 0 0 16px;
+      background: var(--cream-2);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--jade-deep);
+      line-height: 1.55;
+    }
+
+    /* Card & Questions */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 22px 20px;
+      margin-bottom: 18px;
+      border: 1px solid var(--paper-line);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin: 0 0 8px;
+      color: var(--jade-text);
+    }
+
+    .activity-label {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--jade-text);
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      display: inline-block;
+      background: var(--jade-pale);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .desc-en {
+      font-size: 14.5px;
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .desc-vi {
+      font-size: 12.5px;
+      color: var(--ink-3);
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    /* MCQ */
+    .q-card {
+      background: var(--cream-2);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 14px;
+      border: 1px solid var(--paper-line);
+    }
+
+    .q-num {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .q-quote {
+      margin-bottom: 12px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      line-height: 1.55;
+      border-left: 3px solid var(--accent);
+    }
+
+    .qq-en {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .qq-vi {
+      font-size: 12px;
+      color: var(--ink-3);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    .q-opts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .q-opt {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 13.5px;
+      text-align: left;
+      min-height: 44px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .q-opt:hover:not(:disabled) {
+      border-color: var(--jade-deep);
+      background: var(--cream-2);
+    }
+
+    .q-opt:disabled {
+      cursor: default;
+    }
+
+    .q-opt.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--jade-text);
+      font-weight: 700;
+    }
+
+    .q-opt.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+    }
+
+    .q-fb {
+      margin-top: 10px;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 13px;
+      display: none;
+      line-height: 1.55;
+    }
+
+    .q-fb.show {
+      display: block;
+    }
+
+    .q-fb.hint {
+      background: var(--warning-bg);
+      color: var(--accent-text);
+      border: 1px solid var(--accent);
+    }
+
+    .q-fb.ok {
+      background: var(--correct-bg);
+      color: var(--jade-text);
+      border: 1px solid var(--correct);
+    }
+
+    /* Ordering */
+    .ord-wrap {
+      background: var(--cream-2);
+      border-radius: var(--radius);
+      padding: 16px;
+      border: 1px solid var(--paper-line);
+    }
+
+    .ord-bank {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .ord-tile {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      text-align: left;
+      min-height: 44px;
+      color: var(--ink);
+      line-height: 1.45;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .04);
+    }
+
+    .ord-tile:hover:not(.placed) {
+      border-color: var(--jade-deep);
+      transform: translateY(-1px);
+    }
+
+    .ord-tile.placed {
+      opacity: .35;
+      pointer-events: none;
+      transform: none;
+    }
+
+    .ot-en {
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .ot-vi {
+      font-size: 11.5px;
+      color: var(--ink-3);
+      margin-top: 3px;
+      font-style: italic;
+    }
+
+    .ord-answer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+      min-height: 24px;
+    }
+
+    .ord-ans-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      border: 1.5px solid var(--paper-line-2);
+      line-height: 1.45;
+    }
+
+    .ord-ans-row.correct {
+      border-color: var(--correct);
+      background: var(--correct-bg);
+    }
+
+    .ord-ans-row.wrong {
+      border-color: var(--wrong);
+      background: var(--wrong-bg);
+    }
+
+    .ord-num {
+      font-weight: 800;
+      color: #fff;
+      background: var(--jade-deep);
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11.5px;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .ord-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons & Inputs */
+    .an-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 13.5px;
+      min-height: 44px;
+    }
+
+    .an-btn:hover {
+      background: var(--jade-dark);
+    }
+
+    .an-btn.ghost {
+      background: transparent;
+      color: var(--jade-dark);
+      border: 1.5px solid var(--sage);
+    }
+
+    .an-btn.ghost:hover {
+      background: var(--cream-2);
+    }
+
+    .reveal-btn {
+      background: transparent;
+      color: var(--accent-text);
+      border: 1.5px dashed var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 9px 16px;
+      min-height: 42px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .reveal-btn:hover {
+      background: var(--accent-pale);
+    }
+
+    /* Writing submission + AI rubric feedback (engine 02_design Mục 9.6) */
+    .chip-btn {
+      background: var(--jade-dark);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 22px;
+      min-height: 44px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+    }
+
+    .chip-btn:hover {
+      background: var(--jade);
+    }
+
+    .chip-btn:disabled {
+      background: var(--sage);
+      cursor: not-allowed;
+    }
+
+    .write-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .word-count {
+      font-size: 12.5px;
+      color: var(--ink-3);
+      font-weight: 600;
+    }
+
+    .write-feedback {
+      margin-top: 16px;
+      background: var(--white);
+      border: 2px solid var(--jade-soft);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+    }
+
+    .write-feedback.pending .rubric-grid,
+    .write-feedback.pending .write-comment.result {
+      display: none;
+    }
+
+    .write-pending {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--accent-text);
+      display: none;
+    }
+
+    .write-feedback.pending .write-pending {
+      display: block;
+    }
+
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .rubric-item {
+      background: var(--cream-2);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    .rubric-item .rlabel {
+      font-size: 11px;
+      color: var(--ink-2);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .rubric-item .rscore {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin-top: 2px;
+    }
+
+    .rubric-item .rscore small {
+      font-size: 12px;
+      color: var(--ink-3);
+      font-weight: 600;
+    }
+
+    .write-comment {
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      background: var(--cream-2);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+
+    /* Tables & Forms */
+    .fill-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 13.5px;
+    }
+
+    .fill-table th,
+    .fill-table td {
+      border: 1px solid var(--paper-line-2);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .fill-table th {
+      background: var(--cream-2);
+      color: var(--jade-dark);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .fill-table td {
+      color: var(--ink-2);
+    }
+
+    .fill-table input,
+    .fill-table textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 2px dashed var(--sage);
+      background: transparent;
+      font-family: inherit;
+      font-size: 13px;
+      padding: 4px 2px;
+      color: var(--ink);
+      resize: vertical;
+    }
+
+    .fill-table input:focus,
+    .fill-table textarea:focus {
+      outline: none;
+      border-bottom-color: var(--jade-deep);
+      background: rgba(60, 165, 122, .05);
+    }
+
+    .given-cell {
+      font-style: italic;
+      color: var(--jade-text);
+      font-weight: 600;
+    }
+
+    .draft-box {
+      background: var(--cream-2);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin: 10px 0;
+      font-style: italic;
+      font-size: 13.5px;
+      color: var(--ink-2);
+      border-left: 3px solid var(--accent);
+    }
+
+    .write-area {
+      width: 100%;
+      min-height: 120px;
+      border: 2px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 14.5px;
+      font-family: inherit;
+      resize: vertical;
+      margin: 10px 0 8px;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .write-area:focus {
+      outline: none;
+      border-color: var(--jade-deep);
+      box-shadow: 0 0 0 3px rgba(42, 129, 103, .12);
+    }
+
+    /* Self Check */
+    .self-check {
+      margin-top: 16px;
+    }
+
+    .sc-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--jade-text);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .sc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-size: 13.5px;
+      color: var(--ink-2);
+      min-height: 44px;
+    }
+
+    .sc-item.checked {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      font-weight: 600;
+    }
+
+    .sc-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 2px solid var(--sage);
+      flex: 0 0 auto;
+      position: relative;
+      margin-top: 1px;
+    }
+
+    .sc-item.checked .sc-box {
+      background: var(--jade-deep);
+      border-color: var(--jade-deep);
+    }
+
+    .sc-item.checked .sc-box::after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 0px;
+      width: 4px;
+      height: 9px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(40deg);
+    }
+
+    .next-level-wrap {
+      text-align: center;
+      margin: 24px 0 10px;
+    }
+
+    .next-level-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: 12px 28px;
+      font-weight: 800;
+      font-size: 15px;
+      min-height: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .next-level-btn:hover {
+      background: var(--jade-dark);
+    }
+
+    .finale {
+      text-align: center;
+      margin: 24px 0;
+      padding: 32px 20px;
+      background: var(--jade-deep);
+      border-radius: var(--radius-lg);
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .finale h3 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .finale p {
+      color: #fff;
+      opacity: .92;
+      font-size: 14.5px;
+    }
+
+    /* Popup Modal */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 600;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      background: rgba(20, 20, 18, .45);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .popup-overlay.open {
+      display: flex;
+    }
+
+    .popup-sheet {
+      background: #fff;
+      border-radius: 22px 22px 0 0;
+      padding: 24px 22px 22px;
+      width: 100%;
+      max-width: 520px;
+      max-height: 76vh;
+      overflow-y: auto;
+      box-shadow: 0 -10px 35px rgba(0, 0, 0, .2);
+      animation: sheetUp .25s ease;
+      position: relative;
+    }
+
+    @keyframes sheetUp {
+      from {
+        transform: translateY(24px);
+        opacity: 0;
+      }
+
+      to {
+        transform: none;
+        opacity: 1;
+      }
+    }
+
+    @media (min-width: 540px) {
+      .popup-overlay {
+        align-items: center;
+      }
+
+      .popup-sheet {
+        border-radius: 22px;
+      }
+    }
+
+    .popup-sheet p {
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.65;
+    }
+
+    .popup-close {
+      display: block;
+      margin: 18px auto 0;
+      background: var(--jade-deep);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 24px;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 44px;
+    }
+
+    /* Celebration & Back to top */
+    .celebrate-banner {
+      position: fixed;
+      left: 50%;
+      top: 18px;
+      transform: translateX(-50%) translateY(-20px);
+      background: var(--jade-dark);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(20, 67, 47, .35);
+      z-index: 700;
+      opacity: 0;
+      transition: opacity .3s ease, transform .3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .celebrate-banner.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .confetti-piece {
+      position: fixed;
+      border-radius: 2px;
+      z-index: 690;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 90;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--jade-dark);
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 8px 24px rgba(20, 67, 47, .28);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: .2s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 18px 50px;
+      color: var(--ink-3);
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      .top-header {
+        padding: 20px 14px 22px;
+      }
+
+      .card {
+        padding: 18px 14px;
+        border-radius: var(--radius);
+      }
+
+      .fill-table {
+        font-size: 12px;
+      }
+
+      .fill-table th,
+      .fill-table td {
+        padding: 7px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#practiceSplit">Bỏ qua đến phần luyện tập</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
+
+  <header class="top-header">
+    <div class="top-header-inner">
+      <h1>Writing — Phần 2: Practice</h1>
+      <div class="sub">Unit 1 · Family Life | Informal Email: Family Routines</div>
+      <div class="top-header-tags">
+        <span class="top-tag">✉️ Email thân mật</span>
+        <span class="top-tag">👨‍👩‍👧 Family Routines</span>
+        <span class="top-tag">📊 3 Parts: Identify · Structure · Write</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="mobile-pane-controls">
+        <span class="mpc-title">Chế độ xem:</span>
+        <button class="mpc-btn active" data-mode="split" onclick="setMobileViewMode('split')">⚖️ Chia đôi</button>
+        <button class="mpc-btn" data-mode="ref" onclick="setMobileViewMode('ref')">✉️ Email mẫu</button>
+        <button class="mpc-btn" data-mode="q" onclick="setMobileViewMode('q')">📝 Câu hỏi</button>
+      </div>
+
+      <div class="practice-split-container mode-split" id="practiceSplit">
+
+        <!-- LEFT / TOP: Reference email pane -->
+        <div class="practice-ref-pane" id="practiceRefPane">
+          <div class="pref-head">
+            <div class="pref-tabs" id="prefTabs"></div>
+          </div>
+          <div class="pref-body" id="prefBody"></div>
+        </div>
+
+        <!-- RIGHT / BOTTOM: Questions pane -->
+        <div class="practice-questions-pane">
+          <div class="level-tabs" id="levelTabs"></div>
+          <div id="questionsHost">
+
+            <!-- ============ NOTICE ============ -->
+            <div class="q-level-section" id="q_phase-0" style="display:block;">
+              <p class="level-intro">
+                <b>Identify:</b> Apply what you just learned in Part 1 (the 5-part
+                framework + signal words) before moving on to harder parts.
+              </p>
+
+              <div class="card">
+                <span class="activity-label">Activity 1 · Structure labelling</span>
+                <div class="desc-en">Read Minh's email on the left. Which part of the email does each sentence/phrase
+                  below belong to? Choose the best answer.</div>
+                <div id="p0SL"></div>
+              </div>
+
+              <div class="card">
+                <span class="activity-label">Activity 2 · Read &amp; Extract</span>
+                <div class="desc-en">Read Minh's email again. Based on the signal words (First/Second, always/every...),
+                  complete the table below. Routine 1 has already been filled in as an example.</div>
+                <table class="fill-table">
+                  <tr>
+                    <th>Routine</th>
+                    <th>When / How often</th>
+                    <th>Why it matters</th>
+                  </tr>
+                  <tr>
+                    <td class="given-cell">1. watch a movie together</td>
+                    <td class="given-cell">every Friday night</td>
+                    <td class="given-cell">helps relax after a long week</td>
+                  </tr>
+                  <tr>
+                    <td>2. walk the dog</td>
+                    <td><input type="text" placeholder="When?"></td>
+                    <td><input type="text" placeholder="Why?"></td>
+                  </tr>
+                </table>
+                <button class="reveal-btn"
+                  onclick="openPopup('Đáp án gợi ý — Routine 2', '&lt;p&gt;&lt;b&gt;When:&lt;/b&gt; every morning (before breakfast).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; it\u0027s a nice way for us to enjoy some fresh air together.&lt;/p&gt;')">Xem
+                  đáp án gợi ý</button>
+              </div>
+
+              <div class="next-level-wrap">
+                <button class="next-level-btn" onclick="goToLevel('phase-1')">Next: Structure 📨 →</button>
+              </div>
+            </div>
+
+            <!-- ============ STRUCTURE ============ -->
+            <div class="q-level-section" id="q_phase-1" style="display:none;">
+              <p class="level-intro">
+                <b>Structure:</b> Two mixed-up emails to rebuild — the second one is trickier and mixes weekday
+                and weekend routines, just like the email you'll write yourself.
+              </p>
+
+              <div class="card">
+                <span class="activity-label">Activity 3 · Passage/Letter Arrangement (1)</span>
+                <div class="desc-en">The parts below belong to a DIFFERENT email (from Lan), but they are mixed up.
+                  Tap them in the correct order.</div>
+                <div id="p1OrdA"></div>
+              </div>
+
+              <div class="card">
+                <span class="activity-label">Activity 4 · Passage/Letter Arrangement (2)</span>
+                <div class="desc-en">A trickier one this time (from Nam) — the Body mixes a weekday habit AND a
+                  weekend trend in the same sentence. Read carefully before you tap.</div>
+                <div id="p1OrdB"></div>
+              </div>
+
+              <div class="next-level-wrap">
+                <button class="next-level-btn" onclick="goToLevel('phase-2')">Next: Write ✍️ →</button>
+              </div>
+            </div>
+
+            <!-- ============ WRITE (5 STEPS) ============ -->
+            <div class="q-level-section" id="q_phase-2" style="display:none;">
+              <p class="level-intro">
+                <b>Write:</b> 5 steps with decreasing support — less guidance as you go. The last step is a
+                COMPLETE email: Greeting + Opening + Body + Closing + Sign-off, not just the Body.
+              </p>
+
+              <div class="card">
+                <span class="activity-label">Activity 5 · Sentence building</span>
+                <div class="desc-en">Choose the sentence that puts the given words in the correct order and form.
+                </div>
+                <div id="p2SB"></div>
+              </div>
+
+              <div class="card">
+                <span class="activity-label">Activity 6 · Guided Writing (hỗ trợ đầy đủ)</span>
+                <div class="desc-en">Using the table below, write a short paragraph with BOTH a weekday routine
+                  (simple present) AND a weekend trend (present continuous). Sentence starters are given.</div>
+                <table class="fill-table">
+                  <tr>
+                    <th>Routine</th>
+                    <th>When</th>
+                    <th>Tense</th>
+                  </tr>
+                  <tr>
+                    <td>have breakfast together</td>
+                    <td>every day, at 6:45</td>
+                    <td>simple present (weekday)</td>
+                  </tr>
+                  <tr>
+                    <td>paint the fence</td>
+                    <td>this month</td>
+                    <td>present continuous (weekend)</td>
+                  </tr>
+                </table>
+                <div class="draft-box">Starters: "During the week, ... But these days, at the weekend, ..."</div>
+                <textarea class="write-area" placeholder="Viết đoạn văn ở đây..."></textarea>
+                <button class="reveal-btn"
+                  onclick="openPopup('Model answer', '&lt;p&gt;&lt;em&gt;During the week, we always have breakfast together at 6:45. But this month, at the weekend, we\'re painting the fence instead of relaxing like we usually do.&lt;/em&gt;&lt;/p&gt;')">Xem
+                  model answer</button>
+                <div class="self-check">
+                  <div class="sc-title">📝 Self-check</div>
+                  <div id="p2SC1"></div>
+                </div>
+              </div>
+
+              <div class="card">
+                <span class="activity-label">Activity 7 · Guided Writing (hỗ trợ giảm)</span>
+                <div class="desc-en">Same task, only short cues this time (no table, no sentence starters). Write a
+                  short paragraph with BOTH a weekday routine AND a weekend trend, plus a connector.</div>
+                <div class="draft-box">
+                  🚶 walk to school together — every morning (weekday, always the same)<br>
+                  🍳 trying new recipes — every Saturday, instead of the usual routine (weekend)
+                </div>
+                <textarea class="write-area" placeholder="Viết đoạn văn ở đây..."></textarea>
+                <button class="reveal-btn"
+                  onclick="openPopup('Model answer', '&lt;p&gt;&lt;em&gt;We always walk to school together every morning. But these days, instead of resting at the weekend, we\'re trying new recipes every Saturday.&lt;/em&gt;&lt;/p&gt;')">Xem
+                  model answer</button>
+                <div class="self-check">
+                  <div class="sc-title">📝 Self-check</div>
+                  <div id="p2SC2"></div>
+                </div>
+              </div>
+
+              <div class="card">
+                <span class="activity-label">Activity 8 · Correct the mistake</span>
+                <div class="desc-en">The email below (from Lan — switch to the "⚠️ Email có lỗi" tab on the left to
+                  read it) has 4 mistakes mixing weekday and weekend tenses. Choose the correct fix for each mistake.
+                </div>
+                <div id="p2Err"></div>
+              </div>
+
+              <div class="card">
+                <span class="activity-label">Activity 9 · Write email/letter (Body paragraph)</span>
+                <div class="desc-en">Now write your OWN Body paragraph comparing your family's weekday and weekend
+                  routines. Requirements: at least 2 weekday routines (simple present) AND 2 weekend trends
+                  (present continuous), plus connector "but" to contrast them.</div>
+                <textarea class="write-area" id="writeArea" style="min-height:160px;"
+                  placeholder="Viết đoạn Body của bạn ở đây..." oninput="trackWriting()"></textarea>
+                <div class="self-check">
+                  <div class="sc-title">📝 Self-check (tự rà trước khi nộp)</div>
+                  <div id="p2SC3"></div>
+                </div>
+                <div class="write-footer">
+                  <div class="word-count" id="wordCount">0 từ / mục tiêu 40-70 từ</div>
+                  <button class="chip-btn" id="btnSubmitWriting">✓ Nộp bài</button>
+                </div>
+                <div class="write-feedback" id="writeFeedback" style="display:none;">
+                  <div class="write-pending" id="writePending">⏳ Đang gửi cho Athena...</div>
+                  <div class="rubric-grid" id="rubricGrid"></div>
+                  <div class="write-comment" id="writeComment"></div>
+                </div>
+                <button class="reveal-btn"
+                  onclick="openPopup('Model answer', '&lt;p&gt;&lt;em&gt;On weekdays, our routines stay pretty much the same. We always read together before bed, and every morning, we always help each other with a few chores before rushing out the door.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;But our weekends keep changing. These days, we\u0027re trying a new sport together every Saturday, and at the moment, we\u0027re also redecorating the living room bit by bit. Our weekdays feel so predictable, but our weekends never look the same twice!&lt;/em&gt;&lt;/p&gt;')">Xem
+                  model answer</button>
+              </div>
+
+              <div class="finale">
+                <h3>🎉 Hoàn thành xuất sắc Part 2 Practice!</h3>
+                <p>Bạn đã hoàn thành trọn vẹn Identify, Structure và Write. Hãy tiếp tục phát huy nhé!</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>Unit 1 · Writing — Informal Email: Family Routines. Aiducation Design System v1.6.</footer>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+    <div class="celebrate-banner" id="celebrateBanner">🎉 Tuyệt vời! Bạn đã làm rất tốt!</div>
+
+    <div class="popup-overlay" id="popupOverlay" onclick="if(event.target===this)closePopup()">
+      <div class="popup-sheet">
+        <h3 id="popupTitle" style="font-size:17px;margin-bottom:12px;color:var(--jade-dark);"></h3>
+        <div id="popupContent"></div>
+        <button class="popup-close" onclick="closePopup()">Đóng</button>
+      </div>
+    </div>
+
+    <script>
+      function LMS() { return window.AiducationLMS || { ready: function () { }, progress: function () { }, event: function () { }, state: function () { }, complete: function () { }, resize: function () { } }; }
+      function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+      function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+      /* ---------- Popup Modal ---------- */
+      function openPopup(title, html) {
+        document.getElementById('popupTitle').textContent = title;
+        document.getElementById('popupContent').innerHTML = html;
+        document.getElementById('popupOverlay').classList.add('open');
+      }
+      function closePopup() { document.getElementById('popupOverlay').classList.remove('open'); }
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+      /* ---------- Mobile View Mode Switcher ---------- */
+      function setMobileViewMode(mode) {
+        const container = document.getElementById('practiceSplit');
+        container.classList.remove('mode-split', 'mode-ref', 'mode-q');
+        container.classList.add('mode-' + mode);
+        document.querySelectorAll('.mpc-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+      }
+
+      /* ---------- Celebration & Banner ---------- */
+      function showCelebrateBanner(text) {
+        const b = document.getElementById('celebrateBanner');
+        b.textContent = text || '🎉 Tuyệt vời! Bạn đã hoàn thành nhiệm vụ!';
+        b.classList.add('show');
+        createConfetti();
+        setTimeout(() => b.classList.remove('show'), 3200);
+      }
+
+      function createConfetti() {
+        const colors = ['#3CA57A', '#E8A24A', '#2A8167', '#A8C9B8', '#C58A2E'];
+        for (let i = 0; i < 30; i++) {
+          const p = document.createElement('div');
+          p.className = 'confetti-piece';
+          p.style.left = (Math.random() * 100) + 'vw';
+          p.style.top = '-10px';
+          p.style.width = (Math.random() * 8 + 6) + 'px';
+          p.style.height = (Math.random() * 8 + 6) + 'px';
+          p.style.background = colors[Math.floor(Math.random() * colors.length)];
+          p.style.opacity = Math.random() + 0.5;
+          document.body.appendChild(p);
+
+          const fallDur = Math.random() * 2 + 1.5;
+          p.animate([
+            { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+            { transform: `translateY(100vh) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+          ], { duration: fallDur * 1000, easing: 'cubic-bezier(.25,.8,.25,1)' }).onfinish = () => p.remove();
+        }
+      }
+
+      /* ---------- MailApp Generator ---------- */
+      function mailAppHTML(mail) {
+        const senderName = mail.sig.replace(/\\n/g, ' ').split(',')[1]?.trim() || mail.sig.split('\\n')[1]?.trim() || 'Minh';
+        const initial = senderName.charAt(0).toUpperCase();
+
+        return `<div class="mailapp">
+    <div class="mailapp-bar">
+      <span>✉️ Inbox</span>
+      <span class="mailapp-bar-icons" aria-hidden="true">⭐ 🗑️ ↩️</span>
+    </div>
+    <div class="mailapp-meta">
+      <div class="mailapp-avatar-circle">${initial}</div>
+      <div>
+        <div class="mailapp-name">${esc(senderName)}</div>
+        <div class="mailapp-to">To: ${esc(mail.to)}</div>
+      </div>
+      <div class="mailapp-time">9:30 AM</div>
+    </div>
+    <div class="mailapp-subject">Subject: ${esc(mail.subject)}</div>
+    <div class="mailapp-body">
+      ${mail.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}
+      <p class="sig">${esc(mail.sig).replace(/\\n/g, '<br>')}</p>
+    </div>
+    <div class="mailapp-toolbar">
+      <span class="mailapp-send">SEND</span>
+      <span class="mailapp-icons" aria-hidden="true">📎 🙂 🔗 🖼️</span>
+    </div>
+  </div>`;
+      }
+
+      /* ---------- Phase Data ---------- */
+      const levelData = {
+        'phase-0': {
+          tabLabel: 'Identify',
+          refEmails: [
+            {
+              id: 'clean', label: '✉️ Email (Minh)', mail: {
+                to: 'lan@webmail.com', subject: "My family's habits",
+                paragraphs: [
+                  'Hi Lan,',
+                  "Thanks for your email! You asked about my family's routines, so here are two of them.",
+                  'First, we always watch a movie together every Friday night. It helps us relax after a long week.',
+                  "Second, my mum and I walk our dog every morning before breakfast. It's a nice way for us to enjoy some fresh air together.",
+                  'Do you have similar routines? Write back soon!'
+                ], sig: 'Best,\\nMinh'
+              }
+            }
+          ]
+        },
+        'phase-1': {
+          tabLabel: 'Structure',
+          refEmails: [
+            {
+              id: 'clean', label: '✉️ Email (Minh)', mail: {
+                to: 'lan@webmail.com', subject: "My family's habits",
+                paragraphs: [
+                  'Hi Lan,',
+                  "Thanks for your email! You asked about my family's routines, so here are two of them.",
+                  'First, we always watch a movie together every Friday night. It helps us relax after a long week.',
+                  "Second, my mum and I walk our dog every morning before breakfast. It's a nice way for us to enjoy some fresh air together.",
+                  'Do you have similar routines? Write back soon!'
+                ], sig: 'Best,\\nMinh'
+              }
+            }
+          ]
+        },
+        'phase-2': {
+          tabLabel: 'Write',
+          refEmails: [
+            {
+              id: 'clean', label: '✉️ Email mẫu (Nam)', mail: {
+                to: 'lan@webmail.com', subject: 'Our routines: weekdays and weekends!',
+                paragraphs: [
+                  'Hi Lan,',
+                  "Sorry for the late reply! Here's what my family's routines look like now.",
+                  "On weekdays, we usually keep things simple. First, we always have a quick breakfast together at 6:30 because everyone needs to leave for school or work. Second, we always call each other in the evening if we're not home for dinner.",
+                  "These days, our weekends look different. At the moment, we're trying a new recipe every Saturday because my sister just started a cooking class. We're also spending more time in the garden on Sunday afternoons these days.",
+                  'So our weekday habits stay the same, but our weekend activities keep changing! What about your family?'
+                ], sig: 'Take care,\\nNam'
+              }
+            },
+            {
+              id: 'buggy', label: '⚠️ Email có lỗi (Lan)', mail: {
+                to: 'minh@webmail.com', subject: "What we usually do vs what's happening now",
+                paragraphs: [
+                  'Hi Minh,',
+                  "Sorry for not writing sooner! Let me tell you what my family's routines look like these days.",
+                  'On weekdays, my family is always having a fast breakfast before school.',
+                  'Every evening, we usually watches the news together after dinner.',
+                  'These days, on weekends, we cook a new recipe every Saturday because my sister wants to practise her cooking skills.',
+                  'At the moment, my mum plants flowers in the garden every Sunday afternoon.',
+                  'Write soon!'
+                ], sig: 'Best,\\nLan'
+              }
+            }
+          ]
+        }
+      };
+
+      let currentRefEmailIdx = 0;
+      function renderRefPane(levelId) {
+        const lvl = levelData[levelId];
+        currentRefEmailIdx = 0;
+        const tabsEl = document.getElementById('prefTabs');
+        if (lvl.refEmails.length > 1) {
+          tabsEl.style.display = 'flex';
+          tabsEl.innerHTML = lvl.refEmails.map((e, i) =>
+            `<button class="pref-tab${i === 0 ? ' active' : ''}" onclick="switchRefEmail(${i})">${esc(e.label)}</button>`
+          ).join('');
+        } else {
+          tabsEl.style.display = 'none';
+          tabsEl.innerHTML = '';
+        }
+        document.getElementById('prefBody').innerHTML = mailAppHTML(lvl.refEmails[0].mail);
+        window._currentLevelId = levelId;
+      }
+      function switchRefEmail(idx) {
+        const lvl = levelData[window._currentLevelId];
+        currentRefEmailIdx = idx;
+        document.querySelectorAll('.pref-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+        document.getElementById('prefBody').innerHTML = mailAppHTML(lvl.refEmails[idx].mail);
+      }
+
+      /* ---------- Level Tabs ---------- */
+      function renderLevelTabs() {
+        document.getElementById('levelTabs').innerHTML = Object.keys(levelData).map(id =>
+          `<button class="level-tab${id === 'phase-0' ? ' active' : ''}" data-id="${id}" onclick="goToLevel('${id}')">${levelData[id].tabLabel}</button>`
+        ).join('');
+      }
+
+      function goToLevel(id) {
+        window._currentLevelId = id;
+        document.querySelectorAll('.level-tab').forEach(t => t.classList.toggle('active', t.dataset.id === id));
+        document.querySelectorAll('.q-level-section').forEach(s => s.style.display = (s.id === 'q_' + id ? 'block' : 'none'));
+        renderRefPane(id);
+        document.getElementById('practiceRefPane').scrollTop = 0;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        LMS().event('level_change', { level: id });
+      }
+      renderLevelTabs();
+
+      /* ---------- MCQ Engine ---------- */
+      const mcqState = {};
+      function renderMCQGroup(containerId, questions, genericHint) {
+        const host = document.getElementById(containerId);
+        host.innerHTML = questions.map((q, qi) => {
+          const qid = containerId + '_' + qi;
+          return `<div class="q-card">
+      <div class="q-num">Question ${qi + 1}</div>
+      <div class="q-quote"><div class="qq-en">"${esc(q.en)}"</div></div>
+      <div class="q-opts" id="opts_${qid}"></div>
+      <div class="q-fb" id="fb_${qid}"></div>
+    </div>`;
+        }).join('');
+        questions.forEach((q, qi) => {
+          const qid = containerId + '_' + qi;
+          mcqState[qid] = { tries: 0, done: false, data: q, hint: q.hint || genericHint };
+          renderMCQOptions(qid);
+        });
+      }
+
+      function renderMCQOptions(qid) {
+        const state = mcqState[qid];
+        state.shuffledOpts = shuffle(state.data.options);
+        const wrap = document.getElementById('opts_' + qid);
+        wrap.innerHTML = state.shuffledOpts.map((optText, i) =>
+          `<button class="q-opt" onclick="answerMCQ('${qid}', this, ${i})">${esc(optText)}</button>`
+        ).join('');
+      }
+
+      function answerMCQ(qid, btn, idx) {
+        const state = mcqState[qid];
+        if (state.done) return;
+        const chosenText = state.shuffledOpts[idx];
+        state.tries++;
+        const isCorrect = chosenText === state.data.correct;
+        const fb = document.getElementById('fb_' + qid);
+        const allBtns = Array.from(document.querySelectorAll(`#opts_${qid} .q-opt`));
+
+        if (isCorrect) {
+          state.done = true;
+          btn.classList.add('correct');
+          allBtns.forEach(b => b.disabled = true);
+          fb.className = 'q-fb ok show';
+          fb.innerHTML = `<b>✅ Chính xác!</b> ${esc(state.data.explain)}`;
+          LMS().event('mcq_correct', { qid });
+        } else {
+          btn.classList.add('wrong');
+          if (state.tries < 2) {
+            fb.className = 'q-fb hint show';
+            fb.innerHTML = `💡 ${esc(state.hint)}`;
+            allBtns.forEach(b => { if (b !== btn) b.disabled = false; });
+            btn.disabled = true;
+          } else {
+            state.done = true;
+            allBtns.forEach((b, i) => {
+              b.disabled = true;
+              if (state.shuffledOpts[i] === state.data.correct) b.classList.add('correct');
+            });
+            fb.className = 'q-fb ok show';
+            fb.innerHTML = `<b>Đáp án đúng: ${esc(state.data.correct)}</b><br>${esc(state.data.explain)}`;
+          }
+          LMS().event('mcq_wrong', { qid, tries: state.tries });
+        }
+      }
+
+      const STRUCT_HINT_4 = 'Đọc kỹ câu này: nó là lời chào đơn giản, một câu cảm ơn/hỏi thăm dẫn nhập, một routine có sequence word, hay một câu hỏi mời hồi âm?';
+      const GRAMMAR_HINT = 'Xem lại chủ ngữ là số ít hay số nhiều, và routine này diễn ra thường xuyên (hiện tại đơn) hay là xu hướng gần đây (hiện tại tiếp diễn).';
+      const SENT_HINT = 'Xem lại: chủ ngữ số ít hay số nhiều? Đây là thói quen (hiện tại đơn) hay xu hướng gần đây (hiện tại tiếp diễn)? Trạng từ tần suất đứng ở đâu trong câu?';
+
+      /* ---------- Identify: Structure labelling ---------- */
+      renderMCQGroup('p0SL', [
+        {
+          en: 'Hi Lan,', options: ['Greeting', 'Opening', 'Body', 'Closing'], correct: 'Greeting',
+          explain: 'Đây chỉ là lời chào tên người nhận, chưa có nội dung gì khác → Greeting.'
+        },
+        {
+          en: "Thanks for your email! You asked about my family's routines, so here are two of them.",
+          options: ['Greeting', 'Opening', 'Body', 'Closing'], correct: 'Opening',
+          explain: 'Câu này cảm ơn + nhắc lại lý do viết + dẫn cầu nối sang Body ("here are two of them") → Opening.'
+        },
+        {
+          en: 'First, we always watch a movie together every Friday night. It helps us relax after a long week.',
+          options: ['Greeting', 'Opening', 'Body', 'Closing'], correct: 'Body',
+          explain: 'Có sequence word "First" và mô tả đủ What + When + Why cho 1 routine → Body.'
+        },
+        {
+          en: 'Do you have similar routines? Write back soon!',
+          options: ['Greeting', 'Opening', 'Body', 'Closing'], correct: 'Closing',
+          explain: 'Câu hỏi ngược + lời mời hồi âm → Closing.'
+        }
+      ], STRUCT_HINT_4);
+
+      /* ---------- Ordering Engine ---------- */
+      const ordState = {};
+      const explainCache = {};
+      function setOrderingExplain(containerId, html) { explainCache[containerId] = html; }
+
+      function renderOrdering(containerId, items, correctOrder) {
+        ordState[containerId] = { items, correctOrder, placed: [] };
+        const host = document.getElementById(containerId);
+        host.innerHTML = `
+    <div class="ord-wrap">
+      <div class="ord-bank" id="bank_${containerId}"></div>
+      <div class="ord-answer" id="ans_${containerId}"></div>
+      <div class="ord-controls">
+        <button class="an-btn" onclick="checkOrdering('${containerId}')">Kiểm tra thứ tự</button>
+        <button class="an-btn ghost" onclick="resetOrdering('${containerId}')">↺ Làm lại</button>
+      </div>
+      <div class="q-fb" id="fb_${containerId}"></div>
+    </div>`;
+        buildOrderingBank(containerId);
+      }
+
+      function tileHTML(item) {
+        return `<div class="ot-en">${esc(item.en)}</div>`;
+      }
+
+      function buildOrderingBank(containerId) {
+        const st = ordState[containerId];
+        const bank = document.getElementById('bank_' + containerId);
+        const shuffled = shuffle(st.items);
+        bank.innerHTML = shuffled.map(it =>
+          `<button class="ord-tile" data-id="${it.id}" onclick="placeTile('${containerId}','${it.id}', this)">
+       ${tileHTML(it)}
+     </button>`
+        ).join('');
+      }
+
+      function placeTile(containerId, itemId, btn) {
+        const st = ordState[containerId];
+        if (st.placed.includes(itemId)) return;
+        st.placed.push(itemId);
+        btn.classList.add('placed');
+        const item = st.items.find(i => i.id === itemId);
+        const ansWrap = document.getElementById('ans_' + containerId);
+        const row = document.createElement('div');
+        row.className = 'ord-ans-row';
+        row.dataset.id = itemId;
+        row.innerHTML = `<span class="ord-num">${st.placed.length}</span><span>${tileHTML(item)}</span>`;
+        ansWrap.appendChild(row);
+      }
+
+      function checkOrdering(containerId) {
+        const st = ordState[containerId];
+        if (st.placed.length !== st.items.length) {
+          const fb = document.getElementById('fb_' + containerId);
+          fb.className = 'q-fb hint show';
+          fb.textContent = 'Bạn chạm đủ tất cả các mảnh trước khi kiểm tra nhé.';
+          return;
+        }
+        const rows = document.querySelectorAll(`#ans_${containerId} .ord-ans-row`);
+        let allCorrect = true;
+        rows.forEach((row, i) => {
+          const ok = st.placed[i] === st.correctOrder[i];
+          row.classList.remove('correct', 'wrong');
+          row.classList.add(ok ? 'correct' : 'wrong');
+          if (!ok) allCorrect = false;
+        });
+        const fb = document.getElementById('fb_' + containerId);
+        fb.className = 'q-fb ' + (allCorrect ? 'ok' : 'hint') + ' show';
+        fb.innerHTML = (allCorrect ? '<b>✅ Chính xác!</b> ' : '<b>Chưa đúng hết — xem lại các dòng đỏ.</b> ') + explainCache[containerId];
+        if (allCorrect) showCelebrateBanner('🎉 Chính xác! Bạn đã sắp xếp đúng thứ tự!');
+        LMS().event('ordering_check', { containerId, allCorrect });
+      }
+
+      function resetOrdering(containerId) {
+        const st = ordState[containerId];
+        st.placed = [];
+        document.getElementById('ans_' + containerId).innerHTML = '';
+        document.getElementById('fb_' + containerId).className = 'q-fb';
+        buildOrderingBank(containerId);
+      }
+
+      /* ---------- Structure: Passage/Letter Arrangement — bài 1 (đơn giản, Lan) ---------- */
+      renderOrdering('p1OrdA', [
+        { id: 'A', en: 'What does your family usually get up to?' },
+        {
+          id: 'B', en: "Every Saturday morning, we walk to the local market together, and in the afternoon, my mum and I usually read at the same café for an hour."
+        },
+        { id: 'C', en: 'Hi Nam,' },
+        { id: 'D', en: 'Talk soon, Lan' },
+        {
+          id: 'E', en: "It's been a while! Thought I'd tell you about a couple of things we do as a family."
+        }
+      ], ['C', 'E', 'B', 'A', 'D']);
+      setOrderingExplain('p1OrdA', esc('C = Greeting → E = Opening (mở đầu tự nhiên bằng "It\'s been a while") → B = Body (1 câu duy nhất, nối bằng "and") → A = Closing (câu hỏi ngược) → D = Sign-off. Đúng 5 phần.'));
+
+      /* ---------- Structure: Passage/Letter Arrangement — bài 2 (khó hơn, Nam, mix weekday/weekend) ---------- */
+      renderOrdering('p1OrdB', [
+        { id: 'A', en: 'How about your family — any changes recently?' },
+        {
+          id: 'B', en: "During the week, we always eat dinner together at half past six, but these days, at the weekend, we're spending most of our time fixing up the garden instead."
+        },
+        { id: 'C', en: 'Hi Minh,' },
+        { id: 'D', en: 'Speak soon, Nam' },
+        {
+          id: 'E', en: "Sorry I haven't written in a while! Here's a quick update on my family's routines."
+        }
+      ], ['C', 'E', 'B', 'A', 'D']);
+      setOrderingExplain('p1OrdB', esc('C = Greeting → E = Opening (xin lỗi vì lâu chưa viết) → B = Body (1 câu DÀI, mix weekday "always eat...at half past six" VÀ weekend "these days...we are spending", nối bằng "but") → A = Closing → D = Sign-off. Khó hơn bài 1 vì Body chứa CẢ 2 thì trong 1 câu, cue "these days, at the weekend" tinh tế hơn.'));
+
+      /* ---------- Write, bước 0: Sentence building ---------- */
+      renderMCQGroup('p2SB', [
+        {
+          en: 'we / always / walk / the dog / every morning',
+          options: [
+            'We always walk the dog every morning.',
+            'We always walking the dog every morning.',
+            'Always we walk the dog every morning.',
+            'We always walks the dog every morning.'
+          ],
+          correct: 'We always walk the dog every morning.',
+          explain: 'Chủ ngữ "we" số nhiều nên động từ hiện tại đơn KHÔNG thêm "s"; trạng từ tần suất "always" đứng SAU chủ ngữ, TRƯỚC động từ thường.'
+        },
+        {
+          en: 'these days / we / try / a new recipe / every Saturday',
+          options: [
+            'These days, we are trying a new recipe every Saturday.',
+            'These days, we try a new recipe every Saturday.',
+            'These days, we are try a new recipe every Saturday.',
+            'We these days are trying a new recipe every Saturday.'
+          ],
+          correct: 'These days, we are trying a new recipe every Saturday.',
+          explain: 'Tín hiệu "These days" báo hiệu xu hướng gần đây → dùng hiện tại tiếp diễn "are trying", không dùng hiện tại đơn.'
+        },
+        {
+          en: 'my sister / usually / do / homework / after dinner',
+          options: [
+            'My sister usually does homework after dinner.',
+            'My sister usually do homework after dinner.',
+            'My sister does usually homework after dinner.',
+            'Usually does my sister homework after dinner.'
+          ],
+          correct: 'My sister usually does homework after dinner.',
+          explain: 'Chủ ngữ "my sister" số ít nên động từ hiện tại đơn PHẢI thêm "es" (does); trạng từ tần suất đứng trước động từ thường, sau chủ ngữ.'
+        }
+      ], SENT_HINT);
+
+      /* ---------- Write, bước 3: Correct the mistake ---------- */
+      renderMCQGroup('p2Err', [
+        {
+          en: 'On weekdays, my family is always having a fast breakfast before school.',
+          options: ['is always having → always has', 'is always having → always have', 'is always having → is having always', 'No change needed'],
+          correct: 'is always having → always has',
+          explain: 'Đây là thói quen cố định vào weekday (không có tín hiệu "these days"/"at the moment") → dùng hiện tại đơn "always has".'
+        },
+        {
+          en: 'Every evening, we usually watches the news together after dinner.',
+          options: ['usually watches → usually watch', 'usually watches → usually watching', 'usually watches → is usually watching', 'No change needed'],
+          correct: 'usually watches → usually watch',
+          explain: 'Chủ ngữ "we" số nhiều, hiện tại đơn không thêm "s" → "usually watch".'
+        },
+        {
+          en: 'These days, on weekends, we cook a new recipe every Saturday because my sister wants to practise her cooking skills.',
+          options: ['cook → are cooking', 'cook → cooked', 'cook → will cook', 'No change needed'],
+          correct: 'cook → are cooking',
+          explain: 'Tín hiệu "These days" cho thấy đây là xu hướng GẦN ĐÂY, tạm thời (weekend) → dùng hiện tại tiếp diễn "are cooking".'
+        },
+        {
+          en: 'At the moment, my mum plants flowers in the garden every Sunday afternoon.',
+          options: ['plants → is planting', 'plants → planted', 'plants → plant', 'No change needed'],
+          correct: 'plants → is planting',
+          explain: 'Tín hiệu "At the moment" + đây là hoạt động weekend gần đây → dùng hiện tại tiếp diễn "is planting".'
+        }
+      ], GRAMMAR_HINT);
+
+      /* ---------- Self Check ---------- */
+      function renderSelfCheck(containerId, items) {
+        document.getElementById(containerId).innerHTML = items.map(txt =>
+          `<div class="sc-item" onclick="toggleSelfCheck(this)"><span class="sc-box"></span><span>${esc(txt)}</span></div>`
+        ).join('');
+      }
+
+      function toggleSelfCheck(el) {
+        el.classList.toggle('checked');
+        const parent = el.closest('.self-check');
+        const total = parent.querySelectorAll('.sc-item').length;
+        const checkedCount = parent.querySelectorAll('.sc-item.checked').length;
+        if (checkedCount === total) {
+          showCelebrateBanner('🎉 Tuyệt vời! Bạn đã hoàn thành self-check!');
+        }
+      }
+
+      renderSelfCheck('p2SC1', [
+        'Is there 1 weekday routine (simple present) AND 1 weekend trend (present continuous)?',
+        'Does "but" show a REAL contrast (e.g. usual vs different), not just 2 unrelated facts stuck together?',
+        'Are the tenses used correctly for each part?'
+      ]);
+
+      renderSelfCheck('p2SC2', [
+        'Is there 1 weekday routine (simple present) AND 1 weekend trend (present continuous)?',
+        'Does the connector show a REAL contrast, not just 2 unrelated facts stuck together?',
+        'Are the tenses used correctly without the sentence starters this time?'
+      ]);
+
+      renderSelfCheck('p2SC3', [
+        'Are there at least 2 weekday routines (simple present) and 2 weekend trends (present continuous)?',
+        'Are the correct language signals used for each tense (always/usually vs these days/at the moment)?',
+        'Is there at least 1 contrast connector "but"?',
+        'Is the paragraph clearly organised (weekday first, then weekend)?'
+      ]);
+
+      /* ---------- Write, bước 4: Nộp bài & phản hồi rubric AI (engine 02_design Mục 9.6) ---------- */
+      const WRITE_TARGET_MIN = 40, WRITE_TARGET_MAX = 70;
+      function trackWriting() {
+        const words = document.getElementById('writeArea').value.trim().split(/\s+/).filter(Boolean);
+        document.getElementById('wordCount').textContent = `${words.length} từ / mục tiêu ${WRITE_TARGET_MIN}-${WRITE_TARGET_MAX} từ`;
+      }
+
+      function renderRubric(scores /* {task:3, org:4, lang:2, length:3} */, commentVi) {
+        const labels = { task: 'Task Achievement', org: 'Organisation', lang: 'Language Use', length: 'Length & Fluency' };
+        document.getElementById('rubricGrid').innerHTML = Object.entries(scores).map(([k, v]) =>
+          `<div class="rubric-item"><div class="rlabel">${labels[k]}</div><div class="rscore">${v}<small>/4</small></div></div>`
+        ).join('');
+        document.getElementById('writeComment').textContent = commentVi;
+        document.getElementById('writeFeedback').classList.remove('pending');
+      }
+
+      document.getElementById('btnSubmitWriting').addEventListener('click', () => {
+        const text = document.getElementById('writeArea').value.trim();
+        if (!text) return;
+        const fb = document.getElementById('writeFeedback');
+        fb.style.display = 'block';
+        fb.classList.add('pending');
+        document.getElementById('btnSubmitWriting').disabled = true;
+        // TODO: nối API chấm Writing thật của nền tảng — gửi `text`, nhận về {scores, commentVi} rồi
+        // gọi renderRubric(scores, commentVi). KHÔNG tự bịa điểm/nhận xét giả khi chưa có endpoint
+        // (đúng nguyên tắc engine 02_design Mục 9.6) — hiện tại chỉ dừng ở trạng thái "Đang gửi".
+        LMS().event('writing_submitted', { activity: 'p2-write', wordCount: text.split(/\s+/).filter(Boolean).length });
+      });
+
+      /* ---------- Scroll Events & Reading Progress ---------- */
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('readingProgressBar').style.width = scrolled + '%';
+
+        const btn = document.getElementById('backToTop');
+        if (winScroll > 280) { btn.classList.add('show'); } else { btn.classList.remove('show'); }
+      });
+
+      function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+      /* ---------- LMS Integration ---------- */
+      LMS().ready();
+      function reportHeight() { LMS().resize({ height: document.documentElement.scrollHeight }); }
+      window.addEventListener('load', reportHeight);
+      if (window.ResizeObserver) {
+        const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+        ro.observe(document.body);
+      }
+
+      renderRefPane('phase-0');
+    </script>
+</body>
+
+</html>

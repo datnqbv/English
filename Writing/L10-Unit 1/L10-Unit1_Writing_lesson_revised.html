@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 — Writing: Email Writing</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<script type="application/json" id="athena-context">
+{
+  "title": "Unit 1 - Writing - Part 1: How to write an email (Informal Email: Family Routines)",
+  "subject": "Tiếng Anh",
+  "grade": "10",
+  "objectives": [
+    "Xác định đúng cấu trúc 5 phần của một bức email: Greeting, Opening, Body, Closing, Sign-off",
+    "Biết cách brainstorm và viết đoạn Body theo công thức What + When + Why"
+  ],
+  "structure": [
+    { "id": "hook", "title": "Lead in - Email từ Mai" },
+    { "id": "framework", "title": "A. Khung 5 phần" },
+    { "id": "parts", "title": "B. Đi sâu từng phần" },
+    { "id": "analyzer", "title": "C. Máy phân tích cấu trúc email" },
+    { "id": "signals", "title": "D. Bảng tín hiệu nhận diện" }
+  ],
+  "athenaGuidance": "Đây là bài lý thuyết (không chấm điểm) dạy học sinh cấu trúc 5 phần của một bức Email (Greeting/Opening/Body/Closing/Sign-off), dùng chủ đề Family Routines, kể theo góc nhìn nhân vật Nam trả lời email của bạn cùng lớp Mai (một email thân mật - informal). Nội dung chính: khung 5 phần; Body theo công thức What+When/How often+Why; ví dụ đúng/sai ở Opening và Closing; máy phân tích ở phần C dùng 2 email của Nam gửi Lan: Email 1 = đoạn mở đầu (chỉ có Greeting+Opening, bị cắt ngắn), Email 2 = email đầy đủ kể 3 routine (ăn sáng cùng nhau mỗi ngày, chơi cầu lông mỗi Chủ nhật, dọn nhà mỗi tháng một lần). Không có đáp án cần giữ bí mật vì bài không chấm điểm."
+}
+</script>
+
+<style>
+:root{
+  --cream:#FAF7F0; --cream-2:#F0EADD; --cream-3:#E7DECC;
+  --paper-line:#E5DECF; --paper-line-2:#D6CCB6;
+  --ink:#1A1A1A; --ink-2:#514C44; --ink-3:#7C756A; --ink-faint:#ABA396;
+  --jade:#3CA57A; --jade-deep:#2A8167; --jade-dark:#14432F;
+  --jade-text:#1B5E48; --jade-soft:#A9D0BE; --jade-pale:#DCEAE1;
+  --sage:#A8C9B8; --sage-deep:#7CA792; --sage-text:#46685A; --sage-pale:#E1ECE4;
+  --accent:#E8A24A; --accent-deep:#CE8A33; --accent-text:#8A551A; --accent-pale:#F7E7CD;
+  --correct:#2A8167; --correct-bg:#DCEAE1;
+  --wrong:#A84B2C;   --wrong-bg:#F3E2D6;
+  --warning:#C58A2E; --warning-bg:#F5E7CB;
+  --info:#4E7F92;    --info-bg:#DCE7EB;
+  --white:#FFFFFF;
+  --radius-lg:22px; --radius:14px; --radius-sm:10px;
+  --shadow:0 10px 30px rgba(43,43,40,0.10);
+}
+*{box-sizing:border-box;}
+button:focus-visible,[role="button"]:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
+  outline:3px solid var(--accent-deep); outline-offset:2px;
+}
+body{margin:0;font-family:'Be Vietnam Pro',sans-serif;font-size:18px;color:var(--ink);
+  background:var(--cream);line-height:1.6;-webkit-text-size-adjust:100%;}
+h1,h2,h3,.display{font-family:'Be Vietnam Pro',sans-serif;font-weight:800;color:var(--jade-dark);margin:0;}
+button{font-family:inherit;cursor:pointer;}
+p{margin:0 0 12px;} p:last-child{margin-bottom:0;}
+
+@keyframes fadein{ from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:none;} }
+@media (prefers-reduced-motion:reduce){ .fade-target{opacity:1!important;transform:none!important;animation:none!important;} }
+
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 60px;}
+@media (min-width:881px){
+  .wrap{max-width:min(760px, calc(100vw - 460px));}
+  .hero-inner{max-width:min(640px, calc(100vw - 460px));}
+}
+
+/* ---------- Progress Tracker ---------- */
+#progress-tracker{position:fixed;right:18px;top:50%;transform:translateY(-50%);width:186px;
+  background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:16px 14px 14px;z-index:50;border:2px solid var(--cream-2);}
+.pt-handle{width:44px;height:14px;background:var(--jade-dark);border-radius:6px;margin:-24px auto 10px;}
+#progress-tracker h4{font-size:12.5px;letter-spacing:.02em;color:var(--jade-dark);margin:0 0 10px;text-transform:uppercase;}
+.pt-item{display:flex;align-items:center;gap:8px;font-size:12px;padding:6px 0;color:var(--ink-2);
+  cursor:pointer;background:none;border:none;text-align:left;width:100%;font-family:inherit;}
+.pt-box{width:15px;height:15px;border-radius:5px;border:2px solid var(--sage);flex:0 0 auto;position:relative;transition:.25s;}
+.pt-item.done .pt-box{background:var(--jade-deep);border-color:var(--jade-deep);}
+.pt-item.done .pt-box::after{content:'';position:absolute;left:2px;top:0px;width:4px;height:8px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(40deg);}
+.pt-item.done{color:var(--jade-dark);font-weight:600;}
+.pt-item.active{color:var(--accent-text);font-weight:700;}
+.pt-item.active .pt-box{border-color:var(--accent);}
+@media (max-width:880px){
+  #progress-tracker{position:sticky;top:0;transform:none;width:100%;left:0;right:0;border-radius:0;
+    display:flex;align-items:center;gap:8px;padding:8px 10px;border:none;
+    border-bottom:2px solid var(--cream-2);background:var(--white);z-index:99;}
+  .pt-handle{display:none;}
+  #progress-tracker h4{margin:0;white-space:nowrap;font-size:11px;flex:0 0 auto;}
+  .pt-items{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;
+    justify-content:space-between;align-items:center;-webkit-overflow-scrolling:touch;}
+  .pt-items::-webkit-scrollbar{display:none;}
+  .pt-item{padding:0;white-space:nowrap;min-height:36px;width:auto;align-items:center;flex:0 0 auto;font-size:11.5px;}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--jade-deep);overflow:hidden;padding:48px 0 66px;}
+.hero-inner{position:relative;z-index:2;text-align:center;color:#fff;max-width:640px;margin:0 auto;padding:0 20px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.35);padding:6px 16px;border-radius:999px;font-size:12.5px;
+  text-transform:uppercase;letter-spacing:.02em;margin-bottom:16px;font-weight:700;}
+.hero h1{color:#fff;font-size:clamp(24px,5vw,36px);line-height:1.2;margin:0 0 8px;}
+.hero p.sub{color:#fff;font-size:16px;margin:0;font-weight:600;}
+.characters{display:flex;justify-content:center;gap:16px;margin-top:26px;flex-wrap:wrap;}
+.char-card{background:rgba(20,67,47,.42);border:1px solid rgba(255,255,255,.3);border-radius:18px;
+  padding:10px 16px;display:flex;align-items:center;gap:10px;}
+.avatar{width:44px;height:44px;border-radius:50%;flex:0 0 auto;}
+.char-name{font-weight:700;color:#fff;font-size:14.5px;text-align:left;}
+.char-role{font-size:11.5px;color:#fff;text-align:left;opacity:.9;}
+.objectives{margin:26px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.obj-pill{background:#fff;color:var(--jade-dark);border-radius:14px;padding:10px 14px;font-size:13px;
+  font-weight:600;display:flex;gap:8px;align-items:flex-start;box-shadow:var(--shadow);max-width:230px;text-align:left;}
+.obj-num{background:var(--jade-deep);color:#fff;border-radius:50%;width:20px;height:20px;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
+
+main{margin-top:-30px;position:relative;z-index:3;}
+
+/* 2. Phản hồi khi bấm */
+button{transition:transform .12s ease;}
+button:active{transform:scale(.96);}
+.envelope:active{transform:scale(.96);}
+.sc-item:active{transform:scale(.97);}
+
+/* 1. Scroll-snap từng card trên mobile */
+@media (max-width:880px){
+  html{scroll-snap-type:y proximity;}
+  .card{scroll-snap-align:start;scroll-margin-top:16px;}
+}
+
+/* 3. Step indicator cho chuỗi Bước 1-5 (Body) */
+.step-track{display:flex;align-items:center;gap:6px;margin-bottom:14px;}
+.step-dot{width:8px;height:8px;border-radius:50%;background:var(--paper-line-2);transition:.25s;}
+.step-dot.done{background:var(--jade-soft);}
+.step-dot.active{background:var(--jade-deep);width:20px;border-radius:5px;}
+.step-label{font-size:11px;font-weight:800;color:var(--jade-text);margin-left:4px;text-transform:uppercase;letter-spacing:.03em;}
+
+/* Scroll stack — 5 bước viết phần Body */
+.scroll-stack-scroller{position:relative;width:100%;overflow:visible;overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;scroll-behavior:smooth;}
+.scroll-stack-inner{position:relative;padding:0 0 24px;min-height:0;}
+.scroll-stack-card-wrapper{display:contents;}
+.scroll-stack-card{position:sticky;top:calc(78px + var(--stack-index,0)*14px);z-index:calc(20 + var(--stack-index,0));
+  transform-origin:top center;will-change:auto;backface-visibility:visible;
+  min-height:20rem;margin:0 0 64px;padding:clamp(22px,4vw,32px);border-radius:28px;
+  box-shadow:0 18px 45px rgba(20,67,47,.14);transform:none;
+  opacity:1;visibility:visible;animation:none;}
+.card.scroll-stack-card,.card.scroll-stack-card.visible{opacity:1;visibility:visible;animation:none;}
+.scroll-stack-card::before{content:attr(data-stack-step);position:absolute;right:22px;top:20px;width:34px;height:34px;
+  display:grid;place-items:center;border-radius:50%;background:var(--jade-dark);color:#fff;font-size:13px;font-weight:800;
+  box-shadow:0 4px 12px rgba(20,67,47,.2);}
+.scroll-stack-card .step-track{padding-right:46px;}
+.scroll-stack-card.stack-current{border-color:var(--accent);box-shadow:0 22px 55px rgba(20,67,47,.2);}
+.scroll-stack-card.stack-passed{pointer-events:none;}
+.scroll-stack-card.stack-passed button,.scroll-stack-card.stack-passed select,.scroll-stack-card.stack-passed a{pointer-events:auto;}
+.scroll-stack-card[data-stack-step="5"]{margin-bottom:0;}
+.scroll-stack-end{width:100%;height:1px;}
+
+/* 4. Routine icon chips */
+.routine-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.routine-chip{display:inline-flex;align-items:center;gap:6px;background:var(--white);
+  border-radius:999px;padding:5px 12px 5px 5px;font-size:12.5px;font-weight:600;color:var(--jade-text);
+  box-shadow:0 2px 6px rgba(20,67,47,.08);}
+.routine-chip svg{width:26px;height:26px;flex:0 0 auto;}
+.icon-cell{display:flex;align-items:center;gap:8px;}
+.icon-cell svg{width:24px;height:24px;flex:0 0 auto;}
+
+/* 5. Speech bubble / celebration */
+.celebrate-banner{position:fixed;left:50%;top:18px;transform:translateX(-50%) translateY(-20px);
+  background:var(--jade-dark);color:#fff;padding:12px 20px;border-radius:999px;font-size:13.5px;
+  font-weight:700;box-shadow:0 10px 24px rgba(20,67,47,.35);z-index:700;opacity:0;
+  transition:opacity .3s ease, transform .3s ease;pointer-events:none;white-space:nowrap;}
+.celebrate-banner.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* 6. Confetti */
+.confetti-piece{position:fixed;border-radius:2px;z-index:690;pointer-events:none;}
+
+/* 7. Envelope SVG */
+.env-svg{width:84px;height:auto;overflow:visible;}
+.env-flap{transform-origin:50px 22px;transition:opacity .5s ease, transform .5s ease;}
+.env-letter{transition:transform .5s cubic-bezier(.3,.7,.3,1);}
+.envelope.opened .env-flap{opacity:.2;transform:translateY(-4px);}
+.envelope.opened .env-letter{transform:translateY(-34px);}
+
+/* ---------- Card rhythm ---------- */
+.card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);
+  padding:24px 22px;margin-bottom:18px;opacity:0;transform:translateY(14px);}
+.card.visible{animation:fadein .5s ease forwards;}
+.card-tag{display:inline-block;font-size:12px;font-weight:800;color:var(--jade-text);
+  background:var(--jade-pale);padding:4px 12px;border-radius:999px;text-transform:uppercase;
+  letter-spacing:.03em;margin-bottom:12px;}
+.card h2{font-size:20px;margin:0 0 10px;}
+.card h3{font-size:17px;margin:0 0 8px;color:var(--jade-text);}
+.card p{font-size:15.5px;color:var(--ink-2);}
+
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
+th,td{border:1px solid var(--paper-line-2);padding:9px 11px;text-align:left;vertical-align:top;}
+th{background:var(--cream-2);color:var(--jade-dark);font-weight:700;font-size:13px;}
+td{color:var(--ink-2);}
+
+.callout{background:var(--jade-pale);border-left:4px solid var(--jade-deep);padding:14px 16px;
+  border-radius:0 var(--radius) var(--radius) 0;margin:14px 0;color:var(--jade-text);font-weight:600;font-size:14.5px;}
+.callout.warn{background:var(--warning-bg);border-left-color:var(--warning);color:var(--accent-text);}
+
+/* ---------- Mail app (dùng chung Hook + Comparison + Analyzer) ---------- */
+.mail-context{font-size:13px;color:var(--ink-3);margin:0 0 8px;display:flex;gap:6px;align-items:flex-start;line-height:1.5;}
+.mail-context b{color:var(--ink-2);}
+.mailapp{max-width:460px;margin:0 auto 14px;border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--paper-line);background:var(--white);}
+.mailapp-bar{background:var(--jade-dark);color:#fff;padding:9px 14px;display:flex;align-items:center;
+  gap:8px;font-size:12px;font-weight:700;}
+.mailapp-bar-icons{margin-left:auto;display:flex;gap:10px;opacity:.85;font-size:13px;}
+.mailapp-meta{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--cream-2);}
+.mailapp-avatar{width:38px;height:38px;border-radius:50%;flex:0 0 auto;box-shadow:0 1px 4px rgba(20,67,47,.18);}
+.mailapp-name{font-weight:800;font-size:14px;color:var(--jade-dark);line-height:1.3;}
+.mailapp-to{font-size:11px;color:var(--ink-3);}
+.mailapp-time{margin-left:auto;font-size:11px;color:var(--ink-3);white-space:nowrap;align-self:flex-start;}
+.mailapp-subject{padding:10px 14px 0;font-weight:700;font-size:13.5px;color:var(--ink);}
+.mailapp-body{padding:12px 16px 18px;font-size:14.5px;line-height:1.8;color:var(--ink);}
+.mailapp-body em{font-style:italic;}
+
+/* ---------- Popup modal (dùng chung mọi "xem thêm") ---------- */
+.popup-overlay{position:fixed;inset:0;z-index:600;display:none;align-items:flex-end;justify-content:center;
+  background:rgba(20,20,18,.42);}
+.popup-overlay.open{display:flex;}
+.popup-sheet{background:#fff;border-radius:20px 20px 0 0;padding:22px 20px 20px;width:100%;
+  max-width:480px;max-height:74vh;overflow-y:auto;box-shadow:0 -10px 30px rgba(0,0,0,.18);
+  animation:sheetUp .25s ease;}
+@keyframes sheetUp{ from{transform:translateY(24px);opacity:0;} to{transform:none;opacity:1;} }
+@media (min-width:521px){
+  .popup-overlay{align-items:center;}
+  .popup-sheet{border-radius:20px;}
+}
+.popup-sheet p{font-size:14.5px;color:var(--ink-2);}
+.popup-close{display:block;margin:16px auto 0;background:var(--jade-deep);color:#fff;border:none;
+  border-radius:var(--radius-sm);padding:10px 22px;font-weight:700;font-size:13.5px;min-height:44px;}
+
+/* Example boxes */
+.ex-block{margin:14px 0;}
+.ex-quote{border-radius:var(--radius);padding:14px 16px;font-style:italic;font-size:14.5px;
+  border-left:4px solid var(--sage);background:var(--sage-pale);color:var(--ink-2);}
+.ex-quote.good{border-left-color:var(--correct);background:var(--correct-bg);}
+.ex-quote.bad{border-left-color:var(--wrong);background:var(--wrong-bg);}
+.predict-line{font-size:13.5px;color:var(--accent-text);font-weight:700;margin:10px 0 8px;
+  display:flex;align-items:center;gap:8px;}
+.reveal-btn{background:transparent;color:var(--accent-text);border:1.5px dashed var(--accent);
+  border-radius:var(--radius-sm);padding:8px 16px;min-height:42px;font-weight:700;font-size:13.5px;}
+.reveal-btn:hover{background:var(--accent-pale);}
+.ex-block .reveal-btn{margin-top:12px;}
+
+/* Formula sentence */
+.formula-sentence{font-size:15px;line-height:1.9;background:var(--cream-2);border-radius:var(--radius);
+  padding:16px 18px;margin:12px 0;}
+.f-what{background:#DCEAF3;color:#2C5E78;padding:1px 5px;border-radius:5px;font-weight:700;}
+.f-when{background:var(--accent-pale);color:var(--accent-text);padding:1px 5px;border-radius:5px;font-weight:700;}
+.f-why{background:var(--jade-pale);color:var(--jade-text);padding:1px 5px;border-radius:5px;font-weight:700;}
+.formula-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);margin-top:8px;}
+.formula-legend span{display:flex;align-items:center;gap:5px;}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
+
+/* Envelope hook */
+.envelope-wrap{text-align:center;padding:6px 0 4px;}
+.envelope{display:inline-flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;
+  padding:16px 20px;border-radius:var(--radius-lg);transition:transform .2s;user-select:none;}
+.envelope:hover{transform:scale(1.03);}
+.envelope-icon{position:relative;font-size:54px;line-height:1;animation:floatUp 1.8s infinite;}
+.envelope-badge{position:absolute;top:-6px;right:-10px;background:var(--wrong);color:#fff;
+  font-size:12px;font-weight:800;width:22px;height:22px;border-radius:50%;display:flex;
+  align-items:center;justify-content:center;border:2px solid var(--white);}
+.envelope-label{font-size:13.5px;font-weight:700;color:var(--jade-text);}
+@keyframes floatUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+.envelope.opened .envelope-icon{animation:none;}
+#hookMail{display:none;opacity:0;transform:translateY(-8px);transition:opacity .35s ease,transform .35s ease;}
+#hookMail.show{display:block;opacity:1;transform:translateY(0);}
+.hook-questions{margin:0 0 12px;padding-left:20px;}
+.hook-questions li{margin-bottom:6px;color:var(--ink-2);font-size:15px;}
+
+/* ---------- Analyzer ---------- */
+.an-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;justify-content:center;}
+.an-tab{background:var(--cream-2);border:1.5px solid var(--paper-line-2);border-radius:999px;
+  padding:9px 18px;font-size:13.5px;font-weight:700;color:var(--ink-2);min-height:42px;font-family:inherit;}
+.an-tab.active{background:var(--jade-deep);color:#fff;border-color:var(--jade-deep);}
+.an-hint{font-size:13px;color:var(--ink-3);margin-bottom:14px;text-align:center;}
+.an-seg{cursor:pointer;padding:2px 3px;border-radius:5px;transition:background-color .25s,color .25s,opacity .3s;border-bottom:2px solid transparent;}
+.an-seg:hover{background:var(--cream-2);}
+.an-seg.an-flown{opacity:.55;}
+.an-color-greeting.an-active,.an-color-greeting.an-flown{background:var(--jade-pale);color:var(--jade-text);border-bottom-color:var(--jade);}
+.an-color-opening.an-active,.an-color-opening.an-flown{background:var(--accent-pale);color:var(--accent-text);border-bottom-color:var(--accent);}
+.an-color-body.an-active,.an-color-body.an-flown{background:var(--sage-pale);color:var(--sage-text);border-bottom-color:var(--sage-deep);}
+.an-color-closing.an-active,.an-color-closing.an-flown{background:var(--info-bg);color:var(--info);border-bottom-color:var(--info);}
+.an-color-signoff.an-active,.an-color-signoff.an-flown{background:var(--cream-3);color:var(--ink-2);border-bottom-color:var(--ink-3);}
+.an-color-other.an-active,.an-color-other.an-flown{background:transparent;color:var(--ink-3);border-bottom:2px dashed var(--paper-line-2);font-style:italic;}
+
+.an-controls{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;justify-content:center;}
+.an-btn{background:var(--jade-deep);color:#fff;border:none;border-radius:var(--radius-sm);
+  padding:10px 18px;font-weight:700;font-size:13.5px;min-height:44px;font-family:inherit;}
+.an-btn.ghost{background:transparent;color:var(--jade-dark);border:1.5px solid var(--sage);}
+
+.an-zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px;margin:16px 0;}
+.an-zone{border:1.5px dashed var(--paper-line-2);border-radius:var(--radius-sm);padding:10px 6px;
+  text-align:center;cursor:pointer;transition:transform .2s;background:var(--cream-2);font-family:inherit;}
+.an-zone.bump{transform:scale(1.08);}
+.an-zone-head{font-size:9.5px;font-weight:800;letter-spacing:.02em;margin-bottom:4px;color:var(--ink-2);}
+.an-zone-count{font-size:20px;font-weight:800;color:var(--ink-3);}
+.an-zone[data-part="greeting"].filled{background:var(--jade-pale);border-style:solid;border-color:var(--jade);}
+.an-zone[data-part="greeting"].filled .an-zone-count{color:var(--jade-text);}
+.an-zone[data-part="opening"].filled{background:var(--accent-pale);border-style:solid;border-color:var(--accent);}
+.an-zone[data-part="opening"].filled .an-zone-count{color:var(--accent-text);}
+.an-zone[data-part="body"].filled{background:var(--sage-pale);border-style:solid;border-color:var(--sage-deep);}
+.an-zone[data-part="body"].filled .an-zone-count{color:var(--sage-text);}
+.an-zone[data-part="closing"].filled{background:var(--info-bg);border-style:solid;border-color:var(--info);}
+.an-zone[data-part="closing"].filled .an-zone-count{color:var(--info);}
+.an-zone[data-part="signoff"].filled{background:var(--cream-3);border-style:solid;border-color:var(--ink-3);}
+.an-zone[data-part="signoff"].filled .an-zone-count{color:var(--ink-2);}
+
+.an-flyer{position:fixed;z-index:650;padding:5px 12px;border-radius:999px;font-size:10.5px;
+  font-weight:800;letter-spacing:.02em;pointer-events:none;box-shadow:var(--shadow);
+  transition:transform .55s cubic-bezier(.3,.7,.3,1), opacity .55s ease;white-space:nowrap;}
+
+.an-caption{background:var(--info-bg);color:var(--ink-2);border-radius:var(--radius-sm);
+  padding:10px 14px;font-size:13.5px;margin-top:4px;}
+
+footer{text-align:center;padding:30px 18px 50px;color:var(--ink-3);font-size:13px;}
+
+@media (max-width:480px){
+  .card{padding:20px 16px;border-radius:var(--radius);}
+  body{font-size:16px;}
+  .hero h1{font-size:24px;}
+  table{font-size:12.5px;}
+  th,td{padding:7px 8px;}
+}
+
+@media (max-width:880px){
+  .scroll-stack-inner{padding-top:0;padding-bottom:18px;}
+  .scroll-stack-card{top:calc(68px + var(--stack-index,0)*9px);margin-bottom:44px;min-height:18rem;
+    padding:20px 16px;border-radius:20px;}
+  .scroll-stack-card::before{right:14px;top:14px;width:30px;height:30px;}
+  .scroll-stack-card .step-track{padding-right:36px;}
+  .scroll-stack-card.stack-too-tall{position:relative;top:auto!important;transform:none!important;filter:none!important;}
+}
+
+/* ---------- UX polish: responsive, accessible, distraction-free ---------- */
+html{scroll-behavior:smooth;scroll-padding-top:76px;}
+body{min-height:100vh;background:
+  radial-gradient(circle at 8% 12%,rgba(60,165,122,.08),transparent 26rem),
+  radial-gradient(circle at 92% 40%,rgba(232,162,74,.07),transparent 24rem),var(--cream);}
+.skip-link{position:fixed;left:16px;top:12px;z-index:1000;transform:translateY(-160%);
+  background:var(--jade-dark);color:#fff;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;}
+.skip-link:focus{transform:none;}
+.reading-progress{position:fixed;inset:0 0 auto;height:4px;background:transparent;z-index:999;pointer-events:none;}
+.reading-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--accent),var(--jade));
+  box-shadow:0 1px 5px rgba(20,67,47,.3);transition:width .1s linear;}
+.back-to-top{position:fixed;right:20px;bottom:20px;z-index:90;width:48px;height:48px;border:0;border-radius:50%;
+  display:grid;place-items:center;background:var(--jade-dark);color:#fff;font-size:22px;box-shadow:0 8px 24px rgba(20,67,47,.28);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:.2s ease;}
+.back-to-top.show{opacity:1;visibility:visible;transform:none;}
+.back-to-top:hover{background:var(--jade-deep);transform:translateY(-2px);}
+.card{border:1px solid rgba(214,204,182,.65);transition:box-shadow .25s ease,border-color .25s ease;}
+.card:hover{border-color:var(--sage);box-shadow:0 14px 38px rgba(43,43,40,.12);}
+.mailapp{transition:transform .25s ease,box-shadow .25s ease;}
+.mailapp:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(43,43,40,.13);}
+.popup-overlay{padding:20px;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);}
+.popup-sheet{overscroll-behavior:contain;}
+.popup-sheet h3{padding-right:34px;}
+.popup-x{position:absolute;right:14px;top:12px;width:40px;height:40px;border:0;border-radius:50%;background:var(--cream-2);
+  color:var(--ink-2);font-size:20px;line-height:1;}
+.popup-sheet{position:relative;}
+.envelope{border:2px solid transparent;background:transparent;min-width:190px;min-height:44px;}
+.envelope:hover{background:var(--cream);border-color:var(--cream-2);}
+.an-tab,.reveal-btn,.an-btn,.an-zone,.popup-close{touch-action:manipulation;}
+
+@media (min-width:881px){
+  .wrap{max-width:min(900px,calc(100vw - 260px));padding-inline:28px;}
+  .hero-inner{max-width:min(820px,calc(100vw - 260px));}
+  #progress-tracker{right:max(18px,calc((100vw - 1340px)/2));width:200px;}
+  .card{padding:30px 34px;margin-bottom:24px;}
+  .card h2{font-size:23px;}
+  .card p{font-size:16px;}
+  .mailapp{max-width:540px;}
+  .an-zones{grid-template-columns:repeat(5,1fr);}
+}
+@media (max-width:880px){
+  body{padding-top:58px;padding-bottom:0;}
+  #progress-tracker{position:fixed;top:0;bottom:auto;left:0;right:0;width:100%;
+    padding:7px 10px;border-top:0;border-bottom:1px solid var(--cream-2);
+    box-shadow:0 5px 18px rgba(20,67,47,.10);}
+  #progress-tracker h4{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .pt-items{justify-content:flex-start;gap:14px;padding-inline:6px;scroll-snap-type:x proximity;
+    scroll-padding-inline:8px;}
+  .pt-item{scroll-snap-align:center;min-height:44px;}
+  .pt-item.active{background:var(--accent-pale);border-radius:999px;padding-inline:10px;}
+  .wrap{padding-inline:14px;}
+  main{margin-top:-22px;}
+  .hero{padding-top:36px;}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:normal;scrollbar-width:thin;}
+  th{min-width:122px;}
+  .an-zones{grid-template-columns:repeat(5,minmax(92px,1fr));overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory;}
+  .an-zone{scroll-snap-align:start;min-height:74px;}
+  .back-to-top{right:14px;bottom:14px;width:46px;height:46px;}
+}
+@media (max-width:480px){
+  .hero{padding-bottom:52px;}
+  .hero-inner{padding-inline:14px;}
+  .characters{gap:8px;margin-top:20px;}
+  .char-card{padding:8px 10px;flex:1 1 145px;}
+  .avatar{width:38px;height:38px;}
+  .objectives{margin-top:18px;}
+  .obj-pill{max-width:none;width:100%;}
+  .card{padding:20px 16px;margin-bottom:14px;}
+  .card h2{font-size:19px;line-height:1.35;}
+  .mailapp-meta,.mailapp-body{padding-inline:12px;}
+  .mailapp-time{display:none;}
+  .formula-sentence{padding:13px 14px;}
+  .popup-overlay{padding:0;}
+  .popup-sheet{max-height:min(82vh,700px);padding-bottom:max(20px,env(safe-area-inset-bottom));}
+  .celebrate-banner{max-width:calc(100vw - 24px);white-space:normal;text-align:center;border-radius:14px;}
+}
+@media (hover:none){.card:hover,.mailapp:hover{transform:none;box-shadow:var(--shadow);}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
+@media print{#progress-tracker,.reading-progress,.back-to-top,.skip-link,.an-controls{display:none!important}.hero{padding:24px}.card{opacity:1!important;transform:none!important;box-shadow:none;break-inside:avoid}.wrap{max-width:none}.hero-inner{max-width:none}}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#hook">Bỏ qua đến nội dung bài học</a>
+<div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
+
+<div id="progress-tracker">
+  <div class="pt-handle"></div>
+  <h4>Tiến trình đọc</h4>
+  <div class="pt-items" id="ptItems"></div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Unit 1 · Writing | Informal Email: Family Routines</span>
+    <h1>Writing — Phần 1: How to write an email</h1>
+    <p class="sub">Cùng tìm hiểu cách viết một bức email đúng chuẩn nhé!</p>
+    <div class="characters">
+      <div class="char-card">
+        <svg class="avatar" viewBox="0 0 60 60" aria-hidden="true" id="avatarNamHero"></svg>
+        <div><div class="char-name">Nam</div><div class="char-role">Người viết email</div></div>
+      </div>
+      <div class="char-card">
+        <svg class="avatar" viewBox="0 0 60 60" aria-hidden="true" id="avatarMaiHero"></svg>
+        <div><div class="char-name">Mai</div><div class="char-role">Bạn cùng lớp, vừa gửi email</div></div>
+      </div>
+    </div>
+    <div class="objectives">
+      <div class="obj-pill"><span class="obj-num">1</span>Xác định đúng cấu trúc 5 phần của Informal Email</div>
+      <div class="obj-pill"><span class="obj-num">2</span>Brainstorm &amp; viết đoạn Body theo công thức What+When+Why</div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <!-- Hook -->
+  <div class="card fade-target" id="hook">
+    <div class="envelope-wrap">
+      <button class="envelope" id="envelope" type="button" onclick="openEnvelope()" aria-controls="hookMail" aria-expanded="false">
+        <div class="envelope-icon">
+          <svg class="env-svg" viewBox="0 0 100 70" aria-hidden="true">
+            <rect x="4" y="14" width="92" height="52" rx="6" fill="#E7DECC" stroke="#14432F" stroke-width="2"/>
+            <rect class="env-letter" x="18" y="22" width="64" height="42" rx="4" fill="#FAF7F0" stroke="#D6CCB6" stroke-width="1.5"/>
+            <polygon class="env-flap" points="4,14 50,44 96,14" fill="#A9D0BE" stroke="#14432F" stroke-width="2"/>
+          </svg>
+          <span class="envelope-badge" id="envBadge">1</span>
+        </div>
+        <div class="envelope-label">Bạn có 1 email mới! Chạm để mở</div>
+      </button>
+    </div>
+    <div id="hookMail">
+      <div class="mail-context">📝 <span><b>Mai</b> — bạn cùng lớp, người phụ trách Family Day Event — vừa gửi cho bạn 1 email: <b>"Cần thông tin gấp cho Family Day!"</b></span></div>
+      <div class="mailapp">
+        <div class="mailapp-bar">✉️ Inbox<span class="mailapp-bar-icons" aria-hidden="true">↩️ ⭐ 🗑️</span></div>
+        <div class="mailapp-meta">
+          <svg class="mailapp-avatar" viewBox="0 0 60 60" aria-hidden="true" id="avatarMaiHook"></svg>
+          <div><div class="mailapp-name">Mai</div><div class="mailapp-to">to me</div></div>
+          <div class="mailapp-time">9:14 AM</div>
+        </div>
+        <div class="mailapp-body">
+          <em>Hi there! Our class's Family Day display is coming up soon, and I'm putting together a board about everyone's family routines. Could you tell me 2-3 things your family usually does together? Please send it back to me as soon as you can — I need to finish the board this week!</em><br><br>
+          <em>Thanks a lot, Mai</em>
+        </div>
+      </div>
+      <p>Ừm... một bức email. Vậy giờ ta sẽ làm gì nhỉ?</p>
+      <ul class="hook-questions">
+        <li>Mai là bạn cùng lớp, bạn nên viết thư trả lời bạn ấy như thế nào?</li>
+        <li>Để Mai có đủ thông tin về Family Routines, thư của bạn cần có điều gì?</li>
+      </ul>
+      <p><em>Trước khi trả lời Mai, cùng tìm hiểu thật kỹ về email nhé!</em></p>
+      <div class="callout">📌 Vì Mai là bạn cùng lớp, đây sẽ là một email thân mật (Informal Email) — hãy cùng tìm hiểu cấu trúc của một Informal Email nhé!</div>
+    </div>
+  </div>
+
+  <!-- A -->
+  <div class="card fade-target" id="framework">
+    <span class="card-tag">A · Khung tổng quát</span>
+    <h2>Khung 5 phần của một Informal Email</h2>
+    <p>Dù chủ đề email là gì (kể chuyện đi chơi, hỏi thăm sức khỏe, mời sinh nhật, hay kể về family routines như unit này), một informal email luôn có 5 phần theo khung sau:</p>
+    <table>
+      <tr><th>Phần</th><th>Câu hỏi định hướng</th></tr>
+      <tr><td>① Greeting</td><td>Chào ai?</td></tr>
+      <tr><td>② Opening</td><td>Vì sao mình viết email này? Mở đầu ra sao cho tự nhiên?</td></tr>
+      <tr><td>③ Body</td><td>Nội dung chính mình muốn kể là gì?</td></tr>
+      <tr><td>④ Closing</td><td>Kết thúc thế nào? Có mời người đọc hồi âm không?</td></tr>
+      <tr><td>⑤ Sign-off</td><td>Ký tên ra sao?</td></tr>
+    </table>
+    <div class="callout">💡 Lưu ý quan trọng: 4 phần Greeting / Opening / Closing / Sign-off gần như CỐ ĐỊNH về khung, chỉ thay tên người và vài chi tiết nhỏ. Riêng phần Body là nơi thay đổi theo chủ đề, với unit này, Body sẽ kể về 2-3 family routines.</div>
+  </div>
+
+  <!-- C -->
+  <div class="card fade-target" id="parts">
+    <span class="card-tag">B.1 · Greeting</span>
+    <table>
+      <tr><th>Mẫu câu</th><th>Ghi chú</th></tr>
+      <tr><td>Hi [Name],</td><td>Thân mật nhất — dùng với bạn bè cùng lứa tuổi</td></tr>
+      <tr><td>Dear [Name],</td><td>Thân mật vừa — vẫn dùng được với bạn bè, người thân</td></tr>
+      <tr><td>⚠️ Dear Mr. / Ms. [Họ],</td><td>KHÔNG dùng — đây là cách chào của Formal email, không phù hợp với bài này</td></tr>
+    </table>
+  </div>
+
+  <div class="card fade-target">
+    <span class="card-tag">B.2 · Opening</span>
+    <h2>Opening có 2 nhiệm vụ</h2>
+    <p>Một Opening tốt cần đủ cả 2:</p>
+    <p><b>Nhiệm vụ 1</b> — Hỏi thăm hoặc cảm ơn (mở đầu tự nhiên, chưa vào nội dung chính).<br>
+    <b>Nhiệm vụ 2</b> — Nhắc lại lý do viết email, dẫn cầu nối sang Body (phần Thân bài của Email).</p>
+  </div>
+
+  <div class="card fade-target">
+    <h3>Ví dụ 1</h3>
+    <div class="ex-block">
+      <div class="ex-quote good">✅ "Thanks for your last email! You asked me about my family's daily routines. Well, let me share three of the main ones with you."</div>
+      <div class="predict-line">💭 Bạn thử đoán xem ví dụ này có tự nhiên không, và vì sao?</div>
+      <button class="reveal-btn" onclick="openPopup('Phân tích Ví dụ 1', '&lt;p&gt;&lt;b&gt;\u0022Thanks for your last email!\u0022&lt;/b&gt; = Nhiệm vụ 1 (cảm ơn, mở đầu tự nhiên).&lt;/p&gt;&lt;p&gt;&lt;b&gt;\u0022You asked me about... let me share three of the main ones\u0022&lt;/b&gt; = Nhiệm vụ 2 (nhắc lại lý do + dẫn cầu nối trực tiếp sang Body, người đọc biết chắc sắp có 3 ý sẽ được kể).&lt;/p&gt;')">Xem phân tích</button>
+    </div>
+  </div>
+
+  <div class="card fade-target">
+    <h3>Ví dụ 2</h3>
+    <div class="ex-block">
+      <div class="ex-quote bad">❌ "Hi Lan, First, my family always has breakfast together."</div>
+      <div class="predict-line">💭 Bạn thử đoán xem ví dụ này thiếu gì?</div>
+      <button class="reveal-btn" onclick="openPopup('Phân tích Ví dụ 2', '&lt;p&gt;Câu này nhảy thẳng từ Greeting (\u0022Hi Lan,\u0022) sang Body (\u0022First,...\u0022) mà KHÔNG có câu hỏi thăm hay dẫn dắt ở giữa. Người đọc bị bất ngờ, cảm giác email cụt và thiếu tự nhiên — đây là lỗi rất hay gặp khi vội vào nội dung chính.&lt;/p&gt;')">Xem phân tích</button>
+    </div>
+    <div class="callout warn">💡 Lưu ý: Luôn viết ít nhất 1 câu bắc cầu (nhắc lại lý do viết) TRƯỚC KHI dùng "First,..." để vào Body.</div>
+  </div>
+
+  <div class="card fade-target">
+    <span class="card-tag">B.3 · Body</span>
+    <h2>Routine là gì?</h2>
+    <p>Body là nơi kể sự kiện chính, ở đây là 2-3 family routines, là thứ mà Mai đang hỏi. "Routine" là một hành động LẶP ĐI LẶP LẠI theo một tần suất cố định (hằng ngày / hằng tuần / hằng tháng...), khác với một sự việc chỉ xảy ra MỘT LẦN trong quá khứ.</p>
+    <table>
+      <tr><th>So sánh</th><th>Ví dụ</th><th>Thì sử dụng</th></tr>
+      <tr><td>Routine (lặp lại)</td><td>My family always has breakfast together.</td><td>Hiện tại đơn + trạng từ tần suất</td></tr>
+      <tr><td>Sự việc 1 lần</td><td>Yesterday, my family had breakfast at a restaurant.</td><td>Quá khứ đơn — KHÔNG dùng trong Body ở bài này vì không liên quan đến Routines</td></tr>
+    </table>
+    <div class="callout">Công thức mỗi routine: <b>[What] + [When / How often] + [Why it matters]</b></div>
+  </div>
+
+  <div class="scroll-stack-scroller" id="bodySteps" aria-label="Quy trình viết Body gồm 5 bước">
+  <div class="scroll-stack-inner">
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="1">
+    <div class="step-track"><span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-label">Bước 1/5</span></div>
+    <h3>Bước 1 — Brainstorm ý tưởng</h3>
+    <p>Trước khi viết, Nam tự hỏi bản thân: "Nhà mình có những thói quen gì?" và liệt kê nháp ra giấy, chưa cần chọn lọc:</p>
+    <p style="background:var(--cream-2);border-radius:var(--radius-sm);padding:12px 14px;"><em>Nháp: ăn sáng cùng nhau — dọn nhà — xem TV buổi tối — đi chợ cuối tuần — chơi cầu lông — đọc sách trước khi ngủ — nấu ăn đặc biệt vào cuối tuần...</em></p>
+    <p>Sau đó, Nam CHỌN LỌC lại 3 ý theo 2 tiêu chí quan trọng:</p>
+    <p><b>Đa dạng về loại hoạt động</b> — không chọn cả 3 ý đều liên quan đến ăn uống vì bài sẽ đơn điệu.<br>
+    <b>Đa dạng về tần suất</b> — nên có ít nhất 1 routine hằng ngày, 1 hằng tuần, 1 hằng tháng.</p>
+    <div class="callout">→ Nam chọn: (1) Ăn sáng cùng nhau — hằng ngày, (2) Chơi cầu lông — hằng tuần, (3) Dọn nhà — hằng tháng.</div>
+    <div class="routine-chips">
+      <span class="routine-chip"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#DCEAE1"/><path d="M11 18h18a1 1 0 011 1c0 5.5-4.5 10-10 10s-10-4.5-10-10a1 1 0 011-1z" fill="#2A8167"/><path d="M27 19h2.5a3.2 3.2 0 010 6.4H28" stroke="#2A8167" stroke-width="2" fill="none"/><path d="M15 10c0 1.6 1.6 1.6 1.6 3.2M19.5 10c0 1.6 1.6 1.6 1.6 3.2" stroke="#A9D0BE" stroke-width="1.6" stroke-linecap="round"/></svg>Ăn sáng cùng nhau</span>
+      <span class="routine-chip"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#F7E7CD"/><circle cx="15" cy="15" r="6.5" fill="none" stroke="#CE8A33" stroke-width="2"/><line x1="19" y1="19" x2="27" y2="27" stroke="#CE8A33" stroke-width="2.4" stroke-linecap="round"/><circle cx="29" cy="12" r="2.4" fill="#CE8A33"/></svg>Chơi cầu lông</span>
+      <span class="routine-chip"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#E1ECE4"/><line x1="25" y1="10" x2="14" y2="29" stroke="#46685A" stroke-width="2.4" stroke-linecap="round"/><path d="M11 31l4-7 5 3-4 6.5z" fill="#7CA792"/></svg>Dọn nhà</span>
+    </div>
+  </div>
+  </div>
+
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="2">
+    <div class="step-track"><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-label">Bước 2/5</span></div>
+    <h3>Bước 2 — Brainstorm chi tiết What/When/Why</h3>
+    <p>Ví dụ với ý "chơi cầu lông":</p>
+    <table>
+      <tr><th>Tự hỏi</th><th>Câu trả lời của Nam</th></tr>
+      <tr><td>Việc gì? (What)</td><td>play badminton at the park close to our house</td></tr>
+      <tr><td>Khi nào? (When)</td><td>every Sunday afternoon</td></tr>
+      <tr><td>Tại sao đáng nhớ? (Why)</td><td>→ xem phân tích bên dưới</td></tr>
+    </table>
+    <div class="ex-block">
+      <div class="predict-line">💭 Bạn thử đoán câu trả lời nào "đào sâu" hơn?</div>
+      <div class="ex-quote bad">❌ Hời hợt: "...because it's fun."</div>
+      <button class="reveal-btn" onclick="openPopup('So sánh 2 cách trả lời', '&lt;p&gt;&lt;b&gt;❌ Hời hợt:&lt;/b&gt; \u0022...because it\u0027s fun.\u0022 → Đúng ngữ pháp nhưng quá chung chung, không cho người đọc thấy được điều gì đặc biệt.&lt;/p&gt;&lt;p&gt;&lt;b&gt;✅ Đào sâu hơn:&lt;/b&gt; \u0022We always laugh a lot and have great fun together, no matter who wins the games.\u0022 → Cụ thể hơn: nói rõ điều gì làm cho routine này đáng nhớ (tiếng cười, không quan trọng thắng-thua) thay vì chỉ nói \u0022vui\u0022.&lt;/p&gt;')">So sánh 2 cách trả lời</button>
+    </div>
+  </div>
+  </div>
+
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="3">
+    <div class="step-track"><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-label">Bước 3/5</span></div>
+    <h3>Bước 3 — Ráp câu hoàn chỉnh</h3>
+    <p>Từ 3 mảnh nguyên liệu ở Bước 2, Nam ráp lại thành câu hoàn chỉnh, thêm sequence word ở đầu:</p>
+    <div class="formula-sentence">Second, <span class="f-when">every Sunday afternoon</span>, <span class="f-what">we play badminton at the park close to our house.</span> <span class="f-why">We always laugh a lot and have great fun together, no matter who wins the games.</span></div>
+    <div class="formula-legend">
+      <span><i class="dot" style="background:#DCEAF3;border:1px solid #2C5E78;"></i>What</span>
+      <span><i class="dot" style="background:var(--accent-pale);border:1px solid var(--accent);"></i>When</span>
+      <span><i class="dot" style="background:var(--jade-pale);border:1px solid var(--jade);"></i>Why</span>
+    </div>
+  </div>
+  </div>
+
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="4">
+    <div class="step-track"><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-dot"></span><span class="step-label">Bước 4/5</span></div>
+    <h3>Bước 4 — Lặp lại cho 2 routine còn lại</h3>
+    <table>
+      <tr><th>Routine</th><th>Nháp What/When/Why</th><th>Câu hoàn chỉnh</th></tr>
+      <tr><td class="icon-cell"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#DCEAE1"/><path d="M11 18h18a1 1 0 011 1c0 5.5-4.5 10-10 10s-10-4.5-10-10a1 1 0 011-1z" fill="#2A8167"/></svg>Ăn sáng cùng nhau</td><td>have breakfast together / before school, every day / chat about plans, check in</td><td>First, my family always has breakfast together before school. It's a nice time for us to chat about our plans for the day and check in with each other before we all get busy.</td></tr>
+      <tr><td class="icon-cell"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#E1ECE4"/><line x1="25" y1="10" x2="14" y2="29" stroke="#46685A" stroke-width="2.4" stroke-linecap="round"/><path d="M11 31l4-7 5 3-4 6.5z" fill="#7CA792"/></svg>Dọn nhà</td><td>tidy up the house / once a month, Saturday morning / make a list, everyone picks tasks, feel proud</td><td>Third, once a month, on a Saturday morning, we tidy up the whole house as a team. We make a list of jobs, and everyone picks one or two tasks to do. We always feel really pleased when we see our home looking spotless at the end of the morning.</td></tr>
+    </table>
+  </div>
+  </div>
+
+  <div class="scroll-stack-card-wrapper">
+  <div class="card scroll-stack-card" data-stack-step="5">
+    <div class="step-track"><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot done"></span><span class="step-dot active"></span><span class="step-label">Bước 5/5</span></div>
+    <h3>Bước 5 — Lỗi thường gặp</h3>
+    <table>
+      <tr><th>Lỗi</th><th>Câu sai</th><th>Sửa lại</th></tr>
+      <tr><td>Thiếu Why</td><td>First, we have breakfast together every day.</td><td>...It helps us start the day feeling connected before school.</td></tr>
+      <tr><td>Sai thì (tiếp diễn cho routine)</td><td>Second, we are watching TV every Friday evening.</td><td>Second, we watch TV every Friday evening.</td></tr>
+      <tr><td>Why quá chung chung</td><td>...because it's nice.</td><td>...because it gives us time to talk about our week without any distractions.</td></tr>
+    </table>
+  </div>
+  </div>
+  <div class="scroll-stack-end" aria-hidden="true"></div>
+  </div>
+  </div>
+
+  <div class="card fade-target">
+    <span class="card-tag">B.4 · Closing</span>
+    <h2>Closing có 2 nhiệm vụ</h2>
+    <p><b>Nhiệm vụ 1</b> — Đặt câu hỏi ngược, mời người đọc chia sẻ điều tương tự.<br>
+    <b>Nhiệm vụ 2</b> — Mời hồi âm (viết lại thư).</p>
+    <div class="ex-block">
+      <div class="predict-line">💭 Bạn thử đoán ví dụ nào đủ 2 nhiệm vụ trên?</div>
+      <div class="ex-quote good">✅ "Do you and your family have similar routines? I would love to hear all about them. Please write back soon!"</div>
+      <div class="ex-quote bad" style="margin-top:8px;">❌ "Anyway, I have to go now, bye!"</div>
+      <button class="reveal-btn" onclick="openPopup('Phân tích Closing', '&lt;p&gt;&lt;b&gt;✅ \u0022Do you and your family...\u0022:&lt;/b&gt; \u0022Do you and your family have similar routines?\u0022 = Nhiệm vụ 1 (câu hỏi ngược). \u0022Please write back soon!\u0022 = Nhiệm vụ 2 (mời hồi âm).&lt;/p&gt;&lt;p&gt;&lt;b&gt;❌ \u0022Anyway, I have to go...\u0022:&lt;/b&gt; Chỉ báo hiệu \u0022kết thúc\u0022 nhưng KHÔNG có câu hỏi ngược, KHÔNG mời hồi âm cụ thể → thiếu 1 trong 2 nhiệm vụ, chưa phải Closing tốt.&lt;/p&gt;')">Xem phân tích</button>
+    </div>
+  </div>
+
+  <div class="card fade-target">
+    <span class="card-tag">B.5 · Sign-off</span>
+    <table>
+      <tr><th>Mẫu câu</th><th>Mức độ thân mật</th></tr>
+      <tr><td>Best,</td><td>Phổ biến nhất, phù hợp mọi mức độ thân thiết</td></tr>
+      <tr><td>Take care,</td><td>Thân mật, thể hiện sự quan tâm</td></tr>
+      <tr><td>Best wishes,</td><td>Thân mật vừa, lịch sự hơn một chút</td></tr>
+    </table>
+  </div>
+
+  <!-- Analyzer -->
+  <div class="card fade-target" id="analyzer">
+    <span class="card-tag">C · Máy phân tích cấu trúc</span>
+    <h2 style="text-align:center;">Rồi, để nắm rõ cách viết, giờ ta hãy thử phân tích 3 bức email dưới đây nhé!</h2>
+    <p class="an-hint">Chạm từng câu để xem nó thuộc phần nào, hoặc bấm "Phân tích tự động" để xem từng câu bay vào đúng ô của nó.</p>
+    <div class="an-tabs" id="anTabs"></div>
+
+    <div class="mailapp" id="anMailApp">
+      <div class="mailapp-bar">✉️ Sent<span class="mailapp-bar-icons" aria-hidden="true">↩️ 🗑️</span></div>
+      <div class="mailapp-meta">
+        <svg class="mailapp-avatar" viewBox="0 0 60 60" aria-hidden="true" id="anAvatar"></svg>
+        <div><div class="mailapp-name" id="anFrom"></div><div class="mailapp-to" id="anTo"></div></div>
+      </div>
+      <div class="mailapp-subject" id="anSubjectRow"></div>
+      <div class="mailapp-body" id="anEmailBox"></div>
+    </div>
+
+    <div class="an-controls">
+      <button class="an-btn" onclick="runAnalyze()">🔍 Phân tích tự động</button>
+      <button class="an-btn ghost" onclick="resetAnalyzer()">↺ Làm lại</button>
+    </div>
+
+    <div class="an-zones" id="anZones"></div>
+    <p class="an-caption" id="anCaption" style="display:none;"></p>
+  </div>
+
+  <!-- E -->
+  <div class="card fade-target" id="signals">
+    <span class="card-tag">D · Tổng hợp</span>
+    <h2>Bảng tín hiệu nhận diện</h2>
+    <p>Dùng bảng này để tự kiểm tra khi làm bài tập nhận diện cấu trúc (Identifying Structure) ở Part 2:</p>
+    <table>
+      <tr><th>Phần</th><th>Tín hiệu nhận diện</th></tr>
+      <tr><td>Greeting</td><td>Chỉ có "Hi/Dear + tên" — không có nội dung nào khác.</td></tr>
+      <tr><td>Opening</td><td>Có lời cảm ơn/hỏi thăm + câu nhắc lại lý do viết email, nhưng CHƯA có sequence word.</td></tr>
+      <tr><td>Body</td><td>Có sequence word (First/Second/Third) hoặc mô tả rõ 1 routine theo What + When + Why.</td></tr>
+      <tr><td>Closing</td><td>Có câu hỏi ngược mời chia sẻ và/hoặc lời mời hồi âm ("Write back soon").</td></tr>
+      <tr><td>Sign-off</td><td>Chỉ có lời kết ngắn (Best,/Take care,) + tên riêng.</td></tr>
+    </table>
+  </div>
+
+</div>
+</main>
+
+<footer>Phần luyện tập (Practice) sẽ tiếp tục ở Part 2.</footer>
+
+<!-- Popup dùng chung -->
+<div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true" onclick="if(event.target===this)closePopup()">
+  <div class="popup-sheet" tabindex="-1">
+    <button class="popup-x" type="button" aria-label="Đóng cửa sổ" onclick="closePopup()">×</button>
+    <h3 id="popupTitle" style="font-size:16px;margin-bottom:10px;"></h3>
+    <div id="popupContent"></div>
+    <button class="popup-close" onclick="closePopup()">Đóng</button>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Về đầu trang">↑</button>
+
+<script>
+function LMS(){return window.AiducationLMS||{ready:function(){},progress:function(){},event:function(){},state:function(){},complete:function(){},resize:function(){}};}
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- Avatar system ---------- */
+const people = {
+  nam:  { shapes:'<circle cx="30" cy="30" r="30" fill="#DCEAE1"/><circle cx="30" cy="24" r="11" fill="#2A8167"/>'
+         + '<path d="M8 56c3-13 11-19 22-19s19 6 22 19z" fill="#14432F"/>' },
+  mai:  { shapes:'<circle cx="30" cy="30" r="30" fill="#F7E7CD"/><circle cx="30" cy="24" r="11" fill="#E8A24A"/>'
+         + '<path d="M8 56c3-13 11-19 22-19s19 6 22 19z" fill="#CE8A33"/>'
+         + '<path d="M13 26c2-10 8-15 17-15s15 5 17 15c-3-2-8-4-17-4s-14 2-17 4z" fill="#8A551A"/>' },
+  lan:  { shapes:'<circle cx="30" cy="30" r="30" fill="#E1ECE4"/><circle cx="30" cy="24" r="11" fill="#7CA792"/>'
+         + '<path d="M8 56c3-13 11-19 22-19s19 6 22 19z" fill="#46685A"/>'
+         + '<path d="M12 24c2-11 9-16 18-16s16 5 18 16c-4-3-10-5-18-5s-14 2-18 5z" fill="#2E4C40"/>' },
+  pham: { shapes:'<circle cx="30" cy="30" r="30" fill="#E7DECC"/><circle cx="30" cy="24" r="11" fill="#7C756A"/>'
+         + '<path d="M8 56c3-13 11-19 22-19s19 6 22 19z" fill="#514C44"/>'
+         + '<rect x="20" y="21" width="20" height="4.5" rx="2.25" fill="#1A1A1A"/>' }
+};
+function avatarHTML(who){ return people[who].shapes; }
+document.getElementById('avatarNamHero').innerHTML = avatarHTML('nam');
+document.getElementById('avatarMaiHero').innerHTML = avatarHTML('mai');
+document.getElementById('avatarMaiHook').innerHTML = avatarHTML('mai');
+
+/* ---------- Progress Tracker ---------- */
+const sections = [
+  { id:'hook', label:'Hook' },
+  { id:'framework', label:'A · Khung 5 phần' },
+  { id:'parts', label:'B · Từng phần' },
+  { id:'analyzer', label:'C · Phân tích' },
+  { id:'signals', label:'D · Tổng hợp' }
+];
+const ptItems = document.getElementById('ptItems');
+ptItems.innerHTML = sections.map(s =>
+  `<button class="pt-item" data-id="${s.id}" onclick="document.getElementById('${s.id}').scrollIntoView({behavior:'smooth',block:'start'})"><span class="pt-box"></span><span>${esc(s.label)}</span></button>`
+).join('');
+
+const seenSections = new Set();
+if ('IntersectionObserver' in window){
+  const secObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      const item = document.querySelector(`.pt-item[data-id="${id}"]`);
+      if (!item) return;
+      if (entry.isIntersecting){
+        document.querySelectorAll('.pt-item.active').forEach(el => el.classList.remove('active'));
+        item.classList.add('active');
+        if (!seenSections.has(id)){ seenSections.add(id); item.classList.add('done'); }
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => { const el = document.getElementById(s.id); if (el) secObserver.observe(el); });
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){ entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-target').forEach(el => fadeObserver.observe(el));
+} else {
+  document.querySelectorAll('.fade-target').forEach(el => el.classList.add('visible'));
+}
+
+/* ---------- Hook envelope ---------- */
+function openEnvelope(){
+  const env = document.getElementById('envelope');
+  const mail = document.getElementById('hookMail');
+  if (env.classList.contains('opened')) return;
+  env.classList.add('opened');
+  env.setAttribute('aria-expanded','true');
+  document.getElementById('envBadge').style.display = 'none';
+  setTimeout(() => mail.classList.add('show'), 80);
+  LMS().event('hook_opened', {});
+}
+
+/* ---------- Popup dùng chung ---------- */
+let popupReturnFocus = null;
+function openPopup(title, html){
+  popupReturnFocus = document.activeElement;
+  document.getElementById('popupTitle').textContent = title;
+  document.getElementById('popupContent').innerHTML = html;
+  const overlay = document.getElementById('popupOverlay');
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  overlay.querySelector('.popup-sheet').focus();
+}
+function closePopup(){
+  const overlay = document.getElementById('popupOverlay');
+  if (!overlay.classList.contains('open')) return;
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+  if (popupReturnFocus && popupReturnFocus.focus) popupReturnFocus.focus();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+/* ---------- Email Analyzer ---------- */
+const partMeta = {
+  greeting: { tag:'GREETING', short:'Greeting', desc:'Chỉ có "Hi/Dear + tên" — không có nội dung nào khác.' },
+  opening:  { tag:'OPENING', short:'Opening', desc:'Có lời cảm ơn/hỏi thăm + câu nhắc lại lý do viết email, nhưng CHƯA có sequence word.' },
+  body:     { tag:'BODY', short:'Body', desc:'Có sequence word (First/Second/Third) hoặc mô tả rõ 1 routine theo What + When + Why.' },
+  closing:  { tag:'CLOSING', short:'Closing', desc:'Có câu hỏi ngược mời chia sẻ và/hoặc lời mời hồi âm ("Write back soon").' },
+  signoff:  { tag:'SIGN-OFF', short:'Sign-off', desc:'Chỉ có lời kết ngắn (Best,/Take care,) + tên riêng.' }
+};
+const partOrder = ['greeting','opening','body','closing','signoff'];
+
+const analyzerEmails = [
+  { id:'informal_snippet', tabLabel:'Email 1', who:'lan', from:'Nam', to:'to Lan', subject:'',
+    caption:'Đây chỉ là đoạn mở đầu của 1 email — có Greeting và Opening, các phần Body/Closing/Sign-off chưa xuất hiện vì email bị cắt ngắn.',
+    parts:[
+      { text:'Hi Lan!', part:'greeting' },
+      { text:"Thanks so much for your last email! I've been super busy lately, but I finally have time to write back.", part:'opening' }
+    ] },
+  { id:'nam_full', tabLabel:'Email 2', who:'lan', from:'Nam', to:'to Lan', subject:"My family's daily habits",
+    caption:'',
+    parts:[
+      { text:'Hi Lan,', part:'greeting' },
+      { text:"Thanks for your last email! You asked me about my family's daily routines. Well, we actually have quite a few routines that help us stay close and build good habits, but let me share three of the main ones with you.", part:'opening' },
+      { text:"First, my family always has breakfast together before school. It's a nice time for us to chat about our plans for the day and check in with each other before we all get busy.", part:'body' },
+      { text:'Second, every Sunday afternoon, we play badminton at the park close to our house. We always laugh a lot and have great fun together, no matter who wins the games.', part:'body' },
+      { text:'Third, once a month, on a Saturday morning, we tidy up the whole house as a team. We make a list of jobs, and everyone picks one or two tasks to do. We always feel really pleased when we see our home looking spotless at the end of the morning.', part:'body' },
+      { text:'Do you and your family have similar routines? I would love to hear all about them. Please write back soon!', part:'closing' },
+      { text:'Best, Nam', part:'signoff' }
+    ] }
+];
+
+let currentEmailIdx = 1;
+let analyzeTimer = null;
+let flightsInFlight = 0;
+
+function renderTabs(){
+  document.getElementById('anTabs').innerHTML = analyzerEmails.map((e,i) =>
+    `<button class="an-tab${i===currentEmailIdx?' active':''}" onclick="selectEmail(${i})" aria-pressed="${i===currentEmailIdx}">${esc(e.tabLabel)}</button>`
+  ).join('');
+}
+
+function renderZones(){
+  document.getElementById('anZones').innerHTML = partOrder.map(part =>
+    `<button class="an-zone" data-part="${part}" onclick="openZonePopup('${part}')">
+       <div class="an-zone-head">${partMeta[part].short}</div>
+       <div class="an-zone-count">0</div>
+     </button>`
+  ).join('');
+}
+
+function selectEmail(idx){
+  currentEmailIdx = idx;
+  clearInterval(analyzeTimer);
+  renderTabs();
+  renderZones();
+  const email = analyzerEmails[idx];
+  document.getElementById('anAvatar').innerHTML = avatarHTML(email.who);
+  document.getElementById('anFrom').textContent = email.from;
+  document.getElementById('anTo').textContent = email.to;
+  const subjectRow = document.getElementById('anSubjectRow');
+  if (email.subject){ subjectRow.textContent = email.subject; subjectRow.style.display = 'block'; }
+  else { subjectRow.style.display = 'none'; }
+  document.getElementById('anEmailBox').innerHTML = email.parts.map((p,i) =>
+    `<span class="an-seg" data-part="${p.part}" data-idx="${i}" onclick="tapSegment(${i})">${esc(p.text)}</span>`
+  ).join(' ');
+  const capEl = document.getElementById('anCaption');
+  if (email.caption){ capEl.textContent = email.caption; capEl.style.display = 'block'; }
+  else { capEl.style.display = 'none'; }
+  celebratedForThisEmail = false;
+}
+
+function bumpZone(part){
+  const zone = document.querySelector(`.an-zone[data-part="${part}"]`);
+  if (!zone) return;
+  const countEl = zone.querySelector('.an-zone-count');
+  countEl.textContent = String(parseInt(countEl.textContent || '0', 10) + 1);
+  zone.classList.add('filled', 'bump');
+  setTimeout(() => zone.classList.remove('bump'), 300);
+}
+
+let celebratedForThisEmail = false;
+function checkAnalyzerCompletion(){
+  if (celebratedForThisEmail) return;
+  const total = document.querySelectorAll('#anEmailBox .an-seg').length;
+  const flown = document.querySelectorAll('#anEmailBox .an-seg.an-flown').length;
+  if (total > 0 && flown === total){
+    celebratedForThisEmail = true;
+    celebrateAnalysis();
+  }
+}
+
+function celebrateAnalysis(){
+  const zonesEl = document.getElementById('anZones');
+  fireConfetti(zonesEl);
+  const banner = document.createElement('div');
+  banner.className = 'celebrate-banner';
+  banner.textContent = '🎉 Giỏi quá, bạn đã phân tích xong toàn bộ email này!';
+  document.body.appendChild(banner);
+  requestAnimationFrame(() => banner.classList.add('show'));
+  setTimeout(() => { banner.classList.remove('show'); setTimeout(() => banner.remove(), 350); }, 2400);
+  LMS().event('analyzer_completed', { email: analyzerEmails[currentEmailIdx].id });
+}
+
+function fireConfetti(anchorEl){
+  const rect = anchorEl ? anchorEl.getBoundingClientRect() : { left: window.innerWidth/2, top: window.innerHeight/2, width:0, height:0 };
+  const originX = rect.left + rect.width/2;
+  const originY = rect.top + rect.height/2;
+  const colors = ['#3CA57A','#E8A24A','#7CA792','#2A8167','#CE8A33'];
+  for (let i = 0; i < 26; i++){
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    const size = 6 + Math.random()*5;
+    piece.style.width = size + 'px';
+    piece.style.height = (size*1.4) + 'px';
+    piece.style.background = colors[Math.floor(Math.random()*colors.length)];
+    piece.style.left = originX + 'px';
+    piece.style.top = originY + 'px';
+    const dx = (Math.random()-0.5) * 220;
+    const dy = 90 + Math.random()*110;
+    const rot = (Math.random()-0.5) * 540;
+    piece.animate([
+      { transform:'translate(0,0) rotate(0deg)', opacity:1 },
+      { transform:`translate(${dx}px, ${dy}px) rotate(${rot}deg)`, opacity:0 }
+    ], { duration: 850 + Math.random()*400, easing:'cubic-bezier(.25,.6,.4,1)' });
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(), 1300);
+  }
+}
+
+function flyToZone(segEl, part, onDone){
+  const zone = document.querySelector(`.an-zone[data-part="${part}"]`);
+  if (!zone || !segEl){ onDone && onDone(); return; }
+  const startRect = segEl.getBoundingClientRect();
+  const endRect = zone.getBoundingClientRect();
+  const flyer = document.createElement('div');
+  flyer.className = 'an-flyer an-color-' + part;
+  flyer.textContent = partMeta[part].short;
+  flyer.style.left = (startRect.left + startRect.width/2 - 30) + 'px';
+  flyer.style.top = (startRect.top + startRect.height/2 - 12) + 'px';
+  document.body.appendChild(flyer);
+  flightsInFlight++;
+  requestAnimationFrame(() => {
+    const dx = (endRect.left + endRect.width/2) - (startRect.left + startRect.width/2);
+    const dy = (endRect.top + endRect.height/2) - (startRect.top + startRect.height/2);
+    flyer.style.transform = `translate(${dx}px, ${dy}px) scale(.55)`;
+    flyer.style.opacity = '0.2';
+  });
+  setTimeout(() => {
+    flyer.remove();
+    flightsInFlight--;
+    bumpZone(part);
+    onDone && onDone();
+  }, 560);
+}
+
+function tapSegment(i){
+  const email = analyzerEmails[currentEmailIdx];
+  const part = email.parts[i].part;
+  const segEl = document.querySelector(`#anEmailBox .an-seg[data-idx="${i}"]`);
+  if (segEl.classList.contains('an-flown')) {
+    openZonePopup(part);
+    return;
+  }
+  segEl.classList.add('an-active', 'an-color-' + part);
+  flyToZone(segEl, part, () => {
+    segEl.classList.remove('an-active');
+    segEl.classList.add('an-flown');
+    checkAnalyzerCompletion();
+  });
+  LMS().event('analyzer_tap', { email: email.id, part });
+}
+
+function runAnalyze(){
+  clearInterval(analyzeTimer);
+  const segs = Array.from(document.querySelectorAll('#anEmailBox .an-seg')).filter(s => !s.classList.contains('an-flown'));
+  let i = 0;
+  analyzeTimer = setInterval(() => {
+    if (i >= segs.length){ clearInterval(analyzeTimer); return; }
+    const seg = segs[i];
+    const part = seg.dataset.part;
+    seg.classList.add('an-active', 'an-color-' + part);
+    flyToZone(seg, part, () => {
+      seg.classList.remove('an-active');
+      seg.classList.add('an-flown');
+      checkAnalyzerCompletion();
+    });
+    i++;
+  }, 480);
+  LMS().event('analyzer_run', { email: analyzerEmails[currentEmailIdx].id });
+}
+
+function openZonePopup(part){
+  const email = analyzerEmails[currentEmailIdx];
+  const matched = email.parts.filter(p => p.part === part);
+  const meta = partMeta[part];
+  let html = `<p><b>${meta.tag}</b> — ${meta.desc}</p>`;
+  if (matched.length){
+    html += '<p style="margin-top:10px;font-weight:700;color:var(--jade-text);">Câu trong email này:</p>';
+    html += matched.map(m => `<p style="font-style:italic;background:var(--cream-2);border-radius:8px;padding:8px 10px;margin-top:6px;">"${esc(m.text)}"</p>`).join('');
+  } else {
+    html += '<p style="margin-top:10px;color:var(--ink-3);">Email này chưa có câu nào thuộc phần này.</p>';
+  }
+  openPopup(meta.tag, html);
+}
+
+function resetAnalyzer(){ clearInterval(analyzeTimer); selectEmail(currentEmailIdx); }
+
+renderTabs();
+selectEmail(currentEmailIdx);
+
+/* ---------- Scroll stack: 5 bước viết Body (vanilla JS) ---------- */
+function initBodyStepStack(){
+  const root = document.getElementById('bodySteps');
+  if (!root) return;
+  const cards = Array.from(root.querySelectorAll('.scroll-stack-card'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let metrics = [];
+  let ticking = false;
+  let lastActive = -1;
+
+  cards.forEach((card,index) => {
+    card.style.setProperty('--stack-index',index);
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-label',`Bước ${index + 1} trong 5`);
+  });
+
+  function measure(){
+    cards.forEach(card => card.classList.remove('stack-too-tall'));
+    if (window.innerWidth <= 880){
+      cards.forEach(card => {
+        if (card.scrollHeight > window.innerHeight * .78) card.classList.add('stack-too-tall');
+      });
+    }
+    const rootTop = root.getBoundingClientRect().top + window.scrollY;
+    metrics = cards.map((card,index) => ({
+      trigger:rootTop + card.offsetTop - (window.innerWidth <= 880 ? 68 : 78) - index * (window.innerWidth <= 880 ? 9 : 14),
+      disabled:card.classList.contains('stack-too-tall')
+    }));
+    update();
+  }
+
+  function update(){
+    const y = window.scrollY;
+    let active = -1;
+    metrics.forEach((metric,index) => { if (y >= metric.trigger - 12) active = index; });
+
+    cards.forEach((card,index) => {
+      const metric = metrics[index];
+      card.classList.toggle('stack-current',index === active);
+      card.classList.toggle('stack-passed',index < active);
+      if (!reduceMotion && !metric.disabled){
+        card.style.transform = 'none';
+        card.style.filter = 'none';
+      } else {
+        card.style.transform = '';
+        card.style.filter = '';
+      }
+    });
+
+    if (active !== lastActive && active >= 0){
+      lastActive = active;
+      LMS().event('body_step_viewed',{step:active + 1});
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll',() => {
+    if (!ticking){ ticking = true; requestAnimationFrame(update); }
+  },{passive:true});
+  window.addEventListener('resize',() => {
+    clearTimeout(window._stackResize);
+    window._stackResize = setTimeout(measure,140);
+  });
+  window.addEventListener('load',measure,{once:true});
+  measure();
+}
+initBodyStepStack();
+
+/* ---------- Reading comfort ---------- */
+const progressBar = document.getElementById('readingProgressBar');
+const backToTop = document.getElementById('backToTop');
+let scrollTicking = false;
+function updateReadingUI(){
+  const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  const ratio = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+  progressBar.style.width = (ratio * 100).toFixed(1) + '%';
+  backToTop.classList.toggle('show', window.scrollY > 650);
+  scrollTicking = false;
+}
+window.addEventListener('scroll', () => {
+  if (!scrollTicking){ scrollTicking = true; requestAnimationFrame(updateReadingUI); }
+}, { passive:true });
+backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+updateReadingUI();
+
+/* ---------- LMS wiring ---------- */
+LMS().ready();
+function reportHeight(){ LMS().resize({ height: document.documentElement.scrollHeight }); }
+window.addEventListener('load', reportHeight);
+if (window.ResizeObserver){
+  const ro = new ResizeObserver(() => { clearTimeout(window._rz); window._rz = setTimeout(reportHeight, 100); });
+  ro.observe(document.body);
+}
+</script>
+</body>
+</html>
