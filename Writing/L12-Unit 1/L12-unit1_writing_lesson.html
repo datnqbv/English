@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 — Writing: Life Stories (Biography)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1: Life Stories - Writing Lesson",
+    "subject": "Tiếng Anh",
+    "grade": "12",
+    "objectives": [
+      "Synthesise and summarise information from different sources.",
+      "Write a biography (180-200 words) of a well-known person."
+    ],
+    "structure": [
+      { "id": "hook", "title": "Hook — Combining Sources (Marie Curie)" },
+      { "id": "framework", "title": "A · Khung tổng quát (5 phần của Biography)" },
+      { "id": "breakdown", "title": "B · Đi sâu từng phần (Introduction / Narration / Death & Legacy)" },
+      { "id": "builder", "title": "C · Timeline Builder (Quy trình 5 bước)" },
+      { "id": "analyzer", "title": "D · Phân tích bài mẫu 199 từ (Marie Curie)" },
+      { "id": "signals", "title": "E · Bảng tín hiệu nhận diện" }
+    ],
+    "athenaGuidance": "Bài học Writing Unit 1 Lớp 12 hướng dẫn kỹ năng viết tiểu sử danh nhân (Biography) và tổng hợp thông tin từ nhiều nguồn. Bài học gồm: Hook minh họa tổng hợp Source A (audio) và Source B (fact-sheet) thành 1 câu hoàn chỉnh của Nam, Khung 5 phần của Biography, Công thức & phối hợp thì Quá khứ đơn + Quá khứ tiếp diễn (với While), Quy trình Timeline Builder 5 bước, Trình phân tích bài mẫu 199 từ về Marie Curie với 5 nút highlight tĩnh, và Bảng tín hiệu nhận diện."
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Neutrals · giấy & mực */
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+
+      /* Jade · hành động chính */
+      --jade: #3CA57A;
+      --jade-deep: #2A8167;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+
+      /* Sage · phụ trợ */
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+
+      /* Accent · điểm nhấn ấm */
+      --accent: #E8A24A;
+      --accent-deep: #CE8A33;
+      --accent-text: #8A551A;
+      --accent-pale: #F7E7CD;
+
+      /* Semantic · phản hồi đúng/sai/cảnh báo/info */
+      --correct: #2A8167;
+      --correct-bg: #DCEAE1;
+      --wrong: #A84B2C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+
+      --white: #FFFFFF;
+      --radius-lg: 22px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 10px 30px rgba(43, 43, 40, 0.10);
+      --shadow-lg: 0 16px 40px rgba(20, 67, 47, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    .wrap {
+      width: min(1060px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* Top Header */
+    .hero-header {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 56px 0 68px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: .06em;
+    }
+
+    .hero-header h1 {
+      color: #fff;
+      font-size: clamp(28px, 5.2vw, 44px);
+      line-height: 1.2;
+      margin: 16px 0 12px;
+    }
+
+    .hero-header p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    .tag-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .head-tag {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 40px 0 60px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      display: inline-flex;
+      background: var(--sage-pale);
+      color: var(--sage-text);
+      border: 1px solid var(--sage);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-size: 26px;
+      margin-top: 8px;
+    }
+
+    .lead {
+      color: var(--ink-2);
+      font-size: 16px;
+      margin: 6px 0 0;
+    }
+
+    .vi-sub {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-3);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: 2px;
+    }
+
+    /* Hook: Combining Sources Container */
+    .hook-container {
+      background: var(--white);
+      border: 1.5px solid var(--jade-soft);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 34px;
+    }
+
+    .hook-intro {
+      font-size: 15.5px;
+      color: var(--ink);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .sources-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .source-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .source-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--paper-line-2);
+    }
+
+    .source-body h4 {
+      font-size: 14.5px;
+      color: var(--jade-dark);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .source-body p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    .combine-arrow-box {
+      text-align: center;
+      margin: -10px 0 14px;
+    }
+
+    .plus-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(232, 162, 74, 0.3);
+    }
+
+    .combined-result-box {
+      background: var(--correct-bg);
+      border: 1.5px solid var(--correct);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      animation: fadeIn .3s ease;
+    }
+
+    .combined-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--jade-deep);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .combined-text {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      line-height: 1.6;
+    }
+
+    .bridge-note {
+      background: var(--cream-2);
+      border-left: 4px solid var(--jade-deep);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* Section A: Vertical Flow (5 Parts) */
+    .flow-chain {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .flow-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+
+    .flow-card:hover {
+      border-color: var(--jade-deep);
+      transform: translateX(4px);
+    }
+
+    .flow-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    .flow-icon {
+      font-size: 18px;
+      margin-right: 8px;
+    }
+
+    .flow-question {
+      display: none;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--paper-line-2);
+      font-size: 14.5px;
+      color: var(--ink-2);
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .flow-card.open .flow-question {
+      display: block;
+    }
+
+    .flow-arrow {
+      text-align: center;
+      font-size: 20px;
+      color: var(--jade-deep);
+      line-height: 1;
+      margin: -2px 0;
+    }
+
+    /* Section B: Formulas & Contrasting Cases */
+    .formula-box {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .formula-box h3 {
+      font-size: 18.5px;
+      color: var(--jade-dark);
+      margin-bottom: 12px;
+    }
+
+    .formula-tag {
+      background: var(--cream-2);
+      border-left: 4px solid var(--jade-deep);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .contrast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .contrast-card {
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+
+    .contrast-card.good {
+      background: var(--correct-bg);
+      border: 1.5px solid var(--correct);
+      color: var(--jade-dark);
+    }
+
+    .contrast-card.bad {
+      background: var(--wrong-bg);
+      border: 1.5px solid var(--wrong);
+      color: var(--wrong);
+    }
+
+    .contrast-title {
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Section C: Timeline Builder */
+    .builder-step {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+    }
+
+    .step-num {
+      background: var(--jade-deep);
+      color: #fff;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 16px;
+      color: var(--jade-dark);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 14.5px;
+      color: var(--ink-2);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* Section D: 5-Button Highlight Analyzer */
+    .analyzer-card {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .analyzer-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .btn-part {
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      transition: all .15s ease;
+      text-align: center;
+    }
+
+    .btn-part:hover {
+      border-color: var(--jade-deep);
+    }
+
+    .btn-part.active-part {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+      box-shadow: 0 2px 8px rgba(42, 129, 103, 0.25);
+    }
+
+    .model-essay-text {
+      background: var(--cream);
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--paper-line);
+      font-size: 15.5px;
+      line-height: 1.85;
+    }
+
+    .essay-span {
+      transition: background .2s ease;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .essay-span.hl-intro {
+      background: #FEEBC8;
+      border-bottom: 2px solid var(--accent);
+      font-weight: 600;
+    }
+
+    .essay-span.hl-child {
+      background: var(--jade-pale);
+      border-bottom: 2px solid var(--jade-deep);
+      font-weight: 600;
+    }
+
+    .essay-span.hl-ach {
+      background: var(--sage-pale);
+      border-bottom: 2px solid var(--sage-deep);
+      font-weight: 600;
+    }
+
+    .essay-span.hl-fam {
+      background: #EBF8FF;
+      border-bottom: 2px solid #3182CE;
+      font-weight: 600;
+    }
+
+    .essay-span.hl-death {
+      background: #FAF5FF;
+      border-bottom: 2px solid #805AD5;
+      font-weight: 600;
+    }
+
+    .analyzer-info-box {
+      margin-top: 16px;
+      min-height: 50px;
+      background: var(--white);
+      border: 1.5px solid var(--jade-soft);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--jade-dark);
+    }
+
+    /* Section E: Signal Words */
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .signal-pill {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all .15s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .signal-pill:hover,
+    .signal-pill.open {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+    }
+
+    .signal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .signal-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .signal-fn {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-2);
+    }
+
+    .signal-tooltip {
+      display: none;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--jade-soft);
+      font-size: 13.5px;
+      color: var(--jade-dark);
+      font-style: italic;
+    }
+
+    .signal-pill.open .signal-tooltip {
+      display: block;
+    }
+
+    /* Lesson Complete */
+    .lesson-complete-wrap {
+      margin: 40px 0 20px;
+      text-align: center;
+    }
+
+    .lesson-complete-card {
+      display: inline-block;
+      background: var(--correct-bg);
+      color: var(--jade-text);
+      border: 1.5px solid var(--jade-soft);
+      padding: 24px 36px;
+      border-radius: var(--radius-lg);
+      font-weight: 800;
+      font-size: 17px;
+      box-shadow: var(--shadow);
+    }
+
+    .lesson-complete-card span {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 6px;
+    }
+
+    .lesson-complete-card small {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 4px;
+      color: var(--jade-dark);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 18px 50px;
+      color: var(--ink-3);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .sources-row,
+      .contrast-grid,
+      .signals-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .analyzer-btn-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-header {
+        padding: 40px 0 48px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        width: min(100% - 22px, 1060px);
+      }
+
+      .hook-container {
+        padding: 16px;
+      }
+
+      .analyzer-btn-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero-header">
+    <div class="wrap">
+      <span class="eyebrow">Unit 1 · Life Stories</span>
+      <h1>Writing a Biography</h1>
+      <p>Học cách tổng hợp thông tin từ nhiều nguồn tư liệu và xây dựng một bài tiểu sử danh nhân hoàn chỉnh (180–200 từ) với sự phối hợp chính xác của thì Quá khứ đơn và Quá khứ tiếp diễn.</p>
+      <div class="tag-row">
+        <span class="head-tag">📜 Biography</span>
+        <span class="head-tag">🔗 Synthesising 2 Sources</span>
+        <span class="head-tag">⏳ Past Simple &amp; Past Continuous</span>
+        <span class="head-tag">🎯 Target: 180–200 words</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HOOK: Combining Sources (Marie Curie) -->
+    <div class="hook-container">
+      <div class="hook-intro">
+        <b>Tình huống:</b> Nam đang viết bài cho báo trường về các nhà khoa học truyền cảm hứng. Nam có 2 nguồn tư liệu về <b>Marie Curie</b>: một đoạn ghi âm từ phim tài liệu và một bảng thông tin tra cứu trên mạng. Không nguồn nào có đủ mọi thứ &ndash; Nam phải <b>tổng hợp cả 2 nguồn</b> lại với nhau!
+      </div>
+
+      <div class="sources-row">
+        <div class="source-card">
+          <img src="L12-Unit 1-Writing_Source A.png" alt="Source A - Audio Clip" class="source-icon">
+          <div class="source-body">
+            <h4>Source A &bull; Audio Clip (Phim tài liệu)</h4>
+            <p>"In the documentary, Marie Curie was described as someone who faced constant doubt from her male colleagues, but never gave up on her research."</p>
+          </div>
+        </div>
+
+        <div class="source-card">
+          <img src="L12-Unit 1-Writing_Source B.png" alt="Source B - Fact-sheet" class="source-icon">
+          <div class="source-body">
+            <h4>Source B &bull; Fact-sheet (Tra cứu online)</h4>
+            <p><b>Born:</b> 1867 &bull; <b>Field:</b> Radioactivity research &bull; <b>Achievement:</b> First person to win Nobel Prizes in two different sciences.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="combine-arrow-box">
+        <span class="plus-badge">+</span>
+      </div>
+
+      <div class="combined-result-box">
+        <div class="combined-title">💡 Câu tổng hợp của Nam (Combined Sentence):</div>
+        <div class="combined-text">
+          "Even though she faced doubt from her colleagues, Marie Curie went on to become the first person ever to win Nobel Prizes in two different sciences."
+        </div>
+      </div>
+
+      <div class="bridge-note">
+        <b>💡 Đây chính là kỹ năng của một người viết tiểu sử thực thụ:</b> Không một nguồn tư liệu đơn lẻ nào kể được toàn bộ câu chuyện. Bài học hôm nay sẽ giúp bạn thành thạo cách tổng hợp dữ liệu từ nhiều nguồn vào một bài tiểu sử mạch lạc và thuyết phục!
+      </div>
+    </div>
+
+    <!-- SECTION A: Khung tổng quát (5 phần) -->
+    <section>
+      <div class="section-head">
+        <span class="tag">Section A · Framework</span>
+        <h2>How to Write a Biography<span class="vi-sub">Khung cấu trúc 5 phần chuẩn mực của bài tiểu sử</span></h2>
+        <p class="lead">Chạm vào từng phần để xem câu hỏi định hướng chi tiết:</p>
+      </div>
+
+      <div class="flow-chain">
+        <div class="flow-card" onclick="this.classList.toggle('open')">
+          <div class="flow-head">
+            <span><span class="flow-icon">①</span>Introduction (Mở đầu)</span>
+            <span>▼</span>
+          </div>
+          <div class="flow-question">❓ <b>Câu hỏi định hướng:</b> Người này nổi tiếng khắp thế giới vì thành tựu quan trọng nhất nào?</div>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-card" onclick="this.classList.toggle('open')">
+          <div class="flow-head">
+            <span><span class="flow-icon">②</span>Childhood &amp; Education (Thời thơ ấu &amp; Học vấn)</span>
+            <span>▼</span>
+          </div>
+          <div class="flow-question">❓ <b>Câu hỏi định hướng:</b> Sinh ra khi nào, ở đâu? Thời trẻ học tập và bắt đầu nghiên cứu trong hoàn cảnh nào?</div>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-card" onclick="this.classList.toggle('open')">
+          <div class="flow-head">
+            <span><span class="flow-icon">③</span>Achievements (Những thành tựu nổi bật)</span>
+            <span>▼</span>
+          </div>
+          <div class="flow-question">❓ <b>Câu hỏi định hướng:</b> Những phát minh, công trình hoặc chiến thắng vang dội nhất là gì?</div>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-card" onclick="this.classList.toggle('open')">
+          <div class="flow-head">
+            <span><span class="flow-icon">④</span>Family / Later Career (Gia đình hoặc Sự nghiệp giai đoạn sau)</span>
+            <span>▼</span>
+          </div>
+          <div class="flow-question">❓ <b>Lưu ý linh hoạt:</b> Dùng thông tin <i>Family</i> nếu nhân vật có đời sống gia đình đáng kể (Marie Curie, Walt Disney), hoặc chuyển sang <i>Later Career</i> đối với các nhân vật lịch sử/quân sự (Đại tướng Võ Nguyên Giáp, Yersin).</div>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <div class="flow-card" onclick="this.classList.toggle('open')">
+          <div class="flow-head">
+            <span><span class="flow-icon">⑤</span>Death &amp; Legacy (Mất &amp; Di sản để lại)</span>
+            <span>▼</span>
+          </div>
+          <div class="flow-question">❓ <b>Câu hỏi định hướng:</b> Mất năm nào, vì nguyên nhân gì? Những đóng góp/ảnh hưởng của họ tiếp tục tác động đến ngày nay ra sao?</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION B: Đi sâu từng phần & Ngữ pháp -->
+    <section style="margin-top:44px;">
+      <div class="section-head">
+        <span class="tag">Section B · Deep Dive</span>
+        <h2>Formulas &amp; Narrative Tenses<span class="vi-sub">Công thức chi tiết &amp; Phối hợp thì Quá khứ đơn + Quá khứ tiếp diễn</span></h2>
+      </div>
+
+      <!-- B.1 Introduction -->
+      <div class="formula-box">
+        <h3>B.1 — Introduction (Giới thiệu nhân vật &amp; Thành tựu)</h3>
+        <div class="formula-tag">📐 <b>Formula:</b> [Name] is famous around the world for + [main achievement].</div>
+        <div class="contrast-grid">
+          <div class="contrast-card good">
+            <div class="contrast-title"><span>✓</span> Chuẩn tiểu sử (Good)</div>
+            "Marie Curie is famous around the world for her pioneering research into radioactivity."
+          </div>
+          <div class="contrast-card bad">
+            <div class="contrast-title"><span>✗</span> Chưa tốt (Not good)</div>
+            "Marie Curie was a woman who lived a long time ago."<br>
+            <small style="color:var(--ink-2);display:block;margin-top:4px;"><i>(Không nêu được lý do khiến nhân vật nổi tiếng).</i></small>
+          </div>
+        </div>
+      </div>
+
+      <!-- B.2 Narrating Events -->
+      <div class="formula-box">
+        <h3>B.2 — Narrating Events (Kể sự kiện &amp; Bối cảnh nền)</h3>
+        <div class="formula-tag">
+          <b>1. Sự kiện chính (Main event):</b> [Name] + Past simple + [main event].<br>
+          <b>2. Bối cảnh nền (Background context):</b> While + [Name] + was/were + V-ing, + [Name] + Past simple + [main event].
+        </div>
+        <div class="contrast-grid">
+          <div class="contrast-card good">
+            <div class="contrast-title"><span>✓</span> Chuẩn ngữ pháp (Good)</div>
+            "While she was studying at the Sorbonne, she met a young scientist named Pierre Curie."
+          </div>
+          <div class="contrast-card bad">
+            <div class="contrast-title"><span>✗</span> Dùng sai thì (Not good)</div>
+            "While she studied at the Sorbonne, she was meeting Pierre Curie."<br>
+            <small style="color:var(--ink-2);display:block;margin-top:4px;"><i>(Đảo ngược 2 thì: hành động nền kéo dài phải dùng Past Continuous, sự kiện xen vào dùng Past Simple).</i></small>
+          </div>
+        </div>
+      </div>
+
+      <!-- B.3 Death & Legacy -->
+      <div class="formula-box">
+        <h3>B.3 — Death &amp; Legacy (Mất &amp; Di sản để lại)</h3>
+        <div class="formula-tag">📐 <b>Formula:</b> [Name] died in [year], from/after [cause]. However, [legacy / continued impact].</div>
+        <div class="contrast-grid">
+          <div class="contrast-card good">
+            <div class="contrast-title"><span>✓</span> Chuẩn tiểu sử (Good)</div>
+            "Marie Curie died in 1934, from an illness caused by years of exposure to radiation. Her achievements, however, continue to save lives today."
+          </div>
+          <div class="contrast-card bad">
+            <div class="contrast-title"><span>✗</span> Chưa tốt (Not good)</div>
+            "Then she died."<br>
+            <small style="color:var(--ink-2);display:block;margin-top:4px;"><i>(Quá cụt ngủn, không nêu được di sản và tầm ảnh hưởng để lại cho thế hệ sau).</i></small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION C: Timeline Builder -->
+    <section style="margin-top:44px;">
+      <div class="section-head">
+        <span class="tag">Section C · Timeline Builder</span>
+        <h2>5-Step Process to Build a Life Stage<span class="vi-sub">Quy trình 5 bước xây dựng một giai đoạn cuộc đời</span></h2>
+      </div>
+
+      <div class="builder-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Xác định mốc thời gian</h4>
+          <p>Xác định năm nào, độ tuổi nào, hoặc giai đoạn nào trong cuộc đời nhân vật.</p>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Xác định sự kiện chính</h4>
+          <p>Điều gì quan trọng đã xảy ra? Dùng thì <b>Past simple</b> (ví dụ: <i>moved, discovered, founded, won</i>).</p>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Thêm bối cảnh nền nếu cần</h4>
+          <p>Nhân vật đang làm gì khi sự kiện đó diễn ra? Dùng thì <b>Past continuous</b> với liên từ <i>While</i> (ví dụ: <i>While she was studying...</i>).</p>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Nêu ý nghĩa &amp; Tầm quan trọng</h4>
+          <p>Sự kiện đó có ý nghĩa gì đối với sự nghiệp của nhân vật hoặc nhân loại?</p>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>Phòng tránh lỗi thường gặp</h4>
+          <p>⚠️ Liệt kê sự kiện khô khan thiếu phân tích ý nghĩa; dùng lẫn lộn giữa Past simple và Past continuous.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION D: Interactive Analyzer (5 Buttons) -->
+    <section style="margin-top:44px;">
+      <div class="section-head">
+        <span class="tag">Section D · Interactive Analyzer</span>
+        <h2>Model Biography Breakdown (Marie Curie)<span class="vi-sub">Trình phân tích bài mẫu 199 từ với 5 nút highlight tĩnh</span></h2>
+        <p class="lead">Chạm vào từng nút bên dưới để xem tương ứng từng phần cấu trúc:</p>
+      </div>
+
+      <div class="analyzer-card">
+        <div class="analyzer-btn-grid">
+          <button class="btn-part" id="btnPartIntro" onclick="highlightPart('intro', '1. Introduction: Giới thiệu tên và thành tựu nổi tiếng thế giới (radioactivity).')">1. Introduction</button>
+          <button class="btn-part" id="btnPartChild" onclick="highlightPart('child', '2. Childhood &amp; Education: Sinh tại Warsaw (1867), vừa làm gia sư vừa học lén, sang Paris học tại Sorbonne.')">2. Childhood &amp; Ed</button>
+          <button class="btn-part" id="btnPartAch" onclick="highlightPart('ach', '3. Achievements: Cùng chồng phát hiện 2 nguyên tố mới (polonium &amp; radium), đoạt 2 giải Nobel.')">3. Achievements</button>
+          <button class="btn-part" id="btnPartFam" onclick="highlightPart('fam', '4. Family: Có 2 con gái, vừa nuôi con vừa điều hành phòng lab, đào tạo con gái Irène đoạt giải Nobel.')">4. Family</button>
+          <button class="btn-part" id="btnPartDeath" onclick="highlightPart('death', '5. Death &amp; Legacy: Mất năm 1934 do nhiễm xạ, di sản phương pháp điều trị tiếp tục cứu sống nhiều người.')">5. Death &amp; Legacy</button>
+        </div>
+
+        <div class="model-essay-text">
+          <span class="essay-span" id="spanIntro">Marie Curie is famous around the world for her pioneering research into radioactivity.</span>
+          <span class="essay-span" id="spanChild">She was born in Warsaw, Poland, in 1867. While working as a governess to help support her family, she continued studying science in secret. In 1891, she moved to Paris to study at the Sorbonne. While she was studying there, she met a young scientist named Pierre Curie, and the couple married in 1895.</span>
+          <span class="essay-span" id="spanAch">Marie Curie was an extraordinarily successful scientist. Together with her husband, she discovered two new elements, polonium and radium. She was also famous for winning two Nobel Prizes, one in Physics in 1903 and one in Chemistry in 1911, becoming the first person ever to win a Nobel Prize in two different sciences.</span>
+          <span class="essay-span" id="spanFam">Marie Curie had two daughters, Irène and Ève. While raising her daughters, she was also running her own research laboratory in Paris. After Pierre died suddenly in 1906, she carried on their work alone and later trained Irène, who also became a Nobel Prize winner.</span>
+          <span class="essay-span" id="spanDeath">Marie Curie died in 1934, from an illness caused by years of exposure to radiation. Her achievements, however, continue to save lives today, as the treatment she pioneered is still used in hospitals worldwide.</span>
+        </div>
+
+        <div class="analyzer-info-box" id="analyzerInfo">
+          💡 Chạm vào một nút phía trên để xem phân tích từng phần của bài tiểu sử.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION E: Signal Words -->
+    <section style="margin-top:44px;">
+      <div class="section-head">
+        <span class="tag">Section E · Signal Words</span>
+        <h2>Key Signals &amp; Transitions<span class="vi-sub">Bảng từ nối và tín hiệu nhận diện bài tiểu sử</span></h2>
+      </div>
+
+      <div class="signals-grid">
+        <div class="signal-pill" onclick="this.classList.toggle('open')">
+          <div class="signal-head">
+            <span class="signal-badge">Introduction</span>
+            <span class="signal-fn">Mở đầu tiểu sử</span>
+          </div>
+          <div class="signal-tooltip">"[Name] is famous for...", "[Name] is remembered around the world as..."</div>
+        </div>
+
+        <div class="signal-pill" onclick="this.classList.toggle('open')">
+          <div class="signal-head">
+            <span class="signal-badge">Main event</span>
+            <span class="signal-fn">Kể sự kiện chính</span>
+          </div>
+          <div class="signal-tooltip">Dùng thì Past simple: "was born in...", "moved to...", "founded...", "discovered..."</div>
+        </div>
+
+        <div class="signal-pill" onclick="this.classList.toggle('open')">
+          <div class="signal-head">
+            <span class="signal-badge">Background context</span>
+            <span class="signal-fn">Mô tả bối cảnh nền</span>
+          </div>
+          <div class="signal-tooltip">"While + was/were + V-ing, ..." (ví dụ: "While she was studying...")</div>
+        </div>
+
+        <div class="signal-pill" onclick="this.classList.toggle('open')">
+          <div class="signal-head">
+            <span class="signal-badge">Legacy</span>
+            <span class="signal-fn">Di sản để lại</span>
+          </div>
+          <div class="signal-tooltip">"However, ...", "...continue(s) to...", "His/Her legacy lives on..."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON COMPLETE -->
+    <div class="lesson-complete-wrap">
+      <div class="lesson-complete-card">
+        <span>🎉</span>
+        Congratulations! You've mastered the Biography structure.
+        <small>Chúc mừng bạn đã hoàn thành bài học cấu trúc bài tiểu sử danh nhân!</small>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>Unit 1 · Life Stories &bull; Biography Lesson. Aiducation Design System v4.</footer>
+
+  <script>
+    // ---------- 5-Button Highlight Analyzer ----------
+    function highlightPart(partKey, infoText) {
+      document.querySelectorAll('.btn-part').forEach(b => b.classList.remove('active-part'));
+      document.querySelectorAll('.essay-span').forEach(s => s.classList.remove('hl-intro', 'hl-child', 'hl-ach', 'hl-fam', 'hl-death'));
+
+      if (partKey === 'intro') {
+        document.getElementById('btnPartIntro').classList.add('active-part');
+        document.getElementById('spanIntro').classList.add('hl-intro');
+      } else if (partKey === 'child') {
+        document.getElementById('btnPartChild').classList.add('active-part');
+        document.getElementById('spanChild').classList.add('hl-child');
+      } else if (partKey === 'ach') {
+        document.getElementById('btnPartAch').classList.add('active-part');
+        document.getElementById('spanAch').classList.add('hl-ach');
+      } else if (partKey === 'fam') {
+        document.getElementById('btnPartFam').classList.add('active-part');
+        document.getElementById('spanFam').classList.add('hl-fam');
+      } else if (partKey === 'death') {
+        document.getElementById('btnPartDeath').classList.add('active-part');
+        document.getElementById('spanDeath').classList.add('hl-death');
+      }
+
+      document.getElementById('analyzerInfo').innerHTML = '🔎 <b>' + infoText + '</b>';
+    }
+  </script>
+</body>
+
+</html>

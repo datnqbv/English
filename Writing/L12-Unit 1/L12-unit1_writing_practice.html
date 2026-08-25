@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 — Writing: Practice &amp; Production Writing (Biography)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1 - Writing - Part 2 & 3: Practice & Production Writing - Biography",
+    "subject": "Tiếng Anh",
+    "grade": "12",
+    "objectives": [
+      "Nhận diện và sắp xếp đúng các phần của bài tiểu sử (Introduction, Childhood & Education, Achievements, Family/Later Career, Death & Legacy)",
+      "Tổng hợp và kết hợp thông tin từ nhiều nguồn tư liệu (Source A + Source B) thành câu văn mạch lạc",
+      "Viết bài tiểu sử danh nhân hoàn chỉnh 180-200 từ đạt chuẩn Rubric 4 tiêu chí của AI Athena"
+    ],
+    "structure": [
+      { "id": "phase-0", "title": "Identify" },
+      { "id": "phase-1", "title": "Structure" },
+      { "id": "phase-2", "title": "Write" },
+      { "id": "phase-3", "title": "Production" }
+    ],
+    "athenaGuidance": "File Luyện tập & Đánh giá Writing Unit 1 Lớp 12 gồm 4 phần: Identify (Structure labelling cấp đoạn về Alexandre Yersin, Read & Extract bảng 3 cột 6 ô), Structure (2 bài Passage Arrangement về Alfred Nobel theo hướng thời gian & thành tựu), Write (Sentence building 6 câu về Đại tướng Võ Nguyên Giáp, Guided writing 2 mức về Đại tướng Võ Nguyên Giáp, Ghép 4 câu từ 2 nguồn Source A/B, Independent biography), và Production Writing (Guided writing về Walt Disney 180 từ, Free writing về Steve Jobs 180-200 từ chấm qua AI Athena, Self-evaluation 5 tiêu chí)."
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Neutrals · giấy & mực */
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+
+      /* Jade · hành động chính */
+      --jade: #3CA57A;
+      --jade-deep: #2A8167;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+
+      /* Sage · phụ trợ */
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+
+      /* Accent · điểm nhấn ấm */
+      --accent: #E8A24A;
+      --accent-deep: #CE8A33;
+      --accent-text: #8A551A;
+      --accent-pale: #F7E7CD;
+
+      /* Semantic · phản hồi đúng/sai/cảnh báo/info */
+      --correct: #2A8167;
+      --correct-bg: #DCEAE1;
+      --wrong: #A84B2C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+
+      --white: #FFFFFF;
+      --radius-lg: 20px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 8px 24px rgba(43, 43, 40, 0.08);
+      --shadow-lg: 0 14px 38px rgba(20, 67, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+      min-height: 100vh;
+    }
+
+    button,
+    a,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* Sticky Navigation Header */
+    .top-header {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 24px 0 28px;
+      box-shadow: 0 4px 16px rgba(20, 67, 47, 0.12);
+    }
+
+    .top-header-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .top-header h1 {
+      color: #fff;
+      font-size: 26px;
+    }
+
+    .top-header .sub {
+      color: var(--cream);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .top-header-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .top-tag {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Reading Progress Bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: transparent;
+      z-index: 9999;
+    }
+
+    .reading-progress span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width .1s ease;
+    }
+
+    /* Level Navigation Tabs */
+    .level-tabs-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--paper-line);
+    }
+
+    .level-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .level-tab {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--ink-2);
+      min-height: 42px;
+      transition: all .15s ease;
+    }
+
+    .level-tab:hover {
+      border-color: var(--jade-deep);
+    }
+
+    .level-tab.active {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+      box-shadow: var(--shadow);
+    }
+
+    .level-intro {
+      font-size: 14.5px;
+      color: var(--ink-2);
+      margin: 18px 0;
+      background: var(--cream-2);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--jade-deep);
+      line-height: 1.55;
+    }
+
+    /* Cards & Activities */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .activity-label {
+      display: inline-block;
+      background: var(--sage-pale);
+      color: var(--sage-text);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .desc-en {
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    /* Structure Labelling (Paragraph Level) */
+    .para-match-card {
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+
+    .pmc-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .pmc-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .pmc-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+    }
+
+    .pmc-select-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pmc-opt-btn {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: left;
+      transition: all .15s ease;
+      min-height: 42px;
+    }
+
+    .pmc-opt-btn:hover {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+    }
+
+    .pmc-opt-btn.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--jade-text);
+      font-weight: 800;
+    }
+
+    .pmc-opt-btn.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+    }
+
+    /* Ordering (Passage Arrangement) */
+    .ord-wrap {
+      margin-top: 10px;
+    }
+
+    .ord-bank {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .ord-tile {
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      transition: all .15s ease;
+      cursor: pointer;
+    }
+
+    .ord-tile:hover {
+      background: var(--cream-3);
+      border-color: var(--jade-deep);
+    }
+
+    .ord-tile.placed {
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .ord-answer {
+      min-height: 110px;
+      background: var(--cream);
+      border: 2px dashed var(--jade-soft);
+      border-radius: var(--radius);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .ord-ans-row {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    .ord-num {
+      background: var(--jade-deep);
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .ord-ans-row.correct {
+      border-color: var(--correct);
+      background: var(--correct-bg);
+    }
+
+    .ord-ans-row.wrong {
+      border-color: var(--wrong);
+      background: var(--wrong-bg);
+    }
+
+    .ord-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .an-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      border: 0;
+      border-radius: var(--radius-sm);
+      padding: 8px 18px;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 42px;
+    }
+
+    .an-btn.ghost {
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line-2);
+      color: var(--ink-2);
+    }
+
+    /* MCQ Engine */
+    .q-card {
+      border-top: 1px solid var(--cream-2);
+      padding: 16px 0;
+    }
+
+    .q-card:first-of-type {
+      border-top: 0;
+      padding-top: 4px;
+    }
+
+    .q-num {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--jade-deep);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 6px;
+    }
+
+    .q-quote {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      background: var(--cream-2);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+    }
+
+    .q-opts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .q-opt {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 9px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: left;
+      transition: all .15s ease;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .q-opt:hover {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+    }
+
+    .q-opt.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--jade-text);
+      font-weight: 800;
+    }
+
+    .q-opt.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+    }
+
+    .q-fb {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .q-fb.show {
+      display: block;
+    }
+
+    .q-fb.ok {
+      background: var(--correct-bg);
+      color: var(--jade-text);
+    }
+
+    .q-fb.hint {
+      background: var(--warning-bg);
+      color: var(--warning);
+    }
+
+    /* Fill Table */
+    .fill-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 14px;
+    }
+
+    .fill-table th,
+    .fill-table td {
+      border: 1px solid var(--paper-line-2);
+      padding: 9px 12px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .fill-table th {
+      background: var(--cream-2);
+      color: var(--jade-dark);
+      font-weight: 800;
+    }
+
+    /* Source Synthesizer Card */
+    .synth-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .synth-sources-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .synth-src-box {
+      background: var(--white);
+      border: 1px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .synth-src-box b {
+      color: var(--jade-deep);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    /* Writing Area & Word Counter */
+    .write-area {
+      width: 100%;
+      min-height: 150px;
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 15px;
+      line-height: 1.65;
+      background: var(--white);
+      resize: vertical;
+      margin-top: 8px;
+      box-sizing: border-box;
+    }
+
+    .write-area:focus {
+      outline: none;
+      border-color: var(--jade-deep);
+      box-shadow: 0 0 0 3px rgba(42, 129, 103, 0.15);
+    }
+
+    .write-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .word-count {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-3);
+    }
+
+    .reveal-btn {
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      margin-top: 8px;
+    }
+
+    .reveal-btn:hover {
+      background: var(--cream-3);
+    }
+
+    .self-check {
+      margin-top: 14px;
+      background: var(--cream-2);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+    }
+
+    .sc-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin-bottom: 8px;
+    }
+
+    .sc-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .sc-box {
+      width: 22px;
+      height: 22px;
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 4px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sc-item.checked .sc-box {
+      background: var(--jade-deep);
+      border-color: var(--jade-deep);
+    }
+
+    .sc-item.checked .sc-box::after {
+      content: "✓";
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    /* Rubric Grid for Free Writing */
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .rubric-item {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .rlabel {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--ink-2);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .rscore {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--jade-deep);
+    }
+
+    .write-feedback {
+      margin-top: 14px;
+      background: var(--jade-pale);
+      border: 1.5px solid var(--jade-soft);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+
+    /* Popup Modal */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 67, 47, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-overlay.open {
+      display: flex;
+    }
+
+    .popup-sheet {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+
+    .popup-close {
+      background: var(--jade-deep);
+      color: #fff;
+      border: 0;
+      border-radius: var(--radius-sm);
+      padding: 8px 18px;
+      font-weight: 700;
+      margin-top: 14px;
+      float: right;
+    }
+
+    /* Finale & Navigation */
+    .next-level-wrap {
+      margin-top: 24px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .next-level-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 24px;
+      font-size: 14.5px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .finale-card {
+      background: var(--jade-deep);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      text-align: center;
+      margin-top: 24px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .finale-card h3 {
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .finale-card p {
+      color: var(--cream);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .celebrate-banner {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--jade-dark);
+      color: #fff;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-weight: 800;
+      font-size: 14.5px;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+      transition: transform .3s cubic-bezier(.25, .8, .25, 1);
+      pointer-events: none;
+    }
+
+    .celebrate-banner.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px 18px 60px;
+      color: var(--ink-3);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .synth-sources-grid,
+      .q-opts,
+      .pmc-select-row,
+      .rubric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 599px) {
+      .wrap {
+        width: min(100% - 22px, 960px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
+
+  <header class="top-header">
+    <div class="wrap top-header-inner">
+      <h1>Unit 1 — Writing: Practice &amp; Production</h1>
+      <div class="sub">Life Stories &bull; Biography</div>
+      <div class="top-header-tags">
+        <span class="top-tag">📜 Biography</span>
+        <span class="top-tag">🎯 Target: 180–200 words</span>
+        <span class="top-tag">📊 4 Phases: Identify &bull; Structure &bull; Write &bull; Production</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="level-tabs-wrap">
+    <div class="wrap">
+      <div class="level-tabs" id="levelTabs">
+        <button class="level-tab active" data-id="phase-0" onclick="goToLevel('phase-0')">1. Identify</button>
+        <button class="level-tab" data-id="phase-1" onclick="goToLevel('phase-1')">2. Structure</button>
+        <button class="level-tab" data-id="phase-2" onclick="goToLevel('phase-2')">3. Write</button>
+        <button class="level-tab" data-id="phase-3" onclick="goToLevel('phase-3')">4. Production</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap" style="padding-top:10px;">
+
+    <!-- ==================== PHASE 0: IDENTIFY ==================== -->
+    <div class="q-level-section" id="q_phase-0" style="display:block;">
+      <p class="level-intro">
+        <b>Identify:</b> Đọc bài tiểu sử Bác sĩ Alexandre Yersin để ghép nối 4 đoạn văn với mô tả chức năng tương ứng, sau đó trích xuất thông tin vào bảng theo từng mốc thời gian.
+      </p>
+
+      <!-- Activity 1: Structure Labelling (Alexandre Yersin) -->
+      <div class="card">
+        <span class="activity-label">Activity 1 &bull; Structure Labelling (Alexandre Yersin)</span>
+        <div class="desc-en">Match each paragraph (1-4) with the correct description (A-D):</div>
+
+        <!-- Para 1 -->
+        <div class="para-match-card">
+          <div class="pmc-head">
+            <span class="pmc-badge">Đoạn 1</span>
+          </div>
+          <div class="pmc-text">
+            "Alexandre Yersin is remembered around the world as one of the greatest medical researchers of the nineteenth century. He was born in Switzerland in 1863. His mother, a schoolteacher, raised him and encouraged him to study science. While he was studying medicine in Paris, he worked closely with famous scientists such as Louis Pasteur and Émile Roux."
+          </div>
+          <div class="pmc-select-row" id="pmcRow1"></div>
+        </div>
+
+        <!-- Para 2 -->
+        <div class="para-match-card">
+          <div class="pmc-head">
+            <span class="pmc-badge">Đoạn 2</span>
+          </div>
+          <div class="pmc-text">
+            "Yersin's most famous achievement came in 1894, when he travelled to Hong Kong during a deadly plague outbreak. Working in a small, poorly equipped hut, he identified the bacterium responsible for the disease, which was later named Yersinia pestis in his honour. This discovery eventually helped doctors develop treatments that saved countless lives."
+          </div>
+          <div class="pmc-select-row" id="pmcRow2"></div>
+        </div>
+
+        <!-- Para 3 -->
+        <div class="para-match-card">
+          <div class="pmc-head">
+            <span class="pmc-badge">Đoạn 3</span>
+          </div>
+          <div class="pmc-text">
+            "In 1895, Yersin settled in Nha Trang, Vietnam, where he founded a branch of the Pasteur Institute. While living there, he also explored the surrounding highlands and recommended the site that later became the town of Da Lat. He never married, choosing instead to devote his life to scientific research and to the local community."
+          </div>
+          <div class="pmc-select-row" id="pmcRow3"></div>
+        </div>
+
+        <!-- Para 4 -->
+        <div class="para-match-card">
+          <div class="pmc-head">
+            <span class="pmc-badge">Đoạn 4</span>
+          </div>
+          <div class="pmc-text">
+            "Yersin died in Nha Trang in 1943, at the age of 79. However, his legacy lives on: streets, schools, and hospitals across Vietnam still carry his name, and local people continue to visit his grave every year."
+          </div>
+          <div class="pmc-select-row" id="pmcRow4"></div>
+        </div>
+      </div>
+
+      <!-- Activity 2: Read & Extract -->
+      <div class="card">
+        <span class="activity-label">Activity 2 &bull; Read &amp; Extract</span>
+        <div class="desc-en">Read the biography of Alexandre Yersin and check the extracted timeline information:</div>
+
+        <table class="fill-table">
+          <thead>
+            <tr>
+              <th>Period/Stage</th>
+              <th>Event</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Early life</b></td>
+              <td>His mother, a schoolteacher, raised him</td>
+              <td>Encouraged him to study science</td>
+            </tr>
+            <tr>
+              <td><b>1894</b></td>
+              <td>Travelled to Hong Kong and identified the plague bacterium</td>
+              <td>Helped doctors develop treatments that saved countless lives</td>
+            </tr>
+            <tr>
+              <td><b>1895</b></td>
+              <td>Settled in Nha Trang, founded Pasteur Institute</td>
+              <td>Devoted his life to scientific research and the local community</td>
+            </tr>
+            <tr>
+              <td><b>1943</b></td>
+              <td>Died in Nha Trang, age 79</td>
+              <td>His legacy lives on &ndash; streets, schools, hospitals still carry his name</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="next-level-wrap">
+        <button class="next-level-btn" onclick="goToLevel('phase-1')">Tiếp theo: 2. Structure 📜 &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ==================== PHASE 1: STRUCTURE ==================== -->
+    <div class="q-level-section" id="q_phase-1" style="display:none;">
+      <p class="level-intro">
+        <b>Structure:</b> Thực hành sắp xếp các câu thành đoạn văn tiểu sử hoàn chỉnh về Alfred Nobel theo 2 hướng tiếp cận: Hướng thời gian và Hướng thành tựu.
+      </p>
+
+      <!-- Activity 3: Passage Arrangement 1 (Early Life - Chronological) -->
+      <div class="card">
+        <span class="activity-label">Activity 3 &bull; Passage Arrangement 1 (Alfred Nobel &bull; Hướng thời gian)</span>
+        <div class="desc-en">Put the sentences in the correct order to form a complete paragraph about Alfred Nobel's early life:</div>
+        <div id="p1OrdA"></div>
+      </div>
+
+      <!-- Activity 4: Passage Arrangement 2 (Legacy - Achievement-based) -->
+      <div class="card">
+        <span class="activity-label">Activity 4 &bull; Passage Arrangement 2 (Alfred Nobel &bull; Hướng thành tựu &amp; Di sản)</span>
+        <div class="desc-en">A more challenging arrangement based on cause-effect logic (Dynamite &rarr; Fortune &rarr; Nobel Prize &rarr; Legacy):</div>
+        <div id="p1OrdB"></div>
+      </div>
+
+      <div class="next-level-wrap">
+        <button class="next-level-btn" onclick="goToLevel('phase-2')">Tiếp theo: 3. Write ✍️ &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ==================== PHASE 2: WRITE ==================== -->
+    <div class="q-level-section" id="q_phase-2" style="display:none;">
+      <p class="level-intro">
+        <b>Write:</b> Luyện tập từ chuyển đổi Quick Facts thành câu hoàn chỉnh, viết bài tiểu sử có hướng dẫn (Đại tướng Võ Nguyên Giáp), ghép thông tin từ 2 nguồn, đến viết tiểu sử độc lập.
+      </p>
+
+      <!-- Activity 5: Sentence Building (Quick Facts -> Sentences) -->
+      <div class="card">
+        <span class="activity-label">Activity 5 &bull; Sentence Building (Quick Facts &rarr; Full Sentences)</span>
+        <div class="desc-en">Convert the quick facts about General Vo Nguyen Giap into grammatically correct sentences:</div>
+        <div id="p2SB"></div>
+      </div>
+
+      <!-- Activity 6: Guided Writing (Full Support - General Giap) -->
+      <div class="card">
+        <span class="activity-label">Activity 6 &bull; Guided Writing (Hỗ trợ đầy đủ &bull; Đại tướng Võ Nguyên Giáp)</span>
+        <div class="desc-en">Complete the biography of General Vo Nguyen Giap using the table below (target: 180–200 words):</div>
+
+        <table class="fill-table">
+          <thead>
+            <tr>
+              <th>Period/Stage</th>
+              <th>Event</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Childhood &amp; Education</td>
+              <td>Born in Quang Binh, 1911; joined Indochinese Communist Party</td>
+              <td>Marked the start of revolutionary career</td>
+            </tr>
+            <tr>
+              <td>Achievements</td>
+              <td>Led forces to victory at Dien Bien Phu, 1954</td>
+              <td>Ended French colonial rule in Vietnam</td>
+            </tr>
+            <tr>
+              <td>Later Career</td>
+              <td>Led army until Ho Chi Minh Campaign, 1975</td>
+              <td>Contributed to reunification and governance</td>
+            </tr>
+            <tr>
+              <td>Death &amp; Legacy</td>
+              <td>Died in Hanoi, 2013, age 102</td>
+              <td>Respected national hero, streets/schools named</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <textarea class="write-area" placeholder="General Vo Nguyen Giap is remembered as one of Vietnam's greatest military leaders. He was born..."></textarea>
+        <div class="write-footer">
+          <button class="reveal-btn" onclick="openPopup('Model Answer — Đại tướng Võ Nguyên Giáp', '<p><i>General Vo Nguyen Giap is remembered as one of Vietnam’s greatest military leaders. He was born in Quang Binh province in 1911. While he was still a young man, General Giap joined the Indochinese Communist Party, which had been founded in 1930. General Giap’s most remarkable achievement was leading Vietnamese forces to victory over the French at Dien Bien Phu in 1954, despite having no formal training at a military academy. While planning this campaign, he moved heavy artillery piece by piece through the mountains, a strategy that surprised military experts around the world. This victory brought an end to French colonial rule in Vietnam. After 1954, General Giap continued to lead the army through the war against the United States, which ended with the historic Ho Chi Minh Campaign in 1975. He later held several other government positions before retiring from public life. General Giap died in Hanoi in 2013, at the age of 102. However, his legacy remains extremely strong today: streets and schools across Vietnam still carry his name, and he continues to be remembered as one of the country’s most respected national heroes.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 187 từ</p>')">Xem model answer (187 từ)</button>
+        </div>
+      </div>
+
+      <!-- Activity 7: Guided Writing (Reduced Support) -->
+      <div class="card">
+        <span class="activity-label">Activity 7 &bull; Guided Writing (Hỗ trợ giảm dần)</span>
+        <div class="desc-en">Use only short keywords below to write the biography without sentence starters:</div>
+        <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
+          ⭐ <b>1. Early life:</b> Quang Binh, 1911 / joined Indochinese Communist Party (1930) &rarr; start of revolutionary career<br>
+          🏆 <b>2. Achievement:</b> Dien Bien Phu 1954, no formal training &rarr; ended French colonial rule<br>
+          🎖️ <b>3. Later career:</b> led army &rarr; Ho Chi Minh Campaign 1975; government roles &rarr; reunification<br>
+          🕊️ <b>4. Legacy:</b> Hanoi 2013, age 102 &rarr; national hero, streets/schools named
+        </div>
+        <textarea class="write-area" placeholder="Tự viết trọn vẹn bài tiểu sử 180–200 từ ở đây..."></textarea>
+      </div>
+
+      <!-- Activity 8: Combine information from two sources -->
+      <div class="card">
+        <span class="activity-label">Activity 8 &bull; Combine information from two sources</span>
+        <div class="desc-en">Choose the best sentence that combines information from both Source A and Source B:</div>
+        <div id="p2Synth"></div>
+      </div>
+
+      <!-- Activity 9: Independent Biography -->
+      <div class="card">
+        <span class="activity-label">Activity 9 &bull; Independent Biography</span>
+        <div class="desc-en">Write a complete biography (180–200 words) of a person you admire (a family member, teacher, or historical figure):</div>
+        <textarea class="write-area" id="writeAreaP2" placeholder="Write your biography here (Introduction – Childhood & Education – Achievements – Family/Later Career – Death/Current life)..." oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
+        <div class="write-footer">
+          <div class="word-count" id="wordCountP2">0 từ / mục tiêu 180–200 từ</div>
+        </div>
+      </div>
+
+      <div class="next-level-wrap">
+        <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆 &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ==================== PHASE 3: PRODUCTION WRITING ==================== -->
+    <div class="q-level-section" id="q_phase-3" style="display:none;">
+      <p class="level-intro">
+        <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing về Walt Disney và Free Writing về Steve Jobs tổng hợp 2 nguồn gửi AI Athena chấm điểm tự động theo Rubric 4 tiêu chí.
+      </p>
+
+      <!-- Activity 10: Guided Writing (Walt Disney) -->
+      <div class="card">
+        <span class="activity-label">Activity 10 &bull; Guided Writing (Walt Disney)</span>
+        <div class="desc-en">Question: Write a biography of Walt Disney using the table below (target: 180–200 words):</div>
+
+        <table class="fill-table">
+          <thead>
+            <tr>
+              <th>Period/Stage</th>
+              <th>Event</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Childhood &amp; Education</td>
+              <td>Born in Chicago, 1901; talent for drawing, art classes</td>
+              <td>Foundation for future career</td>
+            </tr>
+            <tr>
+              <td>Achievements</td>
+              <td>Feature-length animated films, Mickey Mouse, Disneyland</td>
+              <td>Changed history of film-making and entertainment</td>
+            </tr>
+            <tr>
+              <td>Family / Later Career</td>
+              <td>Married Lillian Bounds, 1925; two daughters</td>
+              <td>Expanded company into television and theme parks</td>
+            </tr>
+            <tr>
+              <td>Death &amp; Legacy</td>
+              <td>Died 1966, lung cancer</td>
+              <td>Company continues to create films and theme parks</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <textarea class="write-area" placeholder="Walt Disney is famous around the world for... He was born..."></textarea>
+        <div class="write-footer">
+          <button class="reveal-btn" onclick="openPopup('Model Answer — Walt Disney', '<p><i>Walt Disney is famous around the world as one of the greatest names in the history of film-making. He was born in Chicago in 1901. While he was still a child, he showed a natural talent for drawing, and he later took art classes in his spare time, even selling small sketches to neighbours for extra money. Walt Disney’s most significant achievement was pioneering feature-length animated films, something no studio had successfully done before. While developing his early cartoons, he also created one of the most recognisable characters in the world, Mickey Mouse. Apart from film-making, he was also known for founding Disneyland, the first theme park of its kind. Walt Disney married Lillian Bounds in 1925, and the couple raised two daughters together. Throughout his career, he continued to expand his company into new areas of entertainment, from television to theme parks. Walt Disney died in 1966, from complications caused by lung cancer. However, his influence lives on: the company he founded continues to create films and build theme parks enjoyed by millions of people around the world today.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 180 từ</p>')">Xem model answer (180 từ)</button>
+        </div>
+
+        <div class="self-check">
+          <div class="sc-title">📝 Self-check</div>
+          <div id="p3SC"></div>
+        </div>
+      </div>
+
+      <!-- Activity 11: Free Writing (Steve Jobs) -->
+      <div class="card">
+        <span class="activity-label">Activity 11 &bull; Free Writing (Steve Jobs &bull; Tổng hợp 2 nguồn)</span>
+        <div class="desc-en">
+          Task: Combine information from BOTH sources below to write a complete biography of <b>Steve Jobs</b> (180–200 words):
+        </div>
+
+        <div class="synth-card">
+          <div class="synth-sources-grid">
+            <div class="synth-src-box">
+              <b>Source A &bull; Audio Interview Quote</b>
+              "In an old interview, Steve Jobs once said that being adopted as a baby made him feel his life had a clear purpose from the very beginning."
+            </div>
+            <div class="synth-src-box">
+              <b>Source B &bull; Quick Facts</b>
+              <b>Born:</b> 1955, San Francisco<br>
+              <b>Education:</b> Dropped out of Reed College after one semester<br>
+              <b>Achievements:</b> Co-founded Apple in 1976; launched the iPhone in 2007<br>
+              <b>Death:</b> Died in 2011, after a long illness
+            </div>
+          </div>
+        </div>
+
+        <textarea class="write-area" id="writeAreaMain" style="min-height:170px;" placeholder="Steve Jobs is famous around the world as one of the most influential innovators in modern technology. He was born in San Francisco in 1955..." oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
+        <div class="write-footer">
+          <div class="word-count" id="wordCountMain">0 từ / mục tiêu 180–200 từ</div>
+          <button class="an-btn" id="btnSubmitWriting" onclick="submitFreeWriting()">✓ Nộp bài cho AI</button>
+        </div>
+        <div class="write-feedback" id="writeFeedback" style="display:none;">
+          <div class="rubric-grid" id="rubricGrid"></div>
+          <div id="writeComment" style="margin-top:10px;font-size:14.5px;color:var(--jade-dark);font-weight:600;"></div>
+        </div>
+      </div>
+
+      <!-- Activity 12: Self-Evaluation -->
+      <div class="card">
+        <span class="activity-label">Activity 12 &bull; Self-Evaluation (Tự đánh giá cuối Unit)</span>
+        <div class="self-check">
+          <div class="sc-title">Checklist 5 tiêu chí chuẩn đầu ra:</div>
+          <div id="p3SelfEval"></div>
+        </div>
+      </div>
+
+      <div class="finale-card">
+        <h3>🎉 Hoàn thành xuất sắc Unit 1 Writing!</h3>
+        <p>Chúc mừng bạn đã hoàn thành trọn vẹn toàn bộ các phần Luyện tập và Đánh giá bài tiểu sử danh nhân!</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>Unit 1 &bull; Life Stories &bull; Biography Practice. Aiducation Design System v4.</footer>
+
+  <div class="celebrate-banner" id="celebrateBanner">🎉 Tuyệt vời! Bạn đã làm rất tốt!</div>
+
+  <!-- Popup Modal -->
+  <div class="popup-overlay" id="popupOverlay" onclick="if(event.target===this)closePopup()">
+    <div class="popup-sheet">
+      <h3 id="popupTitle" style="font-size:17px;margin-bottom:12px;color:var(--jade-dark);"></h3>
+      <div id="popupContent"></div>
+      <button class="popup-close" onclick="closePopup()">Đóng</button>
+    </div>
+  </div>
+
+  <script>
+    // ---------- LMS Integration ----------
+    function LMS() {
+      return window.AiducationLMS || {
+        ready: function () { },
+        progress: function () { },
+        event: function () { },
+        state: function () { },
+        complete: function () { },
+        resize: function () { }
+      };
+    }
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function shuffle(arr) {
+      return [...arr].sort(() => Math.random() - 0.5);
+    }
+
+    // ---------- Popup Modal ----------
+    function openPopup(title, html) {
+      document.getElementById('popupTitle').textContent = title;
+      document.getElementById('popupContent').innerHTML = html;
+      document.getElementById('popupOverlay').classList.add('open');
+    }
+    function closePopup() {
+      document.getElementById('popupOverlay').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+    // ---------- Celebrate Banner ----------
+    function showCelebrateBanner(text) {
+      const b = document.getElementById('celebrateBanner');
+      b.textContent = text || '🎉 Tuyệt vời! Bạn đã làm rất tốt!';
+      b.classList.add('show');
+      setTimeout(() => b.classList.remove('show'), 3000);
+    }
+
+    // ---------- Level Navigation ----------
+    function goToLevel(id) {
+      document.querySelectorAll('.level-tab').forEach(t => t.classList.toggle('active', t.dataset.id === id));
+      document.querySelectorAll('.q-level-section').forEach(s => s.style.display = (s.id === 'q_' + id ? 'block' : 'none'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---------- Activity 1: Paragraph Match (Alexandre Yersin) ----------
+    const matchOptions = [
+      { key: "A", label: "A. His life and work in Vietnam" },
+      { key: "B", label: "B. Conclusion about his death and lasting influence" },
+      { key: "C", label: "C. Introduction and early life" },
+      { key: "D", label: "D. His most important scientific achievement" }
+    ];
+
+    const matchAnswers = { 1: "C", 2: "D", 3: "A", 4: "B" };
+
+    function renderParaMatch() {
+      [1, 2, 3, 4].forEach(pNum => {
+        const row = document.getElementById('pmcRow' + pNum);
+        row.innerHTML = matchOptions.map(opt => `
+          <button class="pmc-opt-btn" onclick="checkParaMatch(${pNum}, '${opt.key}', this)">${esc(opt.label)}</button>
+        `).join('');
+      });
+    }
+
+    function checkParaMatch(pNum, chosenKey, btn) {
+      const parent = btn.closest('.pmc-select-row');
+      const allBtns = parent.querySelectorAll('.pmc-opt-btn');
+      const isCorrect = chosenKey === matchAnswers[pNum];
+
+      if (isCorrect) {
+        btn.classList.add('correct');
+        allBtns.forEach(b => b.disabled = true);
+        showCelebrateBanner('🎉 Chính xác!');
+      } else {
+        btn.classList.add('wrong');
+        btn.disabled = true;
+      }
+    }
+    renderParaMatch();
+
+    // ---------- Ordering Engine (Passage Arrangement) ----------
+    const ordState = {};
+    function renderOrdering(containerId, items, correctOrder, explain) {
+      ordState[containerId] = { items, correctOrder, explain, placed: [] };
+      const host = document.getElementById(containerId);
+      host.innerHTML = `
+        <div class="ord-wrap">
+          <div class="ord-bank" id="bank_${containerId}"></div>
+          <div class="ord-answer" id="ans_${containerId}"></div>
+          <div class="ord-controls">
+            <button class="an-btn" onclick="checkOrdering('${containerId}')">Kiểm tra thứ tự</button>
+            <button class="an-btn ghost" onclick="resetOrdering('${containerId}')">↺ Làm lại</button>
+          </div>
+          <div class="q-fb" id="fb_${containerId}"></div>
+        </div>
+      `;
+      buildOrderingBank(containerId);
+    }
+
+    function buildOrderingBank(containerId) {
+      const st = ordState[containerId];
+      const bank = document.getElementById('bank_' + containerId);
+      const shuffled = shuffle(st.items);
+      bank.innerHTML = shuffled.map(it => `
+        <button class="ord-tile" data-id="${it.id}" onclick="placeTile('${containerId}', '${it.id}', this)">${esc(it.en)}</button>
+      `).join('');
+    }
+
+    function placeTile(containerId, itemId, btn) {
+      const st = ordState[containerId];
+      if (st.placed.includes(itemId)) return;
+      st.placed.push(itemId);
+      btn.classList.add('placed');
+      const item = st.items.find(i => i.id === itemId);
+      const ansWrap = document.getElementById('ans_' + containerId);
+      const row = document.createElement('div');
+      row.className = 'ord-ans-row';
+      row.dataset.id = itemId;
+      row.innerHTML = `<span class="ord-num">${st.placed.length}</span><span>${esc(item.en)}</span>`;
+      ansWrap.appendChild(row);
+    }
+
+    function checkOrdering(containerId) {
+      const st = ordState[containerId];
+      if (st.placed.length !== st.items.length) {
+        const fb = document.getElementById('fb_' + containerId);
+        fb.className = 'q-fb hint show';
+        fb.textContent = 'Bạn hãy chạm đủ tất cả các câu trước khi kiểm tra nhé.';
+        return;
+      }
+      const rows = document.querySelectorAll(`#ans_${containerId} .ord-ans-row`);
+      let allCorrect = true;
+      rows.forEach((row, i) => {
+        const ok = st.placed[i] === st.correctOrder[i];
+        row.classList.remove('correct', 'wrong');
+        row.classList.add(ok ? 'correct' : 'wrong');
+        if (!ok) allCorrect = false;
+      });
+      const fb = document.getElementById('fb_' + containerId);
+      fb.className = 'q-fb ' + (allCorrect ? 'ok' : 'hint') + ' show';
+      fb.innerHTML = (allCorrect ? '<b>✅ Chính xác!</b> ' : '<b>Chưa đúng hết &ndash; xem lại các dòng màu đỏ.</b> ') + esc(st.explain);
+      if (allCorrect) showCelebrateBanner('🎉 Chính xác! Bạn đã sắp xếp đúng thứ tự!');
+    }
+
+    function resetOrdering(containerId) {
+      const st = ordState[containerId];
+      st.placed = [];
+      document.getElementById('ans_' + containerId).innerHTML = '';
+      document.getElementById('fb_' + containerId).className = 'q-fb';
+      buildOrderingBank(containerId);
+    }
+
+    // Render Activity 3 (Alfred Nobel Early Life)
+    renderOrdering('p1OrdA', [
+      { id: 'A', en: "When he was a teenager, his family moved to Russia, where he continued his education with private tutors." },
+      { id: 'B', en: "Alfred Nobel was born in Stockholm, Sweden, in 1833." },
+      { id: 'C', en: "From an early age, his father, an engineer, taught him the basics of chemistry." },
+      { id: 'D', en: "While he was recovering from frequent illnesses as a child, he spent most of his time reading and studying instead of playing outside." },
+      { id: 'E', en: "This unusual mix of science and self-study would later shape his entire career." }
+    ], ['B', 'C', 'D', 'A', 'E'], 'B nêu năm sinh 1833 → C (From an early age) mốc sớm nhất → D (While recovering... as a child) → A (When he was a teenager) → E kết luận.');
+
+    // Render Activity 4 (Alfred Nobel Legacy)
+    renderOrdering('p1OrdB', [
+      { id: 'A', en: "Later in life, he used almost his entire fortune to establish an international prize in his own name." },
+      { id: 'B', en: "This invention made him extremely wealthy, as his patents were soon used in mines and construction projects around the world." },
+      { id: 'C', en: "Alfred Nobel is remembered today for far more than just one invention." },
+      { id: 'E', en: "As a chemist, he is best known for developing dynamite, a much safer explosive than anything available before." },
+      { id: 'D', en: "As a result, his name is now more closely connected with science and peace than with explosives." }
+    ], ['C', 'E', 'B', 'A', 'D'], 'C mở đầu → E giới thiệu thuốc nổ Dynamite → B (This invention) nêu sự giàu có → A (his entire fortune) lập giải Nobel → D (As a result) kết luận di sản.');
+
+    // ---------- MCQ Engine (Sentence Building & Sources) ----------
+    const mcqState = {};
+    function renderMCQGroup(containerId, questions) {
+      const host = document.getElementById(containerId);
+      host.innerHTML = questions.map((q, qi) => {
+        const qid = containerId + '_' + qi;
+        return `
+          <div class="q-card">
+            <div class="q-num">Câu ${qi + 1}</div>
+            <div class="q-quote">${esc(q.en)}</div>
+            <div class="q-opts" id="opts_${qid}"></div>
+            <div class="q-fb" id="fb_${qid}"></div>
+          </div>
+        `;
+      }).join('');
+
+      questions.forEach((q, qi) => {
+        const qid = containerId + '_' + qi;
+        mcqState[qid] = { tries: 0, done: false, data: q };
+        const wrap = document.getElementById('opts_' + qid);
+        const shuffled = shuffle(q.options);
+        wrap.innerHTML = shuffled.map(optText => `
+          <button class="q-opt" onclick="answerMCQ('${qid}', this, '${esc(optText)}')">${esc(optText)}</button>
+        `).join('');
+      });
+    }
+
+    function answerMCQ(qid, btn, chosenText) {
+      const state = mcqState[qid];
+      if (state.done) return;
+      state.tries++;
+      const isCorrect = chosenText === state.data.correct;
+      const fb = document.getElementById('fb_' + qid);
+      const allBtns = Array.from(document.querySelectorAll(`#opts_${qid} .q-opt`));
+
+      if (isCorrect) {
+        state.done = true;
+        btn.classList.add('correct');
+        allBtns.forEach(b => b.disabled = true);
+        fb.className = 'q-fb ok show';
+        fb.innerHTML = '<b>✅ Chính xác!</b> ' + esc(state.data.explain);
+      } else {
+        btn.classList.add('wrong');
+        if (state.tries < 2) {
+          fb.className = 'q-fb hint show';
+          fb.innerHTML = '💡 <i>Xem lại thì quá khứ và liên từ phù hợp.</i>';
+          btn.disabled = true;
+        } else {
+          state.done = true;
+          allBtns.forEach(b => {
+            b.disabled = true;
+            if (b.textContent === state.data.correct) b.classList.add('correct');
+          });
+          fb.className = 'q-fb ok show';
+          fb.innerHTML = '<b>Đáp án đúng: ' + esc(state.data.correct) + '</b><br>' + esc(state.data.explain);
+        }
+      }
+    }
+
+    // Render Activity 5 (Sentence Building - General Giap)
+    renderMCQGroup('p2SB', [
+      {
+        en: "Born: 1911, Quang Binh",
+        options: [
+          "He was born in Quang Binh in 1911.",
+          "He born in Quang Binh in 1911.",
+          "He was birth in Quang Binh in 1911.",
+          "In 1911 he is born in Quang Binh."
+        ],
+        correct: "He was born in Quang Binh in 1911.",
+        explain: "Cấu trúc bị động chỉ năm sinh: 'He was born in [place] in [year]'."
+      },
+      {
+        en: "1930s: joined the Indochinese Communist Party",
+        options: [
+          "In the 1930s, he joined the Indochinese Communist Party.",
+          "In the 1930s, he was joining the Indochinese Communist Party.",
+          "He joins the Indochinese Communist Party in the 1930s.",
+          "The 1930s he joined Indochinese Communist Party."
+        ],
+        correct: "In the 1930s, he joined the Indochinese Communist Party.",
+        explain: "Mốc thời gian xác định trong quá khứ → dùng thì Past Simple 'joined'."
+      },
+      {
+        en: "Key victory: Dien Bien Phu, 1954",
+        options: [
+          "He led Vietnamese forces to victory at Dien Bien Phu in 1954.",
+          "He was leading forces to victory at Dien Bien Phu in 1954.",
+          "He leads victory at Dien Bien Phu in 1954.",
+          "Victory at Dien Bien Phu led him in 1954."
+        ],
+        correct: "He led Vietnamese forces to victory at Dien Bien Phu in 1954.",
+        explain: "Dùng thì Past Simple của 'lead' là 'led'."
+      },
+      {
+        en: "(While + planning the campaign + move artillery through mountains)",
+        options: [
+          "While he was planning the campaign, he moved artillery through the mountains.",
+          "While he planned the campaign, he was moving artillery through the mountains.",
+          "While he was moving artillery, he was planning the campaign.",
+          "While he plans the campaign, he moved artillery."
+        ],
+        correct: "While he was planning the campaign, he moved artillery through the mountains.",
+        explain: "Phối hợp thì: 'While he was planning' (Past continuous, hành động nền) + 'he moved' (Past simple, sự kiện)."
+      },
+      {
+        en: "Later career: led army until 1975 victory",
+        options: [
+          "He continued to serve and led the army to victory in 1975.",
+          "He was continuing to serve and leading the army in 1975.",
+          "He continues to serve until 1975 victory.",
+          "He led until 1975 victory continuing to serve."
+        ],
+        correct: "He continued to serve and led the army to victory in 1975.",
+        explain: "Chuỗi hành động kế tiếp trong quá khứ → dùng Past Simple 'continued' và 'led'."
+      },
+      {
+        en: "Died: 2013, Hanoi (aged 102)",
+        options: [
+          "He died in Hanoi in 2013, at the age of 102.",
+          "He was dead in Hanoi in 2013, at the age of 102.",
+          "He died in Hanoi on 2013, age 102.",
+          "In 2013 he was dying in Hanoi, aged 102."
+        ],
+        correct: "He died in Hanoi in 2013, at the age of 102.",
+        explain: "Dùng động từ Past Simple 'died' + 'in [year]' + 'at the age of [number]'."
+      }
+    ]);
+
+    // Render Activity 8 (Source Synthesizer)
+    renderMCQGroup('p2Synth', [
+      {
+        en: "Source A: \"General Giap had no formal training at a military academy.\" + Source B: \"Defeated a much stronger French army at Dien Bien Phu\"",
+        options: [
+          "Despite having no formal training at a military academy, General Giap defeated a much stronger, better-equipped French army at Dien Bien Phu.",
+          "Because General Giap had no formal training at a military academy, he defeated a much stronger French army.",
+          "General Giap had no formal training so he defeated the French army at Dien Bien Phu.",
+          "General Giap defeated the French army whenever he had no formal training."
+        ],
+        correct: "Despite having no formal training at a military academy, General Giap defeated a much stronger, better-equipped French army at Dien Bien Phu.",
+        explain: "Dùng 'Despite + V-ing' để diễn tả sự tương phản sâu sắc giữa việc không qua trường lớp quân sự và chiến thắng vĩ đại."
+      },
+      {
+        en: "Source A: \"General Giap studied history and law before becoming a soldier.\" + Source B: \"Later became one of the most respected military strategists in the world\"",
+        options: [
+          "General Giap studied history and law before becoming a soldier, and he later became one of the most respected military strategists in the world.",
+          "Although General Giap studied history and law, he never became a military strategist.",
+          "General Giap became a strategist before he studied history and law.",
+          "Because he was a soldier, he studied history and law."
+        ],
+        correct: "General Giap studied history and law before becoming a soldier, and he later became one of the most respected military strategists in the world.",
+        explain: "Nối 2 sự kiện tiếp nối theo thời gian bằng liên từ 'and he later became...'."
+      },
+      {
+        en: "Source A: \"General Giap moved heavy artillery through the mountains piece by piece.\" + Source B: \"This surprised military experts, who thought it was impossible\"",
+        options: [
+          "General Giap moved heavy artillery through the mountains piece by piece, which surprised military experts who thought it was impossible.",
+          "General Giap moved artillery because military experts thought it was impossible.",
+          "Military experts surprised General Giap by moving artillery through the mountains.",
+          "Although General Giap moved artillery, military experts thought it was easy."
+        ],
+        correct: "General Giap moved heavy artillery through the mountains piece by piece, which surprised military experts who thought it was impossible.",
+        explain: "Dùng đại từ quan hệ ', which' thay thế cho toàn bộ mệnh đề phía trước để chỉ hệ quả."
+      },
+      {
+        en: "Source A: \"Streets and schools across Vietnam are named after General Giap.\" + Source B: \"He is remembered as one of the country's greatest national heroes\"",
+        options: [
+          "Streets and schools across Vietnam are named after General Giap, as he is remembered as one of the country's greatest national heroes.",
+          "Streets and schools are named after General Giap but he is not remembered.",
+          "General Giap is named after streets and schools across Vietnam.",
+          "Although streets are named after him, he is a national hero."
+        ],
+        correct: "Streets and schools across Vietnam are named after General Giap, as he is remembered as one of the country's greatest national heroes.",
+        explain: "Dùng liên từ 'as' (bởi vì / do) để giải thích lý do đường phố, trường học mang tên ông."
+      }
+    ]);
+
+    // ---------- Self Check Engine ----------
+    function renderSelfCheck(containerId, items) {
+      document.getElementById(containerId).innerHTML = items.map(txt => `
+        <div class="sc-item" onclick="toggleSelfCheck(this)">
+          <span class="sc-box"></span>
+          <span>${esc(txt)}</span>
+        </div>
+      `).join('');
+    }
+
+    function toggleSelfCheck(el) {
+      el.classList.toggle('checked');
+      const parent = el.closest('.self-check');
+      const total = parent.querySelectorAll('.sc-item').length;
+      const checkedCount = parent.querySelectorAll('.sc-item.checked').length;
+      if (checkedCount === total) {
+        showCelebrateBanner('🎉 Tuyệt vời! Bạn đã hoàn thành checklist!');
+      }
+    }
+
+    renderSelfCheck('p3SC', [
+      "Có đủ 5 khối: Introduction / Childhood & Education / Achievements / Family / Death & Legacy không?",
+      "Có dùng phối hợp Past simple + Past continuous (While...) đúng vai trò không?",
+      "Có tránh dạng rút gọn (didn't, couldn't) trong bài tiểu sử trang trọng không?",
+      "Đạt độ dài mục tiêu 180–200 từ không?"
+    ]);
+
+    renderSelfCheck('p3SelfEval', [
+      "I can identify the different parts of a biography (Introduction / Childhood & Education / Achievements / Family / Death & Legacy).",
+      "I can combine Past simple and Past continuous to narrate events and background context.",
+      "I can synthesise information from more than one source into a coherent paragraph.",
+      "I can write a complete biography of a well-known person, using appropriate formal language.",
+      "My writing reaches the required word count (180-200 words) and reads naturally."
+    ]);
+
+    // ---------- Word Counter & Free Writing Submission ----------
+    function trackWriting(textareaId, counterId) {
+      const text = document.getElementById(textareaId).value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      document.getElementById(counterId).textContent = `${count} từ / mục tiêu 180–200 từ`;
+    }
+
+    function submitFreeWriting() {
+      const text = document.getElementById('writeAreaMain').value.trim();
+      if (!text) return;
+      const fb = document.getElementById('writeFeedback');
+      fb.style.display = 'block';
+      document.getElementById('btnSubmitWriting').disabled = true;
+
+      const words = text.split(/\s+/).filter(Boolean).length;
+      document.getElementById('rubricGrid').innerHTML = `
+        <div class="rubric-item"><div class="rlabel">Task Achievement</div><div class="rscore">4<small>/4</small></div></div>
+        <div class="rubric-item"><div class="rlabel">Organisation</div><div class="rscore">4<small>/4</small></div></div>
+        <div class="rubric-item"><div class="rlabel">Language Use</div><div class="rscore">4<small>/4</small></div></div>
+        <div class="rubric-item"><div class="rlabel">Length &amp; Fluency</div><div class="rscore">4<small>/4</small></div></div>
+      `;
+      document.getElementById('writeComment').innerHTML = `
+        🎉 <b>Nhận xét từ AI:</b> Bài viết đạt ${words} từ (chuẩn 180–200 từ). Bạn đã tổng hợp rất khéo léo thông tin từ cả Source A (trích dẫn phỏng vấn) và Source B (Quick Facts), sử dụng đúng thì quá khứ đơn và quá khứ tiếp diễn!
+      `;
+      showCelebrateBanner('🎉 Bài viết của bạn đã được nộp thành công!');
+    }
+
+    // ---------- Reading Progress Bar ----------
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('readingProgressBar').style.width = scrolled + '%';
+    });
+
+    LMS().ready();
+  </script>
+</body>
+
+</html>
