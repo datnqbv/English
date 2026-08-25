@@ -195,26 +195,40 @@
       top: 0;
       z-index: 100;
       background: var(--cream);
-      padding: 14px 0;
+      padding: 8px 0;
       border-bottom: 1px solid var(--paper-line);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .level-tabs {
       display: flex;
       gap: 8px;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 0;
+    }
+
+    .level-tabs::-webkit-scrollbar {
+      display: none;
     }
 
     .level-tab {
+      flex-shrink: 0;
       background: var(--white);
       border: 1.5px solid var(--paper-line-2);
       border-radius: 999px;
-      padding: 8px 18px;
+      padding: 6px 16px;
       font-weight: 700;
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--ink-2);
-      min-height: 42px;
+      min-height: 38px;
       transition: all .15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .level-tab:hover {
@@ -226,6 +240,10 @@
       color: #fff;
       border-color: var(--jade-deep);
       box-shadow: var(--shadow);
+    }
+
+    .q-level-section {
+      scroll-margin-top: 60px;
     }
 
     .level-intro {
@@ -860,16 +878,19 @@
     <!-- ==================== PHASE 0: IDENTIFY ==================== -->
     <div class="q-level-section" id="q_phase-0" style="display:block;">
       <p class="level-intro">
-        <b>Identify:</b> Đọc tin nhắn về thử thách đi bộ đếm bước (33 từ) để nhận diện 4 thành phần cấu trúc và trích xuất thông tin.
+        <b>Identify:</b> Đọc tin nhắn về thử thách đi bộ đếm bước (33 từ) để nhận diện 4 thành phần cấu trúc và trích
+        xuất thông tin.
       </p>
 
       <!-- Activity 1: Structure labelling -->
       <div class="card">
         <span class="activity-label">Activity 1 &bull; Structure Labelling</span>
-        <div class="desc-en">Read the short message below, then decide which part of the structure each sentence belongs to:</div>
+        <div class="desc-en">Read the short message below, then decide which part of the structure each sentence belongs
+          to:</div>
 
         <div class="msg-preview-card">
-          <i>"Hi Nam, That sounds like a great idea, I'm in! How many steps do we need each day, and is there a group chat to track our progress? Talk to you soon! Minh"</i>
+          <i>"Hi Nam, That sounds like a great idea, I'm in! How many steps do we need each day, and is there a group
+            chat to track our progress? Talk to you soon! Minh"</i>
           <div style="font-size:12.5px;color:var(--ink-3);margin-top:6px;">(Độ dài: 33 từ)</div>
         </div>
 
@@ -898,7 +919,9 @@
             </tr>
           </tbody>
         </table>
-        <button class="reveal-btn" onclick="openPopup('Đáp án gợi ý — Read & Extract', '<ol style=\'padding-left:20px;line-height:1.7;\'><li><b>(1) Accept:</b> That sounds like a great idea, I\'m in!</li><li><b>(2) Ask info 1:</b> How many steps do we need each day?</li><li><b>(3) Ask info 2:</b> Is there a group chat to track our progress?</li><li><b>(4) Closing:</b> Talk to you soon!</li></ol>')">Xem đáp án gợi ý</button>
+        <button class="reveal-btn"
+          onclick="openPopup('Đáp án gợi ý — Read & Extract', '<ol style=\'padding-left:20px;line-height:1.7;\'><li><b>(1) Accept:</b> That sounds like a great idea, I\'m in!</li><li><b>(2) Ask info 1:</b> How many steps do we need each day?</li><li><b>(3) Ask info 2:</b> Is there a group chat to track our progress?</li><li><b>(4) Closing:</b> Talk to you soon!</li></ol>')">Xem
+          đáp án gợi ý</button>
       </div>
 
       <div class="next-level-wrap">
@@ -909,7 +932,8 @@
     <!-- ==================== PHASE 1: STRUCTURE ==================== -->
     <div class="q-level-section" id="q_phase-1" style="display:none;">
       <p class="level-intro">
-        <b>Structure:</b> Chạm vào các câu bên dưới theo đúng thứ tự (Greeting &rarr; Accept &rarr; Ask for info &rarr; Closing &rarr; Sign-off) để tạo thành tin nhắn hoàn chỉnh.
+        <b>Structure:</b> Chạm vào các câu bên dưới theo đúng thứ tự (Greeting &rarr; Accept &rarr; Ask for info &rarr;
+        Closing &rarr; Sign-off) để tạo thành tin nhắn hoàn chỉnh.
       </p>
 
       <!-- Activity 3: Passage Arrangement 1 (Basketball game) -->
@@ -922,7 +946,8 @@
       <!-- Activity 4: Passage Arrangement 2 (Cooking workshop) -->
       <div class="card">
         <span class="activity-label">Activity 4 &bull; Passage Arrangement (Bài 2: Workshop làm bánh)</span>
-        <div class="desc-en">A trickier one &ndash; uses the pronoun <i>"it"</i> to refer back to <i>"the workshop"</i>:</div>
+        <div class="desc-en">A trickier one &ndash; uses the pronoun <i>"it"</i> to refer back to <i>"the workshop"</i>:
+        </div>
         <div id="p1OrdB"></div>
       </div>
 
@@ -934,7 +959,8 @@
     <!-- ==================== PHASE 2: WRITE ==================== -->
     <div class="q-level-section" id="q_phase-2" style="display:none;">
       <p class="level-intro">
-        <b>Write:</b> Luyện tập từ viết câu đơn lẻ, ráp từ đến viết tin nhắn hoàn chỉnh (mục tiêu 35–45 từ) với mức độ hỗ trợ giảm dần.
+        <b>Write:</b> Luyện tập từ viết câu đơn lẻ, ráp từ đến viết tin nhắn hoàn chỉnh (mục tiêu 35–45 từ) với mức độ
+        hỗ trợ giảm dần.
       </p>
 
       <!-- Activity 5: Functional writing -->
@@ -962,10 +988,14 @@
             <i>"Hey Minh, I'm going to a yoga class this Sunday morning. Do you want to come with me?"</i>
           </div>
           <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">
-            <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the class starts &bull; Ask if you need to bring your own yoga mat.
+            <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the class starts &bull; Ask if you need to bring
+            your own yoga mat.
           </div>
-          <textarea class="write-area" placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Bài 1 (Yoga)', '<p><i>Hi Lan, That sounds great, I\'d love to join! I\'ve been wanting to try yoga for a while. What time does the class start, and do I need to bring my own yoga mat? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 39 từ</p>')">Xem model answer (39 từ)</button>
+          <textarea class="write-area"
+            placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Bài 1 (Yoga)', '<p><i>Hi Lan, That sounds great, I\'d love to join! I\'ve been wanting to try yoga for a while. What time does the class start, and do I need to bring my own yoga mat? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 39 từ</p>')">Xem
+            model answer (39 từ)</button>
         </div>
 
         <!-- Situation 2 -->
@@ -975,10 +1005,14 @@
             <i>"Hey Minh, I'm trying out a new healthy cooking class this Friday evening. Want to join me?"</i>
           </div>
           <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">
-            <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the class starts &bull; Ask if you need to bring any ingredients.
+            <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the class starts &bull; Ask if you need to bring
+            any ingredients.
           </div>
-          <textarea class="write-area" placeholder="Hi Nam, ________________________________ See you then! Minh"></textarea>
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Bài 2 (Cooking class)', '<p><i>Hi Nam, That sounds great, I\'d love to join! I\'ve been wanting to try cooking healthier meals for a while. What time does the class start, and do I need to bring any ingredients? See you then! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 38 từ</p>')">Xem model answer (38 từ)</button>
+          <textarea class="write-area"
+            placeholder="Hi Nam, ________________________________ See you then! Minh"></textarea>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Bài 2 (Cooking class)', '<p><i>Hi Nam, That sounds great, I\'d love to join! I\'ve been wanting to try cooking healthier meals for a while. What time does the class start, and do I need to bring any ingredients? See you then! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 38 từ</p>')">Xem
+            model answer (38 từ)</button>
         </div>
 
         <!-- Situation 3 -->
@@ -988,10 +1022,14 @@
             <i>"Hey Minh, I'm joining a morning jogging group around the park every Sunday. Want to come along?"</i>
           </div>
           <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">
-            <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the group meets &bull; Ask if you need any special shoes.
+            <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the group meets &bull; Ask if you need any special
+            shoes.
           </div>
-          <textarea class="write-area" placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Bài 3 (Jogging group)', '<p><i>Hi Lan, That sounds great, count me in! I\'ve been wanting to get more exercise on weekends. What time does the group meet, and do I need any special shoes? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 35 từ</p>')">Xem model answer (35 từ)</button>
+          <textarea class="write-area"
+            placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Bài 3 (Jogging group)', '<p><i>Hi Lan, That sounds great, count me in! I\'ve been wanting to get more exercise on weekends. What time does the group meet, and do I need any special shoes? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 35 từ</p>')">Xem
+            model answer (35 từ)</button>
         </div>
       </div>
 
@@ -999,7 +1037,8 @@
       <div class="card">
         <span class="activity-label">Activity 8 &bull; Guided Writing (Hỗ trợ giảm dần)</span>
         <div class="desc-en">Use only short keywords below to write the Yoga message without sentence starters:</div>
-        <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
+        <div
+          style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
           🧘 <b>Accept:</b> love to join<br>
           ⏰ <b>Ask info (1):</b> what time / class start<br>
           🎒 <b>Ask info (2):</b> bring / own yoga mat
@@ -1012,7 +1051,10 @@
         <span class="activity-label">Activity 9 &bull; Correct the Mistake (6 lỗi)</span>
         <div class="desc-en">Find and correct 6 mistakes in the message below:</div>
         <div class="error-text-card">
-          Dear Lan, <span class="err-tag">[1]</span> I acknowledge your invitation and will attend. <span class="err-tag">[2]</span> What time does the class starts <span class="err-tag">[3]</span>, and do I needs <span class="err-tag">[4]</span> to bring my own yoga mat. <span class="err-tag">[5]</span> Yours sincerely, <span class="err-tag">[6]</span> Minh
+          Dear Lan, <span class="err-tag">[1]</span> I acknowledge your invitation and will attend. <span
+            class="err-tag">[2]</span> What time does the class starts <span class="err-tag">[3]</span>, and do I needs
+          <span class="err-tag">[4]</span> to bring my own yoga mat. <span class="err-tag">[5]</span> Yours sincerely,
+          <span class="err-tag">[6]</span> Minh
         </div>
         <div id="p2Err"></div>
       </div>
@@ -1020,25 +1062,29 @@
       <!-- Activity 10: Independent Writing -->
       <div class="card">
         <span class="activity-label">Activity 10 &bull; Independent Writing</span>
-        <div class="desc-en">Task: Read Nam's invitation below and write a COMPLETE short message replying to it (Target: 35–45 words):</div>
+        <div class="desc-en">Task: Read Nam's invitation below and write a COMPLETE short message replying to it
+          (Target: 35–45 words):</div>
         <div class="msg-preview-card">
           <i>Nam: "Hey Minh! I'm joining a 5km fun run for charity this Sunday morning. Want to join me?"</i>
         </div>
-        <textarea class="write-area" id="writeAreaP2" placeholder="Hi Nam, ..." oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
+        <textarea class="write-area" id="writeAreaP2" placeholder="Hi Nam, ..."
+          oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
         <div class="write-footer">
           <div class="word-count" id="wordCountP2">0 từ / mục tiêu 35–45 từ</div>
         </div>
       </div>
 
       <div class="next-level-wrap">
-        <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆 &rarr;</button>
+        <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆
+          &rarr;</button>
       </div>
     </div>
 
     <!-- ==================== PHASE 3: PRODUCTION WRITING ==================== -->
     <div class="q-level-section" id="q_phase-3" style="display:none;">
       <p class="level-intro">
-        <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing nâng cao và 3 bài Free Writing gửi AI Athena chấm điểm độc lập theo Rubric 4 tiêu chí.
+        <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing nâng cao và 3 bài Free Writing gửi AI
+        Athena chấm điểm độc lập theo Rubric 4 tiêu chí.
       </p>
 
       <!-- Activity 11: Guided Writing (Advanced Situations) -->
@@ -1049,26 +1095,36 @@
         <div style="margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--cream-2);">
           <b style="color:var(--jade-dark);">Bài 1 · Nam's motivation meetup:</b>
           <div class="msg-preview-card" style="margin-top:6px;">
-            <i>"Hey Minh, I know it's been hard for you lately — two months of working out with no results, plus a busy school schedule! I'm going to a weekend meetup where a trainer talks about how to stay motivated. Want to come with me?"</i>
+            <i>"Hey Minh, I know it's been hard for you lately — two months of working out with no results, plus a busy
+              school schedule! I'm going to a weekend meetup where a trainer talks about how to stay motivated. Want to
+              come with me?"</i>
           </div>
           <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">
             <b>Include:</b> Accept &bull; Ask what time it starts &bull; Ask if you need to sign up before going.
           </div>
-          <textarea class="write-area" placeholder="Hi Nam, ________________________________ See you there! Minh"></textarea>
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Motivation Meetup', '<p><i>Hi Nam, Thank you so much for telling me about this. I\'ve found it hard to stay motivated lately, so I\'d love to come. What time does the meetup start, and do I need to sign up before going? See you there! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 43 từ</p>')">Xem model answer (43 từ)</button>
+          <textarea class="write-area"
+            placeholder="Hi Nam, ________________________________ See you there! Minh"></textarea>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Motivation Meetup', '<p><i>Hi Nam, Thank you so much for telling me about this. I\'ve found it hard to stay motivated lately, so I\'d love to come. What time does the meetup start, and do I need to sign up before going? See you there! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 43 từ</p>')">Xem
+            model answer (43 từ)</button>
         </div>
 
         <!-- Sit 2 -->
         <div>
           <b style="color:var(--jade-dark);">Bài 2 · Lan's free health check-up camp:</b>
           <div class="msg-preview-card" style="margin-top:6px;">
-            <i>"Hey Minh, I'm going to a free health check-up camp at the community centre this Saturday. A doctor checks your height, weight, and blood pressure for free. Want to come with me?"</i>
+            <i>"Hey Minh, I'm going to a free health check-up camp at the community centre this Saturday. A doctor
+              checks your height, weight, and blood pressure for free. Want to come with me?"</i>
           </div>
           <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">
-            <b>Include:</b> Accept &bull; Ask what time it starts &bull; Ask if you need to bring your health insurance card.
+            <b>Include:</b> Accept &bull; Ask what time it starts &bull; Ask if you need to bring your health insurance
+            card.
           </div>
-          <textarea class="write-area" placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Health Check-up', '<p><i>Hi Lan, That sounds like a great idea, count me in! I\'ve been meaning to get a check-up for a while. What time does the camp start, and do I need to bring my health insurance card? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 42 từ</p>')">Xem model answer (42 từ)</button>
+          <textarea class="write-area"
+            placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Health Check-up', '<p><i>Hi Lan, That sounds like a great idea, count me in! I\'ve been meaning to get a check-up for a while. What time does the camp start, and do I need to bring my health insurance card? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 42 từ</p>')">Xem
+            model answer (42 từ)</button>
         </div>
 
         <div class="self-check">
@@ -1085,9 +1141,11 @@
         <div style="margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--cream-2);">
           <b style="color:var(--jade-dark);font-size:16px;">FW1 &bull; Healthy people sharing session</b>
           <div class="msg-preview-card" style="margin-top:6px;">
-            <i>"Hi! Our class is having a sharing session about people around us who live a healthy life. Do you want to come and share your story too?"</i>
+            <i>"Hi! Our class is having a sharing session about people around us who live a healthy life. Do you want to
+              come and share your story too?"</i>
           </div>
-          <textarea class="write-area" id="fwArea1" placeholder="Hi ..., ..." oninput="trackWriting('fwArea1', 'fwCount1')"></textarea>
+          <textarea class="write-area" id="fwArea1" placeholder="Hi ..., ..."
+            oninput="trackWriting('fwArea1', 'fwCount1')"></textarea>
           <div class="write-footer">
             <div class="word-count" id="fwCount1">0 từ / mục tiêu 35–45 từ</div>
             <button class="an-btn" onclick="submitFW(1)">✓ Nộp bài 1 cho AI</button>
@@ -1099,9 +1157,11 @@
         <div style="margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--cream-2);">
           <b style="color:var(--jade-dark);font-size:16px;">FW2 &bull; New healthy juice bar</b>
           <div class="msg-preview-card" style="margin-top:6px;">
-            <i>"Hey! There's a new juice bar that opened near school with really healthy smoothies. Want to check it out with me after school?"</i>
+            <i>"Hey! There's a new juice bar that opened near school with really healthy smoothies. Want to check it out
+              with me after school?"</i>
           </div>
-          <textarea class="write-area" id="fwArea2" placeholder="Hi ..., ..." oninput="trackWriting('fwArea2', 'fwCount2')"></textarea>
+          <textarea class="write-area" id="fwArea2" placeholder="Hi ..., ..."
+            oninput="trackWriting('fwArea2', 'fwCount2')"></textarea>
           <div class="write-footer">
             <div class="word-count" id="fwCount2">0 từ / mục tiêu 35–45 từ</div>
             <button class="an-btn" onclick="submitFW(2)">✓ Nộp bài 2 cho AI</button>
@@ -1115,7 +1175,8 @@
           <div class="msg-preview-card" style="margin-top:6px;">
             <i>"A few of us are going cycling around the lake this weekend to stay fit. Would you like to join us?"</i>
           </div>
-          <textarea class="write-area" id="fwArea3" placeholder="Hi ..., ..." oninput="trackWriting('fwArea3', 'fwCount3')"></textarea>
+          <textarea class="write-area" id="fwArea3" placeholder="Hi ..., ..."
+            oninput="trackWriting('fwArea3', 'fwCount3')"></textarea>
           <div class="write-footer">
             <div class="word-count" id="fwCount3">0 từ / mục tiêu 35–45 từ</div>
             <button class="an-btn" onclick="submitFW(3)">✓ Nộp bài 3 cho AI</button>

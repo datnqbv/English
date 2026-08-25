@@ -195,26 +195,40 @@
       top: 0;
       z-index: 100;
       background: var(--cream);
-      padding: 14px 0;
+      padding: 8px 0;
       border-bottom: 1px solid var(--paper-line);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .level-tabs {
       display: flex;
       gap: 8px;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 0;
+    }
+
+    .level-tabs::-webkit-scrollbar {
+      display: none;
     }
 
     .level-tab {
+      flex-shrink: 0;
       background: var(--white);
       border: 1.5px solid var(--paper-line-2);
       border-radius: 999px;
-      padding: 8px 18px;
+      padding: 6px 16px;
       font-weight: 700;
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--ink-2);
-      min-height: 42px;
+      min-height: 38px;
       transition: all .15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .level-tab:hover {
@@ -226,6 +240,10 @@
       color: #fff;
       border-color: var(--jade-deep);
       box-shadow: var(--shadow);
+    }
+
+    .q-level-section {
+      scroll-margin-top: 60px;
     }
 
     .level-intro {
@@ -362,8 +380,13 @@
       letter-spacing: .04em;
     }
 
-    .col-sup .cat-col-title { color: var(--jade-deep); }
-    .col-aga .cat-col-title { color: var(--accent-deep); }
+    .col-sup .cat-col-title {
+      color: var(--jade-deep);
+    }
+
+    .col-aga .cat-col-title {
+      color: var(--accent-deep);
+    }
 
     .cat-item-bank {
       display: flex;
@@ -908,6 +931,7 @@
     }
 
     @media (max-width: 768px) {
+
       .cat-grid,
       .q-opts,
       .pmc-select-row,
@@ -956,13 +980,15 @@
     <!-- ==================== PHASE 0: IDENTIFY ==================== -->
     <div class="q-level-section" id="q_phase-0" style="display:block;">
       <p class="level-intro">
-        <b>Identify:</b> Đọc bài luận mẫu về việc học sinh làm thêm để ghép nối 4 đoạn văn lớn với mô tả chức năng tương ứng, sau đó phân loại các lý do ủng hộ / phản đối giờ giới nghiêm.
+        <b>Identify:</b> Đọc bài luận mẫu về việc học sinh làm thêm để ghép nối 4 đoạn văn lớn với mô tả chức năng tương
+        ứng, sau đó phân loại các lý do ủng hộ / phản đối giờ giới nghiêm.
       </p>
 
       <!-- Activity 1: Structure Labelling (Paragraph Level) -->
       <div class="card">
         <span class="activity-label">Activity 1 &bull; Structure Labelling (Cấp đoạn văn)</span>
-        <div class="desc-en">Read the opinion essay below. Match each paragraph (1-4) with the correct description (A-D):</div>
+        <div class="desc-en">Read the opinion essay below. Match each paragraph (1-4) with the correct description
+          (A-D):</div>
 
         <!-- Para 1 -->
         <div class="para-match-card">
@@ -970,7 +996,8 @@
             <span class="pmc-badge">Đoạn 1</span>
           </div>
           <div class="pmc-text">
-            "Should teenagers be allowed to get a part-time job while still in school? I believe students should be allowed to work part-time, for the following reasons."
+            "Should teenagers be allowed to get a part-time job while still in school? I believe students should be
+            allowed to work part-time, for the following reasons."
           </div>
           <div class="pmc-select-row" id="pmcRow1"></div>
         </div>
@@ -981,7 +1008,9 @@
             <span class="pmc-badge">Đoạn 2</span>
           </div>
           <div class="pmc-text">
-            "First of all, a part-time job can teach teenagers important life skills. For example, working in a shop or a cafe helps them learn how to manage time and communicate with customers. This can prepare them well for the future."
+            "First of all, a part-time job can teach teenagers important life skills. For example, working in a shop or
+            a cafe helps them learn how to manage time and communicate with customers. This can prepare them well for
+            the future."
           </div>
           <div class="pmc-select-row" id="pmcRow2"></div>
         </div>
@@ -992,7 +1021,9 @@
             <span class="pmc-badge">Đoạn 3</span>
           </div>
           <div class="pmc-text">
-            "In addition, earning their own money can make teenagers more responsible. For instance, students who earn pocket money often learn to plan their spending more carefully. This can help them understand the value of money."
+            "In addition, earning their own money can make teenagers more responsible. For instance, students who earn
+            pocket money often learn to plan their spending more carefully. This can help them understand the value of
+            money."
           </div>
           <div class="pmc-select-row" id="pmcRow3"></div>
         </div>
@@ -1003,7 +1034,8 @@
             <span class="pmc-badge">Đoạn 4</span>
           </div>
           <div class="pmc-text">
-            "In conclusion, although schoolwork should still come first, I think a part-time job can bring real benefits to teenagers."
+            "In conclusion, although schoolwork should still come first, I think a part-time job can bring real benefits
+            to teenagers."
           </div>
           <div class="pmc-select-row" id="pmcRow4"></div>
         </div>
@@ -1012,11 +1044,13 @@
       <!-- Activity 2: Categorization (2-Column) -->
       <div class="card">
         <span class="activity-label">Activity 2 &bull; Categorization (Phân loại ý kiến 2 cột)</span>
-        <div class="desc-en">Sort the sentences into the correct column &ndash; reasons that support the curfew, and reasons that go against it:</div>
+        <div class="desc-en">Sort the sentences into the correct column &ndash; reasons that support the curfew, and
+          reasons that go against it:</div>
 
         <div class="curfew-cue-box">
           📌 <b>Topic:</b> Should teenagers be allowed to have a curfew set by their parents?<br>
-          <small><i>*<b>curfew</b>: giờ giới nghiêm &ndash; quy định giờ phải về nhà vào buổi tối do bố mẹ đặt ra.</i></small>
+          <small><i>*<b>curfew</b>: giờ giới nghiêm &ndash; quy định giờ phải về nhà vào buổi tối do bố mẹ đặt
+              ra.</i></small>
         </div>
 
         <div style="font-weight:700;font-size:14px;color:var(--jade-dark);margin-bottom:8px;">
@@ -1050,7 +1084,8 @@
     <!-- ==================== PHASE 1: STRUCTURE ==================== -->
     <div class="q-level-section" id="q_phase-1" style="display:none;">
       <p class="level-intro">
-        <b>Structure:</b> Chạm vào các câu bên dưới theo đúng thứ tự logic (Introduction &rarr; Reason 1 &rarr; Reason 2 &rarr; Conclusion) để tạo thành bài luận hoàn chỉnh.
+        <b>Structure:</b> Chạm vào các câu bên dưới theo đúng thứ tự logic (Introduction &rarr; Reason 1 &rarr; Reason 2
+        &rarr; Conclusion) để tạo thành bài luận hoàn chỉnh.
       </p>
 
       <!-- Activity 3: Passage Arrangement 1 (Dyeing hair) -->
@@ -1062,8 +1097,10 @@
 
       <!-- Activity 4: Passage Arrangement 2 (Travelling with friends) -->
       <div class="card">
-        <span class="activity-label">Activity 4 &bull; Passage Arrangement (Bài 2: Du lịch tự túc không có người lớn)</span>
-        <div class="desc-en">A trickier essay &ndash; uses subtle transition cues like <i>"One advantage is"</i>, <i>"this kind of independence"</i>, and <i>"Overall"</i>:</div>
+        <span class="activity-label">Activity 4 &bull; Passage Arrangement (Bài 2: Du lịch tự túc không có người
+          lớn)</span>
+        <div class="desc-en">A trickier essay &ndash; uses subtle transition cues like <i>"One advantage is"</i>,
+          <i>"this kind of independence"</i>, and <i>"Overall"</i>:</div>
         <div id="p1OrdB"></div>
       </div>
 
@@ -1075,7 +1112,8 @@
     <!-- ==================== PHASE 2: WRITE ==================== -->
     <div class="q-level-section" id="q_phase-2" style="display:none;">
       <p class="level-intro">
-        <b>Write:</b> Luyện tập từ ráp câu, hoàn thành bài luận có hỗ trợ đến viết bài luận độc lập hoàn chỉnh (mục tiêu 120–150 từ).
+        <b>Write:</b> Luyện tập từ ráp câu, hoàn thành bài luận có hỗ trợ đến viết bài luận độc lập hoàn chỉnh (mục tiêu
+        120–150 từ).
       </p>
 
       <!-- Activity 5: Sentence building -->
@@ -1088,7 +1126,8 @@
       <!-- Activity 6: Guided Writing (Full Support - Social Media) -->
       <div class="card">
         <span class="activity-label">Activity 6 &bull; Guided Writing (Hỗ trợ đầy đủ &bull; Mạng xã hội)</span>
-        <div class="desc-en">Question: Should teenagers be allowed to have their own social media accounts? Use the information below:</div>
+        <div class="desc-en">Question: Should teenagers be allowed to have their own social media accounts? Use the
+          information below:</div>
 
         <table class="fill-table">
           <thead>
@@ -1112,22 +1151,29 @@
           </tbody>
         </table>
 
-        <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-weight:600;font-size:14px;">
-          Starters: <i>"Should teenagers be allowed to have their own social media accounts? I believe ... First of all, ... In addition, ... In conclusion, ..."</i>
+        <div
+          style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-weight:600;font-size:14px;">
+          Starters: <i>"Should teenagers be allowed to have their own social media accounts? I believe ... First of all,
+            ... In addition, ... In conclusion, ..."</i>
         </div>
 
         <textarea class="write-area" placeholder="Viết bài luận của bạn ở đây..."></textarea>
         <div class="write-footer">
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Mạng xã hội', '<p><i>Should teenagers be allowed to have their own social media accounts? I believe teenagers should be allowed to use social media, for the following reasons. First of all, social media helps teenagers stay connected with friends and family. For example, they can share updates and photos easily, even when they live far away or have a busy schedule. This can help them feel less isolated, especially if their family does not live nearby. In addition, social media can also help teenagers learn new things. For instance, many teenagers follow educational pages or watch tutorial videos online in their free time. This can support their learning outside school. In conclusion, although parents should still guide how it is used, I think social media can bring real benefits to teenagers.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 128 từ</p>')">Xem model answer (128 từ)</button>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Mạng xã hội', '<p><i>Should teenagers be allowed to have their own social media accounts? I believe teenagers should be allowed to use social media, for the following reasons. First of all, social media helps teenagers stay connected with friends and family. For example, they can share updates and photos easily, even when they live far away or have a busy schedule. This can help them feel less isolated, especially if their family does not live nearby. In addition, social media can also help teenagers learn new things. For instance, many teenagers follow educational pages or watch tutorial videos online in their free time. This can support their learning outside school. In conclusion, although parents should still guide how it is used, I think social media can bring real benefits to teenagers.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 128 từ</p>')">Xem
+            model answer (128 từ)</button>
         </div>
       </div>
 
       <!-- Activity 7: Guided Writing (Reduced Support) -->
       <div class="card">
         <span class="activity-label">Activity 7 &bull; Guided Writing (Hỗ trợ giảm dần)</span>
-        <div class="desc-en">Use only short keywords below to write the Social Media essay without sentence starters:</div>
-        <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
-          💬 <b>Point 1:</b> stay connected / friends &amp; family &rarr; share updates/photos &rarr; feel less isolated<br>
+        <div class="desc-en">Use only short keywords below to write the Social Media essay without sentence starters:
+        </div>
+        <div
+          style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
+          💬 <b>Point 1:</b> stay connected / friends &amp; family &rarr; share updates/photos &rarr; feel less
+          isolated<br>
           📚 <b>Point 2:</b> learn new things &rarr; educational pages/tutorials &rarr; support learning
         </div>
         <textarea class="write-area" placeholder="Tự viết trọn vẹn bài luận 120–150 từ ở đây..."></textarea>
@@ -1138,7 +1184,13 @@
         <span class="activity-label">Activity 8 &bull; Correct the Mistake (6 lỗi)</span>
         <div class="desc-en">Find and correct 6 mistakes in the essay below:</div>
         <div class="error-text-card">
-          Should teenager <span class="err-tag">[1]</span> be allowed to have their own social media accounts? I believe teenagers should be allow <span class="err-tag">[2]</span> to use social media, for the following reasons. First of all, social media help <span class="err-tag">[3]</span> teenagers stay connected with friends and family. they can share updates and photos easily, even when they live far away. <span class="err-tag">[4]</span> This can helps <span class="err-tag">[5]</span> them feel less isolated. In addition, social media can also help teenagers learn new things. In conclusion, I don't think <span class="err-tag">[6]</span> parents should stop teenagers from having their own social media accounts.
+          Should teenager <span class="err-tag">[1]</span> be allowed to have their own social media accounts? I believe
+          teenagers should be allow <span class="err-tag">[2]</span> to use social media, for the following reasons.
+          First of all, social media help <span class="err-tag">[3]</span> teenagers stay connected with friends and
+          family. they can share updates and photos easily, even when they live far away. <span
+            class="err-tag">[4]</span> This can helps <span class="err-tag">[5]</span> them feel less isolated. In
+          addition, social media can also help teenagers learn new things. In conclusion, I don't think <span
+            class="err-tag">[6]</span> parents should stop teenagers from having their own social media accounts.
         </div>
         <div id="p2Err"></div>
       </div>
@@ -1147,29 +1199,35 @@
       <div class="card">
         <span class="activity-label">Activity 9 &bull; Independent Writing</span>
         <div class="desc-en">Task: Write a COMPLETE opinion essay (120–150 words) answering the question below:</div>
-        <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-weight:700;font-size:15px;color:var(--jade-dark);margin-bottom:8px;">
+        <div
+          style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-weight:700;font-size:15px;color:var(--jade-dark);margin-bottom:8px;">
           "Should teenagers be allowed to choose their own clothes without their parents' approval?"
         </div>
-        <textarea class="write-area" id="writeAreaP2" placeholder="Should teenagers be allowed to choose their own clothes...? I believe..." oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
+        <textarea class="write-area" id="writeAreaP2"
+          placeholder="Should teenagers be allowed to choose their own clothes...? I believe..."
+          oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
         <div class="write-footer">
           <div class="word-count" id="wordCountP2">0 từ / mục tiêu 120–150 từ</div>
         </div>
       </div>
 
       <div class="next-level-wrap">
-        <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆 &rarr;</button>
+        <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆
+          &rarr;</button>
       </div>
     </div>
 
     <!-- ==================== PHASE 3: PRODUCTION WRITING ==================== -->
     <div class="q-level-section" id="q_phase-3" style="display:none;">
       <p class="level-intro">
-        <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing về Giới hạn thời gian màn hình và Free Writing viết NGƯỢC quan điểm gửi AI Athena chấm điểm tự động theo Rubric 4 tiêu chí.
+        <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing về Giới hạn thời gian màn hình và Free
+        Writing viết NGƯỢC quan điểm gửi AI Athena chấm điểm tự động theo Rubric 4 tiêu chí.
       </p>
 
       <!-- Activity 10: Guided Writing (Screen time) -->
       <div class="card">
-        <span class="activity-label">Activity 10 &bull; Guided Writing (Chủ đề chính: Giới hạn thời gian màn hình)</span>
+        <span class="activity-label">Activity 10 &bull; Guided Writing (Chủ đề chính: Giới hạn thời gian màn
+          hình)</span>
         <div class="desc-en">Question: Should parents limit teenagers' screen time? Use the information below:</div>
 
         <table class="fill-table">
@@ -1196,7 +1254,9 @@
 
         <textarea class="write-area" placeholder="Should parents limit teenagers' screen time? I believe..."></textarea>
         <div class="write-footer">
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Screen Time', '<p><i>Should parents limit teenagers’ screen time? I believe parents should set some limits on how much time teenagers spend on screens, for the following reasons. First of all, too much screen time can affect teenagers’ health. For example, spending hours looking at a screen every day can cause eye strain and make it harder to sleep at night. This can affect their ability to concentrate at school the next day. In addition, limiting screen time can help teenagers spend more time on other activities. For instance, they could spend more time exercising, reading, or talking with their family instead. This can help them develop a more balanced lifestyle. In conclusion, although screens can be useful, I think parents should still help teenagers manage their screen time for the sake of their health and daily life.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 135 từ</p>')">Xem model answer (135 từ)</button>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Screen Time', '<p><i>Should parents limit teenagers’ screen time? I believe parents should set some limits on how much time teenagers spend on screens, for the following reasons. First of all, too much screen time can affect teenagers’ health. For example, spending hours looking at a screen every day can cause eye strain and make it harder to sleep at night. This can affect their ability to concentrate at school the next day. In addition, limiting screen time can help teenagers spend more time on other activities. For instance, they could spend more time exercising, reading, or talking with their family instead. This can help them develop a more balanced lifestyle. In conclusion, although screens can be useful, I think parents should still help teenagers manage their screen time for the sake of their health and daily life.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 135 từ</p>')">Xem
+            model answer (135 từ)</button>
         </div>
 
         <div class="self-check">
@@ -1207,12 +1267,16 @@
 
       <!-- Activity 11: Free Writing (Arguing the OPPOSITE View) -->
       <div class="card">
-        <span class="activity-label">Activity 11 &bull; Free Writing (Chấm điểm AI Athena &bull; Viết NGƯỢC quan điểm)</span>
+        <span class="activity-label">Activity 11 &bull; Free Writing (Chấm điểm AI Athena &bull; Viết NGƯỢC quan
+          điểm)</span>
         <div class="desc-en">
           Task: Now write an opinion essay (120–150 words) arguing the <b>OPPOSITE view</b>:<br>
-          <span style="color:var(--jade-dark);font-weight:700;">"Teenagers should NOT have their screen time strictly limited by their parents."</span>
+          <span style="color:var(--jade-dark);font-weight:700;">"Teenagers should NOT have their screen time strictly
+            limited by their parents."</span>
         </div>
-        <textarea class="write-area" id="writeAreaMain" style="min-height:160px;" placeholder="Should parents strictly limit teenagers' screen time? I do not believe parents should strictly limit screen time, for the following reasons..." oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
+        <textarea class="write-area" id="writeAreaMain" style="min-height:160px;"
+          placeholder="Should parents strictly limit teenagers' screen time? I do not believe parents should strictly limit screen time, for the following reasons..."
+          oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
         <div class="write-footer">
           <div class="word-count" id="wordCountMain">0 từ / mục tiêu 120–150 từ</div>
           <button class="an-btn" id="btnSubmitWriting" onclick="submitFreeWriting()">✓ Nộp bài cho AI</button>

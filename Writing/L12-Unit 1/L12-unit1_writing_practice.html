@@ -195,26 +195,40 @@
       top: 0;
       z-index: 100;
       background: var(--cream);
-      padding: 14px 0;
+      padding: 8px 0;
       border-bottom: 1px solid var(--paper-line);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .level-tabs {
       display: flex;
       gap: 8px;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 0;
+    }
+
+    .level-tabs::-webkit-scrollbar {
+      display: none;
     }
 
     .level-tab {
+      flex-shrink: 0;
       background: var(--white);
       border: 1.5px solid var(--paper-line-2);
       border-radius: 999px;
-      padding: 8px 18px;
+      padding: 6px 16px;
       font-weight: 700;
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--ink-2);
-      min-height: 42px;
+      min-height: 38px;
       transition: all .15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .level-tab:hover {
@@ -226,6 +240,10 @@
       color: #fff;
       border-color: var(--jade-deep);
       box-shadow: var(--shadow);
+    }
+
+    .q-level-section {
+      scroll-margin-top: 60px;
     }
 
     .level-intro {
@@ -836,6 +854,7 @@
     }
 
     @media (max-width: 768px) {
+
       .synth-sources-grid,
       .q-opts,
       .pmc-select-row,
@@ -884,7 +903,8 @@
     <!-- ==================== PHASE 0: IDENTIFY ==================== -->
     <div class="q-level-section" id="q_phase-0" style="display:block;">
       <p class="level-intro">
-        <b>Identify:</b> Đọc bài tiểu sử Bác sĩ Alexandre Yersin để ghép nối 4 đoạn văn với mô tả chức năng tương ứng, sau đó trích xuất thông tin vào bảng theo từng mốc thời gian.
+        <b>Identify:</b> Đọc bài tiểu sử Bác sĩ Alexandre Yersin để ghép nối 4 đoạn văn với mô tả chức năng tương ứng,
+        sau đó trích xuất thông tin vào bảng theo từng mốc thời gian.
       </p>
 
       <!-- Activity 1: Structure Labelling (Alexandre Yersin) -->
@@ -898,7 +918,10 @@
             <span class="pmc-badge">Đoạn 1</span>
           </div>
           <div class="pmc-text">
-            "Alexandre Yersin is remembered around the world as one of the greatest medical researchers of the nineteenth century. He was born in Switzerland in 1863. His mother, a schoolteacher, raised him and encouraged him to study science. While he was studying medicine in Paris, he worked closely with famous scientists such as Louis Pasteur and Émile Roux."
+            "Alexandre Yersin is remembered around the world as one of the greatest medical researchers of the
+            nineteenth century. He was born in Switzerland in 1863. His mother, a schoolteacher, raised him and
+            encouraged him to study science. While he was studying medicine in Paris, he worked closely with famous
+            scientists such as Louis Pasteur and Émile Roux."
           </div>
           <div class="pmc-select-row" id="pmcRow1"></div>
         </div>
@@ -909,7 +932,10 @@
             <span class="pmc-badge">Đoạn 2</span>
           </div>
           <div class="pmc-text">
-            "Yersin's most famous achievement came in 1894, when he travelled to Hong Kong during a deadly plague outbreak. Working in a small, poorly equipped hut, he identified the bacterium responsible for the disease, which was later named Yersinia pestis in his honour. This discovery eventually helped doctors develop treatments that saved countless lives."
+            "Yersin's most famous achievement came in 1894, when he travelled to Hong Kong during a deadly plague
+            outbreak. Working in a small, poorly equipped hut, he identified the bacterium responsible for the disease,
+            which was later named Yersinia pestis in his honour. This discovery eventually helped doctors develop
+            treatments that saved countless lives."
           </div>
           <div class="pmc-select-row" id="pmcRow2"></div>
         </div>
@@ -920,7 +946,10 @@
             <span class="pmc-badge">Đoạn 3</span>
           </div>
           <div class="pmc-text">
-            "In 1895, Yersin settled in Nha Trang, Vietnam, where he founded a branch of the Pasteur Institute. While living there, he also explored the surrounding highlands and recommended the site that later became the town of Da Lat. He never married, choosing instead to devote his life to scientific research and to the local community."
+            "In 1895, Yersin settled in Nha Trang, Vietnam, where he founded a branch of the Pasteur Institute. While
+            living there, he also explored the surrounding highlands and recommended the site that later became the town
+            of Da Lat. He never married, choosing instead to devote his life to scientific research and to the local
+            community."
           </div>
           <div class="pmc-select-row" id="pmcRow3"></div>
         </div>
@@ -931,7 +960,8 @@
             <span class="pmc-badge">Đoạn 4</span>
           </div>
           <div class="pmc-text">
-            "Yersin died in Nha Trang in 1943, at the age of 79. However, his legacy lives on: streets, schools, and hospitals across Vietnam still carry his name, and local people continue to visit his grave every year."
+            "Yersin died in Nha Trang in 1943, at the age of 79. However, his legacy lives on: streets, schools, and
+            hospitals across Vietnam still carry his name, and local people continue to visit his grave every year."
           </div>
           <div class="pmc-select-row" id="pmcRow4"></div>
         </div>
@@ -983,20 +1013,25 @@
     <!-- ==================== PHASE 1: STRUCTURE ==================== -->
     <div class="q-level-section" id="q_phase-1" style="display:none;">
       <p class="level-intro">
-        <b>Structure:</b> Thực hành sắp xếp các câu thành đoạn văn tiểu sử hoàn chỉnh về Alfred Nobel theo 2 hướng tiếp cận: Hướng thời gian và Hướng thành tựu.
+        <b>Structure:</b> Thực hành sắp xếp các câu thành đoạn văn tiểu sử hoàn chỉnh về Alfred Nobel theo 2 hướng tiếp
+        cận: Hướng thời gian và Hướng thành tựu.
       </p>
 
       <!-- Activity 3: Passage Arrangement 1 (Early Life - Chronological) -->
       <div class="card">
-        <span class="activity-label">Activity 3 &bull; Passage Arrangement 1 (Alfred Nobel &bull; Hướng thời gian)</span>
-        <div class="desc-en">Put the sentences in the correct order to form a complete paragraph about Alfred Nobel's early life:</div>
+        <span class="activity-label">Activity 3 &bull; Passage Arrangement 1 (Alfred Nobel &bull; Hướng thời
+          gian)</span>
+        <div class="desc-en">Put the sentences in the correct order to form a complete paragraph about Alfred Nobel's
+          early life:</div>
         <div id="p1OrdA"></div>
       </div>
 
       <!-- Activity 4: Passage Arrangement 2 (Legacy - Achievement-based) -->
       <div class="card">
-        <span class="activity-label">Activity 4 &bull; Passage Arrangement 2 (Alfred Nobel &bull; Hướng thành tựu &amp; Di sản)</span>
-        <div class="desc-en">A more challenging arrangement based on cause-effect logic (Dynamite &rarr; Fortune &rarr; Nobel Prize &rarr; Legacy):</div>
+        <span class="activity-label">Activity 4 &bull; Passage Arrangement 2 (Alfred Nobel &bull; Hướng thành tựu &amp;
+          Di sản)</span>
+        <div class="desc-en">A more challenging arrangement based on cause-effect logic (Dynamite &rarr; Fortune &rarr;
+          Nobel Prize &rarr; Legacy):</div>
         <div id="p1OrdB"></div>
       </div>
 
@@ -1008,20 +1043,24 @@
     <!-- ==================== PHASE 2: WRITE ==================== -->
     <div class="q-level-section" id="q_phase-2" style="display:none;">
       <p class="level-intro">
-        <b>Write:</b> Luyện tập từ chuyển đổi Quick Facts thành câu hoàn chỉnh, viết bài tiểu sử có hướng dẫn (Đại tướng Võ Nguyên Giáp), ghép thông tin từ 2 nguồn, đến viết tiểu sử độc lập.
+        <b>Write:</b> Luyện tập từ chuyển đổi Quick Facts thành câu hoàn chỉnh, viết bài tiểu sử có hướng dẫn (Đại tướng
+        Võ Nguyên Giáp), ghép thông tin từ 2 nguồn, đến viết tiểu sử độc lập.
       </p>
 
       <!-- Activity 5: Sentence Building (Quick Facts -> Sentences) -->
       <div class="card">
         <span class="activity-label">Activity 5 &bull; Sentence Building (Quick Facts &rarr; Full Sentences)</span>
-        <div class="desc-en">Convert the quick facts about General Vo Nguyen Giap into grammatically correct sentences:</div>
+        <div class="desc-en">Convert the quick facts about General Vo Nguyen Giap into grammatically correct sentences:
+        </div>
         <div id="p2SB"></div>
       </div>
 
       <!-- Activity 6: Guided Writing (Full Support - General Giap) -->
       <div class="card">
-        <span class="activity-label">Activity 6 &bull; Guided Writing (Hỗ trợ đầy đủ &bull; Đại tướng Võ Nguyên Giáp)</span>
-        <div class="desc-en">Complete the biography of General Vo Nguyen Giap using the table below (target: 180–200 words):</div>
+        <span class="activity-label">Activity 6 &bull; Guided Writing (Hỗ trợ đầy đủ &bull; Đại tướng Võ Nguyên
+          Giáp)</span>
+        <div class="desc-en">Complete the biography of General Vo Nguyen Giap using the table below (target: 180–200
+          words):</div>
 
         <table class="fill-table">
           <thead>
@@ -1055,9 +1094,12 @@
           </tbody>
         </table>
 
-        <textarea class="write-area" placeholder="General Vo Nguyen Giap is remembered as one of Vietnam's greatest military leaders. He was born..."></textarea>
+        <textarea class="write-area"
+          placeholder="General Vo Nguyen Giap is remembered as one of Vietnam's greatest military leaders. He was born..."></textarea>
         <div class="write-footer">
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Đại tướng Võ Nguyên Giáp', '<p><i>General Vo Nguyen Giap is remembered as one of Vietnam’s greatest military leaders. He was born in Quang Binh province in 1911. While he was still a young man, General Giap joined the Indochinese Communist Party, which had been founded in 1930. General Giap’s most remarkable achievement was leading Vietnamese forces to victory over the French at Dien Bien Phu in 1954, despite having no formal training at a military academy. While planning this campaign, he moved heavy artillery piece by piece through the mountains, a strategy that surprised military experts around the world. This victory brought an end to French colonial rule in Vietnam. After 1954, General Giap continued to lead the army through the war against the United States, which ended with the historic Ho Chi Minh Campaign in 1975. He later held several other government positions before retiring from public life. General Giap died in Hanoi in 2013, at the age of 102. However, his legacy remains extremely strong today: streets and schools across Vietnam still carry his name, and he continues to be remembered as one of the country’s most respected national heroes.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 187 từ</p>')">Xem model answer (187 từ)</button>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Đại tướng Võ Nguyên Giáp', '<p><i>General Vo Nguyen Giap is remembered as one of Vietnam’s greatest military leaders. He was born in Quang Binh province in 1911. While he was still a young man, General Giap joined the Indochinese Communist Party, which had been founded in 1930. General Giap’s most remarkable achievement was leading Vietnamese forces to victory over the French at Dien Bien Phu in 1954, despite having no formal training at a military academy. While planning this campaign, he moved heavy artillery piece by piece through the mountains, a strategy that surprised military experts around the world. This victory brought an end to French colonial rule in Vietnam. After 1954, General Giap continued to lead the army through the war against the United States, which ended with the historic Ho Chi Minh Campaign in 1975. He later held several other government positions before retiring from public life. General Giap died in Hanoi in 2013, at the age of 102. However, his legacy remains extremely strong today: streets and schools across Vietnam still carry his name, and he continues to be remembered as one of the country’s most respected national heroes.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 187 từ</p>')">Xem
+            model answer (187 từ)</button>
         </div>
       </div>
 
@@ -1065,10 +1107,13 @@
       <div class="card">
         <span class="activity-label">Activity 7 &bull; Guided Writing (Hỗ trợ giảm dần)</span>
         <div class="desc-en">Use only short keywords below to write the biography without sentence starters:</div>
-        <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
-          ⭐ <b>1. Early life:</b> Quang Binh, 1911 / joined Indochinese Communist Party (1930) &rarr; start of revolutionary career<br>
+        <div
+          style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
+          ⭐ <b>1. Early life:</b> Quang Binh, 1911 / joined Indochinese Communist Party (1930) &rarr; start of
+          revolutionary career<br>
           🏆 <b>2. Achievement:</b> Dien Bien Phu 1954, no formal training &rarr; ended French colonial rule<br>
-          🎖️ <b>3. Later career:</b> led army &rarr; Ho Chi Minh Campaign 1975; government roles &rarr; reunification<br>
+          🎖️ <b>3. Later career:</b> led army &rarr; Ho Chi Minh Campaign 1975; government roles &rarr;
+          reunification<br>
           🕊️ <b>4. Legacy:</b> Hanoi 2013, age 102 &rarr; national hero, streets/schools named
         </div>
         <textarea class="write-area" placeholder="Tự viết trọn vẹn bài tiểu sử 180–200 từ ở đây..."></textarea>
@@ -1084,28 +1129,34 @@
       <!-- Activity 9: Independent Biography -->
       <div class="card">
         <span class="activity-label">Activity 9 &bull; Independent Biography</span>
-        <div class="desc-en">Write a complete biography (180–200 words) of a person you admire (a family member, teacher, or historical figure):</div>
-        <textarea class="write-area" id="writeAreaP2" placeholder="Write your biography here (Introduction – Childhood & Education – Achievements – Family/Later Career – Death/Current life)..." oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
+        <div class="desc-en">Write a complete biography (180–200 words) of a person you admire (a family member,
+          teacher, or historical figure):</div>
+        <textarea class="write-area" id="writeAreaP2"
+          placeholder="Write your biography here (Introduction – Childhood & Education – Achievements – Family/Later Career – Death/Current life)..."
+          oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
         <div class="write-footer">
           <div class="word-count" id="wordCountP2">0 từ / mục tiêu 180–200 từ</div>
         </div>
       </div>
 
       <div class="next-level-wrap">
-        <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆 &rarr;</button>
+        <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆
+          &rarr;</button>
       </div>
     </div>
 
     <!-- ==================== PHASE 3: PRODUCTION WRITING ==================== -->
     <div class="q-level-section" id="q_phase-3" style="display:none;">
       <p class="level-intro">
-        <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing về Walt Disney và Free Writing về Steve Jobs tổng hợp 2 nguồn gửi AI Athena chấm điểm tự động theo Rubric 4 tiêu chí.
+        <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing về Walt Disney và Free Writing về Steve
+        Jobs tổng hợp 2 nguồn gửi AI Athena chấm điểm tự động theo Rubric 4 tiêu chí.
       </p>
 
       <!-- Activity 10: Guided Writing (Walt Disney) -->
       <div class="card">
         <span class="activity-label">Activity 10 &bull; Guided Writing (Walt Disney)</span>
-        <div class="desc-en">Question: Write a biography of Walt Disney using the table below (target: 180–200 words):</div>
+        <div class="desc-en">Question: Write a biography of Walt Disney using the table below (target: 180–200 words):
+        </div>
 
         <table class="fill-table">
           <thead>
@@ -1139,9 +1190,12 @@
           </tbody>
         </table>
 
-        <textarea class="write-area" placeholder="Walt Disney is famous around the world for... He was born..."></textarea>
+        <textarea class="write-area"
+          placeholder="Walt Disney is famous around the world for... He was born..."></textarea>
         <div class="write-footer">
-          <button class="reveal-btn" onclick="openPopup('Model Answer — Walt Disney', '<p><i>Walt Disney is famous around the world as one of the greatest names in the history of film-making. He was born in Chicago in 1901. While he was still a child, he showed a natural talent for drawing, and he later took art classes in his spare time, even selling small sketches to neighbours for extra money. Walt Disney’s most significant achievement was pioneering feature-length animated films, something no studio had successfully done before. While developing his early cartoons, he also created one of the most recognisable characters in the world, Mickey Mouse. Apart from film-making, he was also known for founding Disneyland, the first theme park of its kind. Walt Disney married Lillian Bounds in 1925, and the couple raised two daughters together. Throughout his career, he continued to expand his company into new areas of entertainment, from television to theme parks. Walt Disney died in 1966, from complications caused by lung cancer. However, his influence lives on: the company he founded continues to create films and build theme parks enjoyed by millions of people around the world today.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 180 từ</p>')">Xem model answer (180 từ)</button>
+          <button class="reveal-btn"
+            onclick="openPopup('Model Answer — Walt Disney', '<p><i>Walt Disney is famous around the world as one of the greatest names in the history of film-making. He was born in Chicago in 1901. While he was still a child, he showed a natural talent for drawing, and he later took art classes in his spare time, even selling small sketches to neighbours for extra money. Walt Disney’s most significant achievement was pioneering feature-length animated films, something no studio had successfully done before. While developing his early cartoons, he also created one of the most recognisable characters in the world, Mickey Mouse. Apart from film-making, he was also known for founding Disneyland, the first theme park of its kind. Walt Disney married Lillian Bounds in 1925, and the couple raised two daughters together. Throughout his career, he continued to expand his company into new areas of entertainment, from television to theme parks. Walt Disney died in 1966, from complications caused by lung cancer. However, his influence lives on: the company he founded continues to create films and build theme parks enjoyed by millions of people around the world today.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 180 từ</p>')">Xem
+            model answer (180 từ)</button>
         </div>
 
         <div class="self-check">
@@ -1154,14 +1208,16 @@
       <div class="card">
         <span class="activity-label">Activity 11 &bull; Free Writing (Steve Jobs &bull; Tổng hợp 2 nguồn)</span>
         <div class="desc-en">
-          Task: Combine information from BOTH sources below to write a complete biography of <b>Steve Jobs</b> (180–200 words):
+          Task: Combine information from BOTH sources below to write a complete biography of <b>Steve Jobs</b> (180–200
+          words):
         </div>
 
         <div class="synth-card">
           <div class="synth-sources-grid">
             <div class="synth-src-box">
               <b>Source A &bull; Audio Interview Quote</b>
-              "In an old interview, Steve Jobs once said that being adopted as a baby made him feel his life had a clear purpose from the very beginning."
+              "In an old interview, Steve Jobs once said that being adopted as a baby made him feel his life had a clear
+              purpose from the very beginning."
             </div>
             <div class="synth-src-box">
               <b>Source B &bull; Quick Facts</b>
@@ -1173,7 +1229,9 @@
           </div>
         </div>
 
-        <textarea class="write-area" id="writeAreaMain" style="min-height:170px;" placeholder="Steve Jobs is famous around the world as one of the most influential innovators in modern technology. He was born in San Francisco in 1955..." oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
+        <textarea class="write-area" id="writeAreaMain" style="min-height:170px;"
+          placeholder="Steve Jobs is famous around the world as one of the most influential innovators in modern technology. He was born in San Francisco in 1955..."
+          oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
         <div class="write-footer">
           <div class="word-count" id="wordCountMain">0 từ / mục tiêu 180–200 từ</div>
           <button class="an-btn" id="btnSubmitWriting" onclick="submitFreeWriting()">✓ Nộp bài cho AI</button>
