@@ -401,7 +401,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url('https://lh3.googleusercontent.com/d/1FMuSbzRM69cNq642cdxTYTpOIr3ad75x');
+      background-image: url('L10-Unit 2- Anh 2 thay the.png');
       background-size: cover;
       background-position: center;
       opacity: 0.16;
@@ -1015,6 +1015,9 @@
         padding: 14px;
       }
     }
+    /* Kịch bản Unit 2: flip/reveal, scroll-stack and mobile signal layout */
+    .formula-box.v4-flip{cursor:pointer;perspective:1000px}.formula-box.v4-flip:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.flip-stage{position:relative;display:grid;transform-style:preserve-3d;transition:transform .55s ease}.formula-box.open .flip-stage{transform:rotateY(180deg)}.flip-face{grid-area:1/1;min-height:140px;padding:16px;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden}.flip-front{display:flex;align-items:center;background:var(--cream-2)}.flip-back{transform:rotateY(180deg);background:#fff}.flip-back .contrast-grid{display:grid}.builder-stack{position:relative}.builder-stack:before{content:'';position:absolute;left:36px;top:24px;bottom:24px;width:2px;background:var(--jade-soft)}.builder-dots{display:flex;gap:7px;margin:0 0 10px 8px}.builder-dot{width:10px;height:10px;border:0;border-radius:50%;background:var(--cream-3)}.builder-dot.active{background:var(--jade-deep)}.builder-translate{min-height:44px;margin-bottom:12px;border:1px solid var(--jade-soft);border-radius:10px;background:#fff;color:var(--jade-dark);font:inherit;font-weight:750}.hotspot{position:relative}.hotspot-label{display:block;margin-bottom:5px;padding:5px 8px;border-radius:7px;background:var(--jade-deep);color:#fff;font-size:12px;font-weight:750}
+    @media(max-width:480px){.signals-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.builder-stack{max-height:72vh;overflow-y:auto;scroll-snap-type:y mandatory;padding-right:4px}.builder-step{min-height:42vh;scroll-snap-align:start}.flip-back .contrast-grid{grid-template-columns:1fr}.hero-img{width:100%;height:100%;object-position:center}}
   </style>
 </head>
 
@@ -1046,24 +1049,24 @@
 
     <div class="mission-card" id="missionCard">
       <div class="hero-img-wrap">
-        <img src="https://lh3.googleusercontent.com/d/15PizQQnfRP-87Fo7clINrfR2lBDqkcGm" alt="Environment Speech Contest - Trường học xanh" class="hero-img">
+        <img src="L10-Unit 2-Writing_Anh Hook.png" alt="Environment Speech Contest - Trường học xanh" class="hero-img">
       </div>
       <div class="mission-body">
         <span class="mission-badge">New Mission</span>
         <h3>Environment Speech Contest 🌱</h3>
-        <p>Khoa, Hà, and Mai have been chosen to represent Class 10A at the inter-school Environment Speech Contest. Before writing their own speech, the organisers sent a demo speech for teams to study.<span class="vi-sub">Khoa, Hà và Mai đại diện Lớp 10A tham gia cuộc thi Hùng biện Môi trường liên trường. Trước khi viết bài, ban tổ chức đã gửi 1 bài mẫu (Demo Speech) để các đội nghiên cứu.</span></p>
+        <p>Khoa, Hà, and Mai have been chosen to represent Class 10A at the inter-school Environment Speech Contest. Before writing their own speech, the organisers sent last year's winning paragraph so teams can study how it is organised.<span class="vi-sub">Khoa, Hà và Mai đại diện Lớp 10A tham gia cuộc thi Hùng biện Môi trường liên trường. Trước khi viết bài, ban tổ chức đã gửi đoạn văn đoạt giải năm ngoái để các đội nghiên cứu cách tổ chức bài.</span></p>
         <div class="mission-task-box">
-          📌 <b>Today's task:</b> Study how the demo speech below is built, sentence by sentence &ndash; then write your own speech for the contest!<span class="vi-sub" style="margin-top:6px;">📌 Nhiệm vụ hôm nay: Tìm hiểu cách xây dựng từng câu của Demo Speech dưới đây &ndash; sau đó tự viết bài phát biểu của chính bạn cho cuộc thi!</span>
+          📌 <b>Today's task:</b> Read last year's winning paragraph carefully, learn how it is built &ndash; then write your own speech for the contest!<span class="vi-sub" style="margin-top:6px;">📌 Nhiệm vụ hôm nay: Đọc kỹ đoạn văn đoạt giải năm ngoái, tìm hiểu cách bài được xây dựng &ndash; sau đó tự viết bài phát biểu của chính bạn cho cuộc thi!</span>
         </div>
-        <button class="btn-reveal" id="btnRevealDemo" onclick="revealDemoSpeech()">👀 See Demo Speech ↓ <span style="opacity:.85;font-weight:600;">(Xem bài mẫu)</span></button>
+        <button class="btn-reveal" id="btnRevealDemo" onclick="revealDemoSpeech()">📄 See Last Year's Winning Paragraph ↓ <span style="opacity:.85;font-weight:600;">(Xem bài đoạt giải)</span></button>
       </div>
     </div>
 
     <!-- Demo Speech Card -->
     <div class="winning-card" id="winningCard">
-      <div class="ribbon-badge">🎤 Demo Speech</div>
+      <div class="ribbon-badge">🏆 Last Year's Winning Entry</div>
       <div class="winning-card-inner">
-        <h3>Demo Speech: Making Our School Greener<span class="vi-sub">Bài mẫu: Làm cho trường học xanh hơn</span></h3>
+        <h3>Last Year's Winning Paragraph: Making Our School Greener<span class="vi-sub">Bài đoạt giải năm ngoái: Làm cho trường học xanh hơn</span></h3>
         <div class="winning-text">
           There are several things we can do to make our school greener. First, we should turn off the lights and fans when we leave a room. For example, students can check the switches in classrooms before leaving. This can reduce our school's electricity use. Second, the school could set up refill stations for water and hand soap near the canteen. For example, students can refill their own bottles instead of buying new plastic ones. This can cut down on single-use plastic waste. Third, we should encourage students to bring their own water bottles every day. This will help our school produce less plastic waste. In conclusion, making our school greener doesn't need big changes. Small daily habits can already make a real difference.
         </div>
@@ -1439,6 +1442,17 @@
       });
       document.getElementById('analyzerInfo').innerHTML = '💡 Hãy chạm vào một câu bất kỳ để xem vai trò chức năng trong bài văn.';
     }
+  </script>
+  <script type="application/json" id="athena-manifest">{"version":"1.0","type":"lesson","subject":"english","grade":10,"unit":2,"skill":"writing","stateful":true,"completion":"platform-tracked"}</script>
+  <script>
+    /* Unit 2 Lesson repair layer. */
+    function LessonLMS(){return window.AiducationLMS||{ready(){},progress(){},event(){},state(){},resize(){}}}const lessonRepair={mission:false,winning:false,flows:new Set(),flips:new Set(),layers:new Set(),builderTranslation:false,hotspots:new Set(),signals:new Set()};
+    const formulaBoxes=[...document.querySelectorAll('.formula-box')];[0,2].forEach(i=>{const box=formulaBoxes[i];if(!box)return;box.classList.add('v4-flip');const formula=box.querySelector('.formula-tag'),contrast=box.querySelector('.contrast-grid'),stage=document.createElement('div'),front=document.createElement('div'),back=document.createElement('div');stage.className='flip-stage';front.className='flip-face flip-front';back.className='flip-face flip-back';formula.before(stage);front.append(formula);back.append(contrast);stage.append(front,back);box.tabIndex=0;box.setAttribute('role','button');box.setAttribute('aria-expanded','false');const flip=()=>{box.classList.toggle('open');box.setAttribute('aria-expanded',String(box.classList.contains('open')));if(box.classList.contains('open'))lessonRepair.flips.add(i);else lessonRepair.flips.delete(i);saveLessonRepair()};box.addEventListener('click',flip);box.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}})});
+    const builderSteps=[...document.querySelectorAll('.builder-step')],builderEnglish=['Pick two or three suggestions that address genuinely different environmental problems.','For each idea, ask: How exactly can people do it? What result will it produce?','Combine Suggestion, Example and Expected result, using the correct sequence word.','Read the complete point again and check that all three layers are present and logically connected.','Avoid forgetting For example, making a vague suggestion, or repeating the suggestion as the result.'];if(builderSteps.length){const first=builderSteps[0],toggle=document.createElement('button'),dots=document.createElement('div'),stack=document.createElement('div');toggle.className='builder-translate';toggle.type='button';toggle.textContent='Xem bản dịch tiếng Việt';dots.className='builder-dots';dots.innerHTML=builderSteps.map((_,i)=>'<button class="builder-dot'+(i===0?' active':'')+'" aria-label="Bước '+(i+1)+'"></button>').join('');stack.className='builder-stack';first.before(toggle,dots,stack);builderSteps.forEach((step,i)=>{const p=step.querySelector('p'),vi=p.textContent;p.textContent=builderEnglish[i];const v=document.createElement('p');v.className='builder-vi';v.hidden=true;v.textContent=vi;p.after(v);step.querySelector('.vi-sub')?.setAttribute('hidden','');stack.append(step)});dots.querySelectorAll('.builder-dot').forEach((d,i)=>d.addEventListener('click',()=>builderSteps[i].scrollIntoView({behavior:'smooth',block:'center'})));stack.addEventListener('scroll',()=>{const top=stack.scrollTop,idx=builderSteps.reduce((best,s,i)=>Math.abs(s.offsetTop-top)<Math.abs(builderSteps[best].offsetTop-top)?i:best,0);dots.querySelectorAll('.builder-dot').forEach((d,i)=>d.classList.toggle('active',i===idx))});toggle.addEventListener('click',()=>{lessonRepair.builderTranslation=!lessonRepair.builderTranslation;builderSteps.forEach(s=>{const v=s.querySelector('.builder-vi');v.hidden=!lessonRepair.builderTranslation});toggle.textContent=lessonRepair.builderTranslation?'Ẩn bản dịch tiếng Việt':'Xem bản dịch tiếng Việt';saveLessonRepair()})}
+    document.getElementById('hookBanner').addEventListener('click',()=>{lessonRepair.mission=document.getElementById('missionCard').classList.contains('open');saveLessonRepair()});document.getElementById('btnRevealDemo').addEventListener('click',()=>{lessonRepair.winning=true;saveLessonRepair()});document.querySelectorAll('.flow-card').forEach((x,i)=>x.addEventListener('click',()=>{if(x.classList.contains('open'))lessonRepair.flows.add(i);else lessonRepair.flows.delete(i);saveLessonRepair()}));document.getElementById('btnRevealEx').addEventListener('click',()=>{lessonRepair.layers.add('example');saveLessonRepair()});document.getElementById('btnRevealRes').addEventListener('click',()=>{lessonRepair.layers.add('result');saveLessonRepair()});
+    document.querySelectorAll('.hotspot').forEach((x,i)=>x.addEventListener('click',()=>{document.querySelectorAll('.hotspot-label').forEach(n=>n.remove());const label=document.createElement('span');label.className='hotspot-label';label.textContent=document.getElementById('analyzerInfo').textContent.replace(/^\s*💡?\s*/,'');x.prepend(label);lessonRepair.hotspots.add(i);saveLessonRepair()}));document.querySelectorAll('.signal-pill').forEach((x,i)=>x.addEventListener('click',()=>{if(x.classList.contains('open'))lessonRepair.signals.add(i);else lessonRepair.signals.delete(i);saveLessonRepair()}));
+    function lessonSnapshot(){return{mission:lessonRepair.mission,winning:lessonRepair.winning,flows:[...lessonRepair.flows],flips:[...lessonRepair.flips],layers:[...lessonRepair.layers],builderTranslation:lessonRepair.builderTranslation,hotspots:[...lessonRepair.hotspots],signals:[...lessonRepair.signals],lastAction:'lesson'}}function saveLessonRepair(){LessonLMS().state(lessonSnapshot());LessonLMS().progress({done:Number(lessonRepair.mission)+Number(lessonRepair.winning)+lessonRepair.flows.size+lessonRepair.hotspots.size,total:17});reportLessonHeight()}function reportLessonHeight(){LessonLMS().resize({height:document.documentElement.scrollHeight})}
+    if(window.AiducationLMS)window.AiducationLMS.onResume=s=>{if(!s)return;lessonRepair.mission=!!s.mission;lessonRepair.winning=!!s.winning;lessonRepair.flows=new Set(s.flows||[]);lessonRepair.flips=new Set(s.flips||[]);lessonRepair.layers=new Set(s.layers||[]);lessonRepair.builderTranslation=!!s.builderTranslation;lessonRepair.hotspots=new Set(s.hotspots||[]);lessonRepair.signals=new Set(s.signals||[]);if(lessonRepair.mission)document.getElementById('missionCard').classList.add('open');if(lessonRepair.winning)document.getElementById('winningCard').classList.add('open');lessonRepair.flows.forEach(i=>document.querySelectorAll('.flow-card')[i]?.classList.add('open'));lessonRepair.flips.forEach(i=>{formulaBoxes[i]?.classList.add('open');formulaBoxes[i]?.setAttribute('aria-expanded','true')});if(lessonRepair.layers.has('example'))document.getElementById('layerEx').style.display='block';if(lessonRepair.layers.has('result'))document.getElementById('layerRes').style.display='block';if(lessonRepair.builderTranslation){builderSteps.forEach(step=>{step.querySelector('.builder-vi').hidden=false});const b=document.querySelector('.builder-translate');if(b)b.textContent='Ẩn bản dịch tiếng Việt'}lessonRepair.signals.forEach(i=>document.querySelectorAll('.signal-pill')[i]?.classList.add('open'));reportLessonHeight()};window.addEventListener('load',()=>{LessonLMS().ready();reportLessonHeight()});new ResizeObserver(reportLessonHeight).observe(document.body);
   </script>
 </body>
 

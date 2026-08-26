@@ -58,13 +58,13 @@
 
 **HOW TO WRITE A SUGGESTION PARAGRAPH**
 
-| Phần | Câu hỏi định hướng |
+| Part | Guiding Question — Câu hỏi định hướng |
 |---|---|
-| ① Topic Sentence | Đoạn văn này nói về điều gì? |
+| ① Topic Sentence | What is this paragraph about? |
 | ② Supporting Point 1 | Suggestion → Example → Expected result |
 | ③ Supporting Point 2 | Suggestion → Example → Expected result |
 | ④ Supporting Point 3 | Suggestion → Example → Expected result |
-| ⑤ Concluding Sentence | Kết lại đoạn văn thế nào? |
+| ⑤ Concluding Sentence | How does the paragraph wrap up? |
 
 > 🎨 **Desktop:** trình bày dạng chuỗi khối dọc (vertical flow), mỗi phần 1 thẻ nối bằng mũi tên xuống, ở trạng thái tóm tắt (chỉ tên phần + icon) — bấm vào mới mở rộng hiện câu hỏi định hướng (progressive disclosure). 3 thẻ Point 1/2/3 dùng cùng 1 màu `--jade-pale`; Topic Sentence và Concluding Sentence dùng `--cream-3`.
 > 📱 **Mobile:** cấu trúc này vốn đã là 1 cột dọc nên gần như không cần đổi layout — chỉ cần đảm bảo mũi tên nối giữa các thẻ đủ rõ ở màn hình hẹp (dùng icon mũi tên đơn giản, không dùng đường kẻ mảnh dễ mất nét khi nén ảnh). Khoảng cách giữa các thẻ giảm nhẹ (12-16px thay vì 24px trên desktop) để giảm số lần cuộn.
@@ -81,9 +81,9 @@
 | Example ✓ | There are several things we can do to make our school greener. |
 | Not good ✗ | Our school has a lot of environmental problems. *(quá chung chung, không báo hiệu sẽ có các đề xuất)* |
 
-### B.2 — Supporting Point (3 lớp)
+### B.2 — Supporting Point (3 layers)
 
-| Lớp | Formula | Example |
+| Layer — Lớp | Formula | Example |
 |---|---|---|
 | Suggestion | First/Second/Third, + suggestion. | First, we should turn off the lights and fans when we leave a room. |
 | Example | For example, + specific action. | For example, students can check the switches in classrooms before leaving. |
@@ -102,13 +102,20 @@
 
 ---
 
-## C · Suggestion Builder — Quy trình xây 1 Supporting Point
+## C · Suggestion Builder — Process for building 1 Supporting Point
 
-1. **Chọn ý đa dạng:** chọn 2-3 suggestion khác loại nhau (không lặp cùng 1 hướng)
-2. **Brainstorm cho từng ý:** "Làm cụ thể ra sao? (Example)" và "Kết quả gì? (Expected result)"
-3. **Ráp câu theo Formula:** ghép 3 lớp thành 1 cụm hoàn chỉnh, dùng đúng sequence word
-4. **Đọc lại toàn bộ:** kiểm tra đủ 3 lớp, không thiếu Example hoặc Result
-5. **Lỗi thường gặp:** quên "For example,"; Suggestion quá mơ hồ; Expected result lặp lại y nguyên Suggestion
+1. **Choose varied ideas:** pick 2-3 suggestions that are genuinely different from each other (not repeating the same angle)
+2. **Brainstorm for each idea:** ask yourself "How exactly? (Example)" and "What result? (Expected result)"
+3. **Build the sentence using the Formula:** combine all 3 layers into one complete chunk, using the correct sequence word
+4. **Re-read the whole thing:** check all 3 layers are present — don't skip Example or Result
+5. **Common mistakes:** forgetting "For example,"; a Suggestion that's too vague; an Expected result that just repeats the Suggestion word-for-word
+
+> 🎨 **Bản dịch tiếng Việt (ẩn mặc định, hiện qua nút toggle — đúng Nguyên tắc 15 song ngữ):**
+> 1. **Chọn ý đa dạng:** chọn 2-3 suggestion khác loại nhau (không lặp cùng 1 hướng)
+> 2. **Brainstorm cho từng ý:** "Làm cụ thể ra sao? (Example)" và "Kết quả gì? (Expected result)"
+> 3. **Ráp câu theo Formula:** ghép 3 lớp thành 1 cụm hoàn chỉnh, dùng đúng sequence word
+> 4. **Đọc lại toàn bộ:** kiểm tra đủ 3 lớp, không thiếu Example hoặc Result
+> 5. **Lỗi thường gặp:** quên "For example,"; Suggestion quá mơ hồ; Expected result lặp lại y nguyên Suggestion
 
 > 🎨 **Desktop:** dạng scroll-stack (có thể cuộn ngang), mỗi bước 1 thẻ lớn có chấm tiến trình (progress dots) phía trên. Bước 1 minh hoạ bằng vài thẻ ý tưởng, 3 thẻ khoanh nổi bật (đã chọn), còn lại mờ đi. Bước 5 dùng contrasting cases như mục B.
 > 📱 **Mobile:** đổi scroll-stack sang **cuộn dọc** thay vì cuộn ngang — cuộn ngang trên điện thoại dễ xung đột với cử chỉ vuốt-để-quay-lại (swipe-back) của hệ điều hành và dễ bị bỏ sót bước nếu học sinh không nhận ra còn nội dung ở bên phải. Nếu vẫn muốn giữ cảm giác "từng bước" thì dùng carousel dọc có chấm tiến trình bên cạnh (không phải bên trên) và snap-scroll (`scroll-snap-type: y mandatory`) để mỗi lần cuộn dừng đúng 1 bước. Bước 5 (contrasting cases) áp dụng đúng quy tắc xếp dọc như B.1/B.3 ở trên.
@@ -123,11 +130,11 @@
 
 | Part | Corresponding excerpt | Function |
 |---|---|---|
-| ① Topic Sentence | "There are several things we can do to make our school greener." | Giới thiệu chủ đề |
+| ① Topic Sentence | "There are several things we can do to make our school greener." | Introduces the topic |
 | ② Point 1 | "First, we should turn off the lights...electricity use." | Suggestion + Example + Result |
 | ③ Point 2 | "Second, the school could set up...plastic waste." | Suggestion + Example + Result |
 | ④ Point 3 | "Third, we should encourage...plastic waste." | Suggestion + Example + Result |
-| ⑤ Concluding Sentence | "In conclusion...real difference." | Tổng kết, khép đoạn |
+| ⑤ Concluding Sentence | "In conclusion...real difference." | Summarises and closes the paragraph |
 
 > 🎨 **Desktop:** mỗi câu là 1 hotspot bấm được — chạm câu → sáng màu theo đúng chức năng (Topic/Suggestion/Example/Result/Conclusion, mỗi chức năng 1 màu cố định xuyên suốt) + hiện nhãn nổi bật phía trên câu đó. Có nút "🔍 Phân tích tự động" chạy tuần tự. Sau khi phân tích xong, hiện sơ đồ tóm tắt dọc "Notice the pattern": Topic → (Suggestion→Example→Result) ×3 → Conclusion.
 > 📱 **Mobile:** vùng chạm mỗi câu (hotspot) cần đủ lớn theo chiều cao dòng — câu ngắn trên 1 dòng vẫn phải có padding trên/dưới để dễ chạm trúng, tránh chạm nhầm sang câu liền kề. Nhãn hiện ra khi chạm nên xuất hiện NGAY TRÊN câu đó dạng tooltip nhỏ có mũi tên chỉ xuống (không hiện ở vị trí cố định 1 chỗ trên cùng màn hình, vì học sinh sẽ phải liên tục nhìn lên xuống xa nhau). Nút "Phân tích tự động" nên full-width để dễ bấm. Sơ đồ "Notice the pattern" xếp dọc 1 cột (đã đúng hướng mobile sẵn), chỉ cần cỡ chữ và khoảng cách dòng đủ thoáng.
@@ -316,13 +323,30 @@ Find and correct 6 mistakes in the paragraph below.
 
 > There is [1] three things our class can do to make our classroom greener. First we should [2] grow small plant [3] in reused plastic bottles. Students can place them on the classroom windowsill. This make [4] our classroom look fresher and greener. Second, we could set up a small "class plant corner," students could take turns watering and caring for the plants every week [5]. Third, we should used [6] a digital notice board instead of paper notices.
 
-**Answer:**
-1. There is → There are (chủ ngữ "three things" số nhiều)
-2. "First we should" → "First, we should" (thiếu dấu phẩy sau sequence word)
-3. "grow small plant" → "grow small plants" (danh từ số nhiều)
-4. "This make" → "This can make" (thiếu modal verb theo đúng Formula "This can/will + result")
-5. Thiếu "For example," trước "students could take turns..." — 2 câu đang bị nối bằng dấu phẩy (comma splice) thay vì tách thành câu Example riêng
-6. "we should used" → "we should use" (modal + động từ nguyên mẫu, không chia)
+> ⚠️ **QUY TẮC BẮT BUỘC — định dạng MCQ khi build (đã từng bị build sai, gây lỗi hiển thị nặng — xem
+> ghi chú cuối mục này):** Mỗi số lỗi `[1]`-`[6]` trong đoạn văn trên KHI TAP VÀO chỉ mở đúng 1 câu
+> hỏi MCQ theo cấu trúc bảng dưới đây — hiển thị đúng NGUYÊN VĂN cột "Câu hỏi hiển thị" (tiếng Anh
+> thuần, KHÔNG có nhãn "Lỗi [X]:" hay bất kỳ nhãn tiếng Việt nào đứng trước). Cột "Đáp án" (4 lựa
+> chọn, tất cả bằng tiếng Anh, bao gồm 1 phương án "No change needed") lấy đúng nguyên văn, không tự
+> viết lại bằng tiếng Việt. Cột "Giải thích" hiển thị SAU khi học sinh chọn — cột này mới được viết
+> tiếng Việt, đúng quy tắc chung của toàn bộ hệ thống (Answer bằng tiếng Anh, Explain bằng tiếng Việt).
+
+| # | Câu hỏi hiển thị (tiếng Anh, KHÔNG có nhãn "Lỗi [X]:") | 4 lựa chọn (tiếng Anh) | Đáp án đúng | Giải thích (tiếng Việt) |
+|---|---|---|---|---|
+| 1 | "There is three things our class can do to make our classroom greener." | There is → There are · There is → There was · There is → There have · No change needed | There is → There are | Chủ ngữ phía sau "three things" là danh từ số nhiều → dùng "There are". |
+| 2 | "First we should grow small plants..." | First we should → First, we should · First we should → First of we should · First we should → Firstly, should we · No change needed | First we should → First, we should | Thiếu dấu phẩy sau từ nối trình tự "First,". |
+| 3 | "...grow small plant in reused plastic bottles." | small plant → small plants · small plant → a small plant · small plant → small planted · No change needed | small plant → small plants | Trồng nhiều cây trong các chai nhựa → dùng danh từ số nhiều "small plants". |
+| 4 | "This make our classroom look fresher..." | This make → This can make · This make → This making · This make → This made · No change needed | This make → This can make | Theo công thức kết quả kỳ vọng "This can/will + V" → sửa thành "This can make". |
+| 5 | "...class plant corner," students could take turns watering..." | Add "For example," before "students could take turns..." · Change the comma to a question mark · Remove the word "students" · No change needed | Add "For example," before "students could take turns..." | Lỗi comma splice nối 2 mệnh đề độc lập mà thiếu từ dẫn chứng → tách câu và thêm "For example,". |
+| 6 | "...we should used a digital notice board..." | we should used → we should use · we should used → we should using · we should used → we should to use · No change needed | we should used → we should use | Sau động từ khuyết thiếu modal verb "should" đi với động từ nguyên mẫu không chia → "should use". |
+
+> 🐞 **Lỗi đã xảy ra thực tế khi build (ghi lại để không lặp lại):** Bản build trước đã tự chế thêm
+> nhãn `"Lỗi [5]: "` (và tương tự cho cả 6 câu) đứng trước phần trích dẫn tiếng Anh trong câu hỏi —
+> nhãn nội bộ này không được phép xuất hiện trong nội dung học sinh nhìn thấy, đúng "Quy tắc kịch bản
+> sạch" (không đưa nhãn/ghi chú nội bộ vào output). Cùng bản build đó còn tự viết lại 3 lựa chọn của
+> câu 5 bằng tiếng Việt ("Thêm...", "Đổi...", "Bỏ từ...") thay vì tiếng Anh như 5 câu còn lại — vi
+> phạm quy tắc "câu hỏi/đề bài tuyệt đối chỉ tiếng Anh, không trộn Anh-Việt trong 1 câu". Bảng ở trên
+> đã viết tường minh đủ cả 6 câu để loại trừ khả năng người build phải tự suy diễn định dạng.
 
 > 📱 **Mobile:** các số lỗi [1]-[6] cần đủ tương phản màu để nhìn thấy giữa đoạn text dài trên màn hình nhỏ (dùng nền `--cream-3` highlight thay vì chỉ số nhỏ trong ngoặc). Khi chạm vào số lỗi, hiện popup sửa lỗi dạng bottom-sheet (trượt lên từ đáy màn hình) thay vì popup giữa màn hình — thao tác quen thuộc hơn trên mobile và không che mất phần văn bản đang đọc.
 
@@ -364,9 +388,9 @@ Task: Your school library wants to become greener. Use the information below to 
 > *(125 words)*
 
 **Self-check (không phải Athena chấm — tự đối chiếu sau khi viết):**
-- Có đủ 3 Supporting Point, mỗi Point đủ Suggestion + Example + Expected result?
-- Có dùng đúng First/Second/Third và For example?
-- Có Topic Sentence và Concluding Sentence rõ ràng?
+- Have I included 3 Supporting Points, each with a Suggestion + Example + Expected result?
+- Have I used First/Second/Third and For example correctly?
+- Do I have a clear Topic Sentence and Concluding Sentence?
 
 > 🎨 **Desktop:** giữ nguyên dạng outline điền khuyết + "Xem model answer" như Guided Writing ở Practice — đây là bước có đáp án tương đối cố định (deterministic), không cần gửi Athena. Self-check hiển thị dạng checklist tick thật, không tự động chấm điểm.
 > 📱 **Mobile:** bảng 3 cột → thẻ dọc như các mục trước. Textarea auto-grow. Checklist tick dùng ô vuông đủ lớn (tối thiểu 24×24px) để chạm chính xác bằng ngón tay.
