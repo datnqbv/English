@@ -320,6 +320,16 @@
       color: var(--jade-dark);
     }
 
+    .vi-sub {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--ink-3);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: 2px;
+    }
+
     /* Questions Pane */
     .practice-questions-pane {
       flex: 1;
@@ -750,6 +760,24 @@
       background: var(--cream-3);
     }
 
+    .reveal-btn:disabled {
+      background: var(--cream-2);
+      border-color: var(--paper-line);
+      color: var(--ink-faint);
+      cursor: not-allowed;
+      opacity: .75;
+    }
+
+    .reveal-btn:disabled:hover {
+      background: var(--cream-2);
+    }
+
+    .an-btn:disabled {
+      background: var(--ink-faint);
+      cursor: not-allowed;
+      opacity: .7;
+    }
+
     .self-check {
       margin-top: 14px;
       background: var(--cream-2);
@@ -898,6 +926,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+    }
+
+    .next-level-btn:disabled {
+      background: var(--ink-faint);
+      cursor: not-allowed;
+      opacity: .7;
     }
 
     .finale-card {
@@ -1053,9 +1087,9 @@
       <div class="practice-ref-pane" id="practiceRefPane">
         <div class="pref-head">
           <div class="pref-tabs" id="prefTabs">
-            <button class="pref-tab active" onclick="switchRefTab('canteen')">🍴 Bài Căng tin</button>
-            <button class="pref-tab" onclick="switchRefTab('winning')">🏆 Bài đoạt giải</button>
-            <button class="pref-tab" onclick="switchRefTab('signals')">🔗 Bảng tín hiệu</button>
+            <button class="pref-tab active" onclick="switchRefTab('canteen')">🍴 Canteen Passage</button>
+            <button class="pref-tab" onclick="switchRefTab('winning')">🎤 Demo Speech</button>
+            <button class="pref-tab" onclick="switchRefTab('signals')">🔗 Signal Words</button>
           </div>
         </div>
         <div class="pref-body" id="prefBody">
@@ -1077,7 +1111,7 @@
           <!-- ==================== PHASE 0: IDENTIFY ==================== -->
           <div class="q-level-section" id="q_phase-0" style="display:block;">
             <p class="level-intro">
-              <b>Identify:</b> Đọc đoạn văn về Căng tin trường học giảm rác thải thức ăn ở bảng bên trái để nhận diện và trích xuất cấu trúc 5 phần.
+              Read the canteen passage on the left to identify and extract its 5-part structure.<span class="vi-sub" style="margin-top:4px;">Đọc đoạn văn về Căng tin trường học ở bảng bên trái để nhận diện và trích xuất cấu trúc 5 phần.</span>
             </p>
 
             <!-- Activity 1: Structure labelling -->
@@ -1101,59 +1135,63 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><input type="text" placeholder="1. Suggestion 1?"></td>
-                    <td><input type="text" placeholder="2. Example 1?"></td>
-                    <td><input type="text" placeholder="3. Expected result 1?"></td>
+                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="1. Suggestion 1?"></td>
+                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="2. Example 1?"></td>
+                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="3. Expected result 1?"></td>
                   </tr>
                   <tr>
                     <td style="background:var(--cream-2);font-weight:600;">Set up a bin for food waste</td>
-                    <td><input type="text" placeholder="4. Example 2?"></td>
+                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="4. Example 2?"></td>
                     <td style="background:var(--cream-2);font-weight:600;">Turn waste into something useful</td>
                   </tr>
                   <tr>
-                    <td><input type="text" placeholder="5. Suggestion 3?"></td>
-                    <td style="background:var(--cream-3);color:var(--ink-3);font-style:italic;">(Gộp trong Suggestion)</td>
-                    <td><input type="text" placeholder="6. Expected result 3?"></td>
+                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="5. Suggestion 3?"></td>
+                    <td style="background:var(--cream-3);color:var(--ink-3);font-style:italic;">(Merged into Suggestion)</td>
+                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="6. Expected result 3?"></td>
                   </tr>
                 </tbody>
               </table>
-              <button class="reveal-btn" onclick="openPopup('Đáp án gợi ý — Read & Extract', '<ol style=\'padding-left:20px;line-height:1.7;\'><li><b>1.</b> Use real trays instead of foam boxes for lunch</li><li><b>2.</b> Return trays to a collection point after eating</li><li><b>3.</b> Create less rubbish every day</li><li><b>4.</b> Turn the food waste into fertiliser for the school garden</li><li><b>5.</b> Encourage students to bring their own lunch boxes from home...</li><li><b>6.</b> Cut down on plastic and foam waste</li></ol>')">Xem đáp án gợi ý</button>
+              <div class="write-footer">
+                <button class="an-btn" id="submitRE" onclick="submitReadExtract()">✓ Submit</button>
+                <span class="word-count" id="reWarning" style="color:var(--wrong);display:none;">Điền đủ cả 4 ô trống rồi mới Submit nhé.</span>
+              </div>
+              <button class="reveal-btn" id="revealRE" disabled data-unlocked-label="Xem đáp án gợi ý" onclick="openPopup('Đáp án gợi ý — Read &amp; Extract', '<ol style=\'padding-left:20px;line-height:1.7;\'><li><b>1.</b> Use real trays instead of foam boxes for lunch</li><li><b>2.</b> Return trays to a collection point after eating</li><li><b>3.</b> Create less rubbish every day</li><li><b>4.</b> Turn the food waste into fertiliser for the school garden</li><li><b>5.</b> Encourage students to bring their own lunch boxes from home...</li><li><b>6.</b> Cut down on plastic and foam waste</li></ol>')">🔒 Submit bài để mở đáp án gợi ý</button>
             </div>
 
             <div class="next-level-wrap">
-              <button class="next-level-btn" onclick="goToLevel('phase-1')">Tiếp theo: 2. Structure 📨 &rarr;</button>
+              <button class="next-level-btn" id="nextToPhase1" disabled onclick="goToLevel('phase-1')">Next: 2. Structure 📨 &rarr;</button>
             </div>
           </div>
 
           <!-- ==================== PHASE 1: STRUCTURE ==================== -->
           <div class="q-level-section" id="q_phase-1" style="display:none;">
             <p class="level-intro">
-              <b>Structure:</b> Chạm vào các câu bên dưới theo đúng thứ tự để tạo thành đoạn văn hoàn chỉnh.
+              Tap the sentences below in the correct order to form a complete paragraph.<span class="vi-sub" style="margin-top:4px;">Chạm vào các câu bên dưới theo đúng thứ tự để tạo thành đoạn văn hoàn chỉnh.</span>
             </p>
 
             <!-- Activity 3: Passage Arrangement 1 (Water Saving) -->
             <div class="card">
-              <span class="activity-label">Activity 3 &bull; Passage Arrangement (Bài 1: Tiết kiệm nước)</span>
+              <span class="activity-label">Activity 3 &bull; Passage Arrangement (Passage 1: Water Saving)</span>
               <div class="desc-en">Put the sentences in the correct order to form a complete paragraph about saving water:</div>
               <div id="p1OrdA"></div>
             </div>
 
             <!-- Activity 4: Passage Arrangement 2 (Traffic / Air pollution) -->
             <div class="card">
-              <span class="activity-label">Activity 4 &bull; Passage Arrangement (Bài 2: Giảm ô nhiễm cổng trường)</span>
+              <span class="activity-label">Activity 4 &bull; Passage Arrangement (Passage 2: Traffic &amp; Air Pollution)</span>
               <div class="desc-en">A trickier one &ndash; uses natural transitions like <i>"One idea is"</i> and <i>"Another idea"</i> instead of simple sequence words:</div>
               <div id="p1OrdB"></div>
             </div>
 
             <div class="next-level-wrap">
-              <button class="next-level-btn" onclick="goToLevel('phase-2')">Tiếp theo: 3. Write ✍️ &rarr;</button>
+              <button class="next-level-btn" onclick="goToLevel('phase-2')">Next: 3. Write ✍️ &rarr;</button>
             </div>
           </div>
 
           <!-- ==================== PHASE 2: WRITE ==================== -->
           <div class="q-level-section" id="q_phase-2" style="display:none;">
             <p class="level-intro">
-              <b>Write:</b> Luyện tập từ cấp độ câu đến viết đoạn văn hoàn chỉnh (mục tiêu 100-130 từ) với mức độ hỗ trợ giảm dần.
+              Practise from sentence level to a complete paragraph (100-130 words) with decreasing support.<span class="vi-sub" style="margin-top:4px;">Luyện tập từ cấp độ câu đến viết đoạn văn hoàn chỉnh (100-130 từ) với mức độ hỗ trợ giảm dần.</span>
             </p>
 
             <!-- Activity 5: Sentence building -->
@@ -1165,7 +1203,7 @@
 
             <!-- Activity 6: Guided Writing (Full Support) -->
             <div class="card">
-              <span class="activity-label">Activity 6 &bull; Guided Writing (Hỗ trợ đầy đủ &bull; Lớp học xanh)</span>
+              <span class="activity-label">Activity 6 &bull; Guided Writing (Full Support &bull; Green Classroom)</span>
               <div class="desc-en">Task: Your class wants to make the classroom greener. Complete the paragraph using the information below:</div>
               <table class="fill-table">
                 <thead>
@@ -1196,9 +1234,9 @@
               <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-weight:600;font-size:14px;">
                 Starters: <i>"There are three things our class can do to make our classroom greener. First, ... Second, ... Third, ... In conclusion, ..."</i>
               </div>
-              <textarea class="write-area" placeholder="Viết đoạn văn của bạn ở đây..."></textarea>
+              <textarea class="write-area" id="writeAreaFull" placeholder="Viết đoạn văn của bạn ở đây..." oninput="checkRevealGate('writeAreaFull','revealFull',40)"></textarea>
               <div class="write-footer">
-                <button class="reveal-btn" onclick="openPopup('Model Answer — Lớp học xanh', '<p><i>There are three things our class can do to make our classroom greener. First, we should grow small plants in reused plastic bottles. For example, we can place them on the classroom windowsill. This can make our classroom look fresher and greener. Second, we could set up a small &quot;class plant corner&quot;. For example, students can take turns watering and caring for the plants every week. This can help students feel more responsible for their shared space. Third, we should use a digital notice board instead of paper notices. For example, we can share announcements on a screen or in the group chat. This can reduce the amount of paper our class uses. In conclusion, these small habits can make our classroom a greener place to learn.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:8px;\'>Độ dài: 127 từ</p>')">Xem model answer (127 từ)</button>
+                <button class="reveal-btn" id="revealFull" disabled data-unlocked-label="Xem model answer (127 từ)" data-min-words="40" onclick="openPopup('Model Answer — Lớp học xanh', '<p><i>There are three things our class can do to make our classroom greener. First, we should grow small plants in reused plastic bottles. For example, we can place them on the classroom windowsill. This can make our classroom look fresher and greener. Second, we could set up a small &quot;class plant corner&quot;. For example, students can take turns watering and caring for the plants every week. This can help students feel more responsible for their shared space. Third, we should use a digital notice board instead of paper notices. For example, we can share announcements on a screen or in the group chat. This can reduce the amount of paper our class uses. In conclusion, these small habits can make our classroom a greener place to learn.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:8px;\'>Độ dài: 127 từ</p>')">🔒 Viết ít nhất 40 từ để mở khoá model answer (0/40)</button>
               </div>
               <div class="self-check">
                 <div class="sc-title">📝 Self-check</div>
@@ -1208,7 +1246,7 @@
 
             <!-- Activity 7: Guided Writing (Reduced Support) -->
             <div class="card">
-              <span class="activity-label">Activity 7 &bull; Guided Writing (Hỗ trợ giảm dần)</span>
+              <span class="activity-label">Activity 7 &bull; Guided Writing (Reduced Support)</span>
               <div class="desc-en">Use only short keywords to write the paragraph without sentence starters:</div>
               <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
                 🌱 <b>Point 1:</b> grow plants / reused bottles &rarr; windowsill &rarr; greener classroom<br>
@@ -1224,7 +1262,7 @@
 
             <!-- Activity 8: Correct the mistake -->
             <div class="card">
-              <span class="activity-label">Activity 8 &bull; Correct the Mistake (6 lỗi)</span>
+              <span class="activity-label">Activity 8 &bull; Correct the Mistake (6 errors)</span>
               <div class="desc-en">Find and correct 6 mistakes in the paragraph below. Chạm vào từng thẻ số lỗi bên dưới để xem phương án sửa:</div>
               <div class="error-text-card">
                 There is <span class="err-tag">[1]</span> three things our class can do to make our classroom greener. First we should <span class="err-tag">[2]</span> grow small plant <span class="err-tag">[3]</span> in reused plastic bottles. Students can place them on the classroom windowsill. This make <span class="err-tag">[4]</span> our classroom look fresher and greener. Second, we could set up a small "class plant corner," students could take turns watering and caring for the plants every week <span class="err-tag">[5]</span>. Third, we should used <span class="err-tag">[6]</span> a digital notice board instead of paper notices.
@@ -1236,26 +1274,27 @@
             <div class="card">
               <span class="activity-label">Activity 9 &bull; Independent Writing</span>
               <div class="desc-en">Write a COMPLETE paragraph giving suggestions to improve the environment in YOUR OWN school or neighbourhood (Target: 100-130 words):</div>
-              <textarea class="write-area" id="writeAreaP2" placeholder="Viết bài độc lập của bạn ở đây..." oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
+              <textarea class="write-area" id="writeAreaP2" placeholder="Viết bài độc lập của bạn ở đây..." oninput="trackWriting('writeAreaP2', 'wordCountP2'); checkRevealGate('writeAreaP2','revealP2',60)"></textarea>
               <div class="write-footer">
                 <div class="word-count" id="wordCountP2">0 từ / mục tiêu 100-130 từ</div>
+                <button class="reveal-btn" id="revealP2" disabled data-unlocked-label="Xem gợi ý ý tưởng" data-min-words="60" onclick="openPopup('Gợi ý ý tưởng — Independent Writing', '<p>Đây chỉ là 1 GỢI Ý Ý TƯỞNG, không phải bài mẫu để chép lại — bài của bạn cần khác chủ đề/hoạt động cụ thể:</p><ul style=\'padding-left:20px;line-height:1.8;\'><li>Suggestion 1: giảm rác ở khu vực nào đó gần nhà/trường bạn &rarr; Example cụ thể &rarr; This can/will + kết quả</li><li>Suggestion 2: một hành động tiết kiệm năng lượng/nước &rarr; Example &rarr; kết quả</li><li>Suggestion 3: một thói quen cá nhân nhỏ &rarr; kết quả</li><li>Concluding sentence: tóm lại thay đổi nhỏ tạo khác biệt lớn</li></ul>')">🔒 Viết ít nhất 60 từ để mở khoá gợi ý ý tưởng (0/60)</button>
               </div>
             </div>
 
             <div class="next-level-wrap">
-              <button class="next-level-btn" onclick="goToLevel('phase-3')">Tiếp theo: 4. Production Writing 🏆 &rarr;</button>
+              <button class="next-level-btn" onclick="goToLevel('phase-3')">Next: 4. Production Writing 🏆 &rarr;</button>
             </div>
           </div>
 
           <!-- ==================== PHASE 3: PRODUCTION WRITING ==================== -->
           <div class="q-level-section" id="q_phase-3" style="display:none;">
             <p class="level-intro">
-              <b>Production Writing:</b> Bài đánh giá cuối Unit &ndash; Guided Writing chủ đề mới và Free Writing gửi AI Athena chấm điểm tự động theo Rubric 4 tiêu chí.
+              End-of-unit assessment with a new topic (Green Library) &ndash; graded by AI Athena.<span class="vi-sub" style="margin-top:4px;">Bài đánh giá cuối Unit với chủ đề mới (Thư viện xanh) &ndash; được AI Athena chấm điểm.</span>
             </p>
 
             <!-- Activity 10: Guided Writing (School Library) -->
             <div class="card">
-              <span class="activity-label">Activity 10 &bull; Guided Writing (Chủ đề mới: Thư viện xanh)</span>
+              <span class="activity-label">Activity 10 &bull; Guided Writing (New Topic: Green Library)</span>
               <div class="desc-en">Task: Your school library wants to become greener. Use the information below to complete the paragraph:</div>
               <table class="fill-table">
                 <thead>
@@ -1283,15 +1322,15 @@
                   </tr>
                 </tbody>
               </table>
-              <textarea class="write-area" placeholder="Viết đoạn văn về Thư viện xanh ở đây..."></textarea>
+              <textarea class="write-area" id="writeAreaLib" placeholder="Viết đoạn văn về Thư viện xanh ở đây..." oninput="checkRevealGate('writeAreaLib','revealLib',40)"></textarea>
               <div class="write-footer">
-                <button class="reveal-btn" onclick="openPopup('Model Answer — Thư viện xanh', '<p><i>There are three things our library can do to become greener. First, we should use e-books instead of printing paper handouts. For example, students can read their lessons on a tablet or a laptop. This can save a lot of paper every semester. Second, the library could start a book-sharing corner. For example, students can donate old books and borrow books from classmates for free. This can help the school buy fewer new books. Third, we should add a few small plants to the reading corner. For example, we can put the plants on the windowsill near the bookshelves. This can make the library a nicer, greener place to read. In conclusion, a few simple changes could turn our library into a much greener space.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:8px;\'>Độ dài: 125 từ</p>')">Xem model answer (125 từ)</button>
+                <button class="reveal-btn" id="revealLib" disabled data-unlocked-label="Xem model answer (125 từ)" data-min-words="40" onclick="openPopup('Model Answer — Thư viện xanh', '<p><i>There are three things our library can do to become greener. First, we should use e-books instead of printing paper handouts. For example, students can read their lessons on a tablet or a laptop. This can save a lot of paper every semester. Second, the library could start a book-sharing corner. For example, students can donate old books and borrow books from classmates for free. This can help the school buy fewer new books. Third, we should add a few small plants to the reading corner. For example, we can put the plants on the windowsill near the bookshelves. This can make the library a nicer, greener place to read. In conclusion, a few simple changes could turn our library into a much greener space.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:8px;\'>Độ dài: 125 từ</p>')">🔒 Viết ít nhất 40 từ để mở khoá model answer (0/40)</button>
               </div>
             </div>
 
             <!-- Activity 11: Free Writing with Athena AI Rubric -->
             <div class="card">
-              <span class="activity-label">Activity 11 &bull; Free Writing (Chấm điểm AI Athena)</span>
+              <span class="activity-label">Activity 11 &bull; Free Writing (Graded by AI Athena)</span>
               <div class="desc-en">Task: Choose ONE place near you (street, park, market, bus stop...) and write a complete suggestion paragraph (100-130 words) to make it greener:</div>
               <textarea class="write-area" id="writeAreaMain" style="min-height:160px;" placeholder="Viết đoạn văn hoàn chỉnh của bạn ở đây..." oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
               <div class="write-footer">
@@ -1307,7 +1346,7 @@
 
             <!-- Activity 12: Self-Evaluation -->
             <div class="card">
-              <span class="activity-label">Activity 12 &bull; Self-Evaluation (Tự đánh giá cuối Unit)</span>
+              <span class="activity-label">Activity 12 &bull; Self-Evaluation (End of Unit)</span>
               <div class="self-check">
                 <div class="sc-title">Checklist 5 tiêu chí chuẩn đầu ra:</div>
                 <div id="p3SelfEval"></div>
@@ -1389,24 +1428,24 @@
     const refData = {
       canteen: `
         <div class="pref-ref-box">
-          <h4>🍴 Bài văn Căng tin trường học (Food Waste)</h4>
-          <p style="margin:0;font-size:14px;color:var(--ink-2);">Dùng cho các bài tập phần <b>1. Identify</b>.</p>
+          <h4>🍴 School Canteen Passage (Food Waste)<span class="vi-sub">Bài văn Căng tin trường học (giảm rác thải thức ăn)</span></h4>
+          <p style="margin:0;font-size:14px;color:var(--ink-2);">Used for Activities in Part <b>1. Identify</b>.</p>
         </div>
         <p><i>There are several ways our canteen can reduce food waste. First, the canteen should use real trays instead of foam boxes for lunch. For example, students can return their trays to a collection point after eating. This can create less rubbish every day. Second, the school should set up a bin for food waste. For example, we can turn the food waste into fertiliser for the school garden. This can turn waste into something useful. Third, we should encourage students to bring their own lunch boxes from home instead of buying packed meals. This can also cut down on plastic and foam waste. In conclusion, small changes to how we eat at school can make a real difference.</i></p>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:8px;">Độ dài: 118 từ</div>
+        <div style="font-size:12.5px;color:var(--ink-3);margin-top:8px;">Length: 118 words</div>
       `,
       winning: `
         <div class="pref-ref-box">
-          <h4>🏆 Bài đoạt giải năm ngoái (Winning Paragraph)</h4>
-          <p style="margin:0;font-size:14px;color:var(--ink-2);">Bài phát biểu chuẩn mực về trường học xanh.</p>
+          <h4>🎤 Demo Speech<span class="vi-sub">Bài mẫu minh hoạ về trường học xanh</span></h4>
+          <p style="margin:0;font-size:14px;color:var(--ink-2);">Model paragraph for a greener school.</p>
         </div>
         <p><i>There are several things we can do to make our school greener. First, we should turn off the lights and fans when we leave a room. For example, students can check the switches in classrooms before leaving. This can reduce our school's electricity use. Second, the school could set up refill stations for water and hand soap near the canteen. For example, students can refill their own bottles instead of buying new plastic ones. This can cut down on single-use plastic waste. Third, we should encourage students to bring their own water bottles every day. This will help our school produce less plastic waste. In conclusion, making our school greener doesn't need big changes. Small daily habits can already make a real difference.</i></p>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:8px;">Độ dài: 123 từ</div>
+        <div style="font-size:12.5px;color:var(--ink-3);margin-top:8px;">Length: 123 words</div>
       `,
       signals: `
         <div class="pref-ref-box">
-          <h4>🔗 Bảng từ nối &amp; Tín hiệu nhận diện</h4>
-          <p style="margin:0;font-size:14px;color:var(--ink-2);">Tra cứu nhanh các từ nối khi làm bài viết.</p>
+          <h4>🔗 Signal Words Reference<span class="vi-sub">Bảng từ nối &amp; tín hiệu nhận diện</span></h4>
+          <p style="margin:0;font-size:14px;color:var(--ink-2);">Quick reference for writing.</p>
         </div>
         <ul style="padding-left:18px;margin:0;font-size:14px;line-height:1.8;">
           <li><b>First suggestion:</b> <code>First,</code></li>
@@ -1445,7 +1484,7 @@
         const qid = containerId + '_' + qi;
         return `
           <div class="q-card">
-            <div class="q-num">Câu ${qi + 1}</div>
+            <div class="q-num">Question ${qi + 1}</div>
             <div class="q-quote">"${esc(q.en)}"</div>
             <div class="q-opts" id="opts_${qid}"></div>
             <div class="q-fb" id="fb_${qid}"></div>
@@ -1458,9 +1497,12 @@
         mcqState[qid] = { tries: 0, done: false, data: q };
         const wrap = document.getElementById('opts_' + qid);
         const shuffled = shuffle(q.options);
-        wrap.innerHTML = shuffled.map((optText, i) => `
-          <button class="q-opt" onclick="answerMCQ('${qid}', this, '${esc(optText)}')">${esc(optText)}</button>
-        `).join('');
+        // Dùng addEventListener thay vì nhét text vào onclick="" — tránh lỗi dấu nháy đơn
+        // trong đáp án (VD "school's") làm gãy chuỗi JS và khiến nút không bấm được.
+        wrap.innerHTML = shuffled.map(optText => `<button class="q-opt">${esc(optText)}</button>`).join('');
+        Array.from(wrap.children).forEach((btn, i) => {
+          btn.addEventListener('click', () => answerMCQ(qid, btn, shuffled[i]));
+        });
       });
     }
 
@@ -1496,31 +1538,26 @@
       }
     }
 
-    // Render Activity 1
+    // Render Activity 1 — thứ tự câu hỏi KHÔNG theo trình tự đoạn văn gốc (buộc học sinh đọc kỹ,
+    // không đoán theo vị trí xuất hiện)
     renderMCQGroup('p0SL', [
-      {
-        en: "There are several ways our canteen can reduce food waste.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Topic Sentence",
-        explain: "Câu nêu chủ đề chung và mục đích của cả đoạn văn (giảm rác thải thức ăn ở căng tin) → Topic Sentence."
-      },
-      {
-        en: "First, the canteen should use real trays instead of foam boxes for lunch.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Suggestion",
-        explain: "Có 'First,' và nêu đề xuất hành động đầu tiên → Suggestion."
-      },
-      {
-        en: "For example, students can return their trays to a collection point after eating.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Example",
-        explain: "Có 'For example,' và mô tả hành động cụ thể minh họa → Example."
-      },
       {
         en: "This can create less rubbish every day.",
         options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
         correct: "Expected result",
         explain: "Có 'This can...' nêu kết quả kỳ vọng của hành động trả khay → Expected result."
+      },
+      {
+        en: "In conclusion, small changes to how we eat at school can make a real difference.",
+        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
+        correct: "Concluding Sentence",
+        explain: "Có 'In conclusion,' và câu tổng kết khép lại đoạn văn → Concluding Sentence."
+      },
+      {
+        en: "There are several ways our canteen can reduce food waste.",
+        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
+        correct: "Topic Sentence",
+        explain: "Câu nêu chủ đề chung và mục đích của cả đoạn văn (giảm rác thải thức ăn ở căng tin) → Topic Sentence."
       },
       {
         en: "Second, the school should set up a bin for food waste.",
@@ -1529,10 +1566,16 @@
         explain: "Có 'Second,' và mở đầu một đề xuất mới → Suggestion."
       },
       {
-        en: "In conclusion, small changes to how we eat at school can make a real difference.",
+        en: "For example, students can return their trays to a collection point after eating.",
         options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Concluding Sentence",
-        explain: "Có 'In conclusion,' và câu tổng kết khép lại đoạn văn → Concluding Sentence."
+        correct: "Example",
+        explain: "Có 'For example,' và mô tả hành động cụ thể minh họa → Example."
+      },
+      {
+        en: "First, the canteen should use real trays instead of foam boxes for lunch.",
+        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
+        correct: "Suggestion",
+        explain: "Có 'First,' và nêu đề xuất hành động đầu tiên → Suggestion."
       }
     ]);
 
@@ -1782,6 +1825,45 @@
       "My writing reaches the required word count (100-130 words) and reads naturally."
     ]);
 
+    // ---------- Gated Hint / Model Answer Reveal ----------
+    // Standard pattern for every reveal-btn in this file: the button starts disabled and only
+    // unlocks after the student has made a genuine attempt (typed enough words, or filled in the
+    // fields it relates to). Never let a hint/model answer show before an attempt.
+    function checkRevealGate(textareaId, btnId, minWords) {
+      const text = document.getElementById(textareaId).value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      const btn = document.getElementById(btnId);
+      if (count >= minWords) {
+        btn.disabled = false;
+        btn.textContent = btn.dataset.unlockedLabel;
+      } else {
+        btn.disabled = true;
+        btn.textContent = `🔒 Viết ít nhất ${minWords} từ để mở khoá (${count}/${minWords})`;
+      }
+    }
+
+    // ---------- Activity 2: Read & Extract — explicit Submit gate ----------
+    // Học sinh phải điền đủ cả bảng RỒI bấm Submit mới mở model answer và mở khoá bước tiếp theo —
+    // không tự động mở khi gõ đủ (khác Gated Reveal auto-check dùng cho Writing textarea).
+    function submitReadExtract() {
+      const inputs = document.querySelectorAll('.re-input[data-re-group="p0RE"]');
+      const filled = Array.from(inputs).every(inp => inp.value.trim().length > 0);
+      const warning = document.getElementById('reWarning');
+      if (!filled) {
+        warning.style.display = 'inline';
+        return;
+      }
+      warning.style.display = 'none';
+      const revealBtn = document.getElementById('revealRE');
+      revealBtn.disabled = false;
+      revealBtn.textContent = revealBtn.dataset.unlockedLabel;
+      const submitBtn = document.getElementById('submitRE');
+      submitBtn.disabled = true;
+      submitBtn.textContent = '✓ Submitted';
+      const nextBtn = document.getElementById('nextToPhase1');
+      if (nextBtn) nextBtn.disabled = false;
+    }
+
     // ---------- Word Counter & Free Writing Submission ----------
     function trackWriting(textareaId, counterId) {
       const text = document.getElementById(textareaId).value.trim();
@@ -1796,18 +1878,26 @@
       fb.style.display = 'block';
       document.getElementById('btnSubmitWriting').disabled = true;
 
-      // Giả lập giao diện Rubric chuẩn bị kết nối Athena
-      const words = text.split(/\s+/).filter(Boolean).length;
+      // Bài viết đã được gửi — chờ Athena chấm thật qua API.
+      // TODO: nối API chấm Writing thật của Athena tại đây:
+      //   const res = await fetch(ATHENA_WRITING_ENDPOINT, { method:'POST', body: JSON.stringify({ text }) });
+      //   const { scores, commentVi } = await res.json();
+      //   renderWritingFeedback(scores, commentVi);
+      // KHÔNG bịa điểm/nhận xét giả ở đây khi chưa nối API thật — giữ nguyên trạng thái "Đang gửi"
+      // cho đến khi có phản hồi thật từ Athena.
+      document.getElementById('writePending').style.display = 'block';
+      document.getElementById('rubricGrid').innerHTML = '';
+      document.getElementById('writeComment').innerHTML = '';
+    }
+
+    // Gọi hàm này SAU KHI có phản hồi thật từ Athena — không gọi tự động, không bịa dữ liệu mẫu.
+    function renderWritingFeedback(scores /* {task, org, lang, length} thang 1-4 */, commentVi) {
+      const labels = { task: 'Task Achievement', org: 'Organisation', lang: 'Language Use', length: 'Length &amp; Fluency' };
       document.getElementById('writePending').style.display = 'none';
-      document.getElementById('rubricGrid').innerHTML = `
-        <div class="rubric-item"><div class="rlabel">Task Achievement</div><div class="rscore">4<small>/4</small></div></div>
-        <div class="rubric-item"><div class="rlabel">Organisation</div><div class="rscore">4<small>/4</small></div></div>
-        <div class="rubric-item"><div class="rlabel">Language Use</div><div class="rscore">4<small>/4</small></div></div>
-        <div class="rubric-item"><div class="rlabel">Length &amp; Fluency</div><div class="rscore">4<small>/4</small></div></div>
-      `;
-      document.getElementById('writeComment').innerHTML = `
-        🎉 <b>Nhận xét từ AI:</b> Bài viết đạt ${words} từ. Bố cục 5 phần chuẩn mực, sử dụng từ nối trình tự và ví dụ minh họa rất rõ ràng, thuyết phục!
-      `;
+      document.getElementById('rubricGrid').innerHTML = Object.entries(scores).map(([k, v]) =>
+        `<div class="rubric-item"><div class="rlabel">${labels[k]}</div><div class="rscore">${v}<small>/4</small></div></div>`
+      ).join('');
+      document.getElementById('writeComment').innerHTML = `🎉 <b>Nhận xét từ AI:</b> ${commentVi}`;
       showCelebrateBanner('🎉 Bài viết của bạn đã được nộp thành công!');
     }
 
