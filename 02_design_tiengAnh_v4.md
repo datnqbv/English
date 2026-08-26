@@ -1,6 +1,56 @@
-# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v2.2
+# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v2.7
 
-> **v2.2** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **v2.7** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **Mới ở v2.7 (đúc kết từ QA Writing Unit 2 Lớp 12 — mọi Activity viết bài dùng Submit tường minh):**
+> 1. **Mục 9.17 — bổ sung biến thể "Submit tường minh cho textarea tự do":** trước đây Submit tường
+>    minh chỉ có 1 dạng (check "đã điền đủ mọi ô trong 1 group" — hợp bảng điền như Read & Extract),
+>    chưa có dạng cho 1 ô textarea tự do kèm ngưỡng số từ. Bổ sung hàm mới để dùng khi giáo viên muốn
+>    MỌI Activity viết đoạn (không chỉ Activity chặn bước tiếp theo) đều bắt học sinh bấm Submit thay
+>    vì tự mở khoá qua sự kiện `input`.
+> 2. **Mục 9.17 — định nghĩa rõ khung hiển thị Model answer sau khi mở khoá:** trước đây code mẫu gọi
+>    `onclick="openPopup(...)"` nhưng hàm này chưa từng được định nghĩa ở đâu. Từ giờ Model answer tái
+>    dùng đúng pattern overlay bottom-sheet đã có ở Mục 1.14 (file engine) — không viết component mới.
+> 3. **Component mới 4.15b — Write Hint:** khối 💡 hint tĩnh hiển thị TRƯỚC khi học sinh viết, dùng cho
+>    Writing khi bảng scaffold không đủ tự giải thích (VD Guided Writing hỗ trợ giảm không có sentence
+>    starter, Independent Writing không có bảng gợi ý). Khác Mục 9.2 (Mục 9.2 chỉ cấm hint cho MCQ).
+> 4. **Mục 1 — bổ sung hướng dẫn "màu accent cục bộ theo Unit":** cách khai báo custom property CSS
+>    chỉ scope trong 1 component/khối minh hoạ cụ thể, không đụng bảng token toàn cục.
+>
+> **Mới ở v2.6:**
+> 1. **Component mới 4.24 — Timeline Infographic:** mốc thời gian dạng node dọc, BẮT BUỘC cho bài
+>    mẫu phân tích (mục D) thuộc thể loại tường thuật theo thời gian (Biography, Blog post) — thay
+>    Region Highlight (4.23, chỉ dùng cho thể loại KHÔNG có trục thời gian như Opinion essay). Đúc
+>    kết từ lỗi thật: 1 bài Biography (Marie Curie, Writing Unit 1 Lớp 12) vay mượn nhầm cơ chế
+>    Region Highlight của Opinion essay, bỏ lỡ điểm mạnh chuỗi mốc thời gian của thể loại.
+> 2. **Mục 4.23 — bổ sung bullet 5:** làm rõ ranh giới không dùng Region Highlight cho thể loại có
+>    trục thời gian thật.
+>
+> **Mới ở v2.5:**
+> 1. **Component mới 4.23 — Region Highlight:** nhãn bấm tô sáng 1 vùng lớn (đoạn/nhóm câu), loại
+>    trừ lẫn nhau — dùng cho bài mẫu Opinion essay (Introduction/Reason 1/Reason 2/Conclusion), khác
+>    Interactive Analyzer vốn tô từng câu riêng lẻ. Giải quyết câu hỏi mở treo lại từ kịch bản Writing
+>    Unit 2 Lớp 11 ("cơ chế 4-nút highlight — cần xác nhận component trước khi build").
+>
+> **Mới ở v2.4:**
+> 1. **Nguyên tắc 15 (mới, Mục 0):** heading/tiêu đề LUÔN tiếng Anh trước, tiếng Việt nhỏ hơn đặt
+>    sau (`.vi-sub`/`.vi-sub-light`/dấu gạch ngang tuỳ ngữ cảnh) — kèm quy tắc nội dung bài tập
+>    (đề bài, tên Activity) mặc định 100% tiếng Anh.
+> 2. **Nguyên tắc 16 (mới, Mục 0):** Structure/Sequence Labelling — thứ tự câu hỏi không được trùng
+>    thứ tự xuất hiện trong bài mẫu gốc (mở rộng Nguyên tắc 13).
+> 3. **Mục 4.6 — cảnh báo kỹ thuật mới:** lỗi nút MCQ không bấm được do nhúng text có dấu nháy đơn
+>    (VD "school's") vào thuộc tính `onclick=""` — bắt buộc dùng `addEventListener`, áp dụng cho mọi
+>    component tự render nút từ text tự do (không riêng MCQ).
+> 4. **Mục 9.17 — bổ sung biến thể Submit tường minh:** dùng khi Activity đó cũng là điều kiện mở
+>    khoá bước/phase tiếp theo, thay vì chỉ auto-gate qua sự kiện `input`.
+>
+> **Mới ở v2.3:**
+> 1. **Mục 9.17 (mới) — Gated Reveal:** chuẩn hoá nút "Xem model answer/Xem đáp án gợi ý" cho Writing
+>    & bài tự luận (khác Mục 9.2 vốn chỉ dành cho MCQ/trắc nghiệm có đúng/sai) — nút luôn bắt đầu
+>    `disabled`, chỉ mở khoá sau khi học sinh gõ đủ % số từ mục tiêu hoặc điền đủ toàn bộ ô trống.
+> 2. **Checklist 9.15 — bổ sung:** heading/`athena-context.structure.title` luôn tiếng Anh trước
+>    (bản Việt đặt trong `.vi-sub` nếu cần); mọi ô viết đoạn hoàn chỉnh phải có Gated Reveal hoặc
+>    luồng Nộp bài AI (9.6) — không để activity viết bài xong rồi không có phản hồi gì.
+>
 > **Mới ở v2.2:**
 > 1. **Component mới 4.21 — Idea Diagram (sơ đồ cây phát triển ý, gốc→nhánh→lá, 4 mức hỗ trợ):**
 >    dùng cho bài brainstorm ý theo cấu trúc phân tầng trước khi viết/nói (Writing Suggestion &
@@ -177,6 +227,11 @@ câu luyện tập mỗi mức. Báo mình nếu cần chỉnh gì."* — không
    — tránh ký tự `< > & "` trong nội dung kịch bản phá cấu trúc HTML. Ngoại lệ: field nào bản thân
    đã CHỦ ĐỘNG chứa markup cần giữ (VD `message.text` có sẵn `<span class="kw-inline">`) thì KHÔNG
    esc() field đó, chỉ esc() các field text thuần khác trong cùng object.
+   > ⚠️ **`esc()` KHÔNG escape dấu nháy đơn `'`** — vì vậy TUYỆT ĐỐI không dùng text đã qua `esc()`
+   > (hay bất kỳ text tự do nào) làm tham số bên trong thuộc tính `onclick="..."` dạng chuỗi
+   > (`onclick="fn('${esc(text)}')"`), vì text chứa `'` (VD "school's", "I'd") sẽ làm gãy chuỗi JS.
+   > Luôn dùng `addEventListener` khi cần truyền text tự do vào handler — xem cảnh báo đầy đủ + ví
+   > dụ sửa lỗi ở Mục 4.6 (ngay sau `shuffleMCQOptions()`).
 9. **Cấm đề bài chung mơ hồ kiểu "Choose the correct word" lặp lại giống nhau cho mọi câu, khi tiêu
    chí chọn đúng khác nhau giữa các dạng bài.** Học sinh phải đọc đề là hiểu NGAY tiêu chí chọn, không
    phải đoán hoặc bấm bừa vì "chọn cái nào cũng được". Áp dụng bắt buộc cho mọi dạng bài trắc nghiệm/
@@ -288,6 +343,40 @@ câu luyện tập mỗi mức. Báo mình nếu cần chỉnh gì."* — không
     Chat + Vocabulary) hay Progressive Unlock (Mục 4.9, chỉ mở khoá tuần tự, không tự gom lại phần
     đã mở). Mục đích: tránh trang lý thuyết dài vô hạn khi có nhiều khối nối tiếp nhau, đồng thời
     không mất khả năng tra cứu lại như nếu ẩn hẳn bằng Progressive Unlock.
+15. **Heading/tiêu đề LUÔN tiếng Anh trước, tiếng Việt nhỏ hơn/nhạt hơn đặt sau — không đảo ngược,
+    không để heading thuần tiếng Việt thiếu bản tiếng Anh.** Lỗi thật đã gặp: nhiều heading (`<h2>`,
+    `<h3>`, `title` trong `athena-context.structure`, tên tab Reference Pane...) viết thuần tiếng
+    Việt không kèm bản Anh (VD "A · Khung tổng quát", "🍴 Bài Căng tin") — sai nguyên tắc tiếng Anh
+    là ngôn ngữ chính của bài học. 3 cách trình bày tuỳ độ dài, dùng đúng ngữ cảnh:
+    - **Heading/tên Section** (h2/h3, tên tab, tên hoạt động): tiếng Anh làm `<h2>`/text chính, tiếng
+      Việt đặt trong `<span class="vi-sub">` NGAY SAU, hiển thị nhỏ hơn/nhạt màu hơn, xuống dòng
+      riêng nếu cần:
+      ```html
+      <h2>How to Write a Suggestion Paragraph<span class="vi-sub">Khung cấu trúc 5 phần của đoạn văn đề xuất</span></h2>
+      ```
+      ```css
+      .vi-sub { display:block; font-size:14px; font-weight:500; color:var(--ink-3); margin-top:2px; }
+      /* Trên nền màu tối (Hero, Hook banner...) dùng biến thể sáng hơn: */
+      .vi-sub-light { display:block; font-size:13px; font-weight:500; color:rgba(255,255,255,.75); margin-top:2px; }
+      ```
+    - **Nhãn ngắn cùng dòng** (label trong flow-card, pill badge): dùng dấu gạch ngang, không xuống
+      dòng riêng: `<span class="flow-vi">— Câu chủ đề</span>` ngay sau tên tiếng Anh.
+    - **Nội dung bài tập** (đề bài, tên Activity, tên đoạn văn cụ thể): mặc định 100% tiếng Anh,
+      KHÔNG thêm tiếng Việt trừ khi 1 từ/khái niệm quá khó — xem quy tắc "Nội dung bài tập luôn
+      tiếng Anh" ở `01_scenario_builder_tiengAnh.md` mục Song ngữ. Không tự dịch chèn giữa tên
+      Activity (VD sai: "Passage Arrangement (Bài 1: Tiết kiệm nước)").
+    - Đoạn dài hơn (mission brief, level-intro nhiều câu): viết 1 câu tiếng Anh ngắn gọn làm chính,
+      tiếng Việt là bản tóm tắt ngắn hơn (không phải dịch nguyên văn dài) đặt ngay dưới cùng class
+      `.vi-sub`; không diễn giải thêm khái niệm nội bộ (formative/summative, tên cơ chế kỹ thuật...)
+      mà học sinh không cần biết để làm bài.
+16. **Structure/Sequence Labelling — thứ tự câu hỏi KHÔNG được trùng thứ tự xuất hiện trong bài mẫu
+    gốc.** Mở rộng Nguyên tắc 13 (chống đoán mò cấp nội dung soạn bài) sang 1 dạng đoán mò khác: đoán
+    theo VỊ TRÍ CÂU TRONG BÀI MẪU thay vì đoán theo vị trí đáp án. Lỗi thật đã gặp: bài hỏi "câu này
+    thuộc phần nào" đưa ra đúng theo trình tự Topic→Suggestion→Example→Result→Suggestion→Concluding
+    y hệt thứ tự đọc bài mẫu — học sinh chỉ cần nhớ "câu đầu luôn là Topic, câu cuối luôn là
+    Concluding" mà không cần hiểu chức năng câu. Khi build từ kịch bản, nếu phát hiện `data` các câu
+    hỏi được liệt kê đúng theo trình tự bài mẫu, phải tự xáo lại thứ tự trước khi render — không chỉ
+    xáo thứ tự lựa chọn đáp án A/B/C/D (2 việc khác nhau, Nguyên tắc 7 chỉ lo việc thứ 2).
 
 > 🚫 **CẢNH BÁO TOÀN CỤC — LỖI THẬT ĐÃ GẶP, ĐỌC KỸ TRƯỚC KHI BUILD:** mọi từ/câu/tên/số liệu xuất
 > hiện trong file này (Mục 0 nguyên tắc 9-10, Mục 4.6, và file `03_engine_tiengAnh.md` PHẦN 1.10)
@@ -340,6 +429,33 @@ câu luyện tập mỗi mức. Báo mình nếu cần chỉnh gì."* — không
 > luôn viết thẳng tên token gốc (`--jade-deep`, `--cream`, `--white`, `--ink`, `--correct`...) trong
 > mọi CSS ở Mục 4, đúng theo quy tắc v2.2 của `02_design_toan_final_v2.md` Mục 1.1. Alias chỉ dùng
 > khi vá file cũ đã có sẵn `var(--primary)` rải rác — xem `AIDUCATION_UI_REDESIGN_PLAYBOOK.md`.
+
+#### Màu accent cục bộ theo Unit (mới, v2.7)
+
+Một số Unit có 1-2 màu accent chỉ dùng cho ĐÚNG 1 khối minh hoạ gắn bối cảnh văn hoá/địa lý cụ thể
+(VD `--slate` #4E6E7E, `--terracotta` #C1704B cho khối minh hoạ làng bản/lễ hội ở Writing Unit 2
+Lớp 12) — theo Bộ lưu ý Kịch bản Writing Mục 9.3. Đây là màu PHỤ, không phải thêm token mới vào bảng
+toàn cục ở trên. Cách khai báo đúng:
+
+```css
+/* Khai báo NGAY TRONG selector của khối minh hoạ đó — KHÔNG thêm vào :root toàn cục */
+.hook-illustration, .part3-banner {
+  --slate: #4E6E7E;
+  --terracotta: #C1704B;
+}
+.hook-illustration .fabric-pattern { color: var(--slate); }
+.hook-illustration .roof-accent { color: var(--terracotta); }
+```
+
+**⚠️ Bắt buộc:**
+1. Khai báo `--slate`/`--terracotta` (hoặc tên màu cục bộ khác) ngay trong selector của khối minh
+   hoạ/component đó — KHÔNG khai báo trong `:root` (Mục 1 ở trên), tránh rò ra ảnh hưởng toàn hệ
+   thống hoặc đụng Unit khác dùng lại đúng tên biến với hex khác.
+2. Nền Cream/Jade gốc của toàn hệ thống giữ nguyên không đổi — accent cục bộ chỉ xuất hiện trong
+   đúng khối minh hoạ/viền trang trí liên quan, không lan ra nút CTA, badge, hay text thường.
+3. Nếu 1 Unit dùng accent cục bộ ở nhiều vị trí (VD Hook + Part 3 cùng dùng `--slate`/`--terracotta`
+   để giữ liên kết thị giác), khai báo lại ở selector của MỖI vị trí đó (không dựa vào kế thừa từ 1
+   khối cha chung, vì 2 khối có thể ở 2 file HTML khác nhau — Lesson/Practice tách file).
 
 ### Ánh xạ theo vai trò UI Tiếng Anh (bám sát bản tham khảo, chỉ đổi hex)
 
@@ -1208,6 +1324,31 @@ function shuffleMCQOptions(options) {
 // vì index đáp án đúng giờ đổi mỗi lần render, không còn cố định theo data nữa.
 ```
 
+> ⚠️ **Lỗi thật đã gặp — nút KHÔNG bấm được vì dấu nháy đơn trong đáp án:** KHÔNG BAO GIỜ render nút
+> bằng cách nhét text động vào chuỗi thuộc tính `onclick="..."`:
+> ```javascript
+> // ❌ SAI — sẽ gãy nếu optText chứa dấu nháy đơn (VD "school's", "I'd", "don't")
+> `<button onclick="answerMCQ('${qid}', this, '${esc(optText)}')">${esc(optText)}</button>`
+> ```
+> `esc()` (Nguyên tắc 8, Mục 0) chỉ escape `& < > "`, KHÔNG escape dấu nháy đơn `'` — nếu `optText`
+> chứa `'` (rất hay gặp: "school's", "I'd", "don't", "I've"), dấu nháy đó sẽ kết thúc sớm chuỗi JS
+> trong thuộc tính `onclick`, làm gãy toàn bộ nút đó (và có thể cả các nút sau trong cùng câu) —
+> học sinh bấm không có phản ứng gì, rất khó nhận ra khi test nhanh vì phần lớn câu KHÔNG có dấu
+> nháy đơn nên vẫn hoạt động bình thường, chỉ riêng câu có từ như "school's" mới lộ lỗi.
+> **Bắt buộc dùng `addEventListener` — không đưa text động vào bất kỳ thuộc tính `onclick=""` nào:**
+> ```javascript
+> // ✅ ĐÚNG
+> wrap.innerHTML = shuffled.map(optText => `<button class="q-opt">${esc(optText)}</button>`).join('');
+> Array.from(wrap.children).forEach((btn, i) => {
+>   btn.addEventListener('click', () => answerMCQ(qid, btn, shuffled[i]));
+> });
+> ```
+> Quy tắc này áp dụng cho MỌI component tự render nút/phần tử tương tác từ text tự do trong data
+> (MCQ 4.6, Matching 4.12, Ordering/Word-Tile 4.13, Tap-to-Categorize 4.17...) — không riêng bài
+> Writing đã phát hiện lỗi này. Nếu component đã lỡ dùng `onclick=""` với text nhúng, chuyển toàn bộ
+> sang `addEventListener` khi sửa, không chỉ vá thêm escape dấu nháy đơn (dễ sót các ký tự đặc biệt
+> khác sau này).
+
 **True/False:**
 ```javascript
 { q: "...", a: true, explain: "..." }
@@ -2003,6 +2144,31 @@ function speak(text, lang='en-GB'){
 .word-count { font-size:12px; color:var(--ink-3); margin-top:4px; text-align:right; }
 ```
 
+### 4.15b Write Hint — khối 💡 hint tĩnh, hiển thị TRƯỚC khi học sinh viết (mới, v2.7)
+
+> **KHÁC Mục 9.2:** Mục 9.2 ("Không có gợi ý (hint)") chỉ áp dụng cho MCQ/trắc nghiệm — mục đích là
+> chặn đoán mò trước khi trả lời có đúng/sai. Writing không có đúng/sai tuyệt đối, và hint ở đây
+> không phải "gợi ý đáp án" mà là hướng dẫn CÁCH bắt đầu — chỉ dùng khi bảng scaffold (Reason/
+> Example/Explain, Period/Event/Significance...) không còn đủ để tự giải thích nhiệm vụ (VD: Guided
+> Writing hỗ trợ giảm không còn sentence starter, Independent Writing không có bảng gợi ý nào).
+> KHÔNG thêm Write Hint vào Activity đã có bảng scaffold đầy đủ — thừa và làm loãng "kịch bản sạch".
+
+```html
+<div class="write-hint">💡 <span class="write-hint-text">[nội dung hint tiếng Anh, viết như 1 lời nhắc trực tiếp cho học sinh]</span></div>
+```
+```css
+.write-hint { background:var(--cream-2); border-left:3px solid var(--jade-deep); border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:10px 14px; font-size:14.5px; line-height:1.6; color:var(--ink-2); margin-bottom:12px; }
+.write-hint-text { font-style:italic; }
+```
+
+**⚠️ Bắt buộc:**
+1. Nội dung hint LUÔN tiếng Anh (đúng Nguyên tắc 15, Mục 0) — đây là nội dung học sinh đọc trực
+   tiếp, không phải ghi chú thiết kế.
+2. Đặt ngay TRÊN ô `textarea`/khung điền, không đặt trong popup/tooltip cần thêm 1 lượt tap mới
+   thấy — hint phải hiện sẵn, không ẩn thêm 1 lớp.
+3. 1 Activity chỉ có TỐI ĐA 1 khối Write Hint — không lặp lại hint ở nhiều vị trí trong cùng 1 bài.
+
 ### 4.16 Diagnostic / Revision — câu hỏi trộn nhiều category, chấm điểm theo nhóm
 
 Thường gặp ở bài Revision/Ôn tập cuối Unit, nhưng dùng được bất cứ khi nào cần trộn nhiều loại
@@ -2397,6 +2563,133 @@ function autoCollapsePrev(nextBlockEl) {
 >    phân tích thuần tuý; khối luyện tập dùng đúng Progressive Unlock (4.9) hoặc Step-gate (4.5).
 > 4. `open` mặc định chỉ đặt `true` cho khối ĐẦU TIÊN — các khối sau mặc định đóng, tự mở khi học
 >    sinh cuộn tới hoặc bấm, không hiện sẵn hết gây trang dài vô hạn ngay từ đầu.
+
+---
+
+### 4.23 Region Highlight — nhãn bấm tô sáng 1 VÙNG lớn (đoạn/nhóm câu), loại trừ lẫn nhau
+
+> **Khác với Interactive Analyzer/Hotspot-từng-câu** (đã dùng ở Writing Unit 1 Lớp 11 — mỗi CÂU là
+> 1 hotspot riêng, có nút "Phân tích tự động" chạy tuần tự): component này dùng khi bài mẫu cần chia
+> thành các VÙNG LỚN hơn (cả 1 Reason gồm Point+Example+Explain tô chung 1 màu, không tách 3 màu con)
+> — phù hợp thể loại có ít mốc chức năng lớn (Opinion essay: Introduction/Reason 1/Reason 2/
+> Conclusion) hơn là nhiều câu chức năng nhỏ lặp lại. Không cần nút "Phân tích tự động" vì số vùng
+> ít, hiển thị tĩnh 4 nút nhãn là đủ.
+
+```html
+<div class="region-highlight-wrap">
+  <div class="region-labels">
+    <button class="region-label" data-region="intro" onclick="highlightRegion(this,'intro')">Introduction</button>
+    <button class="region-label" data-region="r1" onclick="highlightRegion(this,'r1')">Reason 1</button>
+    <button class="region-label" data-region="r2" onclick="highlightRegion(this,'r2')">Reason 2</button>
+    <button class="region-label" data-region="concl" onclick="highlightRegion(this,'concl')">Conclusion</button>
+  </div>
+  <p class="region-text">
+    <span class="region-span" data-region="intro">Should teenagers be allowed to choose their own bedtime? ...</span>
+    <span class="region-span" data-region="r1">First of all, many teenagers do not get enough sleep...</span>
+    <span class="region-span" data-region="r2">In addition, a regular bedtime helps teenagers stay focused...</span>
+    <span class="region-span" data-region="concl">In conclusion, although teenagers are growing more independent...</span>
+  </p>
+</div>
+```
+```css
+.region-labels { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:14px; }
+@media (max-width:600px){ .region-labels{grid-template-columns:1fr 1fr;} }
+.region-label { background:var(--cream-2); border:1.5px solid var(--paper-line-2); border-radius:var(--radius-sm);
+  padding:9px 10px; font-size:13px; font-weight:700; color:var(--ink-2); min-height:44px; }
+.region-label.active-intro { background:var(--accent-pale); border-color:var(--accent); color:var(--accent-text); }
+.region-label.active-r1 { background:var(--jade-pale); border-color:var(--jade); color:var(--jade-text); }
+.region-label.active-r2 { background:var(--sage-pale); border-color:var(--sage); color:var(--sage-text); }
+.region-label.active-concl { background:var(--accent-pale); border-color:var(--accent-deep); color:var(--accent-text); }
+.region-text { font-size:16px; line-height:1.8; }
+.region-span { transition:background .2s ease; border-radius:4px; padding:1px 2px; }
+.region-span.lit-intro { background:var(--accent-pale); }
+.region-span.lit-r1 { background:var(--jade-pale); }
+.region-span.lit-r2 { background:var(--sage-pale); }
+.region-span.lit-concl { background:var(--accent-pale); }
+```
+```javascript
+function highlightRegion(btn, regionKey) {
+  // CHỈ 1 vùng sáng tại 1 thời điểm — xoá màu vùng trước đó, không cộng dồn
+  document.querySelectorAll('.region-label').forEach(b => b.classList.remove(...b.classList.value.split(' ').filter(c => c.startsWith('active-'))));
+  document.querySelectorAll('.region-span').forEach(s => s.classList.remove(...s.classList.value.split(' ').filter(c => c.startsWith('lit-'))));
+  btn.classList.add('active-' + regionKey);
+  document.querySelectorAll(`.region-span[data-region="${regionKey}"]`).forEach(s => s.classList.add('lit-' + regionKey));
+}
+```
+
+**⚠️ Bắt buộc:**
+1. Mỗi lần bấm 1 nhãn CHỈ tô sáng đúng vùng đó, xoá màu vùng đang tô trước — không cộng dồn nhiều
+   vùng sáng cùng lúc.
+2. Nếu 1 vùng (VD Reason) gồm nhiều lớp con (Point/Example/Explain) nhưng kịch bản chỉ định "1 màu
+   duy nhất" cho cả vùng, KHÔNG tách thêm màu con — dùng đúng 1 `data-region`/1 màu cho toàn vùng.
+3. Nhãn xếp lưới 2×2 trên mobile (không xếp 1 hàng ngang 4 nút gây chữ quá nhỏ).
+4. Dùng khi số vùng cố định và ít (3-5 vùng lớn); nếu bài mẫu cần chỉ ra CHỨC NĂNG TỪNG CÂU riêng lẻ
+   (nhiều hơn 5-6 điểm chạm), dùng Interactive Analyzer/hotspot-từng-câu thay vì component này.
+5. **KHÔNG dùng Region Highlight cho thể loại tường thuật theo thời gian** (Biography, Blog post) —
+   thể loại đó có trục thời gian thật, dùng đúng Timeline Infographic (Mục 4.24) để không bỏ lỡ điểm
+   mạnh chuỗi mốc thời gian của thể loại. Region Highlight chỉ dùng cho thể loại KHÔNG có trục thời
+   gian (Opinion essay, For-and-against...).
+
+---
+
+### 4.24 Timeline Infographic — mốc thời gian dạng node dọc, dùng cho Biography/Blog post
+
+> **Bắt buộc cho mọi bài mẫu phân tích (mục D) thuộc thể loại tường thuật theo thời gian** (Biography,
+> Blog post kể chuyện quá khứ) — THAY THẾ Region Highlight (4.23)/bảng nút bấm thường. Lỗi thật đã
+> gặp: 1 bài mẫu Biography dùng nguyên cơ chế "nút bấm tô vùng" vay mượn từ Opinion essay (thể loại
+> không có trục thời gian) — bỏ lỡ đúng điểm mạnh của Biography (chuỗi mốc năm tháng rõ ràng, khớp
+> thẳng trọng tâm ngữ pháp Past simple/Past continuous hay đi kèm thể loại này).
+
+```html
+<div class="timeline-wrap">
+  <div class="timeline-line"></div>
+  <div class="timeline-node" data-node="n1">
+    <button class="node-head" onclick="toggleTimelineNode(this)">
+      <span class="node-dot">📍</span>
+      <span class="node-year">1867</span>
+      <span class="node-headline">Born in Warsaw, Poland</span>
+    </button>
+    <div class="node-detail">She was born in Warsaw, Poland, in 1867.</div>
+  </div>
+  <!-- Lặp lại .timeline-node cho từng mốc còn lại -->
+</div>
+```
+```css
+.timeline-wrap { position:relative; padding-left:28px; }
+.timeline-line { position:absolute; left:9px; top:6px; bottom:6px; width:2px; background:var(--jade-soft); }
+.timeline-node { position:relative; margin-bottom:18px; }
+.node-head { display:flex; align-items:center; gap:10px; background:var(--white); border:1.5px solid var(--paper-line);
+  border-radius:var(--radius); padding:10px 14px; width:100%; text-align:left; min-height:44px; }
+.node-dot { position:absolute; left:-28px; width:18px; height:18px; border-radius:50%; background:var(--jade-deep);
+  display:flex; align-items:center; justify-content:center; font-size:10px; }
+.node-year { font-weight:800; color:var(--jade-dark); font-size:13.5px; white-space:nowrap; }
+.node-headline { font-weight:600; color:var(--ink); font-size:14.5px; }
+.node-detail { display:none; margin:8px 0 0 0; padding:12px 14px; background:var(--cream-2);
+  border-radius:var(--radius-sm); font-size:15px; line-height:1.7; }
+.timeline-node.open .node-head { border-color:var(--jade-deep); background:var(--jade-pale); }
+.timeline-node.open .node-detail { display:block; }
+.timeline-node.open .node-dot { transform:scale(1.25); }
+```
+```javascript
+// Cho phép mở nhiều node cùng lúc (khác Region Highlight — timeline không loại trừ lẫn nhau, học
+// sinh có thể so sánh 2-3 mốc song song)
+function toggleTimelineNode(btn) {
+  btn.closest('.timeline-node').classList.toggle('open');
+}
+```
+
+**⚠️ Bắt buộc:**
+1. Timeline LUÔN dọc (kể cả desktop) — hợp mobile-first, không dùng timeline ngang.
+2. Icon ở `.node-dot` dùng line-art đơn sắc (1 màu jade, cùng độ dày nét) — KHÔNG dùng icon màu mè/
+   clipart nhiều màu khác nhau giữa các node.
+3. Node mặc định thu gọn (chỉ hiện năm + headline ngắn); chạm để bung đoạn văn đầy đủ tương ứng —
+   KHÔNG hiện sẵn hết mọi đoạn văn cùng lúc (sẽ mất tác dụng "dòng thời gian dẫn dắt").
+4. Có thể mở nhiều node cùng lúc (không loại trừ lẫn nhau như Region Highlight 4.23) — mục đích khác
+   nhau: Region Highlight so sánh CHỨC NĂNG các phần trong 1 lúc nhìn 1 phần; Timeline cho học sinh
+   tự do so sánh nhiều mốc thời gian song song.
+5. Đi kèm khuyến nghị (không bắt buộc kỹ thuật, nhưng nên có): 1 chân dung minh hoạ nhân vật
+   (silhouette/flat-illustration, 1-2 màu phẳng theo bảng Cream/Jade, giữ 1-2 đặc điểm nhận diện tối
+   giản, KHÔNG ảnh chụp thật/tả thực khuôn mặt) đặt ngay phía trên khối Timeline.
 
 ---
 
@@ -3105,6 +3398,21 @@ chưa — nếu chưa, thêm ngay, không để mặc định "học sinh tự �
       đạt sàn ≥15px; nhãn UI/meta phụ ≥11px (0, nguyên tắc 11). Không có class thu-nhỏ-chữ nào bị
       "kế thừa nhầm" từ ngữ cảnh cột hẹp desktop sang layout mobile đã đổi (carousel/step-gate) mà
       chưa được viết đè lại bằng media query riêng.
+- [ ] Mọi `<h2>`/`<h3>`/`<h4>` và mọi `title` trong `athena-context.structure` dùng làm heading/tên
+      section đều viết tiếng Anh trước — nếu cần bản dịch, đặt trong `<span class="vi-sub">` hoặc
+      tương đương NGAY SAU tiêu đề Anh, không đảo ngược thứ tự, không để heading thuần tiếng Việt
+      không kèm bản Anh (0, xem lỗi thật đã gặp — heading "Bài phát biểu mẫu..." không có bản Anh)
+- [ ] Mọi Activity có ô viết đoạn/câu hoàn chỉnh (Practice lẫn Production) đều có Gated Reveal (9.17)
+      hoặc luồng Nộp bài AI (9.6) — không có ô nào viết xong rồi không có phản hồi gì
+- [ ] Nút "Xem model answer"/"Xem đáp án gợi ý" bắt đầu `disabled`, chỉ mở khoá sau khi học sinh đã
+      thử (đủ % số từ mục tiêu, hoặc điền đủ toàn bộ ô trống) — không bấm xem được ngay từ đầu (9.17)
+- [ ] Mọi nút render từ text tự do (MCQ, Matching, Ordering, Tap-to-Categorize...) dùng
+      `addEventListener`, KHÔNG nhúng text vào thuộc tính `onclick=""` — tránh lỗi gãy nút khi text
+      chứa dấu nháy đơn như "school's"/"I'd" (0 Nguyên tắc 8, 4.6)
+- [ ] Structure/Sequence Labelling: thứ tự câu hỏi đã được xáo, không trùng thứ tự xuất hiện trong
+      bài mẫu gốc (0 Nguyên tắc 16)
+- [ ] Activity nào là điều kiện mở khoá bước/phase tiếp theo đã dùng Submit tường minh (9.17 biến
+      thể), không chỉ auto-gate qua sự kiện `input`
 
 ### 9.16 Find the Error (Error Identification trong câu) — layout dạng câu liền mạch, KHÔNG phải
 card rời
@@ -3169,4 +3477,122 @@ theo từng lựa chọn.
 4. **KHÔNG hiện bất kỳ debug control nào** (checkbox Easy/Medium/Difficult Level, nút preview mức
    độ...) trong bản học sinh nhìn thấy — nếu cần công cụ dev để xem trước từng mức, đặt sau 1 flag
    `?debug=1` trên URL hoặc build riêng bản QA, không lẫn vào component chính.
+
+### 9.17 Gated Reveal — chuẩn hoá MỌI nút "Xem model answer / Xem đáp án gợi ý" trong Writing & bài
+tự luận (KHÔNG áp dụng cho MCQ/trắc nghiệm, đã có quy tắc riêng ở 9.2)
+
+> Phát hiện qua QA thật (Writing Unit 2 Lớp 10): mỗi Activity tự bịa 1 kiểu hint khác nhau — có bài
+> nút "Xem model answer" bấm được ngay từ đầu (chưa viết chữ nào), có bài không có nút gì cả (viết
+> xong không biết đúng sai), có bài dùng popup, có bài dùng model answer ẩn trong footer. Mục 9.2 chỉ
+> quy định cho câu hỏi có đáp án đúng/sai (MCQ...); mục này bổ sung pattern riêng cho các trường hợp
+> **không có đúng/sai tuyệt đối** — model answer, đáp án gợi ý cho Read & Extract, gợi ý ý tưởng cho
+> bài viết tự do — nơi Mục 9.2 không áp dụng thẳng được nhưng vẫn cần 1 chuẩn chung, không để mỗi
+> Activity tự bịa.
+
+**Nguyên tắc cốt lõi:** mọi nút "Xem model answer"/"Xem đáp án gợi ý"/"Xem gợi ý ý tưởng" gắn với 1
+ô viết/điền cụ thể LUÔN bắt đầu ở trạng thái `disabled`, chỉ mở khoá SAU KHI học sinh đã thật sự thử
+— không bao giờ để học sinh xem được trước khi tự làm, kể cả với bài không chấm đúng/sai.
+
+**2 điều kiện mở khoá, chọn đúng loại theo bản chất Activity:**
+
+| Loại Activity | Điều kiện mở khoá | Ví dụ |
+|---|---|---|
+| Viết đoạn/câu tự do (textarea) | Đã gõ đủ **~30-50% số từ mục tiêu** của Activity đó (không cần đạt đủ 100%, chỉ cần chứng minh đã thử) | Guided Writing hỗ trợ đầy đủ, Independent Writing, Guided Writing Production |
+| Điền bảng/ô trống có đáp án cụ thể (input rời rạc) | Đã điền **đủ TẤT CẢ ô** (không cần đúng) | Read & Extract |
+
+```html
+<textarea class="write-area" id="[id]" oninput="checkRevealGate('[id]','[btnId]',[minWords])"></textarea>
+<button class="reveal-btn" id="[btnId]" disabled data-unlocked-label="Xem model answer"
+        onclick="openModelAnswerSheet('[modelAnswerId]')">🔒 Viết ít nhất [minWords] từ để mở khoá (0/[minWords])</button>
+```
+
+> ⚠️ **Không dùng `openPopup(...)` mơ hồ** — hàm cụ thể là `openModelAnswerSheet(modelAnswerId)`,
+> tái dùng ĐÚNG pattern overlay bottom-sheet đã có ở Mục 1.14 file engine (`#recap-popup`), chỉ đổi
+> id/nội dung sang Model answer — xem code đầy đủ ở Mục 1.18 file engine. Không viết popup/modal
+> riêng cho Model answer, tránh có 2 kiểu overlay khác nhau trong cùng 1 file.
+```
+```javascript
+function checkRevealGate(textareaId, btnId, minWords) {
+  const text = document.getElementById(textareaId).value.trim();
+  const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+  const btn = document.getElementById(btnId);
+  if (count >= minWords) { btn.disabled = false; btn.textContent = btn.dataset.unlockedLabel; }
+  else { btn.disabled = true; btn.textContent = `🔒 Viết ít nhất ${minWords} từ để mở khoá (${count}/${minWords})`; }
+}
+```
+```css
+.reveal-btn:disabled { background:var(--cream-2); border-color:var(--paper-line); color:var(--ink-faint);
+  cursor:not-allowed; opacity:.75; }
+```
+
+Với Activity điền bảng, thay `checkRevealGate` bằng kiểm tra "tất cả `.re-input` cùng nhóm đã có
+giá trị" (gắn `data-re-group` cho từng input, lặp `querySelectorAll` để check `every`).
+
+**Biến thể — Submit tường minh (khi Activity đó CŨNG là điều kiện mở khoá bước/phase tiếp theo):**
+
+> Phát hiện qua QA thật (Writing Unit 2 Lớp 10, Activity Read & Extract): nếu chỉ tự động mở khoá
+> ngay khi điền đủ ô (không cần bấm gì), học sinh có thể điền qua loa rồi lướt sang bước sau mà
+> không thật sự dừng lại đối chiếu đáp án. Khi Activity đó là "cửa" bắt buộc trước khi sang
+> phase/bước tiếp theo (không chỉ là 1 bài luyện độc lập), dùng nút **Submit tường minh** thay vì tự
+> động mở khoá qua sự kiện `input`:
+
+```html
+<button class="an-btn" id="submitBtn" onclick="submitAndUnlock()">✓ Submit</button>
+<span class="word-count" id="warnMsg" style="color:var(--wrong);display:none;">Điền đủ trước khi Submit nhé.</span>
+<button class="reveal-btn" id="revealBtn" disabled data-unlocked-label="Xem đáp án gợi ý">🔒 Submit bài để mở đáp án</button>
+...
+<button class="next-level-btn" id="nextBtn" disabled onclick="goToLevel('phase-1')">Next &rarr;</button>
+```
+```javascript
+function submitAndUnlock() {
+  const inputs = document.querySelectorAll('.re-input[data-re-group="[group]"]');
+  const filled = Array.from(inputs).every(inp => inp.value.trim().length > 0);
+  const warn = document.getElementById('warnMsg');
+  if (!filled) { warn.style.display = 'inline'; return; }
+  warn.style.display = 'none';
+  const revealBtn = document.getElementById('revealBtn');
+  revealBtn.disabled = false;
+  revealBtn.textContent = revealBtn.dataset.unlockedLabel;
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('nextBtn').disabled = false; // khoá cả nút chuyển bước cho tới khi Submit
+}
+```
+
+Dùng auto-gate (`checkRevealGate`/`input` listener) khi Activity chỉ là luyện tập độc lập, không
+chặn đường đi tiếp; dùng Submit tường minh khi Activity đó là mốc bắt buộc trước khi mở bước sau.
+
+**Biến thể — Submit tường minh cho TEXTAREA tự do (mới, v2.7):**
+
+> Khác với biến thể Submit tường minh ở trên (chỉ hợp bảng điền nhiều ô rời rạc), biến thể này dùng
+> khi giáo viên muốn MỌI Activity viết đoạn/câu — kể cả Activity KHÔNG chặn bước tiếp theo, chỉ là
+> luyện tập độc lập — đều bắt học sinh chủ động bấm Submit thay vì tự mở khoá qua sự kiện `input`.
+> Đây là lựa chọn thiết kế của giáo viên (áp dụng khi kịch bản Writing ghi rõ "mọi bài viết đều có
+> nút Submit"), không phải mặc định bắt buộc thay thế auto-gate — nếu kịch bản không nói rõ, vẫn
+> dùng auto-gate (`checkRevealGate`) như bảng ở trên.
+
+```html
+<textarea class="write-area" id="essay1" oninput="updateWordCount('essay1','wc1')"></textarea>
+<div class="word-count" id="wc1">0/[minWords] từ</div>
+<button class="an-btn" id="submitBtn1" onclick="submitByWords('essay1',[minWords],'submitBtn1','revealBtn1')">✓ Submit</button>
+<span class="word-count" id="warnMsg1" style="color:var(--wrong);display:none;">Viết thêm trước khi Submit nhé.</span>
+<button class="reveal-btn" id="revealBtn1" disabled data-unlocked-label="Xem model answer">🔒 Submit bài để mở model answer</button>
+```
+
+Xem hàm `submitByWords()` đầy đủ ở Mục 1.18 file engine — cùng họ với `submitAndUnlock()` (bảng
+điền) nhưng check điều kiện theo số từ trong 1 textarea, không phải "mọi ô đã điền".
+
+**⚠️ Bắt buộc:**
+1. **Mọi ô viết đoạn/câu hoàn chỉnh trong file (kể cả Practice formative, không chỉ Production)** đều
+   phải có MỘT trong 2 dạng phản hồi sau khi hoàn thành — không được để trống hoàn toàn như một
+   "hộp thư đen" (viết xong không có bất kỳ phản hồi nào): (a) Gated Reveal model answer/gợi ý (mục
+   này), hoặc (b) luồng Nộp bài AI Athena thật (Mục 9.6) nếu là bài được chấm điểm chính thức.
+2. Ngưỡng số từ mở khoá (`minWords`) tính theo % độ dài mục tiêu thật của Activity đó (Mục 3 Prompt
+   Template Writing) — không dùng 1 con số cứng cho mọi bài khác độ dài.
+3. Text nút ở trạng thái khoá PHẢI hiện rõ điều kiện + tiến độ hiện tại (VD "Viết ít nhất 40 từ để
+   mở khoá (12/40)") — không chỉ hiện mờ đi không rõ lý do.
+4. KHÔNG áp dụng gate này cho nút "Xem đáp án" của MCQ/trắc nghiệm có đúng/sai rõ ràng — những
+   component đó dùng đúng quy tắc 9.2 (hiện đáp án SAU khi học sinh đã chọn/trả lời, không phải sau
+   khi gõ đủ số từ).
+5. Nếu Activity là điều kiện mở khoá bước/phase tiếp theo, dùng biến thể Submit tường minh ở trên —
+   không dùng auto-gate qua `input` cho trường hợp này.
 

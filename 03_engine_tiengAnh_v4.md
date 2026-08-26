@@ -1,4 +1,16 @@
-# 🎮 ENGINE TIẾNG ANH — Pattern Kỹ Thuật Cho Tương Tác Module — v1.11
+# 🎮 ENGINE TIẾNG ANH — Pattern Kỹ Thuật Cho Tương Tác Module — v1.13
+
+> **Mới ở v1.13 (đúc kết từ QA Writing Unit 2 Lớp 12):** Mục 1.18 bổ sung 2 hàm mới —
+> `submitByWords()` (Submit tường minh cho 1 textarea tự do kèm ngưỡng số từ, dùng khi giáo viên
+> muốn MỌI Activity viết đoạn đều có nút Submit, không chỉ Activity chặn bước tiếp theo) và
+> `openModelAnswerSheet()` (định nghĩa rõ khung hiển thị Model answer — tái dùng đúng pattern
+> overlay bottom-sheet của Mục 1.14, thay cho `openPopup(...)` chưa từng được định nghĩa ở bản
+> trước). Xem thêm Mục 9.17 file design.
+
+> **Mới ở v1.12:** Mục 1.19 (mới) — bắt buộc `addEventListener` khi render nút/phần tử từ text tự
+> do, không nhúng vào `onclick=""` (lỗi thật: nút gãy khi đáp án chứa dấu nháy đơn như "school's").
+> Mục 1.18 bổ sung biến thể Submit tường minh (`submitAndUnlock()`) cho Activity là điều kiện mở
+> khoá bước/phase tiếp theo.
 
 > **Mới ở v1.11:** khoá cứng giọng đọc TTS `en-GB` ở mọi hàm `speak()`/`SpeechSynthesisUtterance`
 > trong file này (không đổi sang `en-US`) — xem ghi chú tại từng hàm; đồng bộ với nguyên tắc 12/13
@@ -926,6 +938,176 @@ function growBranch(diagramEl, branchIndex, level) {
 >    "Reveal" lệch vị trí gây khó chạm lại.
 > 3. Test bằng `prefers-reduced-motion` bật (DevTools → Rendering → Emulate CSS media feature) VÀ
 >    bằng cách bấm-để-bỏ-qua giữa chừng — cả 2 đường đều phải hiện đủ text, không kẹt nửa chừng.
+
+### 1.18 Gated Reveal — mở khoá nút "Xem model answer/Xem đáp án gợi ý" theo mức độ đã thử (xem
+component 9.17 file design)
+
+```
+Dùng cho MỌI nút reveal gắn với 1 ô viết đoạn/câu tự do hoặc 1 bảng điền không có đúng/sai tuyệt đối
+(model answer của Writing, đáp án gợi ý Read & Extract, gợi ý ý tưởng Free Writing) — KHÁC với nút
+"Xem đáp án" của MCQ/trắc nghiệm (đã có quy tắc riêng ở Mục 9.2 file design: hiện ngay sau khi học
+sinh CHỌN xong, không cần điều kiện số từ). Nút reveal loại này luôn bắt đầu `disabled`.
+```
+
+```javascript
+// Dùng cho ô textarea viết đoạn/câu — mở khoá khi đã gõ đủ % số từ mục tiêu (thường 30-50%)
+function checkRevealGate(textareaId, btnId, minWords) {
+  const text = document.getElementById(textareaId).value.trim();
+  const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+  const btn = document.getElementById(btnId);
+  if (count >= minWords) {
+    btn.disabled = false;
+    btn.textContent = btn.dataset.unlockedLabel;
+  } else {
+    btn.disabled = true;
+    btn.textContent = `🔒 Viết ít nhất ${minWords} từ để mở khoá (${count}/${minWords})`;
+  }
+}
+
+// Dùng cho bảng điền nhiều ô (Read & Extract...) — mở khoá khi TẤT CẢ ô cùng nhóm đã có giá trị
+// (không cần đúng, chỉ cần đã thử). Gắn class="re-input" data-re-group="[tên nhóm]" cho từng input.
+function initFillGate(groupName, btnId) {
+  const inputs = document.querySelectorAll(`.re-input[data-re-group="${groupName}"]`);
+  const btn = document.getElementById(btnId);
+  function check() {
+    const filled = Array.from(inputs).every(inp => inp.value.trim().length > 0);
+    btn.disabled = !filled;
+    btn.textContent = filled ? btn.dataset.unlockedLabel : '🔒 Điền thử cả bảng để mở khoá đáp án gợi ý';
+  }
+  inputs.forEach(inp => inp.addEventListener('input', check));
+  check();
+}
+```
+
+> **Không gọi `recordMistake()`/`checkTextAnswer()` ở đây dưới bất kỳ hình thức nào** — Gated Reveal
+> không chấm đúng/sai, chỉ kiểm tra "đã thử hay chưa" để quyết định mở khoá. Đúng tinh thần Guided
+> Noticing (Mục 4.20 file design) và Strategy Reveal (Mục 1.11-1.13) — công cụ hỗ trợ tự đối chiếu,
+> không phải bài kiểm tra.
+
+> **⚠️ Không nhầm với Mục 9.2 (file design):** nếu Activity CÓ đáp án đúng/sai rõ ràng (MCQ, True/
+> False, Gap-fill có đáp án cố định...), dùng luồng chấm điểm chuẩn ở Mục 1.8/1.6, KHÔNG dùng Gated
+> Reveal — Gated Reveal chỉ dành cho nội dung không có "đúng/sai" tuyệt đối.
+
+**Biến thể — Submit tường minh** (khi Activity đó CŨNG là điều kiện mở khoá bước/phase tiếp theo,
+không chỉ 1 bài luyện độc lập — xem điều kiện chọn ở Mục 9.17 file design):
+
+```javascript
+// Dùng nút Submit tường minh thay vì auto-gate qua sự kiện 'input' — bắt học sinh chủ động xác
+// nhận đã làm xong, đồng thời khoá luôn nút chuyển bước/phase tiếp theo cho tới khi Submit hợp lệ.
+function submitAndUnlock(groupName, revealBtnId, submitBtnId, nextBtnId, warnId) {
+  const inputs = document.querySelectorAll(`.re-input[data-re-group="${groupName}"]`);
+  const filled = Array.from(inputs).every(inp => inp.value.trim().length > 0);
+  const warn = document.getElementById(warnId);
+  if (!filled) { warn.style.display = 'inline'; return; }
+  warn.style.display = 'none';
+  const revealBtn = document.getElementById(revealBtnId);
+  revealBtn.disabled = false;
+  revealBtn.textContent = revealBtn.dataset.unlockedLabel;
+  document.getElementById(submitBtnId).disabled = true;
+  const nextBtn = document.getElementById(nextBtnId);
+  if (nextBtn) nextBtn.disabled = false;
+}
+```
+
+**Biến thể mới (v1.13) — `submitByWords()`: Submit tường minh cho 1 TEXTAREA tự do kèm ngưỡng số
+từ.** Khác `submitAndUnlock()` ở trên (check "mọi ô trong 1 group đã điền" — hợp bảng điền rời rạc),
+hàm này check "đã gõ đủ % số từ mục tiêu trong 1 textarea" — dùng khi kịch bản ghi rõ MỌI Activity
+viết đoạn đều cần bấm Submit, không chỉ Activity chặn bước tiếp theo (xem Mục 9.17 file design,
+biến thể "Submit tường minh cho TEXTAREA tự do"):
+
+```javascript
+function submitByWords(textareaId, minWords, submitBtnId, revealBtnId, warnId) {
+  const text = document.getElementById(textareaId).value.trim();
+  const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+  const warn = document.getElementById(warnId);
+  if (count < minWords) {
+    if (warn) { warn.textContent = `Viết thêm ${minWords - count} từ nữa trước khi Submit nhé.`; warn.style.display = 'inline'; }
+    return;
+  }
+  if (warn) warn.style.display = 'none';
+  const revealBtn = document.getElementById(revealBtnId);
+  revealBtn.disabled = false;
+  revealBtn.textContent = revealBtn.dataset.unlockedLabel;
+  document.getElementById(submitBtnId).disabled = true;
+}
+
+// Cập nhật số từ hiện tại lên UI khi học sinh gõ (không tự mở khoá — chỉ hiển thị tiến độ,
+// việc mở khoá CHỈ xảy ra khi bấm Submit qua submitByWords())
+function updateWordCount(textareaId, counterId) {
+  const text = document.getElementById(textareaId).value.trim();
+  const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+  document.getElementById(counterId).textContent = `${count} từ`;
+}
+```
+
+> ⚠️ Khác biệt cốt lõi với `checkRevealGate()`: `checkRevealGate` tự mở khoá ngay khi đạt đủ số từ
+> (qua sự kiện `input`, không cần bấm gì); `submitByWords` KHÔNG tự mở khoá dù đã gõ đủ số từ — học
+> sinh vẫn phải chủ động bấm nút Submit, hàm chỉ kiểm tra điều kiện tại thời điểm bấm.
+
+**Biến thể mới (v1.13) — `openModelAnswerSheet()`: khung hiển thị Model answer, tái dùng đúng
+pattern overlay bottom-sheet của Mục 1.14 (Recap).** Thay cho `openPopup(...)` chưa từng được định
+nghĩa ở bản trước — dùng CHUNG 1 pattern overlay cho mọi nhu cầu "hiện nội dung phụ đè lên trên,
+không phá state trang chính" (Recap, Model answer, gợi ý ý tưởng...), không viết modal riêng cho
+từng loại:
+
+```javascript
+function openModelAnswerSheet(modelAnswerId) {
+  const sheet = document.getElementById('model-answer-popup');
+  const content = document.getElementById(modelAnswerId); // node chứa sẵn HTML model answer, ẩn mặc định
+  sheet.querySelector('.recap-sheet').innerHTML = content.innerHTML;
+  sheet.classList.add('open');
+  // Không gọi recordMistake() — mở Model answer không tính là sai, không ảnh hưởng adaptive routing
+}
+function closeModelAnswerSheet() {
+  document.getElementById('model-answer-popup').classList.remove('open');
+}
+```
+```css
+/* Dùng ĐÚNG CSS #recap-popup ở Mục 1.14, chỉ đổi id */
+#model-answer-popup { position: fixed; inset: 0; z-index: 500; display: none;
+  align-items: flex-end; justify-content: center; background: rgba(0,0,0,.3); }
+#model-answer-popup.open { display: flex; }
+#model-answer-popup .recap-sheet { background: #fff; border-radius: 16px 16px 0 0; padding: 20px;
+  width: 100%; max-width: 480px; max-height: 70vh; overflow-y: auto; }
+@media (min-width: 481px) {
+  #model-answer-popup { align-items: center; }
+  #model-answer-popup .recap-sheet { border-radius: 16px; }
+}
+```
+
+> ⚠️ Nếu 1 file HTML đã có `#recap-popup` (VD Practice có Reference Pane + Recap), dùng thêm
+> `#model-answer-popup` như 1 overlay riêng (id khác) — KHÔNG dùng chung 1 overlay cho 2 mục đích,
+> vì Recap có thể cần mở khi Model answer đang mở dở (VD học sinh muốn tra lại chiến thuật trong
+> lúc đối chiếu model answer).
+
+### 1.19 Render nút/phần tử tương tác từ text tự do — LUÔN `addEventListener`, KHÔNG nhúng vào
+`onclick=""`
+
+> **Lỗi thật đã gặp (Writing Unit 2 Lớp 10, Sentence Building):** 1 câu có đáp án chứa "school's"
+> hoàn toàn không bấm được nút nào — nguyên nhân là hàm render nhét text đáp án vào chuỗi thuộc
+> tính `onclick="fn('...')"`, và dấu nháy đơn trong "school's" kết thúc sớm chuỗi JS, làm gãy toàn
+> bộ nút. `esc()` (Mục 0 nguyên tắc 8 file design) không escape dấu nháy đơn nên không cứu được lỗi
+> này. Lỗi cực khó phát hiện khi test nhanh vì đa số câu KHÔNG chứa dấu nháy đơn nên vẫn chạy bình
+> thường — chỉ lộ ra đúng câu có từ như "school's"/"I'd"/"don't".
+
+```javascript
+// ❌ SAI — gãy nếu optText chứa dấu nháy đơn
+wrap.innerHTML = shuffled.map((optText, i) => `
+  <button onclick="answerMCQ('${qid}', this, '${esc(optText)}')">${esc(optText)}</button>
+`).join('');
+
+// ✅ ĐÚNG — render trước, gắn sự kiện sau bằng addEventListener, không qua thuộc tính onclick
+wrap.innerHTML = shuffled.map(optText => `<button class="q-opt">${esc(optText)}</button>`).join('');
+Array.from(wrap.children).forEach((btn, i) => {
+  btn.addEventListener('click', () => answerMCQ(qid, btn, shuffled[i]));
+});
+```
+
+**Áp dụng cho MỌI component tự render phần tử tương tác từ text tự do trong data** — không riêng
+MCQ: Matching (1.3), Word-Tile/Ordering (1.4), Tap-to-Categorize (design 4.17), Passage Arrangement.
+Quy tắc chung: bất kỳ lúc nào cần truyền 1 giá trị text (không phải id/số cố định) vào 1 hàm xử lý
+sự kiện, luôn dùng `addEventListener` với closure giữ biến, không bao giờ nội suy text đó vào chuỗi
+thuộc tính HTML (`onclick`, `onchange`...).
 
 ### 2.1 Audio Player Chuẩn
 
