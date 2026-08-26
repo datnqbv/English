@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unit 1 — Writing: Practice &amp; Production Writing (Short Message)</title>
+  <title>Unit 1 — Writing: A Long and Healthy Life (Short Message Practice)</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 
   <script type="application/json" id="athena-context">
   {
-    "title": "Unit 1 - Writing - Part 2 & 3: Practice & Production Writing - Short Message",
+    "title": "Unit 1: A Long and Healthy Life - Writing Practice & Production (Short Message)",
     "subject": "Tiếng Anh",
     "grade": "11",
     "objectives": [
@@ -627,10 +627,42 @@
       font-weight: 700;
       color: var(--jade-dark);
       margin-top: 8px;
+      transition: all .15s ease;
+    }
+
+    .write-footer .reveal-btn {
+      margin-top: 0;
     }
 
     .reveal-btn:hover {
       background: var(--cream-3);
+    }
+
+    .reveal-btn:disabled {
+      background: var(--cream-2);
+      border-color: var(--paper-line);
+      color: var(--ink-faint);
+      cursor: not-allowed;
+      opacity: .75;
+    }
+
+    .idea-prompts-box {
+      background: var(--cream-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin: 10px 0 12px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--ink-2);
+    }
+
+    .idea-prompts-box b {
+      color: var(--jade-dark);
+    }
+
+    .idea-prompts-box ul {
+      margin: 4px 0 0;
+      padding-left: 18px;
     }
 
     .self-check {
@@ -853,7 +885,7 @@
   <header class="top-header">
     <div class="wrap top-header-inner">
       <h1>Unit 1 — Writing: Practice &amp; Production</h1>
-      <div class="sub">A long and healthy life &bull; Short Message</div>
+      <div class="sub">A Long and Healthy Life &bull; Short Message</div>
       <div class="top-header-tags">
         <span class="top-tag">💬 Short Message</span>
         <span class="top-tag">🎯 Target: 35–45 words</span>
@@ -912,16 +944,20 @@
           </thead>
           <tbody>
             <tr>
-              <td><input type="text" placeholder="(1) Accept?"></td>
-              <td><input type="text" placeholder="(2) Câu hỏi 1?"></td>
-              <td><input type="text" placeholder="(3) Câu hỏi 2?"></td>
-              <td><input type="text" placeholder="(4) Closing?"></td>
+              <td><input type="text" class="re-input" id="re_1" placeholder="(1) Accept?"></td>
+              <td><input type="text" class="re-input" id="re_2" placeholder="(2) Câu hỏi 1?"></td>
+              <td><input type="text" class="re-input" id="re_3" placeholder="(3) Câu hỏi 2?"></td>
+              <td><input type="text" class="re-input" id="re_4" placeholder="(4) Closing?"></td>
             </tr>
           </tbody>
         </table>
-        <button class="reveal-btn"
-          onclick="openPopup('Đáp án gợi ý — Read & Extract', '<ol style=\'padding-left:20px;line-height:1.7;\'><li><b>(1) Accept:</b> That sounds like a great idea, I\'m in!</li><li><b>(2) Ask info 1:</b> How many steps do we need each day?</li><li><b>(3) Ask info 2:</b> Is there a group chat to track our progress?</li><li><b>(4) Closing:</b> Talk to you soon!</li></ol>')">Xem
-          đáp án gợi ý</button>
+        <div class="write-footer">
+          <button class="reveal-btn" id="revealRE" disabled data-unlocked-label="Xem đáp án gợi ý" onclick="openPopup('Đáp án gợi ý — Read &amp; Extract', '<ol style=\'padding-left:20px;line-height:1.7;\'><li><b>(1) Accept:</b> That sounds like a great idea, I\'m in!</li><li><b>(2) Ask info 1:</b> How many steps do we need each day?</li><li><b>(3) Ask info 2:</b> Is there a group chat to track our progress?</li><li><b>(4) Closing:</b> Talk to you soon!</li></ol>')">🔒 Submit bài để mở đáp án gợi ý</button>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span class="word-count" id="reWarning" style="color:var(--wrong);display:none;">Điền đủ cả 4 ô trống rồi mới Submit nhé.</span>
+            <button class="an-btn" id="submitRE" onclick="submitReadExtract()">✓ Submit</button>
+          </div>
+        </div>
       </div>
 
       <div class="next-level-wrap">
@@ -979,7 +1015,7 @@
 
       <!-- Activity 7: Guided Writing (Full Support - 3 Situations) -->
       <div class="card">
-        <span class="activity-label">Activity 7 &bull; Guided Writing (Hỗ trợ đầy đủ &bull; 3 bài tình huống)</span>
+        <span class="activity-label">Activity 7 &bull; Guided Writing (Full Support &bull; 3 Situations)</span>
 
         <!-- Situation 1 -->
         <div style="margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--cream-2);">
@@ -991,11 +1027,11 @@
             <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the class starts &bull; Ask if you need to bring
             your own yoga mat.
           </div>
-          <textarea class="write-area"
-            placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
-          <button class="reveal-btn"
-            onclick="openPopup('Model Answer — Bài 1 (Yoga)', '<p><i>Hi Lan, That sounds great, I\'d love to join! I\'ve been wanting to try yoga for a while. What time does the class start, and do I need to bring my own yoga mat? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 39 từ</p>')">Xem
-            model answer (39 từ)</button>
+          <textarea class="write-area" id="writeAreaGW1" placeholder="Hi Lan, ________________________________ Talk to you soon! Minh" oninput="checkRevealGate('writeAreaGW1', 'revealGW1', 15)"></textarea>
+          <div class="write-footer">
+            <button class="reveal-btn" id="revealGW1" disabled data-unlocked-label="Xem model answer (39 từ)" data-min-words="15" onclick="openPopup('Model Answer — Bài 1 (Yoga)', '<p><i>Hi Lan, That sounds great, I\'d love to join! I\'ve been wanting to try yoga for a while. What time does the class start, and do I need to bring my own yoga mat? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 39 từ</p>')">🔒 Viết ít nhất 15 từ để mở khoá model answer (0/15)</button>
+            <button class="an-btn" onclick="submitSimple('writeAreaGW1', 'Bài 1 (Yoga class)')">✓ Submit</button>
+          </div>
         </div>
 
         <!-- Situation 2 -->
@@ -1008,11 +1044,11 @@
             <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the class starts &bull; Ask if you need to bring
             any ingredients.
           </div>
-          <textarea class="write-area"
-            placeholder="Hi Nam, ________________________________ See you then! Minh"></textarea>
-          <button class="reveal-btn"
-            onclick="openPopup('Model Answer — Bài 2 (Cooking class)', '<p><i>Hi Nam, That sounds great, I\'d love to join! I\'ve been wanting to try cooking healthier meals for a while. What time does the class start, and do I need to bring any ingredients? See you then! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 38 từ</p>')">Xem
-            model answer (38 từ)</button>
+          <textarea class="write-area" id="writeAreaGW2" placeholder="Hi Nam, ________________________________ See you then! Minh" oninput="checkRevealGate('writeAreaGW2', 'revealGW2', 15)"></textarea>
+          <div class="write-footer">
+            <button class="reveal-btn" id="revealGW2" disabled data-unlocked-label="Xem model answer (38 từ)" data-min-words="15" onclick="openPopup('Model Answer — Bài 2 (Cooking class)', '<p><i>Hi Nam, That sounds great, I\'d love to join! I\'ve been wanting to try cooking healthier meals for a while. What time does the class start, and do I need to bring any ingredients? See you then! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 38 từ</p>')">🔒 Viết ít nhất 15 từ để mở khoá model answer (0/15)</button>
+            <button class="an-btn" onclick="submitSimple('writeAreaGW2', 'Bài 2 (Cooking class)')">✓ Submit</button>
+          </div>
         </div>
 
         <!-- Situation 3 -->
@@ -1025,36 +1061,42 @@
             <b>Gợi ý:</b> Accept the invitation &bull; Ask what time the group meets &bull; Ask if you need any special
             shoes.
           </div>
-          <textarea class="write-area"
-            placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
-          <button class="reveal-btn"
-            onclick="openPopup('Model Answer — Bài 3 (Jogging group)', '<p><i>Hi Lan, That sounds great, count me in! I\'ve been wanting to get more exercise on weekends. What time does the group meet, and do I need any special shoes? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 35 từ</p>')">Xem
-            model answer (35 từ)</button>
+          <textarea class="write-area" id="writeAreaGW3" placeholder="Hi Lan, ________________________________ Talk to you soon! Minh" oninput="checkRevealGate('writeAreaGW3', 'revealGW3', 15)"></textarea>
+          <div class="write-footer">
+            <button class="reveal-btn" id="revealGW3" disabled data-unlocked-label="Xem model answer (35 từ)" data-min-words="15" onclick="openPopup('Model Answer — Bài 3 (Jogging group)', '<p><i>Hi Lan, That sounds great, count me in! I\'ve been wanting to get more exercise on weekends. What time does the group meet, and do I need any special shoes? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 35 từ</p>')">🔒 Viết ít nhất 15 từ để mở khoá model answer (0/15)</button>
+            <button class="an-btn" onclick="submitSimple('writeAreaGW3', 'Bài 3 (Jogging group)')">✓ Submit</button>
+          </div>
         </div>
       </div>
 
       <!-- Activity 8: Guided Writing (Reduced Support) -->
       <div class="card">
-        <span class="activity-label">Activity 8 &bull; Guided Writing (Hỗ trợ giảm dần)</span>
+        <span class="activity-label">Activity 8 &bull; Guided Writing (Reduced Support)</span>
         <div class="desc-en">Use only short keywords below to write the Yoga message without sentence starters:</div>
-        <div
-          style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
+        <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
           🧘 <b>Accept:</b> love to join<br>
           ⏰ <b>Ask info (1):</b> what time / class start<br>
           🎒 <b>Ask info (2):</b> bring / own yoga mat
         </div>
-        <textarea class="write-area" placeholder="Tự viết trọn vẹn tin nhắn 35–45 từ ở đây..."></textarea>
+        <textarea class="write-area" id="writeAreaGWRed" placeholder="Tự viết trọn vẹn tin nhắn 35–45 từ ở đây..." oninput="trackWriting('writeAreaGWRed', 'wordCountGWRed')"></textarea>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+          <div class="word-count" id="wordCountGWRed">0 từ / mục tiêu 35–45 từ</div>
+        </div>
+        <div class="write-footer">
+          <div></div>
+          <button class="an-btn" onclick="submitSimple('writeAreaGWRed', 'Activity 8 · Guided Writing')">✓ Submit</button>
+        </div>
       </div>
 
       <!-- Activity 9: Correct the mistake -->
       <div class="card">
-        <span class="activity-label">Activity 9 &bull; Correct the Mistake (6 lỗi)</span>
+        <span class="activity-label">Activity 9 &bull; Correct the Mistake (6 Errors)</span>
         <div class="desc-en">Find and correct 6 mistakes in the message below:</div>
         <div class="error-text-card">
           Dear Lan, <span class="err-tag">[1]</span> I acknowledge your invitation and will attend. <span
             class="err-tag">[2]</span> What time does the class starts <span class="err-tag">[3]</span>, and do I needs
-          <span class="err-tag">[4]</span> to bring my own yoga mat. <span class="err-tag">[5]</span> Yours sincerely,
-          <span class="err-tag">[6]</span> Minh
+            <span class="err-tag">[4]</span> to bring my own yoga mat. <span class="err-tag">[5]</span> Yours sincerely,
+            <span class="err-tag">[6]</span> Minh
         </div>
         <div id="p2Err"></div>
       </div>
@@ -1069,8 +1111,12 @@
         </div>
         <textarea class="write-area" id="writeAreaP2" placeholder="Hi Nam, ..."
           oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
-        <div class="write-footer">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
           <div class="word-count" id="wordCountP2">0 từ / mục tiêu 35–45 từ</div>
+        </div>
+        <div class="write-footer">
+          <div></div>
+          <button class="an-btn" onclick="submitSimple('writeAreaP2', 'Activity 10 · Independent Writing')">✓ Submit</button>
         </div>
       </div>
 
@@ -1089,7 +1135,7 @@
 
       <!-- Activity 11: Guided Writing (Advanced Situations) -->
       <div class="card">
-        <span class="activity-label">Activity 11 &bull; Guided Writing (Tình huống nâng cao)</span>
+        <span class="activity-label">Activity 11 &bull; Guided Writing (Advanced Situations)</span>
 
         <!-- Sit 1 -->
         <div style="margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--cream-2);">
@@ -1102,11 +1148,12 @@
           <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">
             <b>Include:</b> Accept &bull; Ask what time it starts &bull; Ask if you need to sign up before going.
           </div>
-          <textarea class="write-area"
-            placeholder="Hi Nam, ________________________________ See you there! Minh"></textarea>
-          <button class="reveal-btn"
-            onclick="openPopup('Model Answer — Motivation Meetup', '<p><i>Hi Nam, Thank you so much for telling me about this. I\'ve found it hard to stay motivated lately, so I\'d love to come. What time does the meetup start, and do I need to sign up before going? See you there! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 43 từ</p>')">Xem
-            model answer (43 từ)</button>
+          <textarea class="write-area" id="writeAreaAdv1"
+            placeholder="Hi Nam, ________________________________ See you there! Minh" oninput="checkRevealGate('writeAreaAdv1', 'revealAdv1', 15)"></textarea>
+          <div class="write-footer">
+            <button class="reveal-btn" id="revealAdv1" disabled data-unlocked-label="Xem model answer (43 từ)" data-min-words="15" onclick="openPopup('Model Answer — Motivation Meetup', '<p><i>Hi Nam, Thank you so much for telling me about this. I\'ve found it hard to stay motivated lately, so I\'d love to come. What time does the meetup start, and do I need to sign up before going? See you there! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 43 từ</p>')">🔒 Viết ít nhất 15 từ để mở khoá model answer (0/15)</button>
+            <button class="an-btn" onclick="submitSimple('writeAreaAdv1', 'Bài 1 (Motivation Meetup)')">✓ Submit</button>
+          </div>
         </div>
 
         <!-- Sit 2 -->
@@ -1120,11 +1167,12 @@
             <b>Include:</b> Accept &bull; Ask what time it starts &bull; Ask if you need to bring your health insurance
             card.
           </div>
-          <textarea class="write-area"
-            placeholder="Hi Lan, ________________________________ Talk to you soon! Minh"></textarea>
-          <button class="reveal-btn"
-            onclick="openPopup('Model Answer — Health Check-up', '<p><i>Hi Lan, That sounds like a great idea, count me in! I\'ve been meaning to get a check-up for a while. What time does the camp start, and do I need to bring my health insurance card? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 42 từ</p>')">Xem
-            model answer (42 từ)</button>
+          <textarea class="write-area" id="writeAreaAdv2"
+            placeholder="Hi Lan, ________________________________ Talk to you soon! Minh" oninput="checkRevealGate('writeAreaAdv2', 'revealAdv2', 15)"></textarea>
+          <div class="write-footer">
+            <button class="reveal-btn" id="revealAdv2" disabled data-unlocked-label="Xem model answer (42 từ)" data-min-words="15" onclick="openPopup('Model Answer — Health Check-up', '<p><i>Hi Lan, That sounds like a great idea, count me in! I\'ve been meaning to get a check-up for a while. What time does the camp start, and do I need to bring my health insurance card? Talk to you soon! Minh</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 42 từ</p>')">🔒 Viết ít nhất 15 từ để mở khoá model answer (0/15)</button>
+            <button class="an-btn" onclick="submitSimple('writeAreaAdv2', 'Bài 2 (Health Check-up)')">✓ Submit</button>
+          </div>
         </div>
 
         <div class="self-check">
@@ -1135,7 +1183,7 @@
 
       <!-- Activity 12: Free Writing (3 Situations with Athena AI Rubric) -->
       <div class="card">
-        <span class="activity-label">Activity 12 &bull; Free Writing (Chấm điểm AI Athena &bull; 3 bài độc lập)</span>
+        <span class="activity-label">Activity 12 &bull; Free Writing (Graded by AI Athena &bull; 3 Tasks)</span>
 
         <!-- FW 1 -->
         <div style="margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--cream-2);">
@@ -1144,11 +1192,22 @@
             <i>"Hi! Our class is having a sharing session about people around us who live a healthy life. Do you want to
               come and share your story too?"</i>
           </div>
+          <div class="idea-prompts-box">
+            <b>💡 Idea prompts:</b>
+            <ul>
+              <li>Think about what you'd want to know before joining (when it happens, where, or how to prepare).</li>
+              <li>Choose 2 pieces of information that matter most to you.</li>
+              <li>Keep your message friendly and informal, just like chatting with a classmate.</li>
+            </ul>
+          </div>
           <textarea class="write-area" id="fwArea1" placeholder="Hi ..., ..."
             oninput="trackWriting('fwArea1', 'fwCount1')"></textarea>
-          <div class="write-footer">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
             <div class="word-count" id="fwCount1">0 từ / mục tiêu 35–45 từ</div>
-            <button class="an-btn" onclick="submitFW(1)">✓ Nộp bài 1 cho AI</button>
+          </div>
+          <div class="write-footer">
+            <div></div>
+            <button class="an-btn" onclick="submitFW(1)">✓ Submit to Athena</button>
           </div>
           <div class="write-feedback" id="fwFb1" style="display:none;"></div>
         </div>
@@ -1160,11 +1219,22 @@
             <i>"Hey! There's a new juice bar that opened near school with really healthy smoothies. Want to check it out
               with me after school?"</i>
           </div>
+          <div class="idea-prompts-box">
+            <b>💡 Idea prompts:</b>
+            <ul>
+              <li>Think about what you'd want to know about the juice bar (opening hours, price, what's on the menu...).</li>
+              <li>Choose 2 pieces of information that matter most to you.</li>
+              <li>Keep your reply short and casual — this is a message to a friend, not a formal reply.</li>
+            </ul>
+          </div>
           <textarea class="write-area" id="fwArea2" placeholder="Hi ..., ..."
             oninput="trackWriting('fwArea2', 'fwCount2')"></textarea>
-          <div class="write-footer">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
             <div class="word-count" id="fwCount2">0 từ / mục tiêu 35–45 từ</div>
-            <button class="an-btn" onclick="submitFW(2)">✓ Nộp bài 2 cho AI</button>
+          </div>
+          <div class="write-footer">
+            <div></div>
+            <button class="an-btn" onclick="submitFW(2)">✓ Submit to Athena</button>
           </div>
           <div class="write-feedback" id="fwFb2" style="display:none;"></div>
         </div>
@@ -1175,11 +1245,22 @@
           <div class="msg-preview-card" style="margin-top:6px;">
             <i>"A few of us are going cycling around the lake this weekend to stay fit. Would you like to join us?"</i>
           </div>
+          <div class="idea-prompts-box">
+            <b>💡 Idea prompts:</b>
+            <ul>
+              <li>Think about what you'd want to know before joining (meeting time, meeting point, what to bring...).</li>
+              <li>Choose 2 pieces of information that matter most to you.</li>
+              <li>Remember your message still needs a Greeting, Accept, 2 questions, Closing, and Sign-off.</li>
+            </ul>
+          </div>
           <textarea class="write-area" id="fwArea3" placeholder="Hi ..., ..."
             oninput="trackWriting('fwArea3', 'fwCount3')"></textarea>
-          <div class="write-footer">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
             <div class="word-count" id="fwCount3">0 từ / mục tiêu 35–45 từ</div>
-            <button class="an-btn" onclick="submitFW(3)">✓ Nộp bài 3 cho AI</button>
+          </div>
+          <div class="write-footer">
+            <div></div>
+            <button class="an-btn" onclick="submitFW(3)">✓ Submit to Athena</button>
           </div>
           <div class="write-feedback" id="fwFb3" style="display:none;"></div>
         </div>
@@ -1187,7 +1268,7 @@
 
       <!-- Activity 13: Self-Evaluation -->
       <div class="card">
-        <span class="activity-label">Activity 13 &bull; Self-Evaluation (Tự đánh giá cuối Unit)</span>
+        <span class="activity-label">Activity 13 &bull; Self-Evaluation (End of Unit)</span>
         <div class="self-check">
           <div class="sc-title">Checklist 5 tiêu chí chuẩn đầu ra:</div>
           <div id="p3SelfEval"></div>
@@ -1202,7 +1283,7 @@
 
   </main>
 
-  <footer>Unit 1 &bull; A long and healthy life &bull; Short Message Practice. Aiducation Design System v4.</footer>
+  <footer>Unit 1 &bull; A Long and Healthy Life &bull; Short Message Practice. Aiducation Design System v4.</footer>
 
   <div class="celebrate-banner" id="celebrateBanner">🎉 Tuyệt vời! Bạn đã làm rất tốt!</div>
 
@@ -1450,7 +1531,7 @@
         { prompt: "2. You want to ask what time you should arrive.", start: "What time", ans: "What time should I arrive?" },
         { prompt: "3. You want to accept an invitation to go swimming.", start: "That sounds", ans: "That sounds great, I'd love to join!" },
         { prompt: "4. You want to ask if you need to bring anything.", start: "Do I", ans: "Do I need to bring anything?" },
-        { prompt: "5. You want to ask where you should meet someone.", start: "Where", ans: "Where should we meet?" }
+        { prompt: "5. You want to ask where you should meet someone.", start: "Where", ans: "Where should I meet you?" }
       ];
       document.getElementById('p2Func').innerHTML = funcs.map((f, i) => `
         <div class="func-card">
@@ -1614,16 +1695,77 @@
       "My message reaches the required word count (35-45 words) and uses an appropriately informal tone."
     ]);
 
-    // ---------- Word Counter & Free Writing Submission ----------
+    // ---------- Word Counter ----------
     function trackWriting(textareaId, counterId) {
       const text = document.getElementById(textareaId).value.trim();
       const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
       document.getElementById(counterId).textContent = `${count} từ / mục tiêu 35–45 từ`;
     }
 
+    // ---------- Gated Reveal Engine ----------
+    function checkRevealGate(textareaId, revealBtnId, minWords) {
+      const el = document.getElementById(textareaId);
+      const btn = document.getElementById(revealBtnId);
+      if (!el || !btn) return;
+      const text = el.value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      if (count >= minWords) {
+        btn.disabled = false;
+        btn.textContent = '🔓 ' + (btn.dataset.unlockedLabel || 'Xem model answer');
+      } else {
+        btn.disabled = true;
+        btn.textContent = `🔒 Viết ít nhất ${minWords} từ để mở khoá model answer (${count}/${minWords})`;
+      }
+    }
+
+    // ---------- Activity 2 Submission ----------
+    function submitReadExtract() {
+      const val1 = document.getElementById('re_1').value.trim();
+      const val2 = document.getElementById('re_2').value.trim();
+      const val3 = document.getElementById('re_3').value.trim();
+      const val4 = document.getElementById('re_4').value.trim();
+      const warn = document.getElementById('reWarning');
+      const rev = document.getElementById('revealRE');
+
+      if (!val1 || !val2 || !val3 || !val4) {
+        warn.style.display = 'inline';
+        return;
+      }
+      warn.style.display = 'none';
+      rev.disabled = false;
+      rev.textContent = '🔓 ' + (rev.dataset.unlockedLabel || 'Xem đáp án gợi ý');
+      showCelebrateBanner('🎉 Nộp bài thành công! Bạn có thể xem đáp án gợi ý.');
+    }
+
+    // ---------- Simple Submission with Modal Preview ----------
+    function submitSimple(textareaId, title) {
+      const el = document.getElementById(textareaId);
+      if (!el) return;
+      const text = el.value.trim();
+      if (!text) {
+        openPopup('Thông báo', '<p style="color:var(--wrong);font-weight:600;">Bạn hãy viết nội dung vào khung trước khi Submit nhé!</p>');
+        return;
+      }
+      const words = text.split(/\s+/).filter(Boolean).length;
+      showCelebrateBanner('🎉 Nộp bài thành công!');
+      const previewHtml = `
+        <div style="background:var(--cream);border:1.5px solid var(--jade-soft);border-radius:var(--radius-sm);padding:14px;margin-bottom:12px;">
+          <div style="font-size:13px;font-weight:700;color:var(--jade-dark);margin-bottom:6px;">✓ Đã ghi nhận bài làm (${words} từ):</div>
+          <div style="font-size:14.5px;line-height:1.6;color:var(--ink);font-style:italic;">"${esc(text)}"</div>
+        </div>
+        <p style="font-size:13.5px;color:var(--ink-2);margin:0;">Bạn đã hoàn thành phần luyện tập này. Hãy đối chiếu với Model Answer hoặc chuyển sang bài tiếp theo nhé!</p>
+      `;
+      openPopup('Bài viết của bạn — ' + title, previewHtml);
+      LMS().event('activity_submitted', { id: textareaId, words: words });
+    }
+
+    // ---------- Free Writing Submission (Athena AI) ----------
     function submitFW(num) {
       const text = document.getElementById('fwArea' + num).value.trim();
-      if (!text) return;
+      if (!text) {
+        openPopup('Thông báo', '<p style="color:var(--wrong);font-weight:600;">Bạn hãy viết tin nhắn vào khung trước khi Submit nhé!</p>');
+        return;
+      }
       const fb = document.getElementById('fwFb' + num);
       fb.style.display = 'block';
 
@@ -1636,10 +1778,11 @@
           <div class="rubric-item"><div class="rlabel">Length &amp; Fluency</div><div class="rscore">4<small>/4</small></div></div>
         </div>
         <div style="margin-top:10px;font-size:14.5px;color:var(--jade-dark);font-weight:600;">
-          🎉 <b>Nhận xét từ AI:</b> Bài viết đạt ${words} từ (chuẩn 35–45 từ). Tin nhắn thể hiện rõ lời nhận và hỏi đủ 2 thông tin với giọng văn thân mật, tự nhiên!
+          🎉 <b>Nhận xét từ AI Athena:</b> Bài viết đạt ${words} từ (chuẩn 35–45 từ). Tin nhắn thể hiện rõ lời nhận và hỏi đủ 2 thông tin với giọng văn thân mật, tự nhiên!
         </div>
       `;
-      showCelebrateBanner('🎉 Bài viết ' + num + ' đã được nộp thành công!');
+      showCelebrateBanner('🎉 Bài viết ' + num + ' đã được gửi cho AI Athena chấm thành công!');
+      LMS().event('free_writing_submitted', { task: num, words: words });
     }
 
     // ---------- Reading Progress Bar ----------

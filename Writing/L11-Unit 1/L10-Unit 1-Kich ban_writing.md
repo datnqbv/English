@@ -1,7 +1,7 @@
 ## Kịch bản: Writing — Unit 1 (Lớp 11) — Writing
 
 **Nguồn:** `L11-Unit_1_Writing_Full.docx` · đối chiếu Syllabus Grade 11, Week 1–3, Unit 1 — dòng Writing (SGK Global Success Tiếng Anh 11, SB p.14-15)
-**Tên bài hiển thị cho học sinh:** A long and healthy life — Short Message (giữ tên gốc)
+**Tên bài hiển thị cho học sinh:** A Long and Healthy Life — Short Message (giữ tên gốc, sửa lại chuẩn Title Case)
 **Xác nhận:** Không có nội dung học thuật gốc nào bị sửa — chỉ lược bỏ 2 mục ghi chú nội bộ (Bảng kiểm tra số lượng câu hỏi, ghi chú lý giải cách cài lỗi) theo Quy tắc mới 1, còn lại map nguyên văn vào cấu trúc PHẦN 1/PHẦN 2 chuẩn.
 **Ảnh cần sinh:** Không có — Hook dùng giao diện notification/chat bubble thuần (không ảnh hero, không hoạ tiết nền cần sinh).
 
@@ -30,7 +30,7 @@
 
 **Khi chạm mở — giao diện nhắn tin (chat bubble):**
 
-> Nam: Hey! Are you free this Saturday? I'm trying a new gym near my house — want to join me for a workout? 💪
+> Nam: Hey! Are you free this Saturday? I'm trying out a new gym near my house — want to join me for a workout? 💪
 
 **Ngay bên dưới, câu dẫn: "Which reply is better?"**
 
@@ -52,14 +52,14 @@
 
 **HOW TO WRITE A SHORT MESSAGE**
 
-| Phần | Câu hỏi định hướng |
-|---|---|
-| ① Greeting | Chào thế nào cho thân mật, đúng kiểu nhắn tin bạn bè? |
-| ② Main Body | Accept the invitation + Ask for 2 pieces of information |
-| ③ Closing | Kết thúc tin nhắn thế nào cho tự nhiên? |
-| ④ Sign-off | Ký tên |
+| Phần | Câu hỏi định hướng | Ví dụ trong bài mẫu (mục D) |
+|---|---|---|
+| ① Greeting | Chào thế nào cho thân mật, đúng kiểu nhắn tin bạn bè? | "Hi Nam," |
+| ② Main Body | Accept the invitation + Ask for 2 pieces of information | "That sounds great, count me in! I've been wanting to try a new gym for a while. What time should we meet on Saturday, and do I need to bring my own equipment?" |
+| ③ Closing | Kết thúc tin nhắn thế nào cho tự nhiên? | "See you then!" |
+| ④ Sign-off | Ký tên | "Minh" |
 
-> 🎨 **Thiết kế:** chuỗi khối dọc, progressive disclosure như Unit 2 Lớp 10. Mobile: giữ nguyên 1 cột, giảm khoảng cách giữa các thẻ.
+> 🎨 **Thiết kế:** chuỗi khối dọc, progressive disclosure như Unit 2 Lớp 10 — mỗi thẻ khi mở ra hiện cả câu hỏi định hướng LẪN ví dụ trích trực tiếp từ bài mẫu ở mục D (đúng pattern flow-card đã chuẩn hoá ở Unit 2 Lớp 10: câu hỏi định hướng trước, ví dụ trích dẫn thật sau, để học sinh thấy ngay lý thuyết áp dụng vào bài mẫu cụ thể như thế nào — không chỉ đọc câu hỏi trừu tượng). Mobile: giữ nguyên 1 cột, giảm khoảng cách giữa các thẻ.
 
 ---
 
@@ -103,7 +103,7 @@
 |---|---|
 | Formula | Chỉ cần tên riêng, không cần cụm dẫn |
 | Example ✓ | Minh |
-| Not good ✗ | Best regards, Minh Nguyen Van *(quá đầy đủ/trang trọng cho 1 tin nhắn thân mật)* |
+| Not good ✗ | Best regards, Nguyen Van Minh *(quá đầy đủ/trang trọng cho 1 tin nhắn thân mật — đã sửa lại đúng thứ tự Họ-Đệm-Tên của tên người Việt)* |
 
 > 🎨 **Thiết kế:** flip card, contrasting cases Example✓/Not good✗ — Desktop cạnh nhau, Mobile xếp dọc. Toàn bộ 5 ví dụ "Not good" đều xoay quanh 1 lỗi gốc — nhầm formal/informal (đúng lưu ý P14 syllabus). Thêm 1 dòng tổng kết cuối mục B: "Short message luôn thân mật — tránh mọi cụm từ trang trọng dùng trong thư/email nghiêm túc."
 
@@ -254,7 +254,7 @@ Write a sentence to express each message below. Begin with the words given.
 2. What time should I arrive?
 3. That sounds great, I'd love to join!
 4. Do I need to bring anything?
-5. Where should we meet?
+5. Where should I meet you?
 
 ## [Write · Sentence building]
 
@@ -486,12 +486,13 @@ Task: Read the invitation below and write a COMPLETE short message replying to i
 
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: build/test ở khung ≤480px trước khi mở rộng desktop.
-- File Practice (PHẦN 2 — gồm Part 2 + Part 3) không cần Reference Pane — mỗi bài tập (Identify/Structure/Write/Production) dùng đoạn tin nhắn độc lập, không cần tra lại nội dung PHẦN 1.
+- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
 - File Lesson (PHẦN 1) kết thúc tự nhiên sau "Ghi chú thiết kế chung (Part 1)" — không có nút/link sang File Practice.
 - File Practice bắt đầu tự nhiên từ Identify — không có nút "Quay lại Bài học".
 - Đồng bộ dữ liệu: bài mẫu ở Hook (Bản A) và ở mục D phải cùng nội dung cốt lõi (đã đúng trong bản gốc).
 - Không có ảnh cần sinh cho unit này (Hook dùng chat bubble/notification thuần).
 
 ### Ghi chú cho Giai đoạn 2 (Design)
-- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment)
-- Luyện tập (PHẦN 2) không cần Reference Pane — ghi rõ để bên build không tự thêm.
+- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), **9.17 (Gated Reveal — bắt buộc cho MỌI nút "Xem model answer" trong file này: Guided Writing Bài 1/2, Correct the mistake, Production Guided Writing Bài 1/2 — không được bấm xem được ngay từ đầu, phải khoá đến khi học sinh đã gõ đủ ~30-50% số từ mục tiêu 35-45 từ)**; xem code mẫu tại `03_engine_tiengAnh.md` mục 1.18.
+- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
+- Mọi heading/tên hoạt động khi build HTML viết tiếng Anh trước (VD "Guided Writing (Full Support)"), tiếng Việt chỉ đặt nhỏ hơn bên dưới nếu cần — không dịch chèn vào giữa tên hoạt động.
