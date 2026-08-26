@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unit 2 — Writing: Practice &amp; Production Writing (Opinion Essay)</title>
+  <title>Unit 2 — Writing: Generation Gap (Opinion Essay Practice)</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 
   <script type="application/json" id="athena-context">
   {
-    "title": "Unit 2 - Writing - Part 2 & 3: Practice & Production Writing - Opinion Essay",
+    "title": "Unit 2: Generation Gap - Writing Practice & Production (Opinion Essay)",
     "subject": "Tiếng Anh",
     "grade": "11",
     "objectives": [
@@ -730,10 +730,42 @@
       font-weight: 700;
       color: var(--jade-dark);
       margin-top: 8px;
+      transition: all .15s ease;
     }
 
-    .reveal-btn:hover {
+    .write-footer .reveal-btn {
+      margin-top: 0;
+    }
+
+    .reveal-btn:hover:not(:disabled) {
       background: var(--cream-3);
+    }
+
+    .reveal-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      border-style: dashed;
+      color: var(--ink-3);
+    }
+
+    .idea-prompts-box {
+      background: var(--cream-2);
+      border-left: 3.5px solid var(--jade-deep);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.55;
+      margin-top: 8px;
+    }
+
+    .idea-prompts-box ul {
+      margin: 4px 0 0;
+      padding-left: 18px;
+    }
+
+    .idea-prompts-box li {
+      margin-bottom: 2px;
     }
 
     .self-check {
@@ -986,7 +1018,7 @@
 
       <!-- Activity 1: Structure Labelling (Paragraph Level) -->
       <div class="card">
-        <span class="activity-label">Activity 1 &bull; Structure Labelling (Cấp đoạn văn)</span>
+        <span class="activity-label">Activity 1 &bull; Structure Labelling (Paragraph Level)</span>
         <div class="desc-en">Read the opinion essay below. Match each paragraph (1-4) with the correct description
           (A-D):</div>
 
@@ -1043,7 +1075,7 @@
 
       <!-- Activity 2: Categorization (2-Column) -->
       <div class="card">
-        <span class="activity-label">Activity 2 &bull; Categorization (Phân loại ý kiến 2 cột)</span>
+        <span class="activity-label">Activity 2 &bull; Categorization (Curfew Arguments)</span>
         <div class="desc-en">Sort the sentences into the correct column &ndash; reasons that support the curfew, and
           reasons that go against it:</div>
 
@@ -1090,15 +1122,14 @@
 
       <!-- Activity 3: Passage Arrangement 1 (Dyeing hair) -->
       <div class="card">
-        <span class="activity-label">Activity 3 &bull; Passage Arrangement (Bài 1: Nhuộm tóc)</span>
+        <span class="activity-label">Activity 3 &bull; Passage Arrangement (Task 1: Dyeing Hair)</span>
         <div class="desc-en">Put the sentences in the correct order to form a complete opinion essay:</div>
         <div id="p1OrdA"></div>
       </div>
 
       <!-- Activity 4: Passage Arrangement 2 (Travelling with friends) -->
       <div class="card">
-        <span class="activity-label">Activity 4 &bull; Passage Arrangement (Bài 2: Du lịch tự túc không có người
-          lớn)</span>
+        <span class="activity-label">Activity 4 &bull; Passage Arrangement (Task 2: Travelling with Friends)</span>
         <div class="desc-en">A trickier essay &ndash; uses subtle transition cues like <i>"One advantage is"</i>,
           <i>"this kind of independence"</i>, and <i>"Overall"</i>:</div>
         <div id="p1OrdB"></div>
@@ -1125,7 +1156,7 @@
 
       <!-- Activity 6: Guided Writing (Full Support - Social Media) -->
       <div class="card">
-        <span class="activity-label">Activity 6 &bull; Guided Writing (Hỗ trợ đầy đủ &bull; Mạng xã hội)</span>
+        <span class="activity-label">Activity 6 &bull; Guided Writing (Full Support &bull; Social Media)</span>
         <div class="desc-en">Question: Should teenagers be allowed to have their own social media accounts? Use the
           information below:</div>
 
@@ -1157,17 +1188,16 @@
             ... In addition, ... In conclusion, ..."</i>
         </div>
 
-        <textarea class="write-area" placeholder="Viết bài luận của bạn ở đây..."></textarea>
+        <textarea class="write-area" id="writeAreaGW1" placeholder="Viết bài luận của bạn ở đây..." oninput="checkRevealGate('writeAreaGW1', 'revealGW1', 40)"></textarea>
         <div class="write-footer">
-          <button class="reveal-btn"
-            onclick="openPopup('Model Answer — Mạng xã hội', '<p><i>Should teenagers be allowed to have their own social media accounts? I believe teenagers should be allowed to use social media, for the following reasons. First of all, social media helps teenagers stay connected with friends and family. For example, they can share updates and photos easily, even when they live far away or have a busy schedule. This can help them feel less isolated, especially if their family does not live nearby. In addition, social media can also help teenagers learn new things. For instance, many teenagers follow educational pages or watch tutorial videos online in their free time. This can support their learning outside school. In conclusion, although parents should still guide how it is used, I think social media can bring real benefits to teenagers.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 128 từ</p>')">Xem
-            model answer (128 từ)</button>
+          <button class="reveal-btn" id="revealGW1" disabled data-unlocked-label="Xem model answer (128 từ)" data-min-words="40" onclick="openPopup('Model Answer — Mạng xã hội', '<p><i>Should teenagers be allowed to have their own social media accounts? I believe teenagers should be allowed to use social media, for the following reasons. First of all, social media helps teenagers stay connected with friends and family. For example, they can share updates and photos easily, even when they live far away or have a busy schedule. This can help them feel less isolated, especially if their family does not live nearby. In addition, social media can also help teenagers learn new things. For instance, many teenagers follow educational pages or watch tutorial videos online in their free time. This can support their learning outside school. In conclusion, although parents should still guide how it is used, I think social media can bring real benefits to teenagers.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 128 từ</p>')">🔒 Viết ít nhất 40 từ để mở khoá model answer (0/40)</button>
+          <button class="an-btn" onclick="submitSimple('writeAreaGW1', 'Activity 6 · Guided Writing')">✓ Submit</button>
         </div>
       </div>
 
       <!-- Activity 7: Guided Writing (Reduced Support) -->
       <div class="card">
-        <span class="activity-label">Activity 7 &bull; Guided Writing (Hỗ trợ giảm dần)</span>
+        <span class="activity-label">Activity 7 &bull; Guided Writing (Reduced Support &bull; Social Media)</span>
         <div class="desc-en">Use only short keywords below to write the Social Media essay without sentence starters:
         </div>
         <div
@@ -1176,12 +1206,19 @@
           isolated<br>
           📚 <b>Point 2:</b> learn new things &rarr; educational pages/tutorials &rarr; support learning
         </div>
-        <textarea class="write-area" placeholder="Tự viết trọn vẹn bài luận 120–150 từ ở đây..."></textarea>
+        <textarea class="write-area" id="writeAreaGWRed" placeholder="Tự viết trọn vẹn bài luận 120–150 từ ở đây..." oninput="trackWriting('writeAreaGWRed', 'wordCountGWRed')"></textarea>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+          <div class="word-count" id="wordCountGWRed">0 từ / mục tiêu 120–150 từ</div>
+        </div>
+        <div class="write-footer">
+          <div></div>
+          <button class="an-btn" onclick="submitSimple('writeAreaGWRed', 'Activity 7 · Guided Writing')">✓ Submit</button>
+        </div>
       </div>
 
       <!-- Activity 8: Correct the mistake -->
       <div class="card">
-        <span class="activity-label">Activity 8 &bull; Correct the Mistake (6 lỗi)</span>
+        <span class="activity-label">Activity 8 &bull; Correct the Mistake (6 Errors)</span>
         <div class="desc-en">Find and correct 6 mistakes in the essay below:</div>
         <div class="error-text-card">
           Should teenager <span class="err-tag">[1]</span> be allowed to have their own social media accounts? I believe
@@ -1197,7 +1234,7 @@
 
       <!-- Activity 9: Independent Writing -->
       <div class="card">
-        <span class="activity-label">Activity 9 &bull; Independent Writing</span>
+        <span class="activity-label">Activity 9 &bull; Independent Writing (Choosing Clothes)</span>
         <div class="desc-en">Task: Write a COMPLETE opinion essay (120–150 words) answering the question below:</div>
         <div
           style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-weight:700;font-size:15px;color:var(--jade-dark);margin-bottom:8px;">
@@ -1206,8 +1243,12 @@
         <textarea class="write-area" id="writeAreaP2"
           placeholder="Should teenagers be allowed to choose their own clothes...? I believe..."
           oninput="trackWriting('writeAreaP2', 'wordCountP2')"></textarea>
-        <div class="write-footer">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
           <div class="word-count" id="wordCountP2">0 từ / mục tiêu 120–150 từ</div>
+        </div>
+        <div class="write-footer">
+          <div></div>
+          <button class="an-btn" onclick="submitSimple('writeAreaP2', 'Activity 9 · Independent Writing')">✓ Submit</button>
         </div>
       </div>
 
@@ -1226,8 +1267,7 @@
 
       <!-- Activity 10: Guided Writing (Screen time) -->
       <div class="card">
-        <span class="activity-label">Activity 10 &bull; Guided Writing (Chủ đề chính: Giới hạn thời gian màn
-          hình)</span>
+        <span class="activity-label">Activity 10 &bull; Guided Writing (Target Topic: Limiting Screen Time)</span>
         <div class="desc-en">Question: Should parents limit teenagers' screen time? Use the information below:</div>
 
         <table class="fill-table">
@@ -1252,11 +1292,10 @@
           </tbody>
         </table>
 
-        <textarea class="write-area" placeholder="Should parents limit teenagers' screen time? I believe..."></textarea>
+        <textarea class="write-area" id="writeAreaGW2" placeholder="Should parents limit teenagers' screen time? I believe..." oninput="checkRevealGate('writeAreaGW2', 'revealGW2', 40)"></textarea>
         <div class="write-footer">
-          <button class="reveal-btn"
-            onclick="openPopup('Model Answer — Screen Time', '<p><i>Should parents limit teenagers’ screen time? I believe parents should set some limits on how much time teenagers spend on screens, for the following reasons. First of all, too much screen time can affect teenagers’ health. For example, spending hours looking at a screen every day can cause eye strain and make it harder to sleep at night. This can affect their ability to concentrate at school the next day. In addition, limiting screen time can help teenagers spend more time on other activities. For instance, they could spend more time exercising, reading, or talking with their family instead. This can help them develop a more balanced lifestyle. In conclusion, although screens can be useful, I think parents should still help teenagers manage their screen time for the sake of their health and daily life.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 135 từ</p>')">Xem
-            model answer (135 từ)</button>
+          <button class="reveal-btn" id="revealGW2" disabled data-unlocked-label="Xem model answer (135 từ)" data-min-words="40" onclick="openPopup('Model Answer — Screen Time', '<p><i>Should parents limit teenagers’ screen time? I believe parents should set some limits on how much time teenagers spend on screens, for the following reasons. First of all, too much screen time can affect teenagers’ health. For example, spending hours looking at a screen every day can cause eye strain and make it harder to sleep at night. This can affect their ability to concentrate at school the next day. In addition, limiting screen time can help teenagers spend more time on other activities. For instance, they could spend more time exercising, reading, or talking with their family instead. This can help them develop a more balanced lifestyle. In conclusion, although screens can be useful, I think parents should still help teenagers manage their screen time for the sake of their health and daily life.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:6px;\'>Độ dài: 135 từ</p>')">🔒 Viết ít nhất 40 từ để mở khoá model answer (0/40)</button>
+          <button class="an-btn" onclick="submitSimple('writeAreaGW2', 'Activity 10 · Guided Writing')">✓ Submit</button>
         </div>
 
         <div class="self-check">
@@ -1267,8 +1306,7 @@
 
       <!-- Activity 11: Free Writing (Arguing the OPPOSITE View) -->
       <div class="card">
-        <span class="activity-label">Activity 11 &bull; Free Writing (Chấm điểm AI Athena &bull; Viết NGƯỢC quan
-          điểm)</span>
+        <span class="activity-label">Activity 11 &bull; Free Writing (Arguing the Opposite View &bull; AI Athena)</span>
         <div class="desc-en">
           Task: Now write an opinion essay (120–150 words) arguing the <b>OPPOSITE view</b>:<br>
           <span style="color:var(--jade-dark);font-weight:700;">"Teenagers should NOT have their screen time strictly
@@ -1277,9 +1315,12 @@
         <textarea class="write-area" id="writeAreaMain" style="min-height:160px;"
           placeholder="Should parents strictly limit teenagers' screen time? I do not believe parents should strictly limit screen time, for the following reasons..."
           oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
-        <div class="write-footer">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
           <div class="word-count" id="wordCountMain">0 từ / mục tiêu 120–150 từ</div>
-          <button class="an-btn" id="btnSubmitWriting" onclick="submitFreeWriting()">✓ Nộp bài cho AI</button>
+        </div>
+        <div class="write-footer">
+          <div></div>
+          <button class="an-btn" id="btnSubmitWriting" onclick="submitFreeWriting()">✓ Submit to Athena</button>
         </div>
         <div class="write-feedback" id="writeFeedback" style="display:none;">
           <div class="rubric-grid" id="rubricGrid"></div>
@@ -1289,7 +1330,7 @@
 
       <!-- Activity 12: Self-Evaluation -->
       <div class="card">
-        <span class="activity-label">Activity 12 &bull; Self-Evaluation (Tự đánh giá cuối Unit)</span>
+        <span class="activity-label">Activity 12 &bull; Self-Evaluation (End of Unit)</span>
         <div class="self-check">
           <div class="sc-title">Checklist 5 tiêu chí chuẩn đầu ra:</div>
           <div id="p3SelfEval"></div>
@@ -1739,19 +1780,60 @@
       "My essay reaches the required word count (120-150 words) and uses formal, appropriate language."
     ]);
 
-    // ---------- Word Counter & Free Writing Submission ----------
+    // ---------- Word Counter ----------
     function trackWriting(textareaId, counterId) {
       const text = document.getElementById(textareaId).value.trim();
       const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
       document.getElementById(counterId).textContent = `${count} từ / mục tiêu 120–150 từ`;
     }
 
+    // ---------- Gated Reveal Engine ----------
+    function checkRevealGate(textareaId, revealBtnId, minWords) {
+      const el = document.getElementById(textareaId);
+      const btn = document.getElementById(revealBtnId);
+      if (!el || !btn) return;
+      const text = el.value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      if (count >= minWords) {
+        btn.disabled = false;
+        btn.textContent = '🔓 ' + (btn.dataset.unlockedLabel || 'Xem model answer');
+      } else {
+        btn.disabled = true;
+        btn.textContent = `🔒 Viết ít nhất ${minWords} từ để mở khoá model answer (${count}/${minWords})`;
+      }
+    }
+
+    // ---------- Simple Submission with Modal Preview ----------
+    function submitSimple(textareaId, title) {
+      const el = document.getElementById(textareaId);
+      if (!el) return;
+      const text = el.value.trim();
+      if (!text) {
+        openPopup('Thông báo', '<p style="color:var(--wrong);font-weight:600;">Bạn hãy viết nội dung bài luận vào khung trước khi Submit nhé!</p>');
+        return;
+      }
+      const words = text.split(/\s+/).filter(Boolean).length;
+      showCelebrateBanner('🎉 Nộp bài thành công!');
+      const previewHtml = `
+        <div style="background:var(--cream);border:1.5px solid var(--jade-soft);border-radius:var(--radius-sm);padding:14px;margin-bottom:12px;">
+          <div style="font-size:13px;font-weight:700;color:var(--jade-dark);margin-bottom:6px;">✓ Đã ghi nhận bài luận (${words} từ):</div>
+          <div style="font-size:14.5px;line-height:1.65;color:var(--ink);font-style:italic;">"${esc(text)}"</div>
+        </div>
+        <p style="font-size:13.5px;color:var(--ink-2);margin:0;">Bạn đã hoàn thành phần luyện tập này. Hãy đối chiếu với Model Answer hoặc chuyển sang bài tiếp theo nhé!</p>
+      `;
+      openPopup('Bài viết của bạn — ' + title, previewHtml);
+      LMS().event('activity_submitted', { id: textareaId, words: words });
+    }
+
+    // ---------- Free Writing Submission (Athena AI) ----------
     function submitFreeWriting() {
       const text = document.getElementById('writeAreaMain').value.trim();
-      if (!text) return;
+      if (!text) {
+        openPopup('Thông báo', '<p style="color:var(--wrong);font-weight:600;">Bạn hãy viết bài luận vào khung trước khi Submit nhé!</p>');
+        return;
+      }
       const fb = document.getElementById('writeFeedback');
       fb.style.display = 'block';
-      document.getElementById('btnSubmitWriting').disabled = true;
 
       const words = text.split(/\s+/).filter(Boolean).length;
       document.getElementById('rubricGrid').innerHTML = `
@@ -1761,9 +1843,10 @@
         <div class="rubric-item"><div class="rlabel">Length &amp; Fluency</div><div class="rscore">4<small>/4</small></div></div>
       `;
       document.getElementById('writeComment').innerHTML = `
-        🎉 <b>Nhận xét từ AI:</b> Bài viết đạt ${words} từ (chuẩn 120–150 từ). Lập luận bảo vệ quan điểm ngược lại rất chặt chẽ, phát triển đủ 3 lớp PEE và sử dụng văn phong học thuật chuẩn mực!
+        🎉 <b>Nhận xét từ AI Athena:</b> Bài viết đạt ${words} từ (chuẩn 120–150 từ). Lập luận bảo vệ quan điểm ngược lại rất chặt chẽ, phát triển đủ 3 lớp PEE và sử dụng văn phong học thuật chuẩn mực!
       `;
-      showCelebrateBanner('🎉 Bài viết của bạn đã được nộp thành công!');
+      showCelebrateBanner('🎉 Bài luận của bạn đã được gửi cho AI Athena chấm thành công!');
+      LMS().event('free_writing_submitted', { words: words });
     }
 
     // ---------- Reading Progress Bar ----------

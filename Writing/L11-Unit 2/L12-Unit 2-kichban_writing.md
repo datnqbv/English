@@ -57,12 +57,16 @@
 
 **HOW TO WRITE AN OPINION ESSAY**
 
-| Phần | Câu hỏi định hướng |
-|---|---|
-| ① Introduction | Vấn đề là gì, và quan điểm của bạn ra sao? |
-| ② Reason 1 | Point → Evidence/Example → Explain |
-| ③ Reason 2 | Point → Evidence/Example → Explain |
-| ④ Conclusion | Tóm lại quan điểm thế nào? |
+| Phần | Câu hỏi định hướng | Ví dụ trong bài mẫu (mục D) |
+|---|---|---|
+| ① Introduction | Vấn đề là gì, và quan điểm của bạn ra sao? | "Should teenagers be allowed to choose their own bedtime? While independence is important, I believe parents should still help set a bedtime for teenagers, for the following reasons." |
+| ② Reason 1 | Point → Evidence/Example → Explain | "First of all, many teenagers do not get enough sleep if they stay up too late. For example, using a phone late at night can easily turn into staying up past midnight. This can lead to tiredness and poor concentration the next day." |
+| ③ Reason 2 | Point → Evidence/Example → Explain | "In addition, a regular bedtime helps teenagers stay focused at school. For instance, students who go to bed at a reasonable time usually find it easier to pay attention in class and finish their homework. Without enough rest, even simple tasks can become much harder." |
+| ④ Conclusion | Tóm lại quan điểm thế nào? | "In conclusion, although teenagers are growing more independent, I think parents should still guide their bedtime for the sake of their health and school performance." |
+
+> 🎨 **Thiết kế:** progressive disclosure — mỗi thẻ khi mở ra hiện cả câu hỏi định hướng lẫn ví dụ
+> trích trực tiếp từ bài mẫu ở mục D (đúng chuẩn Region Highlight/flow-card đã áp dụng ở Unit 2 Lớp
+> 10 và Unit 1 Lớp 11 — xem `02_design_tiengAnh.md` Mục 0 Nguyên tắc 15 + Mục 4.23).
 
 ---
 
@@ -124,7 +128,7 @@
 | Reason 2 | "In addition...much harder." (cả Point+Example+Explain, 1 màu duy nhất) | Màu 3 (sage) |
 | Conclusion | "In conclusion...school performance." | Màu 4 (accent đậm) |
 
-> 🎨 **Thiết kế:** CHỈ 1 vùng được tô sáng tại 1 thời điểm — chạm 1 trong 4 nhãn sẽ tô đúng vùng đó và XOÁ màu vùng đang tô trước đó (không cộng dồn). Mỗi Reason chỉ 1 màu duy nhất, không tách 3 màu con Point/Example/Explain. Không cần nút phân tích tự động — 4 nút tĩnh là đủ.
+> 🎨 **Thiết kế:** CHỈ 1 vùng được tô sáng tại 1 thời điểm — chạm 1 trong 4 nhãn sẽ tô đúng vùng đó và XOÁ màu vùng đang tô trước đó (không cộng dồn). Mỗi Reason chỉ 1 màu duy nhất, không tách 3 màu con Point/Example/Explain. Không cần nút phân tích tự động — 4 nút tĩnh là đủ. **Dùng đúng component Region Highlight** (`02_design_tiengAnh.md` Mục 4.23) — đã chuẩn hoá, không còn là component "mới cần xác nhận" như bản trước.
 > 🎨 **Thiết kế:** Mobile: 4 nút nhãn xếp lưới 2×2 ngay phía trên bài mẫu.
 
 ---
@@ -360,7 +364,7 @@ Task: Write a COMPLETE opinion essay (Introduction with your opinion + 2 Reasons
 
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: build/test ở khung ≤480px trước khi mở rộng desktop.
-- File Practice (PHẦN 2 — gồm Part 2 + Part 3) không cần Reference Pane — mỗi bài tập dùng đoạn văn/chủ đề độc lập, không cần tra lại nội dung PHẦN 1.
+- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
 - File Lesson (PHẦN 1) kết thúc tự nhiên sau mục E — không có nút/link sang File Practice.
 - File Practice bắt đầu tự nhiên từ Identify — không có nút "Quay lại Bài học".
 - Đã bổ sung 1 prompt sinh ảnh cho Hook (xem đầu file, mục "Ảnh cần sinh") — chưa có trong bản Word gốc.
@@ -368,6 +372,6 @@ Task: Write a COMPLETE opinion essay (Introduction with your opinion + 2 Reasons
 - Câu Kết luận ở "Correct the mistake" đã được viết lại so với bản Word gốc để khớp mạch lập luận — xem ghi chú tại đúng vị trí bài tập.
 
 ### Ghi chú cho Giai đoạn 2 (Design)
-- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment)
-- Cơ chế 4-nút highlight ở mục D (PHẦN 1) là component mới, khác cơ chế hotspot-từng-câu đã dùng ở Unit 1 — cần xác nhận với `02_design_tiengAnh.md` trước khi build nếu chưa có component tương ứng.
-- Luyện tập (PHẦN 2) không cần Reference Pane — ghi rõ để bên build không tự thêm.
+- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), **4.23 (Region Highlight — dùng cho cơ chế 4-nút tô sáng vùng ở mục D, đã chuẩn hoá)**, **9.17 (Gated Reveal — áp dụng cho mọi nút "Xem model answer" trong file: Guided Writing hỗ trợ đầy đủ, Production Guided Writing — khoá đến khi học sinh đã gõ đủ ~30-50% số từ mục tiêu 120-150 từ)**; code mẫu tại `03_engine_tiengAnh.md` mục 1.18.
+- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
+- Mọi heading/tên hoạt động khi build HTML viết tiếng Anh trước, tiếng Việt nhỏ hơn đặt sau (Mục 0 Nguyên tắc 15) — không dịch chèn vào giữa tên hoạt động (VD tên Activity Passage Arrangement, Sentence Building... giữ nguyên tiếng Anh).
