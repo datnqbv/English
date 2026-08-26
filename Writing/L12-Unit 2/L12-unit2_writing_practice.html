@@ -193,31 +193,42 @@
       transition: width .1s ease;
     }
 
-    /* Level Navigation Tabs (In-flow, non-sticky to prevent mobile scroll clipping) */
+    /* Level Navigation Tabs */
     .level-tabs-wrap {
-      position: relative;
-      background: var(--cream-2);
-      padding: 12px 0;
-      border-bottom: 1.5px solid var(--paper-line);
-      margin-bottom: 8px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--paper-line);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .level-tabs {
       display: flex;
       gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 2px 0;
+    }
+
+    .level-tabs::-webkit-scrollbar {
+      display: none;
     }
 
     .level-tab {
+      flex-shrink: 0;
       background: var(--white);
       border: 1.5px solid var(--paper-line-2);
       border-radius: 999px;
-      padding: 8px 18px;
+      padding: 6px 16px;
       font-weight: 700;
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--ink-2);
-      min-height: 42px;
+      min-height: 38px;
       transition: all .15s ease;
       display: inline-flex;
       align-items: center;
