@@ -1087,7 +1087,8 @@
       <div class="practice-ref-pane" id="practiceRefPane">
         <div class="pref-head">
           <div class="pref-tabs" id="prefTabs">
-            <button class="pref-tab active" onclick="switchRefTab('winning')">🎤 Demo Speech</button>
+            <button class="pref-tab active" onclick="switchRefTab('canteen')">🍴 Canteen Passage</button>
+            <button class="pref-tab" onclick="switchRefTab('winning')">🎤 Demo Speech</button>
             <button class="pref-tab" onclick="switchRefTab('signals')">🔗 Signal Words</button>
           </div>
         </div>
@@ -1457,46 +1458,21 @@
       `
     };
 
-    const levelRefTabs = {
-      'phase-0': [
-        { key: 'winning', label: '🎤 Demo Speech' },
-        { key: 'signals', label: '🔗 Signal Words' }
-      ],
-      'phase-1': [
-        { key: 'winning', label: '🎤 Demo Speech' },
-        { key: 'signals', label: '🔗 Signal Words' }
-      ],
-      'phase-2': [
-        { key: 'signals', label: '🔗 Signal Words' }
-      ],
-      'phase-3': [
-        { key: 'signals', label: '🔗 Signal Words' }
-      ]
-    };
-
-    function renderRefTabsForLevel(levelId) {
-      const tabs = levelRefTabs[levelId] || levelRefTabs['phase-0'];
-      const tabsContainer = document.getElementById('prefTabs');
-      tabsContainer.innerHTML = tabs.map((t, idx) => `
-        <button class="pref-tab ${idx === 0 ? 'active' : ''}" onclick="switchRefTab('${t.key}')">${t.label}</button>
-      `).join('');
-      switchRefTab(tabs[0].key);
-    }
-
     function switchRefTab(tabKey) {
-      document.querySelectorAll('.pref-tab').forEach(b => {
-        const attr = b.getAttribute('onclick') || '';
-        b.classList.toggle('active', attr.includes(`'${tabKey}'`));
-      });
-      document.getElementById('prefBody').innerHTML = refData[tabKey] || '';
+      document.querySelectorAll('.pref-tab').forEach(b => b.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.pref-tab')).find(b => b.getAttribute('onclick').includes(tabKey));
+      if (activeBtn) activeBtn.classList.add('active');
+      document.getElementById('prefBody').innerHTML = refData[tabKey];
     }
-    renderRefTabsForLevel('phase-0');
+    switchRefTab('canteen');
 
     // ---------- Level Navigation ----------
     function goToLevel(id) {
       document.querySelectorAll('.level-tab').forEach(t => t.classList.toggle('active', t.dataset.id === id));
       document.querySelectorAll('.q-level-section').forEach(s => s.style.display = (s.id === 'q_' + id ? 'block' : 'none'));
-      renderRefTabsForLevel(id);
+      if (id === 'phase-0') switchRefTab('canteen');
+      if (id === 'phase-1' || id === 'phase-2') switchRefTab('signals');
+      if (id === 'phase-3') switchRefTab('winning');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
