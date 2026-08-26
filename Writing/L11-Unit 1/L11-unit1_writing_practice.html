@@ -32,6 +32,10 @@
   }
   </script>
 
+  <script type="application/json" id="athena-manifest">
+  {"version":"1.0","type":"practice","subject":"english","grade":11,"unit":1,"skill":"writing","completion":"self-evaluation-after-athena","stateful":true}
+  </script>
+
   <style>
     :root {
       /* Neutrals · giấy & mực */
@@ -875,6 +879,9 @@
         grid-template-columns: 1fr;
       }
     }
+    /* v4 compliance layer */
+    textarea.write-area{overflow-y:hidden}.correct-write-wrap{margin-top:14px}.correct-write-wrap textarea{min-height:150px}.gate-note{font-size:13px;color:var(--ink-3);font-weight:700}.athena-wait{display:none;margin-top:10px;padding:12px;border:1px solid var(--jade-soft);border-radius:var(--radius-sm);background:var(--jade-pale);color:var(--jade-dark);font-weight:700}.athena-wait.show{display:block}.level-tab:disabled{opacity:.45;cursor:not-allowed}.phase-lock-note{font-size:13px;color:var(--ink-3);text-align:center;margin-top:7px}.model-template{display:none}
+    @media(max-width:599px){.fw-sticky-count{position:sticky;bottom:8px;z-index:4;width:max-content;margin-left:auto;padding:6px 10px!important;border:1px solid var(--jade-soft);border-radius:999px;background:var(--white);box-shadow:var(--shadow)}.write-footer .an-btn{width:100%}}
   </style>
 </head>
 
@@ -1768,21 +1775,13 @@
       }
       const fb = document.getElementById('fwFb' + num);
       fb.style.display = 'block';
-
       const words = text.split(/\s+/).filter(Boolean).length;
-      fb.innerHTML = `
-        <div class="rubric-grid">
-          <div class="rubric-item"><div class="rlabel">Task Achievement</div><div class="rscore">4<small>/4</small></div></div>
-          <div class="rubric-item"><div class="rlabel">Organisation</div><div class="rscore">4<small>/4</small></div></div>
-          <div class="rubric-item"><div class="rlabel">Language Use</div><div class="rscore">4<small>/4</small></div></div>
-          <div class="rubric-item"><div class="rlabel">Length &amp; Fluency</div><div class="rscore">4<small>/4</small></div></div>
-        </div>
-        <div style="margin-top:10px;font-size:14.5px;color:var(--jade-dark);font-weight:600;">
-          🎉 <b>Nhận xét từ AI Athena:</b> Bài viết đạt ${words} từ (chuẩn 35–45 từ). Tin nhắn thể hiện rõ lời nhận và hỏi đủ 2 thông tin với giọng văn thân mật, tự nhiên!
-        </div>
-      `;
-      showCelebrateBanner('🎉 Bài viết ' + num + ' đã được gửi cho AI Athena chấm thành công!');
-      LMS().event('free_writing_submitted', { task: num, words: words });
+      if (words < 35 || words > 45) {
+        fb.textContent = 'Bài viết cần nằm trong khoảng 35–45 từ.';
+        return;
+      }
+      fb.textContent = '⏳ Đang gửi cho Athena...';
+      LMS().event('free_writing_submitted', { task: num, words: words, text: text });
     }
 
     // ---------- Reading Progress Bar ----------
@@ -1794,6 +1793,48 @@
     });
 
     LMS().ready();
+  </script>
+  <script>
+    /* Behaviour alignment with Design v4 / Engine v1.13. */
+    const v4State={phase:'phase-0',submitted:new Set(),athenaDone:new Set(),athenaFeedback:{},completionSent:false};
+    const countWords=t=>{const s=t.trim();return s?s.split(/\s+/).filter(Boolean).length:0};
+    function grow(el){el.style.height='auto';el.style.height=Math.max(120,el.scrollHeight)+'px'}
+    document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{grow(t);saveV4()});grow(t)});
+    ['fwCount1','fwCount2','fwCount3'].forEach(id=>document.getElementById(id)?.classList.add('fw-sticky-count'));
+
+    /* Functional-writing suggestions unlock only after the learner has written. */
+    document.querySelectorAll('#p2Func .func-card').forEach(card=>{const input=card.querySelector('input'),btn=card.querySelector('button');if(!input||!btn)return;btn.disabled=!input.value.trim();input.addEventListener('input',()=>{btn.disabled=!input.value.trim();saveV4()})});
+
+    /* Correct the Mistake is a real writing task with Submit -> gated answer reveal. */
+    const oldErrorHost=document.getElementById('p2Err');oldErrorHost.hidden=true;
+    const correctWrap=document.createElement('div');correctWrap.className='correct-write-wrap';correctWrap.innerHTML='<label for="correctMistakes"><b>Rewrite the message and correct all six mistakes.</b></label><textarea class="write-area" id="correctMistakes" placeholder="Hi Lan, ..."></textarea><div class="write-footer"><span class="gate-note" id="correctGate">Write at least 15 words, then Submit.</span><button class="reveal-btn" id="revealCorrect" disabled>🔒 Submit to view suggested corrections</button><button class="an-btn" id="submitCorrect" disabled>✓ Submit</button></div><div class="model-template" id="modelCorrect"><ol><li><b>Dear Lan,</b> → <b>Hi Lan,</b></li><li><b>I acknowledge your invitation and will attend.</b> → <b>That sounds great, I\'d love to join!</b></li><li><b>does the class starts</b> → <b>does the class start</b></li><li><b>do I needs</b> → <b>do I need</b></li><li>Replace the full stop after <b>yoga mat</b> with <b>?</b></li><li><b>Yours sincerely,</b> → <b>Talk to you soon!</b></li></ol></div>';oldErrorHost.after(correctWrap);
+    const correctArea=document.getElementById('correctMistakes'),submitCorrect=document.getElementById('submitCorrect'),revealCorrect=document.getElementById('revealCorrect');correctArea.addEventListener('input',()=>{const n=countWords(correctArea.value);submitCorrect.disabled=n<15;document.getElementById('correctGate').textContent=n+'/15 words required';grow(correctArea);saveV4()});submitCorrect.addEventListener('click',()=>{v4State.submitted.add('correctMistakes');submitCorrect.disabled=true;revealCorrect.disabled=false;saveV4();LMS().event('activity_submitted',{id:'correctMistakes',words:countWords(correctArea.value)});refreshPhaseGates()});revealCorrect.addEventListener('click',()=>openPopup('Suggested corrections — 6 mistakes',document.getElementById('modelCorrect').innerHTML));
+
+    /* Model answers unlock only after explicit submission. */
+    const revealMap={writeAreaGW1:'revealGW1',writeAreaGW2:'revealGW2',writeAreaGW3:'revealGW3',writeAreaAdv1:'revealAdv1',writeAreaAdv2:'revealAdv2'};
+    checkRevealGate=function(textareaId,revealBtnId,minWords){const n=countWords(document.getElementById(textareaId).value),btn=document.getElementById(revealBtnId);btn.disabled=!v4State.submitted.has(textareaId);btn.textContent=v4State.submitted.has(textareaId)?'🔓 '+(btn.dataset.unlockedLabel||'Xem model answer'):'🔒 Submit after writing at least '+minWords+' words ('+n+'/'+minWords+')';grow(document.getElementById(textareaId));saveV4()};
+    submitSimple=function(textareaId,title){const el=document.getElementById(textareaId),n=countWords(el.value),hasModel=Boolean(revealMap[textareaId]),min=hasModel?15:35;if(n<min){openPopup('Chưa đủ nội dung','<p style="color:var(--wrong);font-weight:700;">Hãy viết thêm '+(min-n)+' từ trước khi Submit.</p>');return}v4State.submitted.add(textareaId);const revealId=revealMap[textareaId];if(revealId){const b=document.getElementById(revealId);b.disabled=false;b.textContent='🔓 '+(b.dataset.unlockedLabel||'Xem model answer')}LMS().event('activity_submitted',{id:textareaId,words:n,text:el.value});showCelebrateBanner('🎉 Đã ghi nhận bài viết '+n+' từ.');if(textareaId==='writeAreaGWRed'||textareaId==='writeAreaP2')openPopup('Self-check — '+title,'<ul><li>Đã có Greeting và Sign-off?</li><li>Đã Accept rõ ràng?</li><li>Đã hỏi đúng 2 thông tin?</li><li>Văn phong thân mật và đạt 35–45 từ?</li></ul>');saveV4();refreshPhaseGates()};
+
+    /* Real Athena bridge: no fabricated scores or comments. */
+    [1,2,3].forEach(i=>{const fb=document.getElementById('fwFb'+i);fb.className+=' athena-wait';fb.setAttribute('role','status');fb.setAttribute('aria-live','polite')});
+    submitFW=function(num){const area=document.getElementById('fwArea'+num),n=countWords(area.value),fb=document.getElementById('fwFb'+num);if(n<35||n>45){openPopup('Kiểm tra số từ','<p style="color:var(--wrong);font-weight:700;">Bài viết cần 35–45 từ. Hiện tại: '+n+' từ.</p>');return}fb.style.display='block';fb.classList.add('show');fb.textContent='⏳ Đang gửi cho Athena...';document.querySelector('[onclick="submitFW('+num+')"]').disabled=true;LMS().event('free_writing_submitted',{task:num,words:n,text:area.value,rubric:['Task Achievement','Organisation','Language Use','Length & Fluency']});v4State.submitted.add('fw'+num);saveV4()};
+    window.addEventListener('athena:writing-feedback',e=>{const d=e.detail||{},num=Number(d.task),fb=document.getElementById('fwFb'+num);if(!fb||!num)return;const scores=d.scores||{};fb.innerHTML='<div class="rubric-grid">'+['Task Achievement','Organisation','Language Use','Length & Fluency'].map((name,i)=>'<div class="rubric-item"><div class="rlabel">'+name+'</div><div class="rscore">'+esc(String(scores[name]??scores[i]??'—'))+'<small>/4</small></div></div>').join('')+'</div><div style="margin-top:10px">'+esc(d.comment||'Athena feedback received.')+'</div>';v4State.athenaDone.add(num);v4State.athenaFeedback[num]=d;saveV4();refreshPhaseGates()});
+
+    /* Sequential phase gates. */
+    const phaseOrder=['phase-0','phase-1','phase-2','phase-3'];document.querySelectorAll('.level-tab').forEach((b,i)=>b.disabled=i>0);document.querySelectorAll('.next-level-btn').forEach(b=>b.disabled=true);
+    const baseGoToLevel=goToLevel;goToLevel=function(id){const i=phaseOrder.indexOf(id);if(i>0&&document.querySelector('.level-tab[data-id="'+id+'"]')?.disabled)return;baseGoToLevel(id);v4State.phase=id;saveV4();reportV4Height()};
+    const baseAnswerMCQ=answerMCQ;answerMCQ=function(...args){baseAnswerMCQ(...args);saveV4();refreshPhaseGates()};const baseCheckOrdering=checkOrdering;checkOrdering=function(...args){baseCheckOrdering(...args);saveV4();refreshPhaseGates()};const baseSubmitReadExtract=submitReadExtract;submitReadExtract=function(){baseSubmitReadExtract();if([...document.querySelectorAll('.re-input')].every(x=>x.value.trim()))v4State.submitted.add('readExtract');saveV4();refreshPhaseGates()};
+    function allDone(prefix){return Object.entries(mcqState).filter(([k])=>k.startsWith(prefix)).every(([,v])=>v.done)}function orderCorrect(id){const s=ordState[id];return s&&s.placed.join('')===s.correctOrder.join('')}
+    function unlockPhase(i){const tab=document.querySelector('.level-tab[data-id="'+phaseOrder[i]+'"]');if(tab)tab.disabled=false;const next=document.querySelector('#q_'+phaseOrder[i-1]+' .next-level-btn');if(next)next.disabled=false}
+    function refreshPhaseGates(){if(allDone('p0SL')&&v4State.submitted.has('readExtract'))unlockPhase(1);if(orderCorrect('p1OrdA')&&orderCorrect('p1OrdB'))unlockPhase(2);const funcReady=[...document.querySelectorAll('#p2Func input')].every(x=>x.value.trim());const phase2Writing=['writeAreaGW1','writeAreaGW2','writeAreaGW3','writeAreaGWRed','correctMistakes','writeAreaP2'].every(x=>v4State.submitted.has(x));if(funcReady&&allDone('p2SB')&&phase2Writing)unlockPhase(3);LMS().progress({done:v4State.submitted.size+v4State.athenaDone.size,total:14});checkComplete()}
+    document.querySelectorAll('#p2Func input,.re-input').forEach(x=>x.addEventListener('input',()=>{saveV4();refreshPhaseGates()}));
+
+    /* Persistent state, resume, completion and iframe resizing. */
+    function snapshot(){const fields={};document.querySelectorAll('input[type="text"],textarea').forEach(x=>fields[x.id]=x.value);const checks=[...document.querySelectorAll('#p3SelfEval .sc-item')].map(x=>x.classList.contains('checked'));const mcq={};Object.entries(mcqState).forEach(([k,v])=>mcq[k]=v.done);return{phase:v4State.phase,submitted:[...v4State.submitted],athenaDone:[...v4State.athenaDone],athenaFeedback:v4State.athenaFeedback,completionSent:v4State.completionSent,fields,checks,mcq}}
+    function saveV4(){LMS().state(snapshot());reportV4Height()}function reportV4Height(){LMS().resize({height:document.documentElement.scrollHeight})}
+    if(window.AiducationLMS)window.AiducationLMS.onResume=s=>{if(!s)return;v4State.phase=s.phase||'phase-0';v4State.submitted=new Set(s.submitted||[]);v4State.athenaDone=new Set(s.athenaDone||[]);v4State.athenaFeedback=s.athenaFeedback||{};v4State.completionSent=!!s.completionSent;Object.entries(s.fields||{}).forEach(([id,v])=>{const x=document.getElementById(id);if(x){x.value=v;if(x.tagName==='TEXTAREA')grow(x)}});Object.entries(s.mcq||{}).forEach(([k,v])=>{if(mcqState[k]&&v)mcqState[k].done=true});(s.checks||[]).forEach((v,i)=>{if(v)document.querySelectorAll('#p3SelfEval .sc-item')[i]?.classList.add('checked')});Object.entries(revealMap).forEach(([id,r])=>checkRevealGate(id,r,15));if(v4State.submitted.has('correctMistakes')){revealCorrect.disabled=false;submitCorrect.disabled=true}refreshPhaseGates();baseGoToLevel(v4State.phase)};
+    const baseToggleSelfCheck=toggleSelfCheck;toggleSelfCheck=function(el){baseToggleSelfCheck(el);saveV4();checkComplete()};function checkComplete(){const selfDone=[...document.querySelectorAll('#p3SelfEval .sc-item')].every(x=>x.classList.contains('checked'));const guidedDone=['writeAreaAdv1','writeAreaAdv2'].every(x=>v4State.submitted.has(x));if(selfDone&&guidedDone&&v4State.athenaDone.size===3&&!v4State.completionSent){v4State.completionSent=true;LMS().complete({summary:'Unit 1 Writing Practice completed',score:3,max:3,items:[...v4State.athenaDone].map(n=>({id:'fw'+n,prompt:'Athena Free Writing '+n,chosen:document.getElementById('fwArea'+n).value,correct:'Open response',isCorrect:null}))});saveV4()}}
+    window.addEventListener('load',()=>{document.querySelectorAll('textarea').forEach(grow);refreshPhaseGates();LMS().ready();reportV4Height()});new ResizeObserver(reportV4Height).observe(document.body);
   </script>
 </body>
 

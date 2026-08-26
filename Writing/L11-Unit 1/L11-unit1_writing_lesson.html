@@ -33,6 +33,10 @@
   }
   </script>
 
+  <script type="application/json" id="athena-manifest">
+  {"version":"1.0","type":"lesson","subject":"english","grade":11,"unit":1,"skill":"writing","completion":"platform-tracked","stateful":true}
+  </script>
+
   <style>
     :root {
       /* Neutrals · giấy & mực */
@@ -840,6 +844,9 @@
         width: 100%;
       }
     }
+    /* v4 interaction alignment */
+    .formula-box{cursor:pointer}.formula-box .contrast-card.bad{display:none}.formula-box.open .contrast-card.bad{display:block}.formula-box.open .contrast-grid{grid-template-columns:1fr 1fr}.formula-box:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.builder-stack{position:relative}.builder-stack:before{content:"";position:absolute;left:36px;top:24px;bottom:24px;width:2px;background:var(--jade-soft)}.builder-step{position:relative;scroll-snap-align:start}.lesson-complete-wrap{display:none}.lesson-complete-wrap.show{display:block}
+    @media(max-width:480px){.builder-stack{max-height:72vh;overflow-y:auto;scroll-snap-type:y mandatory;padding-right:4px}.builder-step{min-height:38vh}.formula-box.open .contrast-grid{grid-template-columns:1fr}}
   </style>
 </head>
 
@@ -1254,6 +1261,18 @@
       });
       document.getElementById('analyzerInfo').innerHTML = '💡 Hãy chạm vào một câu bất kỳ để xem vai trò chức năng trong tin nhắn.';
     }
+  </script>
+  <script>
+    /* LMS-safe lesson interactions and the requested flip/scroll-stack behaviour. */
+    function LessonLMS(){return window.AiducationLMS||{ready(){},progress(){},event(){},state(){},resize(){}}}
+    const lessonState={reply:'',chatOpen:false,formulas:new Set(),hotspots:new Set(),signals:new Set()};
+    const formulaBoxes=[...document.querySelectorAll('.formula-box')];formulaBoxes.forEach((box,i)=>{box.tabIndex=0;box.setAttribute('role','button');box.setAttribute('aria-expanded','false');const toggle=()=>{box.classList.toggle('open');box.setAttribute('aria-expanded',String(box.classList.contains('open')));if(box.classList.contains('open'))lessonState.formulas.add(i);saveLesson()};box.addEventListener('click',toggle);box.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}})});
+    const builderSteps=[...document.querySelectorAll('.builder-step')];if(builderSteps.length){const stack=document.createElement('div');stack.className='builder-stack';builderSteps[0].before(stack);builderSteps.forEach(x=>stack.append(x))}
+    document.getElementById('hookNotification').addEventListener('click',()=>{lessonState.chatOpen=true;saveLesson()});document.querySelectorAll('.reply-choice-card').forEach(x=>x.addEventListener('click',()=>{lessonState.reply=x.id==='replyCardA'?'A':'B';saveLesson();refreshLessonComplete()}));document.querySelectorAll('.hotspot').forEach(x=>x.addEventListener('click',()=>{lessonState.hotspots.add(x.dataset.role);saveLesson();refreshLessonComplete()}));document.querySelectorAll('.signal-pill').forEach((x,i)=>x.addEventListener('click',()=>{lessonState.signals.add(i);saveLesson()}));
+    function refreshLessonComplete(){const ready=lessonState.reply&&lessonState.hotspots.size===5;document.querySelector('.lesson-complete-wrap').classList.toggle('show',Boolean(ready));LessonLMS().progress({done:Number(lessonState.chatOpen)+Number(Boolean(lessonState.reply))+lessonState.hotspots.size,total:7})}
+    function saveLesson(){LessonLMS().state({chatOpen:lessonState.chatOpen,reply:lessonState.reply,formulas:[...lessonState.formulas],hotspots:[...lessonState.hotspots],signals:[...lessonState.signals],lastAction:'lesson'});LessonLMS().resize({height:document.documentElement.scrollHeight})}
+    if(window.AiducationLMS)window.AiducationLMS.onResume=s=>{if(!s)return;lessonState.chatOpen=!!s.chatOpen;lessonState.reply=s.reply||'';lessonState.formulas=new Set(s.formulas||[]);lessonState.hotspots=new Set(s.hotspots||[]);lessonState.signals=new Set(s.signals||[]);if(lessonState.chatOpen)document.getElementById('chatCard').classList.add('open');if(lessonState.reply)document.getElementById('replyCard'+lessonState.reply).classList.add(lessonState.reply==='A'?'selected-good':'selected-bad');lessonState.formulas.forEach(i=>{formulaBoxes[i]?.classList.add('open');formulaBoxes[i]?.setAttribute('aria-expanded','true')});lessonState.signals.forEach(i=>document.querySelectorAll('.signal-pill')[i]?.classList.add('open'));refreshLessonComplete()};
+    window.addEventListener('load',()=>{LessonLMS().ready();refreshLessonComplete();LessonLMS().resize({height:document.documentElement.scrollHeight})});new ResizeObserver(()=>LessonLMS().resize({height:document.documentElement.scrollHeight})).observe(document.body);
   </script>
 </body>
 
