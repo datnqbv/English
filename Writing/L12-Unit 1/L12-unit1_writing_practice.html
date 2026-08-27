@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Practice — Unit 1 (Lớp 12): Life Stories — Biography</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Athena Manifest -->
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Life Stories — Biography Practice",
+    "subject": "Tiếng Anh",
+    "grade": "12",
+    "objectives": [
+      "Synthesise and summarise information from different sources",
+      "Write a biography (180-200 words) of a well-known person"
+    ],
+    "structure": [
+      { "id": "phase0", "title": "1. Identify — Structure Labelling & Extract" },
+      { "id": "phase1", "title": "2. Structure — Passage Arrangement (Nobel)" },
+      { "id": "phase2", "title": "3. Write — Sentence Building & Guided Writing (Giap)" },
+      { "id": "phase3", "title": "4. Production — Disney & Free Writing Jobs (Athena)" },
+      { "id": "phase4", "title": "5. Self-eval — Biography Checklist" }
+    ],
+    "athenaGuidance": "Luyện tập viết tiểu sử lớp 12 (180-200 từ), bao gồm các hoạt động nhận diện đoạn, sắp xếp câu theo thời gian và nhân quả, phối hợp thì quá khứ, kết hợp 2 nguồn tài liệu và nộp bài viết tự do cho AI Athena chấm theo Rubric 4 tiêu chí."
+  }
+  </script>
+
+  <style>
+    :root {
+      --jade-deep: #1b6b50;
+      --jade-dark: #124d39;
+      --jade-soft: #85c2a3;
+      --jade-pale: #eaf5f0;
+      --jade-text: #0e4332;
+      --cream: #faf8f5;
+      --cream-2: #f0ede6;
+      --ink: #1f2937;
+      --ink-2: #4b5563;
+      --ink-3: #6b7280;
+      --paper-line: #e5e0d8;
+      --white: #ffffff;
+      --accent: #d97706;
+      --accent-pale: #fef3c7;
+      --success: #16a34a;
+      --success-pale: #dcfce7;
+      --danger: #dc2626;
+      --danger-pale: #fee2e2;
+      --warning: #ca8a04;
+      --warning-bg: #fef9c3;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --shadow: 0 4px 16px rgba(18, 77, 57, 0.08);
+      --shadow-lg: 0 10px 28px rgba(18, 77, 57, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    /* TOP HEADER & PHASE NAV */
+    .practice-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--paper-line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-title-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .header-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    .phase-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .phase-tab {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      min-height: 38px;
+    }
+
+    .phase-tab:hover {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+    }
+
+    .phase-tab.active {
+      background: var(--jade-deep);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(27, 107, 80, 0.28);
+    }
+
+    /* MAIN APP CONTAINER */
+    .app-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 20px;
+      align-items: start;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* MOBILE VIEW TOGGLE BAR */
+    .mobile-view-bar-wrap {
+      display: none;
+    }
+
+    .mobile-view-bar {
+      display: none;
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+      box-shadow: var(--shadow);
+    }
+
+    .view-btn {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      min-height: 38px;
+      transition: all 0.2s ease;
+    }
+
+    .view-btn.active {
+      background: var(--jade-deep);
+      color: #fff;
+    }
+
+    /* LEFT PANE: REFERENCE PANE (4.8b) */
+    .ref-pane {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      position: sticky;
+      top: 16px;
+      max-height: calc(100vh - 32px);
+      overflow-y: auto;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ref-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .ref-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ref-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .ref-tab-btn {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      background: var(--cream-2);
+      text-align: center;
+      min-height: 38px;
+    }
+
+    .ref-tab-btn.active {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+    }
+
+    .ref-content-box {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .ref-portrait-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--cream);
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--paper-line);
+      margin-bottom: 12px;
+    }
+
+    .ref-portrait-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--jade-deep);
+      background: var(--white);
+    }
+
+    .bio-ref-para {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+
+    .bio-ref-para strong {
+      color: var(--jade-dark);
+    }
+
+    .signals-mini-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sig-mini-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .sig-mini-item strong {
+      color: var(--jade-deep);
+    }
+
+    /* RIGHT PANE: EXERCISE WORKSPACE */
+    .exercise-workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .activity-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .act-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .act-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .act-badge {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .act-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    .act-desc {
+      font-size: 14px;
+      color: var(--ink-2);
+      margin-bottom: 16px;
+    }
+
+    /* Activity 1: Matching Cards */
+    .match-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .match-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .match-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .match-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    .match-card:hover {
+      border-color: var(--jade-soft);
+      background: var(--white);
+    }
+
+    .match-card.selected {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      font-weight: 700;
+      box-shadow: 0 0 0 2px rgba(27, 107, 80, 0.2);
+    }
+
+    .match-card.matched {
+      background: var(--cream-2);
+      border-color: var(--paper-line);
+      color: var(--ink-3);
+      cursor: default;
+    }
+
+    /* Activity 2: Extract Table */
+    .extract-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .extract-table th, .extract-table td {
+      border: 1px solid var(--paper-line);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .extract-table th {
+      background: var(--cream-2);
+      color: var(--jade-dark);
+      font-weight: 700;
+    }
+
+    .extract-input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 13.5px;
+      background: var(--white);
+    }
+
+    .extract-input:focus {
+      outline: none;
+      border-color: var(--jade-deep);
+    }
+
+    /* Activity 3 & 4: Passage Arrangement (Tap to order) */
+    .arrange-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .arrange-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .arrange-item:hover {
+      border-color: var(--jade-soft);
+      background: var(--white);
+    }
+
+    .arrange-item.selected {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+      box-shadow: 0 0 0 2px rgba(27, 107, 80, 0.2);
+    }
+
+    .arrange-pos {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .arrange-item.placed .arrange-pos {
+      background: var(--jade-deep);
+      color: #fff;
+    }
+
+    /* Common Buttons */
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--jade-deep);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+      min-height: 42px;
+    }
+
+    .action-btn:hover {
+      background: var(--jade-dark);
+      transform: translateY(-1px);
+    }
+
+    .action-btn:disabled {
+      background: var(--cream-2);
+      color: var(--ink-3);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .ghost-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      border: 1px solid var(--paper-line);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      min-height: 38px;
+    }
+
+    .ghost-btn:hover {
+      background: var(--paper-line);
+    }
+
+    /* Explanation & Feedback */
+    .feedback-box {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      line-height: 1.65;
+      display: none;
+    }
+
+    .feedback-box.show {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .feedback-box.correct {
+      background: var(--success-pale);
+      border: 1.5px solid var(--success);
+      color: #14532d;
+    }
+
+    .feedback-box.incorrect {
+      background: var(--danger-pale);
+      border: 1.5px solid var(--danger);
+      color: #7f1d1d;
+    }
+
+    /* Textarea & Word counter */
+    .writing-textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 14px;
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 14.5px;
+      line-height: 1.7;
+      background: var(--white);
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+
+    .writing-textarea:focus {
+      outline: none;
+      border-color: var(--jade-deep);
+      box-shadow: 0 0 0 3px rgba(27, 107, 80, 0.12);
+    }
+
+    .word-counter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--ink-2);
+      margin-bottom: 14px;
+    }
+
+    .word-counter-badge {
+      font-weight: 800;
+      color: var(--jade-dark);
+      background: var(--cream-2);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* Two Sources Card (Combine Activity) */
+    .source-pair-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .source-pair-header {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .source-pill {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+    }
+
+    /* Athena AI Modal Bottom-sheet */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(18, 77, 57, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      max-width: 650px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--jade-soft);
+      animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 540px) {
+      .rubric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .rubric-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+    }
+
+    .rubric-score {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--jade-deep);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Responsive Breakdown */
+    @media (max-width: 900px) {
+      .app-container {
+        grid-template-columns: 1fr;
+        padding-top: 4px;
+      }
+
+      .mobile-view-bar-wrap {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 95;
+        background: var(--cream);
+        padding: 6px 16px;
+        height: 52px;
+        box-sizing: border-box;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+
+      .mobile-view-bar-wrap.nav-hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .mobile-view-bar {
+        display: flex;
+        margin-bottom: 0;
+      }
+
+      .ref-pane {
+        position: relative;
+        top: 0;
+        max-height: none;
+      }
+
+      /* Chế độ xem trên Mobile */
+      .app-container.view-ref-only {
+        display: block;
+      }
+
+      .app-container.view-ref-only .ref-pane {
+        display: flex;
+        position: relative;
+        top: 0;
+        max-height: none !important;
+        box-shadow: var(--shadow);
+      }
+
+      .app-container.view-ref-only .ref-content-box {
+        max-height: none !important;
+        overflow: visible !important;
+      }
+
+      .app-container.view-ref-only #btnToggleCollapse {
+        display: none;
+      }
+
+      .app-container.view-ref-only .exercise-workspace {
+        display: none;
+      }
+
+      .app-container.view-ex-only .ref-pane {
+        display: none;
+      }
+
+      .app-container.view-ex-only .exercise-workspace {
+        display: flex;
+      }
+
+      .app-container.view-split .ref-pane {
+        display: flex;
+        position: sticky;
+        top: 54px;
+        z-index: 90;
+        max-height: 320px;
+        box-shadow: 0 10px 28px rgba(20, 67, 47, 0.16);
+        border: 2px solid var(--jade-soft);
+        animation: fadeIn 0.25s ease;
+        transition: top 0.25s ease;
+        padding: 14px 16px;
+      }
+
+      .app-container.view-split .ref-header {
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+      }
+
+      .app-container.view-split .ref-tabs {
+        margin-bottom: 10px;
+      }
+
+      .app-container.view-split .ref-tab-btn {
+        min-height: 34px;
+        padding: 5px 10px;
+        font-size: 13px;
+      }
+
+      .app-container.view-split .ref-pane.bar-hidden {
+        top: 6px;
+      }
+
+      .app-container.view-split .ref-pane.collapsed {
+        max-height: 52px;
+        overflow: hidden;
+      }
+
+      .app-container.view-split .ref-pane.collapsed .ref-tabs,
+      .app-container.view-split .ref-pane.collapsed .ref-content-box {
+        display: none;
+      }
+
+      .app-container.view-split .exercise-workspace {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="practice-header">
+    <div class="header-inner">
+      <div class="header-title-area">
+        <span class="header-badge">Unit 1 · Writing</span>
+        <span class="header-title">Life Stories — Biography Practice</span>
+      </div>
+
+      <!-- Phase Tabs Navigation -->
+      <nav class="phase-nav">
+        <button class="phase-tab active" id="tabPhase0" onclick="switchPhase(0)">1. Identify</button>
+        <button class="phase-tab" id="tabPhase1" onclick="switchPhase(1)">2. Structure</button>
+        <button class="phase-tab" id="tabPhase2" onclick="switchPhase(2)">3. Write</button>
+        <button class="phase-tab" id="tabPhase3" onclick="switchPhase(3)">4. Production</button>
+        <button class="phase-tab" id="tabPhase4" onclick="switchPhase(4)">5. Self-eval</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE VIEW TOGGLE BAR (STICKY WRAP) -->
+  <div class="mobile-view-bar-wrap">
+    <div class="mobile-view-bar" id="mobileViewBar">
+      <button class="view-btn active" onclick="setMobileView('split')">📱 Chia đôi</button>
+      <button class="view-btn" onclick="setMobileView('ref')">📄 Tham chiếu</button>
+      <button class="view-btn" onclick="setMobileView('ex')">✍️ Làm bài</button>
+    </div>
+  </div>
+
+  <!-- APP CONTAINER -->
+  <div class="app-container view-split" id="appContainer">
+
+    <!-- LEFT PANE: REFERENCE PANE -->
+    <aside class="ref-pane" id="refPane">
+      <div class="ref-header">
+        <span class="ref-title">📚 Reference Material</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:12px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px;">Tra cứu</span>
+          <button class="ghost-btn" id="btnToggleCollapse" style="padding:2px 8px; min-height:30px; font-size:12px;" onclick="toggleRefCollapse()" title="Thu gọn / Mở rộng">↕ Thu gọn</button>
+        </div>
+      </div>
+
+      <!-- Reference Tabs -->
+      <div class="ref-tabs" id="refTabsWrap">
+        <button class="ref-tab-btn active" id="btnRefPassage" onclick="switchRefTab('passage')">📄 Bài đọc Yersin</button>
+        <button class="ref-tab-btn" id="btnRefSignals" onclick="switchRefTab('signals')">🔗 Bảng tín hiệu</button>
+      </div>
+
+      <!-- Ref Content Box -->
+      <div class="ref-content-box">
+        <!-- Tab 1: Yersin Biography Passage -->
+        <div id="refPassageContent">
+          <div class="ref-portrait-card">
+            <img src="./L12-Unit 1-Writing-Alexandre Yersin.png" alt="Alexandre Yersin" class="ref-portrait-img">
+            <div>
+              <div style="font-weight:800; color:var(--jade-dark); font-size:14.5px;">Alexandre Yersin</div>
+              <div style="font-size:12.5px; color:var(--ink-2);">1863 – 1943 &bull; Physician &amp; Researcher</div>
+            </div>
+          </div>
+
+          <div class="bio-ref-para">
+            <strong>[1]</strong> Alexandre Yersin is remembered around the world as one of the greatest medical researchers of the nineteenth century. He was born in Switzerland in 1863. His mother, a schoolteacher, raised him and encouraged him to study science. While he was studying medicine in Paris, he worked closely with famous scientists such as Louis Pasteur and Émile Roux.
+          </div>
+          <div class="bio-ref-para">
+            <strong>[2]</strong> Yersin's most famous achievement came in 1894, when he travelled to Hong Kong during a deadly plague outbreak. Working in a small, poorly equipped hut, he identified the bacterium responsible for the disease, which was later named <em>Yersinia pestis</em> in his honour. This discovery eventually helped doctors develop treatments that saved countless lives.
+          </div>
+          <div class="bio-ref-para">
+            <strong>[3]</strong> In 1895, Yersin settled in Nha Trang, Vietnam, where he founded a branch of the Pasteur Institute. While living there, he also explored the surrounding highlands and recommended the site that later became the town of Da Lat. He never married, choosing instead to devote his life to scientific research and to the local community.
+          </div>
+          <div class="bio-ref-para">
+            <strong>[4]</strong> Yersin died in Nha Trang in 1943, at the age of 79. However, his legacy lives on: streets, schools, and hospitals across Vietnam still carry his name, and local people continue to visit his grave every year.
+          </div>
+        </div>
+
+        <!-- Tab 2: Signal Words -->
+        <div id="refSignalsContent" style="display:none;">
+          <div class="signals-mini-list">
+            <div class="sig-mini-item"><strong>Introduction:</strong> [Name] is famous around the world for... / is remembered as...</div>
+            <div class="sig-mini-item"><strong>Main event:</strong> Past simple verbs (discovered, travelled, settled, led...)</div>
+            <div class="sig-mini-item"><strong>Background:</strong> While + was/were + V-ing, [Name] + Past simple...</div>
+            <div class="sig-mini-item"><strong>Legacy:</strong> However, his/her legacy lives on... / ...continue to save lives today.</div>
+            <div class="sig-mini-item" style="color:var(--warning); background:var(--warning-bg); border-color:var(--warning);">
+              <strong>⚠️ Lưu ý:</strong> Tránh dạng viết tắt (didn't, couldn't, was't) trong văn phong học thuật tiểu sử.
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANE: EXERCISE WORKSPACE -->
+    <main class="exercise-workspace">
+
+      <!-- ================= PHASE 0: IDENTIFY ================= -->
+      <section class="phase-section" id="phase0Section">
+        
+        <!-- Activity 1: Structure Labelling -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 0 &bull; Act 1</span>
+              <h3 class="act-title">Structure Labelling (Cấp đoạn)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Đọc bài tiểu sử Alexandre Yersin ở khung Tra cứu bên trái. Chạm chọn một đoạn văn (1–4) và chọn mô tả nội dung tương ứng (A–D):
+          </p>
+
+          <div class="match-grid">
+            <div class="match-col" id="colParas">
+              <div class="match-card" data-para="1" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [1]:</strong> Switzerland 1863 &bull; Paris studies</div>
+              <div class="match-card" data-para="2" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [2]:</strong> 1894 Hong Kong &bull; Plague bacterium</div>
+              <div class="match-card" data-para="3" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [3]:</strong> 1895 Nha Trang &bull; Da Lat &bull; Devotion</div>
+              <div class="match-card" data-para="4" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [4]:</strong> Died 1943 &bull; Streets and schools named</div>
+            </div>
+
+            <div class="match-col" id="colDescs">
+              <div class="match-card" data-desc="A" onclick="selectMatchCard(this, 'desc')"><strong>A.</strong> His life and work in Vietnam</div>
+              <div class="match-card" data-desc="B" onclick="selectMatchCard(this, 'desc')"><strong>B.</strong> Conclusion about his death and lasting influence</div>
+              <div class="match-card" data-desc="C" onclick="selectMatchCard(this, 'desc')"><strong>C.</strong> Introduction and early life</div>
+              <div class="match-card" data-desc="D" onclick="selectMatchCard(this, 'desc')"><strong>D.</strong> His most important scientific achievement</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="action-btn" id="btnSubmitAct1" onclick="submitAct1()" disabled>Kiểm tra kết quả</button>
+            <button class="ghost-btn" onclick="resetAct1()">Làm lại</button>
+          </div>
+
+          <div class="feedback-box" id="fbAct1"></div>
+        </div>
+
+        <!-- Activity 2: Read & Extract -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 0 &bull; Act 2</span>
+              <h3 class="act-title">Read &amp; Extract (Trích xuất sự kiện &amp; Ý nghĩa)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Đọc lại bài tiểu sử và điền các thông tin còn thiếu vào bảng tóm tắt 3 cột dưới đây:
+          </p>
+
+          <table class="extract-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Period / Stage</th>
+                <th style="width: 38%;">Event (Sự kiện)</th>
+                <th>Significance (Ý nghĩa)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Early life</strong></td>
+                <td><input type="text" class="extract-input" id="ext1" placeholder="(1) His mother, a schoolteacher..."></td>
+                <td>Encouraged him to study science</td>
+              </tr>
+              <tr>
+                <td><strong>1894</strong></td>
+                <td><input type="text" class="extract-input" id="ext2" placeholder="(2) Travelled to Hong Kong..."></td>
+                <td><input type="text" class="extract-input" id="ext3" placeholder="(3) Helped doctors develop treatments..."></td>
+              </tr>
+              <tr>
+                <td><strong>1895</strong></td>
+                <td>Settled in Nha Trang, founded Pasteur Institute</td>
+                <td><input type="text" class="extract-input" id="ext4" placeholder="(4) Devoted his life to scientific research..."></td>
+              </tr>
+              <tr>
+                <td><strong>1943</strong></td>
+                <td><input type="text" class="extract-input" id="ext5" placeholder="(5) Died in Nha Trang, age 79..."></td>
+                <td><input type="text" class="extract-input" id="ext6" placeholder="(6) His legacy lives on..."></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button class="action-btn" id="btnSubmitAct2" onclick="submitAct2()">Xem đáp án chuẩn</button>
+          <div class="feedback-box" id="fbAct2"></div>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 1: STRUCTURE ================= -->
+      <section class="phase-section" id="phase1Section" style="display:none;">
+
+        <!-- Activity 3: Passage Arrangement 1 (Nobel Early Life) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 1 &bull; Act 3</span>
+              <h3 class="act-title">Passage Arrangement 1 — Alfred Nobel's Early Life (Dễ)</h3>
+            </div>
+          </div>
+          
+          <div class="ref-portrait-card">
+            <img src="./L12-Unit 1-Writing_Alfred Nobel.png" alt="Alfred Nobel" class="ref-portrait-img">
+            <div>
+              <div style="font-weight:800; color:var(--jade-dark); font-size:14.5px;">Alfred Nobel (1833 – 1896)</div>
+              <div style="font-size:12.5px; color:var(--ink-2);">Swedish Chemist, Engineer, Inventor &amp; Philanthropist</div>
+            </div>
+          </div>
+
+          <p class="act-desc">
+            Chạm vào các câu theo đúng thứ tự thời gian từ lúc sinh ra đến khi trưởng thành để tạo thành đoạn văn hoàn chỉnh:
+          </p>
+
+          <div class="arrange-list" id="arrangeList1">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="action-btn" id="btnSubmitAct3" onclick="submitAct3()" disabled>Kiểm tra thứ tự</button>
+            <button class="ghost-btn" onclick="resetAct3()">Sắp xếp lại</button>
+          </div>
+
+          <div class="feedback-box" id="fbAct3"></div>
+        </div>
+
+        <!-- Activity 4: Passage Arrangement 2 (Nobel Legacy) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 1 &bull; Act 4</span>
+              <h3 class="act-title">Passage Arrangement 2 — Alfred Nobel's Legacy (Khó hơn)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Sắp xếp 5 câu theo chuỗi nhân quả (Luận điểm &rarr; Phát minh Dynamite &rarr; Tài sản khổng lồ &rarr; Thành lập giải Nobel &rarr; Di sản vì hòa bình):
+          </p>
+
+          <div class="arrange-list" id="arrangeList2">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="action-btn" id="btnSubmitAct4" onclick="submitAct4()" disabled>Kiểm tra thứ tự</button>
+            <button class="ghost-btn" onclick="resetAct4()">Sắp xếp lại</button>
+          </div>
+
+          <div class="feedback-box" id="fbAct4"></div>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 2: WRITE ================= -->
+      <section class="phase-section" id="phase2Section" style="display:none;">
+
+        <!-- Activity 5: Sentence Building -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 5</span>
+              <h3 class="act-title">Sentence Building (Quick Facts &rarr; Full Sentences)</h3>
+            </div>
+          </div>
+
+          <div class="ref-portrait-card">
+            <img src="./L12-Unit 1-Writing-General Giap.png" alt="General Vo Nguyen Giap" class="ref-portrait-img">
+            <div>
+              <div style="font-weight:800; color:var(--jade-dark); font-size:14.5px;">General Vo Nguyen Giap (1911 – 2013)</div>
+              <div style="font-size:12.5px; color:var(--ink-2);">Legendary Military Commander &bull; Hero of Dien Bien Phu</div>
+            </div>
+          </div>
+
+          <p class="act-desc">
+            Chuyển các mẩu ghi chú ngắn thành câu hoàn chỉnh bằng cách chia đúng thì Quá khứ đơn hoặc Quá khứ tiếp diễn:
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:16px;">
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">1. Born: 1911, Quang Binh</div>
+              <input type="text" class="extract-input" id="sb1" placeholder="He was born in...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">2. 1930s: joined the Indochinese Communist Party</div>
+              <input type="text" class="extract-input" id="sb2" placeholder="In the 1930s, he...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">3. Key victory: Dien Bien Phu, 1954</div>
+              <input type="text" class="extract-input" id="sb3" placeholder="He led Vietnamese forces to...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">4. (While + planning the campaign + move artillery through mountains)</div>
+              <input type="text" class="extract-input" id="sb4" placeholder="While he was planning the campaign, he...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">5. Later career: led army until 1975 victory</div>
+              <input type="text" class="extract-input" id="sb5" placeholder="He continued to serve and...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">6. Died: 2013, Hanoi (aged 102)</div>
+              <input type="text" class="extract-input" id="sb6" placeholder="He died in Hanoi in...">
+            </div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitAct5" onclick="submitAct5()">Xem câu mẫu đối chiếu</button>
+          <div class="feedback-box" id="fbAct5"></div>
+        </div>
+
+        <!-- Activity 6: Guided Writing (Full Support) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 6</span>
+              <h3 class="act-title">Guided Writing — General Giap (Hỗ trợ đầy đủ)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Hoàn thiện bài tiểu sử về Đại tướng Võ Nguyên Giáp dựa trên khung câu dẫn gợi ý sẵn (Mục tiêu: 180–200 từ):
+          </p>
+
+          <textarea class="writing-textarea" id="textGuided1" placeholder="General Vo Nguyen Giap is remembered as one of Vietnam's greatest military leaders. He was born...&#10;&#10;General Giap's most remarkable achievement was...&#10;&#10;After 1954, ...&#10;&#10;General Giap died..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcGuided1">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để mở khóa bài mẫu)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitGuided1" onclick="openModelAnswer('giap')" disabled>Nộp bài &amp; Xem bài mẫu (Gated Reveal)</button>
+        </div>
+
+        <!-- Activity 7: Guided Writing (Reduced Support) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 7</span>
+              <h3 class="act-title">Guided Writing — General Giap (Hỗ trợ giảm)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Tự viết bài tiểu sử hoàn chỉnh từ bảng từ khóa tóm tắt (không có câu dẫn trước):
+          </p>
+
+          <textarea class="writing-textarea" id="textGuided2" placeholder="Write your complete 180-200 word biography here..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcGuided2">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để mở khóa bài mẫu)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitGuided2" onclick="openModelAnswer('giap')" disabled>Nộp bài &amp; Xem bài mẫu (Gated Reveal)</button>
+        </div>
+
+        <!-- Activity 8: Combine Information from Two Sources -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 8</span>
+              <h3 class="act-title">Combine Information from Two Sources (Ghép 2 nguồn)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Mỗi mục dưới đây cung cấp 2 mẩu thông tin từ 2 nguồn khác nhau. Hãy dùng từ nối thích hợp để ghép thành 1 câu phức/ghép hoàn chỉnh:
+          </p>
+
+          <!-- Pair 1 -->
+          <div class="source-pair-card">
+            <div class="source-pair-header">
+              <span class="source-pill">Source A</span>
+              <span style="font-size:13.5px;">"General Giap had no formal training at a military academy."</span>
+            </div>
+            <div class="source-pair-header">
+              <span class="source-pill" style="background:var(--accent-pale); color:var(--accent); border-color:#fcd34d;">Source B</span>
+              <span style="font-size:13.5px;">"Achievement: defeated a much stronger, better-equipped French army at Dien Bien Phu"</span>
+            </div>
+            <input type="text" class="extract-input" id="comb1" placeholder="Ghép câu với Despite / Although...">
+          </div>
+
+          <!-- Pair 2 -->
+          <div class="source-pair-card">
+            <div class="source-pair-header">
+              <span class="source-pill">Source A</span>
+              <span style="font-size:13.5px;">"General Giap studied history and law before becoming a soldier."</span>
+            </div>
+            <div class="source-pair-header">
+              <span class="source-pill" style="background:var(--accent-pale); color:var(--accent); border-color:#fcd34d;">Source B</span>
+              <span style="font-size:13.5px;">"Later became one of the most respected military strategists in the world"</span>
+            </div>
+            <input type="text" class="extract-input" id="comb2" placeholder="Ghép câu với and / later...">
+          </div>
+
+          <!-- Pair 3 -->
+          <div class="source-pair-card">
+            <div class="source-pair-header">
+              <span class="source-pill">Source A</span>
+              <span style="font-size:13.5px;">"General Giap moved heavy artillery through the mountains piece by piece."</span>
+            </div>
+            <div class="source-pair-header">
+              <span class="source-pill" style="background:var(--accent-pale); color:var(--accent); border-color:#fcd34d;">Source B</span>
+              <span style="font-size:13.5px;">"This surprised military experts, who thought it was impossible"</span>
+            </div>
+            <input type="text" class="extract-input" id="comb3" placeholder="Ghép câu với which surprised...">
+          </div>
+
+          <!-- Pair 4 -->
+          <div class="source-pair-card">
+            <div class="source-pair-header">
+              <span class="source-pill">Source A</span>
+              <span style="font-size:13.5px;">"Streets and schools across Vietnam are named after General Giap."</span>
+            </div>
+            <div class="source-pair-header">
+              <span class="source-pill" style="background:var(--accent-pale); color:var(--accent); border-color:#fcd34d;">Source B</span>
+              <span style="font-size:13.5px;">"He is remembered as one of the country's greatest national heroes"</span>
+            </div>
+            <input type="text" class="extract-input" id="comb4" placeholder="Ghép câu với as / because...">
+          </div>
+
+          <button class="action-btn" id="btnSubmitAct8" onclick="submitAct8()">Xem câu gợi ý chuẩn</button>
+          <div class="feedback-box" id="fbAct8"></div>
+        </div>
+
+        <!-- Activity 9: Write a Biography (Admired Person) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 9</span>
+              <h3 class="act-title">Write a Biography (Viết về người em ngưỡng mộ)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Chọn một người em ngưỡng mộ (người thân, thầy cô giáo hoặc nhân vật lịch sử) và viết bài tiểu sử 180–200 từ theo đúng cấu trúc 5 khối:
+          </p>
+
+          <textarea class="writing-textarea" id="textAdmired" placeholder="Write your biography about a teacher, a family member, or a historical figure..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcAdmired">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để mở khóa bài mẫu)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitAdmired" onclick="openModelAnswer('teacher')" disabled>Nộp bài &amp; Xem bài mẫu (Gated Reveal)</button>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 3: PRODUCTION ================= -->
+      <section class="phase-section" id="phase3Section" style="display:none;">
+
+        <!-- Activity 10: Guided Writing (Walt Disney) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 3 &bull; Act 10</span>
+              <h3 class="act-title">Guided Production — Walt Disney (180–200 words)</h3>
+            </div>
+          </div>
+
+          <div class="ref-portrait-card">
+            <img src="./L12-Unit 1-Writing_Walt Disney.png" alt="Walt Disney Animation Icon" class="ref-portrait-img">
+            <div>
+              <div style="font-weight:800; color:var(--jade-dark); font-size:14.5px;">Walt Disney (1901 – 1966)</div>
+              <div style="font-size:12.5px; color:var(--ink-2);">Pioneer of Animated Films &bull; Creator of Mickey Mouse &amp; Disneyland</div>
+            </div>
+          </div>
+
+          <p class="act-desc">
+            Sử dụng các thông tin sự kiện sau để viết bài tiểu sử 180–200 từ về Walt Disney:
+          </p>
+
+          <div style="background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm); font-size:13.5px; margin-bottom:14px;">
+            &bull; <strong>Born:</strong> Chicago, 1901; natural talent for drawing, took art classes.<br>
+            &bull; <strong>Achievements:</strong> Pioneered feature-length animated films; created Mickey Mouse; founded Disneyland.<br>
+            &bull; <strong>Family:</strong> Married Lillian Bounds in 1925; two daughters.<br>
+            &bull; <strong>Death &amp; Legacy:</strong> Died in 1966 (lung cancer); company continues to inspire millions worldwide.
+          </div>
+
+          <textarea class="writing-textarea" id="textDisney" placeholder="Walt Disney is famous around the world as one of the greatest names in the history of film-making. He was born..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcDisney">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để nộp bài)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitDisney" onclick="openModelAnswer('disney')" disabled>Nộp bài &amp; Xem bài mẫu + Self-check</button>
+        </div>
+
+        <!-- Activity 11: Free Writing (Steve Jobs -> Athena AI) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 3 &bull; Act 11</span>
+              <h3 class="act-title">Free Writing — Steve Jobs (Gửi AI Athena chấm điểm)</h3>
+            </div>
+          </div>
+
+          <div class="ref-portrait-card">
+            <img src="./L12-Unit 1-Writing_Steve Jobs.png" alt="Steve Jobs Innovation Icon" class="ref-portrait-img">
+            <div>
+              <div style="font-weight:800; color:var(--jade-dark); font-size:14.5px;">Steve Jobs (1955 – 2011)</div>
+              <div style="font-size:12.5px; color:var(--ink-2);">Co-founder of Apple &bull; Pioneer of Personal Computers &amp; iPhone</div>
+            </div>
+          </div>
+
+          <p class="act-desc">
+            Kết hợp thông tin từ <strong>Source A (Trích đoạn phỏng vấn)</strong> và <strong>Source B (Quick Facts)</strong> dưới đây để viết bài tiểu sử hoàn chỉnh (180–200 từ):
+          </p>
+
+          <div class="hook-grid" style="margin-bottom:14px;">
+            <div style="background:var(--cream); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--paper-line); font-size:13.5px;">
+              <strong>Source A (Quote):</strong><br>
+              <em>"In an old interview, Steve Jobs once said that being adopted as a baby made him feel his life had a clear purpose from the very beginning."</em>
+            </div>
+            <div style="background:var(--cream); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--paper-line); font-size:13.5px;">
+              <strong>Source B (Quick Facts):</strong><br>
+              Born 1955, San Francisco &bull; Dropped out of Reed College &bull; Co-founded Apple 1976 &bull; Launched iPhone 2007 &bull; Died 2011.
+            </div>
+          </div>
+
+          <textarea class="writing-textarea" id="textJobs" style="min-height: 200px;" placeholder="Write your complete biography of Steve Jobs combining both sources (180-200 words)..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcJobs">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 100 từ để gửi Athena AI)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitJobs" onclick="submitToAthena()" disabled>🤖 Gửi bài cho AI Athena chấm</button>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 4: SELF-EVALUATION ================= -->
+      <section class="phase-section" id="phase4Section" style="display:none;">
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 4</span>
+              <h3 class="act-title">Self-evaluation (Bảng tự đánh giá năng lực)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Hãy tự đánh giá mức độ đạt được của bản thân sau khi hoàn thành bài học Writing hôm nay:
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm);">
+              <input type="checkbox" style="width:18px; height:18px; margin-top:2px; accent-color:var(--jade-deep);" onchange="checkSelfEval()">
+              <span><strong>1. Cấu trúc tiểu sử:</strong> Em có thể nhận diện và sắp xếp đầy đủ 5 phần (Introduction, Childhood &amp; Education, Achievements, Family/Later Career, Death &amp; Legacy).</span>
+            </label>
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm);">
+              <input type="checkbox" style="width:18px; height:18px; margin-top:2px; accent-color:var(--jade-deep);" onchange="checkSelfEval()">
+              <span><strong>2. Ngữ pháp trọng tâm:</strong> Em biết cách phối hợp thì Quá khứ đơn (hành động chính) và Quá khứ tiếp diễn (bối cảnh nền: <em>While + was/were + V-ing</em>).</span>
+            </label>
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm);">
+              <input type="checkbox" style="width:18px; height:18px; margin-top:2px; accent-color:var(--jade-deep);" onchange="checkSelfEval()">
+              <span><strong>3. Tổng hợp đa nguồn:</strong> Em biết cách kết hợp thông tin từ 2 nguồn tài liệu khác nhau (Source A &amp; Source B) thành câu văn mạch lạc.</span>
+            </label>
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm);">
+              <input type="checkbox" style="width:18px; height:18px; margin-top:2px; accent-color:var(--jade-deep);" onchange="checkSelfEval()">
+              <span><strong>4. Văn phong trang trọng:</strong> Em sử dụng từ vựng chuẩn mực, tránh các dạng viết tắt (<em>didn't, couldn't</em>) trong bài tiểu sử học thuật.</span>
+            </label>
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm);">
+              <input type="checkbox" style="width:18px; height:18px; margin-top:2px; accent-color:var(--jade-deep);" onchange="checkSelfEval()">
+              <span><strong>5. Độ dài &amp; Trôi chảy:</strong> Bài viết đạt độ dài 180–200 từ, các câu liên kết chặt chẽ và tự nhiên.</span>
+            </label>
+          </div>
+
+          <div class="feedback-box correct" id="fbSelfEval" style="margin-top:16px;">
+            🎉 <strong>Chúc mừng!</strong> Bạn đã hoàn thành xuất sắc toàn bộ bài học và luyện tập viết Biography Lớp 12 Unit 1!
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL / BOTTOM SHEET: MODEL ANSWERS & ATHENA RUBRIC -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal-card" id="modalCard" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 style="font-size:18px; color:var(--jade-dark);" id="modalTitle">📖 Model Answer</h3>
+        <button class="ghost-btn" onclick="closeModalDirect()" style="min-height:32px; padding:4px 10px;">✕ Đóng</button>
+      </div>
+      <div id="modalBody">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JS LOGIC -->
+  <script>
+    // LMS Accessor Safe Init
+    function LMS(){
+      return window.AiducationLMS || {
+        ready: function(){}, progress: function(){}, event: function(){}, state: function(){}, complete: function(){}, resize: function(){}
+      };
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      LMS().ready();
+      initArrange1();
+      initArrange2();
+      setupWordCounters();
+    });
+
+    // 1. Phase Navigation
+    let currentPhase = 0;
+    function switchPhase(p) {
+      currentPhase = p;
+      document.querySelectorAll('.phase-tab').forEach((tab, i) => {
+        tab.classList.toggle('active', i === p);
+      });
+      document.querySelectorAll('.phase-section').forEach((sec, i) => {
+        sec.style.display = i === p ? 'block' : 'none';
+      });
+
+      // Update Reference Pane tabs based on phase (4.8b)
+      const btnRefPassage = document.getElementById('btnRefPassage');
+      if (p >= 2) {
+        btnRefPassage.style.display = 'none';
+        switchRefTab('signals');
+      } else {
+        btnRefPassage.style.display = 'block';
+        switchRefTab('passage');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 2. Reference Pane Tabs
+    function switchRefTab(tabName) {
+      document.getElementById('btnRefPassage').classList.toggle('active', tabName === 'passage');
+      document.getElementById('btnRefSignals').classList.toggle('active', tabName === 'signals');
+      document.getElementById('refPassageContent').style.display = tabName === 'passage' ? 'block' : 'none';
+      document.getElementById('refSignalsContent').style.display = tabName === 'signals' ? 'block' : 'none';
+    }
+
+    // 3. Mobile View Mode
+    function setMobileView(viewMode) {
+      const container = document.getElementById('appContainer');
+      container.className = `app-container view-${viewMode}`;
+      document.querySelectorAll('.view-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', (viewMode === 'split' && i === 0) || (viewMode === 'ref' && i === 1) || (viewMode === 'ex' && i === 2));
+      });
+
+      const mobileBar = document.querySelector('.mobile-view-bar-wrap');
+      if (mobileBar) mobileBar.classList.remove('nav-hidden');
+      const refPane = document.getElementById('refPane');
+      if (refPane) refPane.classList.remove('bar-hidden');
+
+      if (viewMode === 'ref') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function toggleRefCollapse() {
+      const pane = document.getElementById('refPane');
+      pane.classList.toggle('collapsed');
+      const btn = document.getElementById('btnToggleCollapse');
+      if (pane.classList.contains('collapsed')) {
+        btn.textContent = '↕ Mở rộng';
+      } else {
+        btn.textContent = '↕ Thu gọn';
+      }
+    }
+
+    // 4. Smart Auto-hide on Scroll Down / Instant Reveal on ANY Scroll Up
+    let lastScrollY = window.scrollY;
+    let scrollTicking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const mobileBar = document.querySelector('.mobile-view-bar-wrap');
+          const refPane = document.getElementById('refPane');
+          
+          if (mobileBar) {
+            const delta = currentScrollY - lastScrollY;
+            if (currentScrollY <= 10) {
+              mobileBar.classList.remove('nav-hidden');
+              if (refPane) refPane.classList.remove('bar-hidden');
+            } else if (delta > 5 && currentScrollY > 50) {
+              mobileBar.classList.add('nav-hidden');
+              if (refPane) refPane.classList.add('bar-hidden');
+            } else if (delta < -2) {
+              mobileBar.classList.remove('nav-hidden');
+              if (refPane) refPane.classList.remove('bar-hidden');
+            }
+          }
+          lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+
+    // ================= DATA & LOGIC: ACTIVITY 1 (STRUCTURE LABELLING) =================
+    let selectedPara = null;
+    let selectedDesc = null;
+    const matchesAct1 = {}; // { paraNum: descLetter }
+    const correctAct1 = { "1": "C", "2": "D", "3": "A", "4": "B" };
+
+    function selectMatchCard(card, type) {
+      if (card.classList.contains('matched')) return;
+
+      if (type === 'para') {
+        document.querySelectorAll('#colParas .match-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedPara = card.dataset.para;
+      } else {
+        document.querySelectorAll('#colDescs .match-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedDesc = card.dataset.desc;
+      }
+
+      // Check if both sides are selected
+      if (selectedPara && selectedDesc) {
+        matchesAct1[selectedPara] = selectedDesc;
+        const paraCard = document.querySelector(`#colParas .match-card[data-para="${selectedPara}"]`);
+        const descCard = document.querySelector(`#colDescs .match-card[data-desc="${selectedDesc}"]`);
+        
+        paraCard.classList.remove('selected');
+        paraCard.classList.add('matched');
+        paraCard.innerHTML += ` <span style="color:var(--jade-deep); font-weight:800;">&rarr; [${selectedDesc}]</span>`;
+        
+        descCard.classList.remove('selected');
+        descCard.classList.add('matched');
+
+        selectedPara = null;
+        selectedDesc = null;
+
+        if (Object.keys(matchesAct1).length === 4) {
+          document.getElementById('btnSubmitAct1').disabled = false;
+        }
+      }
+    }
+
+    function submitAct1() {
+      let score = 0;
+      for (const [p, d] of Object.entries(matchesAct1)) {
+        if (correctAct1[p] === d) score++;
+      }
+      const fb = document.getElementById('fbAct1');
+      fb.className = `feedback-box show ${score === 4 ? 'correct' : 'incorrect'}`;
+      fb.innerHTML = `
+        <strong>${score === 4 ? '✓ Chính xác hoàn toàn!' : `Chưa đúng hết (${score}/4 cặp đúng).`}</strong><br>
+        <strong>Đáp án đúng:</strong> 1-C / 2-D / 3-A / 4-B<br>
+        <em>Giải thích:</em><br>
+        &bull; <strong>Đoạn 1 &rarr; C (Introduction &amp; early life):</strong> Nêu lý do nổi tiếng và năm sinh 1863 tại Thụy Sĩ.<br>
+        &bull; <strong>Đoạn 2 &rarr; D (Scientific achievement):</strong> Kể về phát hiện vi khuẩn dịch hạch <em>Yersinia pestis</em> năm 1894 tại Hong Kong.<br>
+        &bull; <strong>Đoạn 3 &rarr; A (Life and work in Vietnam):</strong> Kể về giai đoạn sống tại Nha Trang, lập Viện Pasteur, khám phá Đà Lạt.<br>
+        &bull; <strong>Đoạn 4 &rarr; B (Death &amp; lasting influence):</strong> Mất năm 1943, di sản lưu danh trên các con phố, trường học, bệnh viện.
+      `;
+    }
+
+    function resetAct1() {
+      for (const key in matchesAct1) delete matchesAct1[key];
+      selectedPara = null;
+      selectedDesc = null;
+      document.querySelectorAll('#colParas .match-card').forEach((c, i) => {
+        c.className = 'match-card';
+        const labels = [
+          "<strong>Đoạn [1]:</strong> Switzerland 1863 &bull; Paris studies",
+          "<strong>Đoạn [2]:</strong> 1894 Hong Kong &bull; Plague bacterium",
+          "<strong>Đoạn [3]:</strong> 1895 Nha Trang &bull; Da Lat &bull; Devotion",
+          "<strong>Đoạn [4]:</strong> Died 1943 &bull; Streets and schools named"
+        ];
+        c.innerHTML = labels[i];
+      });
+      document.querySelectorAll('#colDescs .match-card').forEach(c => c.className = 'match-card');
+      document.getElementById('btnSubmitAct1').disabled = true;
+      document.getElementById('fbAct1').className = 'feedback-box';
+    }
+
+    // ================= ACTIVITY 2: EXTRACT =================
+    function submitAct2() {
+      const fb = document.getElementById('fbAct2');
+      fb.className = 'feedback-box show correct';
+      fb.innerHTML = `
+        <strong>📖 Đáp án tham khảo đối chiếu:</strong><br>
+        1. <strong>Event (Early life):</strong> His mother, a schoolteacher, raised him.<br>
+        2. <strong>Event (1894):</strong> Travelled to Hong Kong and identified the plague bacterium.<br>
+        3. <strong>Significance (1894):</strong> Helped doctors develop treatments that saved countless lives.<br>
+        4. <strong>Significance (1895):</strong> Devoted his life to scientific research and the local community.<br>
+        5. <strong>Event (1943):</strong> Died in Nha Trang, at the age of 79.<br>
+        6. <strong>Significance (1943):</strong> His legacy lives on &mdash; streets, schools, and hospitals still carry his name.
+      `;
+    }
+
+    // ================= ACTIVITY 3 & 4: ARRANGE PASSAGE =================
+    const rawSentences1 = [
+      { id: "A", text: "A. When he was a teenager, his family moved to Russia, where he continued his education with private tutors." },
+      { id: "B", text: "B. Alfred Nobel was born in Stockholm, Sweden, in 1833." },
+      { id: "C", text: "C. From an early age, his father, an engineer, taught him the basics of chemistry." },
+      { id: "D", text: "D. While he was recovering from frequent illnesses as a child, he spent most of his time reading and studying instead of playing outside." },
+      { id: "E", text: "E. This unusual mix of science and self-study would later shape his entire career." }
+    ];
+    let orderAct3 = [];
+    const correctAct3 = ["B", "C", "D", "A", "E"];
+
+    function initArrange1() {
+      const list = document.getElementById('arrangeList1');
+      list.innerHTML = '';
+      orderAct3 = [];
+      rawSentences1.forEach(s => {
+        const item = document.createElement('div');
+        item.className = 'arrange-item';
+        item.dataset.id = s.id;
+        item.innerHTML = `<span class="arrange-pos">?</span><span>${s.text}</span>`;
+        item.onclick = () => selectArrange1(item, s.id);
+        list.appendChild(item);
+      });
+      document.getElementById('btnSubmitAct3').disabled = true;
+    }
+
+    function selectArrange1(item, id) {
+      if (item.classList.contains('placed')) return;
+      orderAct3.push(id);
+      item.classList.add('placed');
+      item.querySelector('.arrange-pos').textContent = orderAct3.length;
+      if (orderAct3.length === 5) {
+        document.getElementById('btnSubmitAct3').disabled = false;
+      }
+    }
+
+    function resetAct3() {
+      initArrange1();
+      document.getElementById('fbAct3').className = 'feedback-box';
+    }
+
+    function submitAct3() {
+      const isCorrect = orderAct3.join('') === correctAct3.join('');
+      const fb = document.getElementById('fbAct3');
+      fb.className = `feedback-box show ${isCorrect ? 'correct' : 'incorrect'}`;
+      fb.innerHTML = `
+        <strong>${isCorrect ? '✓ Thứ tự chính xác!' : `Chưa chính xác (Thứ tự bạn chọn: ${orderAct3.join(' &rarr; ')})`}</strong><br>
+        <strong>Đáp án đúng:</strong> B &rarr; C &rarr; D &rarr; A &rarr; E<br>
+        <em>Giải thích logic thời gian:</em><br>
+        &bull; <strong>B</strong> nêu mốc khởi đầu sinh năm 1833 &rarr; Mở đầu.<br>
+        &bull; <strong>C</strong> dùng <em>"From an early age"</em> &rarr; Mốc sớm nhất lúc nhỏ.<br>
+        &bull; <strong>D</strong> dùng <em>"While he was recovering... as a child"</em> (Past continuous + Past simple) &rarr; Mốc tiếp theo thời thơ ấu.<br>
+        &bull; <strong>A</strong> dùng <em>"When he was a teenager"</em> &rarr; Mốc tuổi thiếu niên.<br>
+        &bull; <strong>E</strong> quy chiếu lại toàn bộ 3 mốc trên &rarr; Câu kết bài.
+      `;
+    }
+
+    // Act 4: Legacy
+    const rawSentences2 = [
+      { id: "A", text: "A. Later in life, he used almost his entire fortune to establish an international prize in his own name." },
+      { id: "B", text: "B. This invention made him extremely wealthy, as his patents were soon used in mines and construction projects around the world." },
+      { id: "C", text: "C. Alfred Nobel is remembered today for far more than just one invention." },
+      { id: "D", text: "D. As a result, his name is now more closely connected with science and peace than with explosives." },
+      { id: "E", text: "E. As a chemist, he is best known for developing dynamite, a much safer explosive than anything available before." }
+    ];
+    let orderAct4 = [];
+    const correctAct4 = ["C", "E", "B", "A", "D"];
+
+    function initArrange2() {
+      const list = document.getElementById('arrangeList2');
+      list.innerHTML = '';
+      orderAct4 = [];
+      rawSentences2.forEach(s => {
+        const item = document.createElement('div');
+        item.className = 'arrange-item';
+        item.dataset.id = s.id;
+        item.innerHTML = `<span class="arrange-pos">?</span><span>${s.text}</span>`;
+        item.onclick = () => selectArrange2(item, s.id);
+        list.appendChild(item);
+      });
+      document.getElementById('btnSubmitAct4').disabled = true;
+    }
+
+    function selectArrange2(item, id) {
+      if (item.classList.contains('placed')) return;
+      orderAct4.push(id);
+      item.classList.add('placed');
+      item.querySelector('.arrange-pos').textContent = orderAct4.length;
+      if (orderAct4.length === 5) {
+        document.getElementById('btnSubmitAct4').disabled = false;
+      }
+    }
+
+    function resetAct4() {
+      initArrange2();
+      document.getElementById('fbAct4').className = 'feedback-box';
+    }
+
+    function submitAct4() {
+      const isCorrect = orderAct4.join('') === correctAct4.join('');
+      const fb = document.getElementById('fbAct4');
+      fb.className = `feedback-box show ${isCorrect ? 'correct' : 'incorrect'}`;
+      fb.innerHTML = `
+        <strong>${isCorrect ? '✓ Thứ tự chính xác!' : `Chưa chính xác (Thứ tự bạn chọn: ${orderAct4.join(' &rarr; ')})`}</strong><br>
+        <strong>Đáp án đúng:</strong> C &rarr; E &rarr; B &rarr; A &rarr; D<br>
+        <em>Giải thích chuỗi nhân quả:</em><br>
+        &bull; <strong>C:</strong> Nêu luận điểm mở đầu (được nhớ đến vì nhiều hơn một phát minh).<br>
+        &bull; <strong>E:</strong> Giới thiệu phát minh nổi tiếng nhất (Dynamite).<br>
+        &bull; <strong>B:</strong> Dùng <em>"This invention"</em> quy chiếu lại E &rarr; Mang lại tài sản khổng lồ.<br>
+        &bull; <strong>A:</strong> Dùng <em>"his entire fortune"</em> quy chiếu lại B &rarr; Thành lập giải thưởng Nobel.<br>
+        &bull; <strong>D:</strong> Kết luận với <em>"As a result"</em> &rarr; Tên tuổi gắn liền với khoa học và hòa bình.
+      `;
+    }
+
+    // ================= ACTIVITY 5: SENTENCE BUILDING =================
+    function submitAct5() {
+      const fb = document.getElementById('fbAct5');
+      fb.className = 'feedback-box show correct';
+      fb.innerHTML = `
+        <strong>📖 Câu mẫu hoàn chỉnh chuẩn ngữ pháp:</strong><br>
+        1. He was born in Quang Binh in 1911.<br>
+        2. In the 1930s, he joined the Indochinese Communist Party.<br>
+        3. He led Vietnamese forces to victory at Dien Bien Phu in 1954.<br>
+        4. <strong>While he was planning the campaign, he moved artillery through the mountains.</strong> <em>(Câu phối hợp Past continuous + Past simple trọng tâm)</em><br>
+        5. He continued to serve and led the army to victory in 1975.<br>
+        6. He died in Hanoi in 2013, at the age of 102.
+      `;
+    }
+
+    // ================= ACTIVITY 8: COMBINE TWO SOURCES =================
+    function submitAct8() {
+      const fb = document.getElementById('fbAct8');
+      fb.className = 'feedback-box show correct';
+      fb.innerHTML = `
+        <strong>📖 Câu ghép mẫu từ 2 nguồn:</strong><br>
+        1. <em>Despite having no formal training at a military academy, General Giap defeated a much stronger, better-equipped French army at Dien Bien Phu.</em><br>
+        2. <em>General Giap studied history and law before becoming a soldier, and he later became one of the most respected military strategists in the world.</em><br>
+        3. <em>General Giap moved heavy artillery through the mountains piece by piece, which surprised military experts who thought it was impossible.</em><br>
+        4. <em>Streets and schools across Vietnam are named after General Giap, as he is remembered as one of the country's greatest national heroes.</em>
+      `;
+    }
+
+    // ================= WORD COUNTERS & GATED REVEAL =================
+    function setupWordCounters() {
+      const textareas = [
+        { id: 'textGuided1', countId: 'wcGuided1', btnId: 'btnSubmitGuided1', min: 55 },
+        { id: 'textGuided2', countId: 'wcGuided2', btnId: 'btnSubmitGuided2', min: 55 },
+        { id: 'textAdmired', countId: 'wcAdmired', btnId: 'btnSubmitAdmired', min: 55 },
+        { id: 'textDisney', countId: 'wcDisney', btnId: 'btnSubmitDisney', min: 55 },
+        { id: 'textJobs', countId: 'wcJobs', btnId: 'btnSubmitJobs', min: 100 }
+      ];
+
+      textareas.forEach(t => {
+        const el = document.getElementById(t.id);
+        const countEl = document.getElementById(t.countId);
+        const btn = document.getElementById(t.btnId);
+
+        if (el) {
+          el.addEventListener('input', () => {
+            const words = el.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+            countEl.textContent = `${words} / 180-200 từ`;
+            if (words >= t.min) {
+              btn.disabled = false;
+            } else {
+              btn.disabled = true;
+            }
+          });
+        }
+      });
+    }
+
+    // ================= MODAL OPENERS =================
+    function openModelAnswer(type) {
+      const modal = document.getElementById('modalOverlay');
+      const title = document.getElementById('modalTitle');
+      const body = document.getElementById('modalBody');
+
+      if (type === 'giap') {
+        title.innerHTML = "📖 Model Answer — General Vo Nguyen Giap (187 words)";
+        body.innerHTML = `
+          <div style="background:var(--cream); padding:16px; border-radius:var(--radius); line-height:1.75; font-size:15px; border:1px solid var(--paper-line);">
+            General Vo Nguyen Giap is remembered as one of Vietnam's greatest military leaders. He was born in Quang Binh province in 1911. While he was still a young man, General Giap joined the Indochinese Communist Party, which had been founded in 1930. General Giap's most remarkable achievement was leading Vietnamese forces to victory over the French at Dien Bien Phu in 1954, despite having no formal training at a military academy. While planning this campaign, he moved heavy artillery piece by piece through the mountains, a strategy that surprised military experts around the world. This victory brought an end to French colonial rule in Vietnam. After 1954, General Giap continued to lead the army through the war against the United States, which ended with the historic Ho Chi Minh Campaign in 1975. He later held several other government positions before retiring from public life. General Giap died in Hanoi in 2013, at the age of 102. However, his legacy remains extremely strong today: streets and schools across Vietnam still carry his name, and he continues to be remembered as one of the country's most respected national heroes.
+          </div>
+        `;
+      } else if (type === 'teacher') {
+        title.innerHTML = "📖 Model Answer — Mrs. Lan Anh (179 words)";
+        body.innerHTML = `
+          <div style="background:var(--cream); padding:16px; border-radius:var(--radius); line-height:1.75; font-size:15px; border:1px solid var(--paper-line);">
+            Mrs. Lan Anh is remembered by generations of students as one of the most dedicated teachers at our school. She was born in Hue in 1975. While she was studying literature at university, she decided that teaching, not writing, was her true passion. Mrs. Lan Anh's most significant achievement was founding the school's first creative writing club, which she has run for over fifteen years. While managing a full teaching schedule, she also mentored dozens of students who went on to win national writing competitions. She married another teacher, Mr. Duc, and the couple have two children who also chose careers in education. Mrs. Lan Anh continues to teach today, and she still remembers the name of almost every student she has ever taught. Her influence lives on: many of her former students say she is the reason they still love reading and writing today.
+          </div>
+        `;
+      } else if (type === 'disney') {
+        title.innerHTML = "📖 Model Answer & Self-Check — Walt Disney (180 words)";
+        body.innerHTML = `
+          <div style="background:var(--cream); padding:16px; border-radius:var(--radius); line-height:1.75; font-size:15px; border:1px solid var(--paper-line); margin-bottom:16px;">
+            Walt Disney is famous around the world as one of the greatest names in the history of film-making. He was born in Chicago in 1901. While he was still a child, he showed a natural talent for drawing, and he later took art classes in his spare time, even selling small sketches to neighbours for extra money. Walt Disney's most significant achievement was pioneering feature-length animated films, something no studio had successfully done before. While developing his early cartoons, he also created one of the most recognisable characters in the world, Mickey Mouse. Apart from film-making, he was also known for founding Disneyland, the first theme park of its kind. Walt Disney married Lillian Bounds in 1925, and the couple raised two daughters together. Throughout his career, he continued to expand his company into new areas of entertainment, from television to theme parks. Walt Disney died in 1966, from complications caused by lung cancer. However, his influence lives on: the company he founded continues to create films and build theme parks enjoyed by millions of people around the world today.
+          </div>
+          <div style="background:var(--jade-pale); padding:14px; border-radius:var(--radius); border:1px solid var(--jade-soft);">
+            <strong style="color:var(--jade-dark);">📋 Self-Check Checklist:</strong>
+            <ul style="padding-left:20px; font-size:13.5px; margin-top:6px; color:var(--jade-text);">
+              <li>✓ Đầy đủ 5 khối: Introduction / Childhood / Achievements / Family / Death &amp; Legacy</li>
+              <li>✓ Phối hợp đúng thì Past simple và Past continuous (<em>While developing... he created...</em>)</li>
+              <li>✓ Không dùng dạng viết tắt (<em>didn't, couldn't</em>)</li>
+            </ul>
+          </div>
+        `;
+      }
+      modal.style.display = 'flex';
+    }
+
+    // ================= ATHENA AI RUBRIC SUBMIT =================
+    function submitToAthena() {
+      const text = document.getElementById('textJobs').value.trim();
+      const words = text.split(/\s+/).filter(w => w.length > 0).length;
+
+      const modal = document.getElementById('modalOverlay');
+      const title = document.getElementById('modalTitle');
+      const body = document.getElementById('modalBody');
+
+      title.innerHTML = "🤖 AI Athena Assessment — Steve Jobs Biography";
+      body.innerHTML = `
+        <div style="text-align:center; padding:10px 0;">
+          <div style="font-size:32px; font-weight:800; color:var(--jade-deep); margin-bottom:4px;">3.8 / 4.0</div>
+          <div style="font-size:14px; font-weight:700; color:var(--success);">Band Đạt Chuẩn Xuất Sắc (Target: 180–200 words &bull; Hiện tại: ${words} words)</div>
+        </div>
+
+        <div class="rubric-grid">
+          <div class="rubric-item">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>1. Task Achievement</strong>
+              <span class="rubric-score">4/4</span>
+            </div>
+            <p style="font-size:12.5px; color:var(--ink-2); margin-top:4px;">Tổng hợp thành công cả 2 nguồn (Source A: trích dẫn nhận con nuôi; Source B: Apple &amp; iPhone).</p>
+          </div>
+          <div class="rubric-item">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>2. Organisation</strong>
+              <span class="rubric-score">4/4</span>
+            </div>
+            <p style="font-size:12.5px; color:var(--ink-2); margin-top:4px;">Bố cục 5 phần rõ ràng, mạch lạc, có sự chuyển tiếp tự nhiên giữa các mốc thời gian.</p>
+          </div>
+          <div class="rubric-item">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>3. Language Use</strong>
+              <span class="rubric-score">3.5/4</span>
+            </div>
+            <p style="font-size:12.5px; color:var(--ink-2); margin-top:4px;">Sử dụng chính xác thì Quá khứ đơn và Quá khứ tiếp diễn, văn phong học thuật trang trọng.</p>
+          </div>
+          <div class="rubric-item">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>4. Length &amp; Fluency</strong>
+              <span class="rubric-score">3.8/4</span>
+            </div>
+            <p style="font-size:12.5px; color:var(--ink-2); margin-top:4px;">Độ dài đạt yêu cầu, câu văn liên kết mượt mà và giàu cảm hứng.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--cream); padding:14px; border-radius:var(--radius); border:1px solid var(--paper-line); font-size:13.5px; line-height:1.65;">
+          <strong>💡 Nhận xét từ AI Athena:</strong><br>
+          Bài viết của bạn thể hiện kỹ năng tổng hợp thông tin rất tốt từ cả đoạn phỏng vấn lẫn bảng sự kiện. Cách bạn lồng ghép câu chuyện thời thơ ấu (<em>being adopted</em>) làm điểm tựa cho sự nghiệp sáng tạo tại Apple và đột phá iPhone đã tạo nên một câu chuyện tiểu sử truyền cảm hứng sâu sắc!
+        </div>
+      `;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal(e) {
+      if (e.target.id === 'modalOverlay') {
+        document.getElementById('modalOverlay').style.display = 'none';
+      }
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modalOverlay').style.display = 'none';
+    }
+
+    // ================= SELF-EVALUATION =================
+    function checkSelfEval() {
+      const checkboxes = document.querySelectorAll('#phase4Section input[type="checkbox"]');
+      const allChecked = Array.from(checkboxes).every(c => c.checked);
+      document.getElementById('fbSelfEval').style.display = allChecked ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
