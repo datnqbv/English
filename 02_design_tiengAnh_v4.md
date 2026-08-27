@@ -1,6 +1,33 @@
-# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v2.7
+# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v3.0
 
-> **v2.7** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **v3.0** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **Mới ở v3.0 (yêu cầu bổ sung — nút "Gom lại" cho Reference Pane, áp dụng cả mobile lẫn desktop):**
+> 1. **Mục 4.8b — thêm nút collapse `⟨⟨` trong `.pref-head`:** tắt hẳn Reference Pane (khác 3 nút
+>    mpc-btn trên mobile vốn chỉ đổi tỉ lệ, không tắt hẳn), dùng 1 class `.ref-collapsed` chung cho
+>    cả 2 breakpoint — desktop câu hỏi chiếm full width, mobile ẩn cả Reference Pane lẫn thanh
+>    mpc-btn. Có nút nổi "📄 Xem lại bài mẫu" để mở lại bất cứ lúc nào, không mất trạng thái tab.
+> 2. **Tỉ lệ mobile mode-split giữ nguyên 38vh/62vh** — xác nhận lại sau khi rà soát, KHÔNG đổi
+>    thành 40vh/60vh như đã thử ở bản nháp trước đó.
+>
+> **Mới ở v2.9 (đúc kết từ lỗi thật — `L10-unit1_writing_practice_v2.html` mất hẳn tab Signal Words
+> trong Reference Pane so với bản Unit 2 cũ, do áp nhầm luật của Reading sang Writing):**
+> 1. **Mục 4.8b — thêm ngoại lệ riêng cho Writing:** luật "Reading Passage → chỉ 1 pane, bỏ hẳn
+>    `.pref-tabs`" CHỈ áp dụng cho Reading/Speaking. Writing luôn cần tối thiểu 2 tab (bài mẫu +
+>    Signal Words/Functional Language) — tab Signal Words phải có mặt ở MỌI phase, không được rút
+>    gọn theo luật single-pane của Reading. Đây chính là khối "Quick Reference/Recap" bị mất.
+>
+> **Mới ở v2.8 (đúc kết từ QA sản phẩm thật `L10-unit2_writing_lesson.html` — header lệch màu/thiếu khối, thiếu component Mindmap cho Writing Unit 5 Lớp 10):**
+> 1. **Mục 4.2 — siết lại spec Header, không còn là gợi ý lỏng:** file thật bị lệch 3 điểm so với spec
+>    cũ — màu subtitle dùng nhầm `var(--cream)` thay vì `var(--sage)`; `h1` dùng
+>    `clamp(28px,5.2vw,44px)` thay vì đúng `clamp(28px,5vw,46px)`; và thay hẳn 2 khối bắt buộc
+>    `.characters` (thẻ nhân vật) + `.objectives` (mục tiêu bài học dạng pill đánh số) bằng
+>    `.tag-row`/`.head-tag` (badge chủ đề chung chung, không có trong thư viện component). Từ giờ
+>    Mục 4.2 ghi rõ ĐÂU LÀ BẮT BUỘC (không được thay thế bằng thành phần tự chế) và giá trị CSS chính
+>    xác cần copy nguyên văn, không diễn giải lại.
+> 2. **Component mới 4.15c — Mindmap:** sơ đồ tư duy phân tầng (trung tâm ẩn/lật → nhánh → node lá,
+>    node lá có thể gắn tag 🔧 tra cứu Functional Language), dùng cho Writing khi kịch bản cần bước
+>    brainstorm trước khi viết với độ hỗ trợ giảm dần qua nhiều lần xuất hiện trong cùng 1 Unit.
+>
 > **Mới ở v2.7 (đúc kết từ QA Writing Unit 2 Lớp 12 — mọi Activity viết bài dùng Submit tường minh):**
 > 1. **Mục 9.17 — bổ sung biến thể "Submit tường minh cho textarea tự do":** trước đây Submit tường
 >    minh chỉ có 1 dạng (check "đã điền đủ mọi ô trong 1 group" — hợp bảng điền như Read & Extract),
@@ -577,11 +604,23 @@ Mục 4 là **thư viện**, không phải trình tự bắt buộc. Trước kh
 > tham chiếu số mục đã dùng xuyên suốt tài liệu này và ở `01_scenario_builder_tiengAnh.md`/
 > `03_engine_tiengAnh.md`.
 
-### 4.2 Hero/Header — tuỳ chọn, ẩn được
+### 4.2 Hero/Header — tuỳ chọn ẨN CẢ KHỐI, nhưng KHÔNG tuỳ chọn nội dung bên trong
 
 Dùng đúng quy tắc header ở Mục 3.3/3.6 file Toán: nếu header không chứa id JS cập nhật động, có
 thể xoá hẳn khi nhúng platform khác; nếu có (hiếm với môn Anh, thường không có điểm số trong hero),
 ẩn bằng `display:none`, giữ nguyên node.
+
+> ⚠️ **Bắt buộc (siết lại ở v2.8, sau khi phát hiện lệch ở `L10-unit2_writing_lesson.html`):** nếu
+> ĐÃ quyết định hiển thị header (không ẩn hẳn), **4 khối dưới đây là bắt buộc đủ, không được lược
+> bớt hay thay bằng thành phần tự chế**: `eyebrow` + `h1` + `.characters` (thẻ nhân vật) +
+> `.objectives` (mục tiêu bài học dạng pill đánh số). KHÔNG thay `.characters`/`.objectives` bằng
+> `.tag-row`/`.head-tag` hay bất kỳ dạng "badge chủ đề" chung chung nào khác — 2 khối này không có
+> trong thư viện component, không được tự sáng chế thay thế. Nếu Unit không có nhân vật xuyên suốt
+> Practice, có thể bỏ RIÊNG `.characters`, nhưng `.objectives` luôn giữ (đây chính là nội dung mục
+> "Objectives" đã có sẵn trong kịch bản, không cần soạn thêm).
+> **Giá trị CSS dưới đây copy NGUYÊN VĂN, không diễn giải/làm tròn lại:** màu subtitle luôn
+> `var(--sage)` (KHÔNG dùng `var(--cream)` — cream gần trắng, chìm vào nền xanh đậm, khó đọc hơn
+> sage rõ rệt); `h1` luôn `clamp(28px,5vw,46px)` (không tự đổi hệ số vw hay giá trị max).
 
 ```html
 <header class="hero">
@@ -1764,6 +1803,14 @@ function goToPractice() {
 > Pane (sticky, cuộn riêng), cột phải là câu hỏi. Mobile chia đôi theo **chiều ngang** — Reference
 > Pane sticky ở trên, câu hỏi cuộn ở dưới, kèm thanh nút chuyển chế độ xem (Chia đôi / chỉ Bài đọc /
 > chỉ Câu hỏi) để gom-ẩn bớt 1 bên khi màn hình quá hẹp cho cả 2.
+>
+> **Nút "Gom lại" (⟨⟨, mới v3.0):** đặt ở góc phải `.pref-head`, tắt HẲN Reference Pane (khác 3 nút
+> mpc-btn trên mobile — mpc-btn chỉ đổi tỉ lệ hiển thị, không tắt hẳn) — dùng khi học sinh muốn tập
+> trung 100% màn hình cho câu hỏi, không cần tra lại bài mẫu/từ vựng nữa. Áp dụng CHUNG cho cả
+> desktop lẫn mobile bằng 1 class `.ref-collapsed` duy nhất trên `#practiceSplit`. Khi gom: desktop
+> cột câu hỏi chiếm full width; mobile ẩn cả Reference Pane lẫn thanh 3 nút mpc-btn (không còn ý
+> nghĩa khi Reference Pane đã tắt hẳn). Nút "📄 Xem lại bài mẫu" nổi lên (sticky) để mở lại bất cứ
+> lúc nào — không mất trạng thái tab/nội dung đang xem trong Reference Pane khi mở lại.
 
 ```html
 <div id="practiceInner" style="display:none;">
@@ -1784,12 +1831,16 @@ function goToPractice() {
           <button class="pref-tab active" data-pref="messages" onclick="switchRefTab('messages')">💬 Messages</button>
           <button class="pref-tab" data-pref="vocab" onclick="switchRefTab('vocab')">🧠 Vocabulary</button>
         </div>
+        <button class="pref-collapse-btn" id="prefCollapseBtn" onclick="toggleRefPane()" aria-label="Gom lại, chỉ xem câu hỏi">⟨⟨</button>
       </div>
       <div class="pref-body">
         <div id="refMessagesView" class="pref-view active"><div id="refChatBox"></div></div>
         <div id="refVocabView" class="pref-view"><div id="refVocabList"></div></div>
       </div>
     </div>
+
+    <!-- Nút mở lại Reference Pane khi đã gom — chỉ hiện khi container có class .ref-collapsed -->
+    <button class="ref-reopen-btn" id="refReopenBtn" onclick="toggleRefPane()">📄 Xem lại bài mẫu</button>
 
     <!-- Cột/khối phải-dưới: câu hỏi — Level Tabs (4.5) + practiceHost như bản gốc -->
     <div class="practice-questions-pane" id="practiceQuestionsPane">
@@ -1822,7 +1873,19 @@ function goToPractice() {
 
 .practice-ref-pane { background:var(--white); border:2px solid var(--cream-2); border-radius:var(--radius-lg);
   padding:14px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px; }
-.pref-head { display:flex; align-items:center; border-bottom:1.5px solid var(--cream-2); padding-bottom:8px; }
+.pref-head { display:flex; align-items:center; justify-content:space-between; gap:8px;
+  border-bottom:1.5px solid var(--cream-2); padding-bottom:8px; }
+.pref-collapse-btn { flex:0 0 auto; background:var(--cream-2); border:1.5px solid var(--paper-line-2);
+  border-radius:999px; width:34px; height:34px; font-size:14px; font-weight:800; color:var(--ink-2);
+  display:flex; align-items:center; justify-content:center; }
+.pref-collapse-btn:hover { background:var(--sage-pale); color:var(--jade-text); }
+
+/* Nút mở lại — ẩn mặc định, chỉ hiện khi container đang .ref-collapsed */
+.ref-reopen-btn { display:none; background:var(--jade-deep); color:#fff; border:0; border-radius:999px;
+  padding:9px 16px; font-size:13.5px; font-weight:700; box-shadow:var(--shadow); margin-bottom:14px;
+  align-items:center; gap:6px; }
+.practice-split-container.ref-collapsed .ref-reopen-btn { display:inline-flex; }
+.practice-split-container.ref-collapsed .practice-ref-pane { display:none; }
 .pref-tabs { display:flex; gap:8px; width:100%; }
 .pref-tab { background:var(--cream-2); border:1.5px solid transparent; border-radius:999px; padding:6px 14px;
   font-size:13px; font-weight:700; color:var(--ink-2); min-height:36px; flex:1; text-align:center; white-space:nowrap; }
@@ -1863,6 +1926,9 @@ function goToPractice() {
     gap:20px; align-items:start; }
   .practice-ref-pane { position:sticky; top:70px; max-height:calc(100vh - 90px); }
   .practice-questions-pane { min-width:0; }
+  .ref-reopen-btn { position:sticky; top:70px; z-index:60; }
+  /* Gom lại trên desktop: cột trái biến mất hẳn, câu hỏi chiếm full width */
+  .practice-split-container.ref-collapsed { grid-template-columns:1fr; }
 }
 
 /* ===== Mobile (≤991px): chia đôi theo CHIỀU NGANG — 2 khối trên/dưới, có nút gom-ẩn ===== */
@@ -1879,6 +1945,7 @@ function goToPractice() {
   .practice-split-container.mode-ref .pref-body { max-height:calc(60vh - 55px); }
   .practice-split-container.mode-q .practice-ref-pane { max-height:18vh; }
   .practice-split-container.mode-q .pref-body { max-height:calc(18vh - 55px); }
+  .ref-reopen-btn { position:sticky; top:84px; z-index:80; width:100%; justify-content:center; }
   .q-nav-bar { position:sticky; bottom:0; z-index:90; border-radius:var(--radius) var(--radius) 0 0;
     margin-top:14px; border-bottom:none; background:var(--white); box-shadow:0 -4px 16px rgba(0,0,0,0.1); }
 }
@@ -1917,6 +1984,17 @@ function switchRefTab(tab) {
   document.querySelectorAll('.pref-tab').forEach(t => t.classList.toggle('active', t.dataset.pref === tab));
 }
 
+// Nút "Gom lại" — ẩn hẳn Reference Pane để chỉ hiện Câu hỏi, dùng CHUNG cho cả mobile lẫn desktop
+// (khác 3 nút mpc-btn ở dưới: mpc-btn chỉ ĐỔI TỈ LỆ trên mobile, không tắt hẳn; nút này tắt hẳn ở
+// CẢ 2 breakpoint). Dùng JS bật/tắt class thay vì CSS :has() để không phụ thuộc hỗ trợ trình duyệt.
+function toggleRefPane() {
+  const container = document.getElementById('practiceSplit');
+  const controls = document.querySelector('.mobile-pane-controls');
+  const collapsed = container.classList.toggle('ref-collapsed');
+  if (controls) controls.style.display = collapsed ? 'none' : '';
+  LMS().event('ref_pane_toggle', { collapsed });
+}
+
 function setMobileViewMode(mode) {
   const container = document.getElementById('practiceSplit'); if (!container) return;
   container.classList.remove('mode-split', 'mode-ref', 'mode-q');
@@ -1932,6 +2010,22 @@ function setMobileViewMode(mode) {
 > Từ vựng, Reference Pane chỉ cần 1 pane duy nhất (bỏ hẳn `.pref-tabs`), nội dung là bản sao đoạn
 > văn ở 4.10 (giữ nguyên từ khoá gạch chân, bỏ tương tác tap-hiện-nghĩa vì đây là bản tham chiếu
 > read-only).
+>
+> ⚠️ **Riêng Writing — KHÔNG áp dụng luật "1 pane duy nhất" ở trên (siết lại v2.9, sau lỗi thật ở
+> `L10-unit1_writing_practice_v2.html` — mất hẳn tab Signal Words so với bản Unit 2 cũ):** Part 1
+> của Writing luôn có 2 loại tài liệu cần tra khi làm Practice — (1) bài mẫu/model text liên quan
+> tới phase đang làm, và (2) **Bảng tín hiệu nhận diện/Functional Language** (Mục 6 khuôn Part 1) —
+> đây chính là khối "Quick Reference" giáo viên hay gọi. **BẮT BUỘC luôn có tối thiểu 2 tab, không
+> được rút còn 1 pane:**
+> - Tab bài mẫu: đổi nội dung theo từng phase (VD Identify/Structure dùng đúng bài mẫu Part 1 để đối
+>   chiếu; Write/Production có thể đổi sang bài mẫu khác nếu Practice dùng chủ đề khác) — phase nào
+>   không còn bài mẫu cụ thể để tra (VD bước viết độc lập) thì bỏ RIÊNG tab này, không bỏ cả 2.
+> - Tab Signal Words/Functional Language: **PHẢI xuất hiện Ở MỌI PHASE không trừ phase nào** — kể cả
+>   khi tab bài mẫu bị bỏ ở phase đó, tab này vẫn còn, vì đây là bảng tra cứu công thức viết mà học
+>   sinh cần xuyên suốt cả bài Practice, không riêng 1 phase nào.
+> - Dùng đúng pattern `refData`/`levelRefTabs`/`switchRefTab()`/`renderRefTabsForLevel()` (khai báo
+>   nội dung từng tab theo `key`, danh sách tab hiện theo từng `levelId`) thay vì
+>   `refEmails`/`renderRefPane()` (chỉ hỗ trợ đổi bài mẫu, không hỗ trợ thêm loại tab khác).
 >
 > **Q-Nav Bar (thanh câu hỏi):** tuỳ chọn, hữu ích khi 1 bước có từ 4 câu trở lên để học sinh nhảy
 > nhanh tới câu chưa làm — dựng lại mỗi khi `renderStep()` (4.5) chạy, đánh dấu `.done` cho câu đã
@@ -2168,6 +2262,57 @@ function speak(text, lang='en-GB'){
 2. Đặt ngay TRÊN ô `textarea`/khung điền, không đặt trong popup/tooltip cần thêm 1 lượt tap mới
    thấy — hint phải hiện sẵn, không ẩn thêm 1 lớp.
 3. 1 Activity chỉ có TỐI ĐA 1 khối Write Hint — không lặp lại hint ở nhiều vị trí trong cùng 1 bài.
+
+### 4.15c Mindmap — sơ đồ tư duy phân tầng, độ hỗ trợ giảm dần (mới, v2.8)
+
+Dùng khi kịch bản Writing cần 1 bước brainstorm TRƯỚC khi viết, đặc biệt khi mindmap xuất hiện
+NHIỀU LẦN trong cùng 1 Unit với độ hỗ trợ giảm dần (đầy đủ → 1 phần → chỉ câu hỏi gợi mở → trống
+hoàn toàn) — xem ví dụ thật ở kịch bản Writing Unit 5 Lớp 10.
+
+**Cấu trúc phân tầng bắt buộc:** 1 node trung tâm (chủ đề/phát minh — có thể ẩn dạng "?" chờ lật) →
+2-3 nhánh (bối cảnh sử dụng) → mỗi nhánh 2-4 node lá (từ khoá ngắn, KHÔNG viết thành câu dài). Node
+lá có thể gắn 1 tag 🔧 để tra cứu ngược Functional Language liên quan (xem ví dụ ở kịch bản Unit 5).
+
+```html
+<div class="mindmap" id="mm1">
+  <button class="mindmap-center" id="mmCenter" onclick="flipMindmapCenter('mmCenter','Smartphone')">?</button>
+  <div class="mindmap-branches">
+    <div class="mindmap-branch">
+      <div class="branch-label">At school</div>
+      <div class="mindmap-leaf filled">educational apps <span class="mindmap-tag" onclick="openMindmapTagPopup(event,'help/allow + us + to V','It allows us to use educational apps.')">🔧</span></div>
+      <div class="mindmap-leaf filled">look up information <span class="mindmap-tag" onclick="openMindmapTagPopup(event,'help/allow + us + to V','It helps us look up information quickly.')">🔧</span></div>
+      <div class="mindmap-leaf empty" data-hint="record lectures">+ thêm 1 ý</div>
+    </div>
+    <!-- lặp lại .mindmap-branch cho các nhánh còn lại -->
+  </div>
+</div>
+```
+```css
+.mindmap { background:var(--cream-2); border-radius:var(--radius-lg); padding:24px; text-align:center; }
+.mindmap-center { width:88px; height:88px; border-radius:50%; background:var(--ink-faint); color:#fff;
+  border:0; font-size:28px; font-weight:800; cursor:pointer; transition:transform .4s ease, background .3s ease; }
+.mindmap-center.revealed { background:var(--jade-deep); transform:rotateY(360deg); }
+.mindmap-branches { display:flex; justify-content:center; gap:20px; margin-top:20px; flex-wrap:wrap; }
+.mindmap-branch { background:var(--white); border:1px solid var(--paper-line); border-radius:var(--radius);
+  padding:14px; min-width:160px; }
+.branch-label { font-weight:700; color:var(--jade-text); font-size:13.5px; margin-bottom:8px; }
+.mindmap-leaf { background:var(--sage-pale); border-radius:var(--radius-sm); padding:6px 10px;
+  font-size:13px; margin-bottom:6px; display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.mindmap-leaf.empty { background:transparent; border:1.5px dashed var(--paper-line-2); color:var(--ink-faint); }
+.mindmap-tag { background:var(--sage-deep); color:#fff; border-radius:50%; width:18px; height:18px;
+  font-size:10px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; }
+```
+
+**⚠️ Bắt buộc:**
+1. Node lá là TỪ KHOÁ (2-4 từ), không phải câu hoàn chỉnh — nếu bài cần câu mẫu, đặt câu mẫu ở
+   bảng Outline/Demo riêng bên dưới mindmap (xem cách kịch bản Unit 5 Lớp 10 tách 2 khối).
+2. Độ hỗ trợ giảm dần thể hiện qua tỉ lệ node `.filled` so với `.empty` — KHÔNG đổi số lượng
+   nhánh/node giữa các lần xuất hiện trong cùng 1 Unit, chỉ đổi trạng thái điền sẵn hay để trống.
+3. Node trung tâm chỉ dùng hiệu ứng lật (`flipMindmapCenter`) ở lần XUẤT HIỆN ĐẦU TIÊN (thường là
+   Hook) — các lần sau (Practice/Production) trung tâm hiện sẵn tên chủ đề, không cần lật lại.
+4. Tag 🔧 mở popup tái dùng ĐÚNG pattern overlay bottom-sheet đã có (Mục 1.14/1.18 file engine) —
+   không viết popup riêng.
+5. Xem hàm `flipMindmapCenter()`/`openMindmapTagPopup()` đầy đủ ở Mục 1.20 file engine.
 
 ### 4.16 Diagnostic / Revision — câu hỏi trộn nhiều category, chấm điểm theo nhóm
 

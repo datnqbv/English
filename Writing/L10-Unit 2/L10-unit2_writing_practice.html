@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unit 2 — Writing: Practice &amp; Production Writing</title>
+  <title>Unit 2 — Writing: Humans and the Environment (Practice &amp; Production)</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +14,22 @@
 
   <script type="application/json" id="athena-context">
   {
-    "title": "Unit 2 - Writing - Part 2 & 3: Practice & Production Writing - Suggestion Paragraph",
+    "title": "Unit 2: Humans and the Environment - Writing Practice & Production",
     "subject": "Tiếng Anh",
     "grade": "10",
     "objectives": [
       "Nhận diện và sắp xếp đúng 5 phần của Suggestion Paragraph (Topic Sentence, 3 Supporting Points, Concluding Sentence)",
-      "Áp dụng thành thạo từ nối trình tự (First, Second, Third), từ đưa ví dụ (For example) và mẫu câu kết quả (This can/will)",
-      "Viết đoạn văn đề xuất cải thiện môi trường hoàn chỉnh 100-130 từ đạt chuẩn Rubric 4 tiêu chí của AI Athena"
+      "Sử dụng thành thạo từ nối trình tự (First/Second/Third), 'For example' và câu kết quả (This can/will)",
+      "Viết đoạn văn đề xuất hoàn chỉnh 100-130 từ đạt chuẩn Rubric 4 tiêu chí của AI Athena"
     ],
     "structure": [
       { "id": "phase-0", "title": "Identify" },
       { "id": "phase-1", "title": "Structure" },
       { "id": "phase-2", "title": "Write" },
-      { "id": "phase-3", "title": "Production" }
+      { "id": "phase-3", "title": "Production" },
+      { "id": "phase-4", "title": "Self-evaluation" }
     ],
-    "athenaGuidance": "File Luyện tập & Đánh giá Writing Unit 2 Lớp 10 gồm 4 phần: Identify (Structure labelling 6 câu, Read & Extract bảng 3 cột), Structure (2 bài Passage Arrangement tap-to-order), Write (Sentence building 6 câu, Guided writing 2 mức về Lớp học xanh, Correct the mistake 6 lỗi, Write a paragraph), và Production Writing (Guided writing về Thư viện xanh, Free Writing chấm qua AI Athena 100-130 từ với Rubric 4 tiêu chí, Self-evaluation 5 tiêu chí)."
+    "athenaGuidance": "File Luyện tập & Đánh giá Writing Unit 2 Lớp 10 gồm 5 phần: Identify (Structure labelling 5 câu, Read & Extract 4 ô), Structure (2 bài Passage Arrangement tap-to-order), Write (Sentence building 4 câu, Guided writing 2 mức, Correct the mistake 3 lỗi, Independent suggestion writing), Production Writing (Guided writing về Canteen, Free Writing về giảm rác nhựa 100-130 từ chấm qua AI Athena kèm Rubric 4 tiêu chí), và Self-evaluation (5 tiêu chí tự đánh giá). Hỗ trợ Practice Reference Pane 2 tab (Bài mẫu + Signal Words) và nút gom ⟨⟨ theo chuẩn Design System v3.0."
   }
   </script>
 
@@ -124,50 +125,8 @@
     }
 
     .wrap {
-      width: min(1060px, calc(100% - 32px));
+      width: min(1120px, calc(100% - 32px));
       margin: auto;
-    }
-
-    /* Sticky Navigation Header */
-    .top-header {
-      background: var(--jade-deep);
-      color: #fff;
-      padding: 24px 0 28px;
-      box-shadow: 0 4px 16px rgba(20, 67, 47, 0.12);
-    }
-
-    .top-header-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .top-header h1 {
-      color: #fff;
-      font-size: 26px;
-    }
-
-    .top-header .sub {
-      color: var(--cream);
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .top-header-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .top-tag {
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 999px;
-      padding: 4px 12px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: #fff;
     }
 
     /* Reading Progress Bar */
@@ -176,7 +135,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 3px;
+      height: 3.5px;
       background: transparent;
       z-index: 9999;
     }
@@ -187,6 +146,61 @@
       width: 0%;
       background: var(--accent);
       transition: width .1s ease;
+    }
+
+    /* Top Hero Header (Mục 4.2 Siết v2.8) */
+    .top-header {
+      background: linear-gradient(135deg, var(--jade-dark) 0%, var(--jade-deep) 100%);
+      color: #fff;
+      padding: 32px 0 38px;
+      box-shadow: 0 4px 16px rgba(20, 67, 47, 0.12);
+    }
+
+    .top-header-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: .06em;
+      align-self: flex-start;
+    }
+
+    .top-header h1 {
+      color: #fff;
+      font-size: clamp(24px, 4.5vw, 34px);
+      margin: 4px 0 0;
+    }
+
+    .top-header .sub {
+      color: var(--sage);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .top-header .characters-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #fff;
+      align-self: flex-start;
+      margin-top: 4px;
     }
 
     /* Mobile View Mode Controls */
@@ -202,7 +216,6 @@
       z-index: 100;
       box-shadow: 0 4px 14px rgba(20, 67, 47, 0.10);
       border: 1px solid var(--paper-line);
-      box-sizing: border-box;
     }
 
     .mpc-title {
@@ -252,34 +265,44 @@
       box-shadow: 0 2px 8px rgba(42, 129, 103, 0.25);
     }
 
-    /* Split Container Layout */
+    /* Split Container Layout (Component 4.8b v3.0) */
     .practice-split-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 24px;
+      align-items: start;
+      margin: 28px auto 40px;
     }
 
+    /* Left Reference Pane */
     .practice-ref-pane {
       background: var(--white);
       border: 1px solid var(--paper-line);
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow);
+      position: sticky;
+      top: 20px;
+      max-height: calc(100vh - 40px);
+      display: flex;
+      flex-direction: column;
     }
 
     .pref-head {
       background: var(--cream-2);
       border-bottom: 1px solid var(--paper-line-2);
-      padding: 10px 14px;
+      padding: 10px 12px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
 
     .pref-tabs {
       display: flex;
       gap: 6px;
+      overflow-x: auto;
+      flex: 1;
     }
 
     .pref-tab {
@@ -287,9 +310,15 @@
       border: 0;
       border-radius: var(--radius-sm);
       padding: 6px 12px;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--ink-2);
+      white-space: nowrap;
+      transition: all .15s ease;
+    }
+
+    .pref-tab:hover {
+      background: var(--cream-3);
     }
 
     .pref-tab.active {
@@ -297,42 +326,107 @@
       color: #fff;
     }
 
+    /* Nút Gom lại ⟨⟨ (Mới v3.0) */
+    .pref-collapse-btn {
+      flex: 0 0 auto;
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 999px;
+      width: 32px;
+      height: 32px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .15s ease;
+    }
+
+    .pref-collapse-btn:hover {
+      background: var(--sage-pale);
+      color: var(--jade-text);
+      border-color: var(--jade-soft);
+    }
+
+    /* Nút mở lại Reference Pane (Mới v3.0) */
+    .ref-reopen-btn {
+      display: none;
+      background: var(--jade-deep);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 13.5px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .ref-reopen-btn:hover {
+      background: var(--jade-dark);
+    }
+
+    /* Khi ở trạng thái .ref-collapsed (Mới v3.0) */
+    .practice-split-container.ref-collapsed {
+      grid-template-columns: 1fr;
+    }
+
+    .practice-split-container.ref-collapsed .practice-ref-pane {
+      display: none !important;
+    }
+
+    .practice-split-container.ref-collapsed .ref-reopen-btn {
+      display: inline-flex;
+    }
+
     .pref-body {
-      padding: 18px 20px;
-      max-height: 70vh;
+      padding: 16px 18px;
       overflow-y: auto;
-      font-size: 15px;
-      line-height: 1.7;
+      font-size: 14px;
+      line-height: 1.65;
     }
 
-    .pref-ref-box {
+    .pref-content-panel {
+      display: none;
+    }
+
+    .pref-content-panel.active {
+      display: block;
+      animation: fadeIn .2s ease;
+    }
+
+    .pref-quote {
+      border-left: 3.5px solid var(--accent);
       background: var(--cream);
-      border-left: 4px solid var(--jade-deep);
-      padding: 12px 16px;
-      border-radius: var(--radius-sm);
-      margin-bottom: 14px;
-      font-size: 14px;
+      padding: 12px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--ink-2);
+      margin-bottom: 12px;
     }
 
-    .pref-ref-box h4 {
-      font-size: 14px;
+    .pref-box {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .pref-box h4 {
+      font-size: 13.5px;
       margin-bottom: 4px;
       color: var(--jade-dark);
     }
 
-    .vi-sub {
-      display: block;
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--ink-3);
-      text-transform: none;
-      letter-spacing: normal;
-      margin-top: 2px;
-    }
-
-    /* Questions Pane */
+    /* Right Questions Pane */
     .practice-questions-pane {
-      flex: 1;
+      min-width: 0;
     }
 
     /* Level Navigation Tabs */
@@ -347,9 +441,9 @@
       background: var(--white);
       border: 1.5px solid var(--paper-line-2);
       border-radius: 999px;
-      padding: 8px 20px;
+      padding: 8px 18px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--ink-2);
       min-height: 42px;
       transition: all .15s ease;
@@ -366,10 +460,19 @@
       box-shadow: var(--shadow);
     }
 
+    .phase-panel {
+      display: none;
+    }
+
+    .phase-panel.active {
+      display: block;
+      animation: fadeIn .25s ease;
+    }
+
     .level-intro {
       font-size: 14.5px;
       color: var(--ink-2);
-      margin: 0 0 18px;
+      margin: 0 0 20px;
       background: var(--cream-2);
       padding: 12px 16px;
       border-radius: var(--radius-sm);
@@ -377,7 +480,7 @@
       line-height: 1.55;
     }
 
-    /* Cards & Activities */
+    /* Activity Card */
     .card {
       background: var(--white);
       border: 1px solid var(--paper-line);
@@ -403,43 +506,45 @@
     .desc-en {
       font-size: 15px;
       color: var(--ink);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       font-weight: 600;
     }
 
-    /* MCQ Engine */
+    .vi-sub {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-3);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: 2px;
+    }
+
+    /* MCQ Questions */
     .q-card {
       border-top: 1px solid var(--cream-2);
-      padding: 16px 0;
+      padding: 14px 0;
     }
 
     .q-card:first-of-type {
       border-top: 0;
-      padding-top: 4px;
-    }
-
-    .q-num {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--jade-deep);
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      margin-bottom: 6px;
+      padding-top: 2px;
     }
 
     .q-quote {
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--jade-dark);
       background: var(--cream-2);
       padding: 10px 14px;
       border-radius: var(--radius-sm);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      line-height: 1.5;
     }
 
     .q-opts {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
     }
 
@@ -447,15 +552,16 @@
       background: var(--white);
       border: 1.5px solid var(--paper-line-2);
       border-radius: var(--radius-sm);
-      padding: 9px 14px;
-      font-size: 14px;
+      padding: 9px 12px;
+      font-size: 13.5px;
       font-weight: 700;
-      color: var(--ink);
-      text-align: left;
+      color: var(--ink-2);
+      text-align: center;
       transition: all .15s ease;
       min-height: 44px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     .q-opt:hover {
@@ -463,17 +569,23 @@
       background: var(--accent-pale);
     }
 
+    .q-opt.selected {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+      color: var(--accent-text);
+    }
+
     .q-opt.correct {
-      background: var(--correct-bg);
-      border-color: var(--correct);
-      color: var(--jade-text);
+      background: var(--correct-bg) !important;
+      border-color: var(--correct) !important;
+      color: var(--jade-text) !important;
       font-weight: 800;
     }
 
     .q-opt.wrong {
-      background: var(--wrong-bg);
-      border-color: var(--wrong);
-      color: var(--wrong);
+      background: var(--wrong-bg) !important;
+      border-color: var(--wrong) !important;
+      color: var(--wrong) !important;
       font-weight: 800;
     }
 
@@ -482,92 +594,98 @@
       margin-top: 10px;
       padding: 10px 14px;
       border-radius: var(--radius-sm);
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.5;
+      background: var(--correct-bg);
+      color: var(--jade-text);
     }
 
     .q-fb.show {
       display: block;
     }
 
-    .q-fb.ok {
-      background: var(--correct-bg);
-      color: var(--jade-text);
-    }
-
-    .q-fb.hint {
-      background: var(--warning-bg);
-      color: var(--warning);
+    .q-fb.bad {
+      background: var(--wrong-bg);
+      color: var(--ink);
     }
 
     /* Fill Table (Read & Extract) */
-    .fill-table {
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 14px 0 16px;
+    }
+
+    .field-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--jade-dark);
+    }
+
+    .field-item input {
       width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0 16px;
+      min-height: 44px;
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      background: var(--white);
       font-size: 14px;
     }
 
-    .fill-table th,
-    .fill-table td {
-      border: 1px solid var(--paper-line-2);
-      padding: 9px 12px;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .fill-table th {
-      background: var(--cream-2);
-      color: var(--jade-dark);
-      font-weight: 800;
-    }
-
-    .fill-table td input {
-      width: 100%;
-      border: 1px solid var(--paper-line-2);
-      border-radius: var(--radius-sm);
-      padding: 6px 10px;
-      background: var(--white);
+    .field-item input:focus {
+      outline: none;
+      border-color: var(--jade-deep);
+      box-shadow: 0 0 0 3px var(--jade-pale);
     }
 
     /* Ordering (Passage Arrangement) */
     .ord-wrap {
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .ord-bank {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
+      padding: 12px;
+      background: var(--cream-2);
+      border: 2px dashed var(--paper-line-2);
+      border-radius: var(--radius);
+      min-height: 80px;
     }
 
     .ord-tile {
-      background: var(--cream-2);
+      background: var(--white);
       border: 1.5px solid var(--paper-line-2);
       border-radius: var(--radius-sm);
       padding: 10px 14px;
       text-align: left;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--ink);
       transition: all .15s ease;
-      cursor: pointer;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
     }
 
     .ord-tile:hover {
-      background: var(--cream-3);
       border-color: var(--jade-deep);
+      background: var(--cream);
     }
 
     .ord-tile.placed {
-      opacity: .35;
-      pointer-events: none;
+      display: none;
     }
 
     .ord-answer {
       min-height: 120px;
-      background: var(--cream);
+      background: var(--white);
       border: 2px dashed var(--jade-soft);
       border-radius: var(--radius);
       padding: 12px;
@@ -578,15 +696,17 @@
     }
 
     .ord-ans-row {
-      background: var(--white);
-      border: 1.5px solid var(--paper-line-2);
+      background: var(--jade-pale);
+      border: 1.5px solid var(--jade-soft);
       border-radius: var(--radius-sm);
       padding: 10px 14px;
       display: flex;
-      gap: 10px;
+      gap: 12px;
       align-items: center;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 600;
+      color: var(--jade-text);
+      animation: fadeIn .2s ease;
     }
 
     .ord-num {
@@ -603,233 +723,282 @@
       flex-shrink: 0;
     }
 
-    .ord-ans-row.correct {
-      border-color: var(--correct);
-      background: var(--correct-bg);
-    }
-
-    .ord-ans-row.wrong {
-      border-color: var(--wrong);
-      background: var(--wrong-bg);
-    }
-
-    .ord-controls {
+    /* Sentence Building */
+    .sent-builder-wrap {
       display: flex;
-      gap: 10px;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .an-btn {
-      background: var(--jade-deep);
-      color: #fff;
-      border: 0;
-      border-radius: var(--radius-sm);
-      padding: 8px 18px;
-      font-weight: 700;
-      font-size: 14px;
-      min-height: 42px;
+    .sent-builder {
+      border-top: 1px solid var(--cream-2);
+      padding-top: 14px;
     }
 
-    .an-btn.ghost {
-      background: var(--cream-2);
-      border: 1.5px solid var(--paper-line-2);
-      color: var(--ink-2);
+    .sent-builder:first-of-type {
+      border-top: 0;
+      padding-top: 0;
     }
 
-    /* Sentence Builder Chips */
-    .sb-target {
-      min-height: 48px;
-      background: var(--cream);
-      border: 1.5px dashed var(--jade-soft);
-      border-radius: var(--radius-sm);
-      padding: 8px 12px;
+    .word-bank {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-      margin-bottom: 10px;
+      gap: 8px;
+      padding: 10px;
+      background: var(--cream-2);
+      border: 1.5px dashed var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      margin: 8px 0;
+      min-height: 52px;
     }
 
-    .chip {
+    .word-chip {
       background: var(--white);
       border: 1.5px solid var(--paper-line-2);
-      border-radius: 999px;
-      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
       font-size: 13.5px;
       font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
+      color: var(--ink-2);
       transition: all .15s ease;
-      min-height: 36px;
-      display: inline-flex;
-      align-items: center;
+      min-height: 40px;
     }
 
-    .chip:hover {
-      border-color: var(--jade-deep);
-      background: var(--jade-pale);
+    .word-chip:hover {
+      border-color: var(--accent);
+      background: var(--accent-pale);
     }
 
-    .chip.placed {
+    .word-chip.placed {
       opacity: .35;
       pointer-events: none;
     }
 
-    .sb-chips-bank {
+    .built-tray {
+      min-height: 52px;
+      background: var(--white);
+      border: 1.5px solid var(--jade-soft);
+      border-radius: var(--radius-sm);
+      padding: 10px;
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 12px;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
-    /* Error Spotter (Correct the mistake) */
-    .error-text-card {
+    .built-chip {
+      background: var(--jade-pale);
+      border: 1.5px solid var(--jade-soft);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--jade-text);
+    }
+
+    /* Outlines & Writing Areas */
+    .outline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 12px 0 16px;
+    }
+
+    .outline-col {
       background: var(--cream-2);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      font-size: 15.5px;
-      line-height: 1.8;
-      margin-bottom: 16px;
-      border: 1px solid var(--paper-line-2);
+      border-top: 4px solid var(--jade-deep);
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.5;
     }
 
-    .err-tag {
-      background: var(--accent-pale);
-      border: 1.5px solid var(--accent);
-      color: var(--accent-text);
-      font-weight: 800;
-      border-radius: 6px;
-      padding: 2px 8px;
-      margin: 0 2px;
-      cursor: pointer;
-      display: inline-block;
+    .outline-col h4 {
+      font-size: 13.5px;
+      color: var(--jade-dark);
+      margin-bottom: 6px;
     }
 
-    .err-tag:hover {
-      background: var(--accent);
-      color: #fff;
+    .write-hint {
+      margin: 12px 0;
+      padding: 11px 15px;
+      border-left: 3.5px solid var(--jade-deep);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    /* Writing Area & Live Word Counter */
+    .write-hint-text {
+      font-style: italic;
+    }
+
     .write-area {
       width: 100%;
-      min-height: 140px;
-      border: 1.5px solid var(--paper-line-2);
+      min-height: 170px;
+      border: 2px solid var(--paper-line);
       border-radius: var(--radius);
-      padding: 14px 16px;
-      font-size: 15px;
-      line-height: 1.65;
+      padding: 14px;
       background: var(--white);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink);
       resize: vertical;
-      margin-top: 10px;
-      box-sizing: border-box;
+      transition: border-color .2s ease;
     }
 
     .write-area:focus {
       outline: none;
       border-color: var(--jade-deep);
-      box-shadow: 0 0 0 3px rgba(42, 129, 103, 0.15);
+      box-shadow: 0 0 0 3px var(--jade-pale);
     }
 
     .write-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+      margin-top: 10px;
     }
 
-    .word-count {
-      font-size: 13.5px;
+    .word-counter-badge {
+      font-size: 13px;
       font-weight: 700;
       color: var(--ink-3);
     }
 
-    .reveal-btn {
-      background: var(--cream-2);
-      border: 1.5px solid var(--paper-line-2);
-      border-radius: var(--radius-sm);
-      padding: 8px 16px;
-      font-size: 13.5px;
+    .write-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .warn-msg {
+      display: none;
+      color: var(--wrong);
+      font-size: 13px;
       font-weight: 700;
-      color: var(--jade-dark);
-      margin-top: 10px;
+      margin-top: 6px;
     }
 
-    .write-footer .reveal-btn {
-      margin-top: 0;
+    /* Buttons */
+    .btn-submit {
+      background: var(--jade-deep);
+      border: 1.5px solid var(--jade-deep);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      min-height: 44px;
+      transition: all .2s ease;
     }
 
-    .reveal-btn:hover {
-      background: var(--cream-3);
+    .btn-submit:hover:not(:disabled) {
+      background: var(--jade-dark);
+      border-color: var(--jade-dark);
+      box-shadow: 0 4px 12px rgba(20, 67, 47, 0.2);
     }
 
-    .reveal-btn:disabled {
+    .btn-submit:disabled {
       background: var(--cream-2);
       border-color: var(--paper-line);
       color: var(--ink-faint);
       cursor: not-allowed;
-      opacity: .75;
     }
 
-    .reveal-btn:disabled:hover {
-      background: var(--cream-2);
-    }
-
-    .an-btn:disabled {
-      background: var(--ink-faint);
-      cursor: not-allowed;
-      opacity: .7;
-    }
-
-    .self-check {
-      margin-top: 14px;
-      background: var(--cream-2);
-      border-radius: var(--radius-sm);
-      padding: 12px 16px;
-    }
-
-    .sc-title {
-      font-size: 13.5px;
-      font-weight: 800;
-      color: var(--jade-dark);
-      margin-bottom: 8px;
-    }
-
-    .sc-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .sc-box {
-      width: 22px;
-      height: 22px;
-      border: 1.5px solid var(--paper-line-2);
-      border-radius: 4px;
+    .btn-secondary {
       background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      color: var(--ink-2);
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      min-height: 42px;
+      transition: all .15s ease;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+      color: var(--accent-text);
+    }
+
+    .action-row {
       display: flex;
+      gap: 10px;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      flex-wrap: wrap;
+      margin-top: 14px;
     }
 
-    .sc-item.checked .sc-box {
-      background: var(--jade-deep);
-      border-color: var(--jade-deep);
+    .action-row.right {
+      justify-content: flex-end;
     }
 
-    .sc-item.checked .sc-box::after {
-      content: "✓";
-      color: #fff;
+    /* Correct the Mistake */
+    .mistake-passage {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      font-size: 15.5px;
+      line-height: 1.9;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .mistake-target {
+      border-bottom: 3px dotted var(--wrong);
       font-weight: 800;
-      font-size: 13px;
+      color: var(--wrong);
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: background .15s ease;
     }
 
-    /* Rubric Grid for Production Writing */
+    .mistake-target:hover {
+      background: var(--wrong-bg);
+    }
+
+    .correction-box {
+      display: none;
+      margin: 10px 0;
+      padding: 12px 14px;
+      background: var(--wrong-bg);
+      border-left: 4px solid var(--wrong);
+      border-radius: var(--radius-sm);
+    }
+
+    .correction-box.open {
+      display: block;
+      animation: fadeIn .2s ease;
+    }
+
+    .correction-box label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .correction-box input {
+      width: 100%;
+      min-height: 40px;
+      border: 1px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      background: var(--white);
+    }
+
+    /* Free Writing Rubric Grid */
     .rubric-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -837,193 +1006,261 @@
       margin-top: 16px;
     }
 
-    .rubric-item {
-      background: var(--white);
-      border: 1.5px solid var(--paper-line-2);
+    .rubric-card {
+      background: var(--cream-2);
+      border: 1px solid var(--paper-line);
       border-radius: var(--radius-sm);
       padding: 12px;
       text-align: center;
+      font-size: 12.5px;
+      color: var(--ink-2);
     }
 
-    .rlabel {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--ink-2);
-      text-transform: uppercase;
+    .rubric-card strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--jade-dark);
       margin-bottom: 4px;
     }
 
-    .rscore {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--jade-deep);
-    }
-
-    .write-feedback {
-      margin-top: 16px;
-      background: var(--jade-pale);
-      border: 1.5px solid var(--jade-soft);
-      border-radius: var(--radius);
-      padding: 16px 18px;
-    }
-
-    .write-pending {
-      font-size: 14.5px;
-      font-weight: 700;
-      color: var(--jade-dark);
-    }
-
-    /* Popup Modal */
-    .popup-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(20, 67, 47, 0.45);
-      backdrop-filter: blur(3px);
-      z-index: 999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .popup-overlay.open {
+    /* Self-evaluation Checklist */
+    .self-check-list {
       display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 14px 0 20px;
     }
 
-    .popup-sheet {
+    .self-check-item {
       background: var(--white);
+      border: 2px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px 18px 16px 54px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      position: relative;
+      transition: all .2s ease;
+      min-height: 52px;
+    }
+
+    .self-check-item:before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--sage-deep);
+      border-radius: 6px;
+      background: var(--white);
+      transition: all .2s ease;
+    }
+
+    .self-check-item.active {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+      color: var(--jade-text);
+    }
+
+    .self-check-item.active:before {
+      background: var(--jade-deep);
+      border-color: var(--jade-deep);
+    }
+
+    .self-check-item.active:after {
+      content: '✓';
+      position: absolute;
+      left: 23px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .completion-card {
+      display: none;
+      background: var(--jade-deep);
+      color: #fff;
       border-radius: var(--radius-lg);
       padding: 24px;
-      max-width: 540px;
-      width: 100%;
-      box-shadow: var(--shadow-lg);
-      max-height: 85vh;
-      overflow-y: auto;
-    }
-
-    .popup-close {
-      background: var(--jade-deep);
-      color: #fff;
-      border: 0;
-      border-radius: var(--radius-sm);
-      padding: 8px 18px;
-      font-weight: 700;
-      margin-top: 14px;
-      float: right;
-    }
-
-    /* Finale Banner & Navigation Buttons */
-    .next-level-wrap {
-      margin-top: 24px;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .next-level-btn {
-      background: var(--jade-deep);
-      color: #fff;
-      border: 0;
-      border-radius: 999px;
-      padding: 10px 24px;
-      font-size: 14.5px;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .next-level-btn:disabled {
-      background: var(--ink-faint);
-      cursor: not-allowed;
-      opacity: .7;
-    }
-
-    .finale-card {
-      background: var(--jade-deep);
-      color: #fff;
-      border-radius: var(--radius-lg);
-      padding: 28px;
       text-align: center;
       margin-top: 24px;
-      box-shadow: var(--shadow-lg);
+      animation: fadeIn .3s ease;
     }
 
-    .finale-card h3 {
+    .completion-card.show {
+      display: block;
+    }
+
+    .completion-card h3 {
       color: #fff;
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 6px;
     }
 
-    .finale-card p {
-      color: var(--cream);
+    .completion-card p {
       margin: 0;
+      color: var(--cream-2);
       font-size: 15px;
     }
 
-    .celebrate-banner {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
+    /* Next Level Transition */
+    .next-level-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--paper-line-2);
+    }
+
+    .next-level-btn {
       background: var(--jade-dark);
+      border: 0;
       color: #fff;
-      border-radius: 999px;
-      padding: 12px 24px;
       font-weight: 800;
-      font-size: 14.5px;
-      box-shadow: var(--shadow-lg);
-      z-index: 1000;
-      transition: transform .3s cubic-bezier(.25, .8, .25, 1);
-      pointer-events: none;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow);
+      transition: all .2s ease;
     }
 
-    .celebrate-banner.show {
-      transform: translateX(-50%) translateY(0);
+    .next-level-btn:hover {
+      background: var(--jade-deep);
+      transform: translateX(3px);
     }
 
-    footer {
-      text-align: center;
-      padding: 34px 18px 60px;
-      color: var(--ink-3);
-      font-size: 13px;
+    /* Model Answer Bottom-Sheet Modal */
+    .bottom-sheet-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(15, 35, 25, 0.48);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
     }
 
-    /* Responsive Media Queries */
-    @media (min-width: 992px) {
-      .practice-split-container {
-        display: grid;
-        grid-template-columns: minmax(320px, 420px) 1fr;
-        gap: 24px;
-        align-items: start;
+    .bottom-sheet-overlay.open {
+      display: flex;
+    }
+
+    .bottom-sheet-modal {
+      width: min(640px, 100%);
+      max-height: 80vh;
+      background: var(--white);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: slideUp .25s ease-out;
+    }
+
+    .bottom-sheet-head {
+      background: var(--cream-2);
+      border-bottom: 1px solid var(--paper-line-2);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bottom-sheet-head h3 {
+      font-size: 16.5px;
+      color: var(--jade-dark);
+    }
+
+    .modal-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--white);
+      color: var(--ink-2);
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom-sheet-body {
+      padding: 22px;
+      overflow-y: auto;
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .model-answer-card {
+      background: var(--cream-2);
+      border-left: 4px solid var(--jade-deep);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
       }
-
-      .practice-ref-pane {
-        position: sticky;
-        top: 20px;
-        max-height: calc(100vh - 40px);
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Adaptations (Mục 4.8b v3.0: Mode Split 38vh / 62vh) */
     @media (max-width: 991px) {
+      .practice-split-container {
+        grid-template-columns: 1fr;
+      }
+
       .mobile-pane-controls {
         display: block;
       }
 
       .practice-ref-pane {
-        position: sticky;
-        top: 68px;
-        z-index: 90;
+        position: static;
         max-height: 38vh;
-        box-shadow: 0 8px 24px rgba(42, 129, 103, .15);
-        border-bottom: 3px solid var(--jade-deep);
       }
 
-      .practice-split-container.mode-ref .practice-questions-pane {
-        display: none;
+      body[data-mobile-view="ref"] .practice-questions-pane {
+        display: none !important;
       }
 
-      .practice-split-container.mode-q .practice-ref-pane {
-        display: none;
+      body[data-mobile-view="quest"] .practice-ref-pane {
+        display: none !important;
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .outline-grid {
+        grid-template-columns: 1fr;
       }
 
       .rubric-grid {
@@ -1031,368 +1268,522 @@
       }
     }
 
-    @media (max-width: 599px) {
-      .wrap {
-        width: min(100% - 22px, 1060px);
-      }
-
+    @media (max-width: 600px) {
       .q-opts {
         grid-template-columns: 1fr;
       }
-
-      .mobile-pane-controls {
-        padding: 8px 8px;
-      }
-
-      .mpc-btns {
-        gap: 4px;
-      }
-
-      .mpc-btn {
-        font-size: 11px;
-        padding: 6px 2px;
-        min-height: 38px;
-      }
     }
-    /* Kịch bản Unit 2: no full Reference Pane, mobile-first writing fixes */
-    .reading-progress,.mobile-pane-controls,.practice-ref-pane{display:none!important}.practice-split-container{display:block!important}.practice-questions-pane{width:100%}.write-area{overflow-y:hidden}.finale-card{display:none}.finale-card.show{display:block}.mobile-ref-trigger{display:none}.mobile-ref-sheet{position:fixed;inset:0;z-index:600;display:none;align-items:flex-end;background:rgba(0,0,0,.42)}.mobile-ref-sheet.open{display:flex}.mobile-ref-content{width:100%;max-height:78vh;overflow:auto;padding:18px;border-radius:18px 18px 0 0;background:var(--white)}.mobile-ref-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.mobile-ref-close{min-width:44px;min-height:44px;border:0;border-radius:50%;background:var(--cream-2);font:inherit}.model-template{display:none}.reduced-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:10px}.error-fix-sheet{font-size:15px;line-height:1.7}
-    @media(max-width:768px){.q-opts{grid-template-columns:repeat(2,minmax(0,1fr))!important}.fill-table,.fill-table tbody,.fill-table tr,.fill-table td{display:block;width:100%}.fill-table thead,.fill-table th{display:none}.fill-table tr{margin:10px 0;padding:10px;border:1px solid var(--paper-line);border-radius:var(--radius-sm);background:var(--white)}.fill-table td{border:0;border-bottom:1px solid var(--paper-line);padding:9px 4px}.fill-table td:last-child{border-bottom:0}.fill-table td:before{display:block;margin-bottom:3px;color:var(--jade-dark);font-size:12px;font-weight:800}.fill-table td:nth-child(1):before{content:'Suggestion'}.fill-table td:nth-child(2):before{content:'Example'}.fill-table td:nth-child(3):before{content:'Expected result'}.mobile-ref-trigger{position:fixed;right:12px;bottom:12px;z-index:550;display:inline-flex;min-height:44px;align-items:center;padding:9px 14px;border:0;border-radius:999px;background:var(--jade-deep);color:#fff;font:inherit;font-weight:800;box-shadow:var(--shadow)}#wordCountMain{position:sticky;bottom:10px;z-index:5;width:max-content;margin-left:auto;padding:6px 10px;border:1px solid var(--jade-soft);border-radius:999px;background:#fff}.write-footer .an-btn{min-height:44px}.rubric-grid{grid-template-columns:repeat(2,1fr)}.popup-overlay{align-items:flex-end;padding:0}.popup-sheet{max-width:none;border-radius:18px 18px 0 0;padding:20px}}
   </style>
 </head>
 
-<body>
+<body data-mobile-view="split">
 
-  <div class="reading-progress" aria-hidden="true"><span id="readingProgressBar"></span></div>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readProgress"><span></span></div>
 
+  <!-- Top Hero Header (Mục 4.2 Siết v2.8) -->
   <header class="top-header">
     <div class="wrap top-header-inner">
-      <h1>Unit 2 — Writing: Practice &amp; Production</h1>
-      <div class="sub">Humans and the Environment &bull; Suggestion Paragraph</div>
-      <div class="top-header-tags">
-        <span class="top-tag">🌱 Suggestion Paragraph</span>
-        <span class="top-tag">🏆 Speech Contest Context</span>
-        <span class="top-tag">📊 4 Phases: Identify &bull; Structure &bull; Write &bull; Production</span>
+      <div class="eyebrow">Grade 10 · Unit 2 · Writing Practice</div>
+      <h1>Practice &amp; Production: Suggestion Paragraph</h1>
+      <div class="sub">Humans and the Environment · Luyện tập &amp; Sản sinh bài viết 100–130 từ</div>
+      <div class="characters-pill">
+        <span>👥 Nhân vật: Khoa, Hà, Mai (Lớp 10A)</span>
       </div>
     </div>
   </header>
 
   <main class="wrap">
 
-    <!-- Mobile View Mode Controller -->
-    <div class="mobile-pane-controls">
-      <span class="mpc-title">Chế độ xem:</span>
+    <!-- Mobile Pane Controls -->
+    <div class="mobile-pane-controls" id="mpcControls">
+      <span class="mpc-title">Chế độ xem trên di động:</span>
       <div class="mpc-btns">
-        <button class="mpc-btn active" data-mode="split" onclick="setMobileViewMode('split')">⚖️ Chia đôi</button>
-        <button class="mpc-btn" data-mode="ref" onclick="setMobileViewMode('ref')">📄 Bài mẫu</button>
-        <button class="mpc-btn" data-mode="q" onclick="setMobileViewMode('q')">📝 Câu hỏi</button>
+        <button class="mpc-btn active" data-view="split">📱 Chia đôi</button>
+        <button class="mpc-btn" data-view="ref">📖 Bài mẫu</button>
+        <button class="mpc-btn" data-view="quest">✍️ Câu hỏi</button>
       </div>
     </div>
 
-    <div class="practice-split-container mode-split" id="practiceSplit">
+    <!-- Main Split Container (Mục 4.8b v3.0) -->
+    <div class="practice-split-container" id="practiceSplit">
 
-      <!-- LEFT / TOP: Reference Reference Pane -->
-      <div class="practice-ref-pane" id="practiceRefPane">
+      <!-- LEFT: Practice Reference Pane (BẮT BUỘC 2 TAB theo v2.9 & Nút ⟨⟨ theo v3.0) -->
+      <aside class="practice-ref-pane" aria-label="Reference Materials">
         <div class="pref-head">
           <div class="pref-tabs" id="prefTabs">
-            <button class="pref-tab active" onclick="switchRefTab('canteen')">🍴 Canteen Passage</button>
-            <button class="pref-tab" onclick="switchRefTab('signals')">🔗 Signal Words</button>
+            <button class="pref-tab active" data-target="pref-model">📝 Bài mẫu Model</button>
+            <button class="pref-tab" data-target="pref-signals">💡 Bảng tín hiệu &amp; Công thức</button>
           </div>
-        </div>
-        <div class="pref-body" id="prefBody">
-          <!-- Dynamic Content -->
-        </div>
-      </div>
-
-      <!-- RIGHT / BOTTOM: Questions Pane -->
-      <div class="practice-questions-pane">
-        <div class="level-tabs" id="levelTabs">
-          <button class="level-tab active" data-id="phase-0" onclick="goToLevel('phase-0')">1. Identify</button>
-          <button class="level-tab" data-id="phase-1" onclick="goToLevel('phase-1')">2. Structure</button>
-          <button class="level-tab" data-id="phase-2" onclick="goToLevel('phase-2')">3. Write</button>
-          <button class="level-tab" data-id="phase-3" onclick="goToLevel('phase-3')">4. Production</button>
+          <button class="pref-collapse-btn" id="prefCollapseBtn" onclick="toggleRefPane()" aria-label="Gom lại, chỉ xem câu hỏi">⟨⟨</button>
         </div>
 
-        <div id="questionsHost">
-
-          <!-- ==================== PHASE 0: IDENTIFY ==================== -->
-          <div class="q-level-section" id="q_phase-0" style="display:block;">
-            <p class="level-intro">
-              Read the canteen passage on the left to identify and extract its 5-part structure.<span class="vi-sub" style="margin-top:4px;">Đọc đoạn văn về Căng tin trường học ở bảng bên trái để nhận diện và trích xuất cấu trúc 5 phần.</span>
-            </p>
-
-            <!-- Activity 1: Structure labelling -->
-            <div class="card">
-              <span class="activity-label">Activity 1 &bull; Structure Labelling</span>
-              <div class="desc-en">Read the paragraph about the canteen on the left. Which part of the structure does each sentence belong to?</div>
-              <div id="p0SL"></div>
+        <div class="pref-body">
+          <!-- Panel 1: Model Paragraph -->
+          <div class="pref-content-panel active" id="pref-model">
+            <h4 style="color: var(--jade-dark); margin: 0 0 8px; font-size: 15px;">Making Our School Greener (Bài mẫu 123 từ)</h4>
+            <div class="pref-quote">
+              “There are several things we can do to make our school greener. First, we should turn off the lights and fans when we leave a room. For example, students can check the switches in classrooms before leaving. This can reduce our school's electricity use. Second, the school could set up refill stations for water and hand soap near the canteen. For example, students can refill their own bottles instead of buying new plastic ones. This can cut down on single-use plastic waste. Third, we should encourage students to bring their own water bottles every day. This will help our school produce less plastic waste. In conclusion, making our school greener doesn't need big changes. Small daily habits can already make a real difference.”
             </div>
-
-            <!-- Activity 2: Read & Extract -->
-            <div class="card">
-              <span class="activity-label">Activity 2 &bull; Read &amp; Extract</span>
-              <div class="desc-en">Read the same paragraph and complete the table below with information from the text:</div>
-              <table class="fill-table">
-                <thead>
-                  <tr>
-                    <th>Suggestion</th>
-                    <th>Example</th>
-                    <th>Expected result</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="1. Suggestion 1?"></td>
-                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="2. Example 1?"></td>
-                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="3. Expected result 1?"></td>
-                  </tr>
-                  <tr>
-                    <td style="background:var(--cream-2);font-weight:600;">Set up a bin for food waste</td>
-                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="4. Example 2?"></td>
-                    <td style="background:var(--cream-2);font-weight:600;">Turn waste into something useful</td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="5. Suggestion 3?"></td>
-                    <td style="background:var(--cream-3);color:var(--ink-3);font-style:italic;">(Merged into Suggestion)</td>
-                    <td><input type="text" class="re-input" data-re-group="p0RE" placeholder="6. Expected result 3?"></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="write-footer">
-                <button class="reveal-btn" id="revealRE" disabled data-unlocked-label="Xem đáp án gợi ý" onclick="openPopup('Đáp án gợi ý — Read &amp; Extract', '<ol style=\'padding-left:20px;line-height:1.7;\'><li><b>1.</b> Use real trays instead of foam boxes for lunch</li><li><b>2.</b> Return trays to a collection point after eating</li><li><b>3.</b> Create less rubbish every day</li><li><b>4.</b> Turn the food waste into fertiliser for the school garden</li><li><b>5.</b> Encourage students to bring their own lunch boxes from home...</li><li><b>6.</b> Cut down on plastic and foam waste</li></ol>')">🔒 Submit bài để mở đáp án gợi ý</button>
-                <div style="display:flex;align-items:center;gap:10px;">
-                  <span class="word-count" id="reWarning" style="color:var(--wrong);display:none;">Điền đủ cả 4 ô trống rồi mới Submit nhé.</span>
-                  <button class="an-btn" id="submitRE" onclick="submitReadExtract()">✓ Submit</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="next-level-wrap">
-              <button class="next-level-btn" id="nextToPhase1" disabled onclick="goToLevel('phase-1')">Next: 2. Structure 📨 &rarr;</button>
+            <div class="pref-box">
+              <h4>🎯 Bố cục 5 phần chuẩn:</h4>
+              <ul style="margin: 4px 0 0 16px; padding: 0; font-size: 13px;">
+                <li><strong>Topic:</strong> There are several things we can do to...</li>
+                <li><strong>Point 1:</strong> First + turn off lights + check switches + reduce electricity.</li>
+                <li><strong>Point 2:</strong> Second + refill stations + refill bottles + cut down plastic.</li>
+                <li><strong>Point 3:</strong> Third + bring water bottles + produce less waste.</li>
+                <li><strong>Conclusion:</strong> In conclusion + small daily habits make a difference.</li>
+              </ul>
             </div>
           </div>
 
-          <!-- ==================== PHASE 1: STRUCTURE ==================== -->
-          <div class="q-level-section" id="q_phase-1" style="display:none;">
-            <p class="level-intro">
-              Tap the sentences below in the correct order to form a complete paragraph.<span class="vi-sub" style="margin-top:4px;">Chạm vào các câu bên dưới theo đúng thứ tự để tạo thành đoạn văn hoàn chỉnh.</span>
-            </p>
-
-            <!-- Activity 3: Passage Arrangement 1 (Water Saving) -->
-            <div class="card">
-              <span class="activity-label">Activity 3 &bull; Passage Arrangement (Passage 1: Water Saving)</span>
-              <div class="desc-en">Put the sentences in the correct order to form a complete paragraph about saving water:</div>
-              <div id="p1OrdA"></div>
+          <!-- Panel 2: Signal Words & Formulas (BẮT BUỘC Ở MỌI PHASE theo v2.9) -->
+          <div class="pref-content-panel" id="pref-signals">
+            <h4 style="color: var(--jade-dark); margin: 0 0 8px; font-size: 15px;">Bảng tín hiệu &amp; Công thức viết</h4>
+            <div class="pref-box">
+              <h4>📐 1. Topic Sentence:</h4>
+              <p style="margin: 0; font-size: 13px;"><code>There are several things we can do to + V...</code></p>
             </div>
-
-            <!-- Activity 4: Passage Arrangement 2 (Traffic / Air pollution) -->
-            <div class="card">
-              <span class="activity-label">Activity 4 &bull; Passage Arrangement (Passage 2: Traffic &amp; Air Pollution)</span>
-              <div class="desc-en">A trickier one &ndash; uses natural transitions like <i>"One idea is"</i> and <i>"Another idea"</i> instead of simple sequence words:</div>
-              <div id="p1OrdB"></div>
+            <div class="pref-box">
+              <h4>💡 2. Supporting Point (Công thức 3 lớp):</h4>
+              <p style="margin: 0; font-size: 13px;">• <strong>Lớp 1 (Suggestion):</strong> <code>First / Second / Third, + S + should / could + V</code><br>• <strong>Lớp 2 (Example):</strong> <code>For example, + S + V</code><br>• <strong>Lớp 3 (Expected result):</strong> <code>This can / will + V</code></p>
             </div>
-
-            <div class="next-level-wrap">
-              <button class="next-level-btn" onclick="goToLevel('phase-2')">Next: 3. Write ✍️ &rarr;</button>
+            <div class="pref-box">
+              <h4>🎯 3. Concluding Sentence:</h4>
+              <p style="margin: 0; font-size: 13px;"><code>In conclusion, + [restate main idea / message]</code></p>
             </div>
           </div>
-
-          <!-- ==================== PHASE 2: WRITE ==================== -->
-          <div class="q-level-section" id="q_phase-2" style="display:none;">
-            <p class="level-intro">
-              Practise from sentence level to a complete paragraph (100-130 words) with decreasing support.<span class="vi-sub" style="margin-top:4px;">Luyện tập từ cấp độ câu đến viết đoạn văn hoàn chỉnh (100-130 từ) với mức độ hỗ trợ giảm dần.</span>
-            </p>
-
-            <!-- Activity 5: Sentence building -->
-            <div class="card">
-              <span class="activity-label">Activity 5 &bull; Sentence Building</span>
-              <div class="desc-en">Choose the correct sentence that arranges the words in the right order:</div>
-              <div id="p2SB"></div>
-            </div>
-
-            <!-- Activity 6: Guided Writing (Full Support) -->
-            <div class="card">
-              <span class="activity-label">Activity 6 &bull; Guided Writing (Full Support &bull; Green Classroom)</span>
-              <div class="desc-en">Task: Your class wants to make the classroom greener. Complete the paragraph using the information below:</div>
-              <table class="fill-table">
-                <thead>
-                  <tr>
-                    <th>Suggestion</th>
-                    <th>Example</th>
-                    <th>Expected result</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Grow small plants in reused bottles</td>
-                    <td>Place on the classroom windowsill</td>
-                    <td>Look fresher and greener</td>
-                  </tr>
-                  <tr>
-                    <td>Set up a small class plant corner</td>
-                    <td>Take turns watering every week</td>
-                    <td>Feel more responsible</td>
-                  </tr>
-                  <tr>
-                    <td>Use digital notice boards</td>
-                    <td>Share on screen or group chat</td>
-                    <td>Reduce paper used</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-weight:600;font-size:14px;">
-                Starters: <i>"There are three things our class can do to make our classroom greener. First, ... Second, ... Third, ... In conclusion, ..."</i>
-              </div>
-              <textarea class="write-area" id="writeAreaFull" placeholder="Viết đoạn văn của bạn ở đây..." oninput="checkRevealGate('writeAreaFull','revealFull',40)"></textarea>
-              <div class="write-footer">
-                <button class="reveal-btn" id="revealFull" disabled data-unlocked-label="Xem model answer (127 từ)" data-min-words="40" onclick="openPopup('Model Answer — Lớp học xanh', '<p><i>There are three things our class can do to make our classroom greener. First, we should grow small plants in reused plastic bottles. For example, we can place them on the classroom windowsill. This can make our classroom look fresher and greener. Second, we could set up a small &quot;class plant corner&quot;. For example, students can take turns watering and caring for the plants every week. This can help students feel more responsible for their shared space. Third, we should use a digital notice board instead of paper notices. For example, we can share announcements on a screen or in the group chat. This can reduce the amount of paper our class uses. In conclusion, these small habits can make our classroom a greener place to learn.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:8px;\'>Độ dài: 127 từ</p>')">🔒 Viết ít nhất 40 từ để mở khoá model answer (0/40)</button>
-                <button class="an-btn" id="btnSubmitFull" onclick="submitGuidedFull()">✓ Submit</button>
-              </div>
-              <div class="self-check">
-                <div class="sc-title">📝 Self-check</div>
-                <div id="p2SC1"></div>
-              </div>
-            </div>
-
-            <!-- Activity 7: Guided Writing (Reduced Support) -->
-            <div class="card">
-              <span class="activity-label">Activity 7 &bull; Guided Writing (Reduced Support)</span>
-              <div class="desc-en">Use only short keywords to write the paragraph without sentence starters:</div>
-              <div style="background:var(--cream-2);padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;line-height:1.7;">
-                🌱 <b>Point 1:</b> grow plants / reused bottles &rarr; windowsill &rarr; greener classroom<br>
-                🪴 <b>Point 2:</b> class plant corner &rarr; take turns watering &rarr; more responsible<br>
-                📱 <b>Point 3:</b> digital notice board &rarr; screen / group chat &rarr; less paper
-              </div>
-              <textarea class="write-area" placeholder="Tự viết trọn vẹn đoạn văn 100-130 từ ở đây..."></textarea>
-              <div class="self-check">
-                <div class="sc-title">📝 Self-check</div>
-                <div id="p2SC2"></div>
-              </div>
-            </div>
-
-            <!-- Activity 8: Correct the mistake -->
-            <div class="card">
-              <span class="activity-label">Activity 8 &bull; Correct the Mistake (6 errors)</span>
-              <div class="desc-en">Find and correct 6 mistakes in the paragraph below. Chạm vào từng thẻ số lỗi bên dưới để xem phương án sửa:</div>
-              <div class="error-text-card">
-                There is <span class="err-tag">[1]</span> three things our class can do to make our classroom greener. First we should <span class="err-tag">[2]</span> grow small plant <span class="err-tag">[3]</span> in reused plastic bottles. Students can place them on the classroom windowsill. This make <span class="err-tag">[4]</span> our classroom look fresher and greener. Second, we could set up a small "class plant corner," students could take turns watering and caring for the plants every week <span class="err-tag">[5]</span>. Third, we should used <span class="err-tag">[6]</span> a digital notice board instead of paper notices.
-              </div>
-              <div id="p2Err"></div>
-            </div>
-
-            <!-- Activity 9: Write a paragraph -->
-            <div class="card">
-              <span class="activity-label">Activity 9 &bull; Independent Writing</span>
-              <div class="desc-en">Write a COMPLETE paragraph giving suggestions to improve the environment in YOUR OWN school or neighbourhood (Target: 100-130 words):</div>
-              <textarea class="write-area" id="writeAreaP2" placeholder="Viết bài độc lập của bạn ở đây..." oninput="trackWriting('writeAreaP2', 'wordCountP2'); checkRevealGate('writeAreaP2','revealP2',60)"></textarea>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
-                <div class="word-count" id="wordCountP2">0 từ / mục tiêu 100-130 từ</div>
-              </div>
-              <div class="write-footer">
-                <button class="reveal-btn" id="revealP2" disabled data-unlocked-label="Xem gợi ý ý tưởng" data-min-words="60" onclick="openPopup('Gợi ý ý tưởng — Independent Writing', '<p>Đây chỉ là 1 GỢI Ý Ý TƯỞNG, không phải bài mẫu để chép lại — bài của bạn cần khác chủ đề/hoạt động cụ thể:</p><ul style=\'padding-left:20px;line-height:1.8;\'><li>Suggestion 1: giảm rác ở khu vực nào đó gần nhà/trường bạn &rarr; Example cụ thể &rarr; This can/will + kết quả</li><li>Suggestion 2: một hành động tiết kiệm năng lượng/nước &rarr; Example &rarr; kết quả</li><li>Suggestion 3: một thói quen cá nhân nhỏ &rarr; kết quả</li><li>Concluding sentence: tóm lại thay đổi nhỏ tạo khác biệt lớn</li></ul>')">🔒 Viết ít nhất 60 từ để mở khoá gợi ý ý tưởng (0/60)</button>
-                <button class="an-btn" id="btnSubmitP2" onclick="submitIndependentP2()">✓ Submit</button>
-              </div>
-            </div>
-
-            <div class="next-level-wrap">
-              <button class="next-level-btn" onclick="goToLevel('phase-3')">Next: 4. Production Writing 🏆 &rarr;</button>
-            </div>
-          </div>
-
-          <!-- ==================== PHASE 3: PRODUCTION WRITING ==================== -->
-          <div class="q-level-section" id="q_phase-3" style="display:none;">
-            <p class="level-intro">
-              End-of-unit assessment with a new topic (Green Library) &ndash; graded by AI Athena.<span class="vi-sub" style="margin-top:4px;">Bài đánh giá cuối Unit với chủ đề mới (Thư viện xanh) &ndash; được AI Athena chấm điểm.</span>
-            </p>
-
-            <!-- Activity 10: Guided Writing (School Library) -->
-            <div class="card">
-              <span class="activity-label">Activity 10 &bull; Guided Writing (New Topic: Green Library)</span>
-              <div class="desc-en">Task: Your school library wants to become greener. Use the information below to complete the paragraph:</div>
-              <table class="fill-table">
-                <thead>
-                  <tr>
-                    <th>Suggestion</th>
-                    <th>Example</th>
-                    <th>Expected result</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Use e-books instead of paper handouts</td>
-                    <td>Read on tablets or laptops</td>
-                    <td>Save paper every semester</td>
-                  </tr>
-                  <tr>
-                    <td>Start a book-sharing corner</td>
-                    <td>Donate old books &amp; borrow for free</td>
-                    <td>Buy fewer new books</td>
-                  </tr>
-                  <tr>
-                    <td>Add small plants to reading corner</td>
-                    <td>Place on windowsills near bookshelves</td>
-                    <td>Make library nicer &amp; greener</td>
-                  </tr>
-                </tbody>
-              </table>
-              <textarea class="write-area" id="writeAreaLib" placeholder="Viết đoạn văn về Thư viện xanh ở đây..." oninput="checkRevealGate('writeAreaLib','revealLib',40)"></textarea>
-              <div class="write-footer">
-                <button class="reveal-btn" id="revealLib" disabled data-unlocked-label="Xem model answer (125 từ)" data-min-words="40" onclick="openPopup('Model Answer — Thư viện xanh', '<p><i>There are three things our library can do to become greener. First, we should use e-books instead of printing paper handouts. For example, students can read their lessons on a tablet or a laptop. This can save a lot of paper every semester. Second, the library could start a book-sharing corner. For example, students can donate old books and borrow books from classmates for free. This can help the school buy fewer new books. Third, we should add a few small plants to the reading corner. For example, we can put the plants on the windowsill near the bookshelves. This can make the library a nicer, greener place to read. In conclusion, a few simple changes could turn our library into a much greener space.</i></p><p style=\'color:var(--ink-3);font-size:13px;margin-top:8px;\'>Độ dài: 125 từ</p>')">🔒 Viết ít nhất 40 từ để mở khoá model answer (0/40)</button>
-                <button class="an-btn" id="btnSubmitLib" onclick="submitGuidedLib()">✓ Submit</button>
-              </div>
-            </div>
-
-            <!-- Activity 11: Free Writing with Athena AI Rubric -->
-            <div class="card">
-              <span class="activity-label">Activity 11 &bull; Free Writing (Graded by AI Athena)</span>
-              <div class="desc-en">Task: Choose ONE place near you (street, park, market, bus stop...) and write a complete suggestion paragraph (100-130 words) to make it greener:</div>
-              <textarea class="write-area" id="writeAreaMain" style="min-height:160px;" placeholder="Viết đoạn văn hoàn chỉnh của bạn ở đây..." oninput="trackWriting('writeAreaMain', 'wordCountMain')"></textarea>
-              <div class="write-footer">
-                <div class="word-count" id="wordCountMain">0 từ / mục tiêu 100-130 từ</div>
-                <button class="an-btn" id="btnSubmitWriting" onclick="submitFreeWriting()">✓ Submit to Athena</button>
-              </div>
-              <div class="write-feedback" id="writeFeedback" style="display:none;">
-                <div class="write-pending" id="writePending">⏳ Đang gửi cho Athena...</div>
-                <div class="rubric-grid" id="rubricGrid"></div>
-                <div id="writeComment" style="margin-top:10px;font-size:14.5px;color:var(--jade-dark);font-weight:600;"></div>
-              </div>
-            </div>
-
-            <!-- Activity 12: Self-Evaluation -->
-            <div class="card">
-              <span class="activity-label">Activity 12 &bull; Self-Evaluation (End of Unit)</span>
-              <div class="self-check">
-                <div class="sc-title">Checklist 5 tiêu chí chuẩn đầu ra:</div>
-                <div id="p3SelfEval"></div>
-              </div>
-            </div>
-
-            <div class="finale-card">
-              <h3>🎉 Hoàn thành xuất sắc Unit 2 Writing!</h3>
-              <p>Chúc mừng bạn đã hoàn thành trọn vẹn toàn bộ các phần Luyện tập và Đánh giá bài viết đề xuất môi trường!</p>
-            </div>
-          </div>
-
         </div>
-      </div>
+      </aside>
 
+      <!-- Nút mở lại Reference Pane (Mới v3.0) -->
+      <button class="ref-reopen-btn" id="refReopenBtn" onclick="toggleRefPane()">📄 Xem lại bài mẫu</button>
+
+      <!-- RIGHT: Questions Pane -->
+      <section class="practice-questions-pane">
+
+        <!-- Level Navigation Tabs -->
+        <nav class="level-tabs" id="levelTabs" aria-label="Level Tabs">
+          <button class="level-tab active" data-phase="phase-0">Level 0 · Identify</button>
+          <button class="level-tab" data-phase="phase-1">Level 1 · Structure</button>
+          <button class="level-tab" data-phase="phase-2">Level 2 · Write</button>
+          <button class="level-tab" data-phase="phase-3">Level 3 · Production</button>
+          <button class="level-tab" data-phase="phase-4">Level 4 · Self-eval</button>
+        </nav>
+
+        <!-- ================= PHASE 0: IDENTIFY ================= -->
+        <div class="phase-panel active" id="phase-0">
+          <div class="level-intro">
+            <strong>Phase 0 — Identify:</strong> Nhận diện các thành phần cấu trúc của đoạn văn đề xuất và trích xuất thông tin chi tiết.
+          </div>
+
+          <!-- Activity 1: Structure Labelling -->
+          <article class="card">
+            <span class="activity-label">Activity 1 • Structure Labelling (Cấp câu)</span>
+            <p class="desc-en">Read the sentences from the model paragraph. Choose which part each sentence belongs to.<span class="vi-sub">Đọc các câu trích từ bài mẫu bên khung tham chiếu. Chọn đúng vai trò cấu trúc của từng câu.</span></p>
+
+            <div id="labelQuestions">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="action-row right">
+              <button class="btn-submit" id="labelSubmit" disabled>Submit</button>
+            </div>
+            <div class="q-fb" id="labelSummary"></div>
+          </article>
+
+          <!-- Activity 2: Read & Extract -->
+          <article class="card">
+            <span class="activity-label">Activity 2 • Read &amp; Extract (Trích xuất thông tin)</span>
+            <p class="desc-en">Read the model paragraph and complete all 4 fields below.<span class="vi-sub">Đọc lại bài mẫu và điền đầy đủ 4 thông tin vào bảng bên dưới.</span></p>
+
+            <div class="field-grid" id="extractFields">
+              <label class="field-item">
+                1. Main Topic (Chủ đề chính của bài):
+                <input data-extract placeholder="e.g., Making our school greener / environment…">
+              </label>
+              <label class="field-item">
+                2. 3 Suggestions (3 Đề xuất chính):
+                <input data-extract placeholder="e.g., Turn off lights, set up refill stations, bring water bottles…">
+              </label>
+              <label class="field-item">
+                3. Examples (Ví dụ minh hoạ):
+                <input data-extract placeholder="e.g., Check switches before leaving, refill plastic bottles…">
+              </label>
+              <label class="field-item">
+                4. Concluding Message (Thông điệp kết luận):
+                <input data-extract placeholder="e.g., Small daily habits can already make a real difference…">
+              </label>
+            </div>
+
+            <div class="action-row right">
+              <button class="btn-submit" id="extractSubmit" disabled>Submit</button>
+            </div>
+
+            <div class="q-fb" id="extractFeedback">
+              <strong>✅ Suggested answers (Đáp án gợi ý):</strong>
+              <ul style="margin: 6px 0 0 18px; padding: 0;">
+                <li><strong>Main Topic:</strong> Things we can do to make our school greener.</li>
+                <li><strong>3 Suggestions:</strong> Turn off lights/fans, set up refill stations, encourage bringing water bottles.</li>
+                <li><strong>Examples:</strong> Check switches before leaving classrooms, refill bottles instead of buying new ones.</li>
+                <li><strong>Concluding Message:</strong> Greening school doesn't need big changes; small daily habits make a real difference.</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="next-level-wrap">
+            <button class="next-level-btn" onclick="goToPhase('phase-1')">Tiếp tục: Phase 1 — Structure →</button>
+          </div>
+        </div>
+
+        <!-- ================= PHASE 1: STRUCTURE ================= -->
+        <div class="phase-panel" id="phase-1">
+          <div class="level-intro">
+            <strong>Phase 1 — Structure:</strong> Sắp xếp các câu thành đoạn văn đề xuất hoàn chỉnh theo đúng trật tự logic: Topic → Point 1 → Point 2 → Point 3 → Concluding.
+          </div>
+
+          <!-- Activity 3: Passage Arrangement 1 -->
+          <article class="card">
+            <span class="activity-label">Activity 3 • Passage Arrangement (Classroom Waste Reduction)</span>
+            <p class="desc-en">Tap the sentences in the correct order to form a complete suggestion paragraph.<span class="vi-sub">Chạm các câu theo đúng thứ tự logic để tạo thành đoạn văn đề xuất hoàn chỉnh.</span></p>
+
+            <div class="ord-wrap">
+              <div class="ord-bank" id="orderBank1"></div>
+              <p style="font-size: 13.5px; font-weight: 700; color: var(--jade-dark); margin: 8px 0 6px;">📥 Your order (Thứ tự bạn chọn):</p>
+              <div class="ord-answer" id="orderAnswer1"></div>
+            </div>
+
+            <div class="action-row right">
+              <button class="btn-secondary" data-reset-order="1">Reset</button>
+              <button class="btn-submit" data-submit-order="1" disabled>Submit</button>
+            </div>
+            <div class="q-fb" id="orderFeedback1"></div>
+          </article>
+
+          <!-- Activity 4: Passage Arrangement 2 -->
+          <article class="card">
+            <span class="activity-label">Activity 4 • Passage Arrangement (Saving Energy in Library)</span>
+            <p class="desc-en">Use sequence words (First, Second, Third) and linking signals to arrange the paragraph.<span class="vi-sub">Sắp xếp các câu thành đoạn văn đề xuất tiết kiệm điện trong thư viện trường.</span></p>
+
+            <div class="ord-wrap">
+              <div class="ord-bank" id="orderBank2"></div>
+              <p style="font-size: 13.5px; font-weight: 700; color: var(--jade-dark); margin: 8px 0 6px;">📥 Your order (Thứ tự bạn chọn):</p>
+              <div class="ord-answer" id="orderAnswer2"></div>
+            </div>
+
+            <div class="action-row right">
+              <button class="btn-secondary" data-reset-order="2">Reset</button>
+              <button class="btn-submit" data-submit-order="2" disabled>Submit</button>
+            </div>
+            <div class="q-fb" id="orderFeedback2"></div>
+          </article>
+
+          <div class="next-level-wrap">
+            <button class="next-level-btn" onclick="goToPhase('phase-2')">Tiếp tục: Phase 2 — Write →</button>
+          </div>
+        </div>
+
+        <!-- ================= PHASE 2: WRITE ================= -->
+        <div class="phase-panel" id="phase-2">
+          <div class="level-intro">
+            <strong>Phase 2 — Write:</strong> Ghép câu theo công thức 3 lớp, sửa lỗi ngữ pháp và viết đoạn văn đề xuất theo các mức độ hỗ trợ từ khung dàn ý.
+          </div>
+
+          <!-- Activity 5: Sentence Building -->
+          <article class="card">
+            <span class="activity-label">Activity 5 • Sentence Building (Ghép câu theo công thức)</span>
+            <p class="desc-en">Tap the words in order to make each sentence.<span class="vi-sub">Chạm các từ theo đúng thứ tự để tạo thành câu hoàn chỉnh.</span></p>
+
+            <div class="sent-builder-wrap" id="builders"></div>
+
+            <div class="action-row right">
+              <button class="btn-submit" id="buildersSubmit" disabled>Submit</button>
+            </div>
+          </article>
+
+          <!-- Activity 6: Guided Writing Full Support -->
+          <article class="card">
+            <span class="activity-label">Activity 6 • Guided Writing (Full Support • 3 Green Actions)</span>
+            <p class="desc-en">Write a complete suggestion paragraph based on the outline below. Target: 100–130 words.<span class="vi-sub">Viết đoạn văn đề xuất dựa trên khung 3 ý tưởng xanh cho trường học.</span></p>
+
+            <div class="outline-grid">
+              <div class="outline-col">
+                <h4>📐 Topic Sentence</h4>
+                Several things we can do to make our school greener and cleaner.
+              </div>
+              <div class="outline-col">
+                <h4>💡 3 Supporting Points</h4>
+                • First: plant small trees in classrooms (improve air quality).<br>
+                • Second: recycle waste paper into notebooks.<br>
+                • Third: walk or cycle to school to cut carbon emissions.
+              </div>
+              <div class="outline-col">
+                <h4>🎯 Concluding</h4>
+                In conclusion, protecting our school environment starts with simple daily actions.
+              </div>
+            </div>
+
+            <textarea class="write-area" id="fullWrite" placeholder="Write your paragraph here (e.g., There are several things we can do to make our school greener. First, we should plant small trees in our classrooms…)..."></textarea>
+            <div class="warn-msg" id="fullWarn"></div>
+
+            <div class="write-footer">
+              <span class="word-counter-badge" id="fullCount">0 words · Target 100–130</span>
+              <div class="write-actions">
+                <button class="btn-secondary" id="fullReveal" disabled data-model="modelFull">🔒 Submit để mở Model Answer</button>
+                <button class="btn-submit" id="fullSubmit">Submit</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Activity 7: Guided Writing Reduced Support -->
+          <article class="card">
+            <span class="activity-label">Activity 7 • Guided Writing (Reduced Support • Keywords)</span>
+            <p class="desc-en">Use the keywords below to write the SAME paragraph — this time without full sentences. Target: 100–130 words.<span class="vi-sub">Sử dụng từ khóa rút gọn để tự ráp câu hoàn chỉnh theo công thức 3 lớp.</span></p>
+
+            <div class="outline-grid">
+              <div class="outline-col">
+                <h4>📐 Topic</h4>
+                things / can do / greener school
+              </div>
+              <div class="outline-col">
+                <h4>💡 Points</h4>
+                • First / plant trees / classroom / fresh air<br>
+                • Second / recycle scrap paper / save trees<br>
+                • Third / cycle or walk / reduce smoke
+              </div>
+              <div class="outline-col">
+                <h4>🎯 Conclusion</h4>
+                In conclusion / small actions / big difference
+              </div>
+            </div>
+
+            <div class="write-hint">
+              💡 <span class="write-hint-text">Turn each row into full 3-layer supporting points (Suggestion + For example + This can/will). Remember commas after First, Second, Third, and For example.</span>
+            </div>
+
+            <textarea class="write-area" id="reducedWrite" placeholder="Write your paragraph using keywords here…"></textarea>
+            <div class="warn-msg" id="reducedWarn"></div>
+
+            <div class="write-footer">
+              <span class="word-counter-badge" id="reducedCount">0 words · Target 100–130</span>
+              <div class="write-actions">
+                <button class="btn-secondary" id="reducedReveal" disabled data-model="modelFull">🔒 Submit để mở Model Answer</button>
+                <button class="btn-submit" id="reducedSubmit">Submit</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Activity 8: Correct the Mistake -->
+          <article class="card">
+            <span class="activity-label">Activity 8 • Correct the Mistake (Tìm &amp; Sửa lỗi sai)</span>
+            <p class="desc-en">The paragraph below contains 3 common mistakes. Tap each underlined phrase to correct it.<span class="vi-sub">Chạm vào từng cụm từ gạch chân lỗi để mở ô sửa đúng.</span></p>
+
+            <div class="mistake-passage">
+              There are several things we can do to protect the environment at school. <span class="mistake-target" data-cor="cor1" tabindex="0">First we should to turn off</span> unused lights in the hallways.
+              <div class="correction-box" id="cor1">
+                <label>Sửa dấu phẩy sau First và động từ nguyên mẫu sau modal verb "should":</label>
+                <input data-ans="first, we should turn off" placeholder="Type correct phrase…">
+                <div class="q-fb" style="margin-top:6px;"></div>
+              </div>
+              Second, students could bring reusable containers for lunch. <span class="mistake-target" data-cor="cor2" tabindex="0">For example students bring metal boxes</span> instead of plastic bags.
+              <div class="correction-box" id="cor2">
+                <label>Sửa dấu phẩy sau "For example" và động từ modal "can bring":</label>
+                <input data-ans="for example, students can bring" placeholder="Type correct phrase…">
+                <div class="q-fb" style="margin-top:6px;"></div>
+              </div>
+              This can reduce a lot of rubbish. <span class="mistake-target" data-cor="cor3" tabindex="0">In conclusion. That is all.</span>
+              <div class="correction-box" id="cor3">
+                <label>Sửa câu kết luận cộc lốc thành câu hoàn chỉnh khẳng định lại thông điệp:</label>
+                <input data-ans="in conclusion, small daily habits can make a real difference." placeholder="Type: In conclusion, small daily habits can make a real difference.">
+                <div class="q-fb" style="margin-top:6px;"></div>
+              </div>
+            </div>
+
+            <div class="action-row right">
+              <button class="btn-submit" id="mistakeSubmit" disabled>Submit</button>
+            </div>
+          </article>
+
+          <!-- Activity 9: Independent Suggestion Writing -->
+          <article class="card">
+            <span class="activity-label">Activity 9 • Describe &amp; Suggest (Viết đoạn văn tự do)</span>
+            <p class="desc-en">Write a COMPLETE suggestion paragraph (Topic + 3 Supporting Points + Concluding) about reducing plastic waste at your own school. Target: 100–130 words.<span class="vi-sub">Tự viết một đoạn văn đề xuất hoàn chỉnh về việc giảm rác thải nhựa tại chính ngôi trường của bạn.</span></p>
+
+            <div class="write-hint">
+              💡 <span class="write-hint-text">Before you write, outline 3 distinct suggestions (e.g., reusable bottles, paper straws, sorting bins) and make sure each point has an Example and Expected Result.</span>
+            </div>
+
+            <textarea class="write-area" id="eventWrite" placeholder="Write your complete suggestion paragraph here…"></textarea>
+            <div class="warn-msg" id="eventWarn"></div>
+
+            <div class="write-footer">
+              <span class="word-counter-badge" id="eventCount">0 words · Target 100–130</span>
+              <div class="write-actions">
+                <button class="btn-secondary" id="eventReveal" disabled data-model="modelEvent">🔒 Submit để mở Model Answer</button>
+                <button class="btn-submit" id="eventSubmit">Submit</button>
+              </div>
+            </div>
+          </article>
+
+          <div class="next-level-wrap">
+            <button class="next-level-btn" onclick="goToPhase('phase-3')">Tiếp tục: Phase 3 — Production →</button>
+          </div>
+        </div>
+
+        <!-- ================= PHASE 3: PRODUCTION ================= -->
+        <div class="phase-panel" id="phase-3">
+          <div class="level-intro">
+            <strong>Phase 3 — Production:</strong> Ứng dụng kỹ năng viết độc lập và đánh giá toàn diện bài viết qua trợ lý AI Athena.
+          </div>
+
+          <!-- Activity 10: Guided Writing Production -->
+          <article class="card">
+            <span class="activity-label">Activity 10 • Guided Writing (Greening the School Canteen)</span>
+            <p class="desc-en">Write a suggestion paragraph about making the school canteen more eco-friendly. Target: 100–130 words.<span class="vi-sub">Viết đoạn văn đề xuất các giải pháp làm cho căng tin trường học thân thiện hơn với môi trường.</span></p>
+
+            <div class="outline-grid">
+              <div class="outline-col">
+                <h4>📐 Topic Sentence</h4>
+                Several practical things our canteen can do to become greener.
+              </div>
+              <div class="outline-col">
+                <h4>💡 3 Supporting Points</h4>
+                • First: stop offering single-use plastic straws and spoons.<br>
+                • Second: give small discounts to students who bring lunch boxes.<br>
+                • Third: set up separate food waste bins for composting.
+              </div>
+              <div class="outline-col">
+                <h4>🎯 Concluding</h4>
+                In conclusion, a greener canteen will encourage healthy and eco-friendly habits for everyone.
+              </div>
+            </div>
+
+            <textarea class="write-area" id="canteenWrite" placeholder="Write your paragraph about the canteen here…"></textarea>
+            <div class="warn-msg" id="canteenWarn"></div>
+
+            <div class="write-footer">
+              <span class="word-counter-badge" id="canteenCount">0 words · Target 100–130</span>
+              <div class="write-actions">
+                <button class="btn-secondary" id="canteenReveal" disabled data-model="modelCanteen">🔒 Submit để mở Model Answer</button>
+                <button class="btn-submit" id="canteenSubmit">Submit</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Activity 11: Free Writing with Athena -->
+          <article class="card">
+            <span class="activity-label">Activity 11 • Free Writing (Athena AI Evaluation)</span>
+            <p class="desc-en">Now write your OWN speech contest paragraph for Khoa, Hà, and Mai representing Class 10A. Target: 100–130 words.<span class="vi-sub">Viết bài phát biểu đề xuất hoàn chỉnh 100–130 từ cho đội Lớp 10A tham gia cuộc thi Environment Speech Contest.</span></p>
+
+            <div class="pref-box" style="margin-bottom: 14px;">
+              <ul style="margin: 0 0 0 18px; padding: 0; font-size: 14px; color: var(--ink-2);">
+                <li>Does your paragraph start with a clear topic sentence?</li>
+                <li>Do you have 2–3 distinct supporting points developed with 3 layers (Suggestion + Example + Result)?</li>
+                <li>Did you use sequence words (First, Second, Third) and "For example" accurately?</li>
+                <li>Does your concluding sentence leave a memorable message?</li>
+              </ul>
+            </div>
+
+            <textarea class="write-area" id="athenaWrite" placeholder="Write your final contest paragraph here (Target 100–130 words)…"></textarea>
+
+            <div class="write-footer">
+              <span class="word-counter-badge" id="athenaCount">0 words · Target 100–130</span>
+              <button class="btn-submit" id="athenaSubmit">Nộp bài cho Athena</button>
+            </div>
+            <div class="q-fb" id="athenaStatus"></div>
+
+            <div class="rubric-grid">
+              <div class="rubric-card">
+                <strong>1. Task Achievement</strong>
+                Topic sentence, 3 clear points & conclusion (Scale 1–4)
+              </div>
+              <div class="rubric-card">
+                <strong>2. Organisation</strong>
+                Sequence words (First/Second/Third), For example & Cohesion (Scale 1–4)
+              </div>
+              <div class="rubric-card">
+                <strong>3. Language Use</strong>
+                Modal verbs (should/could/can), base form & commas (Scale 1–4)
+              </div>
+              <div class="rubric-card">
+                <strong>4. Length &amp; Fluency</strong>
+                Reaches 100–130 words, reads naturally (Scale 1–4)
+              </div>
+            </div>
+          </article>
+
+          <div class="next-level-wrap">
+            <button class="next-level-btn" onclick="goToPhase('phase-4')">Tiếp tục: Phase 4 — Self-evaluation →</button>
+          </div>
+        </div>
+
+        <!-- ================= PHASE 4: SELF-EVALUATION ================= -->
+        <div class="phase-panel" id="phase-4">
+          <div class="level-intro">
+            <strong>Phase 4 — Self-evaluation:</strong> Tự đánh giá các năng lực ngôn ngữ và kỹ năng viết đã tích lũy sau bài học.
+          </div>
+
+          <article class="card">
+            <span class="activity-label">Self-evaluation • Bảng tự đánh giá</span>
+            <p class="desc-en">Tap each statement when you feel confident in your skill.<span class="vi-sub">Chạm vào từng mục khi bạn cảm thấy đã nắm vững kỹ năng.</span></p>
+
+            <div class="self-check-list">
+              <button class="self-check-item">I can identify the different parts of a suggestion paragraph (Topic Sentence / Supporting Points / Concluding Sentence).</button>
+              <button class="self-check-item">I can complete sentences using suitable sequence words and examples (First / Second / Third, For example).</button>
+              <button class="self-check-item">I can arrange sentences into a well-structured suggestion paragraph.</button>
+              <button class="self-check-item">I can write a complete paragraph giving suggestions to improve the environment, using sequence words and examples.</button>
+              <button class="self-check-item">My writing reaches the required word count (100–130 words) and reads naturally.</button>
+            </div>
+
+            <div class="completion-card" id="finaleCard">
+              <h3>🎉 Great work! Chúc mừng bạn đã hoàn thành bài học!</h3>
+              <p>Bạn đã hoàn tất toàn bộ các phần Luyện tập &amp; Sản sinh bài viết Writing Unit 2 Lớp 10.</p>
+            </div>
+          </article>
+        </div>
+
+      </section>
     </div>
+
   </main>
 
-  <footer>Unit 2 &bull; Humans and the Environment &bull; Suggestion Paragraph Practice. Aiducation Design System v4.</footer>
+  <!-- Bottom-Sheet Modal for Model Answer (Mục 1.18 Engine v1.13) -->
+  <div class="bottom-sheet-overlay" id="recapPopup" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bottom-sheet-modal">
+      <div class="bottom-sheet-head">
+        <h3 id="modalTitle">📝 Model Answer (Bài mẫu tham khảo)</h3>
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Close">×</button>
+      </div>
+      <div class="bottom-sheet-body" id="modalContent"></div>
+    </div>
+  </div>
 
-  <div class="celebrate-banner" id="celebrateBanner">🎉 Tuyệt vời! Bạn đã làm rất tốt!</div>
+  <!-- Hidden Model Answer Templates -->
+  <div hidden>
+    <div id="modelFull">
+      <div class="model-answer-card">
+        There are several things we can do to make our school greener and cleaner. First, we should plant small trees and potted flowers in our classrooms. For example, students can take turns watering them every morning. This can improve indoor air quality and create a fresh learning space. Second, the school could organise a paper-recycling programme. For example, classrooms can collect used notebooks and cardboard boxes instead of throwing them into the trash bin. This will save a huge amount of paper and protect forests. Third, we should encourage students to walk or cycle to school whenever possible. This will reduce carbon emissions around our school gates. In conclusion, protecting our school environment starts with simple daily actions.
+        <div style="margin-top: 10px; font-weight: 700; color: var(--jade-deep); font-size: 13px;">📊 Total: 128 words</div>
+      </div>
+    </div>
 
-  <!-- Popup Modal -->
-  <div class="popup-overlay" id="popupOverlay" onclick="if(event.target===this)closePopup()">
-    <div class="popup-sheet">
-      <h3 id="popupTitle" style="font-size:17px;margin-bottom:12px;color:var(--jade-dark);"></h3>
-      <div id="popupContent"></div>
-      <button class="popup-close" onclick="closePopup()">Đóng</button>
+    <div id="modelEvent">
+      <div class="model-answer-card">
+        There are several practical things students can do to cut down on plastic waste at school. First, everyone should bring their own reusable water bottle every day. For example, students can refill their bottles at water dispensers instead of buying single-use bottled water. This can save money and reduce plastic trash significantly. Second, students could use cloth bags or paper wrappers for snacks. For example, we can refuse plastic bags when buying food at the canteen. This will keep our school yard clean. Third, the youth union should set up plastic collection stations. In conclusion, reducing plastic waste is easy if every student takes small daily actions.
+        <div style="margin-top: 10px; font-weight: 700; color: var(--jade-deep); font-size: 13px;">📊 Total: 115 words</div>
+      </div>
+    </div>
+
+    <div id="modelCanteen">
+      <div class="model-answer-card">
+        There are several practical things our school canteen can do to become more eco-friendly. First, the canteen staff should stop offering single-use plastic straws and spoons. For example, they can switch to paper straws or encourage students to bring reusable cutlery from home. This can cut down on single-use plastic rubbish. Second, the canteen could give a small discount to students who bring their own lunch containers. For example, students saving five hundred dong each time will feel motivated to form green habits. Third, we should place separate food waste bins next to the tables for organic composting. In conclusion, a greener canteen will encourage healthy and sustainable lifestyle habits for every student.
+        <div style="margin-top: 10px; font-weight: 700; color: var(--jade-deep); font-size: 13px;">📊 Total: 124 words</div>
+      </div>
     </div>
   </div>
 
   <script>
-    // ---------- LMS Integration ----------
+    // LMS Event Integration
     function LMS() {
       return window.AiducationLMS || {
         ready: function () { },
@@ -1403,663 +1794,436 @@
         resize: function () { }
       };
     }
-    function esc(s) {
-      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
-    function shuffle(arr) {
-      return [...arr].sort(() => Math.random() - 0.5);
-    }
 
-    // ---------- Popup Modal ----------
-    function openPopup(title, html) {
-      document.getElementById('popupTitle').textContent = title;
-      document.getElementById('popupContent').innerHTML = html;
-      document.getElementById('popupOverlay').classList.add('open');
-    }
-    function closePopup() {
-      document.getElementById('popupOverlay').classList.remove('open');
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+    const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+    const $ = (sel, root = document) => root.querySelector(sel);
+    let lastActiveFocus = null;
+    let isCompletionSent = false;
 
-    // ---------- Mobile View Mode Switcher ----------
-    function setMobileViewMode(mode) {
-      const container = document.getElementById('practiceSplit');
-      container.classList.remove('mode-split', 'mode-ref', 'mode-q');
-      container.classList.add('mode-' + mode);
-      document.querySelectorAll('.mpc-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
-    }
-
-    // ---------- Celebrate Banner ----------
-    function showCelebrateBanner(text) {
-      const b = document.getElementById('celebrateBanner');
-      b.textContent = text || '🎉 Tuyệt vời! Bạn đã làm rất tốt!';
-      b.classList.add('show');
-      setTimeout(() => b.classList.remove('show'), 3000);
-    }
-
-    // ---------- Reference Pane Tabs ----------
-    const refData = {
-      canteen: `
-        <div class="pref-ref-box">
-          <h4>🍴 School Canteen Passage (Food Waste)<span class="vi-sub">Bài văn Căng tin trường học (giảm rác thải thức ăn)</span></h4>
-          <p style="margin:0;font-size:14px;color:var(--ink-2);">Used for Activities in Part <b>1. Identify</b>.</p>
-        </div>
-        <p><i>There are several ways our canteen can reduce food waste. First, the canteen should use real trays instead of foam boxes for lunch. For example, students can return their trays to a collection point after eating. This can create less rubbish every day. Second, the school should set up a bin for food waste. For example, we can turn the food waste into fertiliser for the school garden. This can turn waste into something useful. Third, we should encourage students to bring their own lunch boxes from home instead of buying packed meals. This can also cut down on plastic and foam waste. In conclusion, small changes to how we eat at school can make a real difference.</i></p>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:8px;">Length: 118 words</div>
-      `,
-      winning: `
-        <div class="pref-ref-box">
-          <h4>🎤 Demo Speech<span class="vi-sub">Bài mẫu minh hoạ về trường học xanh</span></h4>
-          <p style="margin:0;font-size:14px;color:var(--ink-2);">Model paragraph for a greener school.</p>
-        </div>
-        <p><i>There are several things we can do to make our school greener. First, we should turn off the lights and fans when we leave a room. For example, students can check the switches in classrooms before leaving. This can reduce our school's electricity use. Second, the school could set up refill stations for water and hand soap near the canteen. For example, students can refill their own bottles instead of buying new plastic ones. This can cut down on single-use plastic waste. Third, we should encourage students to bring their own water bottles every day. This will help our school produce less plastic waste. In conclusion, making our school greener doesn't need big changes. Small daily habits can already make a real difference.</i></p>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:8px;">Length: 123 words</div>
-      `,
-      signals: `
-        <div class="pref-ref-box">
-          <h4>🔗 Signal Words Reference<span class="vi-sub">Bảng từ nối &amp; tín hiệu nhận diện</span></h4>
-          <p style="margin:0;font-size:14px;color:var(--ink-2);">Quick reference for writing.</p>
-        </div>
-        <ul style="padding-left:18px;margin:0;font-size:14px;line-height:1.8;">
-          <li><b>First suggestion:</b> <code>First,</code></li>
-          <li><b>Second suggestion:</b> <code>Second,</code></li>
-          <li><b>Third suggestion:</b> <code>Third,</code></li>
-          <li><b>Give an example:</b> <code>For example,</code></li>
-          <li><b>Expected result:</b> <code>This will... / This can...</code></li>
-          <li><b>Finish the paragraph:</b> <code>In conclusion,</code></li>
-        </ul>
-      `
-    };
-
-    const levelRefTabs = {
-      'phase-0': [
-        { key: 'canteen', label: '🍴 Canteen Passage' },
-        { key: 'signals', label: '🔗 Signal Words' }
-      ],
-      'phase-1': [
-        { key: 'canteen', label: '🍴 Canteen Passage' },
-        { key: 'signals', label: '🔗 Signal Words' }
-      ],
-      'phase-2': [
-        { key: 'signals', label: '🔗 Signal Words' }
-      ],
-      'phase-3': [
-        { key: 'signals', label: '🔗 Signal Words' }
-      ]
-    };
-
-    function renderRefTabsForLevel(levelId) {
-      const tabs = levelRefTabs[levelId] || levelRefTabs['phase-0'];
-      const tabsContainer = document.getElementById('prefTabs');
-      tabsContainer.innerHTML = tabs.map((t, idx) => `
-        <button class="pref-tab ${idx === 0 ? 'active' : ''}" onclick="switchRefTab('${t.key}')">${t.label}</button>
-      `).join('');
-      switchRefTab(tabs[0].key);
-    }
-
-    function switchRefTab(tabKey) {
-      document.querySelectorAll('.pref-tab').forEach(b => {
-        const attr = b.getAttribute('onclick') || '';
-        b.classList.toggle('active', attr.includes(`'${tabKey}'`));
-      });
-      document.getElementById('prefBody').innerHTML = refData[tabKey] || '';
-    }
-    renderRefTabsForLevel('phase-0');
-
-    // ---------- Level Navigation ----------
-    function goToLevel(id) {
-      document.querySelectorAll('.level-tab').forEach(t => t.classList.toggle('active', t.dataset.id === id));
-      document.querySelectorAll('.q-level-section').forEach(s => s.style.display = (s.id === 'q_' + id ? 'block' : 'none'));
-      renderRefTabsForLevel(id);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // ---------- MCQ Engine (Identify) ----------
-    const mcqState = {};
-    function renderMCQGroup(containerId, questions) {
-      const host = document.getElementById(containerId);
-      host.innerHTML = questions.map((q, qi) => {
-        const qid = containerId + '_' + qi;
-        return `
-          <div class="q-card">
-            <div class="q-num">Question ${qi + 1}</div>
-            <div class="q-quote">"${esc(q.en)}"</div>
-            <div class="q-opts" id="opts_${qid}"></div>
-            <div class="q-fb" id="fb_${qid}"></div>
-          </div>
-        `;
-      }).join('');
-
-      questions.forEach((q, qi) => {
-        const qid = containerId + '_' + qi;
-        mcqState[qid] = { tries: 0, done: false, data: q };
-        const wrap = document.getElementById('opts_' + qid);
-        const shuffled = shuffle(q.options);
-        // Dùng addEventListener thay vì nhét text vào onclick="" — tránh lỗi dấu nháy đơn
-        // trong đáp án (VD "school's") làm gãy chuỗi JS và khiến nút không bấm được.
-        wrap.innerHTML = shuffled.map(optText => `<button class="q-opt">${esc(optText)}</button>`).join('');
-        Array.from(wrap.children).forEach((btn, i) => {
-          btn.addEventListener('click', () => answerMCQ(qid, btn, shuffled[i]));
-        });
-      });
-    }
-
-    function answerMCQ(qid, btn, chosenText) {
-      const state = mcqState[qid];
-      if (state.done) return;
-      state.tries++;
-      const isCorrect = chosenText === state.data.correct;
-      const fb = document.getElementById('fb_' + qid);
-      const allBtns = Array.from(document.querySelectorAll(`#opts_${qid} .q-opt`));
-
-      if (isCorrect) {
-        state.done = true;
-        btn.classList.add('correct');
-        allBtns.forEach(b => b.disabled = true);
-        fb.className = 'q-fb ok show';
-        fb.innerHTML = '<b>✅ Chính xác!</b> ' + esc(state.data.explain);
-      } else {
-        btn.classList.add('wrong');
-        if (state.tries < 2) {
-          fb.className = 'q-fb hint show';
-          fb.innerHTML = '💡 <i>Xem lại câu này nêu chủ đề, đề xuất (First/Second), ví dụ (For example), kết quả (This can), hay kết luận (In conclusion).</i>';
-          btn.disabled = true;
-        } else {
-          state.done = true;
-          allBtns.forEach(b => {
-            b.disabled = true;
-            if (b.textContent === state.data.correct) b.classList.add('correct');
-          });
-          fb.className = 'q-fb ok show';
-          fb.innerHTML = '<b>Đáp án đúng: ' + esc(state.data.correct) + '</b><br>' + esc(state.data.explain);
-        }
-      }
-    }
-
-    // Render Activity 1 — thứ tự câu hỏi KHÔNG theo trình tự đoạn văn gốc (buộc học sinh đọc kỹ,
-    // không đoán theo vị trí xuất hiện)
-    renderMCQGroup('p0SL', [
-      {
-        en: "This can create less rubbish every day.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Expected result",
-        explain: "Có 'This can...' nêu kết quả kỳ vọng của hành động trả khay → Expected result."
-      },
-      {
-        en: "In conclusion, small changes to how we eat at school can make a real difference.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Concluding Sentence",
-        explain: "Có 'In conclusion,' và câu tổng kết khép lại đoạn văn → Concluding Sentence."
-      },
-      {
-        en: "There are several ways our canteen can reduce food waste.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Topic Sentence",
-        explain: "Câu nêu chủ đề chung và mục đích của cả đoạn văn (giảm rác thải thức ăn ở căng tin) → Topic Sentence."
-      },
-      {
-        en: "Second, the school should set up a bin for food waste.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Suggestion",
-        explain: "Có 'Second,' và mở đầu một đề xuất mới → Suggestion."
-      },
-      {
-        en: "For example, students can return their trays to a collection point after eating.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Example",
-        explain: "Có 'For example,' và mô tả hành động cụ thể minh họa → Example."
-      },
-      {
-        en: "First, the canteen should use real trays instead of foam boxes for lunch.",
-        options: ["Topic Sentence", "Suggestion", "Example", "Expected result", "Concluding Sentence"],
-        correct: "Suggestion",
-        explain: "Có 'First,' và nêu đề xuất hành động đầu tiên → Suggestion."
-      }
-    ]);
-
-    // ---------- Ordering Engine (Passage Arrangement) ----------
-    const ordState = {};
-    function renderOrdering(containerId, items, correctOrder, explain) {
-      ordState[containerId] = { items, correctOrder, explain, placed: [] };
-      const host = document.getElementById(containerId);
-      host.innerHTML = `
-        <div class="ord-wrap">
-          <div class="ord-bank" id="bank_${containerId}"></div>
-          <div class="ord-answer" id="ans_${containerId}"></div>
-          <div class="ord-controls">
-            <button class="an-btn" onclick="checkOrdering('${containerId}')">Kiểm tra thứ tự</button>
-            <button class="an-btn ghost" onclick="resetOrdering('${containerId}')">↺ Làm lại</button>
-          </div>
-          <div class="q-fb" id="fb_${containerId}"></div>
-        </div>
-      `;
-      buildOrderingBank(containerId);
-    }
-
-    function buildOrderingBank(containerId) {
-      const st = ordState[containerId];
-      const bank = document.getElementById('bank_' + containerId);
-      const shuffled = shuffle(st.items);
-      bank.innerHTML = shuffled.map(it => `
-        <button class="ord-tile" data-id="${it.id}" onclick="placeTile('${containerId}', '${it.id}', this)">${esc(it.en)}</button>
-      `).join('');
-    }
-
-    function placeTile(containerId, itemId, btn) {
-      const st = ordState[containerId];
-      if (st.placed.includes(itemId)) return;
-      st.placed.push(itemId);
-      btn.classList.add('placed');
-      const item = st.items.find(i => i.id === itemId);
-      const ansWrap = document.getElementById('ans_' + containerId);
-      const row = document.createElement('div');
-      row.className = 'ord-ans-row';
-      row.dataset.id = itemId;
-      row.innerHTML = `<span class="ord-num">${st.placed.length}</span><span>${esc(item.en)}</span>`;
-      ansWrap.appendChild(row);
-    }
-
-    function checkOrdering(containerId) {
-      const st = ordState[containerId];
-      if (st.placed.length !== st.items.length) {
-        const fb = document.getElementById('fb_' + containerId);
-        fb.className = 'q-fb hint show';
-        fb.textContent = 'Bạn hãy chạm đủ tất cả các câu trước khi kiểm tra nhé.';
-        return;
-      }
-      const rows = document.querySelectorAll(`#ans_${containerId} .ord-ans-row`);
-      let allCorrect = true;
-      rows.forEach((row, i) => {
-        const ok = st.placed[i] === st.correctOrder[i];
-        row.classList.remove('correct', 'wrong');
-        row.classList.add(ok ? 'correct' : 'wrong');
-        if (!ok) allCorrect = false;
-      });
-      const fb = document.getElementById('fb_' + containerId);
-      fb.className = 'q-fb ' + (allCorrect ? 'ok' : 'hint') + ' show';
-      fb.innerHTML = (allCorrect ? '<b>✅ Chính xác!</b> ' : '<b>Chưa đúng hết &ndash; xem lại các dòng màu đỏ.</b> ') + esc(st.explain);
-      if (allCorrect) showCelebrateBanner('🎉 Chính xác! Bạn đã sắp xếp đúng thứ tự!');
-    }
-
-    function resetOrdering(containerId) {
-      const st = ordState[containerId];
-      st.placed = [];
-      document.getElementById('ans_' + containerId).innerHTML = '';
-      document.getElementById('fb_' + containerId).className = 'q-fb';
-      buildOrderingBank(containerId);
-    }
-
-    // Render Activity 3 (Water Saving)
-    renderOrdering('p1OrdA', [
-      { id: 'A', en: "This can stop a lot of clean water from going to waste." },
-      { id: 'B', en: "Second, the school should install automatic taps and put up posters to remind everyone to save water." },
-      { id: 'C', en: "There are two simple ways our school can save water every day." },
-      { id: 'D', en: "In conclusion, saving water only takes a few simple changes from everyone at school." },
-      { id: 'E', en: "First, we should fix the leaking taps in the toilets and the science lab." }
-    ], ['C', 'E', 'A', 'B', 'D'], 'C giới thiệu chủ đề → E (First) nêu đề xuất 1 → A (This) nêu kết quả cho E → B (Second) nêu đề xuất 2 → D (In conclusion) kết đoạn.');
-
-    // Render Activity 4 (Traffic / Air Pollution)
-    renderOrdering('p1OrdB', [
-      { id: 'A', en: "Traffic around our school gate causes noise and air pollution every morning." },
-      { id: 'B', en: "One idea is to encourage more students to walk or cycle to school instead of coming by motorbike." },
-      { id: 'C', en: "A covered bike parking area near the gate can make this easier for everyone." },
-      { id: 'D', en: "Another idea is a \"no-motorbike day\" once a month, and everyone should walk, cycle, or take the bus." },
-      { id: 'E', en: "In conclusion, small changes to how we travel to school can make the area around the gate quieter and cleaner." }
-    ], ['A', 'B', 'C', 'D', 'E'], 'A nêu vấn đề mở đầu → B đưa giải pháp 1 (\'One idea is\') → C (\'this\') làm rõ cho B → D (\'Another idea\') đưa giải pháp 2 → E (In conclusion) kết luận.');
-
-    // ---------- Sentence Builder (Activity 5) ----------
-    renderMCQGroup('p2SB', [
-      {
-        en: "lights / the / off / in / turn / classrooms / should / we / First",
-        options: [
-          "First, we should turn off the lights in the classrooms.",
-          "First we should turn the lights in classrooms off.",
-          "We should turn off the lights in classrooms first.",
-          "First, turn off we should the lights in the classrooms."
-        ],
-        correct: "First, we should turn off the lights in the classrooms.",
-        explain: "'First,' đứng đầu câu có dấu phẩy + cấu trúc 'we should turn off the lights in the classrooms'."
-      },
-      {
-        en: "bring / reusable / can / for example / bags / students / shopping",
-        options: [
-          "For example, students can bring reusable shopping bags.",
-          "Students for example can bring reusable shopping bags.",
-          "For example students can bring shopping reusable bags.",
-          "Can students bring reusable shopping bags for example."
-        ],
-        correct: "For example, students can bring reusable shopping bags.",
-        explain: "'For example,' đứng đầu câu + 'students can bring reusable shopping bags'."
-      },
-      {
-        en: "our / can / school's / this / save / energy",
-        options: [
-          "This can save our school's energy.",
-          "This save can our school's energy.",
-          "Our school's energy this can save.",
-          "Save our school's energy this can."
-        ],
-        correct: "This can save our school's energy.",
-        explain: "Cấu trúc 'This can + V nguyên thể' (This can save our school's energy)."
-      },
-      {
-        en: "plant / the / more / could / trees / around / school / Second / playground",
-        options: [
-          "Second, the school could plant more trees around the playground.",
-          "Second the school plant could more trees around the playground.",
-          "The school could plant more trees around playground second.",
-          "Second, could the school plant more trees around the playground."
-        ],
-        correct: "Second, the school could plant more trees around the playground.",
-        explain: "'Second,' + 'the school could plant more trees around the playground'."
-      },
-      {
-        en: "help / can / make / cleaner / this / air / the",
-        options: [
-          "This can help make the air cleaner.",
-          "This help can make the air cleaner.",
-          "Make the air cleaner this can help.",
-          "This can make help the air cleaner."
-        ],
-        correct: "This can help make the air cleaner.",
-        explain: "'This can help make the air cleaner'."
-      },
-      {
-        en: "recycle / should / to / encourage / we / students / Third",
-        options: [
-          "Third, we should encourage students to recycle.",
-          "Third we encourage should students to recycle.",
-          "We should encourage third students to recycle.",
-          "Third, should we encourage students to recycle."
-        ],
-        correct: "Third, we should encourage students to recycle.",
-        explain: "'Third,' + 'we should encourage students to recycle'."
-      }
-    ]);
-
-    // ---------- Correct the Mistake (Activity 8) ----------
-    renderMCQGroup('p2Err', [
-      {
-        en: "Lỗi [1]: \"There is three things our class can do...\"",
-        options: ["There is → There are", "There is → There was", "There is → There have", "No change needed"],
-        correct: "There is → There are",
-        explain: "Chủ ngữ phía sau 'three things' là danh từ số nhiều → dùng 'There are'."
-      },
-      {
-        en: "Lỗi [2]: \"First we should grow...\"",
-        options: ["First we should → First, we should", "First we should → First of we should", "First we should → Firstly, should we", "No change needed"],
-        correct: "First we should → First, we should",
-        explain: "Thiếu dấu phẩy sau từ nối trình tự 'First,'."
-      },
-      {
-        en: "Lỗi [3]: \"...grow small plant in reused plastic bottles.\"",
-        options: ["small plant → small plants", "small plant → a small plant", "small plant → small planted", "No change needed"],
-        correct: "small plant → small plants",
-        explain: "Trồng nhiều cây trong các chai nhựa → dùng danh từ số nhiều 'small plants'."
-      },
-      {
-        en: "Lỗi [4]: \"This make our classroom look fresher...\"",
-        options: ["This make → This can make", "This make → This making", "This make → This made", "No change needed"],
-        correct: "This make → This can make",
-        explain: "Theo công thức kết quả kỳ vọng 'This can/will + V' → sửa thành 'This can make'."
-      },
-      {
-        en: "Lỗi [5]: \"...class plant corner,\" students could take turns...\"",
-        options: [
-          "Thêm \"For example,\" trước \"students could take turns...\"",
-          "Đổi dấu phẩy thành dấu chấm hỏi",
-          "Bỏ từ \"students\"",
-          "No change needed"
-        ],
-        correct: "Thêm \"For example,\" trước \"students could take turns...\"",
-        explain: "Lỗi comma splice nối 2 mệnh đề độc lập mà thiếu từ dẫn chứng → tách câu và thêm 'For example,'."
-      },
-      {
-        en: "Lỗi [6]: \"...we should used a digital notice board...\"",
-        options: ["we should used → we should use", "we should used → we should using", "we should used → we should to use", "No change needed"],
-        correct: "we should used → we should use",
-        explain: "Sau động từ khuyết thiếu modal verb 'should' đi với động từ nguyên mẫu không chia → 'should use'."
-      }
-    ]);
-
-    // ---------- Self Check Engine ----------
-    function renderSelfCheck(containerId, items) {
-      document.getElementById(containerId).innerHTML = items.map(txt => `
-        <div class="sc-item" onclick="toggleSelfCheck(this)">
-          <span class="sc-box"></span>
-          <span>${esc(txt)}</span>
-        </div>
-      `).join('');
-    }
-
-    function toggleSelfCheck(el) {
-      el.classList.toggle('checked');
-      const parent = el.closest('.self-check');
-      const total = parent.querySelectorAll('.sc-item').length;
-      const checkedCount = parent.querySelectorAll('.sc-item.checked').length;
-      if (checkedCount === total) {
-        showCelebrateBanner('🎉 Tuyệt vời! Bạn đã hoàn thành checklist!');
-      }
-    }
-
-    renderSelfCheck('p2SC1', [
-      "Does the topic sentence clearly state the purpose of making the classroom greener?",
-      "Are there 3 supporting points introduced by First, Second, and Third?",
-      "Does each point include an example (For example,) and an expected result (This can/will)?",
-      "Is there a concluding sentence summarising the paragraph?"
-    ]);
-
-    renderSelfCheck('p2SC2', [
-      "Does the paragraph reach the target length of 100–130 words?",
-      "Are commas used correctly after sequence and linking words (First, Second, Third, For example, In conclusion)?",
-      "Are modal verbs (should / could / can) followed by the correct base form of verbs?"
-    ]);
-
-    renderSelfCheck('p3SelfEval', [
-      "I can identify the different parts of a suggestion paragraph (Topic Sentence / Supporting Points / Concluding Sentence).",
-      "I can complete sentences using suitable sequence words and examples (First / Second / Third, For example).",
-      "I can arrange sentences into a well-structured suggestion paragraph.",
-      "I can write a complete paragraph giving suggestions to improve the environment, using sequence words and examples.",
-      "My writing reaches the required word count (100-130 words) and reads naturally."
-    ]);
-
-    // ---------- Gated Hint / Model Answer Reveal ----------
-    // Standard pattern for every reveal-btn in this file: the button starts disabled and only
-    // unlocks after the student has made a genuine attempt (typed enough words, or filled in the
-    // fields it relates to). Never let a hint/model answer show before an attempt.
-    function checkRevealGate(textareaId, btnId, minWords) {
-      const text = document.getElementById(textareaId).value.trim();
-      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
-      const btn = document.getElementById(btnId);
-      if (count >= minWords) {
-        btn.disabled = false;
-        btn.textContent = btn.dataset.unlockedLabel;
-      } else {
-        btn.disabled = true;
-        btn.textContent = `🔒 Viết ít nhất ${minWords} từ để mở khoá (${count}/${minWords})`;
-      }
-    }
-
-    // ---------- Activity 2: Read & Extract — explicit Submit gate ----------
-    // Học sinh phải điền đủ cả bảng RỒI bấm Submit mới mở model answer và mở khoá bước tiếp theo —
-    // không tự động mở khi gõ đủ (khác Gated Reveal auto-check dùng cho Writing textarea).
-    function submitReadExtract() {
-      const inputs = document.querySelectorAll('.re-input[data-re-group="p0RE"]');
-      const filled = Array.from(inputs).every(inp => inp.value.trim().length > 0);
-      const warning = document.getElementById('reWarning');
-      if (!filled) {
-        warning.style.display = 'inline';
-        return;
-      }
-      warning.style.display = 'none';
-      const revealBtn = document.getElementById('revealRE');
-      revealBtn.disabled = false;
-      revealBtn.textContent = revealBtn.dataset.unlockedLabel;
-      const submitBtn = document.getElementById('submitRE');
-      submitBtn.disabled = true;
-      submitBtn.textContent = '✓ Submitted';
-      const nextBtn = document.getElementById('nextToPhase1');
-      if (nextBtn) nextBtn.disabled = false;
-    }
-
-    // ---------- Activity 6: Guided Writing — Submit & Review Popup ----------
-    function submitGuidedFull() {
-      const text = document.getElementById('writeAreaFull').value.trim();
-      if (!text) {
-        openPopup('Thông báo', '<p style="color:var(--wrong);font-weight:600;">⚠️ Bạn hãy viết đoạn văn trước khi bấm Submit nhé!</p>');
-        return;
-      }
-      const wordCount = text.split(/\s+/).filter(Boolean).length;
-      showCelebrateBanner('🎉 Nộp bài thành công!');
-      const popupHtml = `
-        <div style="background:var(--correct-bg);border:1.5px solid var(--correct);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:14px;color:var(--jade-dark);">
-          <div style="font-weight:800;font-size:15px;display:flex;align-items:center;gap:6px;">
-            <span>✅ Nộp bài thành công!</span>
-          </div>
-          <div style="font-size:13px;margin-top:4px;color:var(--ink-2);">
-            Đoạn văn của bạn đã được ghi nhận (Độ dài: <b>${wordCount} từ</b>).
-          </div>
-        </div>
-        <div style="font-weight:700;font-size:13.5px;color:var(--ink-3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">Nội dung bài viết của bạn:</div>
-        <div style="background:var(--cream-2);border-left:4px solid var(--jade-deep);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 16px;line-height:1.7;font-size:14.5px;color:var(--ink);white-space:pre-wrap;word-break:break-word;">${esc(text)}</div>
-      `;
-      openPopup('Bài viết của bạn — Activity 6', popupHtml);
-      LMS().event('guided_writing_submitted', { activity: 'activity-6', wordCount });
-    }
-
-    // ---------- Activity 9: Independent Writing — Submit & Review Popup ----------
-    function submitIndependentP2() {
-      const text = document.getElementById('writeAreaP2').value.trim();
-      if (!text) {
-        openPopup('Thông báo', '<p style="color:var(--wrong);font-weight:600;">⚠️ Bạn hãy viết bài độc lập trước khi bấm Submit nhé!</p>');
-        return;
-      }
-      const wordCount = text.split(/\s+/).filter(Boolean).length;
-      showCelebrateBanner('🎉 Nộp bài thành công!');
-      const popupHtml = `
-        <div style="background:var(--correct-bg);border:1.5px solid var(--correct);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:14px;color:var(--jade-dark);">
-          <div style="font-weight:800;font-size:15px;display:flex;align-items:center;gap:6px;">
-            <span>✅ Nộp bài thành công!</span>
-          </div>
-          <div style="font-size:13px;margin-top:4px;color:var(--ink-2);">
-            Đoạn văn độc lập của bạn đã được ghi nhận (Độ dài: <b>${wordCount} từ</b> / mục tiêu 100-130 từ).
-          </div>
-        </div>
-        <div style="font-weight:700;font-size:13.5px;color:var(--ink-3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">Nội dung bài viết của bạn:</div>
-        <div style="background:var(--cream-2);border-left:4px solid var(--jade-deep);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 16px;line-height:1.7;font-size:14.5px;color:var(--ink);white-space:pre-wrap;word-break:break-word;">${esc(text)}</div>
-      `;
-      openPopup('Bài viết của bạn — Activity 9', popupHtml);
-      LMS().event('independent_writing_submitted', { activity: 'activity-9', wordCount });
-    }
-
-    // ---------- Activity 10: Guided Writing (Library) — Submit & Review Popup ----------
-    function submitGuidedLib() {
-      const text = document.getElementById('writeAreaLib').value.trim();
-      if (!text) {
-        openPopup('Thông báo', '<p style="color:var(--wrong);font-weight:600;">⚠️ Bạn hãy viết đoạn văn trước khi bấm Submit nhé!</p>');
-        return;
-      }
-      const wordCount = text.split(/\s+/).filter(Boolean).length;
-      showCelebrateBanner('🎉 Nộp bài thành công!');
-      const popupHtml = `
-        <div style="background:var(--correct-bg);border:1.5px solid var(--correct);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:14px;color:var(--jade-dark);">
-          <div style="font-weight:800;font-size:15px;display:flex;align-items:center;gap:6px;">
-            <span>✅ Nộp bài thành công!</span>
-          </div>
-          <div style="font-size:13px;margin-top:4px;color:var(--ink-2);">
-            Đoạn văn về Thư viện xanh của bạn đã được ghi nhận (Độ dài: <b>${wordCount} từ</b>).
-          </div>
-        </div>
-        <div style="font-weight:700;font-size:13.5px;color:var(--ink-3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">Nội dung bài viết của bạn:</div>
-        <div style="background:var(--cream-2);border-left:4px solid var(--jade-deep);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 16px;line-height:1.7;font-size:14.5px;color:var(--ink);white-space:pre-wrap;word-break:break-word;">${esc(text)}</div>
-      `;
-      openPopup('Bài viết của bạn — Activity 10', popupHtml);
-      LMS().event('guided_writing_submitted', { activity: 'activity-10', wordCount });
-    }
-
-    // ---------- Word Counter & Free Writing Submission ----------
-    function trackWriting(textareaId, counterId) {
-      const text = document.getElementById(textareaId).value.trim();
-      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
-      document.getElementById(counterId).textContent = `${count} từ / mục tiêu 100-130 từ`;
-    }
-
-    function submitFreeWriting() {
-      const text = document.getElementById('writeAreaMain').value.trim();
-      if (!text) return;
-      const fb = document.getElementById('writeFeedback');
-      fb.style.display = 'block';
-      document.getElementById('btnSubmitWriting').disabled = true;
-
-      // Bài viết đã được gửi — chờ Athena chấm thật qua API.
-      // TODO: nối API chấm Writing thật của Athena tại đây:
-      //   const res = await fetch(ATHENA_WRITING_ENDPOINT, { method:'POST', body: JSON.stringify({ text }) });
-      //   const { scores, commentVi } = await res.json();
-      //   renderWritingFeedback(scores, commentVi);
-      // KHÔNG bịa điểm/nhận xét giả ở đây khi chưa nối API thật — giữ nguyên trạng thái "Đang gửi"
-      // cho đến khi có phản hồi thật từ Athena.
-      document.getElementById('writePending').style.display = 'block';
-      document.getElementById('rubricGrid').innerHTML = '';
-      document.getElementById('writeComment').innerHTML = '';
-    }
-
-    // Gọi hàm này SAU KHI có phản hồi thật từ Athena — không gọi tự động, không bịa dữ liệu mẫu.
-    function renderWritingFeedback(scores /* {task, org, lang, length} thang 1-4 */, commentVi) {
-      const labels = { task: 'Task Achievement', org: 'Organisation', lang: 'Language Use', length: 'Length &amp; Fluency' };
-      document.getElementById('writePending').style.display = 'none';
-      document.getElementById('rubricGrid').innerHTML = Object.entries(scores).map(([k, v]) =>
-        `<div class="rubric-item"><div class="rlabel">${labels[k]}</div><div class="rscore">${v}<small>/4</small></div></div>`
-      ).join('');
-      document.getElementById('writeComment').innerHTML = `🎉 <b>Nhận xét từ AI:</b> ${commentVi}`;
-      showCelebrateBanner('🎉 Bài viết của bạn đã được nộp thành công!');
-    }
-
-    // ---------- Reading Progress Bar ----------
+    // 1. Reading Progress Bar
     window.addEventListener('scroll', () => {
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('readingProgressBar').style.width = scrolled + '%';
+      const doc = document.documentElement;
+      const winScroll = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const p = $('#readProgress span');
+      if (p) p.style.width = scrolled + '%';
     });
 
-    LMS().ready();
+    // 2. Mobile View Controls (Mục 4.8b)
+    $$('.mpc-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        $$('.mpc-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.body.setAttribute('data-mobile-view', btn.dataset.view);
+      });
+    });
+
+    // 3. Reference Pane Tabs (Mục 4.8b v2.9: 2 tabs bắt buộc)
+    $$('#prefTabs .pref-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        $$('#prefTabs .pref-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        $$('.pref-content-panel').forEach(p => p.classList.remove('active'));
+        const target = $(`#${tab.dataset.target}`);
+        if (target) target.classList.add('active');
+      });
+    });
+
+    // 4. Nút Gom lại ⟨⟨ & Nút mở lại Reference Pane (Mới v3.0)
+    function toggleRefPane() {
+      const container = $('#practiceSplit');
+      const controls = $('.mobile-pane-controls');
+      const collapsed = container.classList.toggle('ref-collapsed');
+      if (controls) controls.style.display = collapsed ? 'none' : '';
+      LMS().event('ref_pane_toggle', { collapsed });
+      reportHeight();
+    }
+
+    // 5. Level Tabs Navigation
+    function goToPhase(phaseId) {
+      $$('.level-tab').forEach(tab => tab.classList.toggle('active', tab.dataset.phase === phaseId));
+      $$('.phase-panel').forEach(panel => panel.classList.toggle('active', panel.id === phaseId));
+      LMS().state({ activePhase: phaseId, lastAction: 'change-phase' });
+      const topOffset = $('.practice-questions-pane').offsetTop - 60;
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }
+
+    $$('.level-tab').forEach(tab => {
+      tab.addEventListener('click', () => goToPhase(tab.dataset.phase));
+    });
+
+    // 6. Activity 1: Structure Labelling
+    const labelData = [
+      ['There are several things we can do to make our school greener.', 'A', 'Câu chủ đề nêu mục đích chính của cả đoạn → Topic Sentence.'],
+      ['First, we should turn off the lights and fans when we leave a room.', 'B', 'Đề xuất số 1 bắt đầu bằng "First" → Supporting Point 1.'],
+      ['Second, the school could set up refill stations for water and hand soap near the canteen.', 'C', 'Đề xuất số 2 bắt đầu bằng "Second" → Supporting Point 2.'],
+      ['Third, we should encourage students to bring their own water bottles every day.', 'D', 'Đề xuất số 3 bắt đầu bằng "Third" → Supporting Point 3.'],
+      ['In conclusion, making our school greener doesn\'t need big changes.', 'E', 'Bắt đầu bằng "In conclusion," khép lại đoạn văn → Concluding Sentence.']
+    ];
+
+    const labelContainer = $('#labelQuestions');
+    labelData.forEach((item, idx) => {
+      const card = document.createElement('div');
+      card.className = 'q-card';
+      card.innerHTML = `
+        <div class="q-quote">${idx + 1}. “${item[0]}”</div>
+        <div class="q-opts" style="grid-template-columns: repeat(2, 1fr);">
+          <button class="q-opt" data-val="A">A. Topic Sentence</button>
+          <button class="q-opt" data-val="B">B. Supporting Point 1</button>
+          <button class="q-opt" data-val="C">C. Supporting Point 2</button>
+          <button class="q-opt" data-val="D">D. Supporting Point 3</button>
+          <button class="q-opt" data-val="E" style="grid-column: span 2;">E. Concluding Sentence</button>
+        </div>
+        <div class="q-fb"></div>
+      `;
+      labelContainer.appendChild(card);
+
+      $$('.q-opt', card).forEach(opt => {
+        opt.addEventListener('click', () => {
+          $$('.q-opt', card).forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          card.dataset.choice = opt.dataset.val;
+          const answered = $$('.q-card[data-choice]', labelContainer).length;
+          $('#labelSubmit').disabled = answered < 5;
+        });
+      });
+    });
+
+    $('#labelSubmit').addEventListener('click', () => {
+      $$('#labelQuestions .q-card').forEach((card, idx) => {
+        const userChoice = card.dataset.choice;
+        const correct = labelData[idx][1];
+        const fb = $('.q-fb', card);
+        $$('.q-opt', card).forEach(opt => {
+          if (opt.dataset.val === correct) opt.classList.add('correct');
+          else if (opt.classList.contains('selected')) opt.classList.add('wrong');
+        });
+        const isOk = userChoice === correct;
+        fb.innerHTML = `<strong>${isOk ? '✓ Correct!' : '✗ Answer: ' + correct}</strong> ${labelData[idx][2]}`;
+        fb.className = 'q-fb show' + (isOk ? '' : ' bad');
+      });
+      const summary = $('#labelSummary');
+      summary.innerHTML = '<strong>🎯 Answer key tổng kết:</strong> 1-A · 2-B · 3-C · 4-D · 5-E';
+      summary.className = 'q-fb show';
+    });
+
+    // 7. Activity 2: Read & Extract
+    const extractInputs = $$('[data-extract]');
+    extractInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        const allFilled = extractInputs.every(inp => inp.value.trim().length > 0);
+        $('#extractSubmit').disabled = !allFilled;
+      });
+    });
+
+    $('#extractSubmit').addEventListener('click', () => {
+      $('#extractFeedback').className = 'q-fb show';
+      $('#extractSubmit').disabled = true;
+    });
+
+    // 8. Activities 3 & 4: Passage Arrangement (Tap-to-Order)
+    const orderData = {
+      1: {
+        items: {
+          A: 'First, students should sort rubbish into plastic and paper bins.',
+          B: 'Third, we should reuse old cardboard boxes for class projects.',
+          C: 'There are several ways we can reduce classroom waste effectively.',
+          D: 'In conclusion, keeping our classroom clean and green is everyone\'s responsibility.',
+          E: 'Second, teachers could encourage digital handouts to save printing paper.'
+        },
+        answer: 'CAEBD',
+        explain: 'C là Topic sentence mở đầu. A bắt đầu bằng "First,". E bắt đầu bằng "Second,". B bắt đầu bằng "Third,". D có "In conclusion," luôn khép lại đoạn văn.'
+      },
+      2: {
+        items: {
+          A: 'Third, the school should install motion-sensor lights in the bookshelves area.',
+          B: 'In conclusion, saving electricity in the library helps build a sustainable school.',
+          C: 'Second, students could use natural sunlight near the windows during daytime.',
+          D: 'Our school library can take several simple steps to save electrical energy.',
+          E: 'First, we should switch off unused reading lamps when leaving study desks.'
+        },
+        answer: 'DECAB',
+        explain: 'D nêu chủ đề tiết kiệm điện thư viện. E bắt đầu bằng "First,". C bắt đầu bằng "Second,". A bắt đầu bằng "Third,". B có "In conclusion," khép lại đoạn.'
+      }
+    };
+
+    function renderOrderActivity(n) {
+      const data = orderData[n];
+      const bank = $(`#orderBank${n}`);
+      const answerBox = $(`#orderAnswer${n}`);
+      bank.innerHTML = '';
+      answerBox.innerHTML = '';
+
+      Object.keys(data.items).sort(() => Math.random() - 0.5).forEach(key => {
+        const tile = document.createElement('button');
+        tile.className = 'ord-tile';
+        tile.dataset.key = key;
+        tile.textContent = `${key}. ${data.items[key]}`;
+        tile.addEventListener('click', () => {
+          tile.classList.add('placed');
+          const ansRow = document.createElement('div');
+          ansRow.className = 'ord-ans-row';
+          ansRow.dataset.key = key;
+          ansRow.innerHTML = `<span class="ord-num">${answerBox.children.length + 1}</span> <span>${data.items[key]}</span>`;
+          answerBox.appendChild(ansRow);
+          $(`[data-submit-order="${n}"]`).disabled = answerBox.children.length < 5;
+        });
+        bank.appendChild(tile);
+      });
+    }
+
+    renderOrderActivity(1);
+    renderOrderActivity(2);
+
+    $$('[data-reset-order]').forEach(btn => {
+      btn.addEventListener('click', () => renderOrderActivity(btn.dataset.resetOrder));
+    });
+
+    $$('[data-submit-order]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const n = btn.dataset.submitOrder;
+        const placed = $$(`#orderAnswer${n} .ord-ans-row`).map(r => r.dataset.key).join('');
+        const fb = $(`#orderFeedback${n}`);
+        const isOk = placed === orderData[n].answer;
+        fb.innerHTML = `<strong>${isOk ? '✓ Chính xác!' : '✗ Thứ tự đúng: ' + orderData[n].answer.split('').join(' → ')}</strong><br>${orderData[n].explain}`;
+        fb.className = 'q-fb show' + (isOk ? '' : ' bad');
+      });
+    });
+
+    // 9. Activity 5: Sentence Building
+    const sentenceData = [
+      { words: ['there', 'several', 'things', 'are', 'we', 'can', 'do', 'to', 'save', 'energy'], answer: 'there are several things we can do to save energy', shown: 'There are several things we can do to save energy.' },
+      { words: ['first,', 'we', 'should', 'turn', 'off', 'the', 'fans', 'when', 'leaving'], answer: 'first, we should turn off the fans when leaving', shown: 'First, we should turn off the fans when leaving.' },
+      { words: ['for example,', 'students', 'can', 'refill', 'their', 'own', 'bottles'], answer: 'for example, students can refill their own bottles', shown: 'For example, students can refill their own bottles.' },
+      { words: ['in conclusion,', 'small', 'habits', 'can', 'make', 'a', 'real', 'difference'], answer: 'in conclusion, small habits can make a real difference', shown: 'In conclusion, small habits can make a real difference.' }
+    ];
+
+    const buildersContainer = $('#builders');
+    sentenceData.forEach((s, idx) => {
+      const bCard = document.createElement('div');
+      bCard.className = 'sent-builder';
+      bCard.dataset.total = s.words.length;
+      bCard.innerHTML = `
+        <div style="font-weight: 700; color: var(--jade-dark); margin-bottom: 6px;">Câu ${idx + 1}:</div>
+        <div class="built-tray"></div>
+        <div class="word-bank"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button class="btn-secondary btn-reset-sent">Reset câu này</button>
+        </div>
+        <div class="q-fb" style="margin-top:8px;"></div>
+      `;
+      buildersContainer.appendChild(bCard);
+
+      const bank = $('.word-bank', bCard);
+      const tray = $('.built-tray', bCard);
+
+      s.words.forEach((w, wIdx) => {
+        const chip = document.createElement('button');
+        chip.className = 'word-chip';
+        chip.textContent = w;
+        chip.dataset.idx = wIdx;
+        chip.addEventListener('click', () => {
+          chip.classList.add('placed');
+          const bChip = document.createElement('span');
+          bChip.className = 'built-chip';
+          bChip.textContent = w;
+          tray.appendChild(bChip);
+          checkAllSentenceBuilders();
+        });
+        bank.appendChild(chip);
+      });
+
+      $('.btn-reset-sent', bCard).addEventListener('click', () => {
+        tray.innerHTML = '';
+        $$('.word-chip', bank).forEach(c => c.classList.remove('placed'));
+        checkAllSentenceBuilders();
+      });
+    });
+
+    function checkAllSentenceBuilders() {
+      const allDone = $$('.sent-builder').every(b => $$('.built-chip', b).length === Number(b.dataset.total));
+      $('#buildersSubmit').disabled = !allDone;
+    }
+
+    $('#buildersSubmit').addEventListener('click', () => {
+      $$('.sent-builder').forEach((b, idx) => {
+        const builtText = $$('.built-chip', b).map(c => c.textContent).join(' ').toLowerCase();
+        const fb = $('.q-fb', b);
+        const isOk = builtText === sentenceData[idx].answer;
+        const explains = [
+          'Mẫu câu Topic Sentence: There are several things we can do to + V...',
+          'Mẫu câu Suggestion Lớp 1: First, + S + should + V...',
+          'Mẫu câu Example Lớp 2: For example, + S + can + V...',
+          'Mẫu câu Concluding Sentence: In conclusion, + S + can make a real difference.'
+        ];
+        fb.innerHTML = `<strong>${isOk ? '✓ Correct!' : '✗ Đáp án đúng: ' + sentenceData[idx].shown}</strong><br>${explains[idx]}`;
+        fb.className = 'q-fb show' + (isOk ? '' : ' bad');
+      });
+    });
+
+    // 10. Gated Reveal Writing System (Mục 9.17 & Engine 1.18)
+    function countWords(str) {
+      return str.trim() ? str.trim().split(/\s+/).filter(Boolean).length : 0;
+    }
+
+    function setupGatedWriting(taId, countId, submitId, revealId, warnId, minWords = 40) {
+      const ta = $(`#${taId}`);
+      const countBadge = $(`#${countId}`);
+      const submitBtn = $(`#${submitId}`);
+      const revealBtn = $(`#${revealId}`);
+      const warn = $(`#${warnId}`);
+
+      ta.addEventListener('input', () => {
+        const num = countWords(ta.value);
+        countBadge.textContent = `${num} words · Target 100–130`;
+        ta.style.height = 'auto';
+        ta.style.height = Math.max(170, ta.scrollHeight) + 'px';
+      });
+
+      submitBtn.addEventListener('click', () => {
+        const currentCount = countWords(ta.value);
+        if (currentCount < minWords) {
+          warn.textContent = `⚠️ Hãy viết thêm ít nhất ${minWords - currentCount} từ trước khi bấm Submit nhé! (${currentCount}/${minWords} từ)`;
+          warn.style.display = 'block';
+          return;
+        }
+        warn.style.display = 'none';
+        revealBtn.disabled = false;
+        revealBtn.textContent = '🔓 Xem Model Answer';
+        revealBtn.classList.remove('btn-secondary');
+        revealBtn.classList.add('btn-submit');
+        submitBtn.disabled = true;
+      });
+    }
+
+    setupGatedWriting('fullWrite', 'fullCount', 'fullSubmit', 'fullReveal', 'fullWarn');
+    setupGatedWriting('reducedWrite', 'reducedCount', 'reducedSubmit', 'reducedReveal', 'reducedWarn');
+    setupGatedWriting('eventWrite', 'eventCount', 'eventSubmit', 'eventReveal', 'eventWarn');
+    setupGatedWriting('canteenWrite', 'canteenCount', 'canteenSubmit', 'canteenReveal', 'canteenWarn');
+
+    // 11. Bottom-Sheet Modal Controls (Mục 1.18 Engine v1.13)
+    function openModelAnswerSheet(templateId) {
+      lastActiveFocus = document.activeElement;
+      const tpl = $(`#${templateId}`);
+      if (tpl) {
+        $('#modalContent').innerHTML = tpl.innerHTML;
+        $('#recapPopup').classList.add('open');
+        $('#closeModalBtn').focus();
+      }
+    }
+
+    function closeModelAnswerSheet() {
+      $('#recapPopup').classList.remove('open');
+      if (lastActiveFocus) lastActiveFocus.focus();
+    }
+
+    $$('[data-model]').forEach(btn => {
+      btn.addEventListener('click', () => openModelAnswerSheet(btn.dataset.model));
+    });
+
+    $('#closeModalBtn').addEventListener('click', closeModelAnswerSheet);
+    $('#recapPopup').addEventListener('click', (e) => {
+      if (e.target.id === 'recapPopup') closeModelAnswerSheet();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModelAnswerSheet();
+    });
+
+    // 12. Activity 8: Correct the Mistake
+    $$('.mistake-target').forEach(target => {
+      target.addEventListener('click', () => {
+        const box = $(`#${target.dataset.cor}`);
+        if (box) box.classList.toggle('open');
+      });
+    });
+
+    const mistakeInputs = $$('.correction-box input');
+    mistakeInputs.forEach(inp => {
+      inp.addEventListener('input', () => {
+        const allDone = mistakeInputs.every(i => i.value.trim().length > 0);
+        $('#mistakeSubmit').disabled = !allDone;
+      });
+    });
+
+    $('#mistakeSubmit').addEventListener('click', () => {
+      const explains = [
+        'Quy tắc: Dấu phẩy sau "First," và sau modal verb "should" dùng động từ nguyên mẫu không to (should turn off).',
+        'Quy tắc: Dấu phẩy sau "For example," và bổ sung modal verb "can bring" để câu mạch lạc.',
+        'Quy tắc: Không kết bài cộc lốc; cần câu kết hoàn chỉnh khẳng định lại hành động nhỏ tạo khác biệt lớn.'
+      ];
+      mistakeInputs.forEach((inp, idx) => {
+        const norm = inp.value.trim().toLowerCase().replace(/[’]/g, "'").replace(/[.!]$/, '');
+        const isOk = norm === inp.dataset.ans.toLowerCase().replace(/[.!]$/, '');
+        const fb = inp.nextElementSibling;
+        fb.innerHTML = `<strong>${isOk ? '✓ Correct!' : '✗ Đáp án đúng: ' + inp.dataset.ans}</strong><br>${explains[idx]}`;
+        fb.className = 'q-fb show' + (isOk ? '' : ' bad');
+      });
+      $('#mistakeSubmit').disabled = true;
+    });
+
+    // 13. Activity 11: Free Writing with Athena AI
+    const athenaTa = $('#athenaWrite');
+    athenaTa.addEventListener('input', () => {
+      const count = countWords(athenaTa.value);
+      $('#athenaCount').textContent = `${count} words · Target 100–130`;
+      athenaTa.style.height = 'auto';
+      athenaTa.style.height = Math.max(170, athenaTa.scrollHeight) + 'px';
+    });
+
+    $('#athenaSubmit').addEventListener('click', () => {
+      const status = $('#athenaStatus');
+      if (!athenaTa.value.trim()) {
+        status.innerHTML = '⚠️ Vui lòng viết bài phát biểu của bạn trước khi nộp nhé!';
+        status.className = 'q-fb show bad';
+        return;
+      }
+      status.innerHTML = '<strong>⏳ Đang gửi bài viết cho Athena AI...</strong><br>Hệ thống ghi nhận bài nộp của bạn theo chuẩn Rubric 4 tiêu chí.';
+      status.className = 'q-fb show';
+    });
+
+    // 14. Phase 4: Self-evaluation
+    $$('.self-check-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const activeCount = $$('.self-check-item.active').length;
+        const isAll = activeCount === $$('.self-check-item').length;
+        $('#finaleCard').classList.toggle('show', isAll);
+
+        LMS().progress({ done: activeCount, total: 5 });
+        LMS().state({
+          activePhase: 'phase-4',
+          selfChecked: $$('.self-check-item').map(x => x.classList.contains('active')),
+          lastAction: 'self-evaluation'
+        });
+
+        if (isAll && !isCompletionSent) {
+          isCompletionSent = true;
+          LMS().complete({
+            summary: 'Unit 2 Writing Practice completed',
+            score: 0,
+            max: 0,
+            items: [{ id: 'free-writing', prompt: 'Environment Speech Contest Paragraph', chosen: athenaTa.value, correct: 'Open response', isCorrect: null }]
+          });
+        }
+      });
+    });
+
+    // 15. Auto Height Reporter for LMS
+    function reportHeight() {
+      LMS().resize({ height: document.documentElement.scrollHeight });
+    }
+    window.addEventListener('load', () => {
+      LMS().ready();
+      reportHeight();
+    });
+    const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(window._rz);
+      window._rz = setTimeout(reportHeight, 100);
+    });
+    resizeObserver.observe(document.body);
   </script>
-  <script type="application/json" id="athena-manifest">{"version":"1.0","type":"practice","subject":"english","grade":10,"unit":2,"skill":"writing","stateful":true,"completion":"self-evaluation-after-athena"}</script>
-  <script>
-    /* Unit 2 repair layer — follows the scenario without locking navigation tabs. */
-    const repairState={tab:'phase-0',submitted:new Set(),athenaFeedback:null,completionSent:false};
-    const repairWords=v=>{const s=String(v||'').trim();return s?s.split(/\s+/).filter(Boolean).length:0};
-    let popupReturnFocus=null;const popupOpenBase=openPopup,popupCloseBase=closePopup;openPopup=function(title,html){popupReturnFocus=document.activeElement;popupOpenBase(title,html);document.querySelector('#popupOverlay .popup-close').focus()};closePopup=function(){popupCloseBase();if(popupReturnFocus&&popupReturnFocus.focus)popupReturnFocus.focus()};document.getElementById('popupOverlay').setAttribute('role','dialog');document.getElementById('popupOverlay').setAttribute('aria-modal','true');document.getElementById('popupOverlay').addEventListener('keydown',e=>{if(e.key!=='Tab')return;const a=[...document.getElementById('popupOverlay').querySelectorAll('button,[href],input,textarea,select')].filter(x=>!x.disabled),first=a[0],last=a[a.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
-    document.querySelectorAll('.re-input').forEach((x,i)=>{if(!x.id)x.id='readExtract'+(i+1)});document.querySelectorAll('.write-feedback,.q-fb').forEach(x=>{x.setAttribute('role','status');x.setAttribute('aria-live','polite')});
-    function growWriting(t){t.style.height='auto';t.style.height=Math.max(130,t.scrollHeight)+'px'}document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{growWriting(t);saveRepair()});growWriting(t)});
-    document.getElementById('reWarning').textContent='Điền đủ cả 6 ô trống rồi mới Submit nhé.';
 
-    /* Replace the full two-column reference with the small mobile review tray requested by the script. */
-    const refTrigger=document.createElement('button');refTrigger.className='mobile-ref-trigger';refTrigger.type='button';refTrigger.textContent='📄 Xem lại bài mẫu';document.body.append(refTrigger);const refSheet=document.createElement('div');refSheet.className='mobile-ref-sheet';refSheet.setAttribute('role','dialog');refSheet.setAttribute('aria-modal','true');refSheet.innerHTML='<div class="mobile-ref-content"><div class="mobile-ref-head"><h3>Bài mẫu & Signal Words</h3><button class="mobile-ref-close" aria-label="Đóng">×</button></div><div class="pref-tabs"><button class="pref-tab active" data-ref="winning">🏆 Bài mẫu</button><button class="pref-tab" data-ref="signals">🔗 Signal Words</button></div><div id="mobileRefBody"></div></div>';document.body.append(refSheet);const mobileRefBody=document.getElementById('mobileRefBody');function showMobileRef(key){mobileRefBody.innerHTML=refData[key];refSheet.querySelectorAll('[data-ref]').forEach(b=>b.classList.toggle('active',b.dataset.ref===key));reportRepairHeight()}function closeMobileRef(){refSheet.classList.remove('open');refTrigger.focus()}refTrigger.addEventListener('click',()=>{refSheet.classList.add('open');showMobileRef('winning');refSheet.querySelector('.mobile-ref-close').focus()});refSheet.querySelector('.mobile-ref-close').addEventListener('click',closeMobileRef);refSheet.addEventListener('click',e=>{if(e.target===refSheet)closeMobileRef()});refSheet.querySelectorAll('[data-ref]').forEach(b=>b.addEventListener('click',()=>showMobileRef(b.dataset.ref)));
-    const phase0Intro=document.querySelector('#q_phase-0 .level-intro');phase0Intro.innerHTML='Read the canteen passage below to identify and extract its five-part structure.<span class="vi-sub" style="margin-top:4px;">Đọc đoạn văn về Căng tin trường học dưới đây để nhận diện và trích xuất cấu trúc năm phần.</span>';const inlineCanteen=document.createElement('div');inlineCanteen.className='card';inlineCanteen.innerHTML=refData.canteen;phase0Intro.after(inlineCanteen);
-    const phase0Descriptions=document.querySelectorAll('#q_phase-0 .desc-en');if(phase0Descriptions[0])phase0Descriptions[0].textContent='Read the canteen paragraph above. Which part of the structure does each sentence belong to?';if(phase0Descriptions[1])phase0Descriptions[1].textContent='Read the same paragraph above and complete the table with information from the text.';
-
-    /* Reduced-support writing: complete task, counter, Submit and comparison model. */
-    const reducedCard=[...document.querySelectorAll('.card')].find(c=>c.textContent.includes('Guided Writing (Reduced Support)')),reducedArea=reducedCard.querySelector('textarea');reducedArea.id='writeAreaReduced';const reducedCount=document.createElement('div');reducedCount.id='wordCountReduced';reducedCount.className='word-count';reducedCount.textContent='0 từ / mục tiêu 100-130 từ';reducedArea.after(reducedCount);const reducedActions=document.createElement('div');reducedActions.className='reduced-actions';reducedActions.innerHTML='<button class="reveal-btn" id="revealReduced" disabled>🔒 Submit để xem model answer</button><button class="an-btn" id="submitReduced" disabled>✓ Submit</button>';reducedCount.after(reducedActions);const reducedModel='<p><i>There are three things our class can do to make our classroom greener. First, we should grow small plants in reused plastic bottles. For example, we can place them on the classroom windowsill. This can make our classroom look fresher and greener. Second, we could set up a small class plant corner. Students can take turns watering and caring for the plants every week. This can help students feel more responsible for their shared space. Third, we should use a digital notice board instead of paper notices. For example, announcements can be shared on a screen or in the group chat. This can reduce the amount of paper our class uses. In conclusion, these small habits can make our classroom a greener place to learn.</i></p>';reducedArea.addEventListener('input',()=>{const n=repairWords(reducedArea.value);reducedCount.textContent=n+' từ / mục tiêu 100-130 từ';document.getElementById('submitReduced').disabled=n<100||n>130;growWriting(reducedArea);saveRepair()});document.getElementById('submitReduced').addEventListener('click',()=>{repairState.submitted.add('reduced');document.getElementById('submitReduced').disabled=true;document.getElementById('revealReduced').disabled=false;LMS().event('guided_writing_submitted',{activity:'activity-7',wordCount:repairWords(reducedArea.value),text:reducedArea.value});saveRepair()});document.getElementById('revealReduced').addEventListener('click',()=>openPopup('Model Answer — Green Classroom',reducedModel));
-
-    /* Correct the Mistake: numbered markers open repair explanations; old MCQ cards are removed. */
-    document.getElementById('p2Err').hidden=true;const errorFixes=['There is → There are','First we should → First, we should','small plant → small plants','This make → This makes','Use a full stop before Students: ...corner. Students could...','used → use'];document.querySelectorAll('.error-text-card .err-tag').forEach((tag,i)=>{tag.tabIndex=0;tag.setAttribute('role','button');const open=()=>openPopup('Correction ['+(i+1)+']','<div class="error-fix-sheet"><b>'+esc(errorFixes[i])+'</b></div>');tag.addEventListener('click',open);tag.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
-
-    /* Model/idea buttons remain locked until an explicit valid Submit. */
-    const modelGate={writeAreaFull:{reveal:'revealFull',min:40,key:'full'},writeAreaLib:{reveal:'revealLib',min:40,key:'library'},writeAreaP2:{reveal:'revealP2',min:100,key:'independent'}};checkRevealGate=function(textareaId,btnId,minWords){const n=repairWords(document.getElementById(textareaId).value),cfg=modelGate[textareaId],done=cfg&&repairState.submitted.has(cfg.key),btn=document.getElementById(btnId);btn.disabled=!done;btn.textContent=done?(btn.dataset.unlockedLabel||'Xem nội dung đối chiếu'):'🔒 Submit sau khi viết đủ '+minWords+' từ ('+n+'/'+minWords+')';growWriting(document.getElementById(textareaId));saveRepair()};
-    function acceptWriting(id,key,revealId,min,max,eventId){const t=document.getElementById(id),n=repairWords(t.value);if(n<min||(max&&n>max)){openPopup('Kiểm tra bài viết','<p style="color:var(--wrong);font-weight:700;">Bài này cần '+(max?min+'-'+max:'ít nhất '+min)+' từ. Hiện tại: '+n+' từ.</p>');return false}repairState.submitted.add(key);document.getElementById(revealId).disabled=false;document.getElementById(revealId).textContent=document.getElementById(revealId).dataset.unlockedLabel||'Xem nội dung đối chiếu';LMS().event(eventId,{id:key,wordCount:n,text:t.value});saveRepair();return true}
-    submitGuidedFull=function(){if(acceptWriting('writeAreaFull','full','revealFull',40,0,'guided_writing_submitted')){document.getElementById('btnSubmitFull').disabled=true;showCelebrateBanner('🎉 Đã ghi nhận bài Guided Writing.')}};submitGuidedLib=function(){if(acceptWriting('writeAreaLib','library','revealLib',40,0,'guided_writing_submitted')){document.getElementById('btnSubmitLib').disabled=true;showCelebrateBanner('🎉 Đã ghi nhận bài Green Library.')}};submitIndependentP2=function(){if(acceptWriting('writeAreaP2','independent','revealP2',100,130,'independent_writing_submitted')){document.getElementById('btnSubmitP2').disabled=true;openPopup('Self-check — Independent Writing','<ul><li>Đủ Topic Sentence và Conclusion?</li><li>Mỗi suggestion có Example và Expected result?</li><li>Dùng đúng sequence words?</li><li>Đạt 100-130 từ?</li></ul>')}};
-
-    /* Athena accepts only a complete 100-130 word paragraph and waits for genuine feedback. */
-    submitFreeWriting=function(){const t=document.getElementById('writeAreaMain'),n=repairWords(t.value);if(n<100||n>130){openPopup('Kiểm tra số từ','<p style="color:var(--wrong);font-weight:700;">Bài Athena cần 100-130 từ. Hiện tại: '+n+' từ.</p>');return}document.getElementById('writeFeedback').style.display='block';document.getElementById('writePending').style.display='block';document.getElementById('rubricGrid').innerHTML='';document.getElementById('writeComment').textContent='';document.getElementById('btnSubmitWriting').disabled=true;repairState.submitted.add('athena');LMS().event('free_writing_submitted',{id:'free-writing',wordCount:n,text:t.value,rubric:['Task Achievement','Organisation','Language Use','Length & Fluency']});saveRepair()};window.addEventListener('athena:writing-feedback',e=>{const d=e.detail||{},scores=d.scores||{};renderWritingFeedback({task:scores.task??scores['Task Achievement']??'—',org:scores.org??scores.Organisation??'—',lang:scores.lang??scores['Language Use']??'—',length:scores.length??scores['Length & Fluency']??'—'},esc(d.commentVi||d.comment||'Athena feedback received.'));repairState.athenaFeedback=d;saveRepair();checkRepairComplete()});
-
-    /* Tabs always stay available; persist all learner work and complete only from the final checklist. */
-    document.querySelectorAll('.level-tab').forEach(b=>b.disabled=false);const originalGoToLevel=goToLevel;goToLevel=function(id){originalGoToLevel(id);repairState.tab=id;saveRepair()};const originalToggleSelf=toggleSelfCheck;toggleSelfCheck=function(el){originalToggleSelf(el);saveRepair();checkRepairComplete()};
-    function repairSnapshot(){const fields={};document.querySelectorAll('input[type="text"],textarea').forEach((x,i)=>fields[x.id||('field-'+i)]=x.value);return{tab:repairState.tab,submitted:[...repairState.submitted],athenaFeedback:repairState.athenaFeedback,completionSent:repairState.completionSent,fields,self:[...document.querySelectorAll('#p3SelfEval .sc-item')].map(x=>x.classList.contains('checked'))}}
-    function saveRepair(){LMS().state(repairSnapshot());reportRepairHeight()}function reportRepairHeight(){LMS().resize({height:document.documentElement.scrollHeight})}function checkRepairComplete(){const done=[...document.querySelectorAll('#p3SelfEval .sc-item')].every(x=>x.classList.contains('checked'));document.querySelector('.finale-card').classList.toggle('show',done);if(done&&repairState.athenaFeedback&&!repairState.completionSent){repairState.completionSent=true;LMS().complete({summary:'Unit 2 Suggestion Paragraph Practice completed',score:null,max:null,items:[{id:'free-writing',prompt:'Suggestion paragraph for a greener place',chosen:document.getElementById('writeAreaMain').value,correct:'Open response',isCorrect:null}]});saveRepair()}}
-    if(window.AiducationLMS)window.AiducationLMS.onResume=s=>{if(!s)return;repairState.tab=s.tab||'phase-0';repairState.submitted=new Set(s.submitted||[]);repairState.athenaFeedback=s.athenaFeedback||null;repairState.completionSent=!!s.completionSent;Object.entries(s.fields||{}).forEach(([id,v])=>{const x=document.getElementById(id);if(x){x.value=v;if(x.tagName==='TEXTAREA'){growWriting(x);x.dispatchEvent(new Event('input'))}}});(s.self||[]).forEach((v,i)=>{if(v)document.querySelectorAll('#p3SelfEval .sc-item')[i]?.classList.add('checked')});Object.entries(modelGate).forEach(([id,c])=>checkRevealGate(id,c.reveal,c.min));if(repairState.submitted.has('reduced')){document.getElementById('revealReduced').disabled=false;document.getElementById('submitReduced').disabled=true}if(repairState.athenaFeedback){const d=repairState.athenaFeedback,scores=d.scores||{};document.getElementById('writeFeedback').style.display='block';renderWritingFeedback({task:scores.task??scores['Task Achievement']??'—',org:scores.org??scores.Organisation??'—',lang:scores.lang??scores['Language Use']??'—',length:scores.length??scores['Length & Fluency']??'—'},esc(d.commentVi||d.comment||'Athena feedback received.'));document.getElementById('btnSubmitWriting').disabled=true}else if(repairState.submitted.has('athena')){document.getElementById('writeFeedback').style.display='block';document.getElementById('writePending').style.display='block';document.getElementById('btnSubmitWriting').disabled=true}originalGoToLevel(repairState.tab);checkRepairComplete()};
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&refSheet.classList.contains('open'))closeMobileRef()});window.addEventListener('load',()=>{LMS().ready();document.querySelectorAll('textarea').forEach(growWriting);reportRepairHeight()});new ResizeObserver(reportRepairHeight).observe(document.body);
-  </script>
 </body>
 
 </html>
