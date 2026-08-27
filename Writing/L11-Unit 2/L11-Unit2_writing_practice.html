@@ -130,9 +130,6 @@
     .practice-header {
       background: var(--white);
       border-bottom: 1.5px solid var(--paper-line);
-      position: sticky;
-      top: 0;
-      z-index: 100;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
     }
 
@@ -268,8 +265,8 @@
       border-radius: var(--radius-lg);
       padding: 18px;
       position: sticky;
-      top: 80px;
-      max-height: calc(100vh - 100px);
+      top: 16px;
+      max-height: calc(100vh - 32px);
       overflow-y: auto;
       box-shadow: var(--shadow);
       display: flex;
@@ -898,15 +895,101 @@
 
     /* Responsive Breakdown */
     @media (max-width: 900px) {
-      .app-container { grid-template-columns: 1fr; }
-      .ref-pane { position: relative; top: 0; max-height: 320px; }
-      .mobile-view-bar { display: flex; }
-      .app-container.view-ref-only .ref-pane { display: flex; max-height: none; }
-      .app-container.view-ref-only .exercise-workspace { display: none; }
-      .app-container.view-ex-only .ref-pane { display: none; }
-      .app-container.view-ex-only .exercise-workspace { display: flex; }
-      .app-container.view-split .ref-pane { display: flex; max-height: 260px; }
-      .app-container.view-split .exercise-workspace { display: flex; }
+      .app-container {
+        grid-template-columns: 1fr;
+        padding-top: 4px;
+      }
+      .mobile-view-bar-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 95;
+        background: var(--cream);
+        padding: 6px 16px;
+        height: 52px;
+        box-sizing: border-box;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+      .mobile-view-bar-wrap.nav-hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+      }
+      .mobile-view-bar {
+        display: flex;
+        margin-bottom: 0;
+      }
+      .ref-pane {
+        position: relative;
+        top: 0;
+        max-height: none;
+      }
+      /* Chế độ xem trên Mobile */
+      .app-container.view-ref-only {
+        display: block;
+      }
+      .app-container.view-ref-only .ref-pane {
+        display: flex;
+        position: relative;
+        top: 0;
+        max-height: none !important;
+        box-shadow: var(--shadow);
+      }
+      .app-container.view-ref-only .ref-content-box {
+        max-height: none !important;
+        overflow: visible !important;
+      }
+      .app-container.view-ref-only #btnToggleCollapse {
+        display: none;
+      }
+      .app-container.view-ref-only .exercise-workspace {
+        display: none;
+      }
+
+      .app-container.view-ex-only .ref-pane {
+        display: none;
+      }
+      .app-container.view-ex-only .exercise-workspace {
+        display: flex;
+      }
+
+      .app-container.view-split .ref-pane {
+        display: flex;
+        position: sticky;
+        top: 54px;
+        z-index: 90;
+        max-height: 320px;
+        box-shadow: 0 10px 28px rgba(20, 67, 47, 0.16);
+        border: 2px solid var(--jade-soft);
+        animation: fadeIn 0.25s ease;
+        transition: top 0.25s ease;
+        padding: 14px 16px;
+      }
+      .app-container.view-split .ref-header {
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+      }
+      .app-container.view-split .ref-tabs {
+        margin-bottom: 10px;
+      }
+      .app-container.view-split .ref-tab-btn {
+        min-height: 34px;
+        padding: 5px 10px;
+        font-size: 13px;
+      }
+      .app-container.view-split .ref-pane.bar-hidden {
+        top: 6px;
+      }
+      .app-container.view-split .ref-pane.collapsed {
+        max-height: 52px;
+        overflow: hidden;
+      }
+      .app-container.view-split .ref-pane.collapsed .ref-tabs,
+      .app-container.view-split .ref-pane.collapsed .ref-content-box {
+        display: none;
+      }
+      .app-container.view-split .exercise-workspace {
+        display: flex;
+      }
       .cat-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -933,8 +1016,8 @@
     </div>
   </header>
 
-  <!-- MOBILE VIEW TOGGLE BAR -->
-  <div class="wrap" style="padding-top: 10px;">
+  <!-- MOBILE VIEW TOGGLE BAR (STICKY WRAP) -->
+  <div class="mobile-view-bar-wrap">
     <div class="mobile-view-bar" id="mobileViewBar">
       <button class="view-btn active" onclick="setMobileView('split')">📱 Chia đôi</button>
       <button class="view-btn" onclick="setMobileView('ref')">📄 Tham chiếu</button>
@@ -949,7 +1032,10 @@
     <aside class="ref-pane" id="refPane">
       <div class="ref-header">
         <span class="ref-title">📚 Reference Material</span>
-        <span style="font-size:12px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px;">Tra cứu</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:12px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px;">Tra cứu</span>
+          <button class="ghost-btn" id="btnToggleCollapse" style="padding:2px 8px; min-height:30px; font-size:12px;" onclick="toggleRefCollapse()" title="Thu gọn / Mở rộng">↕ Thu gọn</button>
+        </div>
       </div>
 
       <!-- Reference Tabs -->
@@ -1367,7 +1453,62 @@
       document.querySelectorAll('.view-btn').forEach((btn, i) => {
         btn.classList.toggle('active', (viewMode === 'split' && i === 0) || (viewMode === 'ref' && i === 1) || (viewMode === 'ex' && i === 2));
       });
+
+      const mobileBar = document.querySelector('.mobile-view-bar-wrap');
+      if (mobileBar) mobileBar.classList.remove('nav-hidden');
+      const refPane = document.getElementById('refPane');
+      if (refPane) refPane.classList.remove('bar-hidden');
+
+      // Khi bấm Tham chiếu, tự động cuộn mượt lên đầu phần tra cứu ngay lập tức
+      if (viewMode === 'ref') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
+
+    function toggleRefCollapse() {
+      const pane = document.getElementById('refPane');
+      pane.classList.toggle('collapsed');
+      const btn = document.getElementById('btnToggleCollapse');
+      if (pane.classList.contains('collapsed')) {
+        btn.textContent = '↕ Mở rộng';
+      } else {
+        btn.textContent = '↕ Thu gọn';
+      }
+    }
+
+    // 4. Smart Auto-hide on Scroll Down / Instant Reveal on ANY Scroll Up
+    let lastScrollY = window.scrollY;
+    let scrollTicking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const mobileBar = document.querySelector('.mobile-view-bar-wrap');
+          const refPane = document.getElementById('refPane');
+          
+          if (mobileBar) {
+            const delta = currentScrollY - lastScrollY;
+            if (currentScrollY <= 10) {
+              // Ở đầu trang: luôn hiện
+              mobileBar.classList.remove('nav-hidden');
+              if (refPane) refPane.classList.remove('bar-hidden');
+            } else if (delta > 5 && currentScrollY > 50) {
+              // Cuộn xuống: ẩn thanh 3 nút
+              mobileBar.classList.add('nav-hidden');
+              if (refPane) refPane.classList.add('bar-hidden');
+            } else if (delta < -2) {
+              // Chỉ cần lướt nhẹ ngược lên ở BẤT KỲ ĐÂU: hiện lại ngay lập tức
+              mobileBar.classList.remove('nav-hidden');
+              if (refPane) refPane.classList.remove('bar-hidden');
+            }
+          }
+          lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
 
     function showCurfewNote() {
       const note = document.getElementById('curfewNote');
