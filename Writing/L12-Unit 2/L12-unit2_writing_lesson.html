@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — Unit 2 (Lớp 12): A Multicultural World — Opinion Essay</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Athena Manifest -->
+  <script type="application/json" id="athena-context">
+  {
+    "title": "A Multicultural World — Opinion Essay",
+    "subject": "Tiếng Anh",
+    "grade": "12",
+    "objectives": [
+      "Write an opinion essay on the impact of world festivals on young Vietnamese people.",
+      "Apply advanced transitional devices without repetition and acknowledge counter-arguments."
+    ],
+    "structure": [
+      { "id": "hook", "title": "Hook — Viral Village Life Debate" },
+      { "id": "recap", "title": "Quick Recap — 3-Block Opinion Structure" },
+      { "id": "signals", "title": "Mastery Signal Words & Connectors" }
+    ],
+    "athenaGuidance": "Bài học cung cấp kiến thức nền tảng và bảng tín hiệu nâng cao về Opinion Essay lớp 12, giúp học sinh nhận diện và phân tích cấu trúc luận điểm, dẫn chứng, giải thích và thừa nhận phản biện trong chủ đề thế giới đa văn hóa."
+  }
+  </script>
+
+  <style>
+    :root {
+      --jade-deep: #1b6b50;
+      --jade-dark: #124d39;
+      --jade-soft: #85c2a3;
+      --jade-pale: #eaf5f0;
+      --jade-text: #0e4332;
+      --cream: #faf8f5;
+      --cream-2: #f0ede6;
+      --ink: #1f2937;
+      --ink-2: #4b5563;
+      --ink-3: #6b7280;
+      --paper-line: #e5e0d8;
+      --white: #ffffff;
+      --accent: #d97706;
+      --accent-pale: #fef3c7;
+      --danger: #dc2626;
+      --danger-pale: #fee2e2;
+      --warning: #ca8a04;
+      --warning-bg: #fef9c3;
+
+      /* Local Accent Tokens for L12 Unit 2 */
+      --slate: #4E6E7E;
+      --slate-pale: #E4EBF0;
+      --terracotta: #C1704B;
+      --terracotta-pale: #FBEFEA;
+
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --shadow: 0 4px 16px rgba(18, 77, 57, 0.08);
+      --shadow-lg: 0 10px 28px rgba(18, 77, 57, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15.5px;
+      padding: 0 0 60px 0;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    /* Header */
+    .lesson-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--paper-line);
+      padding: 16px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .header-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    /* Hero Card */
+    .hero-card {
+      background: linear-gradient(135deg, var(--jade-dark) 0%, var(--jade-deep) 100%);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      opacity: 0.92;
+      max-width: 680px;
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .section-icon-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    /* Social Video Mock */
+    .video-mock-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .video-mock-top {
+      background: var(--slate);
+      color: #fff;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .video-thumb-wrap {
+      position: relative;
+      width: 100%;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      max-height: 420px;
+    }
+
+    .video-thumb-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .video-thumb-wrap:hover .video-thumb-img {
+      transform: scale(1.02);
+    }
+
+    .video-play-btn {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(27, 107, 80, 0.85);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      transition: all 0.2s ease;
+    }
+
+    .video-play-btn:hover {
+      transform: scale(1.1);
+      background: var(--jade-deep);
+    }
+
+    .video-badge-view {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      background: rgba(0, 0, 0, 0.72);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .video-badge-tag {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .video-mock-body {
+      padding: 16px 20px;
+    }
+
+    .video-author-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .video-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .video-channel-name {
+      font-weight: 800;
+      color: var(--jade-dark);
+      font-size: 15px;
+    }
+
+    .video-desc {
+      font-size: 14px;
+      color: var(--ink-2);
+      margin-bottom: 14px;
+    }
+
+    .video-comments-wrap {
+      border-top: 1.5px dashed var(--paper-line);
+      padding-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mock-comment {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .mock-comment.pos {
+      border-left: 3.5px solid var(--jade-deep);
+    }
+
+    .mock-comment.neg {
+      border-left: 3.5px solid var(--terracotta);
+    }
+
+    /* Pick Your Reasons Interactive Card */
+    .debate-prompt-box {
+      background: var(--slate-pale);
+      border: 1.5px solid var(--slate);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      font-size: 14.5px;
+      color: var(--jade-dark);
+    }
+
+    .debate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .debate-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .debate-column {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .col-header-pos {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--jade-dark);
+      font-weight: 800;
+      font-size: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--jade-soft);
+    }
+
+    .col-header-neg {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--terracotta);
+      font-weight: 800;
+      font-size: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--terracotta);
+    }
+
+    .reason-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 14px;
+      line-height: 1.5;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      user-select: none;
+    }
+
+    .reason-card:hover {
+      border-color: var(--jade-soft);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .reason-card.active {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+      box-shadow: 0 0 0 2px rgba(27, 107, 80, 0.2);
+    }
+
+    .reason-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Quick Recap Flashcard */
+    .recap-flashcard {
+      background: linear-gradient(135deg, #FAF7F0 0%, #F5EFE4 100%);
+      border: 2px solid var(--jade-soft);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .recap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .recap-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .recap-block {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+
+    .recap-block-title {
+      font-weight: 800;
+      font-size: 14.5px;
+      color: var(--jade-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .recap-block-desc {
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+
+    .recap-block-formula {
+      margin-top: 8px;
+      padding: 6px 8px;
+      background: var(--cream-2);
+      border-radius: 4px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--jade-text);
+    }
+
+    /* Signal Words Table */
+    .signal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .signal-table th, .signal-table td {
+      border: 1px solid var(--paper-line);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .signal-table th {
+      background: var(--cream-2);
+      color: var(--jade-dark);
+      font-weight: 800;
+      font-size: 13.5px;
+    }
+
+    .signal-table tr:nth-child(even) {
+      background: var(--cream);
+    }
+
+    .signal-tag {
+      display: inline-block;
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--jade-text);
+      margin: 2px 4px 2px 0;
+    }
+
+    .audio-play-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .audio-play-chip:hover {
+      background: var(--jade-deep);
+      color: #fff;
+    }
+
+    /* Notice Box */
+    .notice-box {
+      background: var(--warning-bg);
+      border: 1.5px solid var(--warning);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #854d0e;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    /* Footer Info */
+    .lesson-footer {
+      text-align: center;
+      padding: 20px 0 10px;
+      color: var(--ink-3);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="header-inner">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="header-badge">Unit 2 · Writing</span>
+        <span class="header-title">A Multicultural World</span>
+      </div>
+      <span style="font-size:13px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:3px 10px; border-radius:999px;">Mastery Level</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- HERO CARD -->
+    <div class="hero-card">
+      <span class="hero-tag">✨ Advanced Opinion Writing</span>
+      <h1 class="hero-title">A Multicultural World — Opinion Essay</h1>
+      <p class="hero-sub">
+        Làm chủ kỹ thuật viết bài luận ý kiến 180–200 từ: lập luận 2 chiều sâu sắc, sử dụng từ nối biến hóa không lặp lại và thừa nhận góc nhìn trái chiều (Counter-argument).
+      </p>
+    </div>
+
+    <!-- SECTION 1: HOOK (CLASS DEBATE & VIRAL VILLAGE LIFE) -->
+    <section class="section-card" id="hook">
+      <div class="section-header">
+        <div class="section-icon-badge">🏔️</div>
+        <h2 class="section-title">1. Hook — The Viral Mountain Village Debate</h2>
+      </div>
+
+      <div class="debate-prompt-box">
+        <strong>💬 Khoa, Hà and Mai are planning a class debate:</strong><br>
+        Their teacher shows them a short video: a family living in a remote mountain village in Vietnam recently started posting videos about their everyday life online. The videos went viral — millions of people around the world now know their village.
+      </div>
+
+      <!-- Social Video Mockup -->
+      <div class="video-mock-card">
+        <div class="video-mock-top">
+          <span>📹 Trending Culture Video</span>
+          <span>● LIVE / VIRAL</span>
+        </div>
+
+        <div class="video-thumb-wrap">
+          <img src="./L12-Unit 2-Writing-Anh 1 thay the.png" alt="Remote Vietnamese Mountain Village" class="video-thumb-img" onerror="this.src='./L12-Unit 2-Writing_Anh 1.png'">
+          <div class="video-badge-tag">🏔️ Highland Culture Spotlight</div>
+          <div class="video-play-btn" onclick="simulatePlayVideo()" title="Phát video minh họa">▶</div>
+          <div class="video-badge-view">👁️ 2.3M views</div>
+        </div>
+
+        <div class="video-mock-body">
+          <div class="video-author-row">
+            <div class="video-avatar">H</div>
+            <div>
+              <div class="video-channel-name">Hmong Life Stories &bull; <span>Verified Channel</span></div>
+              <div style="font-size:12px; color:var(--ink-3);">Published 3 days ago &bull; Cultural Heritage Series</div>
+            </div>
+          </div>
+          <p class="video-desc">
+            "Sharing our everyday weaving, terraced field harvest, and stilt house life in northern Vietnam with friends worldwide! ✨ #Culture #Vietnam #Highlands"
+          </p>
+
+          <!-- 2 Opposing Comments -->
+          <div class="video-comments-wrap">
+            <div class="mock-comment pos">
+              <strong>💬 @world_explorer:</strong> "It is wonderful that modern technology helps preserve and introduce ancient weaving skills to the world! Brings income and pride to the village."
+            </div>
+            <div class="mock-comment neg">
+              <strong>💬 @cultural_preserver:</strong> "While views are great, I worry young people will change their peaceful lifestyle and abandon stilt houses just to chase online trends."
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Reason Classification -->
+      <h3 style="font-size:16px; font-weight:800; color:var(--jade-dark); margin-bottom:12px;">
+        🔍 Pick your reasons — Tác động tích cực hay tiêu cực?
+      </h3>
+      <p style="font-size:14px; color:var(--ink-2); margin-bottom:16px;">
+        Chạm chọn vào từng luận điểm dưới đây để phân tích 2 mặt của hiện tượng văn hóa này:
+      </p>
+
+      <div class="debate-grid">
+        <!-- Positive Column -->
+        <div class="debate-column">
+          <div class="col-header-pos">
+            <span>✨</span>
+            <span>Positive Impact (Mặt Tích Cực)</span>
+          </div>
+
+          <div class="reason-card" onclick="toggleReason(this, 'pos')">
+            <span class="reason-icon">🌾</span>
+            <div>
+              <strong>Connects remote communities</strong> with people around the world, opening doors for global exchange.
+            </div>
+          </div>
+
+          <div class="reason-card" onclick="toggleReason(this, 'pos')">
+            <span class="reason-icon">💰</span>
+            <div>
+              <strong>Brings extra income</strong> through views, sponsorship, and cultural tourism for local families.
+            </div>
+          </div>
+
+          <div class="reason-card" onclick="toggleReason(this, 'pos')">
+            <span class="reason-icon">🧵</span>
+            <div>
+              <strong>Helps preserve traditions</strong>: Documenting traditional weaving and farming skills that might otherwise be forgotten.
+            </div>
+          </div>
+        </div>
+
+        <!-- Negative Column -->
+        <div class="debate-column">
+          <div class="col-header-neg">
+            <span>⚠️</span>
+            <span>Negative Impact (Mặt Tiêu Cực)</span>
+          </div>
+
+          <div class="reason-card" onclick="toggleReason(this, 'neg')">
+            <span class="reason-icon">📱</span>
+            <div>
+              <strong>Pressure to abandon lifestyles</strong>: Younger generations may feel pressured to abandon traditional houses and values.
+            </div>
+          </div>
+
+          <div class="reason-card" onclick="toggleReason(this, 'neg')">
+            <span class="reason-icon">🎭</span>
+            <div>
+              <strong>Commercialisation</strong>: Communities may start changing how they live just to please online viewers and algorithms.
+            </div>
+          </div>
+
+          <div class="reason-card" onclick="toggleReason(this, 'neg')">
+            <span class="reason-icon">📷</span>
+            <div>
+              <strong>Disrupted privacy</strong>: Traditional peaceful ways of life can be disturbed by constant filming and tourists.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: QUICK RECAP (3-BLOCK OPINION ESSAY) -->
+    <section class="section-card" id="recap">
+      <div class="section-header">
+        <div class="section-icon-badge">📝</div>
+        <h2 class="section-title">2. Quick Recap — Opinion Essay Structure (3 Blocks)</h2>
+      </div>
+
+      <p style="font-size:14.5px; color:var(--ink-2); margin-bottom:14px;">
+        Ở cấp độ Mastery Lớp 12, một bài luận ý kiến hoàn chỉnh luôn bao gồm 3 khối chặt chẽ:
+      </p>
+
+      <div class="recap-flashcard">
+        <div class="recap-grid">
+          <!-- Block 1: Introduction -->
+          <div class="recap-block">
+            <div class="recap-block-title">
+              <span>🎯</span>
+              <span>1. Introduction</span>
+            </div>
+            <div class="recap-block-desc">
+              Giới thiệu hiện tượng xã hội / câu hỏi đề bài và <strong>tuyên bố dứt khoát quan điểm cá nhân</strong> ngay từ câu mở đầu.
+            </div>
+            <div class="recap-block-formula">
+              State the issue + Clear Opinion
+            </div>
+          </div>
+
+          <!-- Block 2: Body -->
+          <div class="recap-block">
+            <div class="recap-block-title">
+              <span>💡</span>
+              <span>2. Body Paragraphs</span>
+            </div>
+            <div class="recap-block-desc">
+              Phát triển ít nhất 2 lý do chính theo công thức: <strong>Luận điểm (Point) &rarr; Ví dụ dẫn chứng (Example) &rarr; Hệ quả (Explain)</strong>.
+            </div>
+            <div class="recap-block-formula">
+              Connector + Point &rarr; Example &rarr; Result
+            </div>
+          </div>
+
+          <!-- Block 3: Conclusion -->
+          <div class="recap-block">
+            <div class="recap-block-title">
+              <span>⚖️</span>
+              <span>3. Conclusion</span>
+            </div>
+            <div class="recap-block-desc">
+              Khẳng định lại quan điểm và <strong>thừa nhận một góc nhìn phản biện (Counter-argument)</strong> trước khi chốt lại để bài viết thuyết phục hơn.
+            </div>
+            <div class="recap-block-formula">
+              In conclusion, although... I believe...
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 3: SIGNALS (MASTER EXPANDED SIGNALS) -->
+    <section class="section-card" id="signals">
+      <div class="section-header">
+        <div class="section-icon-badge">🔗</div>
+        <h2 class="section-title">3. Bảng Tín Hiệu Nhận Diện Mở Rộng (Mastery Connectors)</h2>
+      </div>
+
+      <p style="font-size:14.5px; color:var(--ink-2); margin-bottom:16px;">
+        Để đạt điểm cao tiêu chí <em>Language Use &amp; Cohesion</em>, hãy luân chuyển các từ nối học thuật và tuyệt đối không lặp lại cùng một cụm từ 2 lần:
+      </p>
+
+      <table class="signal-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Chức năng (Function)</th>
+            <th>Cụm từ nối nâng cao (Mastery Signals)</th>
+            <th style="width: 15%;">Phát âm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🎯 Nêu quan điểm (State opinion)</strong></td>
+            <td>
+              <span class="signal-tag">I believe...</span>
+              <span class="signal-tag">In my opinion...</span>
+              <span class="signal-tag">From my point of view...</span>
+              <span class="signal-tag">I am convinced that...</span>
+            </td>
+            <td>
+              <button class="audio-play-chip" onclick="speakText('In my opinion, from my point of view')">🔊 Nghe</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>1️⃣ Lý do thứ nhất (First reason)</strong></td>
+            <td>
+              <span class="signal-tag">To begin with,</span>
+              <span class="signal-tag">Firstly,</span>
+              <span class="signal-tag">First of all,</span>
+            </td>
+            <td>
+              <button class="audio-play-chip" onclick="speakText('To begin with, Firstly')">🔊 Nghe</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>2️⃣ Lý do thứ hai (Second reason)</strong></td>
+            <td>
+              <span class="signal-tag">Furthermore,</span>
+              <span class="signal-tag">Moreover,</span>
+              <span class="signal-tag">In addition,</span>
+              <span class="signal-tag">Secondly,</span>
+            </td>
+            <td>
+              <button class="audio-play-chip" onclick="speakText('Furthermore, Moreover, In addition')">🔊 Nghe</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>3️⃣ Lý do thứ ba (nếu có)</strong></td>
+            <td>
+              <span class="signal-tag">Finally,</span>
+              <span class="signal-tag">Last but not least,</span>
+            </td>
+            <td>
+              <button class="audio-play-chip" onclick="speakText('Finally, Last but not least')">🔊 Nghe</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>💡 Đưa dẫn chứng (Give an example)</strong></td>
+            <td>
+              <span class="signal-tag">For example,</span>
+              <span class="signal-tag">For instance,</span>
+              <span class="signal-tag">A clear example of this is...</span>
+            </td>
+            <td>
+              <button class="audio-play-chip" onclick="speakText('For example, For instance')">🔊 Nghe</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>⚖️ Phản biện / Tương phản (Contrast)</strong></td>
+            <td>
+              <span class="signal-tag">However,</span>
+              <span class="signal-tag">On the other hand,</span>
+              <span class="signal-tag">That said,</span>
+              <span class="signal-tag">Although [counter-point], I believe...</span>
+            </td>
+            <td>
+              <button class="audio-play-chip" onclick="speakText('However, On the other hand, That said')">🔊 Nghe</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>🏁 Kết luận (Conclude)</strong></td>
+            <td>
+              <span class="signal-tag">In conclusion,</span>
+              <span class="signal-tag">To conclude,</span>
+              <span class="signal-tag">Overall,</span>
+              <span class="signal-tag">Taking everything into account,</span>
+            </td>
+            <td>
+              <button class="audio-play-chip" onclick="speakText('In conclusion, To conclude, Overall')">🔊 Nghe</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Mastery Warning Box -->
+      <div class="notice-box">
+        <span style="font-size:20px;">⚠️</span>
+        <div>
+          <strong>Lưu ý Mastery quan trọng:</strong><br>
+          &bull; <strong>Chống lặp từ nối:</strong> Nếu ở Lý do 1 em đã dùng <em>"To begin with,"</em> thì ở Lý do 2 nên đổi sang <em>"Furthermore,"</em> thay vì tiếp tục dùng <em>"In addition,"</em>.<br>
+          &bull; <strong>Văn phong học thuật:</strong> Tuyệt đối tránh dạng viết tắt (dùng <code>do not</code>, <code>cannot</code>, <code>will not</code> thay vì <code>don't</code>, <code>can't</code>, <code>won't</code>).
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="lesson-footer">
+      Unit 2 · Writing — A Multicultural World (Opinion Essay) &bull; Aiducation Design System v4.0
+    </footer>
+
+  </div>
+
+  <script>
+    // Audio pronounce using Web Speech API (en-GB standard)
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-GB';
+      utterance.rate = 0.9;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Toggle Reason Card interactive
+    function toggleReason(card, type) {
+      card.classList.toggle('active');
+    }
+
+    // Simulate Play Video Toast
+    function simulatePlayVideo() {
+      alert("▶️ Đang phát video minh họa: 'Hmong Life Stories - Traditional Weaving & Village Life' (2.3M lượt xem)");
+    }
+  </script>
+</body>
+</html>

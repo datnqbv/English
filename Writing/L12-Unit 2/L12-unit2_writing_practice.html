@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Practice — Unit 2 (Lớp 12): A Multicultural World — Opinion Essay</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Athena Manifest -->
+  <script type="application/json" id="athena-context">
+  {
+    "title": "A Multicultural World — Opinion Essay Practice",
+    "subject": "Tiếng Anh",
+    "grade": "12",
+    "objectives": [
+      "Write an opinion essay (180-200 words) on the impact of world festivals on young Vietnamese people.",
+      "Organise ideas with 2 distinct reasons, specific examples, and acknowledge counter-arguments."
+    ],
+    "structure": [
+      { "id": "phase0", "title": "1. Identify — Structure Labelling & Extract" },
+      { "id": "phase1", "title": "2. Structure — Passage Arrangement (Culture & Media)" },
+      { "id": "phase2", "title": "3. Write — Connectors & Guided Writing" },
+      { "id": "phase3", "title": "4. Production — Da Nang Fireworks & Athena Free Writing" },
+      { "id": "phase4", "title": "5. Self-eval — Opinion Essay Checklist" }
+    ],
+    "athenaGuidance": "Luyện tập viết bài luận ý kiến lớp 12 (180-200 từ) về chủ đề thế giới đa văn hóa và lễ hội thế giới, nhận diện cấu trúc luận điểm, sắp xếp câu theo quan hệ nhân quả và tương phản, và nộp bài viết tự do cho AI Athena chấm theo Rubric 4 tiêu chí."
+  }
+  </script>
+
+  <style>
+    :root {
+      --jade-deep: #1b6b50;
+      --jade-dark: #124d39;
+      --jade-soft: #85c2a3;
+      --jade-pale: #eaf5f0;
+      --jade-text: #0e4332;
+      --cream: #faf8f5;
+      --cream-2: #f0ede6;
+      --ink: #1f2937;
+      --ink-2: #4b5563;
+      --ink-3: #6b7280;
+      --paper-line: #e5e0d8;
+      --white: #ffffff;
+      --accent: #d97706;
+      --accent-pale: #fef3c7;
+      --success: #16a34a;
+      --success-pale: #dcfce7;
+      --danger: #dc2626;
+      --danger-pale: #fee2e2;
+      --warning: #ca8a04;
+      --warning-bg: #fef9c3;
+
+      /* Local Accent Tokens for L12 Unit 2 */
+      --slate: #4E6E7E;
+      --slate-pale: #E4EBF0;
+      --terracotta: #C1704B;
+      --terracotta-pale: #FBEFEA;
+
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --shadow: 0 4px 16px rgba(18, 77, 57, 0.08);
+      --shadow-lg: 0 10px 28px rgba(18, 77, 57, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    /* TOP HEADER & PHASE NAV */
+    .practice-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--paper-line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-title-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .header-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    .phase-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .phase-tab {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      min-height: 38px;
+    }
+
+    .phase-tab:hover {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+    }
+
+    .phase-tab.active {
+      background: var(--jade-deep);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(27, 107, 80, 0.28);
+    }
+
+    /* MAIN DUAL PANE APP CONTAINER */
+    .app-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 20px;
+      align-items: start;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* MOBILE VIEW TOGGLE BAR */
+    .mobile-view-bar-wrap {
+      display: none;
+    }
+
+    .mobile-view-bar {
+      display: none;
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+      box-shadow: var(--shadow);
+    }
+
+    .view-btn {
+      flex: 1;
+      text-align: center;
+      padding: 6px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-2);
+      min-height: 34px;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .view-btn.active {
+      background: var(--jade-deep);
+      color: #fff;
+    }
+
+    /* LEFT PANE: REFERENCE PANE */
+    .ref-pane {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      position: sticky;
+      top: 16px;
+      max-height: calc(100vh - 32px);
+      overflow-y: auto;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ref-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .ref-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .ref-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .ref-tab-btn {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      background: var(--cream-2);
+      text-align: center;
+      min-height: 38px;
+    }
+
+    .ref-tab-btn.active {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+    }
+
+    .ref-content-box {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink);
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .ref-essay-para {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+
+    .ref-essay-para strong {
+      color: var(--jade-dark);
+    }
+
+    .signals-mini-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sig-mini-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .sig-mini-item strong {
+      color: var(--jade-deep);
+    }
+
+    /* RIGHT PANE: EXERCISE WORKSPACE */
+    .exercise-workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .activity-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .act-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .act-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .act-badge {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .act-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    .act-desc {
+      font-size: 14px;
+      color: var(--ink-2);
+      margin-bottom: 16px;
+    }
+
+    /* Activity 1: Match Grid */
+    .match-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .match-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .match-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .match-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13.5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    .match-card:hover {
+      border-color: var(--jade-soft);
+      background: var(--white);
+    }
+
+    .match-card.selected {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      font-weight: 700;
+      box-shadow: 0 0 0 2px rgba(27, 107, 80, 0.2);
+    }
+
+    .match-card.matched {
+      background: var(--cream-2);
+      border-color: var(--paper-line);
+      color: var(--ink-3);
+      cursor: default;
+    }
+
+    /* Activity 2: Extract Table */
+    .extract-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .extract-table th, .extract-table td {
+      border: 1px solid var(--paper-line);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .extract-table th {
+      background: var(--cream-2);
+      color: var(--jade-dark);
+      font-weight: 700;
+    }
+
+    .extract-input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 13.5px;
+      background: var(--white);
+    }
+
+    .extract-input:focus {
+      outline: none;
+      border-color: var(--jade-deep);
+    }
+
+    /* Activity 3 & 4: Passage Arrangement */
+    .arrange-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .arrange-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .arrange-item:hover {
+      border-color: var(--jade-soft);
+      background: var(--white);
+    }
+
+    .arrange-item.selected {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+      box-shadow: 0 0 0 2px rgba(27, 107, 80, 0.2);
+    }
+
+    .arrange-pos {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .arrange-item.placed .arrange-pos {
+      background: var(--jade-deep);
+      color: #fff;
+    }
+
+    /* Common Buttons */
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--jade-deep);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+      min-height: 42px;
+    }
+
+    .action-btn:hover {
+      background: var(--jade-dark);
+      transform: translateY(-1px);
+    }
+
+    .action-btn:disabled {
+      background: var(--cream-2);
+      color: var(--ink-3);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .ghost-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      border: 1px solid var(--paper-line);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      min-height: 38px;
+    }
+
+    .ghost-btn:hover {
+      background: var(--paper-line);
+    }
+
+    /* Feedback Box */
+    .feedback-box {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      line-height: 1.65;
+      display: none;
+    }
+
+    .feedback-box.show {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .feedback-box.correct {
+      background: var(--success-pale);
+      border: 1.5px solid var(--success);
+      color: #14532d;
+    }
+
+    .feedback-box.incorrect {
+      background: var(--danger-pale);
+      border: 1.5px solid var(--danger);
+      color: #7f1d1d;
+    }
+
+    /* Writing Textareas & Word Counter */
+    .writing-textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 14px;
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 14.5px;
+      line-height: 1.7;
+      background: var(--white);
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+
+    .writing-textarea:focus {
+      outline: none;
+      border-color: var(--jade-deep);
+      box-shadow: 0 0 0 3px rgba(27, 107, 80, 0.12);
+    }
+
+    .word-counter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--ink-2);
+      margin-bottom: 14px;
+    }
+
+    .word-counter-badge {
+      font-weight: 800;
+      color: var(--jade-dark);
+      background: var(--cream-2);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* Banner Image Box (DIFF Festival) */
+    .festival-banner-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 1.5px solid var(--paper-line);
+      background: #0f172a;
+      max-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .festival-banner-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .festival-banner-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(15, 23, 42, 0.88) 0%, transparent 100%);
+      padding: 16px 20px;
+      color: #fff;
+    }
+
+    .festival-banner-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .festival-banner-sub {
+      font-size: 12.5px;
+      opacity: 0.9;
+    }
+
+    /* Scaffold Table */
+    .scaffold-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+    }
+
+    .scaffold-table th, .scaffold-table td {
+      border: 1px solid var(--paper-line);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .scaffold-table th {
+      background: var(--cream-2);
+      color: var(--jade-dark);
+      font-weight: 700;
+    }
+
+    /* Modal / Bottom Sheet */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(18, 77, 57, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      max-width: 680px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--jade-soft);
+      animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 540px) {
+      .rubric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .rubric-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+    }
+
+    .rubric-score {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--jade-deep);
+    }
+
+    /* Checklist Box */
+    .checklist-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cream);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--paper-line);
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .check-item.checked {
+      background: var(--jade-pale);
+      border-color: var(--jade-soft);
+      font-weight: 700;
+      color: var(--jade-text);
+    }
+
+    .check-box-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 2px solid var(--jade-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      flex-shrink: 0;
+    }
+
+    .check-item.checked .check-box-icon {
+      background: var(--jade-deep);
+      border-color: var(--jade-deep);
+      color: #fff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* RESPONSIVE BREAKDOWN & MOBILE STANDARD */
+    @media (max-width: 900px) {
+      .app-container {
+        grid-template-columns: 1fr;
+        padding: 12px 16px 24px;
+        gap: 14px;
+      }
+
+      .mobile-view-bar-wrap {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 95;
+        background: var(--cream);
+        padding: 8px 16px;
+        box-sizing: border-box;
+        border-bottom: 1px solid var(--paper-line);
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+
+      .mobile-view-bar-wrap.nav-hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .mobile-view-bar {
+        display: flex;
+        margin-bottom: 0;
+      }
+
+      .ref-pane {
+        position: relative;
+        top: 0;
+        max-height: none;
+      }
+
+      /* Chế độ xem trên Mobile */
+      .app-container.view-ref-only {
+        display: block;
+      }
+
+      .app-container.view-ref-only .ref-pane {
+        display: flex;
+        position: relative;
+        top: 0;
+        max-height: none !important;
+        box-shadow: var(--shadow);
+      }
+
+      .app-container.view-ref-only .ref-content-box {
+        max-height: none !important;
+        overflow: visible !important;
+      }
+
+      .app-container.view-ref-only #btnToggleCollapse {
+        display: none;
+      }
+
+      .app-container.view-ref-only .exercise-workspace {
+        display: none;
+      }
+
+      .app-container.view-ex-only .ref-pane {
+        display: none;
+      }
+
+      .app-container.view-ex-only .exercise-workspace {
+        display: flex;
+      }
+
+      .app-container.view-split .ref-pane {
+        display: flex;
+        position: sticky;
+        top: 68px;
+        z-index: 90;
+        max-height: 320px;
+        box-shadow: 0 10px 28px rgba(20, 67, 47, 0.16);
+        border: 2px solid var(--jade-soft);
+        animation: fadeIn 0.25s ease;
+        transition: top 0.25s ease;
+        padding: 14px 16px;
+        margin-bottom: 8px;
+      }
+
+      .app-container.view-split .ref-header {
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+      }
+
+      .app-container.view-split .ref-tabs {
+        margin-bottom: 10px;
+      }
+
+      .app-container.view-split .ref-tab-btn {
+        min-height: 34px;
+        padding: 5px 10px;
+        font-size: 13px;
+      }
+
+      .app-container.view-split .ref-pane.bar-hidden {
+        top: 8px;
+      }
+
+      .app-container.view-split .ref-pane.collapsed {
+        position: sticky;
+        top: 68px;
+        z-index: 90;
+        max-height: 52px;
+        overflow: hidden;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1.5px solid var(--paper-line);
+        box-shadow: 0 4px 14px rgba(20, 67, 47, 0.12);
+        background: var(--white);
+        margin-bottom: 8px;
+        transition: top 0.25s ease;
+      }
+
+      .app-container.view-split .ref-pane.collapsed.bar-hidden {
+        top: 8px;
+      }
+
+      .app-container.view-split .ref-pane.collapsed .ref-header {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+      }
+
+      .app-container.view-split .ref-pane.collapsed .ref-tabs,
+      .app-container.view-split .ref-pane.collapsed .ref-content-box {
+        display: none !important;
+      }
+
+      .app-container.view-split .exercise-workspace {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="practice-header">
+    <div class="header-inner">
+      <div class="header-title-area">
+        <span class="header-badge">Unit 2 · Writing</span>
+        <span class="header-title">A Multicultural World — Opinion Essay Practice</span>
+      </div>
+
+      <!-- Phase Tabs Navigation -->
+      <nav class="phase-nav">
+        <button class="phase-tab active" id="tabPhase0" onclick="switchPhase(0)">1. Identify</button>
+        <button class="phase-tab" id="tabPhase1" onclick="switchPhase(1)">2. Structure</button>
+        <button class="phase-tab" id="tabPhase2" onclick="switchPhase(2)">3. Write</button>
+        <button class="phase-tab" id="tabPhase3" onclick="switchPhase(3)">4. Production</button>
+        <button class="phase-tab" id="tabPhase4" onclick="switchPhase(4)">5. Self-eval</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE VIEW TOGGLE BAR (STICKY WRAP) -->
+  <div class="mobile-view-bar-wrap">
+    <div class="mobile-view-bar" id="mobileViewBar">
+      <button class="view-btn active" onclick="setMobileView('split')">📱 Chia đôi</button>
+      <button class="view-btn" onclick="setMobileView('ref')">📄 Tham chiếu</button>
+      <button class="view-btn" onclick="setMobileView('ex')">✍️ Làm bài</button>
+    </div>
+  </div>
+
+  <!-- APP CONTAINER -->
+  <div class="app-container view-split" id="appContainer">
+
+    <!-- LEFT PANE: REFERENCE PANE -->
+    <aside class="ref-pane" id="refPane">
+      <div class="ref-header">
+        <span class="ref-title">📚 Reference Material</span>
+        <div style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+          <span style="font-size:11.5px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px; white-space:nowrap;">Tra cứu</span>
+          <button class="ghost-btn" id="btnToggleCollapse" style="padding:2px 8px; min-height:28px; font-size:11.5px; font-weight:700; color:var(--ink-2); background:var(--cream-2); border:1px solid var(--paper-line); border-radius:6px; white-space:nowrap; cursor:pointer;" onclick="toggleRefCollapse()" title="Thu gọn / Mở rộng">↕ Thu gọn</button>
+        </div>
+      </div>
+
+      <!-- Reference Tabs (Phase 0 & 1: 2 tabs; Phase 2 & 3: 1 tab) -->
+      <div class="ref-tabs" id="refTabsWrap">
+        <button class="ref-tab-btn active" id="btnRefPassage" onclick="switchRefTab('passage')">📄 Bài đọc Làng bản</button>
+        <button class="ref-tab-btn" id="btnRefSignals" onclick="switchRefTab('signals')">🔗 Bảng tín hiệu</button>
+      </div>
+
+      <!-- Ref Content Box -->
+      <div class="ref-content-box">
+        <!-- Tab 1: Village Life Essay Passage -->
+        <div id="refPassageContent">
+          <div class="ref-essay-para">
+            <strong>[1]</strong> Nowadays, more and more remote communities in Vietnam are sharing their everyday life on social media, and one family living in a mountain village recently became known around the world this way. In my opinion, this trend brings more benefits than drawbacks to young Vietnamese people.
+          </div>
+          <div class="ref-essay-para">
+            <strong>[2]</strong> To begin with, sharing traditional village life online helps connect remote communities with the rest of the world. For instance, viewers from other countries can learn about customs and traditions they would otherwise never encounter. This exposure can bring real economic benefits, as increased attention often leads to tourism and additional income for local families.
+          </div>
+          <div class="ref-essay-para">
+            <strong>[3]</strong> Furthermore, this kind of content can actually help preserve culture rather than threaten it. When young people record their daily routines, they are documenting traditional skills and customs that might otherwise be forgotten. As a result, future generations will still have access to this knowledge, even as lifestyles continue to change.
+          </div>
+          <div class="ref-essay-para">
+            <strong>[4]</strong> In conclusion, although some people worry that filming daily life for an online audience could encourage communities to change their habits, I believe the benefits of connecting with a wider audience and preserving culture for future generations far outweigh this risk.
+          </div>
+        </div>
+
+        <!-- Tab 2: Signal Words -->
+        <div id="refSignalsContent" style="display:none;">
+          <div class="signals-mini-list">
+            <div class="sig-mini-item"><strong>🎯 State opinion:</strong> I believe... / In my opinion... / From my point of view...</div>
+            <div class="sig-mini-item"><strong>1️⃣ First reason:</strong> To begin with, / Firstly, / First of all,</div>
+            <div class="sig-mini-item"><strong>2️⃣ Second reason:</strong> Furthermore, / Moreover, / In addition, / Secondly,</div>
+            <div class="sig-mini-item"><strong>💡 Examples:</strong> For example, / For instance, / A clear example of this is...</div>
+            <div class="sig-mini-item"><strong>⚖️ Contrast:</strong> However, / On the other hand, / That said, / Although...</div>
+            <div class="sig-mini-item"><strong>🏁 Conclude:</strong> In conclusion, / To conclude, / Overall,</div>
+            <div class="sig-mini-item" style="color:var(--warning); background:var(--warning-bg); border-color:var(--warning);">
+              <strong>⚠️ Mastery:</strong> Không lặp lại cùng một từ nối 2 lần; tránh dạng viết tắt (don't, can't &rarr; do not, cannot).
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANE: EXERCISE WORKSPACE -->
+    <main class="exercise-workspace">
+
+      <!-- ================= PHASE 0: IDENTIFY ================= -->
+      <section class="phase-section" id="phase0Section">
+        
+        <!-- Activity 1: Structure Labelling -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 0 &bull; Act 1</span>
+              <h3 class="act-title">Structure Labelling (Cấp đoạn)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Đọc bài luận ý kiến mẫu ở khung Tra cứu bên trái. Chạm chọn một đoạn văn (1–4) và chọn mô tả chức năng tương ứng (A–D):
+          </p>
+
+          <div class="match-grid">
+            <div class="match-col" id="colParas">
+              <div class="match-card" data-para="1" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [1]:</strong> Nowadays, more and more remote communities...</div>
+              <div class="match-card" data-para="2" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [2]:</strong> To begin with, sharing traditional village life online...</div>
+              <div class="match-card" data-para="3" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [3]:</strong> Furthermore, this kind of content can actually help preserve...</div>
+              <div class="match-card" data-para="4" onclick="selectMatchCard(this, 'para')"><strong>Đoạn [4]:</strong> In conclusion, although some people worry...</div>
+            </div>
+
+            <div class="match-col" id="colDescs">
+              <div class="match-card" data-desc="A" onclick="selectMatchCard(this, 'desc')"><strong>A.</strong> Second reason supporting the writer's opinion, with an example and an explanation</div>
+              <div class="match-card" data-desc="B" onclick="selectMatchCard(this, 'desc')"><strong>B.</strong> Conclusion summarising the writer's opinion, while acknowledging a counter-argument</div>
+              <div class="match-card" data-desc="C" onclick="selectMatchCard(this, 'desc')"><strong>C.</strong> Introduction stating the issue and the writer's opinion</div>
+              <div class="match-card" data-desc="D" onclick="selectMatchCard(this, 'desc')"><strong>D.</strong> First reason supporting the writer's opinion, with an example and an explanation</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="action-btn" id="btnSubmitAct1" onclick="submitAct1()" disabled>Kiểm tra kết quả</button>
+            <button class="ghost-btn" onclick="resetAct1()">Làm lại</button>
+          </div>
+
+          <div class="feedback-box" id="fbAct1"></div>
+        </div>
+
+        <!-- Activity 2: Read & Extract -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 0 &bull; Act 2</span>
+              <h3 class="act-title">Read &amp; Extract (Trích xuất lập luận)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Đọc lại bài mẫu và điền thông tin tóm tắt vào bảng Reason – Example – Explain 3 cột dưới đây:
+          </p>
+
+          <table class="extract-table">
+            <thead>
+              <tr>
+                <th style="width: 32%;">Reason (Luận điểm)</th>
+                <th style="width: 34%;">Example (Dẫn chứng)</th>
+                <th>Explain (Giải thích hệ quả)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" class="extract-input" id="ext1" placeholder="(1) Helps connect remote communities..."></td>
+                <td><input type="text" class="extract-input" id="ext2" placeholder="(2) Viewers learn about customs..."></td>
+                <td><input type="text" class="extract-input" id="ext3" placeholder="(3) Brings economic benefits & tourism..."></td>
+              </tr>
+              <tr>
+                <td>This kind of content can help preserve culture</td>
+                <td><input type="text" class="extract-input" id="ext4" placeholder="(4) Documents traditional skills & customs..."></td>
+                <td><input type="text" class="extract-input" id="ext5" placeholder="(5) Future generations have access to knowledge..."></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button class="action-btn" id="btnSubmitAct2" onclick="submitAct2()">Xem đáp án chuẩn</button>
+          <div class="feedback-box" id="fbAct2"></div>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 1: STRUCTURE ================= -->
+      <section class="phase-section" id="phase1Section" style="display:none;">
+
+        <!-- Activity 3: Passage Arrangement 1 (Culture shock) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 1 &bull; Act 3</span>
+              <h3 class="act-title">Passage Arrangement 1 — Culture Shock (Dễ)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Chạm vào 5 câu theo đúng thứ tự logic để tạo thành một đoạn văn hoàn chỉnh:
+          </p>
+
+          <div class="arrange-list" id="arrangeList1">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="action-btn" id="btnSubmitAct3" onclick="submitAct3()" disabled>Kiểm tra thứ tự</button>
+            <button class="ghost-btn" onclick="resetAct3()">Sắp xếp lại</button>
+          </div>
+
+          <div class="feedback-box" id="fbAct3"></div>
+        </div>
+
+        <!-- Activity 4: Passage Arrangement 2 (Social media) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 1 &bull; Act 4</span>
+              <h3 class="act-title">Passage Arrangement 2 — Social Media &amp; Cultures (Khó hơn)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Sắp xếp 5 câu chứa cặp liên kết tương phản <em>"On one hand / On the other hand"</em>:
+          </p>
+
+          <div class="arrange-list" id="arrangeList2">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="action-btn" id="btnSubmitAct4" onclick="submitAct4()" disabled>Kiểm tra thứ tự</button>
+            <button class="ghost-btn" onclick="resetAct4()">Sắp xếp lại</button>
+          </div>
+
+          <div class="feedback-box" id="fbAct4"></div>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 2: WRITE ================= -->
+      <section class="phase-section" id="phase2Section" style="display:none;">
+
+        <!-- Activity 5: Sentence Building -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 5</span>
+              <h3 class="act-title">Sentence Building (Nâng cấp từ nối học thuật)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Viết lại 4 câu sau bằng các từ nối học thuật phong phú hơn (tránh dùng lặp <em>First of all, In addition, In conclusion</em>):
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:16px;">
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">1. "First of all, world festivals help young people learn about other cultures."</div>
+              <input type="text" class="extract-input" id="sb1" placeholder="Dùng To begin with,...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">2. "In addition, they also bring a lot of fun and joy."</div>
+              <input type="text" class="extract-input" id="sb2" placeholder="Dùng Furthermore,...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">3. "Some people think schools should encourage students to join festivals. Other people disagree."</div>
+              <input type="text" class="extract-input" id="sb3" placeholder="Dùng On one hand,... on the other hand,...">
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--jade-dark); margin-bottom:4px;">4. "In conclusion, I think festivals should be enjoyed in moderation."</div>
+              <input type="text" class="extract-input" id="sb4" placeholder="Dùng Overall, I think...">
+            </div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitAct5" onclick="submitAct5()">Xem câu gợi ý chuẩn</button>
+          <div class="feedback-box" id="fbAct5"></div>
+        </div>
+
+        <!-- Activity 6: Guided Writing (Full Support) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 6</span>
+              <h3 class="act-title">Guided Writing — World Festivals (Hỗ trợ đầy đủ)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Hoàn thiện bài luận ý kiến 180–200 từ dựa trên bảng luận điểm và các câu mở đầu gợi ý sẵn:
+          </p>
+
+          <table class="scaffold-table">
+            <thead>
+              <tr>
+                <th>Reason</th>
+                <th>Example</th>
+                <th>Explain</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>World festivals bring a lot of fun, happiness, and joy</td>
+                <td>Students decorate classrooms & dress up for Halloween parties</td>
+                <td>They always look forward to these fun memories every year</td>
+              </tr>
+              <tr>
+                <td>Helps young people learn about other cultures</td>
+                <td>Discover Christmas traditions through school events/social media</td>
+                <td>Broadens their understanding of the world beyond Vietnam</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <textarea class="writing-textarea" id="textGuided1" placeholder="Nowadays, more and more young Vietnamese people celebrate festivals such as Christmas and Halloween. In my opinion, ________________________________________________&#10;&#10;To begin with, ________________________________________________&#10;&#10;Furthermore, ________________________________________________&#10;&#10;In conclusion, ________________________________________________"></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcGuided1">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để mở khóa Model Answer)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitGuided1" onclick="openModelAnswer('festivals')" disabled>Nộp bài &amp; Xem Model Answer (Gated Reveal)</button>
+        </div>
+
+        <!-- Activity 7: Guided Writing (Reduced Support) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 7</span>
+              <h3 class="act-title">Guided Writing — World Festivals (Hỗ trợ giảm)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Tự viết bài luận hoàn chỉnh chỉ dựa trên bảng từ khóa (không có câu dẫn trước):
+          </p>
+
+          <div style="background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm); font-size:13.5px; margin-bottom:12px; border:1px solid var(--paper-line);">
+            &bull; <strong>Reason 1:</strong> fun, happiness, joy &bull; decorate classroom, Halloween party &bull; memories to look forward to<br>
+            &bull; <strong>Reason 2:</strong> learn about other cultures &bull; Christmas traditions, school events/social media &bull; broadens understanding
+          </div>
+
+          <textarea class="writing-textarea" id="textGuided2" placeholder="Write your complete 180-200 word opinion essay here..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcGuided2">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để mở khóa Model Answer)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitGuided2" onclick="openModelAnswer('festivals')" disabled>Nộp bài &amp; Xem Model Answer (Gated Reveal)</button>
+        </div>
+
+        <!-- Activity 8: Improve the paragraph -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 8</span>
+              <h3 class="act-title">Improve the Paragraph (Nâng cấp văn phong)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Đoạn văn dưới đây đúng ngữ pháp nhưng văn phong còn yếu. Hãy chỉ ra 2 lỗi (lặp từ nối & kết bài đơn điệu) và viết lại câu sửa:
+          </p>
+
+          <div style="background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm); font-size:13.5px; margin-bottom:12px; border-left:3.5px solid var(--warning); font-style:italic;">
+            "Nowadays, more and more young Vietnamese people celebrate festivals such as Christmas and Halloween. In my opinion, this is a good thing. First of all, these festivals are fun for students. In addition, they get to spend time with friends. In addition, they learn some new words in English. In conclusion, I think festivals are good."
+          </div>
+
+          <textarea class="writing-textarea" id="textImprove" style="min-height:100px;" placeholder="Chỉ ra 2 lỗi và viết lại đoạn văn nâng cấp ở đây..."></textarea>
+
+          <button class="action-btn" id="btnSubmitAct8" onclick="submitAct8()">Xem nhận xét &amp; Câu sửa mẫu</button>
+          <div class="feedback-box" id="fbAct8"></div>
+        </div>
+
+        <!-- Activity 9: Independent Writing -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 2 &bull; Act 9</span>
+              <h3 class="act-title">Independent Writing (Viết độc lập)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            <strong>Đề bài:</strong> <em>Should Vietnamese schools organise Halloween events for students, or should schools only focus on traditional Vietnamese festivals?</em>
+          </p>
+
+          <textarea class="writing-textarea" id="textIndependent" placeholder="Write your complete opinion essay (180-200 words)..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcIndependent">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để mở khóa Model Answer)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitIndependent" onclick="openModelAnswer('halloween_school')" disabled>Nộp bài &amp; Xem Model Answer (Gated Reveal)</button>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 3: PRODUCTION ================= -->
+      <section class="phase-section" id="phase3Section" style="display:none;">
+
+        <!-- Activity 10: Guided Production (Da Nang Fireworks Festival) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 3 &bull; Act 10</span>
+              <h3 class="act-title">Guided Production — Da Nang Fireworks Festival</h3>
+            </div>
+          </div>
+
+          <!-- Festival Banner -->
+          <div class="festival-banner-card">
+            <img src="./L12-Unit 2-Writing_Anh 3.png" alt="Da Nang Fireworks Festival DIFF" class="festival-banner-img" onerror="this.src='./L12-Unit 2-Writing_Anh 2.png'">
+            <div class="festival-banner-overlay">
+              <div class="festival-banner-title">🎆 Da Nang International Fireworks Festival (DIFF)</div>
+              <div class="festival-banner-sub">Global Cultural Convergence &bull; Teams from Italy, France, UK &amp; more</div>
+            </div>
+          </div>
+
+          <p class="act-desc">
+            <strong>Đề bài:</strong> <em>Da Nang hosts an International Fireworks Festival every year, where teams from different countries around the world come to compete. Should Vietnamese cities continue to host more international festivals like this?</em>
+          </p>
+
+          <table class="scaffold-table">
+            <thead>
+              <tr>
+                <th>Reason</th>
+                <th>Example</th>
+                <th>Explain</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Experience culture without leaving home</td>
+                <td>Teams from Italy, France, UK bring music & fireworks</td>
+                <td>Broadens understanding of international artistic traditions</td>
+              </tr>
+              <tr>
+                <td>Boosts local economy & city pride</td>
+                <td>Hotels, restaurants, local shops see huge visitor surge</td>
+                <td>Creates jobs and elevates city's global reputation</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <textarea class="writing-textarea" id="textDanang" placeholder="Da Nang hosts an International Fireworks Festival every year... In my opinion, ________________________________________________&#10;&#10;To begin with, ________________________________________________&#10;&#10;Furthermore, ________________________________________________&#10;&#10;In conclusion, ________________________________________________"></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcDanang">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để nộp bài)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitDanang" onclick="openModelAnswer('danang_diff')" disabled>Nộp bài &amp; Xem Model Answer + Self-check</button>
+        </div>
+
+        <!-- Activity 11: Free Writing (Athena AI) -->
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 3 &bull; Act 11</span>
+              <h3 class="act-title">Free Writing — Gửi AI Athena chấm bài</h3>
+            </div>
+          </div>
+
+          <div style="background:var(--slate-pale); border:1.5px solid var(--slate); border-radius:var(--radius-sm); padding:14px 16px; margin-bottom:14px; font-size:14px;">
+            <strong>🌐 Đề bài tổng quát:</strong><br>
+            <em>Do world festivals help young Vietnamese people connect with other cultures, or do they make young people lose interest in their own traditions?</em>
+          </div>
+
+          <textarea class="writing-textarea" id="textFreeWriting" style="min-height:200px;" placeholder="Write your full 180-200 word opinion essay here (Introduction + 2 Reasons with Examples + Conclusion with Counter-argument)..."></textarea>
+          
+          <div class="word-counter-row">
+            <div>Số từ: <span class="word-counter-badge" id="wcFree">0 / 180-200 từ</span></div>
+            <div style="color:var(--ink-3); font-size:12px;">(Cần tối thiểu 55 từ để nộp cho Athena)</div>
+          </div>
+
+          <button class="action-btn" id="btnSubmitFreeWriting" onclick="submitAthenaWriting()" disabled>🚀 Nộp bài cho AI Athena chấm</button>
+
+          <!-- Athena AI Pending & Feedback Box -->
+          <div class="feedback-box" id="fbAthena" style="margin-top:16px;">
+            <div id="athenaPending" style="display:none; text-align:center; padding:16px;">
+              <div style="font-size:24px; margin-bottom:8px;">⏳</div>
+              <div style="font-weight:700; color:var(--jade-dark);">Đang gửi bài viết cho AI Athena chấm điểm...</div>
+              <div style="font-size:13px; color:var(--ink-2);">Athena đang phân tích Task Achievement, Cohesion, Language Use &amp; Fluency...</div>
+            </div>
+
+            <div id="athenaResult" style="display:none;">
+              <div style="font-weight:800; font-size:16px; color:var(--jade-dark); margin-bottom:12px;">
+                🎉 Kết quả đánh giá từ AI Athena
+              </div>
+
+              <div class="rubric-grid">
+                <div class="rubric-item">
+                  <div style="font-size:12px; font-weight:700; color:var(--ink-2);">1. Task Achievement</div>
+                  <div class="rubric-score">4 / 4</div>
+                  <div style="font-size:12px; color:var(--ink-3); margin-top:2px;">Nêu quan điểm rõ ràng, 2 luận điểm dẫn chứng sâu sắc.</div>
+                </div>
+
+                <div class="rubric-item">
+                  <div style="font-size:12px; font-weight:700; color:var(--ink-2);">2. Organisation</div>
+                  <div class="rubric-score">4 / 4</div>
+                  <div style="font-size:12px; color:var(--ink-3); margin-top:2px;">Cấu trúc 3 khối hoàn chỉnh, kết bài có phản biện.</div>
+                </div>
+
+                <div class="rubric-item">
+                  <div style="font-size:12px; font-weight:700; color:var(--ink-2);">3. Language Use</div>
+                  <div class="rubric-score">3.5 / 4</div>
+                  <div style="font-size:12px; color:var(--ink-3); margin-top:2px;">Từ nối biến hóa phong phú, văn phong học thuật chuẩn.</div>
+                </div>
+
+                <div class="rubric-item">
+                  <div style="font-size:12px; font-weight:700; color:var(--ink-2);">4. Length &amp; Fluency</div>
+                  <div class="rubric-score">4 / 4</div>
+                  <div style="font-size:12px; color:var(--ink-3); margin-top:2px;">Đạt mục tiêu 180-200 từ, câu văn diễn đạt tự nhiên.</div>
+                </div>
+              </div>
+
+              <div style="background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm); font-size:13.5px; border-left:3.5px solid var(--jade-deep);">
+                <strong>Nhận xét tổng quát:</strong> Bài viết đạt chuẩn Mastery xuất sắc! Lập luận chặt chẽ, sử dụng linh hoạt các từ nối chuyển ý như <em>To begin with, Furthermore, Although</em> và bảo đảm không lặp từ.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= PHASE 4: SELF-EVAL ================= -->
+      <section class="phase-section" id="phase4Section" style="display:none;">
+        <div class="activity-card">
+          <div class="act-header">
+            <div class="act-title-wrap">
+              <span class="act-badge">Phase 4 &bull; Checklist</span>
+              <h3 class="act-title">Self-evaluation (Tự đánh giá năng lực)</h3>
+            </div>
+          </div>
+          <p class="act-desc">
+            Đánh dấu vào các tiêu chí em đã làm chủ sau bài học Opinion Essay này:
+          </p>
+
+          <div class="checklist-wrap">
+            <div class="check-item" onclick="toggleCheckItem(this)">
+              <div class="check-box-icon">✓</div>
+              <div>I can quickly recall the structure of an opinion essay (Introduction / Body / Conclusion) without needing a full review.</div>
+            </div>
+            <div class="check-item" onclick="toggleCheckItem(this)">
+              <div class="check-box-icon">✓</div>
+              <div>I can use a variety of connectors instead of repeating the same ones.</div>
+            </div>
+            <div class="check-item" onclick="toggleCheckItem(this)">
+              <div class="check-box-icon">✓</div>
+              <div>I can acknowledge a counter-argument before restating my opinion in the conclusion.</div>
+            </div>
+            <div class="check-item" onclick="toggleCheckItem(this)">
+              <div class="check-box-icon">✓</div>
+              <div>I can write a complete opinion essay on a multicultural topic, moving from a specific example to a general argument.</div>
+            </div>
+            <div class="check-item" onclick="toggleCheckItem(this)">
+              <div class="check-box-icon">✓</div>
+              <div>My essay reaches the required word count (180-200 words) and reads naturally.</div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; padding:16px; background:var(--jade-pale); border-radius:var(--radius-sm); color:var(--jade-text); font-size:14px; text-align:center; font-weight:700;">
+            🎉 Chúc mừng em đã hoàn thành xuất sắc toàn bộ bài Luyện tập &amp; Sản xuất Writing Unit 2 Lớp 12!
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODEL ANSWER MODAL / BOTTOM SHEET -->
+  <div class="modal-overlay" id="modelModal" onclick="if(event.target===this)closeModelModal()">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="font-size:17px; font-weight:800; color:var(--jade-dark);">Model Answer</h3>
+        <button class="ghost-btn" style="min-height:32px; padding:4px 10px;" onclick="closeModelModal()">Đóng ✕</button>
+      </div>
+
+      <div id="modalContent" style="font-size:14.5px; line-height:1.7; color:var(--ink);">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT CONTROLLER -->
+  <script>
+    // 1. Phase Navigation
+    function switchPhase(phaseIdx) {
+      document.querySelectorAll('.phase-tab').forEach((tab, i) => {
+        tab.classList.toggle('active', i === phaseIdx);
+      });
+
+      document.querySelectorAll('.phase-section').forEach((sec, i) => {
+        sec.style.display = i === phaseIdx ? 'block' : 'none';
+      });
+
+      // Update Reference Pane Tabs according to phase mapping:
+      // Phase 0 & 1: 2 tabs (Passage + Signals)
+      // Phase 2, 3, 4: 1 tab only (Signals)
+      const btnRefPassage = document.getElementById('btnRefPassage');
+      if (btnRefPassage) {
+        if (phaseIdx === 0 || phaseIdx === 1) {
+          btnRefPassage.style.display = 'block';
+          switchRefTab('passage');
+        } else {
+          btnRefPassage.style.display = 'none';
+          switchRefTab('signals');
+        }
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 2. Reference Tab Switcher
+    function switchRefTab(tabName) {
+      document.querySelectorAll('.ref-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', (tabName === 'passage' && btn.id === 'btnRefPassage') || (tabName === 'signals' && btn.id === 'btnRefSignals'));
+      });
+
+      document.getElementById('refPassageContent').style.display = tabName === 'passage' ? 'block' : 'none';
+      document.getElementById('refSignalsContent').style.display = tabName === 'signals' ? 'block' : 'none';
+    }
+
+    // 3. Mobile View Mode
+    function setMobileView(viewMode) {
+      const container = document.getElementById('appContainer');
+      container.className = `app-container view-${viewMode}`;
+      document.querySelectorAll('.view-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', (viewMode === 'split' && i === 0) || (viewMode === 'ref' && i === 1) || (viewMode === 'ex' && i === 2));
+      });
+
+      const refPane = document.getElementById('refPane');
+      const btnCollapse = document.getElementById('btnToggleCollapse');
+
+      if (viewMode === 'split') {
+        if (refPane && refPane.classList.contains('collapsed')) {
+          refPane.classList.remove('collapsed');
+          if (btnCollapse) btnCollapse.textContent = '↕ Thu gọn';
+        }
+      }
+
+      const mobileBar = document.querySelector('.mobile-view-bar-wrap');
+      if (mobileBar) mobileBar.classList.remove('nav-hidden');
+      if (refPane) refPane.classList.remove('bar-hidden');
+
+      if (viewMode === 'ref') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function toggleRefCollapse() {
+      const pane = document.getElementById('refPane');
+      pane.classList.toggle('collapsed');
+      const btn = document.getElementById('btnToggleCollapse');
+      if (pane.classList.contains('collapsed')) {
+        btn.textContent = '↕ Mở rộng';
+      } else {
+        btn.textContent = '↕ Thu gọn';
+      }
+    }
+
+    // 4. Smart Auto-hide on Scroll Down / Instant Reveal on ANY Scroll Up
+    let lastScrollY = window.scrollY;
+    let scrollTicking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const mobileBar = document.querySelector('.mobile-view-bar-wrap');
+          const refPane = document.getElementById('refPane');
+          
+          if (mobileBar) {
+            const delta = currentScrollY - lastScrollY;
+            if (currentScrollY <= 10) {
+              mobileBar.classList.remove('nav-hidden');
+              if (refPane) refPane.classList.remove('bar-hidden');
+            } else if (delta > 5 && currentScrollY > 50) {
+              mobileBar.classList.add('nav-hidden');
+              if (refPane) refPane.classList.add('bar-hidden');
+            } else if (delta < -2) {
+              mobileBar.classList.remove('nav-hidden');
+              if (refPane) refPane.classList.remove('bar-hidden');
+            }
+          }
+          lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+
+    // ================= ACTIVITY 1: MATCHING =================
+    let selectedPara = null;
+    let selectedDesc = null;
+    const matchedPairs = {};
+
+    function selectMatchCard(el, type) {
+      if (el.classList.contains('matched')) return;
+
+      if (type === 'para') {
+        document.querySelectorAll('#colParas .match-card').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedPara = el.dataset.para;
+      } else {
+        document.querySelectorAll('#colDescs .match-card').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedDesc = el.dataset.desc;
+      }
+
+      if (selectedPara && selectedDesc) {
+        matchedPairs[selectedPara] = selectedDesc;
+        const pEl = document.querySelector(`#colParas .match-card[data-para="${selectedPara}"]`);
+        const dEl = document.querySelector(`#colDescs .match-card[data-desc="${selectedDesc}"]`);
+        pEl.classList.remove('selected');
+        dEl.classList.remove('selected');
+        pEl.classList.add('matched');
+        dEl.classList.add('matched');
+        selectedPara = null;
+        selectedDesc = null;
+
+        if (Object.keys(matchedPairs).length === 4) {
+          document.getElementById('btnSubmitAct1').disabled = false;
+        }
+      }
+    }
+
+    function submitAct1() {
+      const correct = { '1':'C', '2':'D', '3':'A', '4':'B' };
+      let score = 0;
+      for (const k in correct) {
+        if (matchedPairs[k] === correct[k]) score++;
+      }
+
+      const fb = document.getElementById('fbAct1');
+      fb.className = `feedback-box show ${score === 4 ? 'correct' : 'incorrect'}`;
+      fb.innerHTML = `<strong>Kết quả: ${score}/4 cặp chính xác!</strong><br>
+        &bull; <strong>Đoạn [1] &rarr; C:</strong> Introduction stating the issue and the writer's opinion.<br>
+        &bull; <strong>Đoạn [2] &rarr; D:</strong> First reason with example and explanation (To begin with,...).<br>
+        &bull; <strong>Đoạn [3] &rarr; A:</strong> Second reason with example and explanation (Furthermore,...).<br>
+        &bull; <strong>Đoạn [4] &rarr; B:</strong> Conclusion summarising opinion while acknowledging a counter-argument (In conclusion, although...).`;
+    }
+
+    function resetAct1() {
+      for (const k in matchedPairs) delete matchedPairs[k];
+      document.querySelectorAll('.match-card').forEach(c => {
+        c.classList.remove('matched', 'selected');
+      });
+      document.getElementById('btnSubmitAct1').disabled = true;
+      document.getElementById('fbAct1').className = 'feedback-box';
+    }
+
+    // ================= ACTIVITY 2: EXTRACT =================
+    function submitAct2() {
+      const fb = document.getElementById('fbAct2');
+      fb.className = 'feedback-box show correct';
+      fb.innerHTML = `<strong>Đáp án gợi ý trích xuất:</strong><br>
+        &bull; <strong>(1) Reason 1:</strong> Sharing traditional village life online helps connect remote communities with the rest of the world.<br>
+        &bull; <strong>(2) Example 1:</strong> Viewers from other countries can learn about customs and traditions they would otherwise never encounter.<br>
+        &bull; <strong>(3) Explain 1:</strong> Brings real economic benefits — increased attention often leads to tourism and additional income for local families.<br>
+        &bull; <strong>(4) Example 2:</strong> Recording daily routines documents traditional skills and customs that might otherwise be forgotten.<br>
+        &bull; <strong>(5) Explain 2:</strong> Future generations will still have access to this knowledge, even as lifestyles change.`;
+    }
+
+    // ================= ACTIVITY 3 & 4: PASSAGE ARRANGEMENT =================
+    const arrangeData1 = [
+      { id: 'A', text: "Should young people who move to a new country adopt the local culture completely, or keep their own traditions? In my opinion, they should try to do both." },
+      { id: 'B', text: "To begin with, learning the local culture helps newcomers integrate more easily into their new community." },
+      { id: 'C', text: "For example, understanding local customs can make it easier to make friends and find opportunities at work or school." },
+      { id: 'D', text: "At the same time, however, keeping some of their own traditions helps them stay connected to their identity and family background." },
+      { id: 'E', text: "In conclusion, a healthy balance between adapting and preserving one's roots seems to be the most realistic solution." }
+    ];
+
+    const arrangeData2 = [
+      { id: 'B', text: "Does social media make the world more connected, or does it make cultural differences disappear?" },
+      { id: 'A', text: "This question is becoming increasingly relevant as billions of people connect through platforms that were unimaginable a generation ago." },
+      { id: 'E', text: "On one hand, people can now discover traditions from the other side of the world with a single click." },
+      { id: 'C', text: "On the other hand, algorithms often push the same trending content to everyone, which can make cultures start to look increasingly similar." },
+      { id: 'D', text: "There is no simple answer, but the truth probably lies somewhere between these two extremes." }
+    ];
+
+    let userOrder1 = [];
+    let userOrder2 = [];
+
+    function renderArrangeList(containerId, data, userOrderArr, submitBtnId) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      
+      // Shuffle initial data
+      const displayData = [...data].sort(() => 0.5 - Math.random());
+      displayData.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'arrange-item';
+        div.dataset.id = item.id;
+        div.innerHTML = `<span class="arrange-pos">?</span><span>${item.text}</span>`;
+        div.onclick = () => {
+          const idx = userOrderArr.indexOf(item.id);
+          if (idx === -1) {
+            userOrderArr.push(item.id);
+            div.classList.add('placed');
+            div.querySelector('.arrange-pos').textContent = userOrderArr.length;
+          } else {
+            userOrderArr.splice(idx, 1);
+            div.classList.remove('placed');
+            div.querySelector('.arrange-pos').textContent = '?';
+            // re-index remaining
+            userOrderArr.forEach((id, i) => {
+              const el = container.querySelector(`[data-id="${id}"] .arrange-pos`);
+              if (el) el.textContent = i + 1;
+            });
+          }
+          document.getElementById(submitBtnId).disabled = userOrderArr.length !== data.length;
+        };
+        container.appendChild(div);
+      });
+    }
+
+    renderArrangeList('arrangeList1', arrangeData1, userOrder1, 'btnSubmitAct3');
+    renderArrangeList('arrangeList2', arrangeData2, userOrder2, 'btnSubmitAct4');
+
+    function submitAct3() {
+      const isCorrect = userOrder1.join('') === 'ABCDE';
+      const fb = document.getElementById('fbAct3');
+      fb.className = `feedback-box show ${isCorrect ? 'correct' : 'incorrect'}`;
+      fb.innerHTML = `<strong>${isCorrect ? '🎉 Chính xác 100%!' : '⚠️ Chưa hoàn toàn chính xác'}</strong><br>
+        <strong>Thứ tự chuẩn: A &rarr; B &rarr; C &rarr; D &rarr; E</strong><br>
+        &bull; <strong>A:</strong> Nêu vấn đề & tuyên bố quan điểm.<br>
+        &bull; <strong>B:</strong> Luận điểm 1 (To begin with,...).<br>
+        &bull; <strong>C:</strong> Dẫn chứng 1 (For example,...).<br>
+        &bull; <strong>D:</strong> Luận điểm 2 có tính chuyển tiếp (At the same time, however,...).<br>
+        &bull; <strong>E:</strong> Kết luận (In conclusion,...).`;
+    }
+
+    function resetAct3() {
+      userOrder1 = [];
+      renderArrangeList('arrangeList1', arrangeData1, userOrder1, 'btnSubmitAct3');
+      document.getElementById('fbAct3').className = 'feedback-box';
+    }
+
+    function submitAct4() {
+      const isCorrect = userOrder2.join('') === 'BAECD';
+      const fb = document.getElementById('fbAct4');
+      fb.className = `feedback-box show ${isCorrect ? 'correct' : 'incorrect'}`;
+      fb.innerHTML = `<strong>${isCorrect ? '🎉 Chính xác 100%!' : '⚠️ Chưa hoàn toàn chính xác'}</strong><br>
+        <strong>Thứ tự chuẩn: B &rarr; A &rarr; E &rarr; C &rarr; D</strong><br>
+        &bull; <strong>B:</strong> Câu hỏi gợi mở vấn đề.<br>
+        &bull; <strong>A:</strong> Mở rộng bối cảnh ("This question is becoming...").<br>
+        &bull; <strong>E:</strong> Luận điểm một phía ("On one hand,...").<br>
+        &bull; <strong>C:</strong> Luận điểm phía đối lập ("On the other hand,...").<br>
+        &bull; <strong>D:</strong> Kết luận trung dung ("The truth probably lies between these two extremes.").`;
+    }
+
+    function resetAct4() {
+      userOrder2 = [];
+      renderArrangeList('arrangeList2', arrangeData2, userOrder2, 'btnSubmitAct4');
+      document.getElementById('fbAct4').className = 'feedback-box';
+    }
+
+    // ================= ACTIVITY 5: SENTENCE BUILDING =================
+    function submitAct5() {
+      const fb = document.getElementById('fbAct5');
+      fb.className = 'feedback-box show correct';
+      fb.innerHTML = `<strong>Gợi ý nâng cấp từ nối học thuật:</strong><br>
+        1. <em>To begin with, world festivals help young people learn about other cultures.</em><br>
+        2. <em>Furthermore, they also bring a lot of fun and joy.</em><br>
+        3. <em>On one hand, some people think schools should encourage students to join festivals; on the other hand, others disagree.</em><br>
+        4. <em>Overall, I think festivals should be enjoyed in moderation.</em>`;
+    }
+
+    // ================= ACTIVITY 8: IMPROVE =================
+    function submitAct8() {
+      const fb = document.getElementById('fbAct8');
+      fb.className = 'feedback-box show correct';
+      fb.innerHTML = `<strong>Nhận xét &amp; Đoạn văn mẫu nâng cấp:</strong><br>
+        &bull; <strong>Lỗi 1 (Lặp từ nối):</strong> Cụm <em>"In addition,"</em> xuất hiện 2 lần liên tiếp &rarr; đổi câu sau thành <em>"Furthermore,"</em>.<br>
+        &bull; <strong>Lỗi 2 (Kết bài đơn điệu):</strong> Câu <em>"In conclusion, I think festivals are good."</em> quá ngắn &rarr; nâng cấp thành: <em>"In conclusion, although some people worry that these festivals could make young people forget their own culture, I believe the fun and friendship they bring make them a positive part of growing up in Vietnam."</em>`;
+    }
+
+    // ================= WORD COUNT TRACKING & GATED REVEAL =================
+    function setupWordTracker(textareaId, badgeId, submitBtnId, minWords) {
+      const ta = document.getElementById(textareaId);
+      if (!ta) return;
+      ta.addEventListener('input', () => {
+        const text = ta.value.trim();
+        const words = text ? text.split(/\s+/).length : 0;
+        const badge = document.getElementById(badgeId);
+        if (badge) badge.textContent = `${words} / 180-200 từ`;
+        const btn = document.getElementById(submitBtnId);
+        if (btn) btn.disabled = words < minWords;
+      });
+    }
+
+    setupWordTracker('textGuided1', 'wcGuided1', 'btnSubmitGuided1', 55);
+    setupWordTracker('textGuided2', 'wcGuided2', 'btnSubmitGuided2', 55);
+    setupWordTracker('textIndependent', 'wcIndependent', 'btnSubmitIndependent', 55);
+    setupWordTracker('textDanang', 'wcDanang', 'btnSubmitDanang', 55);
+    setupWordTracker('textFreeWriting', 'wcFree', 'btnSubmitFreeWriting', 55);
+
+    // ================= MODEL ANSWERS MODAL =================
+    const modelAnswers = {
+      festivals: {
+        title: "Model Answer — World Festivals (189 words)",
+        content: `<p>Nowadays, more and more young Vietnamese people celebrate festivals such as Christmas and Halloween. Some people think there is nothing wrong with this while others are worried about the influence of foreign cultures. In my opinion, celebrating these festivals brings more benefits than drawbacks to young Vietnamese people.</p>
+        <p style="margin-top:10px;">To begin with, world festivals bring a lot of fun, happiness, and joy to those who take part in them. For example, students often decorate their classrooms and dress up for Halloween parties with their friends. They always look forward to these fun memories every year. This kind of shared excitement is something schoolwork alone rarely provides.</p>
+        <p style="margin-top:10px;">Furthermore, celebrating world festivals helps young people learn about other cultures. For instance, many students discover Christmas traditions from different countries through school events or social media, which broadens their understanding of the world beyond Vietnam.</p>
+        <p style="margin-top:10px;">In conclusion, although some worry that celebrating foreign festivals might make young people forget their own traditions, I believe that as long as local festivals are not ignored, the fun and cultural understanding gained from world festivals make them a valuable part of growing up in Vietnam today.</p>`
+      },
+      halloween_school: {
+        title: "Model Answer — Halloween in Vietnamese Schools (193 words)",
+        content: `<p>Vietnamese schools already spend a lot of time each year preparing students for major national festivals such as Tet and the Mid-Autumn Festival. In my opinion, schools should organise Halloween events for students alongside these traditional festivals, not instead of them.</p>
+        <p style="margin-top:10px;">To begin with, Halloween events give students an enjoyable break from their usual school routine. For example, dressing up in costumes and playing games with classmates creates a relaxed, cheerful atmosphere that students remember for a long time. Students often say this is one of their favourite days at school each year.</p>
+        <p style="margin-top:10px;">Furthermore, these events expose students to a new cultural experience without the cost or effort of travelling abroad. For instance, learning about traditions such as pumpkin carving and trick-or-treating broadens their understanding of cultures beyond Vietnam. This kind of knowledge is useful now that Vietnam has more contact with the rest of the world than ever before.</p>
+        <p style="margin-top:10px;">In conclusion, although some people worry that Halloween events could take attention away from traditional Vietnamese festivals, I believe schools can organise both types of celebrations side by side. In this way, students can enjoy new experiences while still appreciating their own culture.</p>`
+      },
+      danang_diff: {
+        title: "Model Answer — Da Nang Fireworks Festival (181 words)",
+        content: `<p>Da Nang hosts an International Fireworks Festival every year, where teams from different countries around the world come to compete. In my opinion, Vietnamese cities should continue to host more international festivals like this.</p>
+        <p style="margin-top:10px;">To begin with, hosting international festivals like this gives local people the chance to experience culture from around the world without leaving home. For example, teams from countries such as Italy, France, and the UK bring their own music and fireworks styles to Da Nang every year. This broadens local people's understanding of different cultures and artistic traditions.</p>
+        <p style="margin-top:10px;">Furthermore, this kind of festival brings a real boost to the local economy and gives residents something to be proud of. For instance, hotels, restaurants, and local businesses in Da Nang see a large increase in visitors during the festival every year, which creates jobs and helps the city become known internationally as a modern, exciting destination.</p>
+        <p style="margin-top:10px;">In conclusion, although hosting large international events can sometimes overshadow smaller local festivals, I believe the cultural exchange and economic benefits make events like the Da Nang Fireworks Festival well worth continuing.</p>`
+      }
+    };
+
+    function openModelAnswer(key) {
+      const item = modelAnswers[key];
+      if (!item) return;
+      document.getElementById('modalTitle').textContent = item.title;
+      document.getElementById('modalContent').innerHTML = item.content;
+      document.getElementById('modelModal').style.display = 'flex';
+    }
+
+    function closeModelModal() {
+      document.getElementById('modelModal').style.display = 'none';
+    }
+
+    // ================= ATHENA AI WRITING SUBMISSION =================
+    function submitAthenaWriting() {
+      const fb = document.getElementById('fbAthena');
+      const pending = document.getElementById('athenaPending');
+      const result = document.getElementById('athenaResult');
+      const btn = document.getElementById('btnSubmitFreeWriting');
+
+      fb.className = 'feedback-box show';
+      fb.style.display = 'block';
+      pending.style.display = 'block';
+      result.style.display = 'none';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        pending.style.display = 'none';
+        result.style.display = 'block';
+        fb.className = 'feedback-box show correct';
+      }, 1600);
+    }
+
+    // ================= CHECKLIST TOGGLE =================
+    function toggleCheckItem(item) {
+      item.classList.toggle('checked');
+    }
+  </script>
+</body>
+</html>
