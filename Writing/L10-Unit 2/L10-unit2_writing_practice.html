@@ -1159,7 +1159,7 @@
         <!-- Activity 6: Guided Writing (Full Support) -->
         <div class="activity-card" style="margin-top:20px;">
           <div class="activity-head">
-            <div class="activity-instruction">Activity 6: Guided Writing — Making the Classroom Greener</div>
+            <div class="activity-instruction">Activity 6: Guided Writing (Full Support) — Making the Classroom Greener</div>
             <div class="activity-sub-instruction">Use the table information and sentence starters to write a paragraph (100–130 words).</div>
           </div>
 
@@ -1181,10 +1181,38 @@
           </div>
         </div>
 
-        <!-- Activity 7: Correct the Mistake -->
+        <!-- Activity 7: Guided Writing (Reduced Support) -->
         <div class="activity-card" style="margin-top:20px;">
           <div class="activity-head">
-            <div class="activity-instruction">Activity 7: Correct the Mistake</div>
+            <div class="activity-instruction">Activity 7: Guided Writing (Reduced Support) — Keywords Only</div>
+            <div class="activity-sub-instruction">Use the keywords below to write the SAME paragraph — this time without sentence starters (100–130 words).</div>
+          </div>
+
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:14px; font-size:14px;">
+            <strong>🔑 Keywords Table:</strong><br>
+            • Point 1: <em>grow plants / reused bottles</em> → <em>windowsill</em> → <em>greener classroom</em><br>
+            • Point 2: <em>class plant corner</em> → <em>take turns watering</em> → <em>more responsible</em><br>
+            • Point 3: <em>digital notice board</em> → <em>screen / group chat</em> → <em>less paper</em><br>
+            <div style="margin-top:6px; color:var(--ink-2); font-style:italic;">
+              💡 Turn each row into a full sentence, following the 4-part structure: Topic Sentence → 3 Supporting Points → Concluding Sentence.
+            </div>
+          </div>
+
+          <textarea class="writing-textarea" id="guidedText2" placeholder="Write your paragraph here using the keywords..." oninput="updateWordCount('guidedText2', 'wcGuided2', 'btnSubmitGuided2', 35)"></textarea>
+          
+          <div class="word-counter-box">
+            <span id="wcGuided2">0 từ (Mục tiêu: 100–130 từ)</span>
+            <button class="action-btn" id="btnSubmitGuided2" onclick="submitGuidedWriting('guidedText2', 'btnRevealGuided2', 35)">✓ Submit Bài Viết</button>
+            <button class="reveal-btn" id="btnRevealGuided2" disabled data-unlocked-label="📖 Xem Model Answer" onclick="openModelAnswerSheet('model-guided-1')">
+              🔒 Viết ít nhất 35 từ để mở Model Answer
+            </button>
+          </div>
+        </div>
+
+        <!-- Activity 8: Correct the Mistake -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 8: Correct the Mistake</div>
             <div class="activity-sub-instruction">Find and correct 6 mistakes in the paragraph. Tap each highlighted tag [1]–[6] to fix.</div>
           </div>
 
@@ -1193,10 +1221,10 @@
           </div>
         </div>
 
-        <!-- Activity 8: Write a Paragraph -->
+        <!-- Activity 9: Write a Paragraph -->
         <div class="activity-card" style="margin-top:20px;">
           <div class="activity-head">
-            <div class="activity-instruction">Activity 8: Write a Paragraph (Your Own School or Neighbourhood)</div>
+            <div class="activity-instruction">Activity 9: Write a Paragraph (Your Own School or Neighbourhood)</div>
             <div class="activity-sub-instruction">Write a complete paragraph (100–130 words) giving suggestions to improve the environment near you.</div>
           </div>
 

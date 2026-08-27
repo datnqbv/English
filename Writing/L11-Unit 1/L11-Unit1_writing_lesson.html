@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 — Writing: A Long and Healthy Life (Short Message)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1: A Long and Healthy Life - Writing Lesson (Short Message)",
+    "subject": "Tiếng Anh",
+    "grade": "11",
+    "objectives": [
+      "Apply the structure of a short message (Greeting - Main body - Closing - Sign-off).",
+      "Write a short message accepting an invitation and asking for information."
+    ],
+    "structure": [
+      { "id": "hook", "title": "Hook — Nam is messaging you" },
+      { "id": "framework", "title": "A · How to Write a Short Message" },
+      { "id": "deep-dive", "title": "B · Deep Dive into Each Part" },
+      { "id": "builder", "title": "C · Accept & Ask Builder Process" },
+      { "id": "analyzer", "title": "D · Interactive Sample Message Analysis" },
+      { "id": "signals", "title": "E · Signal Words Reference" }
+    ],
+    "athenaGuidance": "Bài học Writing Unit 1 Lớp 11 hướng dẫn cách viết tin nhắn ngắn thân mật nhận lời mời và hỏi thêm 2 thông tin theo cấu trúc Greeting - Main body (Accept + Ask info) - Closing - Sign-off. Bối cảnh: Nam rủ Minh đi tập gym vào thứ 7. Bài học gồm: Hook tương tác mô phỏng lock-screen & chat bubble, Khung tổng quát 4 phần, Thẻ lật công thức & phân biệt văn phong thân mật vs trang trọng, Quy trình 5 bước Accept & Ask Builder, Trình phân tích tin nhắn mẫu 39 từ, và Bảng tín hiệu nhận diện."
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Neutrals · giấy & mực */
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+
+      /* Jade · hành động chính */
+      --jade: #3CA57A;
+      --jade-deep: #2A8167;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+
+      /* Sage · phụ trợ */
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+
+      /* Accent · điểm nhấn ấm */
+      --accent: #D96B27;
+      --accent-deep: #B85315;
+      --accent-text: #8E390A;
+      --accent-pale: #FCEBDD;
+
+      /* Semantic */
+      --correct: #2A8167;
+      --correct-bg: #DCEAE1;
+      --wrong: #A84B2C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+
+      --white: #FFFFFF;
+      --radius-lg: 22px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 10px 30px rgba(43, 43, 40, 0.08);
+      --shadow-lg: 0 16px 40px rgba(20, 67, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    button,
+    a,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    .wrap {
+      width: min(1000px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* Top Hero Header */
+    .hero-header {
+      background: linear-gradient(135deg, var(--jade-dark), var(--jade-deep));
+      color: #fff;
+      padding: 48px 0 54px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-header h1 {
+      color: #fff;
+      font-size: clamp(26px, 4vw, 36px);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 2vw, 18.5px);
+      color: var(--jade-pale);
+      max-width: 660px;
+      margin: 0 auto 22px;
+      font-weight: 500;
+    }
+
+    .objectives-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      backdrop-filter: blur(8px);
+    }
+
+    .objectives-card h4 {
+      color: var(--accent-pale);
+      font-size: 13.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .objectives-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #fff;
+      font-size: 14.5px;
+    }
+
+    .objectives-card li {
+      margin-bottom: 4px;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 36px 0 70px;
+    }
+
+    .section-block {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 30px 26px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--cream-2);
+      padding-bottom: 14px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .section-title {
+      font-size: 21px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-tag {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    /* HOOK: Lock-screen Notification & Chat Bubble */
+    .lockscreen-notif {
+      background: linear-gradient(135deg, #2D3748, #1A202C);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: gentle-bounce 3s infinite ease-in-out;
+    }
+
+    @keyframes gentle-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .lockscreen-notif:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .notif-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .notif-app-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #48BB78;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .notif-arrow {
+      background: rgba(255, 255, 255, 0.15);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: transform 0.3s;
+    }
+
+    .lockscreen-notif.open .notif-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Chat Conversation Container */
+    .chat-container {
+      display: none;
+      margin-top: 20px;
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 22px;
+      animation: fadeIn 0.35s ease forwards;
+    }
+
+    .chat-container.show {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-bubble-received {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 16px 16px 16px 4px;
+      padding: 14px 18px;
+      max-width: 580px;
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: var(--ink);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .chat-sender-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--jade-deep);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* Which Reply is Better */
+    .reply-choice-block {
+      border-top: 1px dashed var(--paper-line-2);
+      padding-top: 16px;
+    }
+
+    .reply-choice-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      margin-bottom: 12px;
+    }
+
+    .reply-cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .reply-card {
+      background: var(--white);
+      border: 2px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .reply-card:hover {
+      border-color: var(--jade);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .reply-card.picked-a {
+      border-color: var(--correct);
+      background: var(--correct-bg);
+    }
+
+    .reply-card.picked-b {
+      border-color: var(--warning);
+      background: var(--warning-bg);
+    }
+
+    .reply-badge {
+      font-weight: 800;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .reply-card.picked-a .reply-badge { color: var(--correct); }
+    .reply-card.picked-b .reply-badge { color: #925805; }
+
+    .hook-feedback-box {
+      display: none;
+      margin-top: 16px;
+      background: var(--white);
+      border-left: 4px solid var(--jade);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      font-size: 15px;
+      color: var(--ink);
+      box-shadow: 0 4px 12px rgba(42, 129, 103, 0.1);
+    }
+
+    /* SECTION A: Overview Framework */
+    .framework-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .flow-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .flow-card.main-body {
+      background: var(--jade-pale);
+      border-color: var(--jade-soft);
+    }
+
+    .flow-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .flow-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .flow-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .flow-card-body {
+      display: none;
+      padding-top: 12px;
+      margin-top: 12px;
+      border-top: 1px dashed var(--paper-line-2);
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    .flow-card.open .flow-card-body {
+      display: block;
+    }
+
+    .flow-card.open .flow-toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .flow-toggle-icon {
+      font-size: 16px;
+      color: var(--ink-3);
+      transition: transform 0.25s;
+    }
+
+    .flow-arrow-down {
+      text-align: center;
+      color: var(--jade-deep);
+      font-size: 18px;
+    }
+
+    /* SECTION B: Deep Dive (B.1 to B.5) */
+    .deep-dive-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .part-box {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .part-box-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .part-box-title {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--jade-dark);
+    }
+
+    .part-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .formula-row {
+      background: var(--white);
+      border-left: 4px solid var(--jade);
+      padding: 10px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    .compare-cases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .case-card {
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 14.5px;
+    }
+
+    .case-card.correct {
+      background: var(--correct-bg);
+      border: 1.5px solid var(--jade-soft);
+    }
+
+    .case-card.wrong {
+      background: var(--warning-bg);
+      border: 1.5px solid var(--warning);
+    }
+
+    .case-head {
+      font-weight: 800;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .case-card.correct .case-head { color: var(--correct); }
+    .case-card.wrong .case-head { color: #925805; }
+
+    .summary-warning-bar {
+      background: var(--accent-pale);
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent-text);
+      margin-top: 14px;
+    }
+
+    /* SECTION C: Builder */
+    .builder-step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .builder-step-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .builder-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--jade-deep);
+      color: #fff;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 15px;
+    }
+
+    .builder-title {
+      font-weight: 700;
+      font-size: 15.5px;
+      color: var(--jade-dark);
+      margin-bottom: 3px;
+    }
+
+    .builder-desc {
+      font-size: 14.5px;
+      color: var(--ink);
+    }
+
+    .builder-vi {
+      display: none;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--paper-line-2);
+      font-size: 13.5px;
+      color: var(--ink-2);
+      font-style: italic;
+    }
+
+    .toggle-vi-btn {
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--ink);
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* SECTION D: Analyzer */
+    .analyzer-box {
+      background: var(--cream);
+      border: 2px solid var(--jade-soft);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .analyzer-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .auto-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .analyzer-text-wrap {
+      font-size: 17px;
+      line-height: 2.2;
+      color: var(--ink);
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--paper-line);
+      margin-bottom: 16px;
+    }
+
+    .msg-hotspot {
+      cursor: pointer;
+      padding: 3px 6px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      border-bottom: 2px dashed var(--paper-line-2);
+      display: inline;
+    }
+
+    .msg-hotspot:hover { background: var(--cream-2); }
+    .msg-hotspot.active-greet { background: #DCEAE1; border-bottom: 3px solid var(--jade); font-weight: 600; }
+    .msg-hotspot.active-body { background: #FCEBDD; border-bottom: 3px solid var(--accent); font-weight: 600; }
+    .msg-hotspot.active-close { background: #E1ECE4; border-bottom: 3px solid var(--sage-deep); font-weight: 600; }
+    .msg-hotspot.active-sign { background: #F5E7CB; border-bottom: 3px solid var(--warning); font-weight: 600; }
+
+    .analyzer-feedback {
+      min-height: 52px;
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 14.5px;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+    }
+
+    /* SECTION E: Signals */
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .signal-pill {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .signal-pill:hover {
+      border-color: var(--jade);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .signal-pill-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .signal-kw {
+      background: var(--jade-deep);
+      color: #fff;
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .signal-kw.warn {
+      background: var(--warning);
+    }
+
+    .signal-func {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-2);
+    }
+
+    .signal-tooltip {
+      display: none;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--paper-line-2);
+      font-size: 13.5px;
+      color: var(--ink);
+      background: var(--white);
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    .signal-pill.open .signal-tooltip {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .compare-cases { grid-template-columns: 1fr; }
+      .section-block { padding: 22px 16px; }
+      .signals-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO HEADER -->
+  <header class="hero-header">
+    <div class="wrap">
+      <div class="eyebrow">💬 Unit 1 · Writing Lesson (Grade 11)</div>
+      <h1>A Long and Healthy Life</h1>
+      <div class="hero-subtitle">Writing a Short Message (Accepting an Invitation &amp; Asking for Information)</div>
+
+      <div class="objectives-card">
+        <h4>🎯 Lesson Objectives</h4>
+        <ul>
+          <li>Apply the structure of a short message (<em>Greeting – Main body – Closing – Sign-off</em>).</li>
+          <li>Write a short message accepting an invitation and asking for 2 pieces of information using an informal tone.</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="wrap">
+
+      <!-- HOOK SECTION: Nam is messaging you -->
+      <section class="section-block" id="hook">
+        <div class="section-title-wrap">
+          <h2 class="section-title">📱 Hook — "Nam is messaging you"</h2>
+          <span class="section-tag">Lock-Screen Chat</span>
+        </div>
+
+        <!-- Lockscreen Notification Banner -->
+        <div class="lockscreen-notif" id="notifBanner" onclick="toggleChatHook()">
+          <div class="notif-left">
+            <div class="notif-app-icon">💬</div>
+            <div>Nam is messaging you now</div>
+          </div>
+          <div class="notif-arrow">↓</div>
+        </div>
+
+        <!-- Chat Conversation Body -->
+        <div class="chat-container" id="chatContainer">
+          <div class="chat-bubble-received">
+            <div class="chat-sender-tag">Nam</div>
+            Hey! Are you free this Saturday? I'm trying out a new gym near my house — want to join me for a workout? 💪
+          </div>
+
+          <div class="reply-choice-block">
+            <div class="reply-choice-label">🤔 Which reply is better? (Chạm để so sánh):</div>
+
+            <div class="reply-cards-list">
+              <div class="reply-card" id="replyCardA" onclick="pickReply('A')">
+                <span class="reply-badge">Bản A</span>
+                <div>"Hi Nam! That sounds great, count me in! What time should we meet, and do I need to bring my own equipment?"</div>
+              </div>
+
+              <div class="reply-card" id="replyCardB" onclick="pickReply('B')">
+                <span class="reply-badge">Bản B</span>
+                <div>"Hi Nam! Sure, sounds fun!"</div>
+              </div>
+            </div>
+
+            <div class="hook-feedback-box" id="hookFeedback">
+              <strong>💡 Giải thích sư phạm:</strong><br>
+              <strong>Bản A tốt hơn nhiều!</strong> Không chỉ nhận lời (<em>Accept</em>) mà còn hỏi thêm thông tin (<em>Ask for information</em>): giờ hẹn và có cần mang đồ gì không. Đây chính là 2 nhiệm vụ bắt buộc khi viết một tin nhắn ngắn nhận lời mời.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION A: Overview Framework -->
+      <section class="section-block" id="framework">
+        <div class="section-title-wrap">
+          <h2 class="section-title">📐 A · Khung tổng quát</h2>
+          <span class="section-tag">4-Part Structure</span>
+        </div>
+        <p style="font-size:15px; color:var(--ink-2); margin-bottom:18px;">
+          Chạm vào từng phần dưới đây để xem <strong>Câu hỏi định hướng</strong> và <strong>Ví dụ trích từ bài mẫu</strong>:
+        </p>
+
+        <div class="framework-flow">
+          <div class="flow-card" onclick="toggleFlow(this)">
+            <div class="flow-card-head">
+              <span class="flow-card-title">① Greeting (Chào mở đầu)</span>
+              <span class="flow-toggle-icon">▼</span>
+            </div>
+            <div class="flow-card-body">
+              <strong>Câu hỏi định hướng:</strong> Chào thế nào cho thân mật, đúng kiểu nhắn tin bạn bè?<br>
+              <strong>Ví dụ bài mẫu:</strong> <em>"Hi Nam,"</em>
+            </div>
+          </div>
+
+          <div class="flow-arrow-down">↓</div>
+
+          <div class="flow-card main-body" onclick="toggleFlow(this)">
+            <div class="flow-card-head">
+              <span class="flow-card-title">② Main Body (Nội dung chính: Accept + Ask 2 info)</span>
+              <span class="flow-toggle-icon">▼</span>
+            </div>
+            <div class="flow-card-body">
+              <strong>Câu hỏi định hướng:</strong> Nhận lời mời như thế nào và cần hỏi thêm đúng 2 thông tin gì?<br>
+              <strong>Ví dụ bài mẫu:</strong> <em>"That sounds great, count me in! I've been wanting to try a new gym for a while. What time should we meet on Saturday, and do I need to bring my own equipment?"</em>
+            </div>
+          </div>
+
+          <div class="flow-arrow-down">↓</div>
+
+          <div class="flow-card" onclick="toggleFlow(this)">
+            <div class="flow-card-head">
+              <span class="flow-card-title">③ Closing (Kết thúc tin nhắn)</span>
+              <span class="flow-toggle-icon">▼</span>
+            </div>
+            <div class="flow-card-body">
+              <strong>Câu hỏi định hướng:</strong> Kết thúc tin nhắn thế nào cho tự nhiên, thân thiện?<br>
+              <strong>Ví dụ bài mẫu:</strong> <em>"See you then!"</em>
+            </div>
+          </div>
+
+          <div class="flow-arrow-down">↓</div>
+
+          <div class="flow-card" onclick="toggleFlow(this)">
+            <div class="flow-card-head">
+              <span class="flow-card-title">④ Sign-off (Ký tên)</span>
+              <span class="flow-toggle-icon">▼</span>
+            </div>
+            <div class="flow-card-body">
+              <strong>Câu hỏi định hướng:</strong> Ký tên ngắn gọn thế nào?<br>
+              <strong>Ví dụ bài mẫu:</strong> <em>"Minh"</em> (chỉ cần tên riêng, không cần chức danh hay họ đệm trang trọng)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION B: Deep Dive (B.1 to B.5) -->
+      <section class="section-block" id="deep-dive">
+        <div class="section-title-wrap">
+          <h2 class="section-title">🔍 B · Đi sâu từng phần (Formal vs. Informal)</h2>
+          <span class="section-tag">Formula &amp; Contrast</span>
+        </div>
+
+        <div class="deep-dive-grid">
+          <!-- B.1 Greeting -->
+          <div class="part-box">
+            <div class="part-box-head">
+              <span class="part-box-title">B.1 · Greeting</span>
+              <span class="part-badge">Lời chào</span>
+            </div>
+            <div class="formula-row"><b>Formula:</b> <code>Hi + name,</code></div>
+            <div class="compare-cases">
+              <div class="case-card correct">
+                <div class="case-head"><span>✓ Example ĐÚNG</span></div>
+                <div>"Hi Nam,"</div>
+              </div>
+              <div class="case-card wrong">
+                <div class="case-head"><span>⚠️ Not good CHƯA TỐT</span></div>
+                <div>"Dear Nam," <br><small style="color:var(--ink-2);">(Quá trang trọng — "Dear" dùng cho thư/email nghiêm túc, không hợp tin nhắn bạn bè)</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B.2 Accept the invitation -->
+          <div class="part-box">
+            <div class="part-box-head">
+              <span class="part-box-title">B.2 · Accept the invitation</span>
+              <span class="part-badge">Nhận lời mời</span>
+            </div>
+            <div class="formula-row"><b>Formula:</b> <code>That sounds great, count me in! / I'd love to! / Thank you for inviting me!</code></div>
+            <div class="compare-cases">
+              <div class="case-card correct">
+                <div class="case-head"><span>✓ Example ĐÚNG</span></div>
+                <div>"That sounds great, count me in!"</div>
+              </div>
+              <div class="case-card wrong">
+                <div class="case-head"><span>⚠️ Not good CHƯA TỐT</span></div>
+                <div>"I acknowledge your invitation and will attend." <br><small style="color:var(--ink-2);">(Văn phong hành chính, xa cách)</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B.3 Ask for information -->
+          <div class="part-box">
+            <div class="part-box-head">
+              <span class="part-box-title">B.3 · Ask for information (Đúng 2 câu hỏi)</span>
+              <span class="part-badge">Hỏi thông tin</span>
+            </div>
+            <div class="formula-row"><b>Formula:</b> <code>What time...? / Do I need to...? / Should I bring...?</code></div>
+            <div class="compare-cases">
+              <div class="case-card correct">
+                <div class="case-head"><span>✓ Example ĐÚNG</span></div>
+                <div>"What time should we meet, and do I need to bring my own equipment?"</div>
+              </div>
+              <div class="case-card wrong">
+                <div class="case-head"><span>⚠️ Not good CHƯA TỐT</span></div>
+                <div>"Ok." <br><small style="color:var(--ink-2);">(Quá cộc lốc, thiếu hẳn 2 câu hỏi xin thông tin bắt buộc)</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B.4 Closing -->
+          <div class="part-box">
+            <div class="part-box-head">
+              <span class="part-box-title">B.4 · Closing</span>
+              <span class="part-badge">Lời kết</span>
+            </div>
+            <div class="formula-row"><b>Formula:</b> <code>See you then! / Looking forward to it! / Talk to you soon!</code></div>
+            <div class="compare-cases">
+              <div class="case-card correct">
+                <div class="case-head"><span>✓ Example ĐÚNG</span></div>
+                <div>"See you then!"</div>
+              </div>
+              <div class="case-card wrong">
+                <div class="case-head"><span>⚠️ Not good CHƯA TỐT</span></div>
+                <div>"Yours faithfully," <br><small style="color:var(--ink-2);">(Cách kết thư trang trọng — hoàn toàn sai ngữ cảnh tin nhắn)</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B.5 Sign-off -->
+          <div class="part-box">
+            <div class="part-box-head">
+              <span class="part-box-title">B.5 · Sign-off</span>
+              <span class="part-badge">Ký tên</span>
+            </div>
+            <div class="formula-row"><b>Formula:</b> <code>Chỉ cần tên riêng, không cần cụm dẫn</code></div>
+            <div class="compare-cases">
+              <div class="case-card correct">
+                <div class="case-head"><span>✓ Example ĐÚNG</span></div>
+                <div>"Minh"</div>
+              </div>
+              <div class="case-card wrong">
+                <div class="case-head"><span>⚠️ Not good CHƯA TỐT</span></div>
+                <div>"Best regards, Nguyen Van Minh" <br><small style="color:var(--ink-2);">(Quá trịnh trọng cho 1 tin nhắn ngắn thân mật)</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-warning-bar">
+            💡 <strong>Quy tắc cốt lõi:</strong> Short message giữa bạn bè luôn dùng <em>văn phong thân mật (informal)</em> — tránh mọi từ ngữ hành chính, trang trọng thường thấy trong thư/email nghiêm túc.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION C: Accept & Ask Builder -->
+      <section class="section-block" id="builder">
+        <div class="section-title-wrap">
+          <h2 class="section-title">⚡ C · Accept &amp; Ask Builder</h2>
+          <button class="toggle-vi-btn" onclick="toggleViTranslation()">
+            <span>🌐 Bật/tắt dịch tiếng Việt</span>
+          </button>
+        </div>
+        <p style="font-size:15px; color:var(--ink-2); margin-bottom:18px;">
+          Quy trình 5 bước xây dựng phần Main Body chuẩn xác:
+        </p>
+
+        <div class="builder-step-list">
+          <div class="builder-step-card">
+            <div class="builder-num">1</div>
+            <div>
+              <div class="builder-title">Đọc lại lời mời</div>
+              <div class="builder-desc">Chắc chắn mình đồng ý tham gia và chọn câu nhận lời phù hợp (Accept).</div>
+              <div class="builder-vi">Re-read the invitation: make sure you accept it enthusiastically.</div>
+            </div>
+          </div>
+
+          <div class="builder-step-card">
+            <div class="builder-num">2</div>
+            <div>
+              <div class="builder-title">Chọn đúng 2 thông tin quan trọng nhất cần hỏi</div>
+              <div class="builder-desc">Chỉ hỏi những thông tin cần thiết (thời gian, địa điểm, đồ cần mang), không hỏi lan man quá 2 ý.</div>
+              <div class="builder-vi">Choose exactly 2 most important missing details to ask (time, location, equipment).</div>
+            </div>
+          </div>
+
+          <div class="builder-step-card">
+            <div class="builder-num">3</div>
+            <div>
+              <div class="builder-title">Ráp câu hoàn chỉnh</div>
+              <div class="builder-desc">Accept trước, sau đó nối 2 câu hỏi bằng từ "and" hoặc để thành 2 câu hỏi ngắn riêng biệt.</div>
+              <div class="builder-vi">Combine: Accept sentence first, then connect the 2 questions with "and" or keep separate.</div>
+            </div>
+          </div>
+
+          <div class="builder-step-card">
+            <div class="builder-num">4</div>
+            <div>
+              <div class="builder-title">Đọc lại kiểm tra</div>
+              <div class="builder-desc">Đã có đủ câu Accept + đúng 2 câu hỏi thông tin chưa?</div>
+              <div class="builder-vi">Review: Ensure both Accept and exactly 2 questions are present.</div>
+            </div>
+          </div>
+
+          <div class="builder-step-card">
+            <div class="builder-num">5</div>
+            <div>
+              <div class="builder-title">Tránh các lỗi thường gặp</div>
+              <div class="builder-desc">Dùng văn phong quá trang trọng; quên hỏi thông tin; hoặc hỏi quá nhiều làm tin nhắn mất tự nhiên.</div>
+              <div class="builder-vi">Avoid: overly formal tone, forgetting to ask, or asking too many questions.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION D: Analyzer -->
+      <section class="section-block" id="analyzer">
+        <div class="section-title-wrap">
+          <h2 class="section-title">🔬 D · Phân tích tin nhắn mẫu hoàn chỉnh</h2>
+          <span class="section-tag">Interactive Analyzer</span>
+        </div>
+
+        <div class="analyzer-box">
+          <div class="analyzer-controls">
+            <span style="font-weight:600; font-size:15px; color:var(--ink-2);">
+              💡 Chạm vào từng phần trong tin nhắn để xem vai trò cấu trúc:
+            </span>
+            <button class="auto-btn" id="btnAutoAnalyze" onclick="startAutoAnalyze()">
+              <span>🔍 Phân tích tự động</span>
+            </button>
+          </div>
+
+          <div class="analyzer-text-wrap" id="analyzerText">
+            <span class="msg-hotspot" data-role="greet" onclick="inspectSentence(this, 'greet')">Hi Nam,</span>
+            <span class="msg-hotspot" data-role="body" onclick="inspectSentence(this, 'body')">That sounds great, count me in! I've been wanting to try a new gym for a while. What time should we meet on Saturday, and do I need to bring my own equipment?</span>
+            <span class="msg-hotspot" data-role="close" onclick="inspectSentence(this, 'close')">See you then!</span>
+            <span class="msg-hotspot" data-role="sign" onclick="inspectSentence(this, 'sign')">Minh</span>
+          </div>
+
+          <div class="analyzer-feedback" id="analyzerFeedback">
+            <span>👉 <em>Chạm vào 1 phần hoặc bấm "Phân tích tự động" để bắt đầu khám phá...</em></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION E: Signals Reference -->
+      <section class="section-block" id="signals">
+        <div class="section-title-wrap">
+          <h2 class="section-title">🔗 E · Bảng tín hiệu nhận diện</h2>
+          <span class="section-tag">Signal Words</span>
+        </div>
+        <p style="font-size:15px; color:var(--ink-2); margin-bottom:18px;">
+          Chạm vào từng thẻ để xem câu ví dụ minh họa:
+        </p>
+
+        <div class="signals-grid">
+          <div class="signal-pill" onclick="toggleSignal(this)">
+            <div class="signal-pill-head">
+              <span class="signal-kw">Accept</span>
+              <span class="signal-func">Nhận lời</span>
+            </div>
+            <div class="signal-tooltip">
+              <em>"That sounds great, count me in!" / "I'd love to!"</em>
+            </div>
+          </div>
+
+          <div class="signal-pill" onclick="toggleSignal(this)">
+            <div class="signal-pill-head">
+              <span class="signal-kw">Ask info</span>
+              <span class="signal-func">Hỏi thông tin</span>
+            </div>
+            <div class="signal-tooltip">
+              <em>"What time...?" / "Do I need to...?" / "Where should we meet?"</em>
+            </div>
+          </div>
+
+          <div class="signal-pill" onclick="toggleSignal(this)">
+            <div class="signal-pill-head">
+              <span class="signal-kw">Closing</span>
+              <span class="signal-func">Lời kết</span>
+            </div>
+            <div class="signal-tooltip">
+              <em>"See you then!" / "Talk to you soon!" / "Looking forward to it!"</em>
+            </div>
+          </div>
+
+          <div class="signal-pill" onclick="toggleSignal(this)">
+            <div class="signal-pill-head">
+              <span class="signal-kw warn">⚠️ Tránh</span>
+              <span class="signal-func">Quá trang trọng</span>
+            </div>
+            <div class="signal-tooltip">
+              <em>"Dear...", "Yours faithfully,", "I acknowledge your invitation..."</em>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // 1. Hook Lock-screen Toggle
+    function toggleChatHook() {
+      const notif = document.getElementById('notifBanner');
+      const chat = document.getElementById('chatContainer');
+      notif.classList.toggle('open');
+      chat.classList.toggle('show');
+    }
+
+    function pickReply(choice) {
+      const cardA = document.getElementById('replyCardA');
+      const cardB = document.getElementById('replyCardB');
+      const fb = document.getElementById('hookFeedback');
+
+      cardA.classList.remove('picked-a', 'picked-b');
+      cardB.classList.remove('picked-a', 'picked-b');
+
+      if (choice === 'A') {
+        cardA.classList.add('picked-a');
+      } else {
+        cardB.classList.add('picked-b');
+      }
+      fb.style.display = 'block';
+    }
+
+    // 2. Section A Flow Toggle
+    function toggleFlow(card) {
+      card.classList.toggle('open');
+    }
+
+    // 3. Section C Toggle Vietnamese Translation
+    let isViVisible = false;
+    function toggleViTranslation() {
+      isViVisible = !isViVisible;
+      document.querySelectorAll('.builder-vi').forEach(el => {
+        el.style.display = isViVisible ? 'block' : 'none';
+      });
+    }
+
+    // 4. Section D Analyzer Logic
+    const msgRoles = {
+      greet: {
+        title: "① Greeting (Lời chào thân mật)",
+        desc: "Lời chào mở đầu tin nhắn bạn bè, dùng 'Hi Nam,'.",
+        cls: "active-greet"
+      },
+      body: {
+        title: "② Main Body (Nhận lời + Hỏi 2 thông tin)",
+        desc: "Gồm câu nhận lời ('That sounds great, count me in!') + 2 câu hỏi ('What time...' và 'do I need to...').",
+        cls: "active-body"
+      },
+      close: {
+        title: "③ Closing (Lời kết thân mật)",
+        desc: "Kết thúc tin nhắn tự nhiên trước khi ký tên: 'See you then!'.",
+        cls: "active-close"
+      },
+      sign: {
+        title: "④ Sign-off (Ký tên)",
+        desc: "Ký tên riêng 'Minh', không dùng họ đệm hay chức danh.",
+        cls: "active-sign"
+      }
+    };
+
+    function clearHotspots() {
+      document.querySelectorAll('.msg-hotspot').forEach(el => el.className = 'msg-hotspot');
+    }
+
+    function inspectSentence(el, role) {
+      clearHotspots();
+      const info = msgRoles[role];
+      if (info) {
+        el.classList.add(info.cls);
+        document.getElementById('analyzerFeedback').innerHTML = `
+          <div>
+            <strong style="color:var(--jade-dark); font-size:15.5px;">${info.title}</strong>
+            <p style="margin:3px 0 0; color:var(--ink-2);">${info.desc}</p>
+          </div>
+        `;
+      }
+    }
+
+    let autoTimer = null;
+    function startAutoAnalyze() {
+      const hotspots = Array.from(document.querySelectorAll('.msg-hotspot'));
+      let idx = 0;
+      const btn = document.getElementById('btnAutoAnalyze');
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳ Đang phân tích...</span>';
+
+      if (autoTimer) clearInterval(autoTimer);
+
+      function step() {
+        if (idx >= hotspots.length) {
+          clearInterval(autoTimer);
+          btn.disabled = false;
+          btn.innerHTML = '<span>↺ Chạy lại phân tích</span>';
+          return;
+        }
+        const el = hotspots[idx];
+        inspectSentence(el, el.dataset.role);
+        idx++;
+      }
+
+      step();
+      autoTimer = setInterval(step, 2400);
+    }
+
+    // 5. Section E Signal Toggle
+    function toggleSignal(pill) {
+      pill.classList.toggle('open');
+    }
+  </script>
+</body>
+
+</html>

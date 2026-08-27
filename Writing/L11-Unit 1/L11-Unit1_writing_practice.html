@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 — Writing: A Long and Healthy Life (Practice &amp; Production)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 1 - Writing - Part 2 & 3: Practice & Production (A Long and Healthy Life)",
+    "subject": "Tiếng Anh",
+    "grade": "11",
+    "objectives": [
+      "Nhận diện và phân loại đúng 4 thành phần của tin nhắn ngắn (Greeting, Accept, Ask for info, Closing, Sign-off)",
+      "Viết câu chức năng nhận lời mời và đặt 2 câu hỏi hỏi thông tin cần thiết",
+      "Viết tin nhắn ngắn hoàn chỉnh 35-45 từ đạt chuẩn Rubric 4 tiêu chí của AI Athena"
+    ],
+    "structure": [
+      { "id": "phase-0", "title": "Identify" },
+      { "id": "phase-1", "title": "Structure" },
+      { "id": "phase-2", "title": "Write" },
+      { "id": "phase-3", "title": "Production" },
+      { "id": "phase-4", "title": "Self-evaluation" }
+    ],
+    "athenaGuidance": "File Luyện tập & Đánh giá Writing Unit 1 Lớp 11 gồm 5 phần: Identify (Structure labelling 5 câu, Read & Extract bảng 4 ô), Structure (2 bài Passage Arrangement tap-to-order), Write (Functional writing 5 câu, Sentence building 6 câu, Guided writing 3 bài + 1 bài hỗ trợ giảm, Correct the mistake 6 lỗi, Write a message), Production Writing (Guided writing 2 bài + 3 bài Free Writing gửi AI Athena chấm 35-45 từ với Rubric 4 tiêu chí), và Self-evaluation (5 tiêu chí tự đánh giá)."
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Neutrals */
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+
+      /* Jade */
+      --jade: #3CA57A;
+      --jade-deep: #2A8167;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+
+      /* Sage */
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+
+      /* Accent */
+      --accent: #D96B27;
+      --accent-deep: #B85315;
+      --accent-text: #8E390A;
+      --accent-pale: #FCEBDD;
+
+      /* Semantic */
+      --correct: #2A8167;
+      --correct-bg: #DCEAE1;
+      --wrong: #A84B2C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+
+      --white: #FFFFFF;
+      --radius-lg: 20px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 8px 24px rgba(43, 43, 40, 0.08);
+      --shadow-lg: 0 14px 38px rgba(20, 67, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+      min-height: 100vh;
+    }
+
+    button,
+    a,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    /* TOP HEADER & PHASE NAV */
+    .practice-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--paper-line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-title-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--jade-dark);
+    }
+
+    .phase-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .phase-tab {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-2);
+      background: var(--cream-2);
+      border: 1px solid var(--paper-line);
+      white-space: nowrap;
+      transition: all 0.2s;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .phase-tab.active {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+      box-shadow: 0 2px 8px rgba(42, 129, 103, 0.25);
+    }
+
+    .phase-tab.completed::after {
+      content: "✓";
+      font-size: 12px;
+      color: var(--correct);
+      background: #fff;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .phase-tab.active.completed::after {
+      color: var(--jade-deep);
+    }
+
+    /* MAIN APP LAYOUT (DUAL PANE) */
+    .app-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 20px;
+      min-height: calc(100vh - 70px);
+    }
+
+    .mobile-view-bar {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 6px;
+      margin-bottom: 12px;
+      gap: 6px;
+    }
+
+    .view-btn {
+      flex: 1;
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      text-align: center;
+      background: var(--cream);
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .view-btn.active {
+      background: var(--jade-deep);
+      color: #fff;
+    }
+
+    /* LEFT PANE: REFERENCE PANE (4.8b) */
+    .ref-pane {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      position: sticky;
+      top: 80px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ref-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .ref-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ref-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .ref-tab-btn {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      background: var(--cream-2);
+      text-align: center;
+      min-height: 38px;
+    }
+
+    .ref-tab-btn.active {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+    }
+
+    .ref-content-box {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--ink);
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .steps-message-card {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-size: 14.5px;
+    }
+
+    .signals-mini-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sig-mini-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .sig-mini-item strong {
+      color: var(--jade-deep);
+    }
+
+    /* RIGHT PANE: EXERCISE WORKSPACE */
+    .exercise-workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .activity-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .activity-head {
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .activity-instruction {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      margin-bottom: 4px;
+    }
+
+    .activity-sub-instruction {
+      font-size: 14px;
+      color: var(--ink-3);
+      font-style: italic;
+    }
+
+    /* 1. Structure Labelling */
+    .sl-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sl-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+
+    .sl-sentence {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .sl-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+    }
+
+    .sl-opt-btn {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-2);
+      text-align: center;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+
+    .sl-opt-btn:hover {
+      border-color: var(--jade);
+      background: var(--cream-2);
+    }
+
+    .sl-opt-btn.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--correct);
+      font-weight: 700;
+    }
+
+    .sl-opt-btn.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+      font-weight: 700;
+    }
+
+    .sl-feedback {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      background: var(--cream-2);
+      color: var(--ink);
+    }
+
+    /* 2. Read & Extract Table */
+    .extract-table-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .extract-col-box {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .extract-label {
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    .extract-input {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--ink);
+      width: 100%;
+      min-height: 44px;
+    }
+
+    .extract-input:focus {
+      outline: none;
+      border-color: var(--jade);
+    }
+
+    /* 3. Passage Arrangement (Tap-to-order) */
+    .order-bank-wrap {
+      margin-bottom: 16px;
+    }
+
+    .order-bank-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-2);
+      margin-bottom: 8px;
+    }
+
+    .order-bank,
+    .order-placed-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 60px;
+      padding: 12px;
+      border-radius: var(--radius);
+    }
+
+    .order-bank {
+      background: var(--cream-2);
+    }
+
+    .order-placed-box {
+      background: var(--white);
+      border: 2px dashed var(--paper-line-2);
+      margin-bottom: 16px;
+    }
+
+    .order-tile {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--paper-line);
+      background: var(--white);
+      font-size: 15px;
+      color: var(--ink);
+      cursor: pointer;
+      min-height: 44px;
+      transition: border-color 0.2s;
+    }
+
+    .order-tile:hover {
+      border-color: var(--jade);
+    }
+
+    .order-tile.placed {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .order-placed-box .order-tile {
+      background: var(--jade-pale);
+      border-color: var(--jade-soft);
+      cursor: default;
+    }
+
+    .order-num-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--jade-deep);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* 4. Functional Writing */
+    .func-write-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .func-write-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+
+    .func-prompt {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .func-input-wrap {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .func-starter {
+      font-weight: 700;
+      color: var(--jade-dark);
+      white-space: nowrap;
+      font-size: 15px;
+    }
+
+    .func-input {
+      flex: 1;
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 14.5px;
+      color: var(--ink);
+      min-height: 44px;
+    }
+
+    /* 5. Sentence Building */
+    .sb-question-box {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .sb-answer-line {
+      min-height: 44px;
+      background: var(--white);
+      border: 1.5px dashed var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .sb-chips-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .word-chip {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.15s;
+    }
+
+    .word-chip:hover {
+      border-color: var(--jade);
+      background: var(--cream-2);
+    }
+
+    .word-chip.used {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .sb-chip-placed {
+      background: var(--jade-pale);
+      border: 1px solid var(--jade-soft);
+      color: var(--jade-text);
+      font-weight: 700;
+    }
+
+    /* 6. Error Correction */
+    .error-msg-box {
+      font-size: 16px;
+      line-height: 2.1;
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .error-tag {
+      background: var(--cream-3);
+      color: var(--accent-text);
+      font-weight: 800;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin: 0 4px;
+      cursor: pointer;
+      border: 1.5px solid var(--accent);
+      display: inline-block;
+      min-height: 32px;
+    }
+
+    .error-tag.fixed {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--correct);
+    }
+
+    /* Buttons */
+    .action-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .action-btn:hover { background: var(--jade-dark); }
+    .action-btn:disabled {
+      background: var(--cream-3);
+      color: var(--ink-faint);
+      cursor: not-allowed;
+      border: 1px solid var(--paper-line);
+    }
+
+    .ghost-btn {
+      background: var(--cream-2);
+      color: var(--ink-2);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      min-height: 44px;
+    }
+
+    .reveal-btn {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .reveal-btn:disabled {
+      background: var(--cream-2);
+      border: 1px solid var(--paper-line);
+      color: var(--ink-faint);
+      cursor: not-allowed;
+    }
+
+    /* Writing Textareas */
+    .writing-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--paper-line-2);
+      background: var(--white);
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: var(--ink);
+      resize: vertical;
+      margin-bottom: 6px;
+    }
+
+    .writing-textarea:focus {
+      outline: none;
+      border-color: var(--jade);
+    }
+
+    .word-counter-box {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Rubric & Self-check */
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+      margin-bottom: 12px;
+    }
+
+    .rubric-card {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .rubric-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-3);
+      text-transform: uppercase;
+    }
+
+    .rubric-score {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--jade-deep);
+      margin-top: 2px;
+    }
+
+    .rubric-desc {
+      font-size: 11.5px;
+      color: var(--ink-2);
+      margin-top: 3px;
+    }
+
+    .self-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--jade-deep);
+      cursor: pointer;
+      margin-top: 2px;
+    }
+
+    /* Overlay / Bottom Sheet */
+    .sheet-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+    }
+
+    .sheet-overlay.open {
+      display: flex;
+    }
+
+    .sheet-container {
+      background: #fff;
+      border-radius: 20px 20px 0 0;
+      padding: 24px;
+      width: 100%;
+      max-width: 580px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .sheet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .sheet-close-btn {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink-3);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream-2);
+    }
+
+    @media (min-width: 601px) {
+      .sheet-overlay { align-items: center; }
+      .sheet-container { border-radius: var(--radius-lg); }
+    }
+
+    /* Responsive Breakdown */
+    @media (max-width: 900px) {
+      .app-container { grid-template-columns: 1fr; }
+      .ref-pane { position: relative; top: 0; max-height: 320px; }
+      .mobile-view-bar { display: flex; }
+      .app-container.view-ref-only .ref-pane { display: flex; max-height: none; }
+      .app-container.view-ref-only .exercise-workspace { display: none; }
+      .app-container.view-ex-only .ref-pane { display: none; }
+      .app-container.view-ex-only .exercise-workspace { display: flex; }
+      .app-container.view-split .ref-pane { display: flex; max-height: 260px; }
+      .app-container.view-split .exercise-workspace { display: flex; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="practice-header">
+    <div class="header-inner">
+      <div class="header-title-area">
+        <span class="header-badge">Unit 1 · Writing</span>
+        <span class="header-title">Short Message Practice</span>
+      </div>
+
+      <!-- Phase Tabs Navigation -->
+      <nav class="phase-nav">
+        <button class="phase-tab active" id="tabPhase0" onclick="switchPhase(0)">1. Identify</button>
+        <button class="phase-tab" id="tabPhase1" onclick="switchPhase(1)">2. Structure</button>
+        <button class="phase-tab" id="tabPhase2" onclick="switchPhase(2)">3. Write</button>
+        <button class="phase-tab" id="tabPhase3" onclick="switchPhase(3)">4. Production</button>
+        <button class="phase-tab" id="tabPhase4" onclick="switchPhase(4)">5. Self-eval</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE VIEW TOGGLE BAR -->
+  <div class="wrap" style="padding-top: 10px;">
+    <div class="mobile-view-bar" id="mobileViewBar">
+      <button class="view-btn active" onclick="setMobileView('split')">📱 Chia đôi</button>
+      <button class="view-btn" onclick="setMobileView('ref')">📄 Tham chiếu</button>
+      <button class="view-btn" onclick="setMobileView('ex')">✍️ Làm bài</button>
+    </div>
+  </div>
+
+  <!-- MAIN DUAL PANE APP CONTAINER -->
+  <div class="app-container view-split" id="appContainer">
+
+    <!-- LEFT PANE: REFERENCE PANE -->
+    <aside class="ref-pane" id="refPane">
+      <div class="ref-header">
+        <span class="ref-title">📚 Reference Material</span>
+        <span style="font-size:12px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px;">Tra cứu</span>
+      </div>
+
+      <!-- Reference Tabs -->
+      <div class="ref-tabs" id="refTabsWrap">
+        <button class="ref-tab-btn active" id="btnRefPassage" onclick="switchRefTab('passage')">📄 Bài đọc Tin nhắn</button>
+        <button class="ref-tab-btn" id="btnRefSignals" onclick="switchRefTab('signals')">🔗 Bảng tín hiệu</button>
+      </div>
+
+      <!-- Ref Content Box -->
+      <div class="ref-content-box">
+        <!-- Tab 1: Steps Message -->
+        <div id="refPassageContent">
+          <div class="steps-message-card">
+            <h4 style="color:var(--jade-dark); margin-bottom:6px; font-size:14.5px;">💬 Daily Steps Challenge (Minh's Reply)</h4>
+            <p style="margin:0; line-height:1.7;">
+              Hi Nam, That sounds like a great idea, I'm in! How many steps do we need each day, and is there a group chat to track our progress? Talk to you soon! Minh
+            </p>
+            <div style="font-size:12px; color:var(--ink-3); text-align:right; margin-top:6px; font-style:italic;">(33 words)</div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Signal Words -->
+        <div id="refSignalsContent" style="display:none;">
+          <div class="signals-mini-list">
+            <div class="sig-mini-item"><strong>Accept:</strong> That sounds great, count me in! / I'd love to!</div>
+            <div class="sig-mini-item"><strong>Ask for info:</strong> What time...? / Do I need to...? / Where should we meet?</div>
+            <div class="sig-mini-item"><strong>Closing:</strong> See you then! / Talk to you soon! / Looking forward to it!</div>
+            <div class="sig-mini-item" style="color:var(--warning); background:var(--warning-bg); border-color:var(--warning);">
+              <strong>⚠️ Tránh:</strong> Dear..., Yours faithfully, I acknowledge...
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANE: EXERCISE WORKSPACE -->
+    <main class="exercise-workspace">
+
+      <!-- ================= PHASE 0: IDENTIFY ================= -->
+      <section class="phase-section" id="phase0Section">
+        
+        <!-- Activity 1: Structure Labelling -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 1: Structure Labelling</div>
+            <div class="activity-sub-instruction">Read the message in the reference pane and decide which part each sentence belongs to.</div>
+          </div>
+
+          <div class="sl-list" id="slList"></div>
+        </div>
+
+        <!-- Activity 2: Read & Extract -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 2: Read &amp; Extract</div>
+            <div class="activity-sub-instruction">Extract the key parts from the message into the table below.</div>
+          </div>
+
+          <div class="extract-table-grid">
+            <div class="extract-col-box">
+              <span class="extract-label">Accept (1)</span>
+              <input type="text" class="extract-input" id="ex1" placeholder="Câu nhận lời...">
+            </div>
+            <div class="extract-col-box">
+              <span class="extract-label">Ask info 1 (2)</span>
+              <input type="text" class="extract-input" id="ex2" placeholder="Câu hỏi 1...">
+            </div>
+            <div class="extract-col-box">
+              <span class="extract-label">Ask info 2 (3)</span>
+              <input type="text" class="extract-input" id="ex3" placeholder="Câu hỏi 2...">
+            </div>
+            <div class="extract-col-box">
+              <span class="extract-label">Closing (4)</span>
+              <input type="text" class="extract-input" id="ex4" placeholder="Câu kết...">
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <button class="action-btn" onclick="checkReadExtract()">✓ Kiểm tra bảng trích xuất</button>
+            <button class="reveal-btn" id="btnRevealExtract" disabled onclick="openModelAnswerSheet('extract-answer-template')">
+              🔒 Điền đủ các ô để mở đáp án
+            </button>
+          </div>
+          <div id="extractFeedback" style="display:none; margin-top:12px; font-size:14.5px; padding:12px; background:var(--cream-2); border-radius:var(--radius-sm);"></div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 1: STRUCTURE ================= -->
+      <section class="phase-section" id="phase1Section" style="display:none;">
+        
+        <!-- Activity 3: Passage Arrangement 1 -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 3: Message Arrangement (Sports Game)</div>
+            <div class="activity-sub-instruction">Tap sentences in the bank in the correct order to form a complete message.</div>
+          </div>
+
+          <div class="order-bank-wrap">
+            <div class="order-bank-label">📦 Sentence Bank:</div>
+            <div class="order-bank" id="orderBank1"></div>
+          </div>
+
+          <div class="order-bank-label">📝 Your Arranged Message:</div>
+          <div class="order-placed-box" id="orderPlaced1"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="ghost-btn" onclick="resetOrder(1)">↺ Làm lại</button>
+            <button class="action-btn" id="btnCheckOrder1" disabled onclick="checkOrder(1)">Kiểm tra thứ tự</button>
+          </div>
+          <div id="orderFeedback1" style="display:none; margin-top:12px; padding:12px; background:var(--cream-2); border-radius:var(--radius-sm); font-size:14.5px;"></div>
+        </div>
+
+        <!-- Activity 4: Passage Arrangement 2 -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 4: Message Arrangement (Cooking Workshop)</div>
+            <div class="activity-sub-instruction">Arrange sentences with indirect clues (e.g. pronoun "it").</div>
+          </div>
+
+          <div class="order-bank-wrap">
+            <div class="order-bank-label">📦 Sentence Bank:</div>
+            <div class="order-bank" id="orderBank2"></div>
+          </div>
+
+          <div class="order-bank-label">📝 Your Arranged Message:</div>
+          <div class="order-placed-box" id="orderPlaced2"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="ghost-btn" onclick="resetOrder(2)">↺ Làm lại</button>
+            <button class="action-btn" id="btnCheckOrder2" disabled onclick="checkOrder(2)">Kiểm tra thứ tự</button>
+          </div>
+          <div id="orderFeedback2" style="display:none; margin-top:12px; padding:12px; background:var(--cream-2); border-radius:var(--radius-sm); font-size:14.5px;"></div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 2: WRITE ================= -->
+      <section class="phase-section" id="phase2Section" style="display:none;">
+        
+        <!-- Activity 5: Functional Writing -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 5: Functional Writing</div>
+            <div class="activity-sub-instruction">Write a sentence to express each message below. Begin with the words given.</div>
+          </div>
+
+          <div class="func-write-list">
+            <div class="func-write-item">
+              <div class="func-prompt">1. You want to accept an invitation to a birthday party.</div>
+              <div class="func-input-wrap">
+                <span class="func-starter">I'd love to</span>
+                <input type="text" class="func-input" id="fn1" placeholder="come to your birthday party...">
+              </div>
+            </div>
+
+            <div class="func-write-item">
+              <div class="func-prompt">2. You want to ask what time you should arrive.</div>
+              <div class="func-input-wrap">
+                <span class="func-starter">What time</span>
+                <input type="text" class="func-input" id="fn2" placeholder="should I arrive?">
+              </div>
+            </div>
+
+            <div class="func-write-item">
+              <div class="func-prompt">3. You want to accept an invitation to go swimming.</div>
+              <div class="func-input-wrap">
+                <span class="func-starter">That sounds</span>
+                <input type="text" class="func-input" id="fn3" placeholder="great, I'd love to join!">
+              </div>
+            </div>
+
+            <div class="func-write-item">
+              <div class="func-prompt">4. You want to ask if you need to bring anything.</div>
+              <div class="func-input-wrap">
+                <span class="func-starter">Do I</span>
+                <input type="text" class="func-input" id="fn4" placeholder="need to bring anything?">
+              </div>
+            </div>
+
+            <div class="func-write-item">
+              <div class="func-prompt">5. You want to ask where you should meet someone.</div>
+              <div class="func-input-wrap">
+                <span class="func-starter">Where</span>
+                <input type="text" class="func-input" id="fn5" placeholder="should I meet you?">
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <button class="action-btn" onclick="checkFuncWriting()">✓ Kiểm tra câu chức năng</button>
+            <button class="reveal-btn" id="btnRevealFunc" disabled onclick="openModelAnswerSheet('model-func-answers')">
+              📖 Xem đáp án gợi ý
+            </button>
+          </div>
+          <div id="funcFeedback" style="display:none; margin-top:12px; padding:12px; background:var(--cream-2); border-radius:var(--radius-sm); font-size:14.5px;"></div>
+        </div>
+
+        <!-- Activity 6: Sentence Building -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 6: Sentence Building</div>
+            <div class="activity-sub-instruction">Tap word chips in order to construct complete informal message sentences.</div>
+          </div>
+
+          <div id="sbContainer"></div>
+        </div>
+
+        <!-- Activity 7: Guided Writing (Full Support - 3 Tasks) -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 7: Guided Writing (Full Support)</div>
+            <div class="activity-sub-instruction">Write a short message (35–45 words) replying to each invitation below.</div>
+          </div>
+
+          <!-- Task 1: Yoga -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:12px; font-size:14px;">
+            <strong>🧘 Bài 1 — Yoga class with Lan:</strong><br>
+            <em>"Hey Minh, I'm going to a yoga class this Sunday morning. Do you want to come with me?"</em><br>
+            • Include: Accept invitation + Ask what time it starts + Ask if you need a yoga mat.
+          </div>
+          <textarea class="writing-textarea" id="gwText1" placeholder="Hi Lan, That sounds great..." oninput="updateWordCount('gwText1', 'wcGw1', 12)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcGw1">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitSingleMessage('gwText1', 'btnRevGw1', 12)">✓ Submit Bài 1</button>
+            <button class="reveal-btn" id="btnRevGw1" disabled onclick="openModelAnswerSheet('model-gw-1')">
+              🔒 Viết ít nhất 12 từ để mở Model Answer
+            </button>
+          </div>
+
+          <!-- Task 2: Cooking -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-top:20px; margin-bottom:12px; font-size:14px;">
+            <strong>🥗 Bài 2 — Healthy cooking class with Nam:</strong><br>
+            <em>"Hey Minh, I'm trying out a new healthy cooking class this Friday evening. Want to join me?"</em><br>
+            • Include: Accept invitation + Ask what time it starts + Ask if you need ingredients.
+          </div>
+          <textarea class="writing-textarea" id="gwText2" placeholder="Hi Nam, That sounds great..." oninput="updateWordCount('gwText2', 'wcGw2', 12)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcGw2">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitSingleMessage('gwText2', 'btnRevGw2', 12)">✓ Submit Bài 2</button>
+            <button class="reveal-btn" id="btnRevGw2" disabled onclick="openModelAnswerSheet('model-gw-2')">
+              🔒 Viết ít nhất 12 từ để mở Model Answer
+            </button>
+          </div>
+
+          <!-- Task 3: Jogging -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-top:20px; margin-bottom:12px; font-size:14px;">
+            <strong>🏃 Bài 3 — Morning jogging with Lan:</strong><br>
+            <em>"Hey Minh, I'm joining a morning jogging group around the park every Sunday. Want to come along?"</em><br>
+            • Include: Accept invitation + Ask what time it meets + Ask about special shoes.
+          </div>
+          <textarea class="writing-textarea" id="gwText3" placeholder="Hi Lan, That sounds great..." oninput="updateWordCount('gwText3', 'wcGw3', 12)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcGw3">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitSingleMessage('gwText3', 'btnRevGw3', 12)">✓ Submit Bài 3</button>
+            <button class="reveal-btn" id="btnRevGw3" disabled onclick="openModelAnswerSheet('model-gw-3')">
+              🔒 Viết ít nhất 12 từ để mở Model Answer
+            </button>
+          </div>
+        </div>
+
+        <!-- Activity 8: Guided Writing (Reduced Support) -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 8: Guided Writing (Reduced Support) — Keywords Only</div>
+            <div class="activity-sub-instruction">Use the keywords below to write the Yoga reply without sentence starters (35–45 words).</div>
+          </div>
+
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:14px; font-size:14px;">
+            <strong>🔑 Keywords:</strong><br>
+            • Accept: <em>love to join</em><br>
+            • Ask info 1: <em>what time / class start</em><br>
+            • Ask info 2: <em>bring / own yoga mat</em>
+          </div>
+
+          <textarea class="writing-textarea" id="gwRedText" placeholder="Write your message here..." oninput="updateWordCount('gwRedText', 'wcGwRed', 12)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcGwRed">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitSingleMessage('gwRedText', 'btnRevGwRed', 12)">✓ Submit Bài Viết</button>
+            <button class="reveal-btn" id="btnRevGwRed" disabled onclick="openModelAnswerSheet('model-gw-1')">
+              🔒 Viết ít nhất 12 từ để mở Model Answer
+            </button>
+          </div>
+        </div>
+
+        <!-- Activity 9: Correct the Mistake -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 9: Correct the Mistake</div>
+            <div class="activity-sub-instruction">Find and correct 6 mistakes in the message. Tap each highlighted tag [1]–[6] to fix.</div>
+          </div>
+
+          <div class="error-msg-box">
+            Dear Lan, <span class="error-tag" id="errTag1" onclick="openErrorMCQ(1)">[1]</span> I acknowledge your invitation and will attend. <span class="error-tag" id="errTag2" onclick="openErrorMCQ(2)">[2]</span> What time does the class starts <span class="error-tag" id="errTag3" onclick="openErrorMCQ(3)">[3]</span>, and do I needs <span class="error-tag" id="errTag4" onclick="openErrorMCQ(4)">[4]</span> to bring my own yoga mat. <span class="error-tag" id="errTag5" onclick="openErrorMCQ(5)">[5]</span> Yours sincerely, <span class="error-tag" id="errTag6" onclick="openErrorMCQ(6)">[6]</span> Minh
+          </div>
+        </div>
+
+        <!-- Activity 10: Write a Message -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 10: Write a Message (5km Fun Run for Charity)</div>
+            <div class="activity-sub-instruction">Reply to Nam's invitation to join a 5km charity run this Sunday (35–45 words).</div>
+          </div>
+
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:12px; font-size:14px;">
+            <em>"Hey Minh! I'm joining a 5km fun run for charity this Sunday morning. Want to join me?"</em>
+          </div>
+
+          <textarea class="writing-textarea" id="writeMsgText" placeholder="Hi Nam, That sounds great..." oninput="updateWordCount('writeMsgText', 'wcWriteMsg', 12)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcWriteMsg">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitSingleMessage('writeMsgText', 'btnRevWriteMsg', 12)">✓ Submit Bài Viết</button>
+            <button class="reveal-btn" id="btnRevWriteMsg" disabled onclick="openModelAnswerSheet('model-msg-indep')">
+              🔒 Viết ít nhất 12 từ để mở Model Answer
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 3: PRODUCTION ================= -->
+      <section class="phase-section" id="phase3Section" style="display:none;">
+        
+        <!-- Guided Production: 2 Tasks -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Production 1: Guided Writing (2 Tasks)</div>
+            <div class="activity-sub-instruction">Reply to the situations below following the short message structure (35–45 words).</div>
+          </div>
+
+          <!-- Prod Task 1 -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:12px; font-size:14px;">
+            <strong>💪 Task 1 — Motivation meetup with Nam:</strong><br>
+            <em>"Hey Minh, I know it's been hard for you lately... I'm going to a weekend meetup where a trainer talks about how to stay motivated. Want to come with me?"</em><br>
+            • Include: Accept invitation + Ask what time it starts + Ask if you need to sign up.
+          </div>
+          <textarea class="writing-textarea" id="prodGwText1" placeholder="Hi Nam, Thank you so much..." oninput="updateWordCount('prodGwText1', 'wcProdGw1', 12)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcProdGw1">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitSingleMessage('prodGwText1', 'btnRevProdGw1', 12)">✓ Submit Task 1</button>
+            <button class="reveal-btn" id="btnRevProdGw1" disabled onclick="openModelAnswerSheet('model-prod-1')">
+              🔒 Mở Model Answer &amp; Self-Check
+            </button>
+          </div>
+
+          <!-- Prod Task 2 -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-top:20px; margin-bottom:12px; font-size:14px;">
+            <strong>🩺 Task 2 — Free health check-up camp with Lan:</strong><br>
+            <em>"Hey Minh, I'm going to a free health check-up camp at the community centre this Saturday. Want to come with me?"</em><br>
+            • Include: Accept invitation + Ask what time it starts + Ask if you need health insurance card.
+          </div>
+          <textarea class="writing-textarea" id="prodGwText2" placeholder="Hi Lan, That sounds like a great idea..." oninput="updateWordCount('prodGwText2', 'wcProdGw2', 12)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcProdGw2">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitSingleMessage('prodGwText2', 'btnRevProdGw2', 12)">✓ Submit Task 2</button>
+            <button class="reveal-btn" id="btnRevProdGw2" disabled onclick="openModelAnswerSheet('model-prod-2')">
+              🔒 Mở Model Answer &amp; Self-Check
+            </button>
+          </div>
+        </div>
+
+        <!-- Free Writing: 3 Tasks for Athena AI -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Production 2: Free Writing (Submit to AI Athena)</div>
+            <div class="activity-sub-instruction">Choose and write replies to the invitations below (35–45 words each). Submitted directly for AI evaluation.</div>
+          </div>
+
+          <!-- FW 1 -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:12px; font-size:14px;">
+            <strong>🌱 FW1 — Healthy people sharing session:</strong><br>
+            <em>"Hi! Our class is having a sharing session about people around us who live a healthy life. Do you want to come and share your story too?"</em>
+          </div>
+          <textarea class="writing-textarea" id="fw1Text" placeholder="Write your reply to FW1 here..." oninput="updateWordCount('fw1Text', 'wcFw1', 10)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcFw1">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitAthenaWriting('fw1Text', 'fbFw1', 'gridFw1', 'commFw1')">✓ Nộp bài FW1 cho Athena chấm</button>
+          </div>
+          <div id="fbFw1" style="display:none; margin-bottom:24px;">
+            <div class="rubric-grid" id="gridFw1"></div>
+            <div id="commFw1" style="background:var(--cream-2); border-radius:var(--radius-sm); padding:12px; font-size:14px; color:var(--ink-2);"></div>
+          </div>
+
+          <!-- FW 2 -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-top:20px; margin-bottom:12px; font-size:14px;">
+            <strong>🥤 FW2 — New healthy juice bar:</strong><br>
+            <em>"Hey! There's a new juice bar that opened near school with really healthy smoothies. Want to check it out with me after school?"</em>
+          </div>
+          <textarea class="writing-textarea" id="fw2Text" placeholder="Write your reply to FW2 here..." oninput="updateWordCount('fw2Text', 'wcFw2', 10)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcFw2">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitAthenaWriting('fw2Text', 'fbFw2', 'gridFw2', 'commFw2')">✓ Nộp bài FW2 cho Athena chấm</button>
+          </div>
+          <div id="fbFw2" style="display:none; margin-bottom:24px;">
+            <div class="rubric-grid" id="gridFw2"></div>
+            <div id="commFw2" style="background:var(--cream-2); border-radius:var(--radius-sm); padding:12px; font-size:14px; color:var(--ink-2);"></div>
+          </div>
+
+          <!-- FW 3 -->
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-top:20px; margin-bottom:12px; font-size:14px;">
+            <strong>🚴 FW3 — Weekend cycling trip:</strong><br>
+            <em>"A few of us are going cycling around the lake this weekend to stay fit. Would you like to join us?"</em>
+          </div>
+          <textarea class="writing-textarea" id="fw3Text" placeholder="Write your reply to FW3 here..." oninput="updateWordCount('fw3Text', 'wcFw3', 10)"></textarea>
+          <div class="word-counter-box">
+            <span id="wcFw3">0 từ (Mục tiêu: 35–45 từ)</span>
+            <button class="action-btn" onclick="submitAthenaWriting('fw3Text', 'fbFw3', 'gridFw3', 'commFw3')">✓ Nộp bài FW3 cho Athena chấm</button>
+          </div>
+          <div id="fbFw3" style="display:none;">
+            <div class="rubric-grid" id="gridFw3"></div>
+            <div id="commFw3" style="background:var(--cream-2); border-radius:var(--radius-sm); padding:12px; font-size:14px; color:var(--ink-2);"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 4: SELF-EVALUATION ================= -->
+      <section class="phase-section" id="phase4Section" style="display:none;">
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Phase 5: Self-evaluation &amp; Finale</div>
+            <div class="activity-sub-instruction">Tick all criteria you feel confident with after finishing this Short Message unit.</div>
+          </div>
+
+          <div class="self-checklist">
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can identify the parts of a short message (<em>Greeting / Main body / Closing / Sign-off</em>).</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can use suitable expressions to accept an invitation enthusiastically.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can ask for information using appropriate question forms (asking exactly 2 details).</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can write a complete short message accepting an invitation and asking for information.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>My message reaches the required word count (35–45 words) and uses an appropriately informal tone.</span>
+            </label>
+          </div>
+
+          <div id="selfEvalDoneBox" style="display:none; margin-top:20px; text-align:center; padding:20px; background:var(--jade-pale); border-radius:var(--radius);">
+            <div style="font-size:32px;">🎉</div>
+            <h3 style="color:var(--jade-dark); margin:8px 0;">Congratulations! You've completed Unit 1 Writing!</h3>
+            <p style="color:var(--ink-2); font-size:15px; margin:0;">You have mastered how to write friendly, well-structured short messages.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- OVERLAY BOTTOM-SHEET POPUP (Model Answer / Error MCQ) -->
+  <div class="sheet-overlay" id="model-answer-popup" onclick="closeModelAnswerSheet()">
+    <div class="sheet-container" onclick="event.stopPropagation()">
+      <div class="sheet-header">
+        <h3 id="sheetTitle" style="font-size:17px; color:var(--jade-dark);">Model Answer</h3>
+        <button class="sheet-close-btn" onclick="closeModelAnswerSheet()">✕</button>
+      </div>
+      <div id="sheetContent" style="font-size:15px; line-height:1.7; color:var(--ink);"></div>
+    </div>
+  </div>
+
+  <!-- TEMPLATES (Hidden in DOM) -->
+  <div style="display:none;">
+    <!-- Extract Answer Key -->
+    <div id="extract-answer-template">
+      <h4 style="color:var(--jade-dark); margin-bottom:10px;">Đáp án gợi ý bảng trích xuất:</h4>
+      <ul style="padding-left:20px; line-height:1.8;">
+        <li><strong>(1) Accept:</strong> That sounds like a great idea, I'm in!</li>
+        <li><strong>(2) Ask info 1:</strong> How many steps do we need each day?</li>
+        <li><strong>(3) Ask info 2:</strong> Is there a group chat to track our progress?</li>
+        <li><strong>(4) Closing:</strong> Talk to you soon!</li>
+      </ul>
+      <p style="color:var(--ink-2); font-style:italic; font-size:13.5px; margin-top:8px;">
+        💡 Lưu ý: Bài mẫu hỏi 2 thông tin trong 1 câu ghép bằng "and" — khi trích xuất tách thành 2 câu hỏi riêng.
+      </p>
+    </div>
+
+    <!-- Functional Writing Answers -->
+    <div id="model-func-answers">
+      <h4 style="color:var(--jade-dark); margin-bottom:10px;">Đáp án gợi ý câu chức năng:</h4>
+      <ol style="padding-left:20px; line-height:1.8;">
+        <li><strong>1.</strong> I'd love to come to your birthday party.</li>
+        <li><strong>2.</strong> What time should I arrive?</li>
+        <li><strong>3.</strong> That sounds great, I'd love to join!</li>
+        <li><strong>4.</strong> Do I need to bring anything?</li>
+        <li><strong>5.</strong> Where should I meet you?</li>
+      </ol>
+    </div>
+
+    <!-- Model GW 1 (Yoga) -->
+    <div id="model-gw-1">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Yoga Class with Lan</h4>
+      <p style="background:var(--cream); padding:14px; border-radius:10px; border:1px solid var(--paper-line);">
+        Hi Lan, That sounds great, I'd love to join! I've been wanting to try yoga for a while. What time does the class start, and do I need to bring my own yoga mat? Talk to you soon! Minh
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right;">(39 words)</div>
+    </div>
+
+    <!-- Model GW 2 (Cooking) -->
+    <div id="model-gw-2">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Healthy Cooking with Nam</h4>
+      <p style="background:var(--cream); padding:14px; border-radius:10px; border:1px solid var(--paper-line);">
+        Hi Nam, That sounds great, I'd love to join! I've been wanting to try cooking healthier meals for a while. What time does the class start, and do I need to bring any ingredients? See you then! Minh
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right;">(38 words)</div>
+    </div>
+
+    <!-- Model GW 3 (Jogging) -->
+    <div id="model-gw-3">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Morning Jogging with Lan</h4>
+      <p style="background:var(--cream); padding:14px; border-radius:10px; border:1px solid var(--paper-line);">
+        Hi Lan, That sounds great, count me in! I've been wanting to get more exercise on weekends. What time does the group meet, and do I need any special shoes? Talk to you soon! Minh
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right;">(35 words)</div>
+    </div>
+
+    <!-- Model Message Indep (5km Run) -->
+    <div id="model-msg-indep">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — 5km Charity Fun Run</h4>
+      <p style="background:var(--cream); padding:14px; border-radius:10px; border:1px solid var(--paper-line);">
+        Hi Nam, That sounds great, count me in! I've been wanting to do a charity run for a while. What time does it start, and where should we meet? See you then! Minh
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right;">(34 words)</div>
+    </div>
+
+    <!-- Model Prod 1 (Motivation Meetup) -->
+    <div id="model-prod-1">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Motivation Meetup</h4>
+      <p style="background:var(--cream); padding:14px; border-radius:10px; border:1px solid var(--paper-line);">
+        Hi Nam, Thank you so much for telling me about this. I've found it hard to stay motivated lately, so I'd love to come. What time does the meetup start, and do I need to sign up before going? See you there! Minh
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right; margin-bottom:12px;">(43 words)</div>
+      <div style="border-top:1px dashed var(--paper-line-2); padding-top:10px; font-size:13.5px;">
+        <strong>Self-Check:</strong><br>
+        ✓ Có Accept rõ ràng<br>
+        ✓ Đủ 2 câu hỏi (giờ bắt đầu &amp; đăng ký trước)<br>
+        ✓ Văn phong thân mật phù hợp
+      </div>
+    </div>
+
+    <!-- Model Prod 2 (Health Check-up) -->
+    <div id="model-prod-2">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Health Check-Up Camp</h4>
+      <p style="background:var(--cream); padding:14px; border-radius:10px; border:1px solid var(--paper-line);">
+        Hi Lan, That sounds like a great idea, count me in! I've been meaning to get a check-up for a while. What time does the camp start, and do I need to bring my health insurance card? Talk to you soon! Minh
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right; margin-bottom:12px;">(42 words)</div>
+      <div style="border-top:1px dashed var(--paper-line-2); padding-top:10px; font-size:13.5px;">
+        <strong>Self-Check:</strong><br>
+        ✓ Có Accept rõ ràng<br>
+        ✓ Đủ 2 câu hỏi (giờ bắt đầu &amp; mang thẻ bảo hiểm)<br>
+        ✓ Văn phong thân mật phù hợp
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // 1. Phase Switching
+    let currentPhase = 0;
+    function switchPhase(p) {
+      currentPhase = p;
+      document.querySelectorAll('.phase-tab').forEach((tab, i) => {
+        tab.classList.toggle('active', i === p);
+      });
+      document.querySelectorAll('.phase-section').forEach((sec, i) => {
+        sec.style.display = i === p ? 'block' : 'none';
+      });
+
+      const btnRefPassage = document.getElementById('btnRefPassage');
+      if (p >= 2) {
+        btnRefPassage.style.display = 'none';
+        switchRefTab('signals');
+      } else {
+        btnRefPassage.style.display = 'block';
+        switchRefTab('passage');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 2. Reference Pane Tabs
+    function switchRefTab(tabName) {
+      document.getElementById('btnRefPassage').classList.toggle('active', tabName === 'passage');
+      document.getElementById('btnRefSignals').classList.toggle('active', tabName === 'signals');
+      document.getElementById('refPassageContent').style.display = tabName === 'passage' ? 'block' : 'none';
+      document.getElementById('refSignalsContent').style.display = tabName === 'signals' ? 'block' : 'none';
+    }
+
+    // 3. Mobile View Toggle
+    function setMobileView(viewMode) {
+      const container = document.getElementById('appContainer');
+      container.className = `app-container view-${viewMode}`;
+      document.querySelectorAll('.view-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', (viewMode === 'split' && i === 0) || (viewMode === 'ref' && i === 1) || (viewMode === 'ex' && i === 2));
+      });
+    }
+
+    // ================= ACTIVITY 1 (STRUCTURE LABELLING) =================
+    const slQuestions = [
+      {
+        sentence: '1. "Hi Nam,"',
+        ans: "A",
+        explain: "Lời chào thân mật mở đầu tin nhắn → Greeting."
+      },
+      {
+        sentence: '2. "That sounds like a great idea, I\'m in!"',
+        ans: "B",
+        explain: "Thể hiện sự đồng ý, nhận lời tham gia hào hứng → Accept the invitation."
+      },
+      {
+        sentence: '3. "How many steps do we need each day, and is there a group chat to track our progress?"',
+        ans: "C",
+        explain: "Đặt 2 câu hỏi để biết thêm thông tin cần thiết → Ask for information."
+      },
+      {
+        sentence: '4. "Talk to you soon!"',
+        ans: "D",
+        explain: "Lời kết thân mật khép lại tin nhắn trước khi ký tên → Closing."
+      },
+      {
+        sentence: '5. "Minh"',
+        ans: "E",
+        explain: "Tên riêng của người viết → Sign-off."
+      }
+    ];
+
+    const slOptions = [
+      { key: "A", text: "Greeting" },
+      { key: "B", text: "Accept" },
+      { key: "C", text: "Ask for info" },
+      { key: "D", text: "Closing" },
+      { key: "E", text: "Sign-off" }
+    ];
+
+    function renderSL() {
+      const container = document.getElementById('slList');
+      container.innerHTML = slQuestions.map((q, idx) => `
+        <div class="sl-item" id="slItem-${idx}">
+          <div class="sl-sentence">${esc(q.sentence)}</div>
+          <div class="sl-options" id="slOpts-${idx}">
+            ${slOptions.map(opt => `
+              <button class="sl-opt-btn" data-key="${opt.key}">${opt.key}. ${opt.text}</button>
+            `).join('')}
+          </div>
+          <div class="sl-feedback" id="slFb-${idx}"></div>
+        </div>
+      `).join('');
+
+      slQuestions.forEach((q, idx) => {
+        const btns = document.querySelectorAll(`#slOpts-${idx} .sl-opt-btn`);
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('correct', 'wrong'));
+            const isCorrect = btn.dataset.key === q.ans;
+            btn.classList.add(isCorrect ? 'correct' : 'wrong');
+            const fb = document.getElementById(`slFb-${idx}`);
+            fb.style.display = 'block';
+            fb.innerHTML = `<strong>${isCorrect ? '✓ Chính xác!' : '✗ Chưa đúng!'}</strong> ${q.explain}`;
+          });
+        });
+      });
+    }
+    renderSL();
+
+    // ================= ACTIVITY 2 (READ & EXTRACT) =================
+    function checkReadExtract() {
+      const ids = ['ex1', 'ex2', 'ex3', 'ex4'];
+      const filled = ids.filter(id => document.getElementById(id).value.trim().length > 0).length;
+      const fb = document.getElementById('extractFeedback');
+      const btnRev = document.getElementById('btnRevealExtract');
+
+      fb.style.display = 'block';
+      if (filled === ids.length) {
+        fb.innerHTML = `<strong style="color:var(--correct);">✓ Đã điền đủ 4 ô!</strong> Bạn có thể mở đáp án đối chiếu để tự kiểm tra.`;
+        btnRev.disabled = false;
+        btnRev.textContent = "📖 Xem đáp án gợi ý bảng";
+      } else {
+        fb.innerHTML = `<strong style="color:var(--warning);">Bạn đã điền ${filled}/4 ô.</strong> Hãy thử điền đầy đủ trước khi mở đáp án nhé!`;
+      }
+    }
+
+    // ================= ACTIVITY 3 & 4 (PASSAGE ARRANGEMENT) =================
+    const orderData = {
+      1: {
+        chunks: [
+          { id: 'A', text: 'So, what time does the game start, and where should I meet you?' },
+          { id: 'B', text: 'Hi Minh,' },
+          { id: 'C', text: 'See you soon!' },
+          { id: 'D', text: 'That sounds like fun, count me in!' },
+          { id: 'E', text: 'Lan' }
+        ],
+        correct: ['B', 'D', 'A', 'C', 'E'],
+        explain: "<strong>Thứ tự chuẩn B → D → A → C → E:</strong><br>• B là Greeting mở đầu.<br>• D là câu nhận lời (Accept).<br>• A dùng 'So,' quy chiếu lại việc vừa nhận lời ở D để hỏi tiếp 2 câu.<br>• C là Closing.<br>• E là Sign-off."
+      },
+      2: {
+        chunks: [
+          { id: 'A', text: 'Looking forward to it!' },
+          { id: 'B', text: 'Hi Lan,' },
+          { id: 'C', text: "I'd love to join you for the workshop." },
+          { id: 'D', text: 'What time does it start, and do I need to bring my own apron?' },
+          { id: 'E', text: 'Nam' }
+        ],
+        correct: ['B', 'C', 'D', 'A', 'E'],
+        explain: "<strong>Thứ tự chuẩn B → C → D → A → E:</strong><br>• B là Greeting.<br>• C là Accept ('the workshop').<br>• D dùng đại từ 'it' quy chiếu lại 'the workshop' ở C để hỏi thông tin.<br>• A là Closing.<br>• E là Sign-off."
+      }
+    };
+
+    let placedOrders = { 1: [], 2: [] };
+
+    function renderOrderBank(num) {
+      const bank = document.getElementById(`orderBank${num}`);
+      const data = orderData[num];
+      const shuffled = [...data.chunks].sort(() => Math.random() - 0.5);
+      bank.innerHTML = '';
+      shuffled.forEach(c => {
+        const el = document.createElement('div');
+        el.className = 'order-tile';
+        el.dataset.id = c.id;
+        el.innerHTML = `<strong>${c.id}.</strong> <span>${esc(c.text)}</span>`;
+        el.addEventListener('click', () => placeChunk(num, c.id, el));
+        bank.appendChild(el);
+      });
+    }
+
+    function placeChunk(num, id, el) {
+      el.classList.add('placed');
+      placedOrders[num].push(id);
+      const c = orderData[num].chunks.find(x => x.id === id);
+      const placedBox = document.getElementById(`orderPlaced${num}`);
+
+      const tile = document.createElement('div');
+      tile.className = 'order-tile';
+      tile.innerHTML = `<span class="order-num-badge">${placedOrders[num].length}</span> <span>${esc(c.text)}</span>`;
+      placedBox.appendChild(tile);
+
+      document.getElementById(`btnCheckOrder${num}`).disabled = (placedOrders[num].length !== orderData[num].chunks.length);
+    }
+
+    function resetOrder(num) {
+      placedOrders[num] = [];
+      document.getElementById(`orderPlaced${num}`).innerHTML = '';
+      document.getElementById(`btnCheckOrder${num}`).disabled = true;
+      document.getElementById(`orderFeedback${num}`).style.display = 'none';
+      renderOrderBank(num);
+    }
+
+    function checkOrder(num) {
+      const data = orderData[num];
+      const isCorrect = JSON.stringify(placedOrders[num]) === JSON.stringify(data.correct);
+      const fb = document.getElementById(`orderFeedback${num}`);
+      fb.style.display = 'block';
+      fb.innerHTML = `
+        <strong style="color:${isCorrect ? 'var(--correct)' : 'var(--wrong)'}; font-size:15.5px;">
+          ${isCorrect ? '🎉 Chính xác hoàn toàn!' : '⚠️ Thứ tự chưa chính xác!'}
+        </strong>
+        <p style="margin:6px 0 0;">${data.explain}</p>
+      `;
+    }
+
+    renderOrderBank(1);
+    renderOrderBank(2);
+
+    // ================= ACTIVITY 5 (FUNCTIONAL WRITING) =================
+    function checkFuncWriting() {
+      const ids = ['fn1', 'fn2', 'fn3', 'fn4', 'fn5'];
+      const filled = ids.filter(id => document.getElementById(id).value.trim().length > 0).length;
+      const fb = document.getElementById('funcFeedback');
+      const btnRev = document.getElementById('btnRevealFunc');
+
+      fb.style.display = 'block';
+      if (filled === ids.length) {
+        fb.innerHTML = `<strong style="color:var(--correct);">✓ Đã hoàn thành 5/5 câu!</strong> Bấm nút xem đáp án để đối chiếu gợi ý.`;
+        btnRev.disabled = false;
+      } else {
+        fb.innerHTML = `<strong style="color:var(--warning);">Bạn đã viết ${filled}/5 câu.</strong> Hãy hoàn thành hết các câu nhé!`;
+      }
+    }
+
+    // ================= ACTIVITY 6 (SENTENCE BUILDING) =================
+    const sbData = [
+      { words: ["That", "sounds", "great,", "count", "me", "in!"], raw: ["count", "That", "sounds", "in!", "great,", "me"] },
+      { words: ["What", "time", "should", "we", "meet?"], raw: ["we", "What", "meet?", "time", "should"] },
+      { words: ["Do", "I", "need", "to", "bring", "anything?"], raw: ["anything?", "Do", "bring", "I", "to", "need"] },
+      { words: ["See", "you", "then!"], raw: ["then!", "See", "you"] },
+      { words: ["I'd", "love", "to", "join", "you!"], raw: ["you!", "I'd", "join", "to", "love"] },
+      { words: ["Talk", "to", "you", "soon!"], raw: ["soon!", "Talk", "you", "to"] }
+    ];
+
+    let userSb = {};
+
+    function renderSB() {
+      const container = document.getElementById('sbContainer');
+      container.innerHTML = sbData.map((item, idx) => `
+        <div class="sb-question-box" id="sbBox-${idx}">
+          <div style="font-weight:700; font-size:13.5px; margin-bottom:5px; color:var(--ink-2);">Câu ${idx + 1}:</div>
+          <div class="sb-answer-line" id="sbLine-${idx}"></div>
+          <div class="sb-chips-bank" id="sbBank-${idx}"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <button class="ghost-btn" style="padding:4px 10px; min-height:34px; font-size:12.5px;" onclick="resetSB(${idx})">↺ Xếp lại</button>
+            <span id="sbFb-${idx}" style="font-size:13.5px; font-weight:700;"></span>
+          </div>
+        </div>
+      `).join('');
+
+      sbData.forEach((item, idx) => {
+        userSb[idx] = [];
+        const bank = document.getElementById(`sbBank-${idx}`);
+        const shuffled = [...item.raw].sort(() => Math.random() - 0.5);
+
+        shuffled.forEach(text => {
+          const chip = document.createElement('button');
+          chip.className = 'word-chip';
+          chip.textContent = text;
+          chip.addEventListener('click', () => {
+            chip.classList.add('used');
+            userSb[idx].push(text);
+            renderPlacedChips(idx);
+            checkSB(idx);
+          });
+          bank.appendChild(chip);
+        });
+      });
+    }
+
+    function renderPlacedChips(idx) {
+      const line = document.getElementById(`sbLine-${idx}`);
+      line.innerHTML = '';
+      userSb[idx].forEach(t => {
+        const s = document.createElement('span');
+        s.className = 'word-chip sb-chip-placed';
+        s.textContent = t;
+        line.appendChild(s);
+      });
+    }
+
+    function resetSB(idx) {
+      userSb[idx] = [];
+      document.getElementById(`sbLine-${idx}`).innerHTML = '';
+      document.querySelectorAll(`#sbBank-${idx} .word-chip`).forEach(c => c.classList.remove('used'));
+      document.getElementById(`sbFb-${idx}`).textContent = '';
+    }
+
+    function checkSB(idx) {
+      if (userSb[idx].length === sbData[idx].words.length) {
+        const isMatch = userSb[idx].join(' ') === sbData[idx].words.join(' ');
+        const fb = document.getElementById(`sbFb-${idx}`);
+        fb.innerHTML = isMatch
+          ? '<span style="color:var(--correct);">✓ Chính xác!</span>'
+          : '<span style="color:var(--wrong);">✗ Chưa đúng thứ tự!</span>';
+      }
+    }
+    renderSB();
+
+    // ================= ACTIVITY 9 (ERROR CORRECTION) =================
+    const errData = {
+      1: {
+        q: '"Dear Lan,"',
+        opts: ["Dear Lan, → Hi Lan,", "Dear Lan, → Dearest Lan,", "Dear Lan, → Hello Mrs Lan,", "No change needed"],
+        ans: 0,
+        explain: "Lời chào 'Dear Lan,' quá trang trọng cho tin nhắn thân mật giữa bạn bè → sửa thành 'Hi Lan,'."
+      },
+      2: {
+        q: '"I acknowledge your invitation and will attend."',
+        opts: [
+          "I acknowledge... → That sounds great, I'd love to join!",
+          "I acknowledge... → I officially accept your message.",
+          "I acknowledge... → I confirm my arrival.",
+          "No change needed"
+        ],
+        ans: 0,
+        explain: "Câu nhận lời gốc viết theo văn phong hành chính → sửa thành câu thân mật 'That sounds great, I'd love to join!'."
+      },
+      3: {
+        q: '"...What time does the class starts..."',
+        opts: ["the class starts → the class start", "the class starts → the class starting", "the class starts → the class to start", "No change needed"],
+        ans: 0,
+        explain: "Sau trợ động từ 'does', động từ chính 'start' phải giữ nguyên mẫu không chia."
+      },
+      4: {
+        q: '"...and do I needs to bring..."',
+        opts: ["do I needs → do I need", "do I needs → do I needed", "do I needs → do I needing", "No change needed"],
+        ans: 0,
+        explain: "Sau trợ động từ 'do', động từ chính 'need' giữ nguyên mẫu."
+      },
+      5: {
+        q: '"...bring my own yoga mat." (Dấu câu cuối câu)',
+        opts: [
+          'Change the full stop "." to a question mark "?"',
+          'Add an exclamation mark "!"',
+          'Remove the full stop',
+          'No change needed'
+        ],
+        ans: 0,
+        explain: "Đây là câu hỏi ('What time... and do I need...?') nên cuối câu bắt buộc dùng dấu hỏi chấm '?'."
+      },
+      6: {
+        q: '"Yours sincerely,"',
+        opts: ["Yours sincerely, → Talk to you soon!", "Yours sincerely, → Yours faithfully,", "Yours sincerely, → Best regards,", "No change needed"],
+        ans: 0,
+        explain: "Cách kết 'Yours sincerely,' quá trang trọng cho tin nhắn → sửa thành 'Talk to you soon!' hoặc 'See you then!'."
+      }
+    };
+
+    function openErrorMCQ(errNum) {
+      const data = errData[errNum];
+      const sheet = document.getElementById('model-answer-popup');
+      document.getElementById('sheetTitle').textContent = `Sửa lỗi [${errNum}]`;
+      const content = document.getElementById('sheetContent');
+
+      content.innerHTML = `
+        <div style="background:var(--cream); padding:12px; border-radius:8px; margin-bottom:14px; font-weight:600;">
+          ${esc(data.q)}
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;" id="errOptList">
+          ${data.opts.map((opt, i) => `
+            <button class="sl-opt-btn" style="text-align:left; justify-content:flex-start; padding:10px 14px;" data-idx="${i}">
+              ${esc(opt)}
+            </button>
+          `).join('')}
+        </div>
+        <div id="errMcqFb" style="display:none; margin-top:12px; padding:10px 12px; border-radius:8px; background:var(--cream-2); font-size:14px;"></div>
+      `;
+
+      sheet.classList.add('open');
+
+      const btns = content.querySelectorAll('#errOptList .sl-opt-btn');
+      btns.forEach((b, i) => {
+        b.addEventListener('click', () => {
+          btns.forEach(x => x.classList.remove('correct', 'wrong'));
+          const isCorrect = (i === data.ans);
+          b.classList.add(isCorrect ? 'correct' : 'wrong');
+          const fb = document.getElementById('errMcqFb');
+          fb.style.display = 'block';
+          fb.innerHTML = `<strong>${isCorrect ? '✓ Hoàn toàn chính xác!' : '✗ Chưa đúng!'}</strong> ${data.explain}`;
+          if (isCorrect) {
+            document.getElementById(`errTag${errNum}`).classList.add('fixed');
+          }
+        });
+      });
+    }
+
+    // ================= WRITING CONTROLS & GATED REVEAL (1.18) =================
+    function updateWordCount(textareaId, counterId, minWords) {
+      const text = document.getElementById(textareaId).value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      document.getElementById(counterId).textContent = `${count} từ (Mục tiêu: 35–45 từ)`;
+    }
+
+    function submitSingleMessage(textareaId, revealBtnId, minWords) {
+      const text = document.getElementById(textareaId).value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      const btn = document.getElementById(revealBtnId);
+
+      if (count >= minWords) {
+        btn.disabled = false;
+        btn.textContent = "📖 Xem Model Answer";
+        alert("✓ Tin nhắn đã được ghi nhận! Nút Model Answer đã mở khoá.");
+      } else {
+        alert(`Bạn cần viết thêm ít nhất ${minWords - count} từ nữa trước khi nộp để mở Model Answer nhé!`);
+      }
+    }
+
+    function submitAthenaWriting(textId, fbId, gridId, commId) {
+      const text = document.getElementById(textId).value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+
+      if (count < 15) {
+        alert("Vui lòng viết tối thiểu 15 từ để AI Athena có thể phân tích tin nhắn của bạn nhé!");
+        return;
+      }
+
+      const fbWrap = document.getElementById(fbId);
+      fbWrap.style.display = 'block';
+
+      const scores = { task: 4, org: 4, lang: 3, length: 4 };
+      const labels = {
+        task: "1. Task Achievement",
+        org: "2. Organisation",
+        lang: "3. Language Use",
+        length: "4. Length & Fluency"
+      };
+      const descs = {
+        task: "Nhận lời + hỏi đủ 2 thông tin",
+        org: "Đủ 4 phần Greeting/Body/Closing/Sign-off",
+        lang: "Ngữ pháp chuẩn, văn phong thân mật",
+        length: "Đạt 35–45 từ, tự nhiên"
+      };
+
+      document.getElementById(gridId).innerHTML = Object.entries(scores).map(([k, v]) => `
+        <div class="rubric-card">
+          <div class="rubric-name">${labels[k]}</div>
+          <div class="rubric-score">${v}<small style="font-size:12px; color:var(--ink-3);">/4</small></div>
+          <div class="rubric-desc">${descs[k]}</div>
+        </div>
+      `).join('');
+
+      document.getElementById(commId).innerHTML = `
+        <strong>Nhận xét từ AI Athena:</strong><br>
+        Tin nhắn của bạn rất tự nhiên, đáp ứng hoàn hảo yêu cầu nhận lời mời và hỏi thêm thông tin với văn phong thân thiện, đúng chuẩn bạn bè. Rất tốt!
+      `;
+      fbWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // ================= SELF EVALUATION FINALE =================
+    function checkAllSelfEval() {
+      const checkboxes = document.querySelectorAll('.self-checklist input[type="checkbox"]');
+      const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+      document.getElementById('selfEvalDoneBox').style.display = allChecked ? 'block' : 'none';
+      if (allChecked) {
+        document.getElementById('tabPhase4').classList.add('completed');
+      }
+    }
+
+    // ================= BOTTOM SHEET HELPER =================
+    function openModelAnswerSheet(templateId) {
+      const sheet = document.getElementById('model-answer-popup');
+      const template = document.getElementById(templateId);
+      if (template) {
+        document.getElementById('sheetTitle').textContent = "Model Answer / Gợi ý";
+        document.getElementById('sheetContent').innerHTML = template.innerHTML;
+        sheet.classList.add('open');
+      }
+    }
+
+    function closeModelAnswerSheet() {
+      document.getElementById('model-answer-popup').classList.remove('open');
+    }
+  </script>
+</body>
+
+</html>
