@@ -229,30 +229,36 @@
       min-height: calc(100vh - 70px);
     }
 
-    /* Mobile View Toggle Bar */
+    /* MOBILE VIEW TOGGLE BAR */
+    .mobile-view-bar-wrap {
+      display: none;
+    }
+
     .mobile-view-bar {
       display: none;
       background: var(--white);
-      border: 1px solid var(--paper-line);
-      border-radius: var(--radius);
-      padding: 6px;
-      margin-bottom: 12px;
-      gap: 6px;
+      border: 1.5px solid var(--paper-line);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+      box-shadow: var(--shadow);
     }
 
     .view-btn {
       flex: 1;
-      padding: 8px;
-      border-radius: var(--radius-sm);
-      font-size: 13px;
+      text-align: center;
+      padding: 6px 8px;
+      border-radius: 999px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--ink-2);
-      text-align: center;
-      background: var(--cream);
-      min-height: 40px;
-      display: flex;
+      min-height: 34px;
+      white-space: nowrap;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 4px;
+      transition: all 0.2s ease;
     }
 
     .view-btn.active {
@@ -279,18 +285,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
       margin-bottom: 12px;
       padding-bottom: 10px;
       border-bottom: 1.5px solid var(--cream-2);
     }
 
     .ref-title {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 800;
       color: var(--jade-dark);
       display: flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
     }
 
     .ref-tabs {
@@ -908,16 +916,18 @@
     @media (max-width: 900px) {
       .app-container {
         grid-template-columns: 1fr;
-        padding-top: 4px;
+        padding: 12px 16px 24px;
+        gap: 14px;
       }
       .mobile-view-bar-wrap {
+        display: block;
         position: sticky;
         top: 0;
         z-index: 95;
         background: var(--cream);
-        padding: 6px 16px;
-        height: 52px;
+        padding: 8px 16px;
         box-sizing: border-box;
+        border-bottom: 1px solid var(--paper-line);
         transition: transform 0.25s ease, opacity 0.2s ease;
       }
       .mobile-view-bar-wrap.nav-hidden {
@@ -966,7 +976,7 @@
       .app-container.view-split .ref-pane {
         display: flex;
         position: sticky;
-        top: 54px;
+        top: 68px;
         z-index: 90;
         max-height: 320px;
         box-shadow: 0 10px 28px rgba(20, 67, 47, 0.16);
@@ -974,6 +984,7 @@
         animation: fadeIn 0.25s ease;
         transition: top 0.25s ease;
         padding: 14px 16px;
+        margin-bottom: 8px;
       }
       .app-container.view-split .ref-header {
         margin-bottom: 8px;
@@ -988,15 +999,33 @@
         font-size: 13px;
       }
       .app-container.view-split .ref-pane.bar-hidden {
-        top: 6px;
+        top: 8px;
       }
       .app-container.view-split .ref-pane.collapsed {
+        position: sticky;
+        top: 68px;
+        z-index: 90;
         max-height: 52px;
         overflow: hidden;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1.5px solid var(--paper-line);
+        box-shadow: 0 4px 14px rgba(20, 67, 47, 0.12);
+        background: var(--white);
+        margin-bottom: 8px;
+        transition: top 0.25s ease;
+      }
+      .app-container.view-split .ref-pane.collapsed.bar-hidden {
+        top: 8px;
+      }
+      .app-container.view-split .ref-pane.collapsed .ref-header {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
       }
       .app-container.view-split .ref-pane.collapsed .ref-tabs,
       .app-container.view-split .ref-pane.collapsed .ref-content-box {
-        display: none;
+        display: none !important;
       }
       .app-container.view-split .exercise-workspace { display: flex; }
 
@@ -1044,9 +1073,9 @@
     <aside class="ref-pane" id="refPane">
       <div class="ref-header">
         <span class="ref-title">📚 Reference Material</span>
-        <div style="display:flex; align-items:center; gap:6px;">
-          <span style="font-size:12px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px;">Tra cứu</span>
-          <button class="ghost-btn" id="btnToggleCollapse" style="padding:2px 8px; min-height:30px; font-size:12px;" onclick="toggleRefCollapse()" title="Thu gọn / Mở rộng">↕ Thu gọn</button>
+        <div style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+          <span style="font-size:11.5px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px; white-space:nowrap;">Tra cứu</span>
+          <button class="ghost-btn" id="btnToggleCollapse" style="padding:2px 8px; min-height:28px; font-size:11.5px; font-weight:700; color:var(--ink-2); background:var(--cream-2); border:1px solid var(--paper-line); border-radius:6px; white-space:nowrap; cursor:pointer;" onclick="toggleRefCollapse()" title="Thu gọn / Mở rộng">↕ Thu gọn</button>
         </div>
       </div>
 
@@ -1517,9 +1546,18 @@
         btn.classList.toggle('active', (viewMode === 'split' && i === 0) || (viewMode === 'ref' && i === 1) || (viewMode === 'ex' && i === 2));
       });
 
+      const refPane = document.getElementById('refPane');
+      const btnCollapse = document.getElementById('btnToggleCollapse');
+
+      if (viewMode === 'split') {
+        if (refPane && refPane.classList.contains('collapsed')) {
+          refPane.classList.remove('collapsed');
+          if (btnCollapse) btnCollapse.textContent = '↕ Thu gọn';
+        }
+      }
+
       const mobileBar = document.querySelector('.mobile-view-bar-wrap');
       if (mobileBar) mobileBar.classList.remove('nav-hidden');
-      const refPane = document.getElementById('refPane');
       if (refPane) refPane.classList.remove('bar-hidden');
 
       // Khi bấm Tham chiếu, tự động cuộn mượt lên đầu phần tra cứu ngay lập tức
