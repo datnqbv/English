@@ -96,7 +96,7 @@ D. First reason supporting the writer's opinion, with an example and an explanat
 
 Giải thích: Đoạn 1 nêu hiện tượng + quan điểm → Introduction. Đoạn 2 dùng "To begin with," → First reason. Đoạn 3 dùng "Furthermore," (không lặp "In addition,") → Second reason. Đoạn 4 có "In conclusion," và thừa nhận ý kiến trái chiều trước khi chốt quan điểm — kỹ thuật nâng cao hơn Lớp 11.
 
-> 🎨 **Thiết kế:** match — mỗi đoạn 1 thẻ, 4 mô tả A-D dạng thẻ rời, kéo/chạm nối cặp. Nút **Submit** chủ động — bấm mới hiện đúng/sai + giải thích, khóa Next tới khi Submit hợp lệ.
+> 🎨 **Thiết kế:** match — mỗi đoạn 1 thẻ, 4 mô tả A-D dạng thẻ rời, kéo/chạm nối cặp. Nút **Submit** (`submitAndUnlock`) chủ động — bấm mới hiện đúng/sai + giải thích, khóa Next tới khi Submit hợp lệ.
 > 📱 **Mobile:** chạm-chọn thay kéo-thả, xếp dọc.
 
 ## [Identify · Read & Extract]
@@ -115,7 +115,7 @@ Read the same essay above and complete the table.
 4. Recording daily routines documents traditional skills and customs that might otherwise be forgotten
 5. Future generations will still have access to this knowledge
 
-> 🎨 **Thiết kế:** 5 ô input. Nút **Submit** — chỉ bấm được khi đủ 5 ô, bấm mới hiện đáp án.
+> 🎨 **Thiết kế:** 5 ô input. Nút **Submit** (`submitAndUnlock`) — chỉ bấm được khi đủ 5 ô, bấm mới hiện đáp án.
 > 📱 **Mobile:** bảng đổi thành thẻ dọc.
 
 ---
@@ -173,7 +173,7 @@ Rewrite each sentence using a MORE SOPHISTICATED connector (avoid First of all/I
 3. On one hand, some people think schools should encourage students to join in these festivals; on the other hand, others disagree.
 4. Overall, I think festivals should be enjoyed in moderation.
 
-> 🎨 **Thiết kế:** 4 ô input, mỗi câu 1 ô. Nút **Submit** — mở khi đủ 4 ô có nội dung. Bấm mới hiện đáp án gợi ý.
+> 🎨 **Thiết kế:** 4 ô input, mỗi câu 1 ô. Nút **Submit** (`submitAndUnlock`) — mở khi đủ 4 ô có nội dung. Bấm mới hiện đáp án gợi ý.
 > 📱 **Mobile:** input auto-grow.
 
 ## [Write · Guided Writing — hỗ trợ đầy đủ]
@@ -203,7 +203,7 @@ Task: Write an opinion essay answering the question below.
 >
 > *(≈189 words — cần đếm lại chính xác bằng script khi xuất Word, Mục 11)*
 
-> 🎨 **Thiết kế:** 4 ô điền chỗ trống. Nút **Submit** — mở khi đủ 4 ô có nội dung. Bấm mới hiện Model answer.
+> 🎨 **Thiết kế:** 4 ô điền chỗ trống. Nút **Submit** (`submitAndUnlock`) — mở khi đủ 4 ô có nội dung. Bấm mới hiện Model answer qua `openModelAnswerSheet()`.
 > 📱 **Mobile:** Model answer dạng bottom-sheet.
 
 ## [Write · Guided Writing — hỗ trợ giảm]
@@ -231,7 +231,7 @@ Task: Use the keywords below to write the same essay — this time without sente
 
 *(Target: 180-200 words.)*
 
-> 🎨 **Thiết kế:** 1 textarea trống hoàn toàn. Nút **Submit** — mở khi đã gõ đủ ~30-50% số từ mục tiêu (90-100 từ). Bấm mới hiện Model answer.
+> 🎨 **Thiết kế:** 1 textarea trống hoàn toàn. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (90-100 từ). Bấm mới hiện Model answer qua `openModelAnswerSheet()`.
 > 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ## [Write · Improve the paragraph]
@@ -269,7 +269,7 @@ Task: Write a COMPLETE opinion essay giving your opinion on the question below.
 >
 > *(≈193 words — cần đếm lại chính xác bằng script, Mục 11)*
 
-> 🎨 **Thiết kế:** textarea trống, word counter trực tiếp. Nút **Submit** — mở khi đã gõ đủ ~30-50% số từ mục tiêu. Bấm mới hiện Model answer.
+> 🎨 **Thiết kế:** textarea trống, word counter trực tiếp. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu. Bấm mới hiện Model answer qua `openModelAnswerSheet()`.
 > 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ---
@@ -310,7 +310,7 @@ Task: Write a COMPLETE opinion essay giving your opinion on the question below.
 - Có dùng connector đa dạng (không lặp First of all/In addition) không?
 - Conclusion có thừa nhận ý kiến trái chiều trước khi chốt quan điểm không?
 
-> 🎨 **Thiết kế:** khung điền chỗ trống, textarea auto-grow. Nút **Submit** — mở khi đã gõ đủ ~30-50% số từ mục tiêu (54-60 từ). Bấm mới hiện Model answer, sau đó hiện Self-check ngay dưới.
+> 🎨 **Thiết kế:** khung điền chỗ trống, textarea auto-grow. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (54-60 từ). Bấm mới hiện Model answer qua `openModelAnswerSheet()`, sau đó hiện Self-check ngay dưới.
 > 📱 **Mobile:** Model answer + Self-check dạng bottom-sheet.
 
 ## Free Writing — gửi Athena chấm (khái quát hoá từ Part 3)
@@ -349,7 +349,9 @@ Task: Write a COMPLETE opinion essay giving your opinion on the question below.
 
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: build/test ở khung ≤480px trước khi mở rộng desktop.
-- File Practice (PHẦN 2 — gồm Part 2 + Part 3) không cần Reference Pane — mỗi bài tập dùng chủ đề/tư liệu độc lập, không cần tra lại nội dung PHẦN 1.
+- File Practice (PHẦN 2 — gồm Part 2 + Part 3) **BẮT BUỘC có Practice Reference Pane** (đã sửa lỗi ghi sai "không cần" ở bản trước — Writing không thuộc diện ngoại lệ bỏ Reference Pane, xem `PROMPT_TEMPLATE_WRITING` Mục 0 v8.0). Chia đôi màn hình: desktop 2 cột trái/phải, mobile 2 khối trên/dưới có 3 nút chuyển chế độ xem (⚖️ Chia đôi / 🔍 Bài đọc / 📝 Câu hỏi) + nút "Gom lại" (⟨⟨). **Mapping tab theo từng phase (đã sửa lại — KHÔNG giữ "Bài mẫu Part 1" xuyên suốt như bản trước):**
+  - **Identify + Structure:** 2 tab — **Tab "📄 Bài đọc"** (dùng lại ĐÚNG bài "village life on social media" — bài đọc chính của Identify, KHÔNG phải bài mẫu Part 1 vốn viết về world festivals) + **Tab "🔗 Bảng tín hiệu"** (Bảng tín hiệu nhận diện — bản mở rộng Mastery).
+  - **Write + Production (Part 3):** bỏ hẳn tab Bài đọc, **CHỈ còn Tab "🔗 Bảng tín hiệu"** — vì từ đây học sinh tự viết, không còn bài đọc cụ thể để đối chiếu.
 - File Lesson (PHẦN 1) kết thúc tự nhiên sau Bảng tín hiệu — không có nút/link sang File Practice.
 - File Practice bắt đầu tự nhiên từ Identify — không có nút "Quay lại Bài học".
 - **Lưu ý chủ đề quan trọng:** Hook + [Identify · Structure labelling] + [Identify · Read & Extract] vẫn dùng chủ đề "village life on social media" (không đổi). TOÀN BỘ các bài còn lại (Sentence Building, Guided Writing x2, Improve the paragraph, Write opinion essay, và cả Part 3) đã đổi sang đúng chủ đề "world festivals" theo Syllabus/SGK. Bên build không tự ý đổi lẫn lộn 2 chủ đề.
@@ -360,4 +362,4 @@ Task: Write a COMPLETE opinion essay giving your opinion on the question below.
 ### Ghi chú cho Giai đoạn 2 (Design)
 - Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), 9.17 (Gated Reveal cho mọi nút "Xem model answer").
 - Cơ chế 4-nút highlight (kế thừa từ Unit 2 Lớp 11/Unit 1 Lớp 12) — Unit này không dùng lại cơ chế đó ở mục D vì Part 1 đã rút gọn (Mastery), không có bài mẫu phân tích chi tiết riêng.
-- Luyện tập (PHẦN 2) không cần Reference Pane — ghi rõ để bên build không tự thêm.
+- Luyện tập (PHẦN 2) **BẮT BUỘC có Practice Reference Pane** — xem đúng mapping theo từng phase ở dòng đầu tiên phía trên, không giữ tab Bài đọc xuyên suốt cả Write/Production.

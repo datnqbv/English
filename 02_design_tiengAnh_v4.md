@@ -1,154 +1,7 @@
-# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v3.4
+# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v3.7
 
-> **v3.4** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
-> **Mới ở v3.4 (2 sửa đổi từ QA thật `L10-unit2_writing_practice.html`):**
-> 1. **Mục 4.8b — chuẩn hoá lại Speaking KHÔNG dùng nút nổi "Quick Recap" nữa:** đổi thành "Recap"
->    là 1 TAB trong Reference Pane (giống hệt cấu trúc Writing), vai trò tương đương Signal Words —
->    ghi đè mô tả nút nổi ở v3.3 (mô tả đó dựa theo kịch bản cũ, nay đã đổi chuẩn).
-> 2. **Mục 4.8b — thêm cảnh báo lỗi thật:** Reference Pane không cuộn được trên mobile, hiển thị
->    thành 1 khối dài vô hạn — nguyên nhân do build thiếu `display:flex; flex-direction:column` trên
->    `.practice-ref-pane` VÀ thiếu override `.pref-body { max-height:calc(38vh - 55px) }` riêng cho
->    mobile. Thêm checklist QA phải rà đúng 2 dòng CSS này, không chỉ nhìn qua `max-height:38vh`.
->
-> **Mới ở v3.3 (đối chiếu trực tiếp 3 file kịch bản Speaking thật — Unit 3/4/5 Lớp 10 — để chốt
-> đúng cấu trúc Recap, thay cho 2 lần suy đoán sai liên tiếp ở v3.2):**
-> 1. **Mục 4.8b — sửa lại chính xác khối "CHỐT RANH GIỚI PHẠM VI":** Speaking có 2 component TÁCH
->    BIỆT cùng tồn tại song song — (a) Practice Reference Pane 2-3 tab (💬 Transcript / 🧠 Functional
->    Language / tuỳ Unit thêm 1 tab tham chiếu khác), và (b) **Quick Recap — nút NỔI độc lập, KHÔNG
->    nằm trong Reference Pane**, mở bất kỳ lúc nào, nội dung là bản gộp/rút gọn của Functional
->    Language + outline liên quan — đúng vai trò tương đương Signal Words bên Writing, chỉ khác cách
->    hiển thị (nút nổi thay vì tab cố định). Không liên quan Mục 9.13 (đã kiểm tra: cả 3 file Speaking
->    không dùng popup 💡 nào).
->
-> **Mới ở v3.2 (chốt ranh giới phạm vi — tránh lặp lại kiểu lỗi "sửa đúng chỗ này lại làm sai chỗ
-> khác" đã xảy ra liên tiếp ở v2.9-v3.1; bản đầu của mục này cũng bị sửa sai 1 lần, đã đính chính):**
-> 1. **Mục 4.8b — thêm khối "CHỐT RANH GIỚI PHẠM VI":** quy tắc mapping tab theo phase (Identify/
->    Structure có Bài đọc, Write/Production chỉ còn Signal Words) CHỈ áp dụng cho Writing — không
->    suy diễn sang Speaking. Đính chính quan trọng: **"Recap" bên Speaking là TÊN TAB trong Reference
->    Pane, đóng vai trò tương đương "Signal Words" bên Writing** (cấu trúc bài nói để tham khảo) —
->    KHÔNG phải popup 💡 (Mục 9.13, 1 component khác, trùng tên gọi nhưng khác bản chất). Chưa suy
->    diễn thêm mapping chi tiết của Speaking nếu chưa đối chiếu trực tiếp file Speaking thật.
->
-> **Mới ở v3.1 (sửa hiểu nhầm thật — 4 kịch bản Writing liên tiếp giữ nhầm tab "Bài mẫu Part 1"
-> xuyên suốt cả Write/Production, đúng ra tab bài đọc chỉ ở Identify/Structure và phải là bài đọc
-> CỦA CHÍNH phase đó, không phải bài mẫu Part 1):**
-> 1. **Mục 4.8b — viết lại rõ ràng quy tắc tab Reference Pane cho Writing:** tab bài đọc CHỈ tồn tại
->    ở Identify + Structure (dùng bài đọc của chính phase đó, KHÔNG phải bài mẫu Part 1); từ Write
->    trở đi CHỈ còn Signal Words; Functional Language tách tab riêng CHỈ khi Unit coi đây là thành
->    phần lớn/quan trọng (không mặc định). Có ví dụ mapping tham khảo theo đúng style Unit 2 Lớp 10.
->
-> **Mới ở v3.0 (yêu cầu bổ sung — nút "Gom lại" cho Reference Pane, áp dụng cả mobile lẫn desktop):**
-> 1. **Mục 4.8b — thêm nút collapse `⟨⟨` trong `.pref-head`:** tắt hẳn Reference Pane (khác 3 nút
->    mpc-btn trên mobile vốn chỉ đổi tỉ lệ, không tắt hẳn), dùng 1 class `.ref-collapsed` chung cho
->    cả 2 breakpoint — desktop câu hỏi chiếm full width, mobile ẩn cả Reference Pane lẫn thanh
->    mpc-btn. Có nút nổi "📄 Xem lại bài mẫu" để mở lại bất cứ lúc nào, không mất trạng thái tab.
-> 2. **Tỉ lệ mobile mode-split giữ nguyên 38vh/62vh** — xác nhận lại sau khi rà soát, KHÔNG đổi
->    thành 40vh/60vh như đã thử ở bản nháp trước đó.
->
-> **Mới ở v2.9 (đúc kết từ lỗi thật — `L10-unit1_writing_practice_v2.html` mất hẳn tab Signal Words
-> trong Reference Pane so với bản Unit 2 cũ, do áp nhầm luật của Reading sang Writing):**
-> 1. **Mục 4.8b — thêm ngoại lệ riêng cho Writing:** luật "Reading Passage → chỉ 1 pane, bỏ hẳn
->    `.pref-tabs`" CHỈ áp dụng cho Reading/Speaking. Writing luôn cần tối thiểu 2 tab (bài mẫu +
->    Signal Words/Functional Language) — tab Signal Words phải có mặt ở MỌI phase, không được rút
->    gọn theo luật single-pane của Reading. Đây chính là khối "Quick Reference/Recap" bị mất.
->
-> **Mới ở v2.8 (đúc kết từ QA sản phẩm thật `L10-unit2_writing_lesson.html` — header lệch màu/thiếu khối, thiếu component Mindmap cho Writing Unit 5 Lớp 10):**
-> 1. **Mục 4.2 — siết lại spec Header, không còn là gợi ý lỏng:** file thật bị lệch 3 điểm so với spec
->    cũ — màu subtitle dùng nhầm `var(--cream)` thay vì `var(--sage)`; `h1` dùng
->    `clamp(28px,5.2vw,44px)` thay vì đúng `clamp(28px,5vw,46px)`; và thay hẳn 2 khối bắt buộc
->    `.characters` (thẻ nhân vật) + `.objectives` (mục tiêu bài học dạng pill đánh số) bằng
->    `.tag-row`/`.head-tag` (badge chủ đề chung chung, không có trong thư viện component). Từ giờ
->    Mục 4.2 ghi rõ ĐÂU LÀ BẮT BUỘC (không được thay thế bằng thành phần tự chế) và giá trị CSS chính
->    xác cần copy nguyên văn, không diễn giải lại.
-> 2. **Component mới 4.15c — Mindmap:** sơ đồ tư duy phân tầng (trung tâm ẩn/lật → nhánh → node lá,
->    node lá có thể gắn tag 🔧 tra cứu Functional Language), dùng cho Writing khi kịch bản cần bước
->    brainstorm trước khi viết với độ hỗ trợ giảm dần qua nhiều lần xuất hiện trong cùng 1 Unit.
->
-> **Mới ở v2.7 (đúc kết từ QA Writing Unit 2 Lớp 12 — mọi Activity viết bài dùng Submit tường minh):**
-> 1. **Mục 9.17 — bổ sung biến thể "Submit tường minh cho textarea tự do":** trước đây Submit tường
->    minh chỉ có 1 dạng (check "đã điền đủ mọi ô trong 1 group" — hợp bảng điền như Read & Extract),
->    chưa có dạng cho 1 ô textarea tự do kèm ngưỡng số từ. Bổ sung hàm mới để dùng khi giáo viên muốn
->    MỌI Activity viết đoạn (không chỉ Activity chặn bước tiếp theo) đều bắt học sinh bấm Submit thay
->    vì tự mở khoá qua sự kiện `input`.
-> 2. **Mục 9.17 — định nghĩa rõ khung hiển thị Model answer sau khi mở khoá:** trước đây code mẫu gọi
->    `onclick="openPopup(...)"` nhưng hàm này chưa từng được định nghĩa ở đâu. Từ giờ Model answer tái
->    dùng đúng pattern overlay bottom-sheet đã có ở Mục 1.14 (file engine) — không viết component mới.
-> 3. **Component mới 4.15b — Write Hint:** khối 💡 hint tĩnh hiển thị TRƯỚC khi học sinh viết, dùng cho
->    Writing khi bảng scaffold không đủ tự giải thích (VD Guided Writing hỗ trợ giảm không có sentence
->    starter, Independent Writing không có bảng gợi ý). Khác Mục 9.2 (Mục 9.2 chỉ cấm hint cho MCQ).
-> 4. **Mục 1 — bổ sung hướng dẫn "màu accent cục bộ theo Unit":** cách khai báo custom property CSS
->    chỉ scope trong 1 component/khối minh hoạ cụ thể, không đụng bảng token toàn cục.
->
-> **Mới ở v2.6:**
-> 1. **Component mới 4.24 — Timeline Infographic:** mốc thời gian dạng node dọc, BẮT BUỘC cho bài
->    mẫu phân tích (mục D) thuộc thể loại tường thuật theo thời gian (Biography, Blog post) — thay
->    Region Highlight (4.23, chỉ dùng cho thể loại KHÔNG có trục thời gian như Opinion essay). Đúc
->    kết từ lỗi thật: 1 bài Biography (Marie Curie, Writing Unit 1 Lớp 12) vay mượn nhầm cơ chế
->    Region Highlight của Opinion essay, bỏ lỡ điểm mạnh chuỗi mốc thời gian của thể loại.
-> 2. **Mục 4.23 — bổ sung bullet 5:** làm rõ ranh giới không dùng Region Highlight cho thể loại có
->    trục thời gian thật.
->
-> **Mới ở v2.5:**
-> 1. **Component mới 4.23 — Region Highlight:** nhãn bấm tô sáng 1 vùng lớn (đoạn/nhóm câu), loại
->    trừ lẫn nhau — dùng cho bài mẫu Opinion essay (Introduction/Reason 1/Reason 2/Conclusion), khác
->    Interactive Analyzer vốn tô từng câu riêng lẻ. Giải quyết câu hỏi mở treo lại từ kịch bản Writing
->    Unit 2 Lớp 11 ("cơ chế 4-nút highlight — cần xác nhận component trước khi build").
->
-> **Mới ở v2.4:**
-> 1. **Nguyên tắc 15 (mới, Mục 0):** heading/tiêu đề LUÔN tiếng Anh trước, tiếng Việt nhỏ hơn đặt
->    sau (`.vi-sub`/`.vi-sub-light`/dấu gạch ngang tuỳ ngữ cảnh) — kèm quy tắc nội dung bài tập
->    (đề bài, tên Activity) mặc định 100% tiếng Anh.
-> 2. **Nguyên tắc 16 (mới, Mục 0):** Structure/Sequence Labelling — thứ tự câu hỏi không được trùng
->    thứ tự xuất hiện trong bài mẫu gốc (mở rộng Nguyên tắc 13).
-> 3. **Mục 4.6 — cảnh báo kỹ thuật mới:** lỗi nút MCQ không bấm được do nhúng text có dấu nháy đơn
->    (VD "school's") vào thuộc tính `onclick=""` — bắt buộc dùng `addEventListener`, áp dụng cho mọi
->    component tự render nút từ text tự do (không riêng MCQ).
-> 4. **Mục 9.17 — bổ sung biến thể Submit tường minh:** dùng khi Activity đó cũng là điều kiện mở
->    khoá bước/phase tiếp theo, thay vì chỉ auto-gate qua sự kiện `input`.
->
-> **Mới ở v2.3:**
-> 1. **Mục 9.17 (mới) — Gated Reveal:** chuẩn hoá nút "Xem model answer/Xem đáp án gợi ý" cho Writing
->    & bài tự luận (khác Mục 9.2 vốn chỉ dành cho MCQ/trắc nghiệm có đúng/sai) — nút luôn bắt đầu
->    `disabled`, chỉ mở khoá sau khi học sinh gõ đủ % số từ mục tiêu hoặc điền đủ toàn bộ ô trống.
-> 2. **Checklist 9.15 — bổ sung:** heading/`athena-context.structure.title` luôn tiếng Anh trước
->    (bản Việt đặt trong `.vi-sub` nếu cần); mọi ô viết đoạn hoàn chỉnh phải có Gated Reveal hoặc
->    luồng Nộp bài AI (9.6) — không để activity viết bài xong rồi không có phản hồi gì.
->
-> **Mới ở v2.2:**
-> 1. **Component mới 4.21 — Idea Diagram (sơ đồ cây phát triển ý, gốc→nhánh→lá, 4 mức hỗ trợ):**
->    dùng cho bài brainstorm ý theo cấu trúc phân tầng trước khi viết/nói (Writing Suggestion &
->    Benefits paragraph...). Dựng thuần bằng CSS Flexbox, KHÔNG dùng SVG/toạ độ JS để vẽ đường nối
->    (dễ vỡ khi mobile xoay màn hình/bàn phím ảo đẩy layout) — xem Mục 4.21.
-> 2. **Component mới 4.22 — Auto-collapse Theory Block:** đoạn lý thuyết dài tự gom lại thành thanh
->    tiêu đề gọn khi học sinh chuyển sang phần tiếp theo, bấm lại để mở xem lại — áp dụng cho mọi
->    khối lý thuyết dài (Khung tổng quát, Đi sâu từng phần, Phân tích bài mẫu...). Xem Nguyên tắc 14
->    (Mục 0) và Mục 4.22.
-> 3. **Engine 1.17 (file `03_engine_tiengAnh.md`) — Typewriter + Growing Diagram:** hiệu ứng gõ chữ
->    dần + Idea Diagram "mọc" thêm 1 cấp, dùng cho demo GV/AI dẫn dắt tuần tự trước khi học sinh tự
->    làm. Mở rộng từ Progressive Reveal có sẵn (Mục 1.7), không phải component tách rời.
->
-> **v2.1:**
-> 1. **Component mới 4.20 — Guided Noticing (ô gõ tự do, tự đối chiếu đáp án):** dùng cho bước
->    "học sinh tự tìm cụm từ chức năng ngôn ngữ trong hội thoại mẫu trước khi xem bảng đầy đủ"
->    (Menu B ở Speaking, đã dùng lặp lại từ Unit 4 trở đi). Học sinh gõ tự do vào ô input, KHÔNG
->    auto-chấm đúng/sai — bấm nút "Hiện đáp án" để tự đối chiếu. Xem Mục 4.20, checklist bổ sung
->    ở Mục 9.15.
->
-> **Mới ở v2.0:**
-> 1. **Bỏ hẳn Task bar/`#progress-tracker`** — xoá toàn bộ code ở Mục 4.1 cũ, thay bằng ghi chú
->    deprecate; dọn mọi tham chiếu còn sót ở Mục 3, Mục 5, Mục 7, Mục 8.
-> 2. **Bỏ nút/link điều hướng giữa File Lesson và File Practice khi tách 2 file** (mặc định) — xem
->    Mục 8.2 mục 2/3 cập nhật. Hành vi trong-trang `goToPractice()` ở Mục 4.8 chỉ còn áp dụng cho
->    trường hợp gộp 1 file (ngoại lệ chủ động).
-> 3. **Nguyên tắc 12 (mới, Mục 0):** giọng đọc bắt buộc `en-GB`; quy tắc chống lặp pattern ở cấp nội
->    dung soạn bài cho MCQ trọng âm/Cloze/Matching, không chỉ dựa vào random vị trí hiển thị.
->
-> **v1.9:** thêm component 4.19 Vietnamese Translation Toggle (nút bật/tắt bản dịch, mặc định
-> ẩn) — dùng cho hướng dẫn/mô tả nhiệm vụ dài cần hỗ trợ tiếng Việt mà không hiển thị song ngữ mặc
-> định; KHÔNG dùng cho câu hỏi/đề bài (luôn thuần tiếng Anh). Đúc kết từ quá trình build Speaking
-> Unit 1 — xem Mục 4.19, checklist bổ sung ở Mục 7.
-
-
+> **v3.7** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md` (đã tách riêng
+> khỏi file này để giảm độ dài — file này chỉ giữ quy tắc hiện hành, không giữ log lịch sử).
 
 > **Dùng được cả trên Antigravity (Gemini) lẫn Claude** — file không phụ thuộc tool cụ thể, không
 > dùng cú pháp riêng IDE nào. Dán file này (kèm `01_scenario_builder_tienganh.md` nếu đã có) cho
@@ -170,24 +23,6 @@
 > năng (Reading=xanh lá, Speaking=đỏ...) như 1 số bản tham khảo. `--jade-deep` là màu hành
 > động chính xuyên suốt mọi module; các token semantic (`--correct/--wrong/--warning/--info`) dùng
 > đúng vai trò phản hồi, không dùng để "phân biệt module".
->
-> **Cập nhật quan trọng (bắt buộc áp dụng cho mọi bài có đủ Hội thoại + Từ vựng + Luyện tập):**
-> đã đúc kết từ việc build và sửa lỗi thực tế trên 1 bài Getting Started hoàn chỉnh, gồm 3 thay đổi
-> lớn so với bản trước:
-> 1. Component Phone Chat (4.3) và Vocabulary (4.4) mặc định GỘP chung vào 1 **Top Panel** có tab
->    chuyển đổi + nút Gom + khoá tuần tự (xem 4.8) — không còn là 2 section rời nhau xếp dọc như
->    layout tham khảo cũ ở Mục 3.
-> 2. Luyện tập (4.5/4.6) mặc định chạy theo **step-gate tuần tự** (từng dạng bài 1 lúc, có nút
->    "Tiếp theo" chỉ bật khi làm xong bước hiện tại) thay vì hiện hết mọi dạng bài cùng lúc trên
->    1 trang dài — và sau khi xong 1 mức phải có nút bấm thẳng sang mức tiếp theo.
-> 3. Bài Matching (4.6) có 1 lỗi dữ liệu rất dễ mắc phải (bảng chữ cái đáp án bị lệch vị trí) —
->    xem khung cảnh báo trong 4.6 để tránh lặp lại.
-> 4. **(Mới)** Vocabulary (4.4) trên mobile chuyển hẳn sang **carousel vuốt/bấm mũi tên ngang**
->    (desktop giữ nguyên dạng lưới bình thường), tối ưu cho tối đa **12 thẻ**. Luyện tập (4.5/4.8b)
->    khi gắn với 1 khối bài học phía trên (Hội thoại/Từ vựng/Reading) mặc định có thêm **Practice
->    Reference Pane**: tái hiện lại đúng nội dung bài học đó song song với phần làm bài — desktop
->    chia đôi màn hình theo **chiều dọc** (2 cột trái/phải), mobile chia đôi theo **chiều ngang**
->    (2 khối trên/dưới), có nút chuyển chế độ xem (Chia đôi / chỉ Bài đọc / chỉ Câu hỏi) — xem 4.8b.
 
 ---
 
@@ -220,13 +55,16 @@ vì phải trả lời câu hỏi mới cho AI build.**
 1. Nhận file/nội dung kịch bản + lệnh "build"
 2. Xác định module đang build thuộc loại nào: Getting Started / Pronunciation / Grammar / Reading /
    Speaking / Listening / Writing / Culture / Revision — map vào đúng component ở PHẦN 1 Mục 4
-   tương ứng (Getting Started → Mục 4.1-4.8; các loại khác → Mục 4.9-4.17)
-2b. **Mặc định LUÔN tách 2 file** — `..._lesson.html` (Khối 1: Hero + Hội thoại/Bài đăng/Reading +
-   Vocabulary) và `..._practice.html` (Khối 2: Luyện tập + Practice Reference Pane 4.8b BẮT BUỘC +
-   Self-assessment). Xem quy tắc chia đúng ranh giới, đồng bộ dữ liệu, và checklist ở Mục 8 — chỉ
-   gộp lại thành 1 file duy nhất khi người dùng CHỦ ĐỘNG yêu cầu ngược lại ("gộp 1 file", "không cần
-   tách"). Nếu kịch bản đầu vào đã tự đánh dấu sẵn PHẦN 1/PHẦN 2 (từ `01_scenario_builder_tienganh_v2.md`)
-   thì build đúng theo ranh giới đó, không tự suy luận lại.
+   tương ứng (Getting Started → Mục 4.2-4.8; các loại khác → Mục 4.9-4.17)
+2b. **Mặc định LUÔN tách 2 file, HOÀN TOÀN ĐỘC LẬP — không gắn kết/liên kết với nhau (không có nút
+   hay link nào trỏ từ file này sang file kia):** `..._lesson.html` (Khối 1: Hero + Hội thoại/Bài
+   đăng/Reading + Vocabulary) và `..._practice.html` (Khối 2: Luyện tập + Practice Reference Pane
+   4.8b BẮT BUỘC + Self-assessment). Mỗi file tự mở, tự kết thúc trọn vẹn — học sinh chuyển giữa 2
+   file qua danh sách bài học của nền tảng LMS, không qua nút trong bài. Xem quy tắc chia đúng ranh
+   giới, đồng bộ dữ liệu, và checklist đầy đủ ở Mục 8 — chỉ gộp lại thành 1 file duy nhất khi người
+   dùng CHỦ ĐỘNG yêu cầu ngược lại ("gộp 1 file", "không cần tách"). Nếu kịch bản đầu vào đã tự đánh
+   dấu sẵn PHẦN 1/PHẦN 2 (từ `01_scenario_builder_tienganh_v2.md`) thì build đúng theo ranh giới đó,
+   không tự suy luận lại.
 2c. **Mobile-first bắt buộc mọi module**: build và kiểm tra layout ở khung hẹp (≤480px) trước, rồi
    mới mở rộng lên desktop — đặc biệt Practice Reference Pane (4.8b) phải test đủ 3 chế độ xem trên
    mobile (Chia đôi/Bài đọc/Câu hỏi), không chỉ test ở desktop rồi giả định mobile tự ổn.
@@ -467,7 +305,7 @@ câu luyện tập mỗi mức. Báo mình nếu cần chỉnh gì."* — không
   --ink:#1A1A1A; --ink-2:#514C44; --ink-3:#7C756A; --ink-faint:#ABA396;
 
   /* Jade · hành động chính */
-  --jade:#3CA57A; --jade-deep:#2D8B6F; --jade-dark:#14432F;
+  --jade:#3CA57A; --jade-deep:#2A8167; --jade-dark:#14432F;
   --jade-text:#1B5E48; --jade-soft:#A9D0BE; --jade-pale:#DCEAE1;
 
   /* Sage · phụ trợ */
@@ -477,14 +315,15 @@ câu luyện tập mỗi mức. Báo mình nếu cần chỉnh gì."* — không
   --accent:#E8A24A; --accent-deep:#CE8A33; --accent-text:#8A551A; --accent-pale:#F7E7CD;
 
   /* Semantic · phản hồi đúng/sai/cảnh báo/info */
-  --correct:#2D8B6F; --correct-bg:#DCEAE1;
-  --wrong:#C15F3C;   --wrong-bg:#F3E2D6;
+  --correct:#2A8167; --correct-bg:#DCEAE1;
+  --wrong:#A84B2C;   --wrong-bg:#F3E2D6;
   --warning:#C58A2E; --warning-bg:#F5E7CB;
   --info:#4E7F92;    --info-bg:#DCE7EB;
 
   --white:#FFFFFF;
   --radius-lg: 22px; --radius: 14px; --radius-sm: 10px;
   --shadow: 0 10px 30px rgba(43,43,40,0.10);
+  --shadow-lg: 0 16px 40px rgba(20,67,47,0.14);
 }
 ```
 
@@ -565,8 +404,7 @@ h1,h2,h3,.display { font-family:'Be Vietnam Pro',sans-serif; font-weight:800; co
 >
 > Điểm chung KHÔNG đổi cho mọi module dù cấu trúc bên trong khác nhau: 1 file HTML độc lập, không
 > sidebar/header/Task bar điều hướng hay theo dõi tiến trình dưới bất kỳ hình thức nào — học sinh
-> chỉ thấy đúng nội dung bài học, không có thanh trạng thái cố định nào che khuất màn hình (bỏ hẳn
-> `#progress-tracker`/"Task bar" từng có ở Mục 4.1 bản cũ — xem ghi chú tại vị trí Mục 4.1 bên dưới).
+> chỉ thấy đúng nội dung bài học, không có thanh trạng thái cố định nào che khuất màn hình.
 
 ```
 header.hero (TUỲ CHỌN, ẩn được display:none nếu cần — xem quy tắc Mục 3.3/3.6 file Toán)
@@ -615,7 +453,7 @@ Mục 4 là **thư viện**, không phải trình tự bắt buộc. Trước kh
 1. Đọc kịch bản/nội dung bài thật — không nhìn vào tên module (VD "Reading") để đoán cấu trúc.
 2. Liệt kê CÁC HOẠT ĐỘNG THỰC TẾ bài cần có (VD: "đọc đoạn văn có từ mới cần giải nghĩa",
    "3 câu hỏi hiểu bài mức dễ", "1 bài nối từ", "học sinh tự viết đoạn ngắn"...).
-3. Với mỗi hoạt động, chọn đúng component khớp nhất trong Mục 4.1-4.17 (không phải component
+3. Với mỗi hoạt động, chọn đúng component khớp nhất trong Mục 4.2-4.17 (không phải component
    "được gắn nhãn cho đúng tên module này" — 1 bài Speaking hoàn toàn có thể dùng component
    Reading Passage (4.10) nếu kịch bản có đoạn hội thoại mẫu cần đọc trước).
 4. Sắp xếp lại theo đúng MẠCH DẠY của kịch bản đó — không nhất thiết theo thứ tự 4.1→4.16.
@@ -624,21 +462,6 @@ Mục 4 là **thư viện**, không phải trình tự bắt buộc. Trước kh
    nguyên tắc chung (Mục 0, token màu Mục 1, mobile Mục 5) thay vì ép vào component có sẵn không
    khớp bản chất hoạt động.
 ```
-
-### 4.1 (ĐÃ BỎ — Task bar/Progress Tracker)
-
-> **Đã bỏ hoàn toàn theo yêu cầu cập nhật mới nhất — không dùng lại dưới bất kỳ hình thức nào.**
-> Bản trước Mục 4.1 là `#progress-tracker` (sidebar sticky bên phải desktop / thanh ngang sticky
-> trên cùng mobile, liệt kê Tasks Messages/Vocabulary/Practice/Self-Assessment). Component này ĐÃ
-> BỊ XOÁ HẲN khỏi hệ thống — không tạo lại `#progress-tracker`, `.pt-item`, `.pt-handle`, hàm
-> `markDone()`, hay bất kỳ thanh/box liệt kê tiến trình tương tự nào (kể cả biến thể khác tên) ở
-> BẤT KỲ file HTML nào, dù 1-file hay tách 2 file. Học sinh chỉ thấy đúng nội dung bài học; tiến
-> trình hoàn thành do nền tảng LMS tự theo dõi qua `LMS().progress()`/`LMS().complete()` gọi ngầm
-> trong code (xem PHẦN 7 file Toán), không cần và không được hiển thị bằng UI riêng trong bài.
->
-> Số thứ tự Mục 4.1 giữ nguyên chỗ trống (không dồn số các mục 4.2 trở đi) để tránh phá vỡ toàn bộ
-> tham chiếu số mục đã dùng xuyên suốt tài liệu này và ở `01_scenario_builder_tiengAnh.md`/
-> `03_engine_tiengAnh.md`.
 
 ### 4.2 Hero/Header — tuỳ chọn ẨN CẢ KHỐI, nhưng KHÔNG tuỳ chọn nội dung bên trong
 
@@ -814,7 +637,7 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 // được, miễn quyết định trái/phải nằm đúng 1 chỗ (hằng isLeft bên dưới), không rải khắp file.
 const speaker = {
   a: { name:'[Tên nhân vật A]',
-       shapes:'<circle cx="30" cy="30" r="30" fill="#DCEAE1"/><circle cx="30" cy="24" r="11" fill="#2D8B6F"/>'
+       shapes:'<circle cx="30" cy="30" r="30" fill="#DCEAE1"/><circle cx="30" cy="24" r="11" fill="#2A8167"/>'
              + '<path d="M8 56c3-13 11-19 22-19s19 6 22 19z" fill="#14432F"/>' },
   b: { name:'[Tên nhân vật B]',
        shapes:'<circle cx="30" cy="30" r="30" fill="#F7E7CD"/><circle cx="30" cy="24" r="11" fill="#E8A24A"/>'
@@ -913,8 +736,8 @@ btnRestart.addEventListener('click', () => {
 
 > ⚠️ **Lỗi đã gặp thật — chữ trên thẻ MỜ NHOÈ khi xem bằng điện thoại.** Chrome/Safari di động vẽ
 > cả khối `transform-style: preserve-3d` ra **một ảnh bitmap** rồi mới xoay/phóng ảnh đó, nên chữ
-> trong thẻ bị nhoè như ảnh phóng to. **Dấu hiệu nhận ra: chỉ mình cụm thẻ mờ, còn thanh
-> `#progress-tracker` và nút bấm ngay cạnh vẫn sắc nét** — nếu mờ đều cả trang thì đó chỉ là ảnh
+> trong thẻ bị nhoè như ảnh phóng to. **Dấu hiệu nhận ra: chỉ mình cụm thẻ mờ, còn các phần tử tĩnh
+> khác (nút bấm, chữ header) ngay cạnh vẫn sắc nét** — nếu mờ đều cả trang thì đó chỉ là ảnh
 > chụp bị thu nhỏ, không phải lỗi này. Lộ rõ nhất ở carousel mobile vì thẻ được phóng tới 84% bề
 > ngang màn hình; trên desktop thẻ nhỏ nên gần như không nhận ra → **bắt buộc nghiệm thu trên máy
 > thật, không tin màn hình desktop.**
@@ -2924,8 +2747,6 @@ function toggleTimelineNode(btn) {
 
 ## 5. Mobile & Responsive — checklist
 
-- [ ] Không có Task bar/`#progress-tracker` hay bất kỳ thanh theo dõi tiến trình nào hiển thị trên
-      trang (đã bỏ hẳn — xem ghi chú tại Mục 4.1)
 - [ ] `.phone`: `width:min(380px,92vw)` — không tràn ngang trên màn hình hẹp
 - [ ] Vocabulary (4.4) desktop: `.vocab-grid` số cột co theo `data-count` (1-12 thẻ); mobile
       (≤640px): carousel vuốt ngang (`display:flex; overflow-x:auto; scroll-snap-type:x mandatory`),
@@ -3050,8 +2871,6 @@ ro.observe(document.body);
       Reference Pane trống cho có
 - [ ] Nội dung trong Reference Pane (4.8b) lấy đúng từ data của Khối 1 (`messages`/`vocab`/đoạn
       Reading), không soạn lại data riêng gây lệch nội dung giữa 2 khối
-- [ ] Không có Task bar/`#progress-tracker` hay component tương tự nào trong file; `LMS().progress()`
-      vẫn được gọi ngầm trong code khi học sinh hoàn thành từng phần (không cần UI riêng)
 - [ ] Hero (nếu có) ẩn được bằng `display:none` không gãy JS
 - [ ] Không dùng kéo-thả (drag-and-drop) — bài nối/sắp xếp/phân loại dùng tap-to-select
       (Mục 4.12/4.13/4.17). Ngoại lệ Before/After Slider (4.18, nếu có) đã đúng chuẩn
@@ -3061,23 +2880,21 @@ ro.observe(document.body);
 - [ ] Nếu có dùng Vietnamese Translation Toggle (4.19): chỉ đặt ở đoạn hướng dẫn/mô tả dài, KHÔNG
       đặt ở câu hỏi/đề bài (câu hỏi luôn thuần tiếng Anh); mỗi `id` của `.vi-text` duy nhất trong
       toàn file; chuỗi JS chứa dấu nháy đơn (don't/isn't/you'll...) đã escape `\'` đúng cách
-- [ ] File là 1 module độc lập, không có sidebar/header/Task bar điều hướng hay theo dõi tiến trình
-      nào trong 1 file
+- [ ] File là 1 module độc lập, không có sidebar/header điều hướng nào trong 1 file
 - [ ] Đạt checklist Mobile ở Mục 5 và checklist LMS ở PHẦN 7 file Toán
 
 ---
 
 ## 8. Tách 1 module thành nhiều file HTML — Lesson file + Practice file
 
-> **Mặc định v1.2 (không nói gì thêm): LUÔN tách 2 file** — `..._lesson.html` (Khối 1) và
-> `..._practice.html` (Khối 2 + Reference Pane 4.8b bắt buộc). Đây là đổi ngược lại so với v1.1 (khi
-> đó mặc định 1 file, tách là ngoại lệ) — lý do: kịch bản từ `01_scenario_builder_tienganh_v2.md`
-> giờ tự chia sẵn PHẦN 1/PHẦN 2, và việc tách file giúp học sinh mobile không phải tải/cuộn 1 trang
-> quá dài. **Chỉ gộp lại 1 file duy nhất khi người dùng CHỦ ĐỘNG yêu cầu** (VD "gộp lại 1 file",
-> "không cần tách file lần này") — khi đó bỏ Reference Pane 4.8b, dùng thẳng nội dung Khối 1 đã có
-> sẵn trên cùng trang.
+> **Mặc định: LUÔN tách 2 file, độc lập hoàn toàn** — `..._lesson.html` (Khối 1) và
+> `..._practice.html` (Khối 2 + Reference Pane 4.8b bắt buộc). Lý do: kịch bản từ
+> `01_scenario_builder_tienganh_v2.md` tự chia sẵn PHẦN 1/PHẦN 2, và việc tách file giúp học sinh
+> mobile không phải tải/cuộn 1 trang quá dài. **Chỉ gộp lại 1 file duy nhất khi người dùng CHỦ ĐỘNG
+> yêu cầu** (VD "gộp lại 1 file", "không cần tách file lần này") — khi đó bỏ Reference Pane 4.8b,
+> dùng thẳng nội dung Khối 1 đã có sẵn trên cùng trang.
 >
-> **Ngoại lệ v1.3 — module không có Khối 1 (kịch bản đánh dấu "bỏ PHẦN 1"):** ví dụ đã gặp là
+> **Ngoại lệ — module không có Khối 1 (kịch bản đánh dấu "bỏ PHẦN 1"):** ví dụ đã gặp là
 > Grammar — lý thuyết được build sẵn ở sản phẩm/pipeline khác, kịch bản chỉ có PHẦN 2 — PRACTICE.
 > Khi đó **build đúng 1 file Practice duy nhất**, KHÔNG tạo file Lesson rỗng chỉ để giữ quy ước 2
 > file. File Practice này cũng KHÔNG có Reference Pane (xem ghi chú "BẮT BUỘC, trừ ngoại lệ" ở
@@ -3107,20 +2924,17 @@ ro.observe(document.body);
    - **(b) Dựa vào `LMS().state()` của nền tảng thật:** CHỈ dùng nếu đã xác nhận với đội LMS rằng
      state được lưu chung theo học sinh + đọc được xuyên nhiều file/module (không phải mặc định của
      mọi nền tảng) — không tự ý giả định, dễ tạo khoá "chết" nếu nền tảng không hỗ trợ.
-   - ~~(c) Banner nhắc nhẹ~~ — **ĐÃ BỎ.** Bản trước dùng banner "Đã đọc hết Bài học ở phần trước
-     chưa? [Quay lại Bài học →]" — banner này chứa 1 link ngược sang File Lesson nên vi phạm quy
-     tắc mới "không liên kết Lesson ↔ Practice" (xem điểm 3 ngay dưới). Không dùng lại phương án
-     này dưới bất kỳ hình thức nào, kể cả không phải hard-lock.
-3. **KHÔNG có nút/link điều hướng nào giữa 2 file (đổi so với bản trước).** File 1 không còn nút
-   "Sang Luyện tập" trỏ sang File 2 (`location.href='...'`/thẻ `<a>`); File 2 không còn nút/banner
-   "Quay lại Bài học" trỏ ngược sang File 1. Mỗi file kết thúc/bắt đầu tự nhiên bằng nội dung của
-   chính nó — học sinh chuyển bước qua danh sách bài học của nền tảng LMS, không qua nút trong bài.
+   - ~~(c) Banner nhắc nhẹ~~ — **ĐÃ BỎ, không dùng lại dưới bất kỳ hình thức nào** (banner kiểu
+     "Đã đọc hết Bài học chưa? [Quay lại Bài học →]" chứa link ngược sang File Lesson, vi phạm quy
+     tắc "không liên kết Lesson ↔ Practice" ở điểm 3 ngay dưới).
+3. **KHÔNG có nút/link điều hướng nào giữa 2 file.** File 1 không có nút "Sang Luyện tập" trỏ sang
+   File 2 (`location.href='...'`/thẻ `<a>`); File 2 không có nút/banner "Quay lại Bài học" trỏ
+   ngược sang File 1. Mỗi file kết thúc/bắt đầu tự nhiên bằng nội dung của chính nó — học sinh
+   chuyển bước qua danh sách bài học của nền tảng LMS, không qua nút trong bài.
    (Ghi chú: hành vi trong-trang `switchTopView`/`toggleTopPanel` ở bản 1-file — khi KHÔNG tách file
    theo yêu cầu chủ động của người dùng — không thuộc phạm vi quy tắc này vì đó là cuộn/gom trong
    cùng 1 trang, không phải điều hướng sang file khác.)
-4. *(đã gộp vào ghi chú Task bar ở Mục 4.1 — không còn nội dung riêng ở đây, xem lý do bỏ hẳn
-   `#progress-tracker` tại vị trí Mục 4.1.)*
-5. **`LMS().complete()` chỉ bắn ở File 2** (nơi thật sự chấm điểm) — File 1 chỉ gọi
+4. **`LMS().complete()` chỉ bắn ở File 2** (nơi thật sự chấm điểm) — File 1 chỉ gọi
    `LMS().progress()`/`LMS().event()` khi đọc xong tin nhắn/lật xong thẻ, KHÔNG gọi `complete()` vì
    chưa có gì để chấm. Athena Manifest cũng tách 2 bản riêng theo đúng `structure[]` của từng file,
    nhưng `athenaGuidance` của CẢ 2 file vẫn nên liệt kê đủ nghĩa từ vựng (File 1 để trả lời khi học
@@ -3130,12 +2944,10 @@ ro.observe(document.body);
 ### 8.3 Checklist riêng khi tách file (thêm vào Mục 7)
 
 - [ ] `messages`/`vocab` giống hệt nhau ở 2 file, có comment "ĐỒNG BỘ" đánh dấu
-- [ ] Đã chọn 1 trong 2 phương án khoá tuần tự còn hiệu lực ở 8.2 mục 2 (a hoặc b — phương án (c)
-      banner đã bỏ vì chứa link ngược sang File Lesson, vi phạm quy tắc không liên kết 2 file)
+- [ ] Đã chọn 1 trong 2 phương án khoá tuần tự còn hiệu lực ở 8.2 mục 2 (a hoặc b)
 - [ ] **Không có bất kỳ nút/link nào điều hướng giữa 2 file** — không còn `location.href=`, thẻ
       `<a href="..._practice.html">`/`<a href="..._lesson.html">`, hay các hàm chỉ có nghĩa trong
       bản 1-file (`switchTopView`, `toggleTopPanel`, `goToPractice`) bị sót lại khi tách file
-- [ ] Không có Task bar/`#progress-tracker` ở bất kỳ file nào (đã bỏ hẳn — xem Mục 4.1)
 - [ ] `LMS().complete()` chỉ xuất hiện đúng 1 lần, ở File 2
 
 ---

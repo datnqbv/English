@@ -163,7 +163,7 @@ D. Introduction to the issue and the writer's point of view
 
 **Answer: 1-D / 2-C / 3-A / 4-B**
 
-> 🎨 **Thiết kế:** mỗi đoạn là 1 khối card lớn (không phải 1 dòng câu) — học sinh kéo hoặc chạm chọn 1 trong 4 mô tả A-D gắn vào từng đoạn. Đúng cơ chế match cả đoạn thật của SGK, khác cơ chế MCQ-từng-câu đã dùng ở Unit trước.
+> 🎨 **Thiết kế:** mỗi đoạn là 1 khối card lớn (không phải 1 dòng câu) — học sinh kéo hoặc chạm chọn 1 trong 4 mô tả A-D gắn vào từng đoạn. Đúng cơ chế match cả đoạn thật của SGK, khác cơ chế MCQ-từng-câu đã dùng ở Unit trước. Nút **Submit** — mở khi cả 4 đoạn đã gắn nhãn, bấm mới hiện đúng/sai.
 
 ## [Identify · Categorization 2 cột]
 
@@ -186,7 +186,7 @@ Sort the sentences below into the correct column — reasons that support the wr
 **Answer:** Supports: "A curfew helps parents know..." + "Coming home at a reasonable time..." / Against: "Teenagers may feel they are not trusted..." + "A strict curfew can make it harder..."
 
 > 🎨 **Thiết kế:** câu hỏi tiếng Anh giữ NGUYÊN VẸN. Từ "curfew" có gạch chân chấm — chạm để hiện popup nghĩa tiếng Việt, mặc định ẨN. Phương án dự phòng: 1 dòng chú thích nhỏ, nhạt màu hơn, đặt NGAY DƯỚI câu hỏi (không chen vào giữa câu). 4 câu ý bên dưới dùng lại "curfew" nhiều lần, KHÔNG lặp lại chú thích — chỉ áp dụng ở lần xuất hiện đầu tiên. Thay thế Read & Extract cho riêng Unit này (Mục 5.2 khuyến nghị Categorization riêng cho Opinion essay).
-> 🎨 **Thiết kế:** Mobile: 2 cột xếp DỌC, thẻ ý tưởng đủ lớn để chạm-giữ kéo hoặc tap-to-sort.
+> 🎨 **Thiết kế:** Mobile: 2 cột xếp DỌC, thẻ ý tưởng đủ lớn để chạm-giữ kéo hoặc tap-to-sort. Nút **Submit** — mở khi cả 4 câu đã được xếp vào 1 trong 2 cột, bấm mới hiện đúng/sai.
 
 ---
 
@@ -204,6 +204,9 @@ E. In addition, most hair dye is not permanent, so teenagers can always change t
 
 Giải thích: B là Introduction → mở đầu. D có "First of all," → Reason 1. A dùng "This" quy chiếu lại việc thể hiện phong cách cá nhân ở D → đứng ngay sau D. E có "In addition," → Reason 2. C có "In conclusion," → luôn đứng cuối.
 
+> 🎨 **Thiết kế:** kéo-thả 5 thẻ câu, xáo trộn ngẫu nhiên mỗi lần tải lại. Nút **Submit** kiểm tra thứ tự — bấm mới hiện đúng/sai + giải thích.
+> 📱 **Mobile:** tap-to-order; nếu giữ kéo-thả, thêm `touch-action: none`.
+
 ## [Structure · Passage Arrangement — Bài 2]
 
 Put the sentences in the correct order to form a complete essay.
@@ -219,6 +222,9 @@ E. Overall, as long as basic safety rules are followed, I think this kind of exp
 Giải thích: B là Introduction. D là Reason 1, dùng "One advantage is" thay vì "First of all,". A dùng "this kind of independence" quy chiếu lại D → đứng ngay sau D. C dùng "also" nối sang Reason 2. E dùng "Overall," thay "In conclusion,".
 
 *(Bài 2 khó hơn Bài 1: không có sequence word tường minh, cue phải suy luận qua cụm từ quy chiếu và từ nối nhẹ như "also".)*
+
+> 🎨 **Thiết kế:** kéo-thả 5 thẻ câu, xáo trộn ngẫu nhiên mỗi lần tải lại. Nút **Submit** kiểm tra thứ tự — bấm mới hiện đúng/sai + giải thích.
+> 📱 **Mobile:** tap-to-order; nếu giữ kéo-thả, thêm `touch-action: none`.
 
 ---
 
@@ -241,6 +247,9 @@ Put the words in the correct order to make a complete sentence.
 5. In conclusion, a part-time job can bring real benefits.
 6. I believe teenagers should be allowed to work part-time.
 
+> 🎨 **Thiết kế:** 6 ô chip từ rời, chạm theo thứ tự để ráp câu. Nút **Submit** — mở khi đủ 6 câu đã ráp, bấm mới hiện đúng/sai.
+> 📱 **Mobile:** chip từ xếp lưới, chạm theo thứ tự (không kéo-thả).
+
 ## [Write · Guided Writing — hỗ trợ đầy đủ]
 
 Task: Write an opinion essay answering the question below. Use the information to complete the essay.
@@ -262,16 +271,32 @@ Task: Write an opinion essay answering the question below. Use the information t
 >
 > *(128 words)*
 
+> 🎨 **Thiết kế:** khung điền chỗ trống + textarea. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (36-45 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** Model answer dạng bottom-sheet.
+
 ## [Write · Guided Writing — hỗ trợ giảm]
 
-Task: Use the keywords below to write the same essay — this time without sentence starters.
+Task: Use the keywords below to write the SAME essay — this time without sentence starters.
 
 | Reason | Example | Explain |
 |---|---|---|
 | stay connected / friends & family | share updates/photos | feel less isolated |
 | learn new things | educational pages/tutorials | support learning |
 
-*(Không có câu dẫn, không có chỗ trống điền sẵn. Target: 120-150 words.)*
+> 💡 Turn each keyword group into a full sentence, following the same 4-part structure as the guided version above (state opinion → Reason 1 → Reason 2 → conclusion).
+
+*Target: 120-150 words.*
+
+**Model answer (shown after submission)** — cùng bài với bản hỗ trợ đầy đủ:
+
+> Should teenagers be allowed to have their own social media accounts? I believe teenagers should be allowed to use social media, for the following reasons. First of all, social media helps teenagers stay connected with friends and family. For example, they can share updates and photos easily, even when they live far away or have a busy schedule. This can help them feel less isolated, especially if their family does not live nearby. In addition, social media can also help teenagers learn new things. For instance, many teenagers follow educational pages or watch tutorial videos online in their free time. This can support their learning outside school. In conclusion, although parents should still guide how it is used, I think social media can bring real benefits to teenagers.
+>
+> *(128 words)*
+
+*(Trước đó block này chỉ có bảng từ khoá — không có textarea/Model answer/Submit nào. Đã bổ sung đầy đủ theo đúng chuẩn Gated Reveal.)*
+
+> 🎨 **Thiết kế:** 1 textarea trống hoàn toàn (không có khung câu dẫn). Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (36-45 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ## [Write · Correct the mistake]
 
@@ -289,13 +314,29 @@ Find and correct 6 mistakes in the essay below.
 
 *(Đã sửa lại nội dung câu Kết luận so với bản Word gốc — bản gốc viết "parents need to worry about how much time teenagers spend on it", lạc mạch so với 2 Reason chỉ nói về việc CÓ tài khoản mạng xã hội, không nói về thời gian sử dụng. Câu mới tóm tắt đúng lập trường "nên được có tài khoản" đã nêu ở Introduction và 2 Reason, đồng thời vẫn giữ nguyên lỗi rút gọn [6] ở đúng vị trí.)*
 
+> 🎨 **Thiết kế:** 6 cụm sai được gạch chân chấm ngay trong đoạn văn, chạm vào cụm sai → hiện 1 ô nhỏ để gõ lại đúng. Nút **Submit** — mở khi đã điền đủ 6 ô. Bấm Submit hiện NGAY đúng/sai + giải thích (Mục 9.2 — không cần Gated Reveal theo số từ).
+> 📱 **Mobile:** ô sửa lỗi hiện dạng inline ngay dưới cụm sai.
+
 ## [Write · Write opinion essay]
 
 Task: Write a COMPLETE opinion essay (Introduction with your opinion + 2 Reasons with examples + Conclusion) answering the question below.
 
 *Should teenagers be allowed to choose their own clothes without their parents' approval?*
 
-*Target: 120-150 words. (No model answer — this is independent writing.)*
+> 💡 There's no table to guide you this time. Before you start, decide your opinion in one sentence, then think of two reasons that support it.
+
+*Target: 120-150 words.*
+
+**Model answer (shown after submission):**
+
+> Should teenagers be allowed to choose their own clothes without their parents' approval? I believe teenagers should be allowed to choose their own clothes, for the following reasons. First of all, choosing their own clothes helps teenagers express their personal identity. For example, a student who prefers simple, comfortable outfits should not be forced to wear something more formal just because their parents prefer it. This can help them feel more confident about who they are. In addition, making small decisions like this can help teenagers develop responsibility. For instance, learning to choose clothes suitable for different occasions, such as school or a family event, is a useful life skill. In conclusion, although parents can still offer advice, I think teenagers should have the final say in what they wear.
+>
+> *(135 words)*
+
+*(Trước đó block này ghi "No model answer — this is independent writing" — đã bổ sung Model answer mới theo đúng chuẩn Gated Reveal.)*
+
+> 🎨 **Thiết kế:** textarea trống, word counter trực tiếp. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (36-45 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ---
 
@@ -327,7 +368,8 @@ Task: Write a COMPLETE opinion essay (Introduction with your opinion + 2 Reasons
 - Mỗi Reason có đủ Point-Example-Explain không?
 - Có tránh dùng dạng rút gọn (don't, can't) không?
 
-> 🎨 **Thiết kế:** outline điền khuyết + "Xem model answer" — deterministic, không cần Athena.
+> 🎨 **Thiết kế:** khung điền chỗ trống + textarea. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (36-45 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`, sau đó hiện Self-check ngay dưới.
+> 📱 **Mobile:** Model answer + Self-check dạng bottom-sheet.
 
 ## Free Writing — gửi Athena chấm (viết NGƯỢC quan điểm)
 
@@ -364,7 +406,9 @@ Task: Write a COMPLETE opinion essay (Introduction with your opinion + 2 Reasons
 
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: build/test ở khung ≤480px trước khi mở rộng desktop.
-- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
+- **BẮT BUỘC có Practice Reference Pane** (đã sửa lỗi ghi sai "Ngoại lệ 2" ở bản trước — Writing không thuộc diện ngoại lệ bỏ Reference Pane, xem `PROMPT_TEMPLATE_WRITING` Mục 0 v8.0). Chia đôi màn hình: desktop 2 cột trái/phải, mobile 2 khối trên/dưới có 3 nút chuyển chế độ xem + nút "Gom lại" (⟨⟨). **Mapping tab theo từng phase (đúng `02_design_tiengAnh.md` Mục 4.8b v3.4):**
+  - **Identify + Structure:** 2 tab — **Tab "📄 Bài đọc"** (dùng lại ĐÚNG bài "part-time job" — bài đọc chính của Identify · Structure labelling, KHÔNG phải bài mẫu Part 1 vốn viết về bedtime) + **Tab "🔗 Bảng tín hiệu"** (mục E ở Part 1).
+  - **Write + Production:** bỏ hẳn tab Bài đọc, **CHỈ còn Tab "🔗 Bảng tín hiệu"** — vì từ đây học sinh tự viết, không còn bài đọc cụ thể để đối chiếu.
 - File Lesson (PHẦN 1) kết thúc tự nhiên sau mục E — không có nút/link sang File Practice.
 - File Practice bắt đầu tự nhiên từ Identify — không có nút "Quay lại Bài học".
 - Đã bổ sung 1 prompt sinh ảnh cho Hook (xem đầu file, mục "Ảnh cần sinh") — chưa có trong bản Word gốc.
@@ -373,5 +417,4 @@ Task: Write a COMPLETE opinion essay (Introduction with your opinion + 2 Reasons
 
 ### Ghi chú cho Giai đoạn 2 (Design)
 - Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), **4.23 (Region Highlight — dùng cho cơ chế 4-nút tô sáng vùng ở mục D, đã chuẩn hoá)**, **9.17 (Gated Reveal — áp dụng cho mọi nút "Xem model answer" trong file: Guided Writing hỗ trợ đầy đủ, Production Guided Writing — khoá đến khi học sinh đã gõ đủ ~30-50% số từ mục tiêu 120-150 từ)**; code mẫu tại `03_engine_tiengAnh.md` mục 1.18.
-- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
 - Mọi heading/tên hoạt động khi build HTML viết tiếng Anh trước, tiếng Việt nhỏ hơn đặt sau (Mục 0 Nguyên tắc 15) — không dịch chèn vào giữa tên hoạt động (VD tên Activity Passage Arrangement, Sentence Building... giữ nguyên tiếng Anh).

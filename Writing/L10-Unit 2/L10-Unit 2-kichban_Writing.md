@@ -97,7 +97,7 @@
 | Example ✓ | In conclusion, making our school greener doesn't need big changes. Small daily habits can already make a real difference. |
 | Not good ✗ | That's all. *(quá cụt, không tổng kết được ý gì)* |
 
-> 🎨 **Desktop:** B.1/B.3 dùng dạng thẻ lật (flip card): mặt trước hiện Formula, chạm để lật sang mặt sau hiện Example. Ví dụ ĐÚNG và SAI đặt CẠNH NHAU trên cùng 1 hàng ngang (contrasting cases) — ví dụ sai có icon ⚠️ viền màu cảnh báo *(TODO: hệ Jade/Cream hiện chưa có token cảnh báo chính thức — cần bạn xác nhận trước khi build, ví dụ thêm `--warning-soft`)*, ví dụ đúng có icon ✓ viền `--jade-pale`. B.2 dùng hiệu ứng hiện dần theo lớp (layered reveal): Suggestion → chạm "+ Thêm ví dụ" hiện Example → chạm tiếp "+ Thêm kết quả" hiện Result. Mỗi lớp 1 màu nền riêng nhạt (Suggestion: `--cream-2`, Example: `--sage-pale`, Result: `--jade-pale`).
+> 🎨 **Desktop:** B.1/B.3 dùng dạng thẻ lật (flip card): mặt trước hiện Formula, chạm để lật sang mặt sau hiện Example. Ví dụ ĐÚNG và SAI đặt CẠNH NHAU trên cùng 1 hàng ngang (contrasting cases) — ví dụ sai có icon ⚠️ viền màu `--warning` (nền `--warning-bg`), ví dụ đúng có icon ✓ viền `--jade-pale`. B.2 dùng hiệu ứng hiện dần theo lớp (layered reveal): Suggestion → chạm "+ Thêm ví dụ" hiện Example → chạm tiếp "+ Thêm kết quả" hiện Result. Mỗi lớp 1 màu nền riêng nhạt (Suggestion: `--cream-2`, Example: `--sage-pale`, Result: `--jade-pale`).
 > 📱 **Mobile:** cặp ví dụ ĐÚNG/SAI ở B.1 và B.3 **KHÔNG đặt cạnh nhau nữa — chuyển thành xếp chồng dọc** (Example ✓ ở trên, Not good ✗ ngay bên dưới), vì cạnh nhau trên màn hình ≤480px sẽ làm mỗi ô quá hẹp, chữ bị xuống dòng liên tục và khó so sánh. Giữ nguyên màu viền/icon để vẫn nhận ra ngay là 1 cặp đối chiếu dù xếp dọc. Thẻ lật (flip card) vẫn hoạt động tốt trên mobile qua chạm (tap), không cần hover — đảm bảo vùng chạm toàn bộ thẻ, không chỉ 1 góc nhỏ. B.2 layered reveal giữ nguyên bố cục dọc, chỉ giảm padding mỗi lớp.
 
 ---
@@ -166,7 +166,7 @@
 - Không auto-reveal — mọi lớp ẩn chỉ hiện sau hành động chủ động của học sinh.
 - Giữ nguyên bảng màu Cream/Jade và font Be Vietnam Pro như Unit 1.
 - Đồng bộ dữ liệu: bài mẫu ở Hook và ở mục D PHẢI là cùng 1 bài.
-- **Reference Pane sticky khi làm Practice:** trên mobile, khi học sinh cuộn xuống làm Practice, nên có 1 nút/khay nhỏ cố định (sticky) ở đáy màn hình cho phép kéo lên xem lại nhanh bài mẫu/Bảng tín hiệu mà không phải cuộn ngược lên đầu trang — đặc biệt quan trọng trên mobile vì thao tác cuộn dài gây mất kiên nhẫn hơn desktop.
+- **Practice Reference Pane (đúng chuẩn `02_design_tiengAnh.md` Mục 4.8b, KHÔNG dùng cơ chế "khay sticky" tự chế):** xem chi tiết mapping đầy đủ ở "Lưu ý thiết kế" cuối file.
 
 **Điều hướng cuối Part 1:** Không có — File Lesson kết thúc tự nhiên sau mục "Ghi chú thiết kế chung (Part 1)", không có nút/link sang File Practice (theo Quy tắc mới 3).
 
@@ -201,6 +201,7 @@ Giải thích câu 5: Có "Second," và nêu đề xuất mới → Suggestion (
 Giải thích câu 6: Có "In conclusion," và câu tổng kết → Concluding Sentence.
 
 > 📱 **Mobile:** mỗi câu hỏi hiện dạng 1 thẻ riêng (không phải danh sách text liền mạch) với 5 nút lựa chọn A-E xếp thành lưới 2 cột (không xếp ngang 1 hàng 5 nút vì sẽ quá nhỏ để chạm chính xác trên màn hình hẹp). Sau khi chọn, feedback đúng/sai + giải thích hiện NGAY DƯỚI câu đó, không hiện ở cuối trang.
+> 🎨 **Desktop:** nút **Submit** (`submitAndUnlock`) — mở khi cả 6 câu đã chọn đáp án, bấm mới hiện đúng/sai + giải thích.
 
 ## [Identify · Read & Extract]
 
@@ -223,6 +224,7 @@ Read the same paragraph above and complete the table.
 Giải thích: Point 3 không có câu "For example," tách riêng — Suggestion đã đủ cụ thể nên bài mẫu gộp Example vào ngay trong câu Suggestion. Không phải Point nào cũng bắt buộc có 3 câu tách bạch.
 
 > 📱 **Mobile:** bảng 3 cột (Suggestion/Example/Expected result) sẽ QUÁ HẸP nếu giữ nguyên dạng bảng ngang trên màn hình ≤480px — chuyển mỗi hàng của bảng thành **1 thẻ dọc** gồm 3 dòng nhãn-giá trị xếp chồng (Suggestion: ... / Example: ... / Expected result: ...) thay vì 3 cột song song. Giữ đúng thứ tự 3 Point như trên, chỉ đổi hướng trình bày.
+> 🎨 **Desktop:** nút **Submit** (`submitAndUnlock`) — mở khi đủ 6 ô có nội dung, bấm mới hiện đáp án.
 
 ---
 
@@ -282,6 +284,7 @@ Put the words in the correct order to make a complete sentence.
 
 > 🎨 **Desktop:** các từ hiện dạng thẻ rời (word chips) để kéo-thả ráp thành câu.
 > 📱 **Mobile:** tương tự Passage Arrangement — ưu tiên **tap-to-insert** (chạm từng chip theo đúng thứ tự để chúng tự nối vào dòng đáp án phía trên) thay vì kéo-thả tự do. Cho phép chạm vào 1 chip đã đặt để gỡ nó ra khỏi câu (thay vì phải kéo ngược lại đúng vị trí cũ). Chip đủ lớn (tối thiểu 36px chiều cao) để chạm chính xác.
+> 🎨 **Desktop:** nút **Submit** (`submitAndUnlock`) — mở khi đủ 6 câu đã ráp, bấm mới hiện đúng/sai.
 
 ## [Write · Guided Writing — hỗ trợ đầy đủ]
 
@@ -304,10 +307,11 @@ Task: Your class wants to make the classroom greener. Use the information below 
 > *(127 words)*
 
 > 📱 **Mobile:** bảng 3 cột chuyển thành thẻ dọc như đã nêu ở Read & Extract. Textarea/blank-fill nên tự giãn chiều cao theo nội dung gõ (auto-grow) thay vì cố định chiều cao rồi phải cuộn bên trong 1 khung nhỏ — cuộn lồng bên trong 1 ô nhỏ trên mobile rất khó chịu.
+> 🎨 **Desktop:** nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (30-40 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
 
 ## [Write · Guided Writing — hỗ trợ giảm]
 
-Task: Use the keywords below to write the same paragraph — this time without sentence starters.
+Task: Use the keywords below to write the SAME paragraph — this time without sentence starters.
 
 | Suggestion | Example | Expected result |
 |---|---|---|
@@ -315,7 +319,20 @@ Task: Use the keywords below to write the same paragraph — this time without s
 | class plant corner | take turns watering | more responsible |
 | digital notice board | screen / group chat | less paper |
 
-*(Không có bảng câu dẫn, không có chỗ trống điền sẵn — học sinh tự viết trọn vẹn đoạn văn từ 3 hàng từ khoá trên. Target: 100-130 words.)*
+> 💡 Turn each row into a full sentence, following the same 4-part structure as the guided version above (Topic Sentence → 3 Supporting Points → Concluding Sentence).
+
+*Target: 100-130 words.*
+
+**Model answer (shown after submission)** — cùng bài với bản hỗ trợ đầy đủ:
+
+> There are three things our class can do to make our classroom greener. First, we should grow small plants in reused plastic bottles. For example, we can place them on the classroom windowsill. This can make our classroom look fresher and greener. Second, we could set up a small "class plant corner". For example, students can take turns watering and caring for the plants every week. This can help students feel more responsible for their shared space. Third, we should use a digital notice board instead of paper notices. For example, we can share announcements on a screen or in the group chat. This can reduce the amount of paper our class uses. In conclusion, these small habits can make our classroom a greener place to learn.
+>
+> *(127 words)*
+
+*(Trước đó block này chỉ có bảng từ khoá — không có textarea/Model answer/Submit nào. Đã bổ sung đầy đủ theo đúng chuẩn Gated Reveal.)*
+
+> 🎨 **Desktop:** 1 textarea trống hoàn toàn (không có khung câu dẫn). Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (30-40 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ## [Write · Correct the mistake]
 
@@ -359,7 +376,20 @@ Task: Write a COMPLETE paragraph (Topic Sentence + 3 Supporting Points with Firs
 - What could people do about it?
 - What would happen if they did?
 
-*Target: 100-130 words. (No model answer — this is independent writing.)*
+> 💡 There's no table to guide you this time. Before you start, note down: the problem, your first suggestion + example + result, and your second suggestion + example + result.
+
+*Target: 100-130 words.*
+
+**Model answer (shown after submission):**
+
+> There are two things people in my neighbourhood can do to reduce litter. First, the local shops could stop giving out free plastic bags. For example, they could sell cheap reusable bags at the counter instead. This can reduce the amount of plastic waste on the street. Second, the neighbourhood committee could set up more rubbish bins along the main road. For example, they could place a bin every 100 metres near the market and bus stop. This can encourage people to throw litter in the right place instead of on the ground. In conclusion, a few simple changes could make our neighbourhood much cleaner.
+>
+> *(103 words)*
+
+*(Trước đó block này ghi "No model answer — this is independent writing" — đã bổ sung Model answer mới theo đúng chuẩn Gated Reveal.)*
+
+> 🎨 **Desktop:** textarea trống, word counter trực tiếp. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (30-40 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ---
 
@@ -392,7 +422,7 @@ Task: Your school library wants to become greener. Use the information below to 
 - Have I used First/Second/Third and For example correctly?
 - Do I have a clear Topic Sentence and Concluding Sentence?
 
-> 🎨 **Desktop:** giữ nguyên dạng outline điền khuyết + "Xem model answer" như Guided Writing ở Practice — đây là bước có đáp án tương đối cố định (deterministic), không cần gửi Athena. Self-check hiển thị dạng checklist tick thật, không tự động chấm điểm.
+> 🎨 **Desktop:** giữ nguyên dạng outline điền khuyết + textarea. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (30-40 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`, sau đó hiện Self-check ngay dưới (dạng checklist tick thật, không tự động chấm điểm).
 > 📱 **Mobile:** bảng 3 cột → thẻ dọc như các mục trước. Textarea auto-grow. Checklist tick dùng ô vuông đủ lớn (tối thiểu 24×24px) để chạm chính xác bằng ngón tay.
 
 ## Free Writing — gửi Athena chấm
@@ -434,12 +464,14 @@ Task: Choose ONE place near you (your street, a local park, a market, a bus stop
 
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: build/test ở khung ≤480px trước khi mở rộng desktop.
-- File Practice (PHẦN 2 — gồm Part 2 + Part 3) không có Reference Pane 2-cột kiểu Reading/Speaking (không tra lại 1 đoạn cụ thể theo từng câu) — nhưng CÓ khay sticky nhỏ ở đáy màn hình (mobile) cho phép kéo lên xem nhanh bài mẫu Hook/Bảng tín hiệu mục E khi làm Practice (xem "Ghi chú thiết kế chung (Part 1)").
+- **BẮT BUỘC có Practice Reference Pane chuẩn** (đã sửa lỗi — bản trước tự chế cơ chế "khay sticky ở đáy màn hình" thay vì dùng đúng component đã chốt; Writing không thuộc diện ngoại lệ bỏ Reference Pane, xem `PROMPT_TEMPLATE_WRITING` Mục 0 v8.0). Chia đôi màn hình: desktop 2 cột trái/phải, mobile 2 khối trên/dưới có 3 nút chuyển chế độ xem + nút "Gom lại" (⟨⟨). **Mapping tab theo từng phase (đúng `02_design_tiengAnh.md` Mục 4.8b v3.4):**
+  - **Identify + Structure:** 2 tab — **Tab "📄 Bài đọc"** (dùng lại ĐÚNG bài "School Canteen Passage" — bài đọc chính của Identify, KHÔNG phải bài mẫu Part 1 "Winning paragraph" về trường học xanh nói chung) + **Tab "🔗 Bảng tín hiệu"** (mục E ở Part 1).
+  - **Write + Production:** bỏ hẳn tab Bài đọc, **CHỈ còn Tab "🔗 Bảng tín hiệu"** — vì từ đây học sinh tự viết, không còn bài đọc cụ thể để đối chiếu.
 - File Lesson (PHẦN 1) kết thúc tự nhiên sau "Ghi chú thiết kế chung (Part 1)" — không có nút/link sang File Practice.
 - File Practice bắt đầu tự nhiên từ Identify — không có nút "Quay lại Bài học".
 - Đồng bộ dữ liệu: bài mẫu "Winning paragraph" ở Hook và ở mục D phải là cùng 1 bài (đã đúng trong bản gốc).
-- 1 điểm màu còn TODO cần xác nhận trước khi build: token màu cảnh báo (viền ví dụ SAI ở mục B.1/B.3, icon ⚠️) — hệ Jade/Cream hiện chưa có token cảnh báo chính thức, và chi tiết viền màu cho ví dụ đúng/sai này không có trong file Word gốc (là phần mở rộng thêm ở giai đoạn kịch bản).
+- **Token màu cảnh báo (viền ví dụ SAI ở mục B.1/B.3, icon ⚠️):** ĐÃ có sẵn trong hệ thống — dùng đúng `--warning`/`--warning-bg` (không cần tự đặt `--warning-soft` như TODO trước đây, hệ Jade/Cream đã có token cảnh báo chính thức từ trước, chỉ là kịch bản bản trước chưa tra đúng bảng token).
 
 ### Ghi chú cho Giai đoạn 2 (Design)
-- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment)
-- Luyện tập (PHẦN 2) không cần Reference Pane 2-cột đầy đủ như Reading/Speaking — chỉ cần khay sticky nhỏ (mobile) để xem lại bài mẫu Hook/Bảng tín hiệu, ghi rõ để bên build không tự thêm Reference Pane kiểu khác.
+- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), **9.17 (Gated Reveal — bắt buộc cho MỌI nút "Xem model answer" trong file này: Guided Writing hỗ trợ đầy đủ/hỗ trợ giảm, Write a paragraph, Production Guided Writing — khoá đến khi học sinh đã gõ đủ ~30-50% số từ mục tiêu 100-130 từ)**; xem code mẫu `submitByWords()`/`openModelAnswerSheet()` tại `03_engine_tiengAnh.md` Mục 1.18.
+- Mục 4.8b (Reference Pane): 2 tab, mapping theo phase — xem chi tiết ở "Lưu ý thiết kế" phía trên, KHÔNG dùng lại cơ chế "khay sticky" của bản trước.

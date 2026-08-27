@@ -189,6 +189,9 @@ Giải thích câu 3: Đặt 2 câu hỏi để biết thêm chi tiết → Ask 
 Giải thích câu 4: Câu kết trước khi ký tên → Closing.
 Giải thích câu 5: Tên người viết → Sign-off.
 
+> 🎨 **Thiết kế:** 5 câu, mỗi câu 1 dòng có 5 nút chọn A-E ngay dưới. Nút **Submit** — mở khi cả 5 câu đã chọn, bấm mới hiện đúng/sai + giải thích từng câu.
+> 📱 **Mobile:** giữ 1 cột, nút A-E xếp lưới ngay dưới mỗi câu.
+
 ## [Identify · Read & Extract]
 
 Read the same message above and complete the table.
@@ -204,6 +207,9 @@ Read the same message above and complete the table.
 4. Talk to you soon!
 
 Giải thích: Bài mẫu hỏi 2 thông tin trong cùng 1 câu ghép bằng "and" — tách ra 2 ý riêng khi điền bảng.
+
+> 🎨 **Thiết kế:** 4 ô nhập text ngắn trong bảng. Nút **Submit** — mở khi đủ 4 ô có nội dung, bấm mới hiện đáp án.
+> 📱 **Mobile:** bảng đổi thành thẻ dọc.
 
 ---
 
@@ -221,6 +227,9 @@ E. Lan
 
 Giải thích: B là Greeting → mở đầu. D là Accept → ngay sau lời chào. A dùng "So," quy chiếu lại việc vừa đồng ý ở D → đứng sau D. C là Closing → gần cuối. E là Sign-off → cuối cùng.
 
+> 🎨 **Thiết kế:** kéo-thả 5 thẻ câu, xáo trộn ngẫu nhiên mỗi lần tải lại. Nút **Submit** kiểm tra thứ tự — bấm mới hiện đúng/sai + giải thích.
+> 📱 **Mobile:** tap-to-order; nếu giữ kéo-thả, thêm `touch-action: none`.
+
 ## [Structure · Passage Arrangement — Bài 2]
 
 Put the sentences in the correct order to form a complete message.
@@ -236,6 +245,9 @@ E. Nam
 Giải thích: B là Greeting. C là Accept, nhắc "the workshop". D dùng đại từ "it" quy chiếu lại "the workshop" ở C (tinh tế hơn Bài 1, không có từ nối tường minh). A là Closing. E là Sign-off.
 
 *(Bài 2 khó hơn Bài 1: cue là đại từ ẩn "it", không có từ nối tường minh như "So," ở Bài 1.)*
+
+> 🎨 **Thiết kế:** kéo-thả 5 thẻ câu, xáo trộn ngẫu nhiên mỗi lần tải lại. Nút **Submit** kiểm tra thứ tự — bấm mới hiện đúng/sai + giải thích.
+> 📱 **Mobile:** tap-to-order; nếu giữ kéo-thả, thêm `touch-action: none`.
 
 ---
 
@@ -256,6 +268,9 @@ Write a sentence to express each message below. Begin with the words given.
 4. Do I need to bring anything?
 5. Where should I meet you?
 
+> 🎨 **Thiết kế:** 5 ô textarea ngắn, mỗi câu có sẵn cụm mở đầu in đậm không thể sửa. Nút **Submit** — mở khi đủ 5 ô có nội dung, bấm mới hiện đáp án gợi ý.
+> 📱 **Mobile:** input auto-grow.
+
 ## [Write · Sentence building]
 
 Put the words in the correct order to make a complete sentence.
@@ -274,6 +289,9 @@ Put the words in the correct order to make a complete sentence.
 4. See you then!
 5. I'd love to join you!
 6. Talk to you soon!
+
+> 🎨 **Thiết kế:** 6 ô chip từ rời, chạm theo thứ tự để ráp câu. Nút **Submit** — mở khi đủ 6 câu đã ráp, bấm mới hiện đúng/sai.
+> 📱 **Mobile:** chip từ xếp lưới, chạm theo thứ tự (không kéo-thả).
 
 ## [Write · Guided Writing — hỗ trợ đầy đủ]
 
@@ -340,15 +358,31 @@ Task: Lan invited you to a morning jogging group. Use the information below to c
 >
 > *(35 words)*
 
+> 🎨 **Thiết kế (áp dụng chung cho cả 3 bài):** khung điền chỗ trống + textarea, mỗi bài độc lập. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (11-14 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** Model answer dạng bottom-sheet.
+
 ## [Write · Guided Writing — hỗ trợ giảm]
 
-Task: Use the keywords below to write the same message — this time without sentence starters.
+Task: Use the keywords below to write the SAME message — this time without sentence starters.
 
 | Accept | Ask info (1) | Ask info (2) |
 |---|---|---|
 | love to join | what time / class start | bring / own yoga mat |
 
-*(Không có câu dẫn, không có chỗ trống điền sẵn. Target: 35-45 words. Dùng lại tình huống Bài 1 — yoga — làm ngữ cảnh cho bước giảm hỗ trợ này.)*
+> 💡 Turn each keyword group into a full sentence, following the same 3-part Main body structure (Accept → Ask info 1 → Ask info 2) as the guided version above.
+
+*Target: 35-45 words. Dùng lại tình huống Bài 1 — yoga — làm ngữ cảnh cho bước giảm hỗ trợ này.*
+
+**Model answer (shown after submission)** — cùng bài với Bài 1 hỗ trợ đầy đủ:
+
+> Hi Lan, That sounds great, I'd love to join! I've been wanting to try yoga for a while. What time does the class start, and do I need to bring my own yoga mat? Talk to you soon! Minh
+>
+> *(39 words)*
+
+*(Trước đó block này chỉ có bảng từ khoá — không có textarea/Model answer/Submit nào. Đã bổ sung đầy đủ theo đúng chuẩn Gated Reveal.)*
+
+> 🎨 **Thiết kế:** 1 textarea trống hoàn toàn (không có khung câu dẫn). Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (11-14 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ## [Write · Correct the mistake]
 
@@ -364,13 +398,29 @@ Find and correct 6 mistakes in the message below.
 5. Thiếu dấu hỏi chấm — câu đang hỏi nhưng kết thúc bằng dấu chấm → phải là "?"
 6. "Yours sincerely," → "Talk to you soon!" (cách kết quá trang trọng, sai ngữ cảnh tin nhắn thân mật)
 
+> 🎨 **Thiết kế:** 6 cụm sai được gạch chân chấm ngay trong đoạn văn, chạm vào cụm sai → hiện 1 ô nhỏ để gõ lại đúng. Nút **Submit** — mở khi đã điền đủ 6 ô. Bấm Submit hiện NGAY đúng/sai + giải thích (Mục 9.2 — không cần Gated Reveal theo số từ).
+> 📱 **Mobile:** ô sửa lỗi hiện dạng inline ngay dưới cụm sai.
+
 ## [Write · Write email/letter]
 
 Task: Read the invitation below and write a COMPLETE short message replying to it (Greeting + Accept + Ask for 2 pieces of information + Closing + Sign-off).
 
 *Nam's message: "Hey Minh! I'm joining a 5km fun run for charity this Sunday morning. Want to join me?"*
 
-*Target: 35-45 words. (No model answer — this is independent writing.)*
+> 💡 There's no table to guide you this time. Before you start, decide your Accept sentence, then think of 2 pieces of information you'd want to ask about.
+
+*Target: 35-45 words.*
+
+**Model answer (shown after submission):**
+
+> Hi Nam, That sounds great, count me in! I've been wanting to do a charity run for a while. What time does it start, and where should we meet? See you then! Minh
+>
+> *(34 words)*
+
+*(Trước đó block này ghi "No model answer — this is independent writing" — đã bổ sung Model answer mới theo đúng chuẩn Gated Reveal.)*
+
+> 🎨 **Thiết kế:** textarea trống, word counter trực tiếp. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (11-14 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ---
 
@@ -423,7 +473,8 @@ Task: Read the invitation below and write a COMPLETE short message replying to i
 - Có đủ 2 câu hỏi xin thông tin không?
 - Văn phong có đủ thân mật (tránh Dear/Yours sincerely) không?
 
-> 🎨 **Thiết kế:** outline điền khuyết + "Xem model answer" — deterministic, không cần Athena. Mobile: textarea auto-grow, outline xếp dọc.
+> 🎨 **Thiết kế:** khung điền chỗ trống + textarea, 2 bài độc lập. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (11-14 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`, sau đó hiện Self-check ngay dưới.
+> 📱 **Mobile:** textarea auto-grow, Model answer + Self-check dạng bottom-sheet.
 
 ## Free Writing — gửi Athena chấm (3 bài)
 
@@ -486,13 +537,14 @@ Task: Read the invitation below and write a COMPLETE short message replying to i
 
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: build/test ở khung ≤480px trước khi mở rộng desktop.
-- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
+- **BẮT BUỘC có Practice Reference Pane** (đã sửa lỗi ghi sai "Ngoại lệ 2" ở bản trước — Writing không thuộc diện ngoại lệ bỏ Reference Pane, xem `PROMPT_TEMPLATE_WRITING` Mục 0 v8.0). Chia đôi màn hình: desktop 2 cột trái/phải, mobile 2 khối trên/dưới có 3 nút chuyển chế độ xem + nút "Gom lại" (⟨⟨). **Mapping tab theo từng phase (đúng `02_design_tiengAnh.md` Mục 4.8b v3.4):**
+  - **Identify + Structure:** 2 tab — **Tab "📄 Bài đọc"** (dùng lại ĐÚNG tin nhắn "steps" ở Identify · Structure labelling, KHÔNG phải bài mẫu Part 1 vốn viết về gym với Nam) + **Tab "🔗 Bảng tín hiệu"** (mục E ở Part 1).
+  - **Write + Production:** bỏ hẳn tab Bài đọc, **CHỈ còn Tab "🔗 Bảng tín hiệu"** — vì từ đây học sinh tự viết, không còn bài đọc cụ thể để đối chiếu.
 - File Lesson (PHẦN 1) kết thúc tự nhiên sau "Ghi chú thiết kế chung (Part 1)" — không có nút/link sang File Practice.
 - File Practice bắt đầu tự nhiên từ Identify — không có nút "Quay lại Bài học".
 - Đồng bộ dữ liệu: bài mẫu ở Hook (Bản A) và ở mục D phải cùng nội dung cốt lõi (đã đúng trong bản gốc).
 - Không có ảnh cần sinh cho unit này (Hook dùng chat bubble/notification thuần).
 
 ### Ghi chú cho Giai đoạn 2 (Design)
-- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), **9.17 (Gated Reveal — bắt buộc cho MỌI nút "Xem model answer" trong file này: Guided Writing Bài 1/2, Correct the mistake, Production Guided Writing Bài 1/2 — không được bấm xem được ngay từ đầu, phải khoá đến khi học sinh đã gõ đủ ~30-50% số từ mục tiêu 35-45 từ)**; xem code mẫu tại `03_engine_tiengAnh.md` mục 1.18.
-- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
+- Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), **9.17 (Gated Reveal — bắt buộc cho MỌI nút "Xem model answer" trong file này: Guided Writing Bài 1/2/3, Guided Writing hỗ trợ giảm, Write email/letter, Correct the mistake, Production Guided Writing Bài 1/2 — không được bấm xem được ngay từ đầu, phải khoá đến khi học sinh đã gõ đủ ~30-50% số từ mục tiêu 35-45 từ)**; xem code mẫu tại `03_engine_tiengAnh.md` mục 1.18.
 - Mọi heading/tên hoạt động khi build HTML viết tiếng Anh trước (VD "Guided Writing (Full Support)"), tiếng Việt chỉ đặt nhỏ hơn bên dưới nếu cần — không dịch chèn vào giữa tên hoạt động.

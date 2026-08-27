@@ -163,6 +163,9 @@ D. His most important scientific achievement
 
 Giải thích: Đoạn 1 nêu lý do nổi tiếng + thời trẻ → Introduction/early life. Đoạn 2 kể chi tiết phát hiện vi khuẩn dịch hạch → Achievement. Đoạn 3 kể giai đoạn cống hiến tại Việt Nam → thay cho khối "Family" vì Yersin không lập gia đình. Đoạn 4 có "However...legacy lives on" → Conclusion.
 
+> 🎨 **Thiết kế:** cấp đoạn — mỗi đoạn 1 thẻ, 4 mô tả A-D dạng thẻ rời, kéo/chạm nối cặp. Nút **Submit** — mở khi cả 4 cặp đã nối, bấm mới hiện đúng/sai + giải thích.
+> 📱 **Mobile:** chạm-chọn thay kéo-thả, xếp dọc.
+
 ## [Identify · Read & Extract]
 
 Read the same biography above and complete the table.
@@ -182,6 +185,9 @@ Read the same biography above and complete the table.
 5. Died in Nha Trang, age 79
 6. His legacy lives on — streets, schools, hospitals still carry his name
 
+> 🎨 **Thiết kế:** 6 ô nhập text ngắn trong bảng. Nút **Submit** — mở khi đủ 6 ô có nội dung, bấm mới hiện đáp án.
+> 📱 **Mobile:** bảng đổi thành thẻ dọc theo từng mốc thời gian.
+
 ---
 
 ## [Structure · Passage Arrangement — Bài 1] — Hướng thời gian (dễ)
@@ -200,6 +206,9 @@ E. This unusual mix of science and self-study would later shape his entire caree
 
 Giải thích: B nêu mốc khởi đầu → mở đầu. C dùng "From an early age" → mốc sớm nhất, đứng sau B. D dùng "While he was recovering...as a child" (Past continuous + Past simple) → mốc lớn hơn C. A dùng "When he was a teenager" → mốc lớn nhất. E kết luận, quy chiếu lại cả 3 mốc → cuối cùng.
 
+> 🎨 **Thiết kế:** kéo-thả 5 thẻ câu, xáo trộn ngẫu nhiên mỗi lần tải lại. Nút **Submit** kiểm tra thứ tự — bấm mới hiện đúng/sai + giải thích.
+> 📱 **Mobile:** tap-to-order; nếu giữ kéo-thả, thêm `touch-action: none`.
+
 ## [Structure · Passage Arrangement — Bài 2] — Hướng thành tựu (khó hơn)
 
 Put the sentences in the correct order to form a complete paragraph about Alfred Nobel's legacy.
@@ -215,6 +224,9 @@ E. As a chemist, he is best known for developing dynamite, a much safer explosiv
 Giải thích: C nêu luận điểm mở đầu → mở đầu. E giới thiệu vai trò đầu tiên. B dùng "This invention" quy chiếu lại E, nêu hệ quả → sau E. A dùng "his entire fortune" quy chiếu lại B → sau B. D kết luận, tổng kết chuỗi nhân-quả → cuối cùng.
 
 *(Bài 2 khó hơn hẳn Bài 1: không có mốc tuổi để bám, học sinh phải suy luận chuỗi nhân-quả phát minh → tài sản → giải thưởng → di sản.)*
+
+> 🎨 **Thiết kế:** kéo-thả 5 thẻ câu, xáo trộn ngẫu nhiên mỗi lần tải lại. Nút **Submit** kiểm tra thứ tự — bấm mới hiện đúng/sai + giải thích.
+> 📱 **Mobile:** tap-to-order; nếu giữ kéo-thả, thêm `touch-action: none`.
 
 ---
 
@@ -272,9 +284,12 @@ Task: Write a biography of General Vo Nguyen Giap. Use the information below to 
 >
 > *(187 words)*
 
+> 🎨 **Thiết kế:** khối outline bảng 3 cột + khung điền chỗ trống. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (55-70 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** bảng outline xếp thẻ dọc, Model answer dạng bottom-sheet.
+
 ## [Write · Guided Writing — hỗ trợ giảm]
 
-Task: Use the keywords below to write the same biography — this time without sentence starters.
+Task: Use the keywords below to write the SAME biography — this time without sentence starters.
 
 | Period/Stage | Event | Significance |
 |---|---|---|
@@ -283,7 +298,20 @@ Task: Use the keywords below to write the same biography — this time without s
 | Later Career | led army → Ho Chi Minh Campaign 1975; other government roles | reunification/governance |
 | Death & Legacy | Hanoi 2013, age 102 | national hero, streets/schools named |
 
-*(Không có câu dẫn, không có chỗ trống điền sẵn. Target: 180-200 words.)*
+> 💡 Turn each row into 1-2 full sentences, combining Past simple and Past continuous where the table suggests background context (VD "While planning the campaign, he moved..."), just like in the guided version above.
+
+*Target: 180-200 words.*
+
+**Model answer (shown after submission)** — cùng bài với bản hỗ trợ đầy đủ:
+
+> General Vo Nguyen Giap is remembered as one of Vietnam's greatest military leaders. He was born in Quang Binh province in 1911. While he was still a young man, General Giap joined the Indochinese Communist Party, which had been founded in 1930. General Giap's most remarkable achievement was leading Vietnamese forces to victory over the French at Dien Bien Phu in 1954, despite having no formal training at a military academy. While planning this campaign, he moved heavy artillery piece by piece through the mountains, a strategy that surprised military experts around the world. This victory brought an end to French colonial rule in Vietnam. After 1954, General Giap continued to lead the army through the war against the United States, which ended with the historic Ho Chi Minh Campaign in 1975. He later held several other government positions before retiring from public life. General Giap died in Hanoi in 2013, at the age of 102. However, his legacy remains extremely strong today: streets and schools across Vietnam still carry his name, and he continues to be remembered as one of the country's most respected national heroes.
+>
+> *(187 words)*
+
+*(Trước đó block này chỉ có bảng từ khoá — không có textarea/Model answer/Submit nào. Đã bổ sung đầy đủ theo đúng chuẩn Gated Reveal.)*
+
+> 🎨 **Thiết kế:** 1 textarea trống hoàn toàn (không có khung câu dẫn). Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (55-70 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ## [Write · Combine information from two sources]
 
@@ -311,19 +339,32 @@ Mỗi câu dưới đây cho 2 mẩu thông tin từ 2 nguồn khác nhau về G
 3. General Giap moved heavy artillery through the mountains piece by piece, which surprised military experts who thought it was impossible.
 4. Streets and schools across Vietnam are named after General Giap, as he is remembered as one of the country's greatest national heroes.
 
-> 🎨 **Thiết kế:** 2 khối Source A/B đặt cạnh nhau (desktop) có mũi tên/dấu + nối, xếp dọc (mobile).
+> 🎨 **Thiết kế:** 2 khối Source A/B đặt cạnh nhau (desktop) có mũi tên/dấu + nối, xếp dọc (mobile). 4 ô textarea để học sinh gõ câu ghép. Nút **Submit** — mở khi đủ 4 câu đã điền, bấm hiện NGAY đáp án gợi ý (Mục 9.2 — không cần Gated Reveal theo số từ vì có đáp án tham khảo rõ ràng).
 
 ## [Write · Write a biography]
 
 Task: Choose a person you admire (a family member, a teacher, or someone from history) and write their biography, using the structure you have learned (Introduction – Childhood & Education – Achievements – Family/Later Career – Death/Current life).
 
-*Target: 180-200 words. (No model answer — this is independent writing.)*
+> 💡 If the person is still alive, adapt the last part to "Current life" instead of "Death & Legacy" — use present simple/present perfect there instead of past tense.
+
+*Target: 180-200 words.*
+
+**Model answer (shown after submission)** — chọn "a teacher":
+
+> Mrs. Lan Anh is remembered by generations of students as one of the most dedicated teachers at our school. She was born in Hue in 1975. While she was studying literature at university, she decided that teaching, not writing, was her true passion. Mrs. Lan Anh's most significant achievement was founding the school's first creative writing club, which she has run for over fifteen years. While managing a full teaching schedule, she also mentored dozens of students who went on to win national writing competitions. She married another teacher, Mr. Duc, and the couple have two children who also chose careers in education. Mrs. Lan Anh continues to teach today, and she still remembers the name of almost every student she has ever taught. Her influence lives on: many of her former students say she is the reason they still love reading and writing today.
+>
+> *(179 words)*
+
+*(Trước đó block này ghi "No model answer — this is independent writing" — đã bổ sung Model answer mới theo đúng chuẩn Gated Reveal, tương tự cách đã sửa ở các Unit Writing khác.)*
+
+> 🎨 **Thiết kế:** textarea trống, word counter trực tiếp. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (55-70 từ). Bấm Submit mới hiện Model answer qua `openModelAnswerSheet()`.
+> 📱 **Mobile:** textarea auto-grow, Model answer dạng bottom-sheet.
 
 ---
 
 #### Part 3 — Production Writing
 
-## Guided Writing — Walt Disney (khớp Objective 2)
+## Guided Writing — Walt Disney
 
 **🖼️ Icon minh hoạ điện ảnh/hoạt hình nói chung (KHÔNG phải chân dung cá nhân — xem lý do rủi ro + prompt đầy đủ ở mục "Ảnh cần sinh" đầu file) — đặt đầu bài.**
 
@@ -343,6 +384,9 @@ Task: Choose a person you admire (a family member, a teacher, or someone from hi
 > Walt Disney is famous around the world as one of the greatest names in the history of film-making. He was born in Chicago in 1901. While he was still a child, he showed a natural talent for drawing, and he later took art classes in his spare time, even selling small sketches to neighbours for extra money. Walt Disney's most significant achievement was pioneering feature-length animated films, something no studio had successfully done before. While developing his early cartoons, he also created one of the most recognisable characters in the world, Mickey Mouse. Apart from film-making, he was also known for founding Disneyland, the first theme park of its kind. Walt Disney married Lillian Bounds in 1925, and the couple raised two daughters together. Throughout his career, he continued to expand his company into new areas of entertainment, from television to theme parks. Walt Disney died in 1966, from complications caused by lung cancer. However, his influence lives on: the company he founded continues to create films and build theme parks enjoyed by millions of people around the world today.
 >
 > *(180 words)*
+
+> 🎨 **Thiết kế:** khung điền chỗ trống + textarea. Nút **Submit** (`submitByWords`) — mở khi đã gõ đủ ~30-50% số từ mục tiêu (55-70 từ). Bấm Submit mới hiện Model answer, sau đó hiện Self-check ngay dưới.
+> 📱 **Mobile:** Model answer + Self-check dạng bottom-sheet.
 
 **Self-check (không phải Athena chấm):**
 - Có đủ 5 khối: Introduction/Childhood&Education/Achievements/Family/Death?
@@ -392,7 +436,9 @@ Task: Choose a person you admire (a family member, a teacher, or someone from hi
 
 ### ⚠️ Lưu ý thiết kế (bắt buộc đọc trước khi build)
 - Mobile-first: build/test ở khung ≤480px trước khi mở rộng desktop.
-- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
+- **BẮT BUỘC có Practice Reference Pane** (đã sửa lỗi ghi sai "Ngoại lệ 2" ở bản trước — Writing không thuộc diện ngoại lệ bỏ Reference Pane, xem `PROMPT_TEMPLATE_WRITING` Mục 0 v8.0). Chia đôi màn hình: desktop 2 cột trái/phải, mobile 2 khối trên/dưới có 3 nút chuyển chế độ xem + nút "Gom lại" (⟨⟨). **Mapping tab theo từng phase (đúng `02_design_tiengAnh.md` Mục 4.8b v3.4):**
+  - **Identify + Structure:** 2 tab — **Tab "📄 Bài đọc"** (dùng lại ĐÚNG bài tiểu sử Alexandre Yersin — bài đọc chính của Identify, KHÔNG phải bài mẫu Part 1 vốn viết về Marie Curie) + **Tab "🔗 Bảng tín hiệu"** (mục E ở Part 1).
+  - **Write + Production:** bỏ hẳn tab Bài đọc, **CHỈ còn Tab "🔗 Bảng tín hiệu"** — vì từ đây học sinh tự viết, không còn bài đọc cụ thể để đối chiếu.
 - File Lesson (PHẦN 1) kết thúc tự nhiên sau mục E — không có nút/link sang File Practice.
 - File Practice bắt đầu tự nhiên từ Identify — không có nút "Quay lại Bài học".
 - Hook đã bổ sung 2 icon minh hoạ nhỏ (1 cho Source A, 1 cho Source B — không phải overlay text lên ảnh lớn) + ví dụ Source A/Source B cụ thể — xem 2 prompt đầy đủ ở đầu file.
@@ -401,5 +447,4 @@ Task: Choose a person you admire (a family member, a teacher, or someone from hi
 
 ### Ghi chú cho Giai đoạn 2 (Design)
 - Đọc `02_design_tiengAnh.md` mục: 4.15 (Writing components), 9.6 (Athena rubric chấm Free Writing), 4.7 (Self-assessment), **4.24 (Timeline Infographic — dùng cho mục D, đã chuẩn hoá, KHÔNG dùng Region Highlight 4.23 vốn chỉ hợp Opinion essay)**, 9.17 (Gated Reveal cho mọi nút "Xem model answer": Guided Writing Bài 1/2, Production Guided Writing).
-- Không dùng Reference Pane (Ngoại lệ 2 — Writing).
 - Mọi heading/tên hoạt động khi build HTML viết tiếng Anh trước, tiếng Việt nhỏ hơn đặt sau (Mục 0 Nguyên tắc 15).
