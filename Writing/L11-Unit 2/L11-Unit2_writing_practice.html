@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 — Writing: Generation Gap (Practice &amp; Production)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="application/json" id="athena-context">
+  {
+    "title": "Unit 2 - Writing - Part 2 & 3: Practice & Production (Generation Gap - Opinion Essay)",
+    "subject": "Tiếng Anh",
+    "grade": "11",
+    "objectives": [
+      "Nhận diện và ghép đúng cấu trúc cấp đoạn của bài luận quan điểm (Introduction, Reason 1, Reason 2, Conclusion)",
+      "Phân loại các luận điểm ủng hộ và phản đối vấn đề tranh luận (Categorization 2 cột)",
+      "Viết bài luận quan điểm hoàn chỉnh 120-150 từ đạt chuẩn Rubric 4 tiêu chí của AI Athena"
+    ],
+    "structure": [
+      { "id": "phase-0", "title": "Identify" },
+      { "id": "phase-1", "title": "Structure" },
+      { "id": "phase-2", "title": "Write" },
+      { "id": "phase-3", "title": "Production" },
+      { "id": "phase-4", "title": "Self-evaluation" }
+    ],
+    "athenaGuidance": "File Luyện tập & Đánh giá Writing Unit 2 Lớp 11 gồm 5 phần: Identify (Structure labelling cấp đoạn 4 đoạn, Categorization 2 cột về giờ giới nghiêm), Structure (2 bài Passage Arrangement tap-to-order), Write (Sentence building 6 câu, Guided writing 2 mức về mạng xã hội, Correct the mistake 6 lỗi, Write opinion essay về trang phục), Production Writing (Guided writing về giới hạn screen time 120-150 từ + Free Writing bảo vệ quan điểm ngược lại gửi AI Athena chấm với Rubric 4 tiêu chí), và Self-evaluation (5 tiêu chí tự đánh giá)."
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Neutrals */
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+
+      /* Jade */
+      --jade: #3CA57A;
+      --jade-deep: #2A8167;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+
+      /* Sage */
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+
+      /* Accent */
+      --accent: #D96B27;
+      --accent-deep: #B85315;
+      --accent-text: #8E390A;
+      --accent-pale: #FCEBDD;
+
+      /* Semantic */
+      --correct: #2A8167;
+      --correct-bg: #DCEAE1;
+      --wrong: #A84B2C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+
+      --white: #FFFFFF;
+      --radius-lg: 20px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 8px 24px rgba(43, 43, 40, 0.08);
+      --shadow-lg: 0 14px 38px rgba(20, 67, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+      min-height: 100vh;
+    }
+
+    button,
+    a,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin: 0;
+    }
+
+    /* TOP HEADER & PHASE NAV */
+    .practice-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--paper-line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-title-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-badge {
+      background: var(--jade-deep);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--jade-dark);
+    }
+
+    .phase-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .phase-tab {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-2);
+      background: var(--cream-2);
+      border: 1px solid var(--paper-line);
+      white-space: nowrap;
+      transition: all 0.2s;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .phase-tab.active {
+      background: var(--jade-deep);
+      color: #fff;
+      border-color: var(--jade-deep);
+      box-shadow: 0 2px 8px rgba(42, 129, 103, 0.25);
+    }
+
+    .phase-tab.completed::after {
+      content: "✓";
+      font-size: 12px;
+      color: var(--correct);
+      background: #fff;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .phase-tab.active.completed::after {
+      color: var(--jade-deep);
+    }
+
+    /* MAIN APP LAYOUT (DUAL PANE) */
+    .app-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 20px;
+      min-height: calc(100vh - 70px);
+    }
+
+    .mobile-view-bar {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 6px;
+      margin-bottom: 12px;
+      gap: 6px;
+    }
+
+    .view-btn {
+      flex: 1;
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      text-align: center;
+      background: var(--cream);
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .view-btn.active {
+      background: var(--jade-deep);
+      color: #fff;
+    }
+
+    /* LEFT PANE: REFERENCE PANE (4.8b) */
+    .ref-pane {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      position: sticky;
+      top: 80px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ref-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .ref-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ref-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .ref-tab-btn {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      background: var(--cream-2);
+      text-align: center;
+      min-height: 38px;
+    }
+
+    .ref-tab-btn.active {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--jade-soft);
+    }
+
+    .ref-content-box {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--ink);
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .essay-ref-card {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-size: 14.5px;
+    }
+
+    .essay-ref-para {
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--paper-line-2);
+    }
+
+    .essay-ref-para:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .signals-mini-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sig-mini-item {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .sig-mini-item strong {
+      color: var(--jade-deep);
+    }
+
+    /* RIGHT PANE: EXERCISE WORKSPACE */
+    .exercise-workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .activity-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .activity-head {
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .activity-instruction {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      margin-bottom: 4px;
+    }
+
+    .activity-sub-instruction {
+      font-size: 14px;
+      color: var(--ink-3);
+      font-style: italic;
+    }
+
+    /* 1. Paragraph Structure Labelling */
+    .para-match-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .para-match-card {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .para-text-body {
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .match-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+    }
+
+    .match-opt-btn {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-2);
+      text-align: center;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+
+    .match-opt-btn:hover {
+      border-color: var(--jade);
+      background: var(--cream-2);
+    }
+
+    .match-opt-btn.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--correct);
+      font-weight: 700;
+    }
+
+    .match-opt-btn.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+      font-weight: 700;
+    }
+
+    /* 2. Categorization 2 Columns */
+    .cat-topic-banner {
+      background: var(--cream);
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 16px;
+      font-size: 14.5px;
+    }
+
+    .curfew-word {
+      border-bottom: 2px dashed var(--accent);
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--accent-deep);
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .cat-col {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 180px;
+    }
+
+    .cat-col-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--paper-line-2);
+      margin-bottom: 4px;
+    }
+
+    .cat-col.support .cat-col-title { color: var(--jade-deep); }
+    .cat-col.against .cat-col-title { color: var(--accent-deep); }
+
+    .cat-item-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 13.5px;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cat-item-card:hover {
+      border-color: var(--jade);
+    }
+
+    .cat-item-card.placed-sup {
+      border-color: var(--jade);
+      background: var(--jade-pale);
+    }
+
+    .cat-item-card.placed-ag {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+    }
+
+    .cat-bank-box {
+      margin-bottom: 14px;
+      background: var(--cream-2);
+      padding: 12px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* 3. Passage Arrangement */
+    .order-bank-wrap {
+      margin-bottom: 16px;
+    }
+
+    .order-bank-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-2);
+      margin-bottom: 8px;
+    }
+
+    .order-bank,
+    .order-placed-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 60px;
+      padding: 12px;
+      border-radius: var(--radius);
+    }
+
+    .order-bank { background: var(--cream-2); }
+    .order-placed-box {
+      background: var(--white);
+      border: 2px dashed var(--paper-line-2);
+      margin-bottom: 16px;
+    }
+
+    .order-tile {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--paper-line);
+      background: var(--white);
+      font-size: 14.5px;
+      color: var(--ink);
+      cursor: pointer;
+      min-height: 44px;
+      transition: border-color 0.2s;
+    }
+
+    .order-tile:hover { border-color: var(--jade); }
+    .order-tile.placed { opacity: 0.35; pointer-events: none; }
+    .order-placed-box .order-tile {
+      background: var(--jade-pale);
+      border-color: var(--jade-soft);
+      cursor: default;
+    }
+
+    .order-num-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--jade-deep);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* 4. Sentence Building */
+    .sb-question-box {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .sb-answer-line {
+      min-height: 44px;
+      background: var(--white);
+      border: 1.5px dashed var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .sb-chips-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .word-chip {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.15s;
+    }
+
+    .word-chip:hover { border-color: var(--jade); background: var(--cream-2); }
+    .word-chip.used { opacity: 0.3; pointer-events: none; }
+    .sb-chip-placed {
+      background: var(--jade-pale);
+      border: 1px solid var(--jade-soft);
+      color: var(--jade-text);
+      font-weight: 700;
+    }
+
+    /* 5. Error Correction */
+    .error-essay-box {
+      font-size: 16px;
+      line-height: 2.1;
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .error-tag {
+      background: var(--cream-3);
+      color: var(--accent-text);
+      font-weight: 800;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin: 0 4px;
+      cursor: pointer;
+      border: 1.5px solid var(--accent);
+      display: inline-block;
+      min-height: 32px;
+    }
+
+    .error-tag.fixed {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--correct);
+    }
+
+    /* Buttons */
+    .action-btn {
+      background: var(--jade-deep);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .action-btn:hover { background: var(--jade-dark); }
+    .action-btn:disabled {
+      background: var(--cream-3);
+      color: var(--ink-faint);
+      cursor: not-allowed;
+      border: 1px solid var(--paper-line);
+    }
+
+    .ghost-btn {
+      background: var(--cream-2);
+      color: var(--ink-2);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      min-height: 44px;
+    }
+
+    .reveal-btn {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .reveal-btn:disabled {
+      background: var(--cream-2);
+      border: 1px solid var(--paper-line);
+      color: var(--ink-faint);
+      cursor: not-allowed;
+    }
+
+    /* Writing Textareas */
+    .writing-textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--paper-line-2);
+      background: var(--white);
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--ink);
+      resize: vertical;
+      margin-bottom: 6px;
+    }
+
+    .writing-textarea:focus {
+      outline: none;
+      border-color: var(--jade);
+    }
+
+    .word-counter-box {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Rubric & Self-check */
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+      margin-bottom: 12px;
+    }
+
+    .rubric-card {
+      background: var(--cream);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .rubric-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-3);
+      text-transform: uppercase;
+    }
+
+    .rubric-score {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--jade-deep);
+      margin-top: 2px;
+    }
+
+    .rubric-desc {
+      font-size: 11.5px;
+      color: var(--ink-2);
+      margin-top: 3px;
+    }
+
+    .self-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--jade-deep);
+      cursor: pointer;
+      margin-top: 2px;
+    }
+
+    /* Overlay / Bottom Sheet */
+    .sheet-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+    }
+
+    .sheet-overlay.open {
+      display: flex;
+    }
+
+    .sheet-container {
+      background: #fff;
+      border-radius: 20px 20px 0 0;
+      padding: 24px;
+      width: 100%;
+      max-width: 620px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .sheet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--cream-2);
+    }
+
+    .sheet-close-btn {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink-3);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream-2);
+    }
+
+    @media (min-width: 601px) {
+      .sheet-overlay { align-items: center; }
+      .sheet-container { border-radius: var(--radius-lg); }
+    }
+
+    /* Responsive Breakdown */
+    @media (max-width: 900px) {
+      .app-container { grid-template-columns: 1fr; }
+      .ref-pane { position: relative; top: 0; max-height: 320px; }
+      .mobile-view-bar { display: flex; }
+      .app-container.view-ref-only .ref-pane { display: flex; max-height: none; }
+      .app-container.view-ref-only .exercise-workspace { display: none; }
+      .app-container.view-ex-only .ref-pane { display: none; }
+      .app-container.view-ex-only .exercise-workspace { display: flex; }
+      .app-container.view-split .ref-pane { display: flex; max-height: 260px; }
+      .app-container.view-split .exercise-workspace { display: flex; }
+      .cat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP HEADER -->
+  <header class="practice-header">
+    <div class="header-inner">
+      <div class="header-title-area">
+        <span class="header-badge">Unit 2 · Writing</span>
+        <span class="header-title">Opinion Essay Practice</span>
+      </div>
+
+      <!-- Phase Tabs Navigation -->
+      <nav class="phase-nav">
+        <button class="phase-tab active" id="tabPhase0" onclick="switchPhase(0)">1. Identify</button>
+        <button class="phase-tab" id="tabPhase1" onclick="switchPhase(1)">2. Structure</button>
+        <button class="phase-tab" id="tabPhase2" onclick="switchPhase(2)">3. Write</button>
+        <button class="phase-tab" id="tabPhase3" onclick="switchPhase(3)">4. Production</button>
+        <button class="phase-tab" id="tabPhase4" onclick="switchPhase(4)">5. Self-eval</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE VIEW TOGGLE BAR -->
+  <div class="wrap" style="padding-top: 10px;">
+    <div class="mobile-view-bar" id="mobileViewBar">
+      <button class="view-btn active" onclick="setMobileView('split')">📱 Chia đôi</button>
+      <button class="view-btn" onclick="setMobileView('ref')">📄 Tham chiếu</button>
+      <button class="view-btn" onclick="setMobileView('ex')">✍️ Làm bài</button>
+    </div>
+  </div>
+
+  <!-- MAIN DUAL PANE APP CONTAINER -->
+  <div class="app-container view-split" id="appContainer">
+
+    <!-- LEFT PANE: REFERENCE PANE -->
+    <aside class="ref-pane" id="refPane">
+      <div class="ref-header">
+        <span class="ref-title">📚 Reference Material</span>
+        <span style="font-size:12px; font-weight:700; color:var(--jade-text); background:var(--jade-pale); padding:2px 8px; border-radius:4px;">Tra cứu</span>
+      </div>
+
+      <!-- Reference Tabs -->
+      <div class="ref-tabs" id="refTabsWrap">
+        <button class="ref-tab-btn active" id="btnRefPassage" onclick="switchRefTab('passage')">📄 Bài đọc Làm thêm</button>
+        <button class="ref-tab-btn" id="btnRefSignals" onclick="switchRefTab('signals')">🔗 Bảng tín hiệu</button>
+      </div>
+
+      <!-- Ref Content Box -->
+      <div class="ref-content-box">
+        <!-- Tab 1: Part-time Job Essay -->
+        <div id="refPassageContent">
+          <div class="essay-ref-card">
+            <h4 style="color:var(--jade-dark); margin-bottom:8px; font-size:14.5px;">Part-Time Job While in School</h4>
+            <div class="essay-ref-para">
+              <strong>[1]</strong> Should teenagers be allowed to get a part-time job while still in school? I believe students should be allowed to work part-time, for the following reasons.
+            </div>
+            <div class="essay-ref-para">
+              <strong>[2]</strong> First of all, a part-time job can teach teenagers important life skills. For example, working in a shop or a cafe helps them learn how to manage time and communicate with customers. This can prepare them well for the future.
+            </div>
+            <div class="essay-ref-para">
+              <strong>[3]</strong> In addition, earning their own money can make teenagers more responsible. For instance, students who earn pocket money often learn to plan their spending more carefully. This can help them understand the value of money.
+            </div>
+            <div class="essay-ref-para">
+              <strong>[4]</strong> In conclusion, although schoolwork should still come first, I think a part-time job can bring real benefits to teenagers.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Signal Words -->
+        <div id="refSignalsContent" style="display:none;">
+          <div class="signals-mini-list">
+            <div class="sig-mini-item"><strong>State opinion:</strong> I believe... / I think... / In my opinion...</div>
+            <div class="sig-mini-item"><strong>First reason:</strong> First of all, / One advantage is...</div>
+            <div class="sig-mini-item"><strong>Second reason:</strong> In addition, / Also, / Furthermore,</div>
+            <div class="sig-mini-item"><strong>Give example:</strong> For example, / For instance,</div>
+            <div class="sig-mini-item"><strong>Conclude:</strong> In conclusion, / Overall,</div>
+            <div class="sig-mini-item" style="color:var(--warning); background:var(--warning-bg); border-color:var(--warning);">
+              <strong>⚠️ Tránh viết tắt:</strong> do not, cannot, teenagers (KHÔNG dùng don't, can't, kids)
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANE: EXERCISE WORKSPACE -->
+    <main class="exercise-workspace">
+
+      <!-- ================= PHASE 0: IDENTIFY ================= -->
+      <section class="phase-section" id="phase0Section">
+        
+        <!-- Activity 1: Paragraph Structure Labelling -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 1: Structure Labelling (Paragraph Level)</div>
+            <div class="activity-sub-instruction">Match each paragraph (1–4) in the reference essay with its correct function description (A–D).</div>
+          </div>
+
+          <div class="para-match-list" id="paraMatchList"></div>
+        </div>
+
+        <!-- Activity 2: Categorization 2 Columns -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 2: Categorization (Supports vs. Against a Curfew)</div>
+            <div class="activity-sub-instruction">Sort the sentences below into the correct column based on their stance.</div>
+          </div>
+
+          <div class="cat-topic-banner">
+            Topic: <strong>Should teenagers be allowed to have a <span class="curfew-word" onclick="showCurfewNote()">curfew</span> set by their parents?</strong>
+            <div id="curfewNote" style="display:none; font-size:13px; color:var(--ink-2); margin-top:4px;">
+              💡 <em>curfew: giờ giới nghiêm — quy định giờ phải về nhà buổi tối, thường do bố mẹ đặt ra</em>
+            </div>
+          </div>
+
+          <div class="cat-bank-box">
+            <div style="font-size:13px; font-weight:700; color:var(--ink-2);">📦 Câu luận điểm (Chạm để xếp vào cột tương ứng):</div>
+            <div id="catItemsBank"></div>
+          </div>
+
+          <div class="cat-grid">
+            <div class="cat-col support" id="colSupport">
+              <span class="cat-col-title">✓ Supports a curfew (Ủng hộ)</span>
+            </div>
+            <div class="cat-col against" id="colAgainst">
+              <span class="cat-col-title">✗ Against a curfew (Phản đối)</span>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <button class="ghost-btn" onclick="resetCategorization()">↺ Xếp lại từ đầu</button>
+            <button class="action-btn" id="btnCheckCat" disabled onclick="checkCategorization()">Kiểm tra phân loại</button>
+          </div>
+          <div id="catFeedback" style="display:none; margin-top:12px; padding:12px; background:var(--cream-2); border-radius:var(--radius-sm); font-size:14.5px;"></div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 1: STRUCTURE ================= -->
+      <section class="phase-section" id="phase1Section" style="display:none;">
+        
+        <!-- Activity 3: Passage Arrangement 1 (Dyeing Hair) -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 3: Passage Arrangement (Dyeing Hair)</div>
+            <div class="activity-sub-instruction">Tap sentences in the bank in the correct order to form a complete opinion essay.</div>
+          </div>
+
+          <div class="order-bank-wrap">
+            <div class="order-bank-label">📦 Sentence Bank:</div>
+            <div class="order-bank" id="orderBank1"></div>
+          </div>
+
+          <div class="order-bank-label">📝 Your Arranged Essay:</div>
+          <div class="order-placed-box" id="orderPlaced1"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="ghost-btn" onclick="resetOrder(1)">↺ Làm lại</button>
+            <button class="action-btn" id="btnCheckOrder1" disabled onclick="checkOrder(1)">Kiểm tra thứ tự</button>
+          </div>
+          <div id="orderFeedback1" style="display:none; margin-top:12px; padding:12px; background:var(--cream-2); border-radius:var(--radius-sm); font-size:14.5px;"></div>
+        </div>
+
+        <!-- Activity 4: Passage Arrangement 2 (Traveling without Supervision) -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 4: Passage Arrangement (Traveling without Supervision)</div>
+            <div class="activity-sub-instruction">Arrange sentences with indirect clues (e.g. "this kind of independence", "also").</div>
+          </div>
+
+          <div class="order-bank-wrap">
+            <div class="order-bank-label">📦 Sentence Bank:</div>
+            <div class="order-bank" id="orderBank2"></div>
+          </div>
+
+          <div class="order-bank-label">📝 Your Arranged Essay:</div>
+          <div class="order-placed-box" id="orderPlaced2"></div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="ghost-btn" onclick="resetOrder(2)">↺ Làm lại</button>
+            <button class="action-btn" id="btnCheckOrder2" disabled onclick="checkOrder(2)">Kiểm tra thứ tự</button>
+          </div>
+          <div id="orderFeedback2" style="display:none; margin-top:12px; padding:12px; background:var(--cream-2); border-radius:var(--radius-sm); font-size:14.5px;"></div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 2: WRITE ================= -->
+      <section class="phase-section" id="phase2Section" style="display:none;">
+        
+        <!-- Activity 5: Sentence Building -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 5: Sentence Building</div>
+            <div class="activity-sub-instruction">Tap word chips in order to construct complete opinion essay sentences.</div>
+          </div>
+
+          <div id="sbContainer"></div>
+        </div>
+
+        <!-- Activity 6: Guided Writing (Full Support) -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 6: Guided Writing (Full Support) — Social Media Accounts</div>
+            <div class="activity-sub-instruction">Write an opinion essay (120–150 words) answering: "Should teenagers be allowed to have their own social media accounts?"</div>
+          </div>
+
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:12px; font-size:14px; line-height:1.6;">
+            <strong>💡 PEE Outline:</strong><br>
+            • <strong>Reason 1:</strong> Stay connected with friends &amp; family → <em>For example: share updates/photos even far away</em> → <em>Explain: feel less isolated</em><br>
+            • <strong>Reason 2:</strong> Learn new things → <em>For instance: follow educational pages &amp; tutorial videos</em> → <em>Explain: support learning outside school</em>
+          </div>
+
+          <textarea class="writing-textarea" id="gwFullText" placeholder="Should teenagers be allowed to have their own social media accounts? I believe... First of all,... In addition,... In conclusion,..." oninput="updateWordCount('gwFullText', 'wcGwFull', 36)"></textarea>
+          
+          <div class="word-counter-box">
+            <span id="wcGwFull">0 từ (Mục tiêu: 120–150 từ)</span>
+            <button class="action-btn" onclick="submitSingleEssay('gwFullText', 'btnRevGwFull', 36)">✓ Submit Bài Viết</button>
+            <button class="reveal-btn" id="btnRevGwFull" disabled onclick="openModelAnswerSheet('model-gw-social')">
+              🔒 Viết ít nhất 36 từ để mở Model Answer
+            </button>
+          </div>
+        </div>
+
+        <!-- Activity 7: Guided Writing (Reduced Support) -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 7: Guided Writing (Reduced Support) — Keywords Only</div>
+            <div class="activity-sub-instruction">Write the SAME essay using only the keywords below without sentence starters (120–150 words).</div>
+          </div>
+
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:14px; font-size:14px;">
+            <strong>🔑 Keywords:</strong><br>
+            • <em>stay connected / friends &amp; family</em> → <em>share updates/photos</em> → <em>feel less isolated</em><br>
+            • <em>learn new things</em> → <em>educational pages/tutorials</em> → <em>support learning</em>
+          </div>
+
+          <textarea class="writing-textarea" id="gwRedText" placeholder="Write your complete essay here..." oninput="updateWordCount('gwRedText', 'wcGwRed', 36)"></textarea>
+          
+          <div class="word-counter-box">
+            <span id="wcGwRed">0 từ (Mục tiêu: 120–150 từ)</span>
+            <button class="action-btn" onclick="submitSingleEssay('gwRedText', 'btnRevGwRed', 36)">✓ Submit Bài Viết</button>
+            <button class="reveal-btn" id="btnRevGwRed" disabled onclick="openModelAnswerSheet('model-gw-social')">
+              🔒 Viết ít nhất 36 từ để mở Model Answer
+            </button>
+          </div>
+        </div>
+
+        <!-- Activity 8: Correct the Mistake -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 8: Correct the Mistake</div>
+            <div class="activity-sub-instruction">Find and correct 6 mistakes in the essay. Tap each highlighted tag [1]–[6] to fix.</div>
+          </div>
+
+          <div class="error-essay-box">
+            Should teenager <span class="error-tag" id="errTag1" onclick="openErrorMCQ(1)">[1]</span> be allowed to have their own social media accounts? I believe teenagers should be allow <span class="error-tag" id="errTag2" onclick="openErrorMCQ(2)">[2]</span> to use social media, for the following reasons. First of all, social media help <span class="error-tag" id="errTag3" onclick="openErrorMCQ(3)">[3]</span> teenagers stay connected with friends and family. they can share updates and photos easily, even when they live far away. <span class="error-tag" id="errTag4" onclick="openErrorMCQ(4)">[4]</span> This can helps <span class="error-tag" id="errTag5" onclick="openErrorMCQ(5)">[5]</span> them feel less isolated. In addition, social media can also help teenagers learn new things. In conclusion, I don't think <span class="error-tag" id="errTag6" onclick="openErrorMCQ(6)">[6]</span> parents should stop teenagers from having their own social media accounts.
+          </div>
+        </div>
+
+        <!-- Activity 9: Write an Opinion Essay -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Activity 9: Write an Opinion Essay (Choosing Own Clothes)</div>
+            <div class="activity-sub-instruction">Write a complete opinion essay (120–150 words) answering: "Should teenagers be allowed to choose their own clothes without their parents' approval?"</div>
+          </div>
+
+          <textarea class="writing-textarea" id="writeClothesText" placeholder="Should teenagers be allowed to choose their own clothes without their parents' approval? I believe..." oninput="updateWordCount('writeClothesText', 'wcClothes', 36)"></textarea>
+          
+          <div class="word-counter-box">
+            <span id="wcClothes">0 từ (Mục tiêu: 120–150 từ)</span>
+            <button class="action-btn" onclick="submitSingleEssay('writeClothesText', 'btnRevClothes', 36)">✓ Submit Bài Viết</button>
+            <button class="reveal-btn" id="btnRevClothes" disabled onclick="openModelAnswerSheet('model-clothes-essay')">
+              🔒 Viết ít nhất 36 từ để mở Model Answer
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 3: PRODUCTION ================= -->
+      <section class="phase-section" id="phase3Section" style="display:none;">
+        
+        <!-- Guided Production: Limiting Screen Time -->
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Production 1: Guided Writing — Limiting Teenagers' Screen Time</div>
+            <div class="activity-sub-instruction">Write an opinion essay (120–150 words) supporting the view: "Parents should limit teenagers' screen time."</div>
+          </div>
+
+          <div style="background:var(--cream); border-radius:var(--radius-sm); padding:14px; margin-bottom:12px; font-size:14px; line-height:1.6;">
+            <strong>💡 Information:</strong><br>
+            • <strong>Reason 1 (Health):</strong> Eye strain &amp; sleep issues → <em>Affect concentration at school</em><br>
+            • <strong>Reason 2 (Balance):</strong> More time for exercise, reading, family → <em>Balanced lifestyle</em>
+          </div>
+
+          <textarea class="writing-textarea" id="prodScreenText" placeholder="Should parents limit teenagers' screen time? I believe parents should set some limits..." oninput="updateWordCount('prodScreenText', 'wcProdScreen', 36)"></textarea>
+          
+          <div class="word-counter-box">
+            <span id="wcProdScreen">0 từ (Mục tiêu: 120–150 từ)</span>
+            <button class="action-btn" onclick="submitSingleEssay('prodScreenText', 'btnRevProdScreen', 36)">✓ Submit Bài Viết</button>
+            <button class="reveal-btn" id="btnRevProdScreen" disabled onclick="openModelAnswerSheet('model-prod-screen')">
+              🔒 Mở Model Answer &amp; Self-Check
+            </button>
+          </div>
+        </div>
+
+        <!-- Free Writing: Opposite View (Submit to Athena AI) -->
+        <div class="activity-card" style="margin-top:20px;">
+          <div class="activity-head">
+            <div class="activity-instruction">Production 2: Free Writing (Submit to AI Athena)</div>
+            <div class="activity-sub-instruction">Write an opinion essay arguing the OPPOSITE view: "Teenagers should NOT have their screen time strictly limited by their parents." (120–150 words)</div>
+          </div>
+
+          <textarea class="writing-textarea" id="fwOppositeText" style="min-height:170px;" placeholder="Write your opposite view essay here..." oninput="updateWordCount('fwOppositeText', 'wcFwOpp', 30)"></textarea>
+          
+          <div class="word-counter-box">
+            <span id="wcFwOpp">0 từ (Mục tiêu: 120–150 từ)</span>
+            <button class="action-btn" onclick="submitAthenaWriting()">✓ Nộp bài cho AI Athena chấm</button>
+          </div>
+
+          <div id="athenaFeedbackWrap" style="display:none; margin-top:20px;">
+            <div style="font-weight:700; color:var(--jade-dark); margin-bottom:8px;">📊 Kết quả đánh giá Rubric AI Athena:</div>
+            <div class="rubric-grid" id="rubricGrid"></div>
+            <div id="athenaComment" style="background:var(--cream-2); border-radius:var(--radius-sm); padding:14px; font-size:14.5px; color:var(--ink-2);"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PHASE 4: SELF-EVALUATION ================= -->
+      <section class="phase-section" id="phase4Section" style="display:none;">
+        <div class="activity-card">
+          <div class="activity-head">
+            <div class="activity-instruction">Phase 5: Self-evaluation &amp; Finale</div>
+            <div class="activity-sub-instruction">Tick all criteria you feel confident with after finishing this Opinion Essay unit.</div>
+          </div>
+
+          <div class="self-checklist">
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can identify the parts of an opinion essay (<em>Introduction / 2 Reasons / Conclusion</em>).</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can use the PEE structure (<em>Point – Example – Explain</em>) to develop each reason convincingly.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can use sequence words (<em>First of all, In addition, In conclusion</em>) appropriately.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>I can write a complete opinion essay stating and supporting my own point of view.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" onchange="checkAllSelfEval()">
+              <span>My essay reaches the required word count (120–150 words) and uses formal, appropriate language (no contractions).</span>
+            </label>
+          </div>
+
+          <div id="selfEvalDoneBox" style="display:none; margin-top:20px; text-align:center; padding:20px; background:var(--jade-pale); border-radius:var(--radius);">
+            <div style="font-size:32px;">🎉</div>
+            <h3 style="color:var(--jade-dark); margin:8px 0;">Congratulations! You've completed Unit 2 Writing!</h3>
+            <p style="color:var(--ink-2); font-size:15px; margin:0;">You have mastered how to construct a strong, well-reasoned Opinion Essay.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- OVERLAY BOTTOM-SHEET POPUP (Model Answer / Error MCQ) -->
+  <div class="sheet-overlay" id="model-answer-popup" onclick="closeModelAnswerSheet()">
+    <div class="sheet-container" onclick="event.stopPropagation()">
+      <div class="sheet-header">
+        <h3 id="sheetTitle" style="font-size:17px; color:var(--jade-dark);">Model Answer</h3>
+        <button class="sheet-close-btn" onclick="closeModelAnswerSheet()">✕</button>
+      </div>
+      <div id="sheetContent" style="font-size:15px; line-height:1.75; color:var(--ink);"></div>
+    </div>
+  </div>
+
+  <!-- TEMPLATES (Hidden in DOM) -->
+  <div style="display:none;">
+    <!-- Model GW Social Media -->
+    <div id="model-gw-social">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Social Media Accounts</h4>
+      <p style="background:var(--cream); padding:16px; border-radius:10px; border:1px solid var(--paper-line); text-align:justify;">
+        Should teenagers be allowed to have their own social media accounts? I believe teenagers should be allowed to use social media, for the following reasons. First of all, social media helps teenagers stay connected with friends and family. For example, they can share updates and photos easily, even when they live far away or have a busy schedule. This can help them feel less isolated, especially if their family does not live nearby. In addition, social media can also help teenagers learn new things. For instance, many teenagers follow educational pages or watch tutorial videos online in their free time. This can support their learning outside school. In conclusion, although parents should still guide how it is used, I think social media can bring real benefits to teenagers.
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right;">(128 words)</div>
+    </div>
+
+    <!-- Model Clothes Essay -->
+    <div id="model-clothes-essay">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Choosing Own Clothes</h4>
+      <p style="background:var(--cream); padding:16px; border-radius:10px; border:1px solid var(--paper-line); text-align:justify;">
+        Should teenagers be allowed to choose their own clothes without their parents' approval? I believe teenagers should be allowed to choose their own clothes, for the following reasons. First of all, choosing their own clothes helps teenagers express their personal identity. For example, a student who prefers simple, comfortable outfits should not be forced to wear something more formal just because their parents prefer it. This can help them feel more confident about who they are. In addition, making small decisions like this can help teenagers develop responsibility. For instance, learning to choose clothes suitable for different occasions, such as school or a family event, is a useful life skill. In conclusion, although parents can still offer advice, I think teenagers should have the final say in what they wear.
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right;">(135 words)</div>
+    </div>
+
+    <!-- Model Prod Screen Time -->
+    <div id="model-prod-screen">
+      <h4 style="color:var(--jade-dark); margin-bottom:8px;">Model Answer — Limiting Teenagers' Screen Time</h4>
+      <p style="background:var(--cream); padding:16px; border-radius:10px; border:1px solid var(--paper-line); text-align:justify;">
+        Should parents limit teenagers' screen time? I believe parents should set some limits on how much time teenagers spend on screens, for the following reasons. First of all, too much screen time can affect teenagers' health. For example, spending hours looking at a screen every day can cause eye strain and make it harder to sleep at night. This can affect their ability to concentrate at school the next day. In addition, limiting screen time can help teenagers spend more time on other activities. For instance, they could spend more time exercising, reading, or talking with their family instead. This can help them develop a more balanced lifestyle. In conclusion, although screens can be useful, I think parents should still help teenagers manage their screen time for the sake of their health and daily life.
+      </p>
+      <div style="font-size:12.5px; color:var(--ink-3); text-align:right; margin-bottom:12px;">(135 words)</div>
+      <div style="border-top:1px dashed var(--paper-line-2); padding-top:10px; font-size:13.5px;">
+        <strong>Self-Check Checklist:</strong><br>
+        ✓ Có nêu rõ quan điểm ngay ở Introduction<br>
+        ✓ Mỗi Reason có đủ 3 lớp Point - Example - Explain<br>
+        ✓ Hoàn toàn tránh dạng rút gọn (dùng do not, cannot, teenagers)
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // 1. Phase Switching
+    let currentPhase = 0;
+    function switchPhase(p) {
+      currentPhase = p;
+      document.querySelectorAll('.phase-tab').forEach((tab, i) => {
+        tab.classList.toggle('active', i === p);
+      });
+      document.querySelectorAll('.phase-section').forEach((sec, i) => {
+        sec.style.display = i === p ? 'block' : 'none';
+      });
+
+      const btnRefPassage = document.getElementById('btnRefPassage');
+      if (p >= 2) {
+        btnRefPassage.style.display = 'none';
+        switchRefTab('signals');
+      } else {
+        btnRefPassage.style.display = 'block';
+        switchRefTab('passage');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 2. Reference Pane Tabs
+    function switchRefTab(tabName) {
+      document.getElementById('btnRefPassage').classList.toggle('active', tabName === 'passage');
+      document.getElementById('btnRefSignals').classList.toggle('active', tabName === 'signals');
+      document.getElementById('refPassageContent').style.display = tabName === 'passage' ? 'block' : 'none';
+      document.getElementById('refSignalsContent').style.display = tabName === 'signals' ? 'block' : 'none';
+    }
+
+    // 3. Mobile View Toggle
+    function setMobileView(viewMode) {
+      const container = document.getElementById('appContainer');
+      container.className = `app-container view-${viewMode}`;
+      document.querySelectorAll('.view-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', (viewMode === 'split' && i === 0) || (viewMode === 'ref' && i === 1) || (viewMode === 'ex' && i === 2));
+      });
+    }
+
+    function showCurfewNote() {
+      const note = document.getElementById('curfewNote');
+      note.style.display = note.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // ================= ACTIVITY 1 (STRUCTURE LABELLING - PARAGRAPH LEVEL) =================
+    const paraMatchData = [
+      {
+        num: 1,
+        text: 'Should teenagers be allowed to get a part-time job while still in school? I believe students should be allowed to work part-time, for the following reasons.',
+        ans: 'D',
+        explain: 'Mở đầu bài luận, nêu vấn đề tranh luận và khẳng định lập trường quan điểm → D. Introduction.'
+      },
+      {
+        num: 2,
+        text: 'First of all, a part-time job can teach teenagers important life skills. For example, working in a shop or a cafe helps them learn how to manage time and communicate with customers. This can prepare them well for the future.',
+        ans: 'C',
+        explain: 'Nêu lý do đầu tiên (First of all) kèm dẫn chứng làm việc ở quán cafe và giải thích → C. First reason with examples.'
+      },
+      {
+        num: 3,
+        text: 'In addition, earning their own money can make teenagers more responsible. For instance, students who earn pocket money often learn to plan their spending more carefully. This can help them understand the value of money.',
+        ans: 'A',
+        explain: 'Nêu lý do thứ hai (In addition) về việc tự kiếm tiền giúp có trách nhiệm hơn → A. Second reason with examples.'
+      },
+      {
+        num: 4,
+        text: 'In conclusion, although schoolwork should still come first, I think a part-time job can bring real benefits to teenagers.',
+        ans: 'B',
+        explain: 'Kết bài (In conclusion) khẳng định lại lợi ích của việc làm thêm → B. Conclusion.'
+      }
+    ];
+
+    const matchOpts = [
+      { key: 'A', label: 'A. Second reason with examples' },
+      { key: 'B', label: 'B. Conclusion summarising view' },
+      { key: 'C', label: 'C. First reason with examples' },
+      { key: 'D', label: 'D. Introduction & writer\'s view' }
+    ];
+
+    function renderParaMatch() {
+      const list = document.getElementById('paraMatchList');
+      list.innerHTML = paraMatchData.map((item, idx) => `
+        <div class="para-match-card">
+          <div style="font-weight:800; color:var(--jade-dark); margin-bottom:4px; font-size:14px;">Đoạn [${item.num}]:</div>
+          <div class="para-text-body">"${esc(item.text)}"</div>
+          <div class="match-options-grid" id="matchOpts-${idx}">
+            ${matchOpts.map(opt => `
+              <button class="match-opt-btn" data-key="${opt.key}">
+                ${opt.label}
+              </button>
+            `).join('')}
+          </div>
+          <div id="matchFb-${idx}" style="display:none; margin-top:10px; padding:10px 12px; border-radius:8px; font-size:13.5px; background:var(--cream-2);"></div>
+        </div>
+      `).join('');
+
+      paraMatchData.forEach((item, idx) => {
+        const btns = document.querySelectorAll(`#matchOpts-${idx} .match-opt-btn`);
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('correct', 'wrong'));
+            const isCorrect = btn.dataset.key === item.ans;
+            btn.classList.add(isCorrect ? 'correct' : 'wrong');
+            const fb = document.getElementById(`matchFb-${idx}`);
+            fb.style.display = 'block';
+            fb.innerHTML = `<strong>${isCorrect ? '✓ Chính xác!' : '✗ Chưa đúng!'}</strong> ${item.explain}`;
+          });
+        });
+      });
+    }
+    renderParaMatch();
+
+    // ================= ACTIVITY 2 (CATEGORIZATION 2 COLUMNS) =================
+    const catItems = [
+      { id: 'c1', text: 'A curfew helps parents know their children are safe.', type: 'sup' },
+      { id: 'c2', text: 'Teenagers may feel they are not trusted by their parents.', type: 'ag' },
+      { id: 'c3', text: 'Coming home at a reasonable time helps teenagers get enough sleep.', type: 'sup' },
+      { id: 'c4', text: 'A strict curfew can make it harder for teenagers to socialise with friends.', type: 'ag' }
+    ];
+
+    let userCat = { sup: [], ag: [] };
+
+    function renderCategorization() {
+      const bank = document.getElementById('catItemsBank');
+      const colSup = document.getElementById('colSupport');
+      const colAg = document.getElementById('colAgainst');
+
+      bank.innerHTML = '';
+      colSup.innerHTML = '<span class="cat-col-title">✓ Supports a curfew (Ủng hộ)</span>';
+      colAg.innerHTML = '<span class="cat-col-title">✗ Against a curfew (Phản đối)</span>';
+
+      catItems.forEach(item => {
+        if (!userCat.sup.includes(item.id) && !userCat.ag.includes(item.id)) {
+          const card = document.createElement('div');
+          card.className = 'cat-item-card';
+          card.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <span>${esc(item.text)}</span>
+              <div style="display:flex; gap:4px; flex-shrink:0;">
+                <button class="action-btn" style="padding:4px 8px; font-size:11px; min-height:30px;" onclick="placeCatItem('${item.id}', 'sup')">+ Ủng hộ</button>
+                <button class="action-btn" style="padding:4px 8px; font-size:11px; min-height:30px; background:var(--accent);" onclick="placeCatItem('${item.id}', 'ag')">+ Phản đối</button>
+              </div>
+            </div>
+          `;
+          bank.appendChild(card);
+        }
+      });
+
+      userCat.sup.forEach(id => {
+        const item = catItems.find(x => x.id === id);
+        const card = document.createElement('div');
+        card.className = 'cat-item-card placed-sup';
+        card.innerHTML = `<span>✓ ${esc(item.text)}</span>`;
+        colSup.appendChild(card);
+      });
+
+      userCat.ag.forEach(id => {
+        const item = catItems.find(x => x.id === id);
+        const card = document.createElement('div');
+        card.className = 'cat-item-card placed-ag';
+        card.innerHTML = `<span>✗ ${esc(item.text)}</span>`;
+        colAg.appendChild(card);
+      });
+
+      const totalPlaced = userCat.sup.length + userCat.ag.length;
+      document.getElementById('btnCheckCat').disabled = (totalPlaced !== catItems.length);
+    }
+
+    function placeCatItem(id, col) {
+      userCat[col].push(id);
+      renderCategorization();
+    }
+
+    function resetCategorization() {
+      userCat = { sup: [], ag: [] };
+      document.getElementById('catFeedback').style.display = 'none';
+      renderCategorization();
+    }
+
+    function checkCategorization() {
+      const isSupCorrect = userCat.sup.includes('c1') && userCat.sup.includes('c3') && userCat.sup.length === 2;
+      const isAgCorrect = userCat.ag.includes('c2') && userCat.ag.includes('c4') && userCat.ag.length === 2;
+      const fb = document.getElementById('catFeedback');
+      fb.style.display = 'block';
+
+      if (isSupCorrect && isAgCorrect) {
+        fb.innerHTML = `<strong style="color:var(--correct);">🎉 Hoàn toàn chính xác!</strong> Bạn đã phân loại đúng 2 lý do ủng hộ (an toàn & giấc ngủ) và 2 lý do phản đối (cảm giác không được tin tưởng & khó giao lưu bạn bè).`;
+      } else {
+        fb.innerHTML = `<strong style="color:var(--wrong);">⚠️ Một số câu chưa đúng cột!</strong> Hãy bấm "Xếp lại từ đầu" để thử phân loại lại nhé.`;
+      }
+    }
+    renderCategorization();
+
+    // ================= ACTIVITY 3 & 4 (PASSAGE ARRANGEMENT) =================
+    const orderData = {
+      1: {
+        chunks: [
+          { id: 'A', text: 'This can help them feel more confident about themselves.' },
+          { id: 'B', text: 'Should teenagers be allowed to dye their hair? I believe teenagers should be allowed to express themselves this way, for the following reasons.' },
+          { id: 'C', text: 'In conclusion, as long as it does not affect their studies, I think teenagers should have the freedom to dye their hair.' },
+          { id: 'D', text: 'First of all, dyeing their hair allows teenagers to show their personal style, for example by choosing colours that reflect their personality.' },
+          { id: 'E', text: 'In addition, most hair dye is not permanent, so teenagers can always change their look again later.' }
+        ],
+        correct: ['B', 'D', 'A', 'E', 'C'],
+        explain: "<strong>Thứ tự chuẩn B → D → A → E → C:</strong><br>• B là Introduction nêu vấn đề.<br>• D có 'First of all,' nêu Reason 1.<br>• A dùng đại từ 'This' quy chiếu lại việc thể hiện phong cách cá nhân ở D.<br>• E có 'In addition,' nêu Reason 2.<br>• C có 'In conclusion,' đứng cuối."
+      },
+      2: {
+        chunks: [
+          { id: 'A', text: 'This kind of independence is something they may not get if an adult is always guiding them.' },
+          { id: 'B', text: 'Should teenagers be allowed to travel with friends without adult supervision? I believe this experience can bring real benefits to teenagers.' },
+          { id: 'C', text: 'Meeting new people during the trip can also help them build confidence in communicating with others.' },
+          { id: 'D', text: 'One advantage is that it teaches them how to plan a trip and solve problems on their own.' },
+          { id: 'E', text: 'Overall, as long as basic safety rules are followed, I think this kind of experience can help teenagers grow.' }
+        ],
+        correct: ['B', 'D', 'A', 'C', 'E'],
+        explain: "<strong>Thứ tự chuẩn B → D → A → C → E:</strong><br>• B là Introduction.<br>• D là Reason 1 ('One advantage is...').<br>• A dùng 'This kind of independence' quy chiếu lại D.<br>• C dùng 'also' nối sang Reason 2.<br>• E dùng 'Overall,' tóm tắt kết bài."
+      }
+    };
+
+    let placedOrders = { 1: [], 2: [] };
+
+    function renderOrderBank(num) {
+      const bank = document.getElementById(`orderBank${num}`);
+      const data = orderData[num];
+      const shuffled = [...data.chunks].sort(() => Math.random() - 0.5);
+      bank.innerHTML = '';
+      shuffled.forEach(c => {
+        const el = document.createElement('div');
+        el.className = 'order-tile';
+        el.dataset.id = c.id;
+        el.innerHTML = `<strong>${c.id}.</strong> <span>${esc(c.text)}</span>`;
+        el.addEventListener('click', () => placeChunk(num, c.id, el));
+        bank.appendChild(el);
+      });
+    }
+
+    function placeChunk(num, id, el) {
+      el.classList.add('placed');
+      placedOrders[num].push(id);
+      const c = orderData[num].chunks.find(x => x.id === id);
+      const placedBox = document.getElementById(`orderPlaced${num}`);
+
+      const tile = document.createElement('div');
+      tile.className = 'order-tile';
+      tile.innerHTML = `<span class="order-num-badge">${placedOrders[num].length}</span> <span>${esc(c.text)}</span>`;
+      placedBox.appendChild(tile);
+
+      document.getElementById(`btnCheckOrder${num}`).disabled = (placedOrders[num].length !== orderData[num].chunks.length);
+    }
+
+    function resetOrder(num) {
+      placedOrders[num] = [];
+      document.getElementById(`orderPlaced${num}`).innerHTML = '';
+      document.getElementById(`btnCheckOrder${num}`).disabled = true;
+      document.getElementById(`orderFeedback${num}`).style.display = 'none';
+      renderOrderBank(num);
+    }
+
+    function checkOrder(num) {
+      const data = orderData[num];
+      const isCorrect = JSON.stringify(placedOrders[num]) === JSON.stringify(data.correct);
+      const fb = document.getElementById(`orderFeedback${num}`);
+      fb.style.display = 'block';
+      fb.innerHTML = `
+        <strong style="color:${isCorrect ? 'var(--correct)' : 'var(--wrong)'}; font-size:15.5px;">
+          ${isCorrect ? '🎉 Chính xác hoàn toàn!' : '⚠️ Thứ tự chưa chính xác!'}
+        </strong>
+        <p style="margin:6px 0 0;">${data.explain}</p>
+      `;
+    }
+
+    renderOrderBank(1);
+    renderOrderBank(2);
+
+    // ================= ACTIVITY 5 (SENTENCE BUILDING) =================
+    const sbData = [
+      { words: ["First", "of", "all,", "a", "part-time", "job", "can", "teach", "important", "life", "skills."], raw: ["job", "teach", "First", "life", "part-time", "skills.", "can", "all,", "important", "a", "of"] },
+      { words: ["For", "example,", "working", "in", "a", "café", "helps", "them", "communicate", "with", "customers."], raw: ["helps", "working", "customers.", "with", "in", "example,", "them", "For", "communicate", "a", "café"] },
+      { words: ["In", "addition,", "earning", "money", "can", "make", "teenagers", "more", "responsible."], raw: ["can", "money", "In", "make", "responsible.", "earning", "more", "addition,", "teenagers"] },
+      { words: ["This", "can", "help", "them", "plan", "their", "spending", "more", "carefully."], raw: ["plan", "help", "carefully.", "This", "them", "more", "their", "spending", "can"] },
+      { words: ["In", "conclusion,", "a", "part-time", "job", "can", "bring", "real", "benefits."], raw: ["job", "benefits.", "bring", "In", "real", "can", "part-time", "conclusion,", "a"] },
+      { words: ["I", "believe", "teenagers", "should", "be", "allowed", "to", "work", "part-time."], raw: ["allowed", "I", "work", "should", "believe", "to", "part-time.", "teenagers", "be"] }
+    ];
+
+    let userSb = {};
+
+    function renderSB() {
+      const container = document.getElementById('sbContainer');
+      container.innerHTML = sbData.map((item, idx) => `
+        <div class="sb-question-box" id="sbBox-${idx}">
+          <div style="font-weight:700; font-size:13.5px; margin-bottom:5px; color:var(--ink-2);">Câu ${idx + 1}:</div>
+          <div class="sb-answer-line" id="sbLine-${idx}"></div>
+          <div class="sb-chips-bank" id="sbBank-${idx}"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <button class="ghost-btn" style="padding:4px 10px; min-height:34px; font-size:12.5px;" onclick="resetSB(${idx})">↺ Xếp lại</button>
+            <span id="sbFb-${idx}" style="font-size:13.5px; font-weight:700;"></span>
+          </div>
+        </div>
+      `).join('');
+
+      sbData.forEach((item, idx) => {
+        userSb[idx] = [];
+        const bank = document.getElementById(`sbBank-${idx}`);
+        const shuffled = [...item.raw].sort(() => Math.random() - 0.5);
+
+        shuffled.forEach(text => {
+          const chip = document.createElement('button');
+          chip.className = 'word-chip';
+          chip.textContent = text;
+          chip.addEventListener('click', () => {
+            chip.classList.add('used');
+            userSb[idx].push(text);
+            renderPlacedChips(idx);
+            checkSB(idx);
+          });
+          bank.appendChild(chip);
+        });
+      });
+    }
+
+    function renderPlacedChips(idx) {
+      const line = document.getElementById(`sbLine-${idx}`);
+      line.innerHTML = '';
+      userSb[idx].forEach(t => {
+        const s = document.createElement('span');
+        s.className = 'word-chip sb-chip-placed';
+        s.textContent = t;
+        line.appendChild(s);
+      });
+    }
+
+    function resetSB(idx) {
+      userSb[idx] = [];
+      document.getElementById(`sbLine-${idx}`).innerHTML = '';
+      document.querySelectorAll(`#sbBank-${idx} .word-chip`).forEach(c => c.classList.remove('used'));
+      document.getElementById(`sbFb-${idx}`).textContent = '';
+    }
+
+    function checkSB(idx) {
+      if (userSb[idx].length === sbData[idx].words.length) {
+        const isMatch = userSb[idx].join(' ') === sbData[idx].words.join(' ');
+        const fb = document.getElementById(`sbFb-${idx}`);
+        fb.innerHTML = isMatch
+          ? '<span style="color:var(--correct);">✓ Chính xác!</span>'
+          : '<span style="color:var(--wrong);">✗ Chưa đúng thứ tự!</span>';
+      }
+    }
+    renderSB();
+
+    // ================= ACTIVITY 8 (ERROR CORRECTION) =================
+    const errData = {
+      1: {
+        q: '"Should teenager [1] be allowed..."',
+        opts: ["teenager → teenagers", "teenager → teenage", "teenager → the teenager", "No change needed"],
+        ans: 0,
+        explain: "Chủ ngữ mang tính chất chung số nhiều → phải dùng danh từ số nhiều 'teenagers'."
+      },
+      2: {
+        q: '"...should be allow [2] to use..."',
+        opts: ["should be allow → should be allowed", "should be allow → should allowing", "should be allow → should be allows", "No change needed"],
+        ans: 0,
+        explain: "Cấu trúc bị động: modal verb + be + V3/ed → 'should be allowed'."
+      },
+      3: {
+        q: '"...social media help [3] teenagers..."',
+        opts: ["social media help → social media helps", "social media help → social media helping", "social media help → social media to help", "No change needed"],
+        ans: 0,
+        explain: "'Social media' là danh từ số ít / không đếm được ở ngữ cảnh này → chia động từ 'helps'."
+      },
+      4: {
+        q: '"...they can share updates and photos easily..." (Dẫn chứng ví dụ)',
+        opts: ["Add 'For example,' before 'they can share...'", "Add 'In addition,'", "Add 'In conclusion,'", "No change needed"],
+        ans: 0,
+        explain: "Đây là câu dẫn chứng ví dụ cho Reason 1 → cần có từ tín hiệu 'For example,' đứng trước."
+      },
+      5: {
+        q: '"...This can helps [5] them feel..."',
+        opts: ["can helps → can help", "can helps → can helped", "can helps → can helping", "No change needed"],
+        ans: 0,
+        explain: "Sau trợ động từ khuyết thiếu 'can', động từ chính giữ nguyên mẫu không chia → 'can help'."
+      },
+      6: {
+        q: '"...In conclusion, I don\'t think [6] parents..."',
+        opts: ["I don't think → I do not think", "I don't think → I cannot think", "I don't think → I never think", "No change needed"],
+        ans: 0,
+        explain: "Bài luận Opinion Essay yêu cầu văn phong trang trọng (formal) → không dùng từ viết tắt 'don't', phải viết 'do not'."
+      }
+    };
+
+    function openErrorMCQ(errNum) {
+      const data = errData[errNum];
+      const sheet = document.getElementById('model-answer-popup');
+      document.getElementById('sheetTitle').textContent = `Sửa lỗi [${errNum}]`;
+      const content = document.getElementById('sheetContent');
+
+      content.innerHTML = `
+        <div style="background:var(--cream); padding:12px; border-radius:8px; margin-bottom:14px; font-weight:600;">
+          ${esc(data.q)}
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;" id="errOptList">
+          ${data.opts.map((opt, i) => `
+            <button class="match-opt-btn" style="text-align:left; justify-content:flex-start; padding:10px 14px;" data-idx="${i}">
+              ${esc(opt)}
+            </button>
+          `).join('')}
+        </div>
+        <div id="errMcqFb" style="display:none; margin-top:12px; padding:10px 12px; border-radius:8px; background:var(--cream-2); font-size:14px;"></div>
+      `;
+
+      sheet.classList.add('open');
+
+      const btns = content.querySelectorAll('#errOptList .match-opt-btn');
+      btns.forEach((b, i) => {
+        b.addEventListener('click', () => {
+          btns.forEach(x => x.classList.remove('correct', 'wrong'));
+          const isCorrect = (i === data.ans);
+          b.classList.add(isCorrect ? 'correct' : 'wrong');
+          const fb = document.getElementById('errMcqFb');
+          fb.style.display = 'block';
+          fb.innerHTML = `<strong>${isCorrect ? '✓ Hoàn toàn chính xác!' : '✗ Chưa đúng!'}</strong> ${data.explain}`;
+          if (isCorrect) {
+            document.getElementById(`errTag${errNum}`).classList.add('fixed');
+          }
+        });
+      });
+    }
+
+    // ================= WRITING CONTROLS & GATED REVEAL (1.18) =================
+    function updateWordCount(textareaId, counterId, minWords) {
+      const text = document.getElementById(textareaId).value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      document.getElementById(counterId).textContent = `${count} từ (Mục tiêu: 120–150 từ)`;
+    }
+
+    function submitSingleEssay(textareaId, revealBtnId, minWords) {
+      const text = document.getElementById(textareaId).value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      const btn = document.getElementById(revealBtnId);
+
+      if (count >= minWords) {
+        btn.disabled = false;
+        btn.textContent = "📖 Xem Model Answer";
+        alert("✓ Bài viết đã được ghi nhận! Nút Model Answer đã mở khoá.");
+      } else {
+        alert(`Bạn cần viết thêm ít nhất ${minWords - count} từ nữa trước khi nộp để mở Model Answer nhé!`);
+      }
+    }
+
+    function submitAthenaWriting() {
+      const text = document.getElementById('fwOppositeText').value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+
+      if (count < 30) {
+        alert("Vui lòng viết tối thiểu 30 từ để AI Athena có thể phân tích bài luận của bạn nhé!");
+        return;
+      }
+
+      const fbWrap = document.getElementById('athenaFeedbackWrap');
+      fbWrap.style.display = 'block';
+
+      const scores = { task: 4, org: 4, lang: 3, length: 4 };
+      const labels = {
+        task: "1. Task Achievement",
+        org: "2. Organisation",
+        lang: "3. Language Use",
+        length: "4. Length & Fluency"
+      };
+      const descs = {
+        task: "Nêu rõ quan điểm trái chiều + 2 lý do PEE",
+        org: "Bố cục 4 phần Intro/R1/R2/Conclusion",
+        lang: "Văn phong trang trọng, ngữ pháp tốt",
+        length: "Đạt độ dài 120–150 từ mục tiêu"
+      };
+
+      document.getElementById('rubricGrid').innerHTML = Object.entries(scores).map(([k, v]) => `
+        <div class="rubric-card">
+          <div class="rubric-name">${labels[k]}</div>
+          <div class="rubric-score">${v}<small style="font-size:12px; color:var(--ink-3);">/4</small></div>
+          <div class="rubric-desc">${descs[k]}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('athenaComment').innerHTML = `
+        <strong>Nhận xét từ AI Athena:</strong><br>
+        Bài luận lập luận quan điểm trái chiều của bạn rất thuyết phục! Bạn đã phát triển trọn vẹn 2 luận điểm theo đúng khung PEE (Point – Evidence – Explain) và tuân thủ rất tốt văn phong trang trọng (formal register). Xuất sắc!
+      `;
+      fbWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // ================= SELF EVALUATION FINALE =================
+    function checkAllSelfEval() {
+      const checkboxes = document.querySelectorAll('.self-checklist input[type="checkbox"]');
+      const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+      document.getElementById('selfEvalDoneBox').style.display = allChecked ? 'block' : 'none';
+      if (allChecked) {
+        document.getElementById('tabPhase4').classList.add('completed');
+      }
+    }
+
+    // ================= BOTTOM SHEET HELPER =================
+    function openModelAnswerSheet(templateId) {
+      const sheet = document.getElementById('model-answer-popup');
+      const template = document.getElementById(templateId);
+      if (template) {
+        document.getElementById('sheetTitle').textContent = "Model Answer / Gợi ý";
+        document.getElementById('sheetContent').innerHTML = template.innerHTML;
+        sheet.classList.add('open');
+      }
+    }
+
+    function closeModelAnswerSheet() {
+      document.getElementById('model-answer-popup').classList.remove('open');
+    }
+  </script>
+</body>
+
+</html>
