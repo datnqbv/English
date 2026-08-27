@@ -1196,8 +1196,20 @@
       }
 
       .practice-ref-pane {
-        position: static;
-        max-height: none;
+        position: sticky;
+        top: 10px;
+        z-index: 80;
+        max-height: 38vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 24px rgba(42, 129, 103, 0.15);
+        border-bottom: 3px solid var(--jade-deep);
+      }
+
+      .pref-body {
+        max-height: calc(38vh - 55px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       body[data-mobile-view="ref"] .practice-questions-pane {

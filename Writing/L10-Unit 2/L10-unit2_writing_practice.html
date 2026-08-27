@@ -29,7 +29,7 @@
       { "id": "phase-3", "title": "Production" },
       { "id": "phase-4", "title": "Self-evaluation" }
     ],
-    "athenaGuidance": "File Luyện tập & Đánh giá Writing Unit 2 Lớp 10 gồm 5 phần: Identify (Structure labelling 5 câu, Read & Extract 4 ô), Structure (2 bài Passage Arrangement tap-to-order), Write (Sentence building 4 câu, Guided writing 2 mức, Correct the mistake 3 lỗi, Independent suggestion writing), Production Writing (Guided writing về Canteen, Free Writing về giảm rác nhựa 100-130 từ chấm qua AI Athena kèm Rubric 4 tiêu chí), và Self-evaluation (5 tiêu chí tự đánh giá). Hỗ trợ Practice Reference Pane 2 tab (Bài mẫu + Signal Words) và nút gom ⟨⟨ theo chuẩn Design System v3.0."
+    "athenaGuidance": "File Luyện tập & Đánh giá Writing Unit 2 Lớp 10 gồm 5 phần: Identify (Structure labelling 5 câu, Read & Extract 4 ô), Structure (2 bài Passage Arrangement tap-to-order), Write (Sentence building 4 câu, Guided writing 2 mức, Correct the mistake 3 lỗi, Independent suggestion writing), Production Writing (Guided writing về Canteen, Free Writing về giảm rác nhựa 100-130 từ chấm qua AI Athena kèm Rubric 4 tiêu chí), và Self-evaluation (5 tiêu chí tự đánh giá). Chuẩn hoá Practice Reference Pane theo Design System v3.4 (Identify/Structure: 2 tab Bài đọc + Signal Words; Write/Production: 1 tab Signal Words duy nhất; nút collapse ⟨⟨; sửa triệt để lỗi cuộn mobile)."
   }
   </script>
 
@@ -203,69 +203,7 @@
       margin-top: 4px;
     }
 
-    /* Mobile View Mode Controls */
-    .mobile-pane-controls {
-      display: none;
-      margin: 0 0 16px;
-      background: var(--white);
-      padding: 10px 12px;
-      border-radius: var(--radius);
-      width: 100%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 14px rgba(20, 67, 47, 0.10);
-      border: 1px solid var(--paper-line);
-    }
-
-    .mpc-title {
-      font-size: 11.5px;
-      font-weight: 800;
-      color: var(--jade-dark);
-      margin-bottom: 6px;
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
-    .mpc-btns {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-      width: 100%;
-    }
-
-    .mpc-btn {
-      background: var(--cream-2);
-      border: 1.5px solid var(--paper-line-2);
-      border-radius: 999px;
-      padding: 7px 6px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--ink-2);
-      min-height: 40px;
-      width: 100%;
-      white-space: nowrap;
-      text-align: center;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      transition: all .15s ease;
-    }
-
-    .mpc-btn:hover {
-      background: var(--cream-3);
-    }
-
-    .mpc-btn.active {
-      background: var(--jade-deep);
-      color: #fff;
-      border-color: var(--jade-deep);
-      box-shadow: 0 2px 8px rgba(42, 129, 103, 0.25);
-    }
-
-    /* Split Container Layout (Component 4.8b v3.0) */
+    /* Split Container Layout (Component 4.8b v3.4) */
     .practice-split-container {
       display: grid;
       grid-template-columns: 380px 1fr;
@@ -274,7 +212,7 @@
       margin: 28px auto 40px;
     }
 
-    /* Left Reference Pane */
+    /* Left Reference Pane (Chuẩn v3.4: flex column + cuộn độc lập) */
     .practice-ref-pane {
       background: var(--white);
       border: 1px solid var(--paper-line);
@@ -296,24 +234,34 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
+      flex-shrink: 0;
     }
 
     .pref-tabs {
       display: flex;
       gap: 6px;
-      overflow-x: auto;
       flex: 1;
+      min-width: 0;
     }
 
     .pref-tab {
       background: transparent;
       border: 0;
       border-radius: var(--radius-sm);
-      padding: 6px 12px;
-      font-size: 12.5px;
+      padding: 7px 10px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--ink-2);
+      flex: 1;
+      text-align: center;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-width: 0;
       transition: all .15s ease;
     }
 
@@ -388,15 +336,7 @@
       overflow-y: auto;
       font-size: 14px;
       line-height: 1.65;
-    }
-
-    .pref-content-panel {
-      display: none;
-    }
-
-    .pref-content-panel.active {
-      display: block;
-      animation: fadeIn .2s ease;
+      flex: 1;
     }
 
     .pref-quote {
@@ -1232,27 +1172,36 @@
       }
     }
 
-    /* Mobile Adaptations (Mục 4.8b v3.0: Mode Split 38vh / 62vh) */
+    /* Mobile Responsive (Chuẩn v3.4: Bắt buộc 2 dòng flex-column & max-height để không bị cuộn lỗi) */
     @media (max-width: 991px) {
       .practice-split-container {
         grid-template-columns: 1fr;
-      }
-
-      .mobile-pane-controls {
-        display: block;
+        gap: 16px;
       }
 
       .practice-ref-pane {
-        position: static;
+        position: sticky;
+        top: 10px;
+        z-index: 80;
         max-height: 38vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 24px rgba(42, 129, 103, 0.15);
+        border-bottom: 3px solid var(--jade-deep);
       }
 
-      body[data-mobile-view="ref"] .practice-questions-pane {
-        display: none !important;
+      .ref-reopen-btn {
+        position: sticky;
+        top: 10px;
+        z-index: 80;
+        width: 100%;
+        justify-content: center;
       }
 
-      body[data-mobile-view="quest"] .practice-ref-pane {
-        display: none !important;
+      .pref-body {
+        max-height: calc(38vh - 55px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .field-grid {
@@ -1276,7 +1225,7 @@
   </style>
 </head>
 
-<body data-mobile-view="split">
+<body>
 
   <!-- Reading Progress Bar -->
   <div class="reading-progress" id="readProgress"><span></span></div>
@@ -1295,68 +1244,24 @@
 
   <main class="wrap">
 
-    <!-- Mobile Pane Controls -->
-    <div class="mobile-pane-controls" id="mpcControls">
-      <span class="mpc-title">Chế độ xem trên di động:</span>
-      <div class="mpc-btns">
-        <button class="mpc-btn active" data-view="split">📱 Chia đôi</button>
-        <button class="mpc-btn" data-view="ref">📖 Bài mẫu</button>
-        <button class="mpc-btn" data-view="quest">✍️ Câu hỏi</button>
-      </div>
-    </div>
-
-    <!-- Main Split Container (Mục 4.8b v3.0) -->
+    <!-- Main Split Container (Mục 4.8b v3.4) -->
     <div class="practice-split-container" id="practiceSplit">
 
-      <!-- LEFT: Practice Reference Pane (BẮT BUỘC 2 TAB theo v2.9 & Nút ⟨⟨ theo v3.0) -->
+      <!-- LEFT: Practice Reference Pane (Được render động theo Phase chuẩn v3.1 & v3.4) -->
       <aside class="practice-ref-pane" aria-label="Reference Materials">
         <div class="pref-head">
           <div class="pref-tabs" id="prefTabs">
-            <button class="pref-tab active" data-target="pref-model">📝 Bài mẫu Model</button>
-            <button class="pref-tab" data-target="pref-signals">💡 Bảng tín hiệu &amp; Công thức</button>
+            <!-- Rendered by JS based on Phase -->
           </div>
           <button class="pref-collapse-btn" id="prefCollapseBtn" onclick="toggleRefPane()" aria-label="Gom lại, chỉ xem câu hỏi">⟨⟨</button>
         </div>
 
-        <div class="pref-body">
-          <!-- Panel 1: Model Paragraph -->
-          <div class="pref-content-panel active" id="pref-model">
-            <h4 style="color: var(--jade-dark); margin: 0 0 8px; font-size: 15px;">Making Our School Greener (Bài mẫu 123 từ)</h4>
-            <div class="pref-quote">
-              “There are several things we can do to make our school greener. First, we should turn off the lights and fans when we leave a room. For example, students can check the switches in classrooms before leaving. This can reduce our school's electricity use. Second, the school could set up refill stations for water and hand soap near the canteen. For example, students can refill their own bottles instead of buying new plastic ones. This can cut down on single-use plastic waste. Third, we should encourage students to bring their own water bottles every day. This will help our school produce less plastic waste. In conclusion, making our school greener doesn't need big changes. Small daily habits can already make a real difference.”
-            </div>
-            <div class="pref-box">
-              <h4>🎯 Bố cục 5 phần chuẩn:</h4>
-              <ul style="margin: 4px 0 0 16px; padding: 0; font-size: 13px;">
-                <li><strong>Topic:</strong> There are several things we can do to...</li>
-                <li><strong>Point 1:</strong> First + turn off lights + check switches + reduce electricity.</li>
-                <li><strong>Point 2:</strong> Second + refill stations + refill bottles + cut down plastic.</li>
-                <li><strong>Point 3:</strong> Third + bring water bottles + produce less waste.</li>
-                <li><strong>Conclusion:</strong> In conclusion + small daily habits make a difference.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Panel 2: Signal Words & Formulas (BẮT BUỘC Ở MỌI PHASE theo v2.9) -->
-          <div class="pref-content-panel" id="pref-signals">
-            <h4 style="color: var(--jade-dark); margin: 0 0 8px; font-size: 15px;">Bảng tín hiệu &amp; Công thức viết</h4>
-            <div class="pref-box">
-              <h4>📐 1. Topic Sentence:</h4>
-              <p style="margin: 0; font-size: 13px;"><code>There are several things we can do to + V...</code></p>
-            </div>
-            <div class="pref-box">
-              <h4>💡 2. Supporting Point (Công thức 3 lớp):</h4>
-              <p style="margin: 0; font-size: 13px;">• <strong>Lớp 1 (Suggestion):</strong> <code>First / Second / Third, + S + should / could + V</code><br>• <strong>Lớp 2 (Example):</strong> <code>For example, + S + V</code><br>• <strong>Lớp 3 (Expected result):</strong> <code>This can / will + V</code></p>
-            </div>
-            <div class="pref-box">
-              <h4>🎯 3. Concluding Sentence:</h4>
-              <p style="margin: 0; font-size: 13px;"><code>In conclusion, + [restate main idea / message]</code></p>
-            </div>
-          </div>
+        <div class="pref-body" id="prefBody">
+          <!-- Rendered dynamically by JS -->
         </div>
       </aside>
 
-      <!-- Nút mở lại Reference Pane (Mới v3.0) -->
+      <!-- Nút mở lại Reference Pane khi đã gom (Mới v3.0) -->
       <button class="ref-reopen-btn" id="refReopenBtn" onclick="toggleRefPane()">📄 Xem lại bài mẫu</button>
 
       <!-- RIGHT: Questions Pane -->
@@ -1810,40 +1715,114 @@
       if (p) p.style.width = scrolled + '%';
     });
 
-    // 2. Mobile View Controls (Mục 4.8b)
-    $$('.mpc-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        $$('.mpc-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.body.setAttribute('data-mobile-view', btn.dataset.view);
-      });
-    });
+    // 2. Reference Pane Data & Phase Tabs Mapping (Mục 4.8b Chuẩn v3.1 & v3.4)
+    const refData = {
+      modelSpeech: {
+        id: 'modelSpeech',
+        label: '📖 Bài đọc',
+        render: () => `
+          <h4 style="color: var(--jade-dark); margin: 0 0 8px; font-size: 15px;">Making Our School Greener (Bài mẫu 123 từ)</h4>
+          <div class="pref-quote">
+            “There are several things we can do to make our school greener. First, we should turn off the lights and fans when we leave a room. For example, students can check the switches in classrooms before leaving. This can reduce our school's electricity use. Second, the school could set up refill stations for water and hand soap near the canteen. For example, students can refill their own bottles instead of buying new plastic ones. This can cut down on single-use plastic waste. Third, we should encourage students to bring their own water bottles every day. This will help our school produce less plastic waste. In conclusion, making our school greener doesn't need big changes. Small daily habits can already make a real difference.”
+          </div>
+          <div class="pref-box">
+            <h4>🎯 Bố cục 5 phần chuẩn:</h4>
+            <ul style="margin: 4px 0 0 16px; padding: 0; font-size: 13px;">
+              <li><strong>Topic:</strong> There are several things we can do to...</li>
+              <li><strong>Point 1:</strong> First + turn off lights + check switches + reduce electricity.</li>
+              <li><strong>Point 2:</strong> Second + refill stations + refill bottles + cut down plastic.</li>
+              <li><strong>Point 3:</strong> Third + bring water bottles + produce less waste.</li>
+              <li><strong>Conclusion:</strong> In conclusion + small daily habits make a difference.</li>
+            </ul>
+          </div>
+        `
+      },
+      orderPassage1: {
+        id: 'orderPassage1',
+        label: '📖 Bài đọc',
+        render: () => `
+          <h4 style="color: var(--jade-dark); margin: 0 0 8px; font-size: 15px;">Passage Structure Reference</h4>
+          <div class="pref-box">
+            <h4>🌿 Bài 1: Giảm rác thải lớp học</h4>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6;">Topic (C) &rarr; First (A: phân loại rác) &rarr; Second (E: phát tài liệu số) &rarr; Third (B: tái sử dụng hộp) &rarr; Conclusion (D: trách nhiệm chung).</p>
+          </div>
+          <div class="pref-box">
+            <h4>💡 Bài 2: Tiết kiệm điện thư viện</h4>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6;">Topic (D) &rarr; First (E: tắt đèn bàn học) &rarr; Second (C: tận dụng ánh sáng tự nhiên) &rarr; Third (A: đèn cảm ứng) &rarr; Conclusion (B).</p>
+          </div>
+        `
+      },
+      signals: {
+        id: 'signals',
+        label: '💡 Công thức & Tín hiệu',
+        render: () => `
+          <h4 style="color: var(--jade-dark); margin: 0 0 8px; font-size: 15px;">Bảng tín hiệu &amp; Công thức viết</h4>
+          <div class="pref-box">
+            <h4>📐 1. Topic Sentence:</h4>
+            <p style="margin: 0; font-size: 13px;"><code>There are several things we can do to + V...</code></p>
+          </div>
+          <div class="pref-box">
+            <h4>💡 2. Supporting Point (Công thức 3 lớp):</h4>
+            <p style="margin: 0; font-size: 13px;">• <strong>Lớp 1 (Suggestion):</strong> <code>First / Second / Third, + S + should / could + V</code><br>• <strong>Lớp 2 (Example):</strong> <code>For example, + S + V</code><br>• <strong>Lớp 3 (Expected result):</strong> <code>This can / will + V</code></p>
+          </div>
+          <div class="pref-box">
+            <h4>🎯 3. Concluding Sentence:</h4>
+            <p style="margin: 0; font-size: 13px;"><code>In conclusion, + [restate main idea / message]</code></p>
+          </div>
+          <div class="pref-box">
+            <h4>🔗 4. Sequence &amp; Linking Words:</h4>
+            <p style="margin: 0; font-size: 13px;"><em>First, / Second, / Third, / For example, / This can... / In conclusion,</em></p>
+          </div>
+        `
+      }
+    };
 
-    // 3. Reference Pane Tabs (Mục 4.8b v2.9: 2 tabs bắt buộc)
-    $$('#prefTabs .pref-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        $$('#prefTabs .pref-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        $$('.pref-content-panel').forEach(p => p.classList.remove('active'));
-        const target = $(`#${tab.dataset.target}`);
-        if (target) target.classList.add('active');
-      });
-    });
+    // Chuẩn v3.1 & v3.4: Identify/Structure có Bài đọc + Signal Words; Write/Production/Self-eval CHỈ CÒN Signal Words
+    const levelRefTabs = {
+      'phase-0': ['modelSpeech', 'signals'],
+      'phase-1': ['orderPassage1', 'signals'],
+      'phase-2': ['signals'],
+      'phase-3': ['signals'],
+      'phase-4': ['signals']
+    };
 
-    // 4. Nút Gom lại ⟨⟨ & Nút mở lại Reference Pane (Mới v3.0)
+    let currentActiveTabKey = 'modelSpeech';
+
+    function renderRefTabsForLevel(phaseId) {
+      const tabKeys = levelRefTabs[phaseId] || ['signals'];
+      if (!tabKeys.includes(currentActiveTabKey)) {
+        currentActiveTabKey = tabKeys[0];
+      }
+
+      const tabsContainer = $('#prefTabs');
+      tabsContainer.innerHTML = tabKeys.map(key => {
+        const item = refData[key];
+        const isActive = key === currentActiveTabKey;
+        return `<button class="pref-tab ${isActive ? 'active' : ''}" data-key="${key}" onclick="switchRefTab('${key}')">${item.label}</button>`;
+      }).join('');
+
+      $('#prefBody').innerHTML = refData[currentActiveTabKey].render();
+    }
+
+    function switchRefTab(key) {
+      currentActiveTabKey = key;
+      $$('#prefTabs .pref-tab').forEach(t => t.classList.toggle('active', t.dataset.key === key));
+      $('#prefBody').innerHTML = refData[key].render();
+    }
+
+    // 3. Nút Gom lại ⟨⟨ & Nút mở lại Reference Pane (Mới v3.0)
     function toggleRefPane() {
       const container = $('#practiceSplit');
-      const controls = $('.mobile-pane-controls');
       const collapsed = container.classList.toggle('ref-collapsed');
-      if (controls) controls.style.display = collapsed ? 'none' : '';
       LMS().event('ref_pane_toggle', { collapsed });
       reportHeight();
     }
 
-    // 5. Level Tabs Navigation
+    // 4. Level Tabs Navigation
     function goToPhase(phaseId) {
       $$('.level-tab').forEach(tab => tab.classList.toggle('active', tab.dataset.phase === phaseId));
       $$('.phase-panel').forEach(panel => panel.classList.toggle('active', panel.id === phaseId));
+      renderRefTabsForLevel(phaseId);
       LMS().state({ activePhase: phaseId, lastAction: 'change-phase' });
       const topOffset = $('.practice-questions-pane').offsetTop - 60;
       window.scrollTo({ top: topOffset, behavior: 'smooth' });
@@ -1853,7 +1832,7 @@
       tab.addEventListener('click', () => goToPhase(tab.dataset.phase));
     });
 
-    // 6. Activity 1: Structure Labelling
+    // 5. Activity 1: Structure Labelling
     const labelData = [
       ['There are several things we can do to make our school greener.', 'A', 'Câu chủ đề nêu mục đích chính của cả đoạn → Topic Sentence.'],
       ['First, we should turn off the lights and fans when we leave a room.', 'B', 'Đề xuất số 1 bắt đầu bằng "First" → Supporting Point 1.'],
@@ -1908,7 +1887,7 @@
       summary.className = 'q-fb show';
     });
 
-    // 7. Activity 2: Read & Extract
+    // 6. Activity 2: Read & Extract
     const extractInputs = $$('[data-extract]');
     extractInputs.forEach(input => {
       input.addEventListener('input', () => {
@@ -1922,7 +1901,7 @@
       $('#extractSubmit').disabled = true;
     });
 
-    // 8. Activities 3 & 4: Passage Arrangement (Tap-to-Order)
+    // 7. Activities 3 & 4: Passage Arrangement (Tap-to-Order)
     const orderData = {
       1: {
         items: {
@@ -1991,7 +1970,7 @@
       });
     });
 
-    // 9. Activity 5: Sentence Building
+    // 8. Activity 5: Sentence Building
     const sentenceData = [
       { words: ['there', 'several', 'things', 'are', 'we', 'can', 'do', 'to', 'save', 'energy'], answer: 'there are several things we can do to save energy', shown: 'There are several things we can do to save energy.' },
       { words: ['first,', 'we', 'should', 'turn', 'off', 'the', 'fans', 'when', 'leaving'], answer: 'first, we should turn off the fans when leaving', shown: 'First, we should turn off the fans when leaving.' },
@@ -2062,7 +2041,7 @@
       });
     });
 
-    // 10. Gated Reveal Writing System (Mục 9.17 & Engine 1.18)
+    // 9. Gated Reveal Writing System (Mục 9.17 & Engine 1.18)
     function countWords(str) {
       return str.trim() ? str.trim().split(/\s+/).filter(Boolean).length : 0;
     }
@@ -2102,7 +2081,7 @@
     setupGatedWriting('eventWrite', 'eventCount', 'eventSubmit', 'eventReveal', 'eventWarn');
     setupGatedWriting('canteenWrite', 'canteenCount', 'canteenSubmit', 'canteenReveal', 'canteenWarn');
 
-    // 11. Bottom-Sheet Modal Controls (Mục 1.18 Engine v1.13)
+    // 10. Bottom-Sheet Modal Controls (Mục 1.18 Engine v1.13)
     function openModelAnswerSheet(templateId) {
       lastActiveFocus = document.activeElement;
       const tpl = $(`#${templateId}`);
@@ -2130,7 +2109,7 @@
       if (e.key === 'Escape') closeModelAnswerSheet();
     });
 
-    // 12. Activity 8: Correct the Mistake
+    // 11. Activity 8: Correct the Mistake
     $$('.mistake-target').forEach(target => {
       target.addEventListener('click', () => {
         const box = $(`#${target.dataset.cor}`);
@@ -2162,7 +2141,7 @@
       $('#mistakeSubmit').disabled = true;
     });
 
-    // 13. Activity 11: Free Writing with Athena AI
+    // 12. Activity 11: Free Writing with Athena AI
     const athenaTa = $('#athenaWrite');
     athenaTa.addEventListener('input', () => {
       const count = countWords(athenaTa.value);
@@ -2182,7 +2161,7 @@
       status.className = 'q-fb show';
     });
 
-    // 14. Phase 4: Self-evaluation
+    // 13. Phase 4: Self-evaluation
     $$('.self-check-item').forEach(btn => {
       btn.addEventListener('click', () => {
         btn.classList.toggle('active');
@@ -2209,14 +2188,17 @@
       });
     });
 
-    // 15. Auto Height Reporter for LMS
+    // 14. Initial Load & Auto Height Reporter for LMS
     function reportHeight() {
       LMS().resize({ height: document.documentElement.scrollHeight });
     }
+
     window.addEventListener('load', () => {
+      renderRefTabsForLevel('phase-0');
       LMS().ready();
       reportHeight();
     });
+
     const resizeObserver = new ResizeObserver(() => {
       clearTimeout(window._rz);
       window._rz = setTimeout(reportHeight, 100);

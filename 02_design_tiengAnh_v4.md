@@ -1,6 +1,42 @@
-# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v3.0
+# 🎨 DESIGN SYSTEM — Môn Tiếng Anh (Aiducation Cream · Jade · Sage · Accent) — v3.4
 
-> **v3.0** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **v3.4** — lịch sử thay đổi đầy đủ qua từng version xem `00_changelog_tiengAnh.md`. File này chỉ giữ quy tắc hiện hành.
+> **Mới ở v3.4 (2 sửa đổi từ QA thật `L10-unit2_writing_practice.html`):**
+> 1. **Mục 4.8b — chuẩn hoá lại Speaking KHÔNG dùng nút nổi "Quick Recap" nữa:** đổi thành "Recap"
+>    là 1 TAB trong Reference Pane (giống hệt cấu trúc Writing), vai trò tương đương Signal Words —
+>    ghi đè mô tả nút nổi ở v3.3 (mô tả đó dựa theo kịch bản cũ, nay đã đổi chuẩn).
+> 2. **Mục 4.8b — thêm cảnh báo lỗi thật:** Reference Pane không cuộn được trên mobile, hiển thị
+>    thành 1 khối dài vô hạn — nguyên nhân do build thiếu `display:flex; flex-direction:column` trên
+>    `.practice-ref-pane` VÀ thiếu override `.pref-body { max-height:calc(38vh - 55px) }` riêng cho
+>    mobile. Thêm checklist QA phải rà đúng 2 dòng CSS này, không chỉ nhìn qua `max-height:38vh`.
+>
+> **Mới ở v3.3 (đối chiếu trực tiếp 3 file kịch bản Speaking thật — Unit 3/4/5 Lớp 10 — để chốt
+> đúng cấu trúc Recap, thay cho 2 lần suy đoán sai liên tiếp ở v3.2):**
+> 1. **Mục 4.8b — sửa lại chính xác khối "CHỐT RANH GIỚI PHẠM VI":** Speaking có 2 component TÁCH
+>    BIỆT cùng tồn tại song song — (a) Practice Reference Pane 2-3 tab (💬 Transcript / 🧠 Functional
+>    Language / tuỳ Unit thêm 1 tab tham chiếu khác), và (b) **Quick Recap — nút NỔI độc lập, KHÔNG
+>    nằm trong Reference Pane**, mở bất kỳ lúc nào, nội dung là bản gộp/rút gọn của Functional
+>    Language + outline liên quan — đúng vai trò tương đương Signal Words bên Writing, chỉ khác cách
+>    hiển thị (nút nổi thay vì tab cố định). Không liên quan Mục 9.13 (đã kiểm tra: cả 3 file Speaking
+>    không dùng popup 💡 nào).
+>
+> **Mới ở v3.2 (chốt ranh giới phạm vi — tránh lặp lại kiểu lỗi "sửa đúng chỗ này lại làm sai chỗ
+> khác" đã xảy ra liên tiếp ở v2.9-v3.1; bản đầu của mục này cũng bị sửa sai 1 lần, đã đính chính):**
+> 1. **Mục 4.8b — thêm khối "CHỐT RANH GIỚI PHẠM VI":** quy tắc mapping tab theo phase (Identify/
+>    Structure có Bài đọc, Write/Production chỉ còn Signal Words) CHỈ áp dụng cho Writing — không
+>    suy diễn sang Speaking. Đính chính quan trọng: **"Recap" bên Speaking là TÊN TAB trong Reference
+>    Pane, đóng vai trò tương đương "Signal Words" bên Writing** (cấu trúc bài nói để tham khảo) —
+>    KHÔNG phải popup 💡 (Mục 9.13, 1 component khác, trùng tên gọi nhưng khác bản chất). Chưa suy
+>    diễn thêm mapping chi tiết của Speaking nếu chưa đối chiếu trực tiếp file Speaking thật.
+>
+> **Mới ở v3.1 (sửa hiểu nhầm thật — 4 kịch bản Writing liên tiếp giữ nhầm tab "Bài mẫu Part 1"
+> xuyên suốt cả Write/Production, đúng ra tab bài đọc chỉ ở Identify/Structure và phải là bài đọc
+> CỦA CHÍNH phase đó, không phải bài mẫu Part 1):**
+> 1. **Mục 4.8b — viết lại rõ ràng quy tắc tab Reference Pane cho Writing:** tab bài đọc CHỈ tồn tại
+>    ở Identify + Structure (dùng bài đọc của chính phase đó, KHÔNG phải bài mẫu Part 1); từ Write
+>    trở đi CHỈ còn Signal Words; Functional Language tách tab riêng CHỈ khi Unit coi đây là thành
+>    phần lớn/quan trọng (không mặc định). Có ví dụ mapping tham khảo theo đúng style Unit 2 Lớp 10.
+>
 > **Mới ở v3.0 (yêu cầu bổ sung — nút "Gom lại" cho Reference Pane, áp dụng cả mobile lẫn desktop):**
 > 1. **Mục 4.8b — thêm nút collapse `⟨⟨` trong `.pref-head`:** tắt hẳn Reference Pane (khác 3 nút
 >    mpc-btn trên mobile vốn chỉ đổi tỉ lệ, không tắt hẳn), dùng 1 class `.ref-collapsed` chung cho
@@ -1950,6 +1986,20 @@ function goToPractice() {
     margin-top:14px; border-bottom:none; background:var(--white); box-shadow:0 -4px 16px rgba(0,0,0,0.1); }
 }
 ```
+
+> 🛑 **Lỗi thật đã gặp (`L10-unit2_writing_practice.html`) — Reference Pane không cuộn được trên
+> mobile, hiển thị thành 1 khối rất dài đẩy cả trang xuống, thay vì bị giới hạn đúng 38vh có cuộn
+> riêng bên trong:** nguyên nhân là bên build bỏ sót ĐÚNG 2 điều bắt buộc ở trên khi tự triển khai
+> lại CSS thay vì copy nguyên văn:
+> 1. `.practice-ref-pane` PHẢI có `display:flex; flex-direction:column;` (không chỉ `overflow:hidden`
+>    suông) — thiếu dòng này khiến `.pref-body` render độc lập theo `max-height` riêng của nó, không
+>    còn bị ép co lại vừa khung cha.
+> 2. `.pref-body` PHẢI có override `max-height:calc(38vh - 55px)` RIÊNG cho mobile (bên trong
+>    `@media (max-width:991px)`) — nếu chỉ giữ `max-height` mặc định của bản desktop (thường lớn hơn
+>    nhiều, VD 480px hoặc 70vh) mà không override cho mobile, phần nội dung bên trong sẽ cố hiển thị
+>    hết theo max-height desktop, phá vỡ khung 38vh của khối cha.
+> Khi QA, luôn kiểm tra ĐÚNG 2 dòng CSS này có mặt — không chỉ nhìn qua thấy có `max-height:38vh` ở
+> `.practice-ref-pane` là coi như đủ.
 ```javascript
 // Dựng nội dung read-only cho Reference Pane từ CHÍNH data đã dùng ở Khối 1 (messages/vocab) —
 // không tạo data riêng, tránh lệch nội dung giữa bài học và phần tham chiếu lúc luyện tập.
@@ -2013,19 +2063,53 @@ function setMobileViewMode(mode) {
 >
 > ⚠️ **Riêng Writing — KHÔNG áp dụng luật "1 pane duy nhất" ở trên (siết lại v2.9, sau lỗi thật ở
 > `L10-unit1_writing_practice_v2.html` — mất hẳn tab Signal Words so với bản Unit 2 cũ):** Part 1
-> của Writing luôn có 2 loại tài liệu cần tra khi làm Practice — (1) bài mẫu/model text liên quan
-> tới phase đang làm, và (2) **Bảng tín hiệu nhận diện/Functional Language** (Mục 6 khuôn Part 1) —
-> đây chính là khối "Quick Reference" giáo viên hay gọi. **BẮT BUỘC luôn có tối thiểu 2 tab, không
-> được rút còn 1 pane:**
-> - Tab bài mẫu: đổi nội dung theo từng phase (VD Identify/Structure dùng đúng bài mẫu Part 1 để đối
->   chiếu; Write/Production có thể đổi sang bài mẫu khác nếu Practice dùng chủ đề khác) — phase nào
->   không còn bài mẫu cụ thể để tra (VD bước viết độc lập) thì bỏ RIÊNG tab này, không bỏ cả 2.
-> - Tab Signal Words/Functional Language: **PHẢI xuất hiện Ở MỌI PHASE không trừ phase nào** — kể cả
->   khi tab bài mẫu bị bỏ ở phase đó, tab này vẫn còn, vì đây là bảng tra cứu công thức viết mà học
->   sinh cần xuyên suốt cả bài Practice, không riêng 1 phase nào.
+> của Writing luôn có 2 loại tài liệu cần tra khi làm Practice — (1) bài đọc của TỪNG phase Identify/
+> Structure, và (2) **Bảng tín hiệu nhận diện/Functional Language** (Mục 6 khuôn Part 1) — đây chính
+> là khối "Quick Reference" giáo viên hay gọi. **BẮT BUỘC luôn có tối thiểu 2 tab ở Identify/
+> Structure, không được rút còn 1 pane:**
+> - **Tab bài đọc — CHỈ tồn tại ở đúng 2 phase Identify + Structure, dùng CHÍNH bài đọc xuất hiện
+>   TRONG phase đó** (VD bài đọc "washing machine" ở Identify, bài đọc "calculator"/"headphones" ở
+>   Structure bài 1/2) — **KHÔNG phải bài mẫu Part 1** (bài mẫu Part 1 chỉ dùng để DẠY cấu trúc ở
+>   Lesson, không phải tài liệu tra cứu lặp lại ở Practice). Đổi nội dung tab theo đúng bài đọc của
+>   từng phase, không giữ cố định 1 bài xuyên suốt.
+> - **Từ phase Write trở đi (Write + Production): BỎ HẲN tab bài đọc, CHỈ còn tab Signal Words** —
+>   đây là điểm hay bị hiểu nhầm nhất (đã hiểu sai ít nhất 1 lần trong thực tế: giữ nhầm 1 tab "Bài
+>   mẫu Part 1" xuyên suốt cả Write/Production). Lý do: Write/Production là học sinh TỰ VIẾT, không
+>   còn "bài đọc" cụ thể nào để đối chiếu — chỉ cần công thức/tín hiệu ngôn ngữ để tra khi viết.
+> - **Tab Functional Language riêng (tách khỏi Signal Words)** — CHỈ thêm khi Unit coi đây là thành
+>   phần đủ lớn/quan trọng để tách riêng (VD Mindmap gắn tag 🔧 Functional Language ở Writing Unit 5
+>   Lớp 10) — không phải mặc định cho mọi Unit; đa số Unit gộp chung vào 1 tab "Signal Words" duy
+>   nhất là đủ.
+> - Tab Signal Words: **PHẢI xuất hiện Ở MỌI PHASE không trừ phase nào** (Identify → Structure →
+>   Write → Production), kể cả khi tab bài đọc đã bị bỏ từ Write trở đi.
+> - Ví dụ đúng — mapping tham khảo (`levelRefTabs`, style Unit 2 Lớp 10 gốc):
+>   `Identify: [Bài đọc, Signal Words] · Structure: [Bài đọc, Signal Words] · Write: [Signal Words] ·
+>   Production: [Signal Words]`.
 > - Dùng đúng pattern `refData`/`levelRefTabs`/`switchRefTab()`/`renderRefTabsForLevel()` (khai báo
 >   nội dung từng tab theo `key`, danh sách tab hiện theo từng `levelId`) thay vì
 >   `refEmails`/`renderRefPane()` (chỉ hỗ trợ đổi bài mẫu, không hỗ trợ thêm loại tab khác).
+>
+> ⚠️ **CHỐT RANH GIỚI PHẠM VI — chuẩn hoá theo quyết định mới nhất (Speaking dùng Reference Pane
+> dạng tab giống hệt Writing, KHÔNG dùng nút nổi):**
+> - Toàn bộ đoạn "Riêng Writing" ở trên **CHỈ áp dụng cho môn Viết (Writing)**. KHÔNG tự suy diễn
+>   áp sang Speaking hay bất kỳ kỹ năng nào khác — mapping tab theo phase (Identify/Structure có Bài
+>   đọc, Write/Production chỉ còn Signal Words) là đặc thù của Writing, không phải quy tắc chung.
+> - **Speaking dùng ĐÚNG 1 component Practice Reference Pane (Mục 4.8b), giống cấu trúc Writing —
+>   KHÔNG có nút nổi "Quick Recap" tách riêng.** "Recap" của Speaking là **tên 1 TAB bên trong
+>   Reference Pane**, đóng vai trò tương đương tab Signal Words bên Writing (mẫu câu/cấu trúc bài nói
+>   để tham khảo) — hiển thị và cuộn đúng theo cùng cơ chế 38vh/62vh mobile như mọi Reference Pane
+>   khác, không phải overlay/popup mở riêng.
+>   - Tab thường gặp: 💬 **Messages/Audio Transcript** (bài nghe/hội thoại mẫu) + 🔗 **Recap**
+>     (mẫu câu/Functional Language/cấu trúc bài nói — vai trò = Signal Words bên Writing) + tuỳ Unit
+>     có thêm 1 tab thứ 3 cho bảng tham chiếu chủ động khác (VD "Inventions & Uses", "Mind map").
+>   - Nếu kịch bản cũ mô tả "Recap" dưới dạng nút nổi độc lập — đó là mô tả CŨ, đã thay bằng chuẩn
+>     tab-trong-Reference-Pane này. Khi sửa lại kịch bản Speaking cũ, đổi nút nổi thành 1 tab bình
+>     thường trong `.pref-tabs`, dùng đúng `switchRefTab()`/`refData` như Writing.
+> - **Không liên quan Mục 9.13 (icon 💡):** đây vẫn là 1 component khác — popup nổi cạnh 1 câu hỏi,
+>   không phải tab Recap của Reference Pane nói trên.
+> - Trước khi viết/sửa quy tắc Reference Pane cho 1 môn/kỹ năng cụ thể, LUÔN xác nhận rõ đang làm
+>   đúng môn nào (Writing/Speaking/Reading...), và ưu tiên đối chiếu trực tiếp file kịch bản thật của
+>   môn đó thay vì suy diễn từ tên gọi hay từ quy tắc của môn khác.
 >
 > **Q-Nav Bar (thanh câu hỏi):** tuỳ chọn, hữu ích khi 1 bước có từ 4 câu trở lên để học sinh nhảy
 > nhanh tới câu chưa làm — dựng lại mỗi khi `renderStep()` (4.5) chạy, đánh dấu `.done` cho câu đã
